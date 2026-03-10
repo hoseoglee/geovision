@@ -1,0 +1,194 @@
+import { useState } from 'react';
+import { useAlertStore, type Alert, type AlertSeverity } from '@/store/useAlertStore';
+
+const SEVERITY_STYLE: Record<AlertSeverity, { bg: string; border: string; text: string; icon: string; pulse: string }> = {
+  critical: {
+    bg: 'bg-red-950/80',
+    border: 'border-red-500/60',
+    text: 'text-red-400',
+    icon: '🚨',
+    pulse: 'animate-pulse',
+  },
+  warning: {
+    bg: 'bg-yellow-950/60',
+    border: 'border-yellow-500/40',
+    text: 'text-yellow-400',
+    icon: '⚠️',
+    pulse: '',
+  },
+  info: {
+    bg: 'bg-blue-950/40',
+    border: 'border-blue-500/30',
+    text: 'text-blue-400',
+    icon: 'ℹ️',
+    pulse: '',
+  },
+};
+
+const CATEGORY_LABELS: Record<string, string> = {
+  earthquake: 'SEISMIC',
+  flight: 'ADS-B',
+  ship: 'AIS',
+  satellite: 'SAT',
+  chokepoint: 'CHOKE',
+  system: 'SYS',
+  nuclear: 'NUCLEAR',
+};
+
+function timeAgo(ts: number): string {
+  const diff = Math.floor((Date.now() - ts) / 1000);
+  if (diff < 10) return 'NOW';
+  if (diff < 60) return `${diff}s`;
+  if (diff < 3600) return `${Math.floor(diff / 60)}m`;
+  return `${Math.floor(diff / 3600)}h`;
+}
+
+/** 알람 알림 배지 — 항상 보이는 작은 인디케이터 */
+function AlertBadge({ count, hasCritical, onClick }: { count: number; hasCritical: boolean; onClick: () => void }) {
+  if (count === 0) return null;
+
+  return (
+    <button
+      onClick={onClick}
+      className={`fixed top-8 left-[155px] z-50 flex items-center gap-1.5 px-2.5 py-1
+        rounded font-mono text-xs backdrop-blur-sm transition-all
+        ${hasCritical
+          ? 'bg-red-900/80 border border-red-500/60 text-red-400 animate-pulse'
+          : 'bg-yellow-900/60 border border-yellow-500/40 text-yellow-400'
+        }`}
+    >
+      <span>{hasCritical ? '🚨' : '⚠️'}</span>
+      <span className="font-bold">{count}</span>
+      <span className="text-[9px] opacity-70">ALERT{count > 1 ? 'S' : ''}</span>
+    </button>
+  );
+}
+
+/** 알람 패널 — 전체 알람 목록 */
+export default function AlertPanel() {
+  const [expanded, setExpanded] = useState(false);
+  const alerts = useAlertStore((s) => s.alerts);
+  const unacknowledgedCount = useAlertStore((s) => s.unacknowledgedCount);
+  const muted = useAlertStore((s) => s.muted);
+  const acknowledgeAlert = useAlertStore((s) => s.acknowledgeAlert);
+  const acknowledgeAll = useAlertStore((s) => s.acknowledgeAll);
+  const toggleMute = useAlertStore((s) => s.toggleMute);
+
+  const hasCritical = alerts.some((a) => !a.acknowledged && a.severity === 'critical');
+
+  return (
+    <>
+      <AlertBadge count={unacknowledgedCount} hasCritical={hasCritical} onClick={() => setExpanded(!expanded)} />
+
+      {/* 최신 미확인 알람 토스트 (최대 3개) */}
+      {!expanded && (
+        <div className="fixed top-16 left-[300px] z-40 space-y-1.5 pointer-events-auto" style={{ width: '360px' }}>
+          {alerts
+            .filter((a) => !a.acknowledged)
+            .slice(0, 3)
+            .map((alert) => (
+              <AlertToast key={alert.id} alert={alert} onAck={() => acknowledgeAlert(alert.id)} />
+            ))}
+        </div>
+      )}
+
+      {/* 확장된 알람 패널 */}
+      {expanded && (
+        <div className="fixed top-16 left-[300px] z-50 w-[420px] max-h-[500px] flex flex-col
+          bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded shadow-2xl
+          font-mono animate-slideIn pointer-events-auto">
+          {/* 헤더 */}
+          <div className="flex justify-between items-center px-3 py-2 border-b border-gray-700/40">
+            <div className="flex items-center gap-2">
+              <span className="text-red-400 text-sm">🚨</span>
+              <span className="text-gray-300 text-xs font-bold tracking-widest">ALERT CENTER</span>
+              {unacknowledgedCount > 0 && (
+                <span className="bg-red-600/80 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">
+                  {unacknowledgedCount}
+                </span>
+              )}
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={toggleMute}
+                className="text-gray-500 hover:text-gray-300 text-xs"
+                title={muted ? 'Unmute' : 'Mute'}
+              >
+                {muted ? '🔇' : '🔊'}
+              </button>
+              <button
+                onClick={acknowledgeAll}
+                className="text-gray-500 hover:text-green-400 text-[10px] border border-gray-700/40 px-2 py-0.5 rounded"
+              >
+                ACK ALL
+              </button>
+              <button
+                onClick={() => setExpanded(false)}
+                className="text-gray-500 hover:text-gray-300 text-xs"
+              >
+                ✕
+              </button>
+            </div>
+          </div>
+
+          {/* 알람 목록 */}
+          <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
+            {alerts.length === 0 ? (
+              <div className="text-gray-600 text-xs text-center py-8">NO ACTIVE ALERTS</div>
+            ) : (
+              alerts.map((alert) => (
+                <AlertRow key={alert.id} alert={alert} onAck={() => acknowledgeAlert(alert.id)} />
+              ))
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+function AlertToast({ alert, onAck }: { alert: Alert; onAck: () => void }) {
+  const style = SEVERITY_STYLE[alert.severity];
+
+  return (
+    <div className={`${style.bg} ${style.border} border rounded px-3 py-2 ${style.pulse}
+      flex items-start gap-2 shadow-lg transition-all`}>
+      <span className="text-sm mt-0.5">{style.icon}</span>
+      <div className="flex-1 min-w-0">
+        <div className="flex justify-between items-center">
+          <span className={`text-[10px] font-bold ${style.text}`}>
+            [{CATEGORY_LABELS[alert.category] || alert.category}] {alert.title}
+          </span>
+          <span className="text-gray-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
+        </div>
+        <p className="text-gray-400 text-[10px] mt-0.5 leading-snug">{alert.message}</p>
+      </div>
+      <button onClick={onAck} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0" title="Acknowledge">
+        ✓
+      </button>
+    </div>
+  );
+}
+
+function AlertRow({ alert, onAck }: { alert: Alert; onAck: () => void }) {
+  const style = SEVERITY_STYLE[alert.severity];
+
+  return (
+    <div className={`px-3 py-2 border-b border-gray-800/50 flex items-start gap-2
+      ${alert.acknowledged ? 'opacity-40' : ''} ${!alert.acknowledged ? style.bg : ''}`}>
+      <span className="text-xs mt-0.5">{style.icon}</span>
+      <div className="flex-1 min-w-0">
+        <div className="flex justify-between items-center">
+          <span className={`text-[10px] font-bold ${alert.acknowledged ? 'text-gray-600' : style.text}`}>
+            [{CATEGORY_LABELS[alert.category] || alert.category}] {alert.title}
+          </span>
+          <span className="text-gray-600 text-[9px]">{timeAgo(alert.timestamp)}</span>
+        </div>
+        <p className="text-gray-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
+      </div>
+      {!alert.acknowledged && (
+        <button onClick={onAck} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0">✓</button>
+      )}
+    </div>
+  );
+}

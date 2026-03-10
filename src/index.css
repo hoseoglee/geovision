@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+/* 수평 스캔 라인 애니메이션 */
+.scan-line-h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 100, 0.15), transparent);
+  animation: scanH 4s linear infinite;
+  z-index: 20;
+}
+
+@keyframes scanH {
+  0% { top: -2px; }
+  100% { top: 100%; }
+}
+
+/* 데이터 티커 스크롤 */
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: tickerScroll 30s linear infinite;
+}
+
+/* Cesium 크레딧 숨기기 */
+.cesium-credit-logoContainer,
+.cesium-credit-textContainer {
+  display: none !important;
+}
+
+/* 스크롤바 스타일 */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 2px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 엔티티 디테일 패널 슬라이드 인 */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slideIn {
+  animation: slideIn 0.2s ease-out;
+}

@@ -1,0 +1,13 @@
+// SVG data URIs (base64-encoded) for CesiumJS Billboard icons
+
+// White airplane silhouette pointing up, 24x24px
+export const airplaneIcon =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMkw4IDEwSDNsMiA0aDVsLTIgNmg0bDQtNmg1bDItNGgtNUwxMiAyeiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=';
+
+// Cyan diamond/rhombus, 12x12px
+export const satelliteIcon =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj48cG9seWdvbiBwb2ludHM9IjYsMCAxMiw2IDYsMTIgMCw2IiBmaWxsPSJjeWFuIi8+PC9zdmc+';
+
+// Red concentric circles/rings, 20x20px
+export const earthquakeIcon =
+  'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9InJlZCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZWQiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjIiIGZpbGw9InJlZCIvPjwvc3ZnPg==';
