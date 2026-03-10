@@ -616,7 +616,7 @@ export default function Globe() {
     return () => { cancelled = true; };
   }, [activeLayers, removePrimitive, setDataCounts]);
 
-  // 항공기 — Billboard + heading 회전
+  // 항공기 — Billboard + heading 회전 + 15초 주기 갱신
   useEffect(() => {
     const viewer = viewerRef.current;
     if (!viewer) return;
@@ -631,7 +631,8 @@ export default function Globe() {
     }
 
     let cancelled = false;
-    (async () => {
+
+    async function updateFlights() {
       const flights = await fetchFlights();
       if (cancelled || !viewerRef.current) return;
 
@@ -665,9 +666,13 @@ export default function Globe() {
       flightPrimitiveRef.current = billboards;
       setDataCounts('flights', count);
       setLastUpdated('flights', Date.now());
-    })();
+    }
 
-    return () => { cancelled = true; };
+    // 초기 로드 + 15초마다 갱신
+    updateFlights();
+    const interval = setInterval(updateFlights, 15000);
+
+    return () => { cancelled = true; clearInterval(interval); };
   }, [activeLayers, setDataCounts]);
 
   // 선박(AIS) — Billboard + heading 회전 + WebSocket 실시간 업데이트
