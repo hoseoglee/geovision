@@ -32,6 +32,9 @@ const AIRPLANE_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http:
 // 위성 아이콘 — 밝은 시안 다이아몬드
 const SATELLITE_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><polygon points="8,1 15,8 8,15 1,8" fill="#00FFFF" stroke="#FFF" stroke-width="0.5" opacity="0.9"/></svg>`)}`;
 
+// ISS 전용 아이콘 — 크고 눈에 띄는 금색 마커
+const ISS_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.6"/><circle cx="20" cy="20" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><line x1="2" y1="20" x2="38" y2="20" stroke="#FFD700" stroke-width="2" opacity="0.8"/><line x1="20" y1="8" x2="20" y2="32" stroke="#FFD700" stroke-width="1" opacity="0.5"/></svg>`)}`;
+
 // 선박 아이콘 — 밝은 파란색 삼각형 (위를 향하는 뱃머리)
 const SHIP_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 4,16 10,13 16,16" fill="#4DA6FF" stroke="#FFF" stroke-width="0.8"/></svg>`)}`;
 
@@ -80,6 +83,7 @@ export default function Globe() {
   const shipPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
   const earthquakeEntitiesRef = useRef<Cesium.Entity[]>([]);
   const quakeAnimFrameRef = useRef<number>(0);
+  const issEntitiesRef = useRef<Cesium.Entity[]>([]);
   const overlayEntitiesRef = useRef<Cesium.Entity[]>([]);
   const overlayImageryRef = useRef<Cesium.ImageryLayer[]>([]);
 
@@ -383,16 +387,20 @@ export default function Globe() {
         if (meta) {
           if (meta.type === 'satellite') {
             const d = meta.data;
+            const isISS = d.noradId === '25544';
             setSelectedEntity({
               type: 'satellite',
-              name: d.name,
+              name: isISS ? 'ISS (International Space Station)' : d.name,
               details: {
                 NORAD_ID: d.noradId,
                 ALTITUDE: `${d.alt.toFixed(1)} km`,
                 LAT: d.lat.toFixed(4),
                 LNG: d.lng.toFixed(4),
+                ...(isISS ? { CREW: '7 astronauts', SPEED: '~27,600 km/h' } : {}),
               },
-              url: `https://www.n2yo.com/satellite/?s=${d.noradId}`,
+              url: isISS
+                ? 'https://www.youtube.com/watch?v=xRPjKQtRXR8'
+                : `https://www.n2yo.com/satellite/?s=${d.noradId}`,
             });
           } else if (meta.type === 'flight') {
             const d = meta.data;
@@ -541,17 +549,62 @@ export default function Globe() {
 
       const billboards = new Cesium.BillboardCollection({ scene: viewer.scene });
 
+      // 이전 ISS 엔티티 정리
+      for (const e of issEntitiesRef.current) viewer.entities.remove(e);
+      issEntitiesRef.current = [];
+
       // 전체 위성 표시 (PointPrimitive라서 10K+도 가능)
       const subset = sats.slice(0, 2000);
       for (const sat of subset) {
+        const isISS = sat.noradId === '25544';
         const bb = billboards.add({
           position: Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, sat.alt * 1000),
-          image: SATELLITE_SVG,
-          width: 12,
-          height: 12,
-          scaleByDistance: new Cesium.NearFarScalar(1e6, 1.5, 5e7, 0.4),
+          image: isISS ? ISS_SVG : SATELLITE_SVG,
+          width: isISS ? 36 : 12,
+          height: isISS ? 36 : 12,
+          scaleByDistance: isISS
+            ? new Cesium.NearFarScalar(5e5, 2.0, 1e8, 0.6)
+            : new Cesium.NearFarScalar(1e6, 1.5, 5e7, 0.4),
         });
         billboardDataMap.current.set(bb, { type: 'satellite', data: sat });
+
+        // ISS 전용: 항상 보이는 라벨 + 글로우 링
+        if (isISS) {
+          const issPos = Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, sat.alt * 1000);
+          const labelEntity = viewer.entities.add({
+            name: 'ISS',
+            position: issPos,
+            label: {
+              text: '  ISS',
+              font: '12px monospace',
+              fillColor: Cesium.Color.fromCssColorString('#FFD700'),
+              outlineColor: Cesium.Color.BLACK,
+              outlineWidth: 3,
+              style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+              horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+              verticalOrigin: Cesium.VerticalOrigin.CENTER,
+              pixelOffset: new Cesium.Cartesian2(18, 0),
+              scaleByDistance: new Cesium.NearFarScalar(5e5, 1.2, 1e8, 0.5),
+              show: true,
+            },
+          });
+          issEntitiesRef.current.push(labelEntity);
+
+          // 글로우 펄스 엔티티
+          const glowEntity = viewer.entities.add({
+            position: issPos,
+            ellipse: {
+              semiMinorAxis: 80000,
+              semiMajorAxis: 80000,
+              height: sat.alt * 1000,
+              material: Cesium.Color.fromCssColorString('#FFD700').withAlpha(0.15),
+              outline: true,
+              outlineColor: Cesium.Color.fromCssColorString('#FFD700').withAlpha(0.4),
+              outlineWidth: 1,
+            },
+          });
+          issEntitiesRef.current.push(glowEntity);
+        }
       }
 
       viewer.scene.primitives.add(billboards);

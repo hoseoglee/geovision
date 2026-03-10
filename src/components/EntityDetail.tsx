@@ -71,7 +71,7 @@ export default function EntityDetail() {
               ${TYPE_COLORS[entity.type]} ${TYPE_BORDER[entity.type]} bg-gray-800/50 hover:bg-gray-700/50`}
           >
             <span>↗</span>
-            <span>{LINK_LABELS[entity.type] || 'VIEW DETAILS'}</span>
+            <span>{entity.name?.includes('ISS') ? 'WATCH LIVE STREAM' : (LINK_LABELS[entity.type] || 'VIEW DETAILS')}</span>
           </a>
         </div>
       )}
