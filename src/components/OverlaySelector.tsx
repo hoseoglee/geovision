@@ -2,7 +2,10 @@ import { useAppStore } from '@/store/useAppStore';
 
 const OVERLAYS = [
   { id: 'satellite', label: 'Satellite Photo', icon: '🛰' },
-  { id: 'clouds', label: 'Weather Radar', icon: '🌧' },
+  { id: 'clouds', label: 'Weather/Cloud', icon: '🌧' },
+  { id: 'terrain3d', label: '3D Terrain', icon: '🏔' },
+  { id: 'traffic', label: 'Traffic Flow', icon: '🚗' },
+  { id: 'cctv', label: 'CCTV Cameras', icon: '📹' },
   { id: 'terminator', label: 'Day/Night Line', icon: '🌓' },
   { id: 'nightLights', label: 'Night Lights', icon: '🌃' },
   { id: 'seaTemp', label: 'Sea Temp', icon: '🌡' },

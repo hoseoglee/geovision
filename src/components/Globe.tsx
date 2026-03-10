@@ -11,6 +11,7 @@ import { fetchSatellites } from '@/providers/SatelliteProvider';
 import { fetchFlights } from '@/providers/FlightProvider';
 import { fetchEarthquakes } from '@/providers/EarthquakeProvider';
 import { fetchShips, connectAISStream, disconnectAISStream, isAISConnected } from '@/providers/ShipProvider';
+import { fetchCCTVs, setSelectedCCTV } from '@/providers/CCTVProvider';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
@@ -34,6 +35,9 @@ const SATELLITE_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http
 
 // ISS 전용 아이콘 — 크고 눈에 띄는 금색 마커
 const ISS_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.6"/><circle cx="20" cy="20" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><line x1="2" y1="20" x2="38" y2="20" stroke="#FFD700" stroke-width="2" opacity="0.8"/><line x1="20" y1="8" x2="20" y2="32" stroke="#FFD700" stroke-width="1" opacity="0.5"/></svg>`)}`;
+
+// CCTV 아이콘 — 밝은 녹색 카메라
+const CCTV_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="10" rx="2" fill="#00FF88" stroke="#FFF" stroke-width="1"/><polygon points="15,8 21,5 21,19 15,16" fill="#00FF88" stroke="#FFF" stroke-width="0.8"/><circle cx="9" cy="20" r="2" fill="#00FF88"/></svg>`)}`;
 
 // 선박 아이콘 — 밝은 파란색 삼각형 (위를 향하는 뱃머리)
 const SHIP_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 4,16 10,13 16,16" fill="#4DA6FF" stroke="#FFF" stroke-width="0.8"/></svg>`)}`;
@@ -441,6 +445,13 @@ export default function Globe() {
       // Entity 클릭 (초크포인트, 지진 등)
       if (Cesium.defined(picked) && picked.id instanceof Cesium.Entity) {
         const entity = picked.id;
+
+        // Check if clicked entity is a CCTV camera
+        const cctvData = entity?.properties?.cctvData?.getValue(Cesium.JulianDate.now());
+        if (cctvData) {
+          setSelectedCCTV(cctvData);
+          return;
+        }
         const desc = entity.description?.getValue(Cesium.JulianDate.now()) || '';
         const name = entity.name || 'Unknown';
         if (name && (entity as any)._chokepoint) {
@@ -919,6 +930,22 @@ export default function Globe() {
             layer.alpha = 0.6;
             overlayImageryRef.current.push(layer);
           }
+          // After the radar layer, also try satellite infrared
+          const satIR = data.satellite?.infrared;
+          if (satIR && satIR.length > 0) {
+            const irPath = satIR[satIR.length - 1]?.path;
+            if (irPath) {
+              const irProvider = new Cesium.UrlTemplateImageryProvider({
+                url: `https://tilecache.rainviewer.com${irPath}/256/{z}/{x}/{y}/0/0_1.png`,
+                credit: new Cesium.Credit('RainViewer Satellite'),
+                minimumLevel: 1,
+                maximumLevel: 6,
+              });
+              const irLayer = viewer.imageryLayers.addImageryProvider(irProvider);
+              irLayer.alpha = 0.5;
+              overlayImageryRef.current.push(irLayer);
+            }
+          }
         } catch { /* 무시 */ }
       })();
     }
@@ -1182,6 +1209,82 @@ export default function Globe() {
         },
       });
       overlayEntitiesRef.current.push(entity);
+    }
+
+    // 11. 3D 지형
+    if (activeOverlays.includes('terrain3d')) {
+      // Enable 3D terrain if Cesium Ion token available
+      (async () => {
+        try {
+          const terrain = await Cesium.CesiumTerrainProvider.fromIonAssetId(1);
+          viewer.terrainProvider = terrain;
+          viewer.scene.globe.depthTestAgainstTerrain = true;
+          // Terrain exaggeration for better visual effect
+          viewer.scene.verticalExaggeration = 2.0;
+        } catch {
+          console.warn('[Terrain] Cesium Ion token required for 3D terrain');
+          // Fallback: just enable terrain exaggeration on existing terrain
+          viewer.scene.verticalExaggeration = 2.0;
+        }
+      })();
+    } else {
+      // Reset terrain
+      viewer.terrainProvider = new Cesium.EllipsoidTerrainProvider();
+      viewer.scene.globe.depthTestAgainstTerrain = false;
+      viewer.scene.verticalExaggeration = 1.0;
+    }
+
+    // 12. 교통 흐름 (TomTom)
+    if (activeOverlays.includes('traffic')) {
+      const tomtomKey = import.meta.env.VITE_TOMTOM_KEY;
+      if (tomtomKey && tomtomKey !== 'placeholder') {
+        const trafficProvider = new Cesium.UrlTemplateImageryProvider({
+          url: `https://api.tomtom.com/traffic/map/4/tile/flow/relative0-dark/{z}/{x}/{y}.png?key=${tomtomKey}&tileSize=256`,
+          credit: new Cesium.Credit('© TomTom'),
+          minimumLevel: 0,
+          maximumLevel: 18,
+        });
+        const trafficLayer = viewer.imageryLayers.addImageryProvider(trafficProvider);
+        trafficLayer.alpha = 0.7;
+        overlayImageryRef.current.push(trafficLayer);
+      } else {
+        console.warn('[Traffic] VITE_TOMTOM_KEY required for traffic overlay');
+      }
+    }
+
+    // 13. CCTV 카메라
+    if (activeOverlays.includes('cctv')) {
+      const cctvs = fetchCCTVs();
+      for (const cam of cctvs) {
+        const color = cam.type === 'traffic' ? Cesium.Color.LIME
+          : cam.type === 'port' ? Cesium.Color.CYAN
+          : cam.type === 'landmark' ? Cesium.Color.GOLD
+          : Cesium.Color.WHITE;
+        const entity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 100),
+          billboard: {
+            image: CCTV_SVG,
+            width: 20,
+            height: 20,
+            color,
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 1e7, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+          },
+          label: {
+            text: cam.name,
+            font: '10px monospace',
+            fillColor: Cesium.Color.WHITE,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            pixelOffset: new Cesium.Cartesian2(0, -18),
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e6),
+          },
+          properties: { cctvData: cam },
+        });
+        overlayEntitiesRef.current.push(entity);
+      }
     }
   }, [activeOverlays]);
 
