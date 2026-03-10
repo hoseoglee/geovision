@@ -735,11 +735,9 @@ export default function Globe() {
     if (apiKey && apiKey !== 'placeholder') {
       connectAISStream(apiKey);
       refreshInterval = setInterval(async () => {
-        if (isAISConnected()) {
-          const ships = await fetchShips();
-          renderShips(ships);
-        }
-      }, 10000);
+        const ships = await fetchShips();
+        renderShips(ships);
+      }, 5000);
     }
 
     return () => {

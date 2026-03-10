@@ -45,14 +45,40 @@ function classifyShipType(aisType: number): ShipData['shipType'] {
   return 'cargo'; // default
 }
 
+// --- localStorage 캐시 ---
+const LS_KEY = 'geovision_ais_cache';
+const LS_MAX_AGE = 30 * 60 * 1000; // 30분
+
+function loadCachedShips(): Map<string, ShipData> {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return new Map();
+    const { ts, ships } = JSON.parse(raw);
+    if (Date.now() - ts > LS_MAX_AGE) return new Map();
+    const map = new Map<string, ShipData>();
+    for (const s of ships) map.set(s.mmsi, s);
+    console.log(`[AIS] Loaded ${map.size} cached ships from localStorage`);
+    return map;
+  } catch { return new Map(); }
+}
+
+function saveCachedShips(ships: Map<string, ShipData>) {
+  try {
+    if (ships.size === 0) return;
+    const arr = Array.from(ships.values());
+    localStorage.setItem(LS_KEY, JSON.stringify({ ts: Date.now(), ships: arr }));
+  } catch { /* quota 초과 무시 */ }
+}
+
 // --- AISstream.io WebSocket 실시간 연동 ---
 
 let wsConnection: WebSocket | null = null;
-let liveShips: Map<string, ShipData> = new Map();
+let liveShips: Map<string, ShipData> = loadCachedShips();
 let wsConnected = false;
 let reconnectAttempts = 0;
 let lastMessageTime = 0;
 let healthCheckInterval: ReturnType<typeof setInterval> | null = null;
+let saveCacheInterval: ReturnType<typeof setInterval> | null = null;
 
 type ShipUpdateCallback = (ships: ShipData[]) => void;
 let updateCallback: ShipUpdateCallback | null = null;
@@ -76,7 +102,7 @@ export function connectAISStream(apiKey: string, onUpdate?: ShipUpdateCallback) 
       wsConnected = true;
       reconnectAttempts = 0;
       lastMessageTime = Date.now();
-      console.log('[AIS] WebSocket connected to aisstream.io');
+      console.log(`[AIS] WebSocket connected (cached: ${liveShips.size} ships)`);
 
       // 헬스체크: 60초 동안 메시지 없으면 재연결
       if (healthCheckInterval) clearInterval(healthCheckInterval);
@@ -86,8 +112,13 @@ export function connectAISStream(apiKey: string, onUpdate?: ShipUpdateCallback) 
           wsConnection.close();
         }
       }, 15000);
+
+      // 30초마다 localStorage에 캐시 저장
+      if (saveCacheInterval) clearInterval(saveCacheInterval);
+      saveCacheInterval = setInterval(() => saveCachedShips(liveShips), 30000);
     };
 
+    let msgCount = 0;
     ws.onmessage = (event) => {
       try {
         lastMessageTime = Date.now();
@@ -121,9 +152,11 @@ export function connectAISStream(apiKey: string, onUpdate?: ShipUpdateCallback) 
 
         if (ship.heading === 511) ship.heading = 0;
         liveShips.set(mmsi, ship);
+        msgCount++;
 
-        if (updateCallback && liveShips.size % 50 === 0) {
-          updateCallback(Array.from(liveShips.values()));
+        // 로그: 처음 500개, 이후 1000개 단위
+        if (msgCount === 100 || msgCount === 500 || msgCount % 1000 === 0) {
+          console.log(`[AIS] ${msgCount} messages received, ${liveShips.size} unique ships`);
         }
       } catch {
         // 파싱 실패 무시
@@ -136,10 +169,13 @@ export function connectAISStream(apiKey: string, onUpdate?: ShipUpdateCallback) 
     };
 
     ws.onclose = () => {
-      console.log('[AIS] WebSocket closed, live ships cached:', liveShips.size);
+      console.log(`[AIS] WebSocket closed, ${liveShips.size} ships cached`);
       wsConnection = null;
       wsConnected = false;
       if (healthCheckInterval) { clearInterval(healthCheckInterval); healthCheckInterval = null; }
+      if (saveCacheInterval) { clearInterval(saveCacheInterval); saveCacheInterval = null; }
+      // 끊길 때 캐시 저장
+      saveCachedShips(liveShips);
 
       // 지수 백오프 재연결 (최대 60초)
       reconnectAttempts++;
@@ -156,6 +192,7 @@ export function connectAISStream(apiKey: string, onUpdate?: ShipUpdateCallback) 
 }
 
 export function disconnectAISStream() {
+  saveCachedShips(liveShips);
   if (wsConnection) {
     wsConnection.close();
     wsConnection = null;
