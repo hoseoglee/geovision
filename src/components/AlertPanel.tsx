@@ -35,6 +35,41 @@ const CATEGORY_LABELS: Record<string, string> = {
   nuclear: 'NUCLEAR',
 };
 
+/** 알람 카테고리와 메시지로부터 관련 외부 사이트 URL 생성 */
+function getAlertUrl(alert: Alert): string | null {
+  const msg = alert.message;
+  switch (alert.category) {
+    case 'earthquake': {
+      // "M6.2 earthquake detected — 142km SW of Tonga" → 구글 검색
+      const match = msg.match(/M[\d.]+\s+earthquake[^.—]*/i);
+      return `https://www.google.com/search?q=${encodeURIComponent(match?.[0] || alert.title)}`;
+    }
+    case 'flight': {
+      // "Aircraft KE901 transponder lost" or "SQUAWK 7700 — UA442"
+      const callsign = msg.match(/(?:Aircraft\s+|—\s*)([A-Z]{2,3}\d{1,4})/)?.[1];
+      if (callsign) return `https://www.flightradar24.com/${callsign}`;
+      return `https://www.google.com/search?q=${encodeURIComponent(alert.title + ' ' + msg.slice(0, 60))}`;
+    }
+    case 'ship': {
+      // "Tanker EVER FORTUNE dark since..." or "MAERSK OHIO speed anomaly"
+      const vessel = msg.match(/(?:Tanker|Vessel|MAERSK|EVER)\s+([A-Z][A-Z\s]{2,20}?)(?:\s+dark|\s+speed|\s+AIS)/)?.[0]?.trim();
+      if (vessel) return `https://www.marinetraffic.com/en/ais/index/search/all?keyword=${encodeURIComponent(vessel)}`;
+      return `https://www.google.com/search?q=${encodeURIComponent(alert.title + ' maritime')}`;
+    }
+    case 'satellite':
+      return `https://www.n2yo.com/`;
+    case 'nuclear':
+      return `https://www.google.com/search?q=${encodeURIComponent(alert.title + ' ' + msg.slice(0, 60))}`;
+    case 'chokepoint': {
+      // "Strait of Hormuz — traffic density..."
+      const strait = msg.match(/(Strait of \w+|Suez Canal|Taiwan Strait|Panama Canal)/)?.[1];
+      return `https://www.google.com/search?q=${encodeURIComponent(strait || alert.title)}`;
+    }
+    default:
+      return null;
+  }
+}
+
 function timeAgo(ts: number): string {
   const diff = Math.floor((Date.now() - ts) / 1000);
   if (diff < 10) return 'NOW';
@@ -149,10 +184,18 @@ export default function AlertPanel() {
 
 function AlertToast({ alert, onAck }: { alert: Alert; onAck: () => void }) {
   const style = SEVERITY_STYLE[alert.severity];
+  const url = getAlertUrl(alert);
+
+  const handleClick = () => {
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
-    <div className={`${style.bg} ${style.border} border rounded px-3 py-2 ${style.pulse}
-      flex items-start gap-2 shadow-lg transition-all`}>
+    <div
+      className={`${style.bg} ${style.border} border rounded px-3 py-2 ${style.pulse}
+      flex items-start gap-2 shadow-lg transition-all ${url ? 'cursor-pointer hover:brightness-125' : ''}`}
+      onClick={handleClick}
+    >
       <span className="text-sm mt-0.5">{style.icon}</span>
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center">
@@ -162,8 +205,9 @@ function AlertToast({ alert, onAck }: { alert: Alert; onAck: () => void }) {
           <span className="text-gray-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
         </div>
         <p className="text-gray-400 text-[10px] mt-0.5 leading-snug">{alert.message}</p>
+        {url && <span className="text-gray-600 text-[8px] mt-0.5">↗ CLICK TO VIEW</span>}
       </div>
-      <button onClick={onAck} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0" title="Acknowledge">
+      <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0" title="Acknowledge">
         ✓
       </button>
     </div>
@@ -172,22 +216,34 @@ function AlertToast({ alert, onAck }: { alert: Alert; onAck: () => void }) {
 
 function AlertRow({ alert, onAck }: { alert: Alert; onAck: () => void }) {
   const style = SEVERITY_STYLE[alert.severity];
+  const url = getAlertUrl(alert);
+
+  const handleClick = () => {
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
-    <div className={`px-3 py-2 border-b border-gray-800/50 flex items-start gap-2
-      ${alert.acknowledged ? 'opacity-40' : ''} ${!alert.acknowledged ? style.bg : ''}`}>
+    <div
+      className={`px-3 py-2 border-b border-gray-800/50 flex items-start gap-2
+      ${alert.acknowledged ? 'opacity-40' : ''} ${!alert.acknowledged ? style.bg : ''}
+      ${url ? 'cursor-pointer hover:brightness-125' : ''}`}
+      onClick={handleClick}
+    >
       <span className="text-xs mt-0.5">{style.icon}</span>
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center">
           <span className={`text-[10px] font-bold ${alert.acknowledged ? 'text-gray-600' : style.text}`}>
             [{CATEGORY_LABELS[alert.category] || alert.category}] {alert.title}
           </span>
-          <span className="text-gray-600 text-[9px]">{timeAgo(alert.timestamp)}</span>
+          <div className="flex items-center gap-1.5">
+            {url && <span className="text-gray-600 text-[8px]">↗</span>}
+            <span className="text-gray-600 text-[9px]">{timeAgo(alert.timestamp)}</span>
+          </div>
         </div>
         <p className="text-gray-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
       </div>
       {!alert.acknowledged && (
-        <button onClick={onAck} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0">✓</button>
+        <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0">✓</button>
       )}
     </div>
   );
