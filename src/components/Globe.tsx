@@ -1372,15 +1372,16 @@ export default function Globe() {
           overlayEntitiesRef.current.push(previewEntity);
         }
 
-        // 카메라 시야각(FOV) 콘 — 줌인 시 표시
+        // 카메라 시야각(FOV) 3D 프러스텀 — 줌인 시 표시
         // heading 데이터가 있으면 사용, 없으면 시드 기반 fallback
         const camHeading = cam.heading ?? ((cam.lat * 1000 + cam.lng * 100) % 360);
         const headingRad = Cesium.Math.toRadians(camHeading);
         const fovRange = 300; // 시야 범위 (미터)
         const fovAngle = 60; // FOV 각도 (도)
         const halfFov = Cesium.Math.toRadians(fovAngle / 2);
+        const camHeight = 200; // 카메라 설치 높이 (m)
 
-        // FOV 부채꼴 — 3개 점 (카메라, 좌측 끝, 우측 끝)
+        // FOV 부채꼴 끝점 계산
         const camLatRad = Cesium.Math.toRadians(cam.lat);
         const metersPerDeg = 111320 * Math.cos(camLatRad);
         const dLat1 = (fovRange * Math.cos(headingRad - halfFov)) / 111320;
@@ -1388,21 +1389,85 @@ export default function Globe() {
         const dLat2 = (fovRange * Math.cos(headingRad + halfFov)) / 111320;
         const dLng2 = (fovRange * Math.sin(headingRad + halfFov)) / metersPerDeg;
 
-        const fovEntity = viewer.entities.add({
+        const farLng1 = cam.lng + dLng1;
+        const farLat1 = cam.lat + dLat1;
+        const farLng2 = cam.lng + dLng2;
+        const farLat2 = cam.lat + dLat2;
+
+        // 바닥 삼각형 (지면)
+        const fovGround = viewer.entities.add({
           polygon: {
             hierarchy: Cesium.Cartesian3.fromDegreesArray([
               cam.lng, cam.lat,
-              cam.lng + dLng1, cam.lat + dLat1,
-              cam.lng + dLng2, cam.lat + dLat2,
+              farLng1, farLat1,
+              farLng2, farLat2,
             ]),
-            material: color.withAlpha(0.15),
-            outline: true,
-            outlineColor: color.withAlpha(0.5),
-            height: 50,
+            material: color.withAlpha(0.1),
+            height: 0,
           },
           distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
         } as any);
-        overlayEntitiesRef.current.push(fovEntity);
+        overlayEntitiesRef.current.push(fovGround);
+
+        // 3D 벽면 — 카메라에서 지면까지 내려오는 프러스텀 측면
+        // 좌측 벽
+        const wallLeft = viewer.entities.add({
+          wall: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              cam.lng, cam.lat, camHeight,
+              farLng1, farLat1, 0,
+            ]),
+            material: color.withAlpha(0.08),
+          },
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        } as any);
+        overlayEntitiesRef.current.push(wallLeft);
+
+        // 우측 벽
+        const wallRight = viewer.entities.add({
+          wall: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              cam.lng, cam.lat, camHeight,
+              farLng2, farLat2, 0,
+            ]),
+            material: color.withAlpha(0.08),
+          },
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        } as any);
+        overlayEntitiesRef.current.push(wallRight);
+
+        // 전면 벽 (먼 쪽 끝)
+        const wallFront = viewer.entities.add({
+          wall: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              farLng1, farLat1, 0,
+              farLng2, farLat2, 0,
+            ]),
+            minimumHeights: [0, 0],
+            maximumHeights: [camHeight * 0.3, camHeight * 0.3],
+            material: color.withAlpha(0.12),
+          },
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        } as any);
+        overlayEntitiesRef.current.push(wallFront);
+
+        // 프러스텀 엣지 라인 — 카메라에서 FOV 끝점까지 와이어프레임
+        const fovLines = viewer.entities.add({
+          polyline: {
+            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+              farLng1, farLat1, 0,
+              cam.lng, cam.lat, camHeight,
+              farLng2, farLat2, 0,
+            ]),
+            width: 1.5,
+            material: new Cesium.PolylineGlowMaterialProperty({
+              glowPower: 0.3,
+              color: color.withAlpha(0.6),
+            }),
+          },
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        } as any);
+        overlayEntitiesRef.current.push(fovLines);
       }
     }
 
