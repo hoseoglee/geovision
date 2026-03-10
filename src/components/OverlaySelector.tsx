@@ -1,11 +1,12 @@
 import { useAppStore } from '@/store/useAppStore';
+import { getCCTVCount } from '@/providers/CCTVProvider';
 
 const OVERLAYS = [
   { id: 'satellite', label: 'Satellite Photo', icon: '🛰' },
   { id: 'clouds', label: 'Weather/Cloud', icon: '🌧' },
-  { id: 'terrain3d', label: '3D Terrain', icon: '🏔' },
+  { id: 'terrain3d', label: '3D Buildings', icon: '🏔' },
   { id: 'traffic', label: 'Traffic Flow', icon: '🚗' },
-  { id: 'cctv', label: 'CCTV Cameras', icon: '📹' },
+  { id: 'cctv', label: 'CCTV Cameras', icon: '📹', dynamic: true },
   { id: 'terminator', label: 'Day/Night Line', icon: '🌓' },
   { id: 'nightLights', label: 'Night Lights', icon: '🌃' },
   { id: 'seaTemp', label: 'Sea Temp', icon: '🌡' },
@@ -15,6 +16,9 @@ const OVERLAYS = [
   { id: 'ports', label: 'Major Ports', icon: '⚓' },
   { id: 'currents', label: 'Ocean Currents', icon: '🌊' },
   { id: 'sunPos', label: 'Sun Position', icon: '☀' },
+  { id: 'godMode', label: 'God Mode', icon: '👁' },
+  { id: 'vehicles', label: 'Vehicle Detect', icon: '🚙' },
+  { id: 'adsb', label: 'Military Air', icon: '✈' },
 ];
 
 export default function OverlaySelector() {
@@ -40,7 +44,12 @@ export default function OverlaySelector() {
                 }`}
             >
               <span className="text-xs">{o.icon}</span>
-              <span className="truncate">{o.label}</span>
+              <span className="truncate">
+                {o.label}
+                {(o as any).dynamic && active && (
+                  <span className="ml-1 text-[8px] text-gray-400">({getCCTVCount()})</span>
+                )}
+              </span>
             </button>
           );
         })}

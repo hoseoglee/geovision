@@ -8,6 +8,9 @@ const FILTERS = [
   { id: 'crt', label: 'CRT', key: '2' },
   { id: 'nightvision', label: 'Night Vision', key: '3' },
   { id: 'thermal', label: 'Thermal', key: '4' },
+  { id: 'flir', label: 'FLIR', key: '5' },
+  { id: 'anime', label: 'Anime', key: '6' },
+  { id: 'lut', label: 'Cinematic', key: '7' },
 ] as const;
 
 export default function FilterControls() {
@@ -44,7 +47,7 @@ export default function FilterControls() {
       <h3 className="text-xs font-semibold uppercase tracking-wider text-green-500 mb-2">
         Visual Filter
       </h3>
-      <div className="grid grid-cols-2 gap-1.5">
+      <div className="grid grid-cols-3 gap-1.5">
         {FILTERS.map((filter) => {
           const isActive = activeFilter === filter.id || (!activeFilter && filter.id === 'normal');
 

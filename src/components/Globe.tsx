@@ -11,7 +11,7 @@ import { fetchSatellites } from '@/providers/SatelliteProvider';
 import { fetchFlights } from '@/providers/FlightProvider';
 import { fetchEarthquakes } from '@/providers/EarthquakeProvider';
 import { fetchShips, connectAISStream, disconnectAISStream, isAISConnected } from '@/providers/ShipProvider';
-import { fetchCCTVs, setSelectedCCTV } from '@/providers/CCTVProvider';
+import { fetchCCTVs, setSelectedCCTV, bootstrapWindyCams, subscribeAllCCTVs } from '@/providers/CCTVProvider';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
@@ -20,11 +20,17 @@ import { getSunPosition } from '@/components/SunPosition';
 import crtShader from '@/filters/crt';
 import nightVisionShader from '@/filters/nightVision';
 import thermalShader from '@/filters/thermal';
+import flirShader from '@/filters/flir';
+import animeShader from '@/filters/anime';
+import lutShader from '@/filters/lut';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
   nightVision: nightVisionShader,
   thermal: thermalShader,
+  flir: flirShader,
+  anime: animeShader,
+  lut: lutShader,
 };
 
 // 비행기 아이콘 SVG — 밝은 노란색, 큰 삼각형
@@ -75,6 +81,7 @@ export default function Globe() {
   const viewerRef = useRef<Cesium.Viewer | null>(null);
   const stageRef = useRef<Cesium.PostProcessStage | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
+  const [windyCamsVersion, setWindyCamsVersion] = useState(0);
 
   // Billboard → 데이터 매핑 (호버/클릭용)
   const billboardDataMap = useRef<Map<any, BillboardMeta>>(new Map());
@@ -90,6 +97,7 @@ export default function Globe() {
   const issEntitiesRef = useRef<Cesium.Entity[]>([]);
   const overlayEntitiesRef = useRef<Cesium.Entity[]>([]);
   const overlayImageryRef = useRef<Cesium.ImageryLayer[]>([]);
+  const buildingsTilesetRef = useRef<Cesium.Cesium3DTileset | null>(null);
 
   const activeFilter = useAppStore((s) => s.activeFilter);
   const activeOverlays = useAppStore((s) => s.activeOverlays);
@@ -1211,20 +1219,36 @@ export default function Globe() {
       overlayEntitiesRef.current.push(entity);
     }
 
-    // 11. 3D 지형
+    // 11. 3D 지형 + OSM Buildings
     if (activeOverlays.includes('terrain3d')) {
-      // Enable 3D terrain if Cesium Ion token available
       (async () => {
         try {
+          // 3D 지형
           const terrain = await Cesium.CesiumTerrainProvider.fromIonAssetId(1);
           viewer.terrainProvider = terrain;
           viewer.scene.globe.depthTestAgainstTerrain = true;
-          // Terrain exaggeration for better visual effect
           viewer.scene.verticalExaggeration = 2.0;
         } catch {
           console.warn('[Terrain] Cesium Ion token required for 3D terrain');
-          // Fallback: just enable terrain exaggeration on existing terrain
           viewer.scene.verticalExaggeration = 2.0;
+        }
+        try {
+          // OSM 3D Buildings (Cesium Ion asset 96188)
+          if (!buildingsTilesetRef.current) {
+            const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(96188, {
+              maximumScreenSpaceError: 16,
+            });
+            // 건물 스타일 — 반투명 시안/녹색 와이어프레임 느낌
+            tileset.style = new Cesium.Cesium3DTileStyle({
+              color: "color('cyan', 0.6)",
+            });
+            viewer.scene.primitives.add(tileset);
+            buildingsTilesetRef.current = tileset;
+          } else {
+            buildingsTilesetRef.current.show = true;
+          }
+        } catch (e) {
+          console.warn('[Buildings] OSM Buildings not available:', e);
         }
       })();
     } else {
@@ -1232,6 +1256,10 @@ export default function Globe() {
       viewer.terrainProvider = new Cesium.EllipsoidTerrainProvider();
       viewer.scene.globe.depthTestAgainstTerrain = false;
       viewer.scene.verticalExaggeration = 1.0;
+      // Hide buildings
+      if (buildingsTilesetRef.current) {
+        buildingsTilesetRef.current.show = false;
+      }
     }
 
     // 12. 교통 흐름 (TomTom)
@@ -1254,14 +1282,18 @@ export default function Globe() {
 
     // 13. CCTV 카메라
     if (activeOverlays.includes('cctv')) {
+      // Bootstrap Windy cams in background
+      bootstrapWindyCams();
+
       const cctvs = fetchCCTVs();
       for (const cam of cctvs) {
         const color = cam.type === 'traffic' ? Cesium.Color.LIME
           : cam.type === 'port' ? Cesium.Color.CYAN
           : cam.type === 'landmark' ? Cesium.Color.GOLD
+          : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
           : Cesium.Color.WHITE;
         const entity = viewer.entities.add({
-          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 100),
+          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
           billboard: {
             image: CCTV_SVG,
             width: 20,
@@ -1269,6 +1301,7 @@ export default function Globe() {
             color,
             scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 1e7, 0.3),
             distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
           label: {
             text: cam.name,
@@ -1280,12 +1313,366 @@ export default function Globe() {
             pixelOffset: new Cesium.Cartesian2(0, -18),
             scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e6, 0.3),
             distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
           properties: { cctvData: cam },
         });
         overlayEntitiesRef.current.push(entity);
+
+        // 카메라 영상 미리보기 — 줌인 시 3D 공간에 떠있는 패널
+        if (cam.source === 'static' && cam.thumbnailUrl !== undefined) {
+          // static 카메라는 YouTube 썸네일 사용
+          const thumbUrl = `https://img.youtube.com/vi/${cam.embedUrl.split('/embed/')[1]?.split('?')[0]}/mqdefault.jpg`;
+          const previewEntity = viewer.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 350),
+            billboard: {
+              image: thumbUrl,
+              width: 160,
+              height: 90,
+              disableDepthTestDistance: Number.POSITIVE_INFINITY,
+              scaleByDistance: new Cesium.NearFarScalar(500, 1.2, 2e4, 0.3),
+              distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e4),
+              pixelOffset: new Cesium.Cartesian2(0, -50),
+            },
+          });
+          overlayEntitiesRef.current.push(previewEntity);
+        } else if (cam.source === 'static') {
+          // YouTube 썸네일 자동 추출
+          const vidId = cam.embedUrl.split('/embed/')[1]?.split('?')[0];
+          if (vidId) {
+            const thumbUrl = `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`;
+            const previewEntity = viewer.entities.add({
+              position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 350),
+              billboard: {
+                image: thumbUrl,
+                width: 160,
+                height: 90,
+                disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                scaleByDistance: new Cesium.NearFarScalar(500, 1.2, 2e4, 0.3),
+                distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e4),
+                pixelOffset: new Cesium.Cartesian2(0, -50),
+              },
+            });
+            overlayEntitiesRef.current.push(previewEntity);
+          }
+        } else if (cam.thumbnailUrl) {
+          // Windy 카메라는 thumbnailUrl 사용
+          const previewEntity = viewer.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 350),
+            billboard: {
+              image: cam.thumbnailUrl,
+              width: 160,
+              height: 90,
+              disableDepthTestDistance: Number.POSITIVE_INFINITY,
+              scaleByDistance: new Cesium.NearFarScalar(500, 1.2, 2e4, 0.3),
+              distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e4),
+              pixelOffset: new Cesium.Cartesian2(0, -50),
+            },
+          });
+          overlayEntitiesRef.current.push(previewEntity);
+        }
+
+        // 카메라 시야각(FOV) 콘 — 줌인 시 표시
+        // heading 데이터가 있으면 사용, 없으면 시드 기반 fallback
+        const camHeading = cam.heading ?? ((cam.lat * 1000 + cam.lng * 100) % 360);
+        const headingRad = Cesium.Math.toRadians(camHeading);
+        const fovRange = 300; // 시야 범위 (미터)
+        const fovAngle = 60; // FOV 각도 (도)
+        const halfFov = Cesium.Math.toRadians(fovAngle / 2);
+
+        // FOV 부채꼴 — 3개 점 (카메라, 좌측 끝, 우측 끝)
+        const camLatRad = Cesium.Math.toRadians(cam.lat);
+        const metersPerDeg = 111320 * Math.cos(camLatRad);
+        const dLat1 = (fovRange * Math.cos(headingRad - halfFov)) / 111320;
+        const dLng1 = (fovRange * Math.sin(headingRad - halfFov)) / metersPerDeg;
+        const dLat2 = (fovRange * Math.cos(headingRad + halfFov)) / 111320;
+        const dLng2 = (fovRange * Math.sin(headingRad + halfFov)) / metersPerDeg;
+
+        const fovEntity = viewer.entities.add({
+          polygon: {
+            hierarchy: Cesium.Cartesian3.fromDegreesArray([
+              cam.lng, cam.lat,
+              cam.lng + dLng1, cam.lat + dLat1,
+              cam.lng + dLng2, cam.lat + dLat2,
+            ]),
+            material: color.withAlpha(0.15),
+            outline: true,
+            outlineColor: color.withAlpha(0.5),
+            height: 50,
+          },
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        } as any);
+        overlayEntitiesRef.current.push(fovEntity);
       }
     }
+
+    // 14. God Mode — 모든 감지 오버레이 활성화 (panoptic detection)
+    if (activeOverlays.includes('godMode')) {
+      // 감시 그리드 — 전 세계를 격자로 표시
+      for (let lat = -60; lat <= 60; lat += 30) {
+        for (let lng = -180; lng < 180; lng += 30) {
+          const north = Math.min(lat + 30, 89.9);
+          const south = Math.max(lat, -89.9);
+          const entity = viewer.entities.add({
+            rectangle: {
+              coordinates: Cesium.Rectangle.fromDegrees(lng, south, lng + 30, north),
+              material: Cesium.Color.LIME.withAlpha(0.03),
+              outline: true,
+              outlineColor: Cesium.Color.LIME.withAlpha(0.15),
+              outlineWidth: 1,
+            },
+          });
+          overlayEntitiesRef.current.push(entity);
+        }
+      }
+      // 감시 노드 — 주요 도시에 스캐닝 포인트
+      const godModeNodes = [
+        { lat: 40.7128, lng: -74.006 }, { lat: 51.5074, lng: -0.1278 },
+        { lat: 35.6762, lng: 139.6503 }, { lat: 48.8566, lng: 2.3522 },
+        { lat: 37.5665, lng: 126.978 }, { lat: 39.9042, lng: 116.4074 },
+        { lat: 55.7558, lng: 37.6173 }, { lat: 28.6139, lng: 77.209 },
+        { lat: -33.8688, lng: 151.2093 }, { lat: 1.3521, lng: 103.8198 },
+        { lat: 25.2048, lng: 55.2708 }, { lat: 34.0522, lng: -118.2437 },
+        { lat: -23.5505, lng: -46.6333 }, { lat: 31.2304, lng: 121.4737 },
+        { lat: 52.52, lng: 13.405 }, { lat: 41.9028, lng: 12.4964 },
+      ];
+      for (const node of godModeNodes) {
+        // 스캐닝 링
+        const ringEntity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(node.lng, node.lat, 500),
+          ellipse: {
+            semiMinorAxis: 80000,
+            semiMajorAxis: 80000,
+            material: Cesium.Color.LIME.withAlpha(0.08),
+            outline: true,
+            outlineColor: Cesium.Color.LIME.withAlpha(0.4),
+            outlineWidth: 2,
+            height: 0,
+          },
+        });
+        overlayEntitiesRef.current.push(ringEntity);
+        // 내부 링
+        const innerRing = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(node.lng, node.lat, 500),
+          ellipse: {
+            semiMinorAxis: 30000,
+            semiMajorAxis: 30000,
+            material: Cesium.Color.LIME.withAlpha(0.05),
+            outline: true,
+            outlineColor: Cesium.Color.LIME.withAlpha(0.6),
+            outlineWidth: 1,
+            height: 0,
+          },
+        });
+        overlayEntitiesRef.current.push(innerRing);
+        // 라벨
+        const labelEntity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(node.lng, node.lat, 1000),
+          label: {
+            text: 'SCANNING',
+            font: '9px monospace',
+            fillColor: Cesium.Color.LIME.withAlpha(0.7),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1.0, 1e7, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+          },
+        });
+        overlayEntitiesRef.current.push(labelEntity);
+      }
+    }
+
+    // 15. Vehicle Detection — 주요 도시 도로에 차량 감지 오버레이
+    if (activeOverlays.includes('vehicles')) {
+      const vehicleCities = [
+        { name: 'New York', lat: 40.7580, lng: -73.9855, roads: [
+          [[40.748, -73.998], [40.758, -73.985], [40.768, -73.972]],
+          [[40.753, -73.995], [40.753, -73.980], [40.753, -73.965]],
+        ]},
+        { name: 'London', lat: 51.5074, lng: -0.1278, roads: [
+          [[51.500, -0.140], [51.507, -0.128], [51.515, -0.115]],
+          [[51.503, -0.135], [51.508, -0.125], [51.513, -0.115]],
+        ]},
+        { name: 'Tokyo', lat: 35.6762, lng: 139.6503, roads: [
+          [[35.670, 139.640], [35.676, 139.650], [35.682, 139.660]],
+          [[35.672, 139.645], [35.678, 139.655], [35.684, 139.665]],
+        ]},
+        { name: 'Seoul', lat: 37.5665, lng: 126.978, roads: [
+          [[37.560, 126.970], [37.567, 126.978], [37.574, 126.986]],
+          [[37.563, 126.973], [37.570, 126.981], [37.577, 126.989]],
+        ]},
+        { name: 'Paris', lat: 48.8566, lng: 2.3522, roads: [
+          [[48.850, 2.340], [48.857, 2.352], [48.864, 2.364]],
+          [[48.853, 2.345], [48.860, 2.357], [48.867, 2.369]],
+        ]},
+      ];
+
+      for (const city of vehicleCities) {
+        // 도시별 감지 영역 표시
+        const areaEntity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(city.lng, city.lat, 200),
+          ellipse: {
+            semiMinorAxis: 2000,
+            semiMajorAxis: 2000,
+            material: Cesium.Color.ORANGE.withAlpha(0.06),
+            outline: true,
+            outlineColor: Cesium.Color.ORANGE.withAlpha(0.3),
+            height: 0,
+          },
+        });
+        overlayEntitiesRef.current.push(areaEntity);
+
+        // 도로별 차량 흐름 표시 (폴리라인)
+        for (const road of city.roads) {
+          const positions = road.map(([lat, lng]) =>
+            Cesium.Cartesian3.fromDegrees(lng, lat, 50)
+          );
+          const roadEntity = viewer.entities.add({
+            polyline: {
+              positions,
+              width: 4,
+              material: new Cesium.PolylineGlowMaterialProperty({
+                glowPower: 0.3,
+                color: Cesium.Color.ORANGE.withAlpha(0.8),
+              }),
+              clampToGround: true,
+            },
+          });
+          overlayEntitiesRef.current.push(roadEntity);
+
+          // 차량 포인트 (도로 위에 점으로 표시)
+          for (const [lat, lng] of road) {
+            // 도로 위에 여러 차량 시뮬레이션
+            for (let offset = 0; offset < 3; offset++) {
+              const jitter = (Math.random() - 0.5) * 0.002;
+              const vEntity = viewer.entities.add({
+                position: Cesium.Cartesian3.fromDegrees(
+                  lng + jitter, lat + jitter * 0.7, 30
+                ),
+                point: {
+                  pixelSize: 4,
+                  color: Cesium.Color.YELLOW,
+                  outlineColor: Cesium.Color.ORANGE,
+                  outlineWidth: 1,
+                  scaleByDistance: new Cesium.NearFarScalar(1e3, 2.0, 5e5, 0.5),
+                  distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3e5),
+                },
+              });
+              overlayEntitiesRef.current.push(vEntity);
+            }
+          }
+        }
+
+        // 감지 라벨
+        const label = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(city.lng, city.lat + 0.008, 500),
+          label: {
+            text: `VEHICLE DETECT: ${city.name}`,
+            font: '9px monospace',
+            fillColor: Cesium.Color.ORANGE,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e5, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3e5),
+          },
+        });
+        overlayEntitiesRef.current.push(label);
+      }
+    }
+
+    // 16. Military Aircraft (ADS-B) — 군용기 추적 마커
+    if (activeOverlays.includes('adsb')) {
+      // 주요 군사 공역 표시
+      const milAirspace = [
+        { name: 'PACAF', lat: 36.0, lng: 138.0, radius: 500000 },
+        { name: 'EUCOM', lat: 50.0, lng: 10.0, radius: 600000 },
+        { name: 'CENTCOM', lat: 30.0, lng: 50.0, radius: 700000 },
+        { name: 'INDOPACOM', lat: 15.0, lng: 115.0, radius: 500000 },
+        { name: 'NORTHCOM', lat: 38.0, lng: -98.0, radius: 800000 },
+        { name: 'AFRICOM', lat: 5.0, lng: 20.0, radius: 600000 },
+        { name: 'SOUTHCOM', lat: -10.0, lng: -60.0, radius: 500000 },
+      ];
+
+      for (const airspace of milAirspace) {
+        // 공역 범위 표시
+        const areaEntity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(airspace.lng, airspace.lat, 10000),
+          ellipse: {
+            semiMinorAxis: airspace.radius,
+            semiMajorAxis: airspace.radius,
+            material: Cesium.Color.RED.withAlpha(0.04),
+            outline: true,
+            outlineColor: Cesium.Color.RED.withAlpha(0.2),
+            outlineWidth: 1,
+            height: 0,
+          },
+        });
+        overlayEntitiesRef.current.push(areaEntity);
+        // 라벨
+        const label = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(airspace.lng, airspace.lat, 15000),
+          label: {
+            text: `MIL AIRSPACE: ${airspace.name}`,
+            font: '10px monospace',
+            fillColor: Cesium.Color.RED.withAlpha(0.8),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1.0, 1e7, 0.4),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1.5e7),
+          },
+        });
+        overlayEntitiesRef.current.push(label);
+      }
+
+      // 시뮬레이션 군용기 마커 (주요 군사 기지 인근)
+      const milAircraft = [
+        { callsign: 'FORTE12', type: 'RQ-4 Global Hawk', lat: 36.2, lng: 129.5, alt: 18000, heading: 45 },
+        { callsign: 'DOOM31', type: 'B-52H Stratofortress', lat: 35.5, lng: 126.0, alt: 12000, heading: 270 },
+        { callsign: 'KNIFE72', type: 'RC-135W Rivet Joint', lat: 38.5, lng: 127.5, alt: 10000, heading: 180 },
+        { callsign: 'VIPER01', type: 'F-16C Fighting Falcon', lat: 51.0, lng: 1.0, alt: 8000, heading: 90 },
+        { callsign: 'SENTRY50', type: 'E-3 AWACS', lat: 33.0, lng: 44.0, alt: 9000, heading: 320 },
+        { callsign: 'DRAGON50', type: 'P-8A Poseidon', lat: 25.0, lng: 120.0, alt: 7500, heading: 200 },
+        { callsign: 'ATLAS01', type: 'C-17 Globemaster', lat: 49.0, lng: 8.0, alt: 11000, heading: 60 },
+        { callsign: 'REAPER11', type: 'MQ-9 Reaper', lat: 32.0, lng: 45.0, alt: 6000, heading: 150 },
+      ];
+
+      for (const ac of milAircraft) {
+        const acEntity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(ac.lng, ac.lat, ac.alt * 100),
+          billboard: {
+            image: AIRPLANE_SVG,
+            width: 24,
+            height: 24,
+            color: Cesium.Color.RED,
+            rotation: -Cesium.Math.toRadians(ac.heading),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
+          },
+          label: {
+            text: `${ac.callsign}\n${ac.type}\nFL${Math.round(ac.alt / 100)}`,
+            font: '9px monospace',
+            fillColor: Cesium.Color.RED,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            pixelOffset: new Cesium.Cartesian2(15, 0),
+            horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.0, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+          },
+        });
+        overlayEntitiesRef.current.push(acEntity);
+      }
+    }
+  }, [activeOverlays, windyCamsVersion]);
+
+  // Subscribe to Windy cam updates to re-trigger overlay rendering
+  useEffect(() => {
+    if (!activeOverlays.includes('cctv')) return;
+    const unsub = subscribeAllCCTVs(() => setWindyCamsVersion((v) => v + 1));
+    return unsub;
   }, [activeOverlays]);
 
   return (

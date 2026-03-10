@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { isAISConnected } from '@/providers/ShipProvider';
+import { getCCTVCount } from '@/providers/CCTVProvider';
 
 /** 우측 미니 통계 패널 — 위협 레벨 + 데이터 파이프라인 + 엔티티 카운트 */
 export default function MiniStats() {
@@ -45,6 +46,7 @@ export default function MiniStats() {
           <StatRow label="FLT" count={dataCounts.flights || 0} color="text-yellow-400" />
           <StatRow label="SHIP" count={dataCounts.ships || 0} color="text-blue-400" />
           <StatRow label="EQ" count={dataCounts.earthquakes || 0} color="text-red-400" />
+          <StatRow label="CCTV" count={getCCTVCount()} color="text-purple-400" />
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ let alertCounter = 0;
 
 export const useAlertStore = create<AlertState>((set, get) => ({
   alerts: [],
-  muted: false,
+  muted: true,
   unacknowledgedCount: 0,
 
   addAlert: (alert) => {
