@@ -14,6 +14,7 @@ import NetworkStatus from './components/NetworkStatus';
 import SunPositionHUD from './components/SunPosition';
 import AlertMonitor from './components/AlertMonitor';
 import AlertPanel from './components/AlertPanel';
+import ISSLiveStream from './components/ISSLiveStream';
 
 export default function App() {
   return (
@@ -33,6 +34,7 @@ export default function App() {
       <SunPositionHUD />
       <AlertMonitor />
       <AlertPanel />
+      <ISSLiveStream />
       <DataTicker />
     </main>
   );

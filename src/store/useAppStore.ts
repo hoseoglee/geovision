@@ -24,6 +24,7 @@ interface AppState {
   selectedEntity: SelectedEntity | null;
   lastUpdated: Record<string, number>;
   fps: number;
+  issLiveStream: boolean;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -35,6 +36,7 @@ interface AppState {
   setSelectedEntity: (entity: SelectedEntity | null) => void;
   setLastUpdated: (source: string, ts: number) => void;
   setFps: (fps: number) => void;
+  setIssLiveStream: (show: boolean) => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -48,6 +50,7 @@ export const useAppStore = create<AppState>((set) => ({
   selectedEntity: null,
   lastUpdated: {},
   fps: 0,
+  issLiveStream: false,
 
   toggleLayer: (layer) =>
     set((state) => ({
@@ -77,4 +80,5 @@ export const useAppStore = create<AppState>((set) => ({
       lastUpdated: { ...state.lastUpdated, [source]: ts },
     })),
   setFps: (fps) => set({ fps }),
+  setIssLiveStream: (show) => set({ issLiveStream: show }),
 }));
