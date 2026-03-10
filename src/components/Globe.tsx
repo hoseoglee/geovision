@@ -148,6 +148,9 @@ export default function Globe() {
       imageryProvider: hasValidToken ? undefined : false as any,
     });
 
+    // Expose viewer for debugging
+    (window as any).__cesiumViewer = viewer;
+
     viewer.scene.globe.enableLighting = true;
     viewer.scene.globe.baseColor = Cesium.Color.fromCssColorString('#0a1628');
 
@@ -1372,8 +1375,8 @@ export default function Globe() {
           overlayEntitiesRef.current.push(previewEntity);
         }
 
-        // 카메라 시야각(FOV) 3D 프러스텀 — 줌인 시 표시
-        // heading 데이터가 있으면 사용, 없으면 시드 기반 fallback
+        // 카메라 시야각(FOV) 3D 프러스텀 — 정적 카메라(36개)에만 적용 (성능)
+        if (cam.source === 'static') {
         const camHeading = cam.heading ?? ((cam.lat * 1000 + cam.lng * 100) % 360);
         const headingRad = Cesium.Math.toRadians(camHeading);
         const fovRange = 300; // 시야 범위 (미터)
@@ -1468,6 +1471,7 @@ export default function Globe() {
           distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
         } as any);
         overlayEntitiesRef.current.push(fovLines);
+        } // end if (cam.source === 'static')
       }
     }
 
