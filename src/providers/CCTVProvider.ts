@@ -25,13 +25,13 @@ const STATIC_CCTVS: CCTVData[] = [
     name: 'Times Square',
     city: 'New York',
     country: 'US',
-    lat: 40.7565,
-    lng: -73.9864,
+    lat: 40.7580,
+    lng: -73.9855,
     embedUrl: 'https://www.youtube.com/embed/rnXIjl_Rzy4?autoplay=1&mute=1',
     type: 'landmark',
     source: 'static',
-    heading: 170, // SSE — Renaissance Hotel, looking south down 7th Ave
-    tilt: -30,
+    heading: 210, // WSW — Marriott Marquis area, looking toward McDonald's & pedestrian plaza
+    tilt: -35,
   },
   {
     id: 'nyc-times-square-2',
@@ -66,13 +66,13 @@ const STATIC_CCTVS: CCTVData[] = [
     name: 'Shibuya Crossing (Sky)',
     city: 'Tokyo',
     country: 'JP',
-    lat: 35.6586,
-    lng: 139.6997,
+    lat: 35.6584,
+    lng: 139.7005,
     embedUrl: 'https://www.youtube.com/embed/3Q5wZeTuttw?autoplay=1&mute=1',
     type: 'city',
     source: 'static',
-    heading: 225, // SW — Shibuya Sky rooftop, elevated panoramic view
-    tilt: -50,
+    heading: 255, // WSW — Shibuya Sky (Scramble Square rooftop), looking down at crossing
+    tilt: -55,
   },
   {
     id: 'tokyo-kabukicho',
@@ -84,7 +84,7 @@ const STATIC_CCTVS: CCTVData[] = [
     embedUrl: 'https://www.youtube.com/embed/DjdUEyjx8GM?autoplay=1&mute=1',
     type: 'city',
     source: 'static',
-    heading: 320, // NW — looking down Kabukicho main street
+    heading: 350, // N — looking north down Kabukicho-ichiban-gai main strip
     tilt: -25,
   },
   {
@@ -107,13 +107,13 @@ const STATIC_CCTVS: CCTVData[] = [
     name: 'Banpo Bridge',
     city: 'Seoul',
     country: 'KR',
-    lat: 37.5146,
-    lng: 126.9963,
+    lat: 37.5060,
+    lng: 126.9960,
     embedUrl: 'https://www.youtube.com/embed/-JhoMGoAfFc?autoplay=1&mute=1',
     type: 'landmark',
     source: 'static',
-    heading: 350, // N — looking north along Han River from south bank
-    tilt: -10,
+    heading: 350, // N — south bank looking north at Banpo Bridge rainbow fountain
+    tilt: -5,
   },
   {
     id: 'seoul-station',
@@ -125,8 +125,8 @@ const STATIC_CCTVS: CCTVData[] = [
     embedUrl: 'https://www.youtube.com/embed/DSgn-lTHJzM?autoplay=1&mute=1',
     type: 'city',
     source: 'static',
-    heading: 270, // W — looking west from station plaza
-    tilt: -20,
+    heading: 190, // S — looking south at Seoul Station old building from plaza
+    tilt: -15,
   },
   {
     id: 'seoul-lotte-world',
@@ -143,15 +143,15 @@ const STATIC_CCTVS: CCTVData[] = [
   },
   {
     id: 'seoul-city-view',
-    name: 'Seoul Skyline',
+    name: 'Gyeongbokgung Palace',
     city: 'Seoul',
     country: 'KR',
-    lat: 37.5665,
-    lng: 126.978,
+    lat: 37.572,
+    lng: 126.977,
     embedUrl: 'https://www.youtube.com/embed/VBlN0MGqyz4?autoplay=1&mute=1',
-    type: 'city',
+    type: 'landmark',
     source: 'static',
-    heading: 180, // S — panoramic view looking south over city
+    heading: 355, // N — Gwanghwamun area looking north at palace + Bugaksan mountain
     tilt: -5,
   },
 
@@ -293,7 +293,7 @@ const STATIC_CCTVS: CCTVData[] = [
     embedUrl: 'https://www.youtube.com/embed/E4dp1EzsJaY?autoplay=1&mute=1',
     type: 'city',
     source: 'static',
-    heading: 0, // N — looking north along Lake Michigan skyline
+    heading: 20, // NNE — looking north-northeast along Lake Michigan shoreline
     tilt: -5,
   },
 
@@ -364,8 +364,8 @@ const STATIC_CCTVS: CCTVData[] = [
     embedUrl: 'https://www.youtube.com/embed/v9rQqa_VTEY?autoplay=1&mute=1',
     type: 'traffic',
     source: 'static',
-    heading: 0, // N — station terminal looking north toward Kyoto Tower
-    tilt: -15,
+    heading: 355, // N — Kyoto Station bus terminal, looking north toward Kyoto Tower
+    tilt: -10,
   },
 
   // ── Rio de Janeiro ────────────────────────────────────
