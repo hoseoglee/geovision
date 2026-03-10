@@ -2,6 +2,8 @@
 // WorldView 스타일 FLIR 시뮬레이션
 const flirShader = /* glsl */ `
 uniform sampler2D colorTexture;
+uniform float u_contrast;
+uniform float u_noise;
 in vec2 v_textureCoordinates;
 
 // 열화상 컬러맵 (White-hot 모드)
@@ -78,10 +80,10 @@ void main() {
 
   // 밝기 추출 + 컨트라스트 강화
   float lum = dot(color, vec3(0.299, 0.587, 0.114));
-  lum = clamp((lum - 0.15) * 1.8, 0.0, 1.0);
+  lum = clamp((lum - 0.15) * u_contrast, 0.0, 1.0);
 
   // 약간의 노이즈 — FLIR 센서 시뮬레이션
-  float noise = fract(sin(dot(uv * 800.0, vec2(12.9898, 78.233))) * 43758.5453) * 0.03;
+  float noise = fract(sin(dot(uv * 800.0, vec2(12.9898, 78.233))) * 43758.5453) * u_noise;
   lum += noise;
   lum = clamp(lum, 0.0, 1.0);
 

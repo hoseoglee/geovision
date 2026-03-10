@@ -2,6 +2,8 @@
 // 밝기를 4단계로 양자화 + 에지 검출 + 파스텔 톤매핑
 const animeShader = /* glsl */ `
 uniform sampler2D colorTexture;
+uniform float u_edgeStrength;
+uniform float u_pastelMix;
 in vec2 v_textureCoordinates;
 
 // Sobel edge detection
@@ -39,12 +41,12 @@ void main() {
   float delta = maxC - minC;
 
   // 파스텔 톤 — 채도를 줄이고 밝기를 높임
-  vec3 pastel = mix(vec3(quantized), color, 0.5);
+  vec3 pastel = mix(vec3(quantized), color, u_pastelMix);
   pastel = pastel * 0.85 + vec3(0.15); // 약간 밝게
 
   // Sobel edge — 잉크 라인
   vec2 texelSize = vec2(1.0 / 1920.0, 1.0 / 1080.0);
-  float edge = edgeDetect(uv, texelSize * 1.5);
+  float edge = edgeDetect(uv, texelSize * u_edgeStrength);
   float edgeLine = smoothstep(0.05, 0.15, edge);
 
   // 에지를 진한 아웃라인으로

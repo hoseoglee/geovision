@@ -2,6 +2,9 @@
 // WorldView 스타일 cinematic color grading
 const lutShader = /* glsl */ `
 uniform sampler2D colorTexture;
+uniform float u_saturation;
+uniform float u_vignette;
+uniform float u_contrast;
 in vec2 v_textureCoordinates;
 
 // Lift-Gamma-Gain 3-way color correction
@@ -41,15 +44,15 @@ void main() {
 
   // 3. 채도 조절 — 약간 낮춰서 영화적 톤
   float lum = dot(color, vec3(0.299, 0.587, 0.114));
-  color = mix(vec3(lum), color, 0.85);
+  color = mix(vec3(lum), color, u_saturation);
 
   // 4. 비네팅
-  float dist = length(uv - 0.5) * 1.2;
+  float dist = length(uv - 0.5) * u_vignette;
   float vignette = smoothstep(1.0, 0.4, dist);
   color *= mix(0.7, 1.0, vignette);
 
-  // 5. 컨트라스트 S-커브
-  color = smoothstep(vec3(0.0), vec3(1.0), color);
+  // 5. 컨트라스트 S-커브 (u_contrast로 강도 조절)
+  color = pow(smoothstep(vec3(0.0), vec3(1.0), color), vec3(u_contrast));
 
   out_FragColor = vec4(color, 1.0);
 }

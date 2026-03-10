@@ -25,6 +25,7 @@ interface AppState {
   lastUpdated: Record<string, number>;
   fps: number;
   issLiveStream: boolean;
+  filterParams: Record<string, number>;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -37,6 +38,7 @@ interface AppState {
   setLastUpdated: (source: string, ts: number) => void;
   setFps: (fps: number) => void;
   setIssLiveStream: (show: boolean) => void;
+  setFilterParam: (key: string, value: number) => void;
 }
 
 export const useAppStore = create<AppState>((set) => ({
@@ -51,6 +53,15 @@ export const useAppStore = create<AppState>((set) => ({
   lastUpdated: {},
   fps: 0,
   issLiveStream: false,
+  filterParams: {
+    flirContrast: 1.8,
+    flirNoise: 0.03,
+    animeEdge: 1.5,
+    animePastel: 0.5,
+    lutSaturation: 0.85,
+    lutVignette: 1.2,
+    lutContrast: 1.0,
+  },
 
   toggleLayer: (layer) =>
     set((state) => ({
@@ -81,4 +92,8 @@ export const useAppStore = create<AppState>((set) => ({
     })),
   setFps: (fps) => set({ fps }),
   setIssLiveStream: (show) => set({ issLiveStream: show }),
+  setFilterParam: (key, value) =>
+    set((state) => ({
+      filterParams: { ...state.filterParams, [key]: value },
+    })),
 }));
