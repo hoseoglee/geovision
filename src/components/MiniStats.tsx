@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { isAISConnected } from '@/providers/ShipProvider';
 
 /** 우측 미니 통계 패널 — 위협 레벨 + 데이터 파이프라인 + 엔티티 카운트 */
 export default function MiniStats() {
   const dataCounts = useAppStore((s) => s.dataCounts);
+  const [aisLive, setAisLive] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => setAisLive(isAISConnected()), 3000);
+    return () => clearInterval(id);
+  }, []);
 
   const threatLevel = dataCounts.earthquakes > 50 ? 'ELEVATED' : 'NORMAL';
   const threatColor = threatLevel === 'ELEVATED' ? 'text-yellow-400' : 'text-green-400';
@@ -25,7 +32,7 @@ export default function MiniStats() {
           <PipelineRow label="CELESTRAK" value="SYNC" ok />
           <PipelineRow label="OPENSKY" value="LIVE" ok />
           <PipelineRow label="USGS" value="POLL" ok />
-          <PipelineRow label="AIS" value="SIM" ok />
+          <PipelineRow label="AIS" value={aisLive ? 'LIVE' : 'SIM'} ok />
           <PipelineRow label="SIGINT" value="N/A" ok={false} />
         </div>
 
