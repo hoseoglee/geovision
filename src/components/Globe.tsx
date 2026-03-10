@@ -824,6 +824,27 @@ export default function Globe() {
     }
     overlayImageryRef.current = [];
 
+    // 0. 위성사진 베이스맵 토글
+    if (activeOverlays.includes('satellite')) {
+      // 기존 CartoDB dark 베이스 레이어를 숨기고 위성사진 추가
+      if (viewer.imageryLayers.length > 0) {
+        viewer.imageryLayers.get(0).show = false;
+      }
+      const satProvider = new Cesium.UrlTemplateImageryProvider({
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        credit: new Cesium.Credit('Esri, Maxar, Earthstar Geographics'),
+        minimumLevel: 0,
+        maximumLevel: 19,
+      });
+      const satLayer = viewer.imageryLayers.addImageryProvider(satProvider, 1);
+      overlayImageryRef.current.push(satLayer);
+    } else {
+      // 위성사진 꺼졌으면 CartoDB 베이스 다시 표시
+      if (viewer.imageryLayers.length > 0) {
+        viewer.imageryLayers.get(0).show = true;
+      }
+    }
+
     // 1. 구름/기상 레이더 — RainViewer 타일
     if (activeOverlays.includes('clouds')) {
       (async () => {

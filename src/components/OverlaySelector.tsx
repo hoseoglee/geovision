@@ -1,6 +1,7 @@
 import { useAppStore } from '@/store/useAppStore';
 
 const OVERLAYS = [
+  { id: 'satellite', label: 'Satellite Photo', icon: '🛰' },
   { id: 'clouds', label: 'Weather Radar', icon: '🌧' },
   { id: 'terminator', label: 'Day/Night Line', icon: '🌓' },
   { id: 'nightLights', label: 'Night Lights', icon: '🌃' },
