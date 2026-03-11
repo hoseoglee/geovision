@@ -231,6 +231,72 @@ const earthquakeShipping: CorrelationRule = {
   },
 };
 
+/** 6. earthquake-volcano: M4+ 지진 & 반경 50km 내 활화산 */
+const earthquakeVolcano: CorrelationRule = {
+  id: 'earthquake-volcano',
+  name: 'Earthquake near Active Volcano',
+  description: 'M4+ earthquake within 50km of an active volcano',
+  layers: ['earthquakes', 'volcanoes'],
+  spatialRadius: 50,
+  temporalWindow: 300,
+  severity: 'warning',
+  condition: (ctx) => {
+    if (!ctx.triggerEntity) return false;
+    const mag = ctx.triggerEntity.data.magnitude as number;
+    if (mag < 4) return false;
+    const volcanoes = ctx.nearbyEntities.filter(
+      (e) => e.layer === 'volcanoes' && e.data.status === 'active',
+    );
+    ctx.matchedEntities = volcanoes;
+    return volcanoes.length > 0;
+  },
+  generate: (ctx) => {
+    const quake = ctx.triggerEntity!;
+    const names = ctx.matchedEntities.map((e) => e.data.name as string).join(', ');
+    return {
+      id: makeAlertId('earthquake-volcano'),
+      ruleId: 'earthquake-volcano',
+      ruleName: 'Earthquake near Active Volcano',
+      severity: 'warning',
+      title: 'SEISMIC-VOLCANIC PROXIMITY',
+      message: `M${(quake.data.magnitude as number).toFixed(1)} earthquake near ${quake.data.place}. Active volcanoes in range: ${names}. Monitoring volcanic activity.`,
+      lat: quake.lat,
+      lng: quake.lng,
+      timestamp: Date.now(),
+      relatedEntities: [quake, ...ctx.matchedEntities].map((e) => ({
+        id: e.id, layer: e.layer, lat: e.lat, lng: e.lng,
+      })),
+    };
+  },
+};
+
+/** 7. wildfire-wind: placeholder (향후 바람 데이터 연동 시 활성화) */
+const wildfireWind: CorrelationRule = {
+  id: 'wildfire-wind',
+  name: 'Wildfire Wind Risk',
+  description: 'Wildfire hotspot with high wind speed nearby (placeholder)',
+  layers: ['wildfires', 'weather'],
+  spatialRadius: 100,
+  temporalWindow: 600,
+  severity: 'warning',
+  condition: () => {
+    // placeholder — 향후 weather 데이터와 wildfire 데이터 조합 시 구현
+    return false;
+  },
+  generate: (ctx) => ({
+    id: makeAlertId('wildfire-wind'),
+    ruleId: 'wildfire-wind',
+    ruleName: 'Wildfire Wind Risk',
+    severity: 'warning',
+    title: 'WILDFIRE-WIND RISK',
+    message: 'High wind detected near active wildfire zone.',
+    lat: ctx.centerLat,
+    lng: ctx.centerLng,
+    timestamp: Date.now(),
+    relatedEntities: [],
+  }),
+};
+
 /** 모든 내장 규칙 */
 export const BUILTIN_RULES: CorrelationRule[] = [
   earthquakeNuclear,
@@ -238,4 +304,6 @@ export const BUILTIN_RULES: CorrelationRule[] = [
   militaryCluster,
   earthquakeCctv,
   earthquakeShipping,
+  earthquakeVolcano,
+  wildfireWind,
 ];

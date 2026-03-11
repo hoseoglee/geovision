@@ -19,6 +19,10 @@ const OVERLAYS = [
   { id: 'godMode', label: 'God Mode', icon: '👁' },
   { id: 'vehicles', label: 'Vehicle Detect', icon: '🚙' },
   { id: 'adsb', label: 'Military Air', icon: '✈' },
+  { id: 'weather', label: 'Weather', icon: '🌡' },
+  { id: 'typhoon', label: 'Typhoons', icon: '🌀' },
+  { id: 'volcano', label: 'Volcanoes', icon: '🌋' },
+  { id: 'wildfire', label: 'Wildfires', icon: '🔥' },
 ];
 
 export default function OverlaySelector() {

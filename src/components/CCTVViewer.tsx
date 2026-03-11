@@ -5,6 +5,7 @@ import {
   setSelectedCCTV,
   type CCTVData,
 } from '@/providers/CCTVProvider';
+import CCTVAnalysis from './CCTVAnalysis';
 
 const TYPE_LABELS: Record<CCTVData['type'], string> = {
   traffic: 'TRAFFIC',
@@ -163,6 +164,10 @@ export default function CCTVViewer() {
             <span className={`text-[8px] tracking-wider ${isWindy ? 'text-purple-400/70' : 'text-emerald-400/70'}`}>
               {isWindy ? 'WINDY' : 'LIVE'}
             </span>
+          </div>
+          {/* AI Analysis section */}
+          <div className="bg-gray-900/95">
+            <CCTVAnalysis cctv={cctv} />
           </div>
         </div>
       )}

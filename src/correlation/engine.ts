@@ -179,6 +179,31 @@ export class CorrelationEngine {
       }
     }
 
+    // 화산 근접 지진 규칙 (earthquake-volcano)
+    for (const quake of earthquakes) {
+      const rule = this.rules.find((r) => r.id === 'earthquake-volcano');
+      if (!rule) continue;
+
+      const cooldownKey = `${rule.id}:${quake.id}`;
+      const lastTime = this.lastFired.get(cooldownKey);
+      if (lastTime && now - lastTime < this.COOLDOWN_MS) continue;
+
+      const nearby = this.spatialIndex.nearby(quake.lat, quake.lng, rule.spatialRadius);
+      const ctx: CorrelationContext = {
+        centerLat: quake.lat,
+        centerLng: quake.lng,
+        nearbyEntities: nearby,
+        matchedEntities: [],
+        triggerEntity: quake,
+      };
+
+      if (rule.condition(ctx)) {
+        const alert = rule.generate(ctx);
+        this.lastFired.set(cooldownKey, now);
+        this.emitCorrelation(alert);
+      }
+    }
+
     // 군용기 클러스터 규칙
     const milAircraft = this.spatialIndex.getByLayer('adsb');
     const evaluatedClusters = new Set<string>();
@@ -246,6 +271,8 @@ export class CorrelationEngine {
     'military-cluster': 'flight',
     'earthquake-cctv': 'earthquake',
     'earthquake-shipping': 'earthquake',
+    'earthquake-volcano': 'earthquake',
+    'wildfire-wind': 'system',
   };
 
   /** 코릴레이션 알림 발행 */

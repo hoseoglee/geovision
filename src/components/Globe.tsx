@@ -14,6 +14,10 @@ import { fetchEarthquakes } from '@/providers/EarthquakeProvider';
 import { fetchShips, connectAISStream, disconnectAISStream, isAISConnected } from '@/providers/ShipProvider';
 import { fetchCCTVs, setSelectedCCTV, bootstrapWindyCams, subscribeAllCCTVs } from '@/providers/CCTVProvider';
 import { fetchMilAircraft } from '@/providers/AdsbProvider';
+import { fetchWeather, weatherCodeToIcon } from '@/providers/WeatherProvider';
+import { fetchTyphoons } from '@/providers/TyphoonProvider';
+import { fetchVolcanoes } from '@/providers/VolcanoProvider';
+import { fetchWildfires } from '@/providers/WildfireProvider';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
@@ -109,6 +113,14 @@ export default function Globe() {
   const cctvLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
   const adsbPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
   const adsbLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
+
+  // Phase 1 — 데이터 강화 레이어
+  const weatherBillboardRef = useRef<Cesium.BillboardCollection | null>(null);
+  const weatherLabelRef = useRef<Cesium.LabelCollection | null>(null);
+  const typhoonEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const typhoonBillboardRef = useRef<Cesium.BillboardCollection | null>(null);
+  const volcanoEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const wildfirePointsRef = useRef<Cesium.PointPrimitiveCollection | null>(null);
 
   const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);
@@ -1916,6 +1928,302 @@ export default function Globe() {
     };
   }, [activeOverlays, setDataCounts, setLastUpdated]);
 
+  // ── Weather 오버레이 — 주요 도시 현재 기상 (10분 갱신) ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeOverlays.includes('weather')) {
+      if (weatherBillboardRef.current) {
+        viewer.scene.primitives.remove(weatherBillboardRef.current);
+        weatherBillboardRef.current = null;
+      }
+      if (weatherLabelRef.current) {
+        viewer.scene.primitives.remove(weatherLabelRef.current);
+        weatherLabelRef.current = null;
+      }
+      setDataCounts('weather', 0);
+      return;
+    }
+
+    let cancelled = false;
+
+    async function updateWeather() {
+      const data = await fetchWeather();
+      if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
+      const v = viewerRef.current;
+
+      if (weatherBillboardRef.current) {
+        v.scene.primitives.remove(weatherBillboardRef.current);
+      }
+      if (weatherLabelRef.current) {
+        v.scene.primitives.remove(weatherLabelRef.current);
+      }
+
+      const labels = new Cesium.LabelCollection({ scene: v.scene });
+
+      for (const w of data) {
+        const icon = weatherCodeToIcon(w.weatherCode);
+        const tempColor = w.temperature > 30 ? '#FF4444'
+          : w.temperature > 20 ? '#FFD700'
+          : w.temperature > 10 ? '#00FF88'
+          : w.temperature > 0 ? '#00BFFF'
+          : '#87CEEB';
+
+        labels.add({
+          position: Cesium.Cartesian3.fromDegrees(w.lng, w.lat, 50000),
+          text: `${icon} ${w.temperature.toFixed(0)}°C\n${w.city}`,
+          font: '11px monospace',
+          fillColor: Cesium.Color.fromCssColorString(tempColor),
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 3,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          verticalOrigin: Cesium.VerticalOrigin.CENTER,
+          scaleByDistance: new Cesium.NearFarScalar(5e5, 1.2, 2e7, 0.4),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        });
+      }
+
+      v.scene.primitives.add(labels);
+      weatherLabelRef.current = labels;
+      setDataCounts('weather', data.length);
+      setLastUpdated('weather', Date.now());
+    }
+
+    updateWeather();
+    const interval = setInterval(updateWeather, 600000); // 10분
+
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, [activeOverlays, setDataCounts, setLastUpdated]);
+
+  // ── Typhoon 오버레이 — 현재 위치 + 예측 경로 ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeOverlays.includes('typhoon')) {
+      if (typhoonBillboardRef.current) {
+        viewer.scene.primitives.remove(typhoonBillboardRef.current);
+        typhoonBillboardRef.current = null;
+      }
+      for (const e of typhoonEntitiesRef.current) {
+        viewer.entities.remove(e);
+      }
+      typhoonEntitiesRef.current = [];
+      setDataCounts('typhoon', 0);
+      return;
+    }
+
+    let cancelled = false;
+
+    (async () => {
+      const typhoons = await fetchTyphoons();
+      if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
+      const v = viewerRef.current;
+
+      // 정리
+      if (typhoonBillboardRef.current) {
+        v.scene.primitives.remove(typhoonBillboardRef.current);
+      }
+      for (const e of typhoonEntitiesRef.current) {
+        v.entities.remove(e);
+      }
+      typhoonEntitiesRef.current = [];
+
+      const billboards = new Cesium.BillboardCollection({ scene: v.scene });
+
+      for (const t of typhoons) {
+        // 카테고리별 색상
+        const catColor = t.category >= 4 ? '#FF0000'
+          : t.category >= 3 ? '#FF4500'
+          : t.category >= 2 ? '#FFA500'
+          : '#FFD700';
+        const color = Cesium.Color.fromCssColorString(catColor);
+
+        // 현재 위치 — 펄스 포인트
+        const pos = Cesium.Cartesian3.fromDegrees(t.lng, t.lat, 10000);
+        const entity = v.entities.add({
+          name: t.name,
+          position: pos,
+          point: {
+            pixelSize: new Cesium.CallbackProperty(() => {
+              const phase = (Date.now() % 3000) / 3000;
+              return 12 + Math.sin(phase * Math.PI * 2) * 6;
+            }, false) as any,
+            color: new Cesium.CallbackProperty(() => {
+              const phase = (Date.now() % 3000) / 3000;
+              return color.withAlpha(0.5 + Math.sin(phase * Math.PI * 2) * 0.3);
+            }, false) as any,
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
+            outlineWidth: 2,
+          },
+          label: {
+            text: `🌀 ${t.name}\nCAT${t.category} ${t.windSpeed}kn\n${t.pressure}hPa`,
+            font: '10px monospace',
+            fillColor: color,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -20),
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1.2, 2e7, 0.4),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+        });
+        typhoonEntitiesRef.current.push(entity);
+
+        // 예측 경로 Polyline
+        if (t.forecastPath.length > 1) {
+          const pathPositions = t.forecastPath.map((p) =>
+            Cesium.Cartesian3.fromDegrees(p.lng, p.lat, 5000)
+          );
+          const pathEntity = v.entities.add({
+            polyline: {
+              positions: pathPositions,
+              width: 3,
+              material: new Cesium.PolylineDashMaterialProperty({
+                color: color.withAlpha(0.7),
+                dashLength: 16,
+              }),
+              clampToGround: false,
+            },
+          });
+          typhoonEntitiesRef.current.push(pathEntity);
+
+          // 경로 끝점 (예측 도착점)
+          const lastPt = t.forecastPath[t.forecastPath.length - 1];
+          const endEntity = v.entities.add({
+            position: Cesium.Cartesian3.fromDegrees(lastPt.lng, lastPt.lat, 5000),
+            point: {
+              pixelSize: 6,
+              color: color.withAlpha(0.5),
+              outlineColor: Cesium.Color.WHITE.withAlpha(0.3),
+              outlineWidth: 1,
+            },
+          });
+          typhoonEntitiesRef.current.push(endEntity);
+        }
+      }
+
+      v.scene.primitives.add(billboards);
+      typhoonBillboardRef.current = billboards;
+      setDataCounts('typhoon', typhoons.length);
+      setLastUpdated('typhoon', Date.now());
+    })();
+
+    return () => { cancelled = true; };
+  }, [activeOverlays, setDataCounts, setLastUpdated]);
+
+  // ── Volcano 오버레이 — 활화산/휴화산 마커 ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeOverlays.includes('volcano')) {
+      for (const e of volcanoEntitiesRef.current) {
+        viewer.entities.remove(e);
+      }
+      volcanoEntitiesRef.current = [];
+      setDataCounts('volcano', 0);
+      return;
+    }
+
+    // 이전 정리
+    for (const e of volcanoEntitiesRef.current) {
+      viewer.entities.remove(e);
+    }
+    volcanoEntitiesRef.current = [];
+
+    const volcanoes = fetchVolcanoes();
+    for (const vol of volcanoes) {
+      const color = vol.status === 'active'
+        ? Cesium.Color.RED.withAlpha(0.9)
+        : Cesium.Color.ORANGE.withAlpha(0.7);
+
+      const entity = viewer.entities.add({
+        name: vol.name,
+        position: Cesium.Cartesian3.fromDegrees(vol.lng, vol.lat, vol.elevation),
+        point: {
+          pixelSize: vol.status === 'active' ? 10 : 7,
+          color,
+          outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+          outlineWidth: 1,
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.5),
+        },
+        label: {
+          text: `🌋 ${vol.name} (${vol.elevation}m)\n${vol.status.toUpperCase()} | Last: ${vol.lastEruption}`,
+          font: '10px monospace',
+          fillColor: color,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          outlineWidth: 2,
+          outlineColor: Cesium.Color.BLACK,
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+          pixelOffset: new Cesium.Cartesian2(0, -14),
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 3e6, 0),
+          show: false,
+        },
+      });
+      volcanoEntitiesRef.current.push(entity);
+    }
+    setDataCounts('volcano', volcanoes.length);
+    setLastUpdated('volcano', Date.now());
+  }, [activeOverlays, setDataCounts, setLastUpdated]);
+
+  // ── Wildfire 오버레이 — 열점 PointPrimitiveCollection ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeOverlays.includes('wildfire')) {
+      if (wildfirePointsRef.current) {
+        viewer.scene.primitives.remove(wildfirePointsRef.current);
+        wildfirePointsRef.current = null;
+      }
+      setDataCounts('wildfire', 0);
+      return;
+    }
+
+    let cancelled = false;
+
+    (async () => {
+      const fires = await fetchWildfires();
+      if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
+      const v = viewerRef.current;
+
+      if (wildfirePointsRef.current) {
+        v.scene.primitives.remove(wildfirePointsRef.current);
+      }
+
+      const points = new Cesium.PointPrimitiveCollection();
+      for (const f of fires) {
+        // brightness → 색상/크기 매핑
+        const intensity = Math.min(1, (f.brightness - 250) / 200);
+        const r = 1.0;
+        const g = 0.3 + (1 - intensity) * 0.4; // 밝을수록 빨강, 약하면 주황
+        const size = 4 + intensity * 6;
+
+        points.add({
+          position: Cesium.Cartesian3.fromDegrees(f.lng, f.lat, 1000),
+          pixelSize: size,
+          color: new Cesium.Color(r, g, 0.0, 0.85),
+          outlineColor: Cesium.Color.fromCssColorString('#FF4500').withAlpha(0.4),
+          outlineWidth: 1,
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 2.0, 1e7, 0.5),
+        });
+      }
+
+      v.scene.primitives.add(points);
+      wildfirePointsRef.current = points;
+      setDataCounts('wildfire', fires.length);
+      setLastUpdated('wildfire', Date.now());
+    })();
+
+    return () => { cancelled = true; };
+  }, [activeOverlays, setDataCounts, setLastUpdated]);
+
   // ── Correlation Engine 연동 ──
   const correlationEngine = useCorrelationStore((s) => s.engine);
 
@@ -1990,6 +2298,32 @@ export default function Globe() {
         data: { name: c.name, city: c.city, type: c.type },
       }));
       correlationEngine.updateLayer('cctvs', cctvEntities);
+
+      // 화산 데이터
+      const volcanoes = fetchVolcanoes();
+      const volcanoEntities: SpatialEntity[] = volcanoes.map((v) => ({
+        id: `vol-${v.name}`,
+        layer: 'volcanoes',
+        lat: v.lat,
+        lng: v.lng,
+        data: { name: v.name, country: v.country, elevation: v.elevation, status: v.status, lastEruption: v.lastEruption },
+      }));
+      correlationEngine.updateLayer('volcanoes', volcanoEntities);
+
+      // 산불 데이터
+      try {
+        const fires = await fetchWildfires();
+        const wildfireEntities: SpatialEntity[] = fires.map((f, i) => ({
+          id: `fire-${i}-${f.lat}-${f.lng}`,
+          layer: 'wildfires',
+          lat: f.lat,
+          lng: f.lng,
+          data: { brightness: f.brightness, confidence: f.confidence, satellite: f.satellite },
+        }));
+        correlationEngine.updateLayer('wildfires', wildfireEntities);
+      } catch {
+        // 산불 데이터 fetch 실패 시 무시
+      }
     };
 
     // 초기 로드 + 15초마다 갱신
