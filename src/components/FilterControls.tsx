@@ -1,6 +1,6 @@
 
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 const FILTERS = [
@@ -30,11 +30,17 @@ const FILTER_PARAMS: Record<string, { key: string; label: string; min: number; m
 };
 
 export default function FilterControls() {
-  const { activeFilter, setActiveFilter, filterParams, setFilterParam } = useAppStore();
+  const {
+    activeFilter, setActiveFilter,
+    filterParams, setFilterParam,
+    filterPresets, saveFilterPreset, loadFilterPreset, deleteFilterPreset,
+  } = useAppStore();
+
+  const [presetName, setPresetName] = useState('');
+  const [showPresets, setShowPresets] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // input/textarea 등에서 입력 중이면 무시
       if (
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement ||
@@ -45,7 +51,6 @@ export default function FilterControls() {
 
       const filter = FILTERS.find((f) => f.key === e.key);
       if (filter) {
-        // 같은 필터를 다시 누르면 해제 (normal 제외)
         setActiveFilter(
           activeFilter === filter.id && filter.id !== 'normal'
             ? 'normal'
@@ -59,6 +64,7 @@ export default function FilterControls() {
   }, [activeFilter, setActiveFilter]);
 
   const activeFilterParams = activeFilter ? FILTER_PARAMS[activeFilter] : undefined;
+  const presetNames = Object.keys(filterPresets);
 
   return (
     <div className="space-y-1">
@@ -86,6 +92,8 @@ export default function FilterControls() {
           );
         })}
       </div>
+
+      {/* 파라미터 슬라이더 */}
       {activeFilterParams && (
         <div className="mt-3 space-y-2 border-t border-gray-700/50 pt-2">
           <h4 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
@@ -108,6 +116,63 @@ export default function FilterControls() {
               </span>
             </div>
           ))}
+
+          {/* 프리셋 저장/불러오기 */}
+          <div className="mt-2 border-t border-gray-700/30 pt-2">
+            <div className="flex items-center gap-1">
+              <button
+                onClick={() => setShowPresets(!showPresets)}
+                className="text-[10px] text-gray-500 hover:text-gray-300 transition-colors"
+              >
+                {showPresets ? 'Hide' : 'Presets'} ({presetNames.length})
+              </button>
+              <div className="flex-1" />
+              <input
+                type="text"
+                placeholder="Name..."
+                value={presetName}
+                onChange={(e) => setPresetName(e.target.value)}
+                className="w-20 px-1.5 py-0.5 text-[10px] bg-gray-800/60 border border-gray-700 rounded
+                  text-gray-300 placeholder-gray-600 focus:border-green-600 focus:outline-none"
+              />
+              <button
+                onClick={() => {
+                  if (presetName.trim()) {
+                    saveFilterPreset(presetName.trim());
+                    setPresetName('');
+                  }
+                }}
+                disabled={!presetName.trim()}
+                className="px-1.5 py-0.5 text-[10px] bg-green-800/40 border border-green-700/50 rounded
+                  text-green-400 hover:bg-green-700/40 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                Save
+              </button>
+            </div>
+
+            {showPresets && presetNames.length > 0 && (
+              <div className="mt-1.5 space-y-0.5">
+                {presetNames.map((name) => (
+                  <div key={name} className="flex items-center gap-1">
+                    <button
+                      onClick={() => loadFilterPreset(name)}
+                      className="flex-1 text-left px-1.5 py-0.5 text-[10px] text-gray-400
+                        hover:text-green-300 hover:bg-gray-800/50 rounded transition-colors truncate"
+                    >
+                      {name}
+                    </button>
+                    <button
+                      onClick={() => deleteFilterPreset(name)}
+                      className="px-1 text-[10px] text-gray-600 hover:text-red-400 transition-colors"
+                      title="Delete preset"
+                    >
+                      x
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>

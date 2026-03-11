@@ -26,6 +26,7 @@ interface AppState {
   fps: number;
   issLiveStream: boolean;
   filterParams: Record<string, number>;
+  filterPresets: Record<string, Record<string, number>>;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -39,7 +40,24 @@ interface AppState {
   setFps: (fps: number) => void;
   setIssLiveStream: (show: boolean) => void;
   setFilterParam: (key: string, value: number) => void;
+  saveFilterPreset: (name: string) => void;
+  loadFilterPreset: (name: string) => void;
+  deleteFilterPreset: (name: string) => void;
 }
+
+// localStorage에서 프리셋 로드
+const loadPresetsFromStorage = (): Record<string, Record<string, number>> => {
+  try {
+    const stored = localStorage.getItem('geovision-filter-presets');
+    return stored ? JSON.parse(stored) : {};
+  } catch { return {}; }
+};
+
+const savePresetsToStorage = (presets: Record<string, Record<string, number>>) => {
+  try {
+    localStorage.setItem('geovision-filter-presets', JSON.stringify(presets));
+  } catch { /* ignore */ }
+};
 
 export const useAppStore = create<AppState>((set) => ({
   activeLayers: [],
@@ -62,6 +80,7 @@ export const useAppStore = create<AppState>((set) => ({
     lutVignette: 1.2,
     lutContrast: 1.0,
   },
+  filterPresets: loadPresetsFromStorage(),
 
   toggleLayer: (layer) =>
     set((state) => ({
@@ -96,4 +115,22 @@ export const useAppStore = create<AppState>((set) => ({
     set((state) => ({
       filterParams: { ...state.filterParams, [key]: value },
     })),
+  saveFilterPreset: (name) =>
+    set((state) => {
+      const newPresets = { ...state.filterPresets, [name]: { ...state.filterParams } };
+      savePresetsToStorage(newPresets);
+      return { filterPresets: newPresets };
+    }),
+  loadFilterPreset: (name) =>
+    set((state) => {
+      const preset = state.filterPresets[name];
+      if (!preset) return {};
+      return { filterParams: { ...state.filterParams, ...preset } };
+    }),
+  deleteFilterPreset: (name) =>
+    set((state) => {
+      const { [name]: _, ...rest } = state.filterPresets;
+      savePresetsToStorage(rest);
+      return { filterPresets: rest };
+    }),
 }));

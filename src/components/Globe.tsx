@@ -921,7 +921,7 @@ export default function Globe() {
       viewer.imageryLayers.remove(layer);
     }
     overlayImageryRef.current = [];
-    // CCTV/ADS-B BillboardCollection 정리
+    // CCTV BillboardCollection 정리 (ADS-B는 독립 useEffect에서 관리)
     if (cctvPrimitiveRef.current) {
       viewer.scene.primitives.remove(cctvPrimitiveRef.current);
       cctvPrimitiveRef.current = null;
@@ -929,14 +929,6 @@ export default function Globe() {
     if (cctvLabelCollRef.current) {
       viewer.scene.primitives.remove(cctvLabelCollRef.current);
       cctvLabelCollRef.current = null;
-    }
-    if (adsbPrimitiveRef.current) {
-      viewer.scene.primitives.remove(adsbPrimitiveRef.current);
-      adsbPrimitiveRef.current = null;
-    }
-    if (adsbLabelCollRef.current) {
-      viewer.scene.primitives.remove(adsbLabelCollRef.current);
-      adsbLabelCollRef.current = null;
     }
 
     // 0. 위성사진 베이스맵 토글
@@ -1737,55 +1729,7 @@ export default function Globe() {
         overlayEntitiesRef.current.push(label);
       }
 
-      // 군용기 — ADS-B Exchange 실데이터 또는 시뮬레이션 (BillboardCollection)
-      (async () => {
-        const aircraft = await fetchMilAircraft();
-        if (!viewer || viewer.isDestroyed()) return;
-
-        // 이전 ADS-B primitive 정리
-        if (adsbPrimitiveRef.current) {
-          viewer.scene.primitives.remove(adsbPrimitiveRef.current);
-        }
-        if (adsbLabelCollRef.current) {
-          viewer.scene.primitives.remove(adsbLabelCollRef.current);
-        }
-
-        const adsbBillboards = new Cesium.BillboardCollection({ scene: viewer.scene });
-        const adsbLabels = new Cesium.LabelCollection({ scene: viewer.scene });
-
-        for (const ac of aircraft) {
-          const altMeters = ac.altitude * 0.3048; // feet → meters
-          adsbBillboards.add({
-            position: Cesium.Cartesian3.fromDegrees(ac.lng, ac.lat, altMeters * 100),
-            image: AIRPLANE_SVG,
-            width: 24,
-            height: 24,
-            color: Cesium.Color.RED,
-            rotation: -Cesium.Math.toRadians(ac.heading),
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
-          });
-
-          adsbLabels.add({
-            position: Cesium.Cartesian3.fromDegrees(ac.lng, ac.lat, altMeters * 100),
-            text: `${ac.callsign}\n${ac.type}\nFL${Math.round(ac.altitude / 100)}`,
-            font: '9px monospace',
-            fillColor: Cesium.Color.RED,
-            outlineColor: Cesium.Color.BLACK,
-            outlineWidth: 2,
-            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-            pixelOffset: new Cesium.Cartesian2(15, 0),
-            horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.0, 5e6, 0.3),
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
-          });
-        }
-
-        viewer.scene.primitives.add(adsbBillboards);
-        viewer.scene.primitives.add(adsbLabels);
-        adsbPrimitiveRef.current = adsbBillboards;
-        adsbLabelCollRef.current = adsbLabels;
-        setDataCounts('adsb', aircraft.length);
-      })();
+      // 군용기 — 별도 useEffect에서 30초 자동 갱신으로 처리
     }
   }, [activeOverlays, windyCamsVersion]);
 
@@ -1795,6 +1739,127 @@ export default function Globe() {
     const unsub = subscribeAllCCTVs(() => setWindyCamsVersion((v) => v + 1));
     return unsub;
   }, [activeOverlays]);
+
+  // ADS-B 군용기 — 30초 자동 갱신 + 이전 위치 트레일
+  const adsbTrailRef = useRef<Map<string, Cesium.Cartesian3[]>>(new Map());
+  const adsbTrailEntitiesRef = useRef<Cesium.Entity[]>([]);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeOverlays.includes('adsb')) {
+      // ADS-B 비활성 시 정리
+      if (adsbPrimitiveRef.current) {
+        viewer.scene.primitives.remove(adsbPrimitiveRef.current);
+        adsbPrimitiveRef.current = null;
+      }
+      if (adsbLabelCollRef.current) {
+        viewer.scene.primitives.remove(adsbLabelCollRef.current);
+        adsbLabelCollRef.current = null;
+      }
+      for (const e of adsbTrailEntitiesRef.current) {
+        viewer.entities.remove(e);
+      }
+      adsbTrailEntitiesRef.current = [];
+      adsbTrailRef.current.clear();
+      setDataCounts('adsb', 0);
+      return;
+    }
+
+    let cancelled = false;
+
+    async function updateAdsb() {
+      const aircraft = await fetchMilAircraft();
+      if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
+      const v = viewerRef.current;
+
+      // 이전 primitive 정리
+      if (adsbPrimitiveRef.current) {
+        viewer.scene.primitives.remove(adsbPrimitiveRef.current);
+      }
+      if (adsbLabelCollRef.current) {
+        viewer.scene.primitives.remove(adsbLabelCollRef.current);
+      }
+      // 이전 트레일 엔티티 정리
+      for (const e of adsbTrailEntitiesRef.current) {
+        v.entities.remove(e);
+      }
+      adsbTrailEntitiesRef.current = [];
+
+      const adsbBillboards = new Cesium.BillboardCollection({ scene: v.scene });
+      const adsbLabels = new Cesium.LabelCollection({ scene: v.scene });
+
+      for (const ac of aircraft) {
+        const altMeters = ac.altitude * 0.3048;
+        const pos = Cesium.Cartesian3.fromDegrees(ac.lng, ac.lat, altMeters * 100);
+
+        adsbBillboards.add({
+          position: pos,
+          image: AIRPLANE_SVG,
+          width: 24,
+          height: 24,
+          color: Cesium.Color.RED,
+          rotation: -Cesium.Math.toRadians(ac.heading),
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
+        });
+
+        adsbLabels.add({
+          position: pos,
+          text: `${ac.callsign}\n${ac.type}\nFL${Math.round(ac.altitude / 100)}`,
+          font: '9px monospace',
+          fillColor: Cesium.Color.RED,
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 2,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          pixelOffset: new Cesium.Cartesian2(15, 0),
+          horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 1.0, 5e6, 0.3),
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+        });
+
+        // 트레일 기록 (최대 20포인트 = ~10분분)
+        const key = ac.callsign || ac.hex;
+        if (!adsbTrailRef.current.has(key)) {
+          adsbTrailRef.current.set(key, []);
+        }
+        const trail = adsbTrailRef.current.get(key)!;
+        trail.push(pos);
+        if (trail.length > 20) trail.shift();
+
+        // 트레일 폴리라인 렌더링 (2포인트 이상)
+        if (trail.length >= 2) {
+          const trailEntity = v.entities.add({
+            polyline: {
+              positions: [...trail],
+              width: 2,
+              material: new Cesium.PolylineGlowMaterialProperty({
+                glowPower: 0.2,
+                color: Cesium.Color.RED.withAlpha(0.4),
+              }),
+            },
+          });
+          adsbTrailEntitiesRef.current.push(trailEntity);
+        }
+      }
+
+      v.scene.primitives.add(adsbBillboards);
+      v.scene.primitives.add(adsbLabels);
+      adsbPrimitiveRef.current = adsbBillboards;
+      adsbLabelCollRef.current = adsbLabels;
+      setDataCounts('adsb', aircraft.length);
+      setLastUpdated('adsb', Date.now());
+    }
+
+    // 초기 로드 + 30초마다 갱신
+    updateAdsb();
+    const interval = setInterval(updateAdsb, 30000);
+
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, [activeOverlays, setDataCounts, setLastUpdated]);
 
   return (
     <>
