@@ -19,6 +19,8 @@ import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
 } from '@/data/overlayData';
 import { getSunPosition } from '@/components/SunPosition';
+import { useCorrelationStore } from '@/store/useCorrelationStore';
+import type { SpatialEntity } from '@/correlation/SpatialIndex';
 import crtShader from '@/filters/crt';
 import nightVisionShader from '@/filters/nightVision';
 import thermalShader from '@/filters/thermal';
@@ -1913,6 +1915,88 @@ export default function Globe() {
       clearInterval(interval);
     };
   }, [activeOverlays, setDataCounts, setLastUpdated]);
+
+  // ── Correlation Engine 연동 ──
+  const correlationEngine = useCorrelationStore((s) => s.engine);
+
+  // 엔진 자동 시작/정지
+  useEffect(() => {
+    const startEngine = useCorrelationStore.getState().startEngine;
+    const stopEngine = useCorrelationStore.getState().stopEngine;
+    startEngine();
+    return () => { stopEngine(); };
+  }, []);
+
+  // 레이어 데이터 갱신 시 SpatialIndex 업데이트
+  useEffect(() => {
+    if (!correlationEngine) return;
+
+    const buildEntities = async () => {
+      try {
+        // 지진 데이터
+        const quakes = await fetchEarthquakes();
+        const quakeEntities: SpatialEntity[] = quakes.map((q) => ({
+          id: `eq-${q.id}`,
+          layer: 'earthquakes',
+          lat: q.lat,
+          lng: q.lng,
+          data: { magnitude: q.magnitude, place: q.place, depth: q.depth, time: q.time },
+        }));
+        correlationEngine.updateLayer('earthquakes', quakeEntities);
+
+        // 선박 데이터
+        const ships = await fetchShips();
+        const shipEntities: SpatialEntity[] = ships.map((s) => ({
+          id: `ship-${s.mmsi}`,
+          layer: 'ships',
+          lat: s.lat,
+          lng: s.lng,
+          data: { name: s.name, mmsi: s.mmsi, shipType: s.shipType, speed: s.speed },
+        }));
+        correlationEngine.updateLayer('ships', shipEntities);
+
+        // 항공기 데이터
+        const flights = await fetchFlights();
+        const flightEntities: SpatialEntity[] = flights.filter((f) => !f.onGround).map((f) => ({
+          id: `flight-${f.callsign || Math.random().toString(36).slice(2, 8)}`,
+          layer: 'flights',
+          lat: f.lat,
+          lng: f.lng,
+          data: { callsign: f.callsign, altitude: f.altitude, velocity: f.velocity },
+        }));
+        correlationEngine.updateLayer('flights', flightEntities);
+
+        // 군용기 데이터
+        const aircraft = await fetchMilAircraft();
+        const adsbEntities: SpatialEntity[] = aircraft.map((ac) => ({
+          id: `adsb-${ac.hex}`,
+          layer: 'adsb',
+          lat: ac.lat,
+          lng: ac.lng,
+          data: { callsign: ac.callsign, type: ac.type, altitude: ac.altitude, hex: ac.hex },
+        }));
+        correlationEngine.updateLayer('adsb', adsbEntities);
+      } catch {
+        // 데이터 fetch 실패 시 무시 (다음 주기에 재시도)
+      }
+
+      // CCTV 데이터
+      const cctvs = fetchCCTVs();
+      const cctvEntities: SpatialEntity[] = cctvs.map((c) => ({
+        id: `cctv-${c.id}`,
+        layer: 'cctvs',
+        lat: c.lat,
+        lng: c.lng,
+        data: { name: c.name, city: c.city, type: c.type },
+      }));
+      correlationEngine.updateLayer('cctvs', cctvEntities);
+    };
+
+    // 초기 로드 + 15초마다 갱신
+    buildEntities();
+    const interval = setInterval(buildEntities, 15000);
+    return () => clearInterval(interval);
+  }, [correlationEngine]);
 
   return (
     <>

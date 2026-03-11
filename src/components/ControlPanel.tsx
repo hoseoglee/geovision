@@ -2,11 +2,53 @@
 
 import { useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { useCorrelationStore } from '@/store/useCorrelationStore';
 import LayerSelector from './LayerSelector';
 import FilterControls from './FilterControls';
 import LandmarkNav from './LandmarkNav';
 import Legend from './Legend';
 import OverlaySelector from './OverlaySelector';
+
+function CorrelationStatus() {
+  const isRunning = useCorrelationStore((s) => s.isRunning);
+  const correlations = useCorrelationStore((s) => s.correlations);
+  const startEngine = useCorrelationStore((s) => s.startEngine);
+  const stopEngine = useCorrelationStore((s) => s.stopEngine);
+
+  const critCount = correlations.filter((c) => c.severity === 'critical').length;
+  const warnCount = correlations.filter((c) => c.severity === 'warning').length;
+  const recentCount = correlations.filter((c) => Date.now() - c.timestamp < 300000).length;
+
+  return (
+    <div>
+      <h3 className="text-gray-400 text-[10px] font-bold tracking-widest mb-2">CORRELATION ENGINE</h3>
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className={`w-2 h-2 rounded-full ${isRunning ? 'bg-cyan-400 animate-pulse' : 'bg-gray-600'}`} />
+            <span className="text-gray-400 text-[10px]">{isRunning ? 'ACTIVE' : 'IDLE'}</span>
+          </div>
+          <button
+            onClick={() => isRunning ? stopEngine() : startEngine()}
+            className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors
+              ${isRunning
+                ? 'border-red-500/40 text-red-400 hover:bg-red-900/30'
+                : 'border-green-500/40 text-green-400 hover:bg-green-900/30'
+              }`}
+          >
+            {isRunning ? 'STOP' : 'START'}
+          </button>
+        </div>
+        <div className="flex gap-3 text-[9px] text-gray-500">
+          <span>ACTIVE: <span className="text-cyan-400">{recentCount}</span></span>
+          <span>CRIT: <span className={critCount > 0 ? 'text-red-400' : 'text-gray-600'}>{critCount}</span></span>
+          <span>WARN: <span className={warnCount > 0 ? 'text-yellow-400' : 'text-gray-600'}>{warnCount}</span></span>
+        </div>
+        <p className="text-gray-600 text-[8px]">5 rules | 10s interval | spatial+temporal</p>
+      </div>
+    </div>
+  );
+}
 
 export default function ControlPanel() {
   const [collapsed, setCollapsed] = useState(false);
@@ -39,6 +81,8 @@ export default function ControlPanel() {
           <LandmarkNav />
           <div className="border-t border-gray-700/50" />
           <OverlaySelector />
+          <div className="border-t border-gray-700/50" />
+          <CorrelationStatus />
           <div className="border-t border-gray-700/50" />
           <Legend />
         </div>

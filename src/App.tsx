@@ -16,6 +16,7 @@ import AlertMonitor from './components/AlertMonitor';
 import AlertPanel from './components/AlertPanel';
 import ISSLiveStream from './components/ISSLiveStream';
 import CCTVViewer from './components/CCTVViewer';
+import CorrelationPanel from './components/CorrelationPanel';
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
       <AlertPanel />
       <ISSLiveStream />
       <CCTVViewer />
+      <CorrelationPanel />
       <DataTicker />
     </main>
   );
