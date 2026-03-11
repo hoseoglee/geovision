@@ -1,6 +1,8 @@
 // CCTV Provider — static dataset + Windy Webcams API dynamic fetching
-// Static: well-known public webcams (YouTube live streams)
+// Static: well-known public webcams (YouTube live streams) + 1000 public webcams
 // Dynamic: Windy Webcams API v3 (by viewport bounding box)
+
+import { PUBLIC_CCTVS } from '../data/publicCCTVs';
 
 export interface CCTVData {
   id: string;
@@ -692,11 +694,14 @@ export function subscribeSelectedCCTV(fn: () => void) {
   };
 }
 
+// ── Merged static list: hand-curated + 1000 public webcams ────
+const ALL_STATIC_CCTVS: CCTVData[] = [...STATIC_CCTVS, ...PUBLIC_CCTVS];
+
 // ── External store for all CCTVs (static + windy) ────────────
-let _allCCTVsSnapshot: CCTVData[] = [...STATIC_CCTVS];
+let _allCCTVsSnapshot: CCTVData[] = [...ALL_STATIC_CCTVS];
 
 function rebuildSnapshot() {
-  _allCCTVsSnapshot = [...STATIC_CCTVS, ...windyCams];
+  _allCCTVsSnapshot = [...ALL_STATIC_CCTVS, ...windyCams];
 }
 
 // Subscribe to windy cam updates

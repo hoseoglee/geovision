@@ -7,10 +7,15 @@ export interface CameraTarget {
 }
 
 export interface SelectedEntity {
-  type: 'satellite' | 'flight' | 'ship' | 'earthquake' | 'adsb';
+  type:
+    | 'satellite' | 'flight' | 'ship' | 'earthquake' | 'adsb'
+    | 'chokepoint' | 'cable' | 'military_base' | 'nuclear_plant'
+    | 'port' | 'current' | 'sun';
   name: string;
   details: Record<string, string | number>;
   url?: string;
+  /** 뉴스 검색에 사용할 키워드 (없으면 name 사용) */
+  newsQuery?: string;
 }
 
 interface AppState {

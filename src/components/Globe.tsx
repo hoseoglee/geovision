@@ -12,7 +12,7 @@ import { fetchSatellites } from '@/providers/SatelliteProvider';
 import { fetchFlights } from '@/providers/FlightProvider';
 import { fetchEarthquakes } from '@/providers/EarthquakeProvider';
 import { fetchShips, connectAISStream, disconnectAISStream, isAISConnected } from '@/providers/ShipProvider';
-import { fetchCCTVs, setSelectedCCTV, bootstrapWindyCams, subscribeAllCCTVs } from '@/providers/CCTVProvider';
+import { fetchCCTVs, setSelectedCCTV, bootstrapWindyCams, subscribeAllCCTVs, type CCTVData } from '@/providers/CCTVProvider';
 import { fetchMilAircraft } from '@/providers/AdsbProvider';
 import { fetchWeather, weatherCodeToIcon } from '@/providers/WeatherProvider';
 import { fetchTyphoons } from '@/providers/TyphoonProvider';
@@ -111,6 +111,13 @@ export default function Globe() {
   const buildingsTilesetRef = useRef<Cesium.Cesium3DTileset | null>(null);
   const cctvPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
   const cctvLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
+  // CCTV LOD: FOV/썸네일 엔티티 (저고도에서만 동적 생성)
+  const cctvFovEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const cctvThumbnailEntitiesRef = useRef<Cesium.Entity[]>([]);
+  // CCTV Billboard → CCTVData 매핑 (클릭 핸들링)
+  const cctvBillboardDataRef = useRef<Map<any, CCTVData>>(new Map());
+  // CCTV 카메라 이동 리스너 해제 함수
+  const cctvCameraListenerRef = useRef<(() => void) | null>(null);
   const adsbPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
   const adsbLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
 
@@ -420,6 +427,15 @@ export default function Globe() {
     handler.setInputAction((click: { position: Cesium.Cartesian2 }) => {
       const picked = viewer.scene.pick(click.position);
 
+      // CCTV Billboard 클릭 — BillboardCollection 기반 카메라
+      if (Cesium.defined(picked) && picked.primitive) {
+        const cctvData = cctvBillboardDataRef.current.get(picked.primitive);
+        if (cctvData) {
+          setSelectedCCTV(cctvData);
+          return;
+        }
+      }
+
       // Billboard 클릭 (위성, 항공기, 선박)
       if (Cesium.defined(picked) && picked.primitive && !(picked.id instanceof Cesium.Entity)) {
         const meta = billboardDataMap.current.get(picked.primitive);
@@ -440,6 +456,7 @@ export default function Globe() {
               url: isISS
                 ? 'https://www.youtube.com/watch?v=xRPjKQtRXR8'
                 : `https://www.n2yo.com/satellite/?s=${d.noradId}`,
+              newsQuery: isISS ? 'ISS International Space Station' : `${d.name} satellite`,
             });
           } else if (meta.type === 'flight') {
             const d = meta.data;
@@ -456,6 +473,7 @@ export default function Globe() {
                 LNG: d.lng.toFixed(4),
               },
               url: cs ? `https://www.flightradar24.com/${cs}` : undefined,
+              newsQuery: cs ? `${cs} flight` : undefined,
             });
           } else if (meta.type === 'ship') {
             const d = meta.data;
@@ -471,6 +489,7 @@ export default function Globe() {
                 LNG: d.lng.toFixed(4),
               },
               url: `https://www.marinetraffic.com/en/ais/details/ships/mmsi:${d.mmsi}`,
+              newsQuery: `${d.name} vessel ship`,
             });
           } else if (meta.type === 'adsb') {
             const d = meta.data;
@@ -492,30 +511,90 @@ export default function Globe() {
                 LNG: d.lng.toFixed(4),
               },
               url: d.hex ? `https://globe.adsbexchange.com/?icao=${d.hex}` : undefined,
+              newsQuery: `${d.callsign || d.hex} military aircraft`,
             });
           }
           return;
         }
       }
 
-      // Entity 클릭 (초크포인트, 지진 등)
+      // Entity 클릭 (모든 오버레이 타입)
       if (Cesium.defined(picked) && picked.id instanceof Cesium.Entity) {
         const entity = picked.id;
 
-        // Check if clicked entity is a CCTV camera
+        // CCTV 카메라
         const cctvData = entity?.properties?.cctvData?.getValue(Cesium.JulianDate.now());
         if (cctvData) {
           setSelectedCCTV(cctvData);
           return;
         }
+
         const desc = entity.description?.getValue(Cesium.JulianDate.now()) || '';
         const name = entity.name || 'Unknown';
-        if (name && (entity as any)._chokepoint) {
+        const overlayType = (entity as any)._overlayType;
+        const overlayData = (entity as any)._overlayData;
+
+        // ── 오버레이 타입별 핸들링 ──
+        if (overlayType === 'cable' && overlayData) {
+          setSelectedEntity({
+            type: 'cable',
+            name: overlayData.name,
+            details: { TYPE: 'SUBMARINE CABLE', LENGTH: `${overlayData.points.length} segments` },
+            newsQuery: `${overlayData.name} submarine cable`,
+          });
+        } else if (overlayType === 'military_base' && overlayData) {
+          setSelectedEntity({
+            type: 'military_base',
+            name: overlayData.name,
+            details: {
+              TYPE: overlayData.type.toUpperCase(),
+              COUNTRY: overlayData.country,
+              LAT: overlayData.lat.toFixed(3),
+              LNG: overlayData.lng.toFixed(3),
+            },
+            newsQuery: `${overlayData.name} military base ${overlayData.country}`,
+          });
+        } else if (overlayType === 'nuclear_plant' && overlayData) {
+          setSelectedEntity({
+            type: 'nuclear_plant',
+            name: overlayData.name,
+            details: {
+              STATUS: overlayData.status.toUpperCase(),
+              REACTORS: `${overlayData.reactors} units`,
+              COUNTRY: overlayData.country,
+              LAT: overlayData.lat.toFixed(3),
+              LNG: overlayData.lng.toFixed(3),
+            },
+            newsQuery: `${overlayData.name} nuclear plant`,
+          });
+        } else if (overlayType === 'port' && overlayData) {
+          setSelectedEntity({
+            type: 'port',
+            name: overlayData.name,
+            details: {
+              RANK: `#${overlayData.rank} worldwide`,
+              COUNTRY: overlayData.country,
+              LAT: overlayData.lat.toFixed(3),
+              LNG: overlayData.lng.toFixed(3),
+            },
+            newsQuery: `${overlayData.name} port shipping`,
+          });
+        } else if (overlayType === 'current' && overlayData) {
+          setSelectedEntity({
+            type: 'current',
+            name: overlayData.name,
+            details: {
+              TYPE: overlayData.warm ? 'WARM CURRENT' : 'COLD CURRENT',
+            },
+            newsQuery: `${overlayData.name} ocean current climate`,
+          });
+        } else if ((entity as any)._chokepoint) {
           const cp = (entity as any)._chokepoint;
           setSelectedEntity({
-            type: 'ship',
+            type: 'chokepoint',
             name: cp.name,
             details: { TYPE: cp.type.toUpperCase(), LAT: cp.lat.toFixed(3), LNG: cp.lng.toFixed(3), INFO: cp.info },
+            newsQuery: `${cp.name} shipping geopolitics`,
           });
         } else if (desc.includes('Depth:')) {
           const parts = desc.replace(/<[^>]*>/g, '|').split('|').filter(Boolean).map(s => s.trim());
@@ -533,6 +612,7 @@ export default function Globe() {
               TIME: time.replace('Time: ', ''),
             },
             url: `https://www.google.com/search?q=${encodeURIComponent(name)}`,
+            newsQuery: `earthquake ${place || name}`,
           });
         }
       } else {
@@ -559,11 +639,12 @@ export default function Globe() {
         name: cp.name,
         position: Cesium.Cartesian3.fromDegrees(cp.lng, cp.lat, 0),
         point: {
-          pixelSize: 6,
+          pixelSize: 10,
           color,
           outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
-          outlineWidth: 1,
-          scaleByDistance: new Cesium.NearFarScalar(1e5, 2.0, 1e7, 0.5),
+          outlineWidth: 2,
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 2.0, 1e7, 0.6),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
         },
         label: {
           text: `◆ ${cp.name}`,
@@ -573,9 +654,10 @@ export default function Globe() {
           outlineWidth: 2,
           outlineColor: Cesium.Color.BLACK,
           verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-          pixelOffset: new Cesium.Cartesian2(0, -8),
+          pixelOffset: new Cesium.Cartesian2(0, -12),
           scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
-          show: false,
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
         },
       });
       (entity as any)._chokepoint = cp;
@@ -993,6 +1075,16 @@ export default function Globe() {
       viewer.scene.primitives.remove(cctvLabelCollRef.current);
       cctvLabelCollRef.current = null;
     }
+    // CCTV FOV/썸네일 엔티티 + 카메라 리스너 정리
+    for (const e of cctvFovEntitiesRef.current) viewer.entities.remove(e);
+    cctvFovEntitiesRef.current = [];
+    for (const e of cctvThumbnailEntitiesRef.current) viewer.entities.remove(e);
+    cctvThumbnailEntitiesRef.current = [];
+    cctvBillboardDataRef.current.clear();
+    if (cctvCameraListenerRef.current) {
+      cctvCameraListenerRef.current();
+      cctvCameraListenerRef.current = null;
+    }
 
     // 0. 위성사진 베이스맵 토글
     if (activeOverlays.includes('satellite')) {
@@ -1134,29 +1226,55 @@ export default function Globe() {
         const positions = cable.points.map(([lng, lat]) =>
           Cesium.Cartesian3.fromDegrees(lng, lat, 0)
         );
+        const cableColor = Cesium.Color.fromCssColorString(cable.color);
+        // 클릭 가능한 폴리라인
         const entity = viewer.entities.add({
           name: cable.name,
           polyline: {
             positions,
-            width: 2,
+            width: 3,
             material: new Cesium.PolylineDashMaterialProperty({
-              color: Cesium.Color.fromCssColorString(cable.color).withAlpha(0.7),
+              color: cableColor.withAlpha(0.7),
               dashLength: 12,
             }),
             clampToGround: true,
           },
+        });
+        (entity as any)._overlayType = 'cable';
+        (entity as any)._overlayData = cable;
+        overlayEntitiesRef.current.push(entity);
+
+        // 케이블 중간 지점에 클릭 가능한 라벨 마커 추가
+        const midIdx = Math.floor(cable.points.length / 2);
+        const midPt = cable.points[midIdx];
+        const labelEntity = viewer.entities.add({
+          name: cable.name,
+          position: Cesium.Cartesian3.fromDegrees(midPt[0], midPt[1], 0),
+          point: {
+            pixelSize: 8,
+            color: cableColor.withAlpha(0.9),
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+            outlineWidth: 2,
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.5),
+          },
           label: {
-            text: cable.name,
-            font: '9px monospace',
-            fillColor: Cesium.Color.fromCssColorString(cable.color),
+            text: `🔗 ${cable.name}`,
+            font: '10px monospace',
+            fillColor: cableColor,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
             outlineWidth: 2,
             outlineColor: Cesium.Color.BLACK,
-            scaleByDistance: new Cesium.NearFarScalar(5e5, 1, 5e6, 0.3),
-            show: false,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -12),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 8e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
         });
-        overlayEntitiesRef.current.push(entity);
+        (labelEntity as any)._overlayType = 'cable';
+        (labelEntity as any)._overlayData = cable;
+        overlayEntitiesRef.current.push(labelEntity);
       }
     }
 
@@ -1166,29 +1284,34 @@ export default function Globe() {
         naval: '#FF4444', air: '#FFD700', army: '#32CD32', joint: '#FF69B4',
       };
       for (const base of MILITARY_BASES) {
+        const bColor = Cesium.Color.fromCssColorString(typeColors[base.type] || '#FF4444');
         const entity = viewer.entities.add({
           name: base.name,
           position: Cesium.Cartesian3.fromDegrees(base.lng, base.lat, 0),
           point: {
-            pixelSize: 7,
-            color: Cesium.Color.fromCssColorString(typeColors[base.type] || '#FF4444'),
-            outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
-            outlineWidth: 1,
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.5),
+            pixelSize: 10,
+            color: bColor,
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
+            outlineWidth: 2,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
           label: {
             text: `⚔ ${base.name} [${base.country}]`,
             font: '10px monospace',
-            fillColor: Cesium.Color.fromCssColorString(typeColors[base.type] || '#FF4444'),
+            fillColor: bColor,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
             outlineWidth: 2,
             outlineColor: Cesium.Color.BLACK,
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-            pixelOffset: new Cesium.Cartesian2(0, -10),
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 3e6, 0),
-            show: false,
+            pixelOffset: new Cesium.Cartesian2(0, -14),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
         });
+        (entity as any)._overlayType = 'military_base';
+        (entity as any)._overlayData = base;
         overlayEntitiesRef.current.push(entity);
       }
     }
@@ -1196,32 +1319,36 @@ export default function Globe() {
     // 7. 핵 시설
     if (activeOverlays.includes('nuclear')) {
       for (const plant of NUCLEAR_PLANTS) {
-        const color = plant.status === 'active'
+        const nColor = plant.status === 'active'
           ? Cesium.Color.fromCssColorString('#00FF00')
           : Cesium.Color.fromCssColorString('#FF6600');
         const entity = viewer.entities.add({
           name: plant.name,
           position: Cesium.Cartesian3.fromDegrees(plant.lng, plant.lat, 0),
           point: {
-            pixelSize: 8,
-            color,
-            outlineColor: Cesium.Color.YELLOW.withAlpha(0.8),
-            outlineWidth: 2,
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.5),
+            pixelSize: 12,
+            color: nColor,
+            outlineColor: Cesium.Color.YELLOW.withAlpha(0.9),
+            outlineWidth: 3,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
           label: {
             text: `☢ ${plant.name} (${plant.reactors}R)`,
             font: '10px monospace',
-            fillColor: color,
+            fillColor: nColor,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
             outlineWidth: 2,
             outlineColor: Cesium.Color.BLACK,
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-            pixelOffset: new Cesium.Cartesian2(0, -12),
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 3e6, 0),
-            show: false,
+            pixelOffset: new Cesium.Cartesian2(0, -16),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
         });
+        (entity as any)._overlayType = 'nuclear_plant';
+        (entity as any)._overlayData = plant;
         overlayEntitiesRef.current.push(entity);
       }
     }
@@ -1233,11 +1360,12 @@ export default function Globe() {
           name: port.name,
           position: Cesium.Cartesian3.fromDegrees(port.lng, port.lat, 0),
           point: {
-            pixelSize: Math.max(5, 12 - port.rank * 0.5),
+            pixelSize: Math.max(8, 14 - port.rank * 0.4),
             color: Cesium.Color.fromCssColorString('#00BFFF'),
-            outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
-            outlineWidth: 1,
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.5),
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.7),
+            outlineWidth: 2,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
           label: {
             text: `⚓ #${port.rank} ${port.name}`,
@@ -1247,11 +1375,14 @@ export default function Globe() {
             outlineWidth: 2,
             outlineColor: Cesium.Color.BLACK,
             verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-            pixelOffset: new Cesium.Cartesian2(0, -10),
-            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 3e6, 0),
-            show: false,
+            pixelOffset: new Cesium.Cartesian2(0, -14),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
         });
+        (entity as any)._overlayType = 'port';
+        (entity as any)._overlayData = port;
         overlayEntitiesRef.current.push(entity);
       }
     }
@@ -1262,27 +1393,52 @@ export default function Globe() {
         const positions = current.points.map(([lng, lat]) =>
           Cesium.Cartesian3.fromDegrees(lng, lat, 0)
         );
-        const color = Cesium.Color.fromCssColorString(current.color).withAlpha(0.6);
+        const curColor = Cesium.Color.fromCssColorString(current.color);
+        // 클릭 가능한 폴리라인
         const entity = viewer.entities.add({
           name: current.name,
           polyline: {
             positions,
-            width: current.warm ? 4 : 3,
-            material: new Cesium.PolylineArrowMaterialProperty(color),
+            width: current.warm ? 5 : 4,
+            material: new Cesium.PolylineArrowMaterialProperty(curColor.withAlpha(0.6)),
             clampToGround: true,
+          },
+        });
+        (entity as any)._overlayType = 'current';
+        (entity as any)._overlayData = current;
+        overlayEntitiesRef.current.push(entity);
+
+        // 해류 중간 지점에 클릭 가능한 라벨 마커 추가
+        const midIdx = Math.floor(current.points.length / 2);
+        const midPt = current.points[midIdx];
+        const curLabelEntity = viewer.entities.add({
+          name: current.name,
+          position: Cesium.Cartesian3.fromDegrees(midPt[0], midPt[1], 0),
+          point: {
+            pixelSize: 8,
+            color: curColor.withAlpha(0.9),
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.5),
+            outlineWidth: 1,
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.5),
           },
           label: {
             text: `${current.warm ? '🔴' : '🔵'} ${current.name}`,
-            font: '9px monospace',
-            fillColor: Cesium.Color.fromCssColorString(current.color),
+            font: '10px monospace',
+            fillColor: curColor,
             style: Cesium.LabelStyle.FILL_AND_OUTLINE,
             outlineWidth: 2,
             outlineColor: Cesium.Color.BLACK,
-            scaleByDistance: new Cesium.NearFarScalar(5e5, 1, 5e6, 0.3),
-            show: false,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -12),
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1, 8e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
         });
-        overlayEntitiesRef.current.push(entity);
+        (curLabelEntity as any)._overlayType = 'current';
+        (curLabelEntity as any)._overlayData = current;
+        overlayEntitiesRef.current.push(curLabelEntity);
       }
     }
 
@@ -1375,16 +1531,25 @@ export default function Globe() {
       }
     }
 
-    // 13. CCTV 카메라
+    // 13. CCTV 카메라 — LOD + 뷰포트 컬링 최적화
+    // 고도별 LOD:
+    //   > 8,000km: 표시 안함
+    //   > 2,000km: 빌보드만 (작게)
+    //   > 500km:  빌보드 + 라벨
+    //   > 50km:   빌보드 + 라벨 + FOV 프러스텀 (기존 40개 큐레이션 카메라만)
+    //   < 50km:   빌보드 + 라벨 + FOV + 썸네일 프리뷰
     if (activeOverlays.includes('cctv')) {
-      // Bootstrap Windy cams in background
       bootstrapWindyCams();
 
       const cctvs = fetchCCTVs();
-      // Windy 카메라용 BillboardCollection (1000+ 성능 최적화)
+
+      // ── 모든 카메라를 BillboardCollection으로 통합 (Entity 대신) ──
       const cctvBillboards = new Cesium.BillboardCollection({ scene: viewer.scene });
       const cctvLabels = new Cesium.LabelCollection({ scene: viewer.scene });
+      const bbDataMap = cctvBillboardDataRef.current;
+      bbDataMap.clear();
 
+      // 전체 카메라를 BillboardCollection에 추가 (Cesium이 GPU 레벨 distance culling 처리)
       for (const cam of cctvs) {
         const color = cam.type === 'traffic' ? Cesium.Color.LIME
           : cam.type === 'port' ? Cesium.Color.CYAN
@@ -1392,40 +1557,217 @@ export default function Globe() {
           : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
           : Cesium.Color.WHITE;
 
-        if (cam.source === 'static') {
-          // 정적 카메라 — Entity 기반 (FOV, 썸네일 등 복잡한 시각화 지원)
-          const entity = viewer.entities.add({
-            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-            billboard: {
-              image: CCTV_SVG,
-              width: 20,
-              height: 20,
-              color,
-              scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 1e7, 0.3),
-              distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
-              disableDepthTestDistance: Number.POSITIVE_INFINITY,
-            },
-            label: {
-              text: cam.name,
-              font: '10px monospace',
-              fillColor: Cesium.Color.WHITE,
-              outlineColor: Cesium.Color.BLACK,
-              outlineWidth: 2,
-              style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-              pixelOffset: new Cesium.Cartesian2(0, -18),
-              scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e6, 0.3),
-              distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e6),
-              disableDepthTestDistance: Number.POSITIVE_INFINITY,
-            },
-            properties: { cctvData: cam },
-          });
-          overlayEntitiesRef.current.push(entity);
+        const bb = cctvBillboards.add({
+          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
+          image: CCTV_SVG,
+          width: 20,
+          height: 20,
+          color,
+          scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 8e6, 0.15),
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        });
+        // Billboard → CCTVData 매핑 (클릭 핸들링)
+        bbDataMap.set(bb, cam);
 
-          // YouTube 썸네일 프리뷰
-          const vidId = cam.embedUrl.split('/embed/')[1]?.split('?')[0];
-          if (vidId) {
+        // 라벨은 500km 이내에서만 표시
+        cctvLabels.add({
+          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
+          text: cam.name,
+          font: '10px monospace',
+          fillColor: Cesium.Color.WHITE,
+          outlineColor: Cesium.Color.BLACK,
+          outlineWidth: 2,
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          pixelOffset: new Cesium.Cartesian2(0, -18),
+          scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e5, 0.2),
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e5),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        });
+      }
+
+      viewer.scene.primitives.add(cctvBillboards);
+      viewer.scene.primitives.add(cctvLabels);
+      cctvPrimitiveRef.current = cctvBillboards;
+      cctvLabelCollRef.current = cctvLabels;
+
+      // ── FOV/썸네일 동적 LOD — 카메라 이동 시 뷰포트 내 저고도 카메라만 Entity 생성 ──
+      // 기존 40개 큐레이션 카메라 (source=static, STATIC_CCTVS 원본)만 FOV 대상
+      const ORIGINAL_STATIC_IDS = new Set(
+        cctvs.filter((c) => c.source === 'static').slice(0, 40).map((c) => c.id),
+      );
+      const fovCandidates = cctvs.filter((c) => ORIGINAL_STATIC_IDS.has(c.id));
+
+      /** 뷰포트 내 카메라 중 고도 기반으로 FOV/썸네일 동적 생성 */
+      const updateCCTVLOD = () => {
+        const v = viewerRef.current;
+        if (!v) return;
+
+        const altitude = v.camera.positionCartographic.height;
+
+        // FOV: 50km 이내에서만 생성
+        const needFov = altitude < 5e4;
+        // 썸네일: 20km 이내에서만 생성
+        const needThumbnails = altitude < 2e4;
+
+        // 현재 FOV 필요 없으면 모두 제거
+        if (!needFov) {
+          for (const e of cctvFovEntitiesRef.current) v.entities.remove(e);
+          cctvFovEntitiesRef.current = [];
+          for (const e of cctvThumbnailEntitiesRef.current) v.entities.remove(e);
+          cctvThumbnailEntitiesRef.current = [];
+          return;
+        }
+
+        // 뷰포트 사각형 계산
+        const viewRect = v.camera.computeViewRectangle();
+        if (!viewRect) return;
+
+        // 뷰포트 안에 있는 카메라 필터링
+        const visibleCams = fovCandidates.filter((cam) => {
+          const cLng = Cesium.Math.toRadians(cam.lng);
+          const cLat = Cesium.Math.toRadians(cam.lat);
+          return Cesium.Rectangle.contains(viewRect, new Cesium.Cartographic(cLng, cLat));
+        });
+
+        // 현재 FOV 엔티티 ID Set
+        const currentFovIds = new Set(
+          cctvFovEntitiesRef.current
+            .filter((e: any) => e._cctvFovId)
+            .map((e: any) => e._cctvFovId),
+        );
+        const visibleIds = new Set(visibleCams.map((c) => c.id));
+
+        // 뷰포트 밖으로 나간 FOV 엔티티 제거
+        const keepFov: Cesium.Entity[] = [];
+        for (const e of cctvFovEntitiesRef.current) {
+          if (!(e as any)._cctvFovId || !visibleIds.has((e as any)._cctvFovId)) {
+            v.entities.remove(e);
+          } else {
+            keepFov.push(e);
+          }
+        }
+        cctvFovEntitiesRef.current = keepFov;
+
+        // 새로 보이는 카메라에 대해 FOV 생성
+        for (const cam of visibleCams) {
+          if (currentFovIds.has(cam.id)) continue; // 이미 생성됨
+
+          const color = cam.type === 'traffic' ? Cesium.Color.LIME
+            : cam.type === 'port' ? Cesium.Color.CYAN
+            : cam.type === 'landmark' ? Cesium.Color.GOLD
+            : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
+            : Cesium.Color.WHITE;
+
+          const camHeading = cam.heading ?? ((cam.lat * 1000 + cam.lng * 100) % 360);
+          const headingRad = Cesium.Math.toRadians(camHeading);
+          const fovRange = 300;
+          const fovAngle = 60;
+          const halfFov = Cesium.Math.toRadians(fovAngle / 2);
+          const camHeight = 200;
+
+          const camLatRad = Cesium.Math.toRadians(cam.lat);
+          const metersPerDeg = 111320 * Math.cos(camLatRad);
+          const dLat1 = (fovRange * Math.cos(headingRad - halfFov)) / 111320;
+          const dLng1 = (fovRange * Math.sin(headingRad - halfFov)) / metersPerDeg;
+          const dLat2 = (fovRange * Math.cos(headingRad + halfFov)) / 111320;
+          const dLng2 = (fovRange * Math.sin(headingRad + halfFov)) / metersPerDeg;
+
+          const farLng1 = cam.lng + dLng1;
+          const farLat1 = cam.lat + dLat1;
+          const farLng2 = cam.lng + dLng2;
+          const farLat2 = cam.lat + dLat2;
+
+          // FOV 엔티티 생성 (바닥 삼각형 + 벽면 + 엣지 라인)
+          const fovEntities: Cesium.Entity[] = [];
+
+          const fovGround = v.entities.add({
+            polygon: {
+              hierarchy: Cesium.Cartesian3.fromDegreesArray([
+                cam.lng, cam.lat, farLng1, farLat1, farLng2, farLat2,
+              ]),
+              material: color.withAlpha(0.1),
+              height: 0,
+            },
+          } as any);
+          fovEntities.push(fovGround);
+
+          const wallLeft = v.entities.add({
+            wall: {
+              positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+                cam.lng, cam.lat, camHeight, farLng1, farLat1, 0,
+              ]),
+              material: color.withAlpha(0.08),
+            },
+          } as any);
+          fovEntities.push(wallLeft);
+
+          const wallRight = v.entities.add({
+            wall: {
+              positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+                cam.lng, cam.lat, camHeight, farLng2, farLat2, 0,
+              ]),
+              material: color.withAlpha(0.08),
+            },
+          } as any);
+          fovEntities.push(wallRight);
+
+          const wallFront = v.entities.add({
+            wall: {
+              positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+                farLng1, farLat1, 0, farLng2, farLat2, 0,
+              ]),
+              minimumHeights: [0, 0],
+              maximumHeights: [camHeight * 0.3, camHeight * 0.3],
+              material: color.withAlpha(0.12),
+            },
+          } as any);
+          fovEntities.push(wallFront);
+
+          const fovLines = v.entities.add({
+            polyline: {
+              positions: Cesium.Cartesian3.fromDegreesArrayHeights([
+                farLng1, farLat1, 0, cam.lng, cam.lat, camHeight, farLng2, farLat2, 0,
+              ]),
+              width: 1.5,
+              material: new Cesium.PolylineGlowMaterialProperty({
+                glowPower: 0.3,
+                color: color.withAlpha(0.6),
+              }),
+            },
+          } as any);
+          fovEntities.push(fovLines);
+
+          // 각 FOV 엔티티에 카메라 ID 태그 (정리용)
+          for (const e of fovEntities) (e as any)._cctvFovId = cam.id;
+          cctvFovEntitiesRef.current.push(...fovEntities);
+        }
+
+        // ── 썸네일 프리뷰 (20km 이내) ──
+        const currentThumbIds = new Set(
+          cctvThumbnailEntitiesRef.current
+            .filter((e: any) => e._cctvThumbId)
+            .map((e: any) => e._cctvThumbId),
+        );
+
+        // 뷰포트 밖 썸네일 제거
+        const keepThumbs: Cesium.Entity[] = [];
+        for (const e of cctvThumbnailEntitiesRef.current) {
+          if (!(e as any)._cctvThumbId || !visibleIds.has((e as any)._cctvThumbId)) {
+            v.entities.remove(e);
+          } else {
+            keepThumbs.push(e);
+          }
+        }
+        cctvThumbnailEntitiesRef.current = keepThumbs;
+
+        if (needThumbnails) {
+          for (const cam of visibleCams) {
+            if (currentThumbIds.has(cam.id)) continue;
+            const vidId = cam.embedUrl.split('/embed/')[1]?.split('?')[0];
+            if (!vidId) continue;
             const thumbUrl = `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`;
-            const previewEntity = viewer.entities.add({
+            const thumbEntity = v.entities.add({
               position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 350),
               billboard: {
                 image: thumbUrl,
@@ -1437,138 +1779,29 @@ export default function Globe() {
                 pixelOffset: new Cesium.Cartesian2(0, -50),
               },
             });
-            overlayEntitiesRef.current.push(previewEntity);
+            (thumbEntity as any)._cctvThumbId = cam.id;
+            cctvThumbnailEntitiesRef.current.push(thumbEntity);
           }
-        } else {
-          // Windy 카메라 — BillboardCollection 기반 (성능 최적화)
-          cctvBillboards.add({
-            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-            image: CCTV_SVG,
-            width: 20,
-            height: 20,
-            color,
-            scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 1e7, 0.3),
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
-            disableDepthTestDistance: Number.POSITIVE_INFINITY,
-          });
-          cctvLabels.add({
-            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-            text: cam.name,
-            font: '10px monospace',
-            fillColor: Cesium.Color.WHITE,
-            outlineColor: Cesium.Color.BLACK,
-            outlineWidth: 2,
-            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-            pixelOffset: new Cesium.Cartesian2(0, -18),
-            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e6, 0.3),
-            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 2e6),
-            disableDepthTestDistance: Number.POSITIVE_INFINITY,
-          });
         }
+      };
 
-        // 카메라 시야각(FOV) 3D 프러스텀 — 정적 카메라(36개)에만 적용 (성능)
-        if (cam.source === 'static') {
-        const camHeading = cam.heading ?? ((cam.lat * 1000 + cam.lng * 100) % 360);
-        const headingRad = Cesium.Math.toRadians(camHeading);
-        const fovRange = 300; // 시야 범위 (미터)
-        const fovAngle = 60; // FOV 각도 (도)
-        const halfFov = Cesium.Math.toRadians(fovAngle / 2);
-        const camHeight = 200; // 카메라 설치 높이 (m)
+      // 초기 LOD 업데이트
+      updateCCTVLOD();
 
-        // FOV 부채꼴 끝점 계산
-        const camLatRad = Cesium.Math.toRadians(cam.lat);
-        const metersPerDeg = 111320 * Math.cos(camLatRad);
-        const dLat1 = (fovRange * Math.cos(headingRad - halfFov)) / 111320;
-        const dLng1 = (fovRange * Math.sin(headingRad - halfFov)) / metersPerDeg;
-        const dLat2 = (fovRange * Math.cos(headingRad + halfFov)) / 111320;
-        const dLng2 = (fovRange * Math.sin(headingRad + halfFov)) / metersPerDeg;
+      // 카메라 이동 시 디바운스 LOD 업데이트 (200ms)
+      let lodTimer: ReturnType<typeof setTimeout> | null = null;
+      const onCameraChanged = () => {
+        if (lodTimer) clearTimeout(lodTimer);
+        lodTimer = setTimeout(updateCCTVLOD, 200);
+      };
+      viewer.camera.changed.addEventListener(onCameraChanged);
+      // 카메라 changed 이벤트 감도 설정 (0.1 = 10% 이동 시 발생)
+      viewer.camera.percentageChanged = 0.1;
 
-        const farLng1 = cam.lng + dLng1;
-        const farLat1 = cam.lat + dLat1;
-        const farLng2 = cam.lng + dLng2;
-        const farLat2 = cam.lat + dLat2;
-
-        // 바닥 삼각형 (지면)
-        const fovGround = viewer.entities.add({
-          polygon: {
-            hierarchy: Cesium.Cartesian3.fromDegreesArray([
-              cam.lng, cam.lat,
-              farLng1, farLat1,
-              farLng2, farLat2,
-            ]),
-            material: color.withAlpha(0.1),
-            height: 0,
-          },
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
-        } as any);
-        overlayEntitiesRef.current.push(fovGround);
-
-        // 3D 벽면 — 카메라에서 지면까지 내려오는 프러스텀 측면
-        // 좌측 벽
-        const wallLeft = viewer.entities.add({
-          wall: {
-            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
-              cam.lng, cam.lat, camHeight,
-              farLng1, farLat1, 0,
-            ]),
-            material: color.withAlpha(0.08),
-          },
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
-        } as any);
-        overlayEntitiesRef.current.push(wallLeft);
-
-        // 우측 벽
-        const wallRight = viewer.entities.add({
-          wall: {
-            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
-              cam.lng, cam.lat, camHeight,
-              farLng2, farLat2, 0,
-            ]),
-            material: color.withAlpha(0.08),
-          },
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
-        } as any);
-        overlayEntitiesRef.current.push(wallRight);
-
-        // 전면 벽 (먼 쪽 끝)
-        const wallFront = viewer.entities.add({
-          wall: {
-            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
-              farLng1, farLat1, 0,
-              farLng2, farLat2, 0,
-            ]),
-            minimumHeights: [0, 0],
-            maximumHeights: [camHeight * 0.3, camHeight * 0.3],
-            material: color.withAlpha(0.12),
-          },
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
-        } as any);
-        overlayEntitiesRef.current.push(wallFront);
-
-        // 프러스텀 엣지 라인 — 카메라에서 FOV 끝점까지 와이어프레임
-        const fovLines = viewer.entities.add({
-          polyline: {
-            positions: Cesium.Cartesian3.fromDegreesArrayHeights([
-              farLng1, farLat1, 0,
-              cam.lng, cam.lat, camHeight,
-              farLng2, farLat2, 0,
-            ]),
-            width: 1.5,
-            material: new Cesium.PolylineGlowMaterialProperty({
-              glowPower: 0.3,
-              color: color.withAlpha(0.6),
-            }),
-          },
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
-        } as any);
-        overlayEntitiesRef.current.push(fovLines);
-        } // end if (cam.source === 'static')
-      }
-      // Windy BillboardCollection을 scene에 추가
-      viewer.scene.primitives.add(cctvBillboards);
-      viewer.scene.primitives.add(cctvLabels);
-      cctvPrimitiveRef.current = cctvBillboards;
-      cctvLabelCollRef.current = cctvLabels;
+      cctvCameraListenerRef.current = () => {
+        viewer.camera.changed.removeEventListener(onCameraChanged);
+        if (lodTimer) clearTimeout(lodTimer);
+      };
     }
 
     // 14. God Mode — 모든 감지 오버레이 활성화 (panoptic detection)
