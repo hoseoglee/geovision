@@ -7,7 +7,7 @@ export interface CameraTarget {
 }
 
 export interface SelectedEntity {
-  type: 'satellite' | 'flight' | 'ship' | 'earthquake';
+  type: 'satellite' | 'flight' | 'ship' | 'earthquake' | 'adsb';
   name: string;
   details: Record<string, string | number>;
   url?: string;
@@ -16,7 +16,7 @@ export interface SelectedEntity {
 interface AppState {
   activeLayers: string[];
   activeOverlays: string[];
-  activeFilter: string | null;
+  activeFilters: string[];
   cameraTarget: CameraTarget | null;
   dataCounts: Record<string, number>;
   mouseCoords: { lat: number; lng: number } | null;
@@ -31,6 +31,7 @@ interface AppState {
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
   setActiveFilter: (filter: string | null) => void;
+  toggleFilter: (filter: string) => void;
   setCameraTarget: (target: CameraTarget | null) => void;
   setDataCounts: (layer: string, count: number) => void;
   setMouseCoords: (coords: { lat: number; lng: number } | null) => void;
@@ -62,7 +63,7 @@ const savePresetsToStorage = (presets: Record<string, Record<string, number>>) =
 export const useAppStore = create<AppState>((set) => ({
   activeLayers: [],
   activeOverlays: [],
-  activeFilter: null,
+  activeFilters: [],
   cameraTarget: null,
   dataCounts: {},
   mouseCoords: null,
@@ -96,7 +97,13 @@ export const useAppStore = create<AppState>((set) => ({
         : [...state.activeOverlays, overlay],
     })),
 
-  setActiveFilter: (filter) => set({ activeFilter: filter }),
+  setActiveFilter: (filter) => set({ activeFilters: filter && filter !== 'normal' ? [filter] : [] }),
+  toggleFilter: (filter) =>
+    set((state) => ({
+      activeFilters: state.activeFilters.includes(filter)
+        ? state.activeFilters.filter((f) => f !== filter)
+        : [...state.activeFilters, filter],
+    })),
   setCameraTarget: (target) => set({ cameraTarget: target }),
   setDataCounts: (layer, count) =>
     set((state) => ({

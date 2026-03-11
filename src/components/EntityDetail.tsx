@@ -5,6 +5,7 @@ const TYPE_LABELS: Record<string, string> = {
   flight: 'AIRCRAFT',
   ship: 'VESSEL',
   earthquake: 'SEISMIC EVENT',
+  adsb: 'MILITARY AIRCRAFT',
 };
 
 const TYPE_COLORS: Record<string, string> = {
@@ -12,6 +13,7 @@ const TYPE_COLORS: Record<string, string> = {
   flight: 'text-yellow-400',
   ship: 'text-blue-400',
   earthquake: 'text-red-400',
+  adsb: 'text-red-400',
 };
 
 const TYPE_BORDER: Record<string, string> = {
@@ -19,6 +21,7 @@ const TYPE_BORDER: Record<string, string> = {
   flight: 'border-yellow-500/40',
   ship: 'border-blue-500/40',
   earthquake: 'border-red-500/40',
+  adsb: 'border-red-500/40',
 };
 
 const LINK_LABELS: Record<string, string> = {
@@ -26,6 +29,7 @@ const LINK_LABELS: Record<string, string> = {
   flight: 'VIEW ON FLIGHTRADAR24',
   ship: 'VIEW ON MARINETRAFFIC',
   earthquake: 'SEARCH ON GOOGLE',
+  adsb: 'TRACK ON ADS-B EXCHANGE',
 };
 
 /** 엔티티 클릭 시 상세 정보 패널 */

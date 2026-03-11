@@ -6,6 +6,7 @@ import { useAppStore } from '@/store/useAppStore';
 import type { SatelliteData } from '@/providers/SatelliteProvider';
 import { propagateSatellite } from '@/providers/SatelliteProvider';
 import type { FlightData } from '@/providers/FlightProvider';
+import type { MilAircraftData } from '@/providers/AdsbProvider';
 import type { ShipData } from '@/providers/ShipProvider';
 import { fetchSatellites } from '@/providers/SatelliteProvider';
 import { fetchFlights } from '@/providers/FlightProvider';
@@ -68,6 +69,9 @@ type BillboardMeta = {
 } | {
   type: 'ship';
   data: ShipData;
+} | {
+  type: 'adsb';
+  data: MilAircraftData;
 };
 
 interface TooltipState {
@@ -80,7 +84,7 @@ interface TooltipState {
 export default function Globe() {
   const containerRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<Cesium.Viewer | null>(null);
-  const stageRef = useRef<Cesium.PostProcessStage | null>(null);
+  const stageRef = useRef<Cesium.PostProcessStage | Cesium.PostProcessStageComposite | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
   const [windyCamsVersion, setWindyCamsVersion] = useState(0);
 
@@ -104,7 +108,7 @@ export default function Globe() {
   const adsbPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
   const adsbLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
 
-  const activeFilter = useAppStore((s) => s.activeFilter);
+  const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);
   const activeOverlays = useAppStore((s) => s.activeOverlays);
   const cameraTarget = useAppStore((s) => s.cameraTarget);
@@ -453,6 +457,27 @@ export default function Globe() {
                 LNG: d.lng.toFixed(4),
               },
               url: `https://www.marinetraffic.com/en/ais/details/ships/mmsi:${d.mmsi}`,
+            });
+          } else if (meta.type === 'adsb') {
+            const d = meta.data;
+            const trailCount = adsbTrailRef.current.get(d.callsign || d.hex)?.length || 0;
+            setSelectedEntity({
+              type: 'adsb',
+              name: d.callsign || d.hex,
+              details: {
+                TYPE: d.type,
+                CALLSIGN: d.callsign || 'N/A',
+                HEX: d.hex,
+                ALTITUDE: `FL${Math.round(d.altitude / 100)} (${d.altitude.toLocaleString()} ft)`,
+                SPEED: `${d.speed} kn (${Math.round(d.speed * 1.852)} km/h)`,
+                HEADING: `${d.heading.toFixed(0)}°`,
+                SQUAWK: d.squawk || 'N/A',
+                CATEGORY: d.category || 'N/A',
+                TRAIL: `${trailCount} points`,
+                LAT: d.lat.toFixed(4),
+                LNG: d.lng.toFixed(4),
+              },
+              url: d.hex ? `https://globe.adsbexchange.com/?icao=${d.hex}` : undefined,
             });
           }
           return;
@@ -859,7 +884,7 @@ export default function Globe() {
     };
   }, [activeLayers, clearEntities, setDataCounts]);
 
-  // PostProcessStage 적용/해제
+  // PostProcessStage 적용/해제 (다중 필터 합성 지원)
   useEffect(() => {
     const viewer = viewerRef.current;
     if (!viewer) return;
@@ -869,28 +894,52 @@ export default function Globe() {
       stageRef.current = null;
     }
 
-    if (activeFilter && FILTER_SHADERS[activeFilter]) {
-      const uniforms: Record<string, number> = {};
-      if (activeFilter === 'flir') {
-        uniforms.u_contrast = filterParams.flirContrast ?? 1.8;
-        uniforms.u_noise = filterParams.flirNoise ?? 0.03;
-      } else if (activeFilter === 'anime') {
-        uniforms.u_edgeStrength = filterParams.animeEdge ?? 1.5;
-        uniforms.u_pastelMix = filterParams.animePastel ?? 0.5;
-      } else if (activeFilter === 'lut') {
-        uniforms.u_saturation = filterParams.lutSaturation ?? 0.85;
-        uniforms.u_vignette = filterParams.lutVignette ?? 1.2;
-        uniforms.u_contrast = filterParams.lutContrast ?? 1.0;
-      }
+    // 유효한 필터만 추출
+    const validFilters = activeFilters.filter((f) => FILTER_SHADERS[f]);
+    if (validFilters.length === 0) return;
 
+    const buildUniforms = (filterName: string): Record<string, number> => {
+      const u: Record<string, number> = {};
+      if (filterName === 'flir') {
+        u.u_contrast = filterParams.flirContrast ?? 1.8;
+        u.u_noise = filterParams.flirNoise ?? 0.03;
+      } else if (filterName === 'anime') {
+        u.u_edgeStrength = filterParams.animeEdge ?? 1.5;
+        u.u_pastelMix = filterParams.animePastel ?? 0.5;
+      } else if (filterName === 'lut') {
+        u.u_saturation = filterParams.lutSaturation ?? 0.85;
+        u.u_vignette = filterParams.lutVignette ?? 1.2;
+        u.u_contrast = filterParams.lutContrast ?? 1.0;
+      }
+      return u;
+    };
+
+    if (validFilters.length === 1) {
+      // 단일 필터: 기존 방식
+      const uniforms = buildUniforms(validFilters[0]);
       const stage = new Cesium.PostProcessStage({
-        fragmentShader: FILTER_SHADERS[activeFilter],
+        fragmentShader: FILTER_SHADERS[validFilters[0]],
         uniforms: Object.keys(uniforms).length > 0 ? uniforms : undefined,
       });
       viewer.scene.postProcessStages.add(stage);
       stageRef.current = stage;
+    } else {
+      // 다중 필터: PostProcessStageComposite 체인
+      const stages = validFilters.map((filterName) => {
+        const uniforms = buildUniforms(filterName);
+        return new Cesium.PostProcessStage({
+          fragmentShader: FILTER_SHADERS[filterName],
+          uniforms: Object.keys(uniforms).length > 0 ? uniforms : undefined,
+        });
+      });
+      const composite = new Cesium.PostProcessStageComposite({
+        stages,
+        inputPreviousStageTexture: true, // 이전 스테이지 결과를 다음 입력으로
+      });
+      viewer.scene.postProcessStages.add(composite);
+      stageRef.current = composite;
     }
-  }, [activeFilter, filterParams]);
+  }, [activeFilters, filterParams]);
 
   // 카메라 이동
   useEffect(() => {
@@ -1774,8 +1823,11 @@ export default function Globe() {
       if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
       const v = viewerRef.current;
 
-      // 이전 primitive 정리
+      // 이전 primitive + billboard 매핑 정리
       if (adsbPrimitiveRef.current) {
+        for (let i = 0; i < adsbPrimitiveRef.current.length; i++) {
+          billboardDataMap.current.delete(adsbPrimitiveRef.current.get(i));
+        }
         viewer.scene.primitives.remove(adsbPrimitiveRef.current);
       }
       if (adsbLabelCollRef.current) {
@@ -1794,7 +1846,7 @@ export default function Globe() {
         const altMeters = ac.altitude * 0.3048;
         const pos = Cesium.Cartesian3.fromDegrees(ac.lng, ac.lat, altMeters * 100);
 
-        adsbBillboards.add({
+        const bb = adsbBillboards.add({
           position: pos,
           image: AIRPLANE_SVG,
           width: 24,
@@ -1803,6 +1855,7 @@ export default function Globe() {
           rotation: -Cesium.Math.toRadians(ac.heading),
           scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
         });
+        billboardDataMap.current.set(bb, { type: 'adsb', data: ac });
 
         adsbLabels.add({
           position: pos,

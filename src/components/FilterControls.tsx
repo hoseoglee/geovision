@@ -31,7 +31,7 @@ const FILTER_PARAMS: Record<string, { key: string; label: string; min: number; m
 
 export default function FilterControls() {
   const {
-    activeFilter, setActiveFilter,
+    activeFilters, setActiveFilter, toggleFilter,
     filterParams, setFilterParam,
     filterPresets, saveFilterPreset, loadFilterPreset, deleteFilterPreset,
   } = useAppStore();
@@ -51,19 +51,22 @@ export default function FilterControls() {
 
       const filter = FILTERS.find((f) => f.key === e.key);
       if (filter) {
-        setActiveFilter(
-          activeFilter === filter.id && filter.id !== 'normal'
-            ? 'normal'
-            : filter.id
-        );
+        if (filter.id === 'normal') {
+          setActiveFilter(null); // Reset all
+        } else if (e.ctrlKey || e.metaKey) {
+          toggleFilter(filter.id); // Ctrl/Cmd+숫자: 다중 선택
+        } else {
+          setActiveFilter(filter.id); // 단일 선택
+        }
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [activeFilter, setActiveFilter]);
+  }, [activeFilters, setActiveFilter, toggleFilter]);
 
-  const activeFilterParams = activeFilter ? FILTER_PARAMS[activeFilter] : undefined;
+  // 활성 필터들의 파라미터 목록 수집
+  const allActiveParams = activeFilters.flatMap((f) => FILTER_PARAMS[f] || []);
   const presetNames = Object.keys(filterPresets);
 
   return (
@@ -73,12 +76,22 @@ export default function FilterControls() {
       </h3>
       <div className="grid grid-cols-3 gap-1.5">
         {FILTERS.map((filter) => {
-          const isActive = activeFilter === filter.id || (!activeFilter && filter.id === 'normal');
+          const isActive = filter.id === 'normal'
+            ? activeFilters.length === 0
+            : activeFilters.includes(filter.id);
 
           return (
             <button
               key={filter.id}
-              onClick={() => setActiveFilter(filter.id)}
+              onClick={(e) => {
+                if (filter.id === 'normal') {
+                  setActiveFilter(null);
+                } else if (e.ctrlKey || e.metaKey) {
+                  toggleFilter(filter.id); // Ctrl/Cmd+클릭: 다중 선택
+                } else {
+                  setActiveFilter(filter.id); // 일반 클릭: 단일 선택
+                }
+              }}
               className={`px-2 py-1.5 rounded text-xs font-medium transition-all border
                 ${
                   isActive
@@ -92,14 +105,17 @@ export default function FilterControls() {
           );
         })}
       </div>
+      {activeFilters.length > 0 && (
+        <p className="text-[9px] text-gray-600 mt-1">⌘/Ctrl+Click to combine filters</p>
+      )}
 
       {/* 파라미터 슬라이더 */}
-      {activeFilterParams && (
+      {allActiveParams.length > 0 && (
         <div className="mt-3 space-y-2 border-t border-gray-700/50 pt-2">
           <h4 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
-            Parameters
+            Parameters {activeFilters.length > 1 && `(${activeFilters.length} filters)`}
           </h4>
-          {activeFilterParams.map((param) => (
+          {allActiveParams.map((param) => (
             <div key={param.key} className="flex items-center gap-2">
               <span className="text-[10px] text-gray-400 w-16 shrink-0">{param.label}</span>
               <input
