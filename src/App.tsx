@@ -18,6 +18,9 @@ import ISSLiveStream from './components/ISSLiveStream';
 import CCTVViewer from './components/CCTVViewer';
 import CorrelationPanel from './components/CorrelationPanel';
 import DailyBrief from './components/DailyBrief';
+import EventTimeline from './components/EventTimeline';
+import KeyboardShortcuts from './components/KeyboardShortcuts';
+import SearchModal from './components/SearchModal';
 
 export default function App() {
   return (
@@ -41,6 +44,9 @@ export default function App() {
       <CCTVViewer />
       <CorrelationPanel />
       <DailyBrief />
+      <EventTimeline />
+      <KeyboardShortcuts />
+      <SearchModal />
       <DataTicker />
     </main>
   );

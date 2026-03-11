@@ -7,6 +7,7 @@ export default function HudOverlay() {
   const [utcTime, setUtcTime] = useState('');
   const dataCounts = useAppStore((s) => s.dataCounts);
   const activeLayers = useAppStore((s) => s.activeLayers);
+  const hudVisible = useAppStore((s) => s.hudVisible);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -18,6 +19,8 @@ export default function HudOverlay() {
   }, []);
 
   const totalEntities = Object.values(dataCounts).reduce((a, b) => a + b, 0);
+
+  if (!hudVisible) return null;
 
   return (
     <>

@@ -24,6 +24,9 @@ interface AppState {
   selectedEntity: SelectedEntity | null;
   lastUpdated: Record<string, number>;
   fps: number;
+  hudVisible: boolean;
+  timelineVisible: boolean;
+  searchVisible: boolean;
   issLiveStream: boolean;
   filterParams: Record<string, number>;
   filterPresets: Record<string, Record<string, number>>;
@@ -39,6 +42,9 @@ interface AppState {
   setSelectedEntity: (entity: SelectedEntity | null) => void;
   setLastUpdated: (source: string, ts: number) => void;
   setFps: (fps: number) => void;
+  toggleHud: () => void;
+  toggleTimeline: () => void;
+  toggleSearch: () => void;
   setIssLiveStream: (show: boolean) => void;
   setFilterParam: (key: string, value: number) => void;
   saveFilterPreset: (name: string) => void;
@@ -71,6 +77,9 @@ export const useAppStore = create<AppState>((set) => ({
   selectedEntity: null,
   lastUpdated: {},
   fps: 0,
+  hudVisible: true,
+  timelineVisible: false,
+  searchVisible: false,
   issLiveStream: false,
   filterParams: {
     flirContrast: 1.8,
@@ -117,6 +126,9 @@ export const useAppStore = create<AppState>((set) => ({
       lastUpdated: { ...state.lastUpdated, [source]: ts },
     })),
   setFps: (fps) => set({ fps }),
+  toggleHud: () => set((state) => ({ hudVisible: !state.hudVisible })),
+  toggleTimeline: () => set((state) => ({ timelineVisible: !state.timelineVisible })),
+  toggleSearch: () => set((state) => ({ searchVisible: !state.searchVisible })),
   setIssLiveStream: (show) => set({ issLiveStream: show }),
   setFilterParam: (key, value) =>
     set((state) => ({
