@@ -1,5 +1,5 @@
 // CCTV Provider — static dataset + Windy Webcams API dynamic fetching
-// Static: well-known public webcams (YouTube live streams) + 1000 public webcams
+// Static: well-known public webcams (YouTube live streams) + ~130 verified public webcams
 // Dynamic: Windy Webcams API v3 (by viewport bounding box)
 
 import { PUBLIC_CCTVS } from '../data/publicCCTVs';
@@ -171,32 +171,6 @@ const STATIC_CCTVS: CCTVData[] = [
     heading: 240, // WSW — Trocadéro area, looking toward Eiffel Tower
     tilt: -5,
   },
-  {
-    id: 'paris-city-view',
-    name: 'Paris City View',
-    city: 'Paris',
-    country: 'FR',
-    lat: 48.8460,
-    lng: 2.3460,
-    embedUrl: 'https://www.youtube.com/embed/0yRlsbecXWo?autoplay=1&mute=1',
-    type: 'city',
-    source: 'static',
-    heading: 350, // N — rooftop near Latin Quarter, looking north
-    tilt: -5,
-  },
-  {
-    id: 'paris-city-view-2',
-    name: 'Paris Panorama',
-    city: 'Paris',
-    country: 'FR',
-    lat: 48.855,
-    lng: 2.348,
-    embedUrl: 'https://www.youtube.com/embed/UHlDzWrBEPI?autoplay=1&mute=1',
-    type: 'city',
-    source: 'static',
-    heading: 300, // WNW — panoramic rooftop view
-    tilt: 0,
-  },
 
   // ── London ────────────────────────────────────────────
   {
@@ -269,36 +243,6 @@ const STATIC_CCTVS: CCTVData[] = [
     tilt: -10,
   },
 
-  // ── Santa Monica ──────────────────────────────────────
-  {
-    id: 'santa-monica-pier',
-    name: 'Pacific Park Pier',
-    city: 'Santa Monica',
-    country: 'US',
-    lat: 34.0092,
-    lng: -118.4973,
-    embedUrl: 'https://www.youtube.com/embed/DckQwhIzMdA?autoplay=1&mute=1',
-    type: 'landmark',
-    source: 'static',
-    heading: 260, // W — looking west toward Pacific Ocean from pier
-    tilt: -10,
-  },
-
-  // ── Chicago ───────────────────────────────────────────
-  {
-    id: 'chicago-city-view',
-    name: 'Chicago Skyline',
-    city: 'Chicago',
-    country: 'US',
-    lat: 41.8781,
-    lng: -87.6298,
-    embedUrl: 'https://www.youtube.com/embed/E4dp1EzsJaY?autoplay=1&mute=1',
-    type: 'city',
-    source: 'static',
-    heading: 20, // NNE — looking north-northeast along Lake Michigan shoreline
-    tilt: -5,
-  },
-
   // ── Hong Kong ─────────────────────────────────────────
   {
     id: 'hk-peak',
@@ -355,21 +299,6 @@ const STATIC_CCTVS: CCTVData[] = [
     tilt: -10,
   },
 
-  // ── Kyoto ─────────────────────────────────────────────
-  {
-    id: 'kyoto-station',
-    name: 'Kyoto Station Terminal',
-    city: 'Kyoto',
-    country: 'JP',
-    lat: 34.9856,
-    lng: 135.7584,
-    embedUrl: 'https://www.youtube.com/embed/v9rQqa_VTEY?autoplay=1&mute=1',
-    type: 'traffic',
-    source: 'static',
-    heading: 355, // N — Kyoto Station bus terminal, looking north toward Kyoto Tower
-    tilt: -10,
-  },
-
   // ── Rio de Janeiro ────────────────────────────────────
   {
     id: 'rio-copacabana',
@@ -378,7 +307,7 @@ const STATIC_CCTVS: CCTVData[] = [
     country: 'BR',
     lat: -22.9711,
     lng: -43.1826,
-    embedUrl: 'https://www.youtube.com/embed/gX73YiJp-RU?autoplay=1&mute=1',
+    embedUrl: 'https://www.youtube.com/embed/7LW0PPvA7-o?autoplay=1&mute=1',
     type: 'landmark',
     source: 'static',
     heading: 120, // ESE — looking along beach toward Sugarloaf
@@ -396,62 +325,6 @@ const STATIC_CCTVS: CCTVData[] = [
     source: 'static',
     heading: 60, // ENE — Corcovado, looking toward city and Sugarloaf
     tilt: -20,
-  },
-
-  // ── Cape Town ─────────────────────────────────────────
-  {
-    id: 'capetown-table-mountain',
-    name: 'Table Mountain View',
-    city: 'Cape Town',
-    country: 'ZA',
-    lat: -33.9628,
-    lng: 18.4098,
-    embedUrl: 'https://www.youtube.com/embed/4Zu64CmAjMo?autoplay=1&mute=1',
-    type: 'landmark',
-    source: 'static',
-    heading: 180, // S — looking south toward Table Mountain
-    tilt: 10,
-  },
-  {
-    id: 'capetown-sea-point',
-    name: 'Sea Point',
-    city: 'Cape Town',
-    country: 'ZA',
-    lat: -33.916,
-    lng: 18.388,
-    embedUrl: 'https://www.youtube.com/embed/Gg-UaNPlJmQ?autoplay=1&mute=1',
-    type: 'city',
-    source: 'static',
-    heading: 270, // W — Sea Point looking west toward Atlantic
-    tilt: -5,
-  },
-
-  // ── Duluth Harbor ─────────────────────────────────────
-  {
-    id: 'duluth-harbor',
-    name: 'Duluth Aerial Lift Bridge',
-    city: 'Duluth',
-    country: 'US',
-    lat: 46.7783,
-    lng: -92.0944,
-    embedUrl: 'https://www.youtube.com/embed/HPS48TMmNag?autoplay=1&mute=1',
-    type: 'port',
-    source: 'static',
-    heading: 135, // SE — looking toward Lift Bridge and Lake Superior
-    tilt: -10,
-  },
-  {
-    id: 'duluth-harbor-canal',
-    name: 'Duluth Ship Canal',
-    city: 'Duluth',
-    country: 'US',
-    lat: 46.779,
-    lng: -92.093,
-    embedUrl: 'https://www.youtube.com/embed/BzwWjdZXymc?autoplay=1&mute=1',
-    type: 'port',
-    source: 'static',
-    heading: 90, // E — looking east through ship canal to Lake Superior
-    tilt: -5,
   },
 
   // ── Port of Miami ─────────────────────────────────────
@@ -482,35 +355,6 @@ const STATIC_CCTVS: CCTVData[] = [
     tilt: -10,
   },
 
-  // ── Port of Southampton ───────────────────────────────
-  {
-    id: 'southampton-port',
-    name: 'Port of Southampton',
-    city: 'Southampton',
-    country: 'GB',
-    lat: 50.899,
-    lng: -1.404,
-    embedUrl: 'https://www.youtube.com/embed/QO-hO_kwwmY?autoplay=1&mute=1',
-    type: 'port',
-    source: 'static',
-    heading: 180, // S — looking south toward Southampton Water
-    tilt: -10,
-  },
-
-  // ── Taiwan Traffic ────────────────────────────────────
-  {
-    id: 'taiwan-traffic',
-    name: 'Taiwan Highway',
-    city: 'Taipei',
-    country: 'TW',
-    lat: 25.033,
-    lng: 121.5654,
-    embedUrl: 'https://www.youtube.com/embed/pmM2CeSAx0I?autoplay=1&mute=1',
-    type: 'traffic',
-    source: 'static',
-    heading: 45, // NE — highway traffic cam
-    tilt: -25,
-  },
 ];
 
 // ── Windy Webcams API integration ───────────────────────────
@@ -694,7 +538,7 @@ export function subscribeSelectedCCTV(fn: () => void) {
   };
 }
 
-// ── Merged static list: hand-curated + 1000 public webcams ────
+// ── Merged static list: hand-curated + verified public webcams ────
 const ALL_STATIC_CCTVS: CCTVData[] = [...STATIC_CCTVS, ...PUBLIC_CCTVS];
 
 // ── External store for all CCTVs (static + windy) ────────────
