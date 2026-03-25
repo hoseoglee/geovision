@@ -1,0 +1,782 @@
+[
+  {
+    "videoId": "OzYp4NRZlwQ",
+    "name": "Eiffel Tower Live Webcam",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8584,
+    "lng": 2.2945,
+    "type": "landmark",
+    "source": "earthlive24.com / webcamhopper.com"
+  },
+  {
+    "videoId": "K_Vg94nBiaY",
+    "name": "Venice Rialto Bridge - Grand Canal",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.438,
+    "lng": 12.336,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "dFBRpHHwQeg",
+    "name": "Venice St. Mark's Basin Live 4K - Tribute to Music",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4326,
+    "lng": 12.3414,
+    "type": "landmark",
+    "source": "earthlive24.com / larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "M3EYAY2MftI",
+    "name": "Abbey Road Crossing Live",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.532,
+    "lng": -0.178,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "8JCk5M_xrBs",
+    "name": "Tower Bridge Live Webcam",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.5055,
+    "lng": -0.0754,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "L0o8ACCxH_A",
+    "name": "Brandenburg Gate Live Webcam",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "IRqboacDNFg",
+    "name": "Berlin Brandenburg Gate (Alt View)",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "type": "landmark",
+    "source": "earthlive24.com (initial homepage extraction)"
+  },
+  {
+    "videoId": "hXCcHjrPN-s",
+    "name": "Bavarian Alps Panorama",
+    "city": "Garmisch-Partenkirchen",
+    "country": "DE",
+    "lat": 47.4916,
+    "lng": 11.0955,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "LuKwFajn37U",
+    "name": "DW News Live (Deutsche Welle)",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.52,
+    "lng": 13.405,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "IFnbDmgP69Q",
+    "name": "Prague Old Town Square - Astronomical Clock",
+    "city": "Prague",
+    "country": "CZ",
+    "lat": 50.0875,
+    "lng": 14.4213,
+    "type": "city",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "9yUkeT8lCKo",
+    "name": "Stork Nest Cam - Mlade Buky",
+    "city": "Mlade Buky",
+    "country": "CZ",
+    "lat": 50.3,
+    "lng": 15.9,
+    "type": "webcam",
+    "source": "webcamhopper.com"
+  },
+  {
+    "videoId": "enYFXf8u7Lc",
+    "name": "Swiss Alps - Matterhorn Zermatt",
+    "city": "Zermatt",
+    "country": "CH",
+    "lat": 46.0207,
+    "lng": 7.7491,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "Gd9d4q6WvUY",
+    "name": "Amsterdam Dam Square / Schiphol Airport",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.373,
+    "lng": 4.8932,
+    "type": "city",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "UWZNkLXKDpo",
+    "name": "Amsterdam WebCam.NL Livestream",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.373,
+    "lng": 4.893,
+    "type": "city",
+    "source": "webcam.nl (thumbnail reference)"
+  },
+  {
+    "videoId": "HPS48TMmNag",
+    "name": "Amsterdam Canal Cam",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.3676,
+    "lng": 4.9041,
+    "type": "city",
+    "source": "camstreamer.com"
+  },
+  {
+    "videoId": "A5kXiKzbBFs",
+    "name": "Scheveningen Beach - North Sea",
+    "city": "The Hague",
+    "country": "NL",
+    "lat": 52.1083,
+    "lng": 4.2708,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "aXAsMcmtJTc",
+    "name": "Seal Centre Pieterburen",
+    "city": "Pieterburen",
+    "country": "NL",
+    "lat": 53.4,
+    "lng": 6.4572,
+    "type": "webcam",
+    "source": "camstreamer.com"
+  },
+  {
+    "videoId": "DuBAVRZVn2A",
+    "name": "Ibiza Beach Live",
+    "city": "Ibiza",
+    "country": "ES",
+    "lat": 38.9067,
+    "lng": 1.4206,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "NHRDdaH4LpU",
+    "name": "Sagrada Familia Live Webcam",
+    "city": "Barcelona",
+    "country": "ES",
+    "lat": 41.4036,
+    "lng": 2.1744,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "jNCiy9kujro",
+    "name": "Playa del Inglés Beach - Gran Canaria",
+    "city": "Playa del Inglés",
+    "country": "ES",
+    "lat": 27.7507,
+    "lng": -15.5723,
+    "type": "webcam",
+    "source": "geowebcams.com"
+  },
+  {
+    "videoId": "3nyPER2kzqk",
+    "name": "Dublin Temple Bar",
+    "city": "Dublin",
+    "country": "IE",
+    "lat": 53.3454,
+    "lng": -6.2644,
+    "type": "city",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "u4UZ4UvZXrg",
+    "name": "Temple Bar Street Elevated Cam",
+    "city": "Dublin",
+    "country": "IE",
+    "lat": 53.3456,
+    "lng": -6.2639,
+    "type": "city",
+    "source": "geowebcams.com"
+  },
+  {
+    "videoId": "0wHWHAFnNh0",
+    "name": "Split Riva Waterfront - Diocletian's Palace",
+    "city": "Split",
+    "country": "HR",
+    "lat": 43.5081,
+    "lng": 16.4402,
+    "type": "port",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "uGaxXTlz_f8",
+    "name": "Athens Acropolis & Parthenon View",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 37.9715,
+    "lng": 23.7257,
+    "type": "landmark",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "5p-s-1453Us",
+    "name": "Athens Acropolis (Alt View)",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 37.9715,
+    "lng": 23.7267,
+    "type": "landmark",
+    "source": "earthlive24.com (homepage)"
+  },
+  {
+    "videoId": "L_lz09YdBqI",
+    "name": "Istanbul Bosphorus Strait",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0422,
+    "lng": 29.0083,
+    "type": "port",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "Vqzek6ZWy3Y",
+    "name": "Istanbul Bosphorus Panorama",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0422,
+    "lng": 29.0083,
+    "type": "city",
+    "source": "earthlive24.com (homepage)"
+  },
+  {
+    "videoId": "pWdJOo-6IuM",
+    "name": "Istanbul Golden Horn",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0186,
+    "lng": 28.9562,
+    "type": "city",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "VdAUx5pV3A4",
+    "name": "Istanbul Golden Horn (Alt View)",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0186,
+    "lng": 28.9562,
+    "type": "city",
+    "source": "earthlive24.com (homepage)"
+  },
+  {
+    "videoId": "ABfFhWzWs0s",
+    "name": "TRT World Live - Istanbul",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "pqq5c6k70kk",
+    "name": "NTV Turkey Live - Istanbul",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "6N8_r2uwLEc",
+    "name": "CNN Turk Live - Ankara",
+    "city": "Ankara",
+    "country": "TR",
+    "lat": 39.9334,
+    "lng": 32.8597,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "ccTVAhJU5lg",
+    "name": "Northern Lights Aurora - Kilpisjärvi",
+    "city": "Kilpisjärvi",
+    "country": "FI",
+    "lat": 69.0455,
+    "lng": 20.7871,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "LwihxyJ4V20",
+    "name": "Zero Point Levi - Arctic Finland",
+    "city": "Levi",
+    "country": "FI",
+    "lat": 67.7944,
+    "lng": 24.8228,
+    "type": "webcam",
+    "source": "camstreamer.com"
+  },
+  {
+    "videoId": "Cp4RRAEgpeU",
+    "name": "Santa Claus Village",
+    "city": "Rovaniemi",
+    "country": "FI",
+    "lat": 66.5436,
+    "lng": 25.8473,
+    "type": "landmark",
+    "source": "camstreamer.com"
+  },
+  {
+    "videoId": "yMSc-qqW3To",
+    "name": "Geirangerfjord Cruise Port",
+    "city": "Geiranger",
+    "country": "NO",
+    "lat": 62.1042,
+    "lng": 7.2059,
+    "type": "port",
+    "source": "camstreamer.com"
+  },
+  {
+    "videoId": "agY6ZaM1G_o",
+    "name": "Stockholm Skyline from DN Tower",
+    "city": "Stockholm",
+    "country": "SE",
+    "lat": 59.3293,
+    "lng": 18.0686,
+    "type": "city",
+    "source": "webcamhopper.com"
+  },
+  {
+    "videoId": "ESNa1vdHcYY",
+    "name": "Lourdes Sanctuary - Basilica",
+    "city": "Lourdes",
+    "country": "FR",
+    "lat": 43.0964,
+    "lng": -0.0559,
+    "type": "landmark",
+    "source": "geowebcams.com"
+  },
+  {
+    "videoId": "Ap-UM1O9RBU",
+    "name": "France 24 English Live",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8263,
+    "lng": 2.2398,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "KKyell1r4xQ",
+    "name": "Madeira Airport - Cristiano Ronaldo Intl",
+    "city": "Funchal",
+    "country": "PT",
+    "lat": 32.6942,
+    "lng": -16.7745,
+    "type": "webcam",
+    "source": "geowebcams.com"
+  },
+  {
+    "videoId": "YDvsBbKfLPA",
+    "name": "Sky News Live",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "type": "webcam",
+    "source": "earthlive24.com"
+  },
+  {
+    "videoId": "wMT2aNcP4Wg",
+    "name": "Rome Trevi Fountain",
+    "city": "Rome",
+    "country": "IT",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "type": "landmark",
+    "source": "earthlive24.com (homepage)"
+  },
+  {
+    "videoId": "P393gTj527k",
+    "name": "Venice Grand Canal - I Love You Venice",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4404,
+    "lng": 12.3303,
+    "type": "city",
+    "source": "livecamcroatia.com (Venice embed)"
+  },
+  {
+    "videoId": "4wKN93E3K8g",
+    "name": "Venice 4K Live Scalzi Bridge - Hotel U-Visionary",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.442,
+    "lng": 12.3218,
+    "type": "landmark",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "7fhy-Eu8AFs",
+    "name": "Venice Bacino di San Marco - Hotel Ca' Formenta",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.431,
+    "lng": 12.352,
+    "type": "city",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "BPDwgX9GIjs",
+    "name": "Venice Lagoon 4K PTZ - Cantieri Biasin",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.443,
+    "lng": 12.361,
+    "type": "port",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "HkuZmbVsgF4",
+    "name": "Venice Grand Canal 4K from Ca' Angeli",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4375,
+    "lng": 12.3285,
+    "type": "city",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "P6JA_YjHMZs",
+    "name": "Venice Grand Canal 4K from Trattoria Povoledo",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.441,
+    "lng": 12.3252,
+    "type": "city",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "lFQ_BvxIcnI",
+    "name": "Venice Grand Canal - Hotel San Cassiano",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4404,
+    "lng": 12.3303,
+    "type": "city",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "yGQepsHPcN4",
+    "name": "Venice Ponte delle Guglie 4K - Hotel Marte",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4435,
+    "lng": 12.3276,
+    "type": "city",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "eE6VVJ3hvv8",
+    "name": "Venice St. Mark's Basin - A Tribute to Music Rooms",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4326,
+    "lng": 12.3414,
+    "type": "landmark",
+    "source": "I Love You Venice channel / archive.org"
+  },
+  {
+    "videoId": "BPXtn15_9qo",
+    "name": "Venice Rialto Bridge & Grand Canal from Palazzo Bembo",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.438,
+    "lng": 12.336,
+    "type": "landmark",
+    "source": "I Love You Venice channel / archive.org"
+  },
+  {
+    "videoId": "cjCmsRjxVL0",
+    "name": "Venice Grand Canal from Hotel San Cassiano (Alt)",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4404,
+    "lng": 12.3303,
+    "type": "city",
+    "source": "I Love You Venice channel"
+  },
+  {
+    "videoId": "JqUREqYduHw",
+    "name": "Venice Canale di San Vio - Dorsoduro",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4315,
+    "lng": 12.334,
+    "type": "city",
+    "source": "I Love You Venice channel"
+  },
+  {
+    "videoId": "GgLRWs8OyMs",
+    "name": "Venice Typical Canal and Street View",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.435,
+    "lng": 12.335,
+    "type": "city",
+    "source": "I Love You Venice channel"
+  },
+  {
+    "videoId": "WjOGhNDX51M",
+    "name": "Venice Campo Santa Maria Formosa",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4371,
+    "lng": 12.3432,
+    "type": "city",
+    "source": "I Love You Venice channel"
+  },
+  {
+    "videoId": "rVyP35EHCzY",
+    "name": "Venice St. Mark's Basin & San Giorgio Church",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4328,
+    "lng": 12.341,
+    "type": "landmark",
+    "source": "I Love You Venice channel"
+  },
+  {
+    "videoId": "KnlnB2Poxr0",
+    "name": "Chioggia Sottomarina Beach 4K - Hotel Park",
+    "city": "Chioggia",
+    "country": "IT",
+    "lat": 45.2101,
+    "lng": 12.293,
+    "type": "webcam",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "huEcPtSsdLc",
+    "name": "Chioggia Sottomarina Live HD",
+    "city": "Chioggia",
+    "country": "IT",
+    "lat": 45.211,
+    "lng": 12.2925,
+    "type": "webcam",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "ES2aIagLWZs",
+    "name": "Jesolo Lido Beach 4K",
+    "city": "Jesolo",
+    "country": "IT",
+    "lat": 45.5145,
+    "lng": 12.6381,
+    "type": "webcam",
+    "source": "larrysvacationwebcams.com"
+  },
+  {
+    "videoId": "yTEFISws27Y",
+    "name": "Athens Ano Liosia City View",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 38.0801,
+    "lng": 23.7015,
+    "type": "city",
+    "source": "athensgreecenow.com"
+  },
+  {
+    "videoId": "cRTbQePGwPk",
+    "name": "Athens Kaisariani View",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 37.9583,
+    "lng": 23.765,
+    "type": "city",
+    "source": "athensgreecenow.com"
+  },
+  {
+    "videoId": "tuPEEiVkLgU",
+    "name": "Athens Kifissias Avenue Traffic Camera",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 38.0186,
+    "lng": 23.7882,
+    "type": "traffic",
+    "source": "athensgreecenow.com"
+  },
+  {
+    "videoId": "CcnlJI_UXyM",
+    "name": "Corfu Arillas Bay Beach",
+    "city": "Corfu",
+    "country": "GR",
+    "lat": 39.761,
+    "lng": 19.6612,
+    "type": "webcam",
+    "source": "athensgreecenow.com"
+  },
+  {
+    "videoId": "OJbDXnoQzjA",
+    "name": "Kos Island Municipality Harbour",
+    "city": "Kos",
+    "country": "GR",
+    "lat": 36.8951,
+    "lng": 27.091,
+    "type": "port",
+    "source": "athensgreecenow.com"
+  },
+  {
+    "videoId": "Ifw4P_eJrVM",
+    "name": "Santorini Oia Village Webcam",
+    "city": "Santorini",
+    "country": "GR",
+    "lat": 36.4618,
+    "lng": 25.3753,
+    "type": "webcam",
+    "source": "webcamgreece.com"
+  },
+  {
+    "videoId": "v7RIxT4mtHw",
+    "name": "LiveCamCroatia Stream 1",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "8vC5GKNzexM",
+    "name": "LiveCamCroatia Stream 2",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "wkO-_0OhbFM",
+    "name": "LiveCamCroatia Stream 3",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "xZc_ZFy4KOg",
+    "name": "LiveCamCroatia Stream 4",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "n5tBV2Vt7WQ",
+    "name": "LiveCamCroatia Stream 5",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "n8Bc5PxaqxI",
+    "name": "LiveCamCroatia Stream 6",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "2Ooc_zUMkW4",
+    "name": "LiveCamCroatia Stream 7",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "HLZ39mGq2fc",
+    "name": "LiveCamCroatia Stream 8",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "QIHg4S9iTm8",
+    "name": "LiveCamCroatia Stream 9",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "SOrEBtHuSxU",
+    "name": "LiveCamCroatia Stream 10",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "adWtErhP0CU",
+    "name": "LiveCamCroatia Stream 11",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  },
+  {
+    "videoId": "8WNV-Cwim2s",
+    "name": "LiveCamCroatia Stream 12",
+    "city": "Croatia",
+    "country": "HR",
+    "lat": 43.5,
+    "lng": 16.0,
+    "type": "webcam",
+    "source": "livecamcroatia.com"
+  }
+]

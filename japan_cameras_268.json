@@ -1,0 +1,2146 @@
+[
+  {
+    "videoId": "8H3nRCFVR6Y",
+    "name": "Shibuya Scramble Crossing",
+    "city": "Tokyo",
+    "lat": 35.6595,
+    "lng": 139.7004,
+    "type": "city"
+  },
+  {
+    "videoId": "dfVK7ld38Ys",
+    "name": "Shibuya Crossing Cam 2",
+    "city": "Tokyo",
+    "lat": 35.6595,
+    "lng": 139.7004,
+    "type": "city"
+  },
+  {
+    "videoId": "3Q5wZeTuttw",
+    "name": "Shibuya Sky View",
+    "city": "Tokyo",
+    "lat": 35.6595,
+    "lng": 139.7004,
+    "type": "city"
+  },
+  {
+    "videoId": "6dp-bvQ7RWo",
+    "name": "Shinjuku O-Guard Intersection",
+    "city": "Tokyo",
+    "lat": 35.6938,
+    "lng": 139.7034,
+    "type": "city"
+  },
+  {
+    "videoId": "1Xm5bjdI5hU",
+    "name": "Ginza Sukiyabashi Crossing",
+    "city": "Tokyo",
+    "lat": 35.6722,
+    "lng": 139.7649,
+    "type": "city"
+  },
+  {
+    "videoId": "Zhmmh7l6KEw",
+    "name": "Shinjuku Station",
+    "city": "Tokyo",
+    "lat": 35.6896,
+    "lng": 139.7006,
+    "type": "traffic"
+  },
+  {
+    "videoId": "lA6TaaMGgDo",
+    "name": "Shinjuku Live Camera",
+    "city": "Tokyo",
+    "lat": 35.6938,
+    "lng": 139.7034,
+    "type": "city"
+  },
+  {
+    "videoId": "urE7veQRlrQ",
+    "name": "Asakusa",
+    "city": "Tokyo",
+    "lat": 35.7148,
+    "lng": 139.7967,
+    "type": "landmark"
+  },
+  {
+    "videoId": "MwcMURMzJ7A",
+    "name": "Asakusa District",
+    "city": "Tokyo",
+    "lat": 35.7148,
+    "lng": 139.7967,
+    "type": "city"
+  },
+  {
+    "videoId": "nvjYhbiznNk",
+    "name": "Asakusa Cam 3",
+    "city": "Tokyo",
+    "lat": 35.7148,
+    "lng": 139.7967,
+    "type": "city"
+  },
+  {
+    "videoId": "XVmLmpU1bLY",
+    "name": "Akihabara",
+    "city": "Tokyo",
+    "lat": 35.7023,
+    "lng": 139.7745,
+    "type": "city"
+  },
+  {
+    "videoId": "Zq-D5z2n0EY",
+    "name": "Akihabara Chuo Dori",
+    "city": "Tokyo",
+    "lat": 35.7023,
+    "lng": 139.7745,
+    "type": "city"
+  },
+  {
+    "videoId": "3KZ20aH_Oq4",
+    "name": "Arakawa River",
+    "city": "Tokyo",
+    "lat": 35.7935,
+    "lng": 139.8099,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Ml0_q9_s_xY",
+    "name": "Ryogoku District",
+    "city": "Tokyo",
+    "lat": 35.6966,
+    "lng": 139.7936,
+    "type": "city"
+  },
+  {
+    "videoId": "hZWjNxtKP4Q",
+    "name": "Ebisu",
+    "city": "Tokyo",
+    "lat": 35.6467,
+    "lng": 139.7101,
+    "type": "city"
+  },
+  {
+    "videoId": "DjdUEyjx8GM",
+    "name": "Kabukicho Live Cam 1",
+    "city": "Tokyo",
+    "lat": 35.6944,
+    "lng": 139.7028,
+    "type": "city"
+  },
+  {
+    "videoId": "gFRtAAmiFbE",
+    "name": "Kabukicho Live Cam 2",
+    "city": "Tokyo",
+    "lat": 35.6944,
+    "lng": 139.7028,
+    "type": "city"
+  },
+  {
+    "videoId": "ErHJBXTmm2Q",
+    "name": "Kabukicho Live Cam 3",
+    "city": "Tokyo",
+    "lat": 35.6944,
+    "lng": 139.7028,
+    "type": "city"
+  },
+  {
+    "videoId": "ZIHxOzhFFUc",
+    "name": "Narita Airport",
+    "city": "Narita",
+    "lat": 35.7647,
+    "lng": 140.3864,
+    "type": "traffic"
+  },
+  {
+    "videoId": "r5C3u8ypCtM",
+    "name": "Narita Airport Spotting",
+    "city": "Narita",
+    "lat": 35.7647,
+    "lng": 140.3864,
+    "type": "traffic"
+  },
+  {
+    "videoId": "KR7qSzE1j_w",
+    "name": "Rainbow Bridge Cam 1",
+    "city": "Tokyo",
+    "lat": 35.6367,
+    "lng": 139.7636,
+    "type": "landmark"
+  },
+  {
+    "videoId": "fGOCRGXPgRY",
+    "name": "Rainbow Bridge Cam 2",
+    "city": "Tokyo",
+    "lat": 35.6367,
+    "lng": 139.7636,
+    "type": "landmark"
+  },
+  {
+    "videoId": "QE9NWdINg08",
+    "name": "Rainbow Bridge Cam 3",
+    "city": "Tokyo",
+    "lat": 35.6367,
+    "lng": 139.7636,
+    "type": "landmark"
+  },
+  {
+    "videoId": "VM18f-IIUTw",
+    "name": "Tokyo Tower - Shimbashi View",
+    "city": "Tokyo",
+    "lat": 35.6586,
+    "lng": 139.7454,
+    "type": "landmark"
+  },
+  {
+    "videoId": "p37X_4sf5h4",
+    "name": "Tokyo Sunset View",
+    "city": "Tokyo",
+    "lat": 35.6586,
+    "lng": 139.7454,
+    "type": "city"
+  },
+  {
+    "videoId": "nu6NE55_X7A",
+    "name": "Tokyo Tower Closeup",
+    "city": "Tokyo",
+    "lat": 35.6586,
+    "lng": 139.7454,
+    "type": "landmark"
+  },
+  {
+    "videoId": "zPfCPHQZvpw",
+    "name": "Tokyo Bay Cam 1",
+    "city": "Tokyo",
+    "lat": 35.62,
+    "lng": 139.77,
+    "type": "port"
+  },
+  {
+    "videoId": "RIEliWw2WG4",
+    "name": "Tokyo Bay Cam 2",
+    "city": "Tokyo",
+    "lat": 35.62,
+    "lng": 139.77,
+    "type": "port"
+  },
+  {
+    "videoId": "A0FCKcTuRHo",
+    "name": "Haneda Airport Terminal 2",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "2PIdi3Xa7TY",
+    "name": "Haneda Airport Runway",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "LZlHg3vzwe0",
+    "name": "Haneda Airport Cam 3",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "2f9NOSw-FqM",
+    "name": "Haneda Airport Terminal 1",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "0ytmbJ6mn70",
+    "name": "Haneda Airport Cam 5",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "6iwGblWPMQQ",
+    "name": "Haneda Airport Cam 6",
+    "city": "Tokyo",
+    "lat": 35.5494,
+    "lng": 139.7798,
+    "type": "traffic"
+  },
+  {
+    "videoId": "_k-5U7IeK8g",
+    "name": "Tokyo Skyline",
+    "city": "Tokyo",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "type": "city"
+  },
+  {
+    "videoId": "EmXsW-g6Ni8",
+    "name": "Tokyo Tower & Railway",
+    "city": "Tokyo",
+    "lat": 35.6586,
+    "lng": 139.7454,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ZN4gh5IOowM",
+    "name": "Tokyo Station Marunouchi Entrance",
+    "city": "Tokyo",
+    "lat": 35.6812,
+    "lng": 139.7671,
+    "type": "traffic"
+  },
+  {
+    "videoId": "3PnakUsiMOE",
+    "name": "Tokyo Station Shinkansen Terminal",
+    "city": "Tokyo",
+    "lat": 35.6812,
+    "lng": 139.7671,
+    "type": "traffic"
+  },
+  {
+    "videoId": "f50R4vDlCmA",
+    "name": "Shibuya Live Camera",
+    "city": "Tokyo",
+    "lat": 35.6595,
+    "lng": 139.7004,
+    "type": "city"
+  },
+  {
+    "videoId": "tujkoXI8rWM",
+    "name": "Shibuya Scramble Crossing Alt",
+    "city": "Tokyo",
+    "lat": 35.6595,
+    "lng": 139.7004,
+    "type": "city"
+  },
+  {
+    "videoId": "vLVAbockG6k",
+    "name": "Nishiazabu",
+    "city": "Tokyo",
+    "lat": 35.6579,
+    "lng": 139.7265,
+    "type": "city"
+  },
+  {
+    "videoId": "KsoxRtx01KE",
+    "name": "Odaiba Beach",
+    "city": "Tokyo",
+    "lat": 35.629,
+    "lng": 139.7746,
+    "type": "webcam"
+  },
+  {
+    "videoId": "_zU8K43Twus",
+    "name": "Shinjuku View",
+    "city": "Tokyo",
+    "lat": 35.6938,
+    "lng": 139.7034,
+    "type": "city"
+  },
+  {
+    "videoId": "m_WCI3EQRwQ",
+    "name": "Tokyo General View",
+    "city": "Tokyo",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "type": "city"
+  },
+  {
+    "videoId": "fndY3LREfdE",
+    "name": "Futako Tamagawa",
+    "city": "Tokyo",
+    "lat": 35.6111,
+    "lng": 139.6264,
+    "type": "city"
+  },
+  {
+    "videoId": "_ByNEL0Ton4",
+    "name": "Odaiba Tokyo Bay",
+    "city": "Tokyo",
+    "lat": 35.629,
+    "lng": 139.7746,
+    "type": "port"
+  },
+  {
+    "videoId": "XXU3tg6cmGs",
+    "name": "Kiba Park",
+    "city": "Tokyo",
+    "lat": 35.6736,
+    "lng": 139.8043,
+    "type": "webcam"
+  },
+  {
+    "videoId": "_wTMYAEtwAM",
+    "name": "Tokyo Skytree View East",
+    "city": "Tokyo",
+    "lat": 35.7101,
+    "lng": 139.8107,
+    "type": "landmark"
+  },
+  {
+    "videoId": "HjRZNBm1kms",
+    "name": "Sensoji Temple Precincts",
+    "city": "Tokyo",
+    "lat": 35.7148,
+    "lng": 139.7967,
+    "type": "landmark"
+  },
+  {
+    "videoId": "qMDxy_qbdtE",
+    "name": "Tokyo Bay Sea and Sky",
+    "city": "Tokyo",
+    "lat": 35.62,
+    "lng": 139.77,
+    "type": "port"
+  },
+  {
+    "videoId": "n3B8fp-Henc",
+    "name": "Odaiba Live Camera",
+    "city": "Tokyo",
+    "lat": 35.629,
+    "lng": 139.7746,
+    "type": "city"
+  },
+  {
+    "videoId": "AADZvNj8db4",
+    "name": "Metropolitan Expressway Yoga Tollgate",
+    "city": "Tokyo",
+    "lat": 35.6287,
+    "lng": 139.6365,
+    "type": "traffic"
+  },
+  {
+    "videoId": "3o9aoRyrvAk",
+    "name": "Umineko Store",
+    "city": "Tokyo",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ktds5GPgu6Q",
+    "name": "Ebisu Shibuya City",
+    "city": "Tokyo",
+    "lat": 35.6467,
+    "lng": 139.7101,
+    "type": "city"
+  },
+  {
+    "videoId": "gTO_FJzv70k",
+    "name": "Shinjuku Kabukicho View",
+    "city": "Tokyo",
+    "lat": 35.6944,
+    "lng": 139.7028,
+    "type": "city"
+  },
+  {
+    "videoId": "mCBV2OpKKXQ",
+    "name": "Shinjuku Station View",
+    "city": "Tokyo",
+    "lat": 35.6896,
+    "lng": 139.7006,
+    "type": "traffic"
+  },
+  {
+    "videoId": "1XphVUBHHmk",
+    "name": "Hoya Station Seibu Line",
+    "city": "Tokyo",
+    "lat": 35.7483,
+    "lng": 139.5628,
+    "type": "traffic"
+  },
+  {
+    "videoId": "fSm0LbN2y1Q",
+    "name": "Adachi-Ku District",
+    "city": "Tokyo",
+    "lat": 35.7747,
+    "lng": 139.8045,
+    "type": "city"
+  },
+  {
+    "videoId": "bosDMHZNIik",
+    "name": "Minowa Station",
+    "city": "Tokyo",
+    "lat": 35.7286,
+    "lng": 139.7893,
+    "type": "traffic"
+  },
+  {
+    "videoId": "K2ZEHtTU1XY",
+    "name": "Hamarikyu Gardens",
+    "city": "Tokyo",
+    "lat": 35.6596,
+    "lng": 139.7637,
+    "type": "landmark"
+  },
+  {
+    "videoId": "A5H4LoL9he4",
+    "name": "Shimbashi Station",
+    "city": "Tokyo",
+    "lat": 35.6656,
+    "lng": 139.7585,
+    "type": "traffic"
+  },
+  {
+    "videoId": "1vdmvnXnkQ4",
+    "name": "Musashi Mitake Shrine",
+    "city": "Tokyo",
+    "lat": 35.7897,
+    "lng": 139.1492,
+    "type": "landmark"
+  },
+  {
+    "videoId": "g4ywAi5WMWE",
+    "name": "Sunshine 60 Street",
+    "city": "Tokyo",
+    "lat": 35.7295,
+    "lng": 139.7188,
+    "type": "city"
+  },
+  {
+    "videoId": "dJZBqTeC-h8",
+    "name": "Odaiba District",
+    "city": "Tokyo",
+    "lat": 35.629,
+    "lng": 139.7746,
+    "type": "city"
+  },
+  {
+    "videoId": "p7mbQ2qkACg",
+    "name": "Akihabara District",
+    "city": "Tokyo",
+    "lat": 35.7023,
+    "lng": 139.7745,
+    "type": "city"
+  },
+  {
+    "videoId": "W0V8-6WrgBY",
+    "name": "Hamamatsucho Station",
+    "city": "Tokyo",
+    "lat": 35.6554,
+    "lng": 139.7571,
+    "type": "traffic"
+  },
+  {
+    "videoId": "7XzfKy8CzdY",
+    "name": "Tokyo Dome",
+    "city": "Tokyo",
+    "lat": 35.7056,
+    "lng": 139.7519,
+    "type": "landmark"
+  },
+  {
+    "videoId": "GLQhbRGv5qU",
+    "name": "Shinjuku Railway Omoideyokocho",
+    "city": "Tokyo",
+    "lat": 35.6938,
+    "lng": 139.6989,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Iv2VUE_UhRQ",
+    "name": "Kamikochi Kappa-Bashi Bridge",
+    "city": "Nagano",
+    "lat": 36.2477,
+    "lng": 137.6313,
+    "type": "landmark"
+  },
+  {
+    "videoId": "c7_kqMFDE8c",
+    "name": "Real-Time Earthquake Alert Channel",
+    "city": "Tokyo",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Nbs_WkWTD7M",
+    "name": "Osaka Dotonbori",
+    "city": "Osaka",
+    "lat": 34.6687,
+    "lng": 135.5012,
+    "type": "city"
+  },
+  {
+    "videoId": "YIjxwMxWzgE",
+    "name": "Osaka Skyline Cam 1",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "uDat-pm3Rzw",
+    "name": "Osaka Skyline Cam 2",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "O9HzIuolSds",
+    "name": "Osaka Skyline Cam 3",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "bzn2QWfOLFY",
+    "name": "Dotonbori Street View",
+    "city": "Osaka",
+    "lat": 34.6687,
+    "lng": 135.5012,
+    "type": "city"
+  },
+  {
+    "videoId": "LPcDAtkX0-Q",
+    "name": "Nakanoshima",
+    "city": "Osaka",
+    "lat": 34.6916,
+    "lng": 135.4972,
+    "type": "city"
+  },
+  {
+    "videoId": "oG3XilZ2xQ8",
+    "name": "Nipponbashi",
+    "city": "Osaka",
+    "lat": 34.6595,
+    "lng": 135.5057,
+    "type": "city"
+  },
+  {
+    "videoId": "YZMZSqz9fx8",
+    "name": "Shinsaibashi Uniqlo",
+    "city": "Osaka",
+    "lat": 34.6748,
+    "lng": 135.5013,
+    "type": "city"
+  },
+  {
+    "videoId": "aVAO2wSUsPo",
+    "name": "Shinsaibashi 2",
+    "city": "Osaka",
+    "lat": 34.6748,
+    "lng": 135.5013,
+    "type": "city"
+  },
+  {
+    "videoId": "lKZqryb7Nno",
+    "name": "Osaka Koreatown (Ikuno)",
+    "city": "Osaka",
+    "lat": 34.6569,
+    "lng": 135.5321,
+    "type": "city"
+  },
+  {
+    "videoId": "qwKh-LOkomQ",
+    "name": "Osaka Airport Cam 1",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "fJ4j-Moq3Lw",
+    "name": "Osaka Airport Cam 2",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "T2TQocGHH5A",
+    "name": "Osaka Airport Cam 3",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "ybJpRrthdNM",
+    "name": "Osaka Airport Cam 4",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "IBW4UX4A-Dk",
+    "name": "Osaka Airport Cam 5",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "GCxs-DhQs08",
+    "name": "Abeno Harukas Osaka",
+    "city": "Osaka",
+    "lat": 34.6462,
+    "lng": 135.5141,
+    "type": "landmark"
+  },
+  {
+    "videoId": "f7RlL3k6FJM",
+    "name": "Osaka Airport View",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "2gisxkF6Lao",
+    "name": "Kansai International Airport",
+    "city": "Osaka",
+    "lat": 34.4348,
+    "lng": 135.244,
+    "type": "traffic"
+  },
+  {
+    "videoId": "KuTnm6CSqag",
+    "name": "Itami Airport Cam 1",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "z18ZcuEnbUI",
+    "name": "Itami Airport Cam 2",
+    "city": "Osaka",
+    "lat": 34.7855,
+    "lng": 135.438,
+    "type": "traffic"
+  },
+  {
+    "videoId": "v_Pze0f4qOw",
+    "name": "Yodo River",
+    "city": "Osaka",
+    "lat": 34.71,
+    "lng": 135.48,
+    "type": "webcam"
+  },
+  {
+    "videoId": "BUV-HTTp3ZI",
+    "name": "Nipponbashi Osaka",
+    "city": "Osaka",
+    "lat": 34.6595,
+    "lng": 135.5057,
+    "type": "city"
+  },
+  {
+    "videoId": "kCE6T3p8AZ4",
+    "name": "EXPO 2025 Grand Ring",
+    "city": "Osaka",
+    "lat": 34.8006,
+    "lng": 135.5325,
+    "type": "landmark"
+  },
+  {
+    "videoId": "7lcPQ97iv5I",
+    "name": "Osaka Live Camera",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "vSLXU7AbZAQ",
+    "name": "Dotonbori Cam 2",
+    "city": "Osaka",
+    "lat": 34.6687,
+    "lng": 135.5012,
+    "type": "city"
+  },
+  {
+    "videoId": "Z0oyVhk_7RA",
+    "name": "Osaka JR Railway",
+    "city": "Osaka",
+    "lat": 34.7024,
+    "lng": 135.4959,
+    "type": "traffic"
+  },
+  {
+    "videoId": "qdF4u9KY3BQ",
+    "name": "Tokaido Shinkansen Rail Cam",
+    "city": "Osaka",
+    "lat": 34.7024,
+    "lng": 135.4959,
+    "type": "traffic"
+  },
+  {
+    "videoId": "4b9X-g0L844",
+    "name": "Osaka Mountain View",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "8Pr3xHazf0k",
+    "name": "Shin-Midosuji Osaka",
+    "city": "Osaka",
+    "lat": 34.6862,
+    "lng": 135.5009,
+    "type": "city"
+  },
+  {
+    "videoId": "icsXz10WQSk",
+    "name": "Osaka Railway Tracks",
+    "city": "Osaka",
+    "lat": 34.7024,
+    "lng": 135.4959,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Bq30kRKn3eA",
+    "name": "Tokaido Shinkansen Osaka",
+    "city": "Osaka",
+    "lat": 34.7024,
+    "lng": 135.4959,
+    "type": "traffic"
+  },
+  {
+    "videoId": "-Vck0hn-zqk",
+    "name": "Panoramic Osaka",
+    "city": "Osaka",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "type": "city"
+  },
+  {
+    "videoId": "i9LRwkZCGtU",
+    "name": "Toyonaka Road Osaka",
+    "city": "Osaka",
+    "lat": 34.7812,
+    "lng": 135.4694,
+    "type": "traffic"
+  },
+  {
+    "videoId": "kFKxyyLfh1E",
+    "name": "JR West Osaka Loop Line",
+    "city": "Osaka",
+    "lat": 34.7024,
+    "lng": 135.4959,
+    "type": "traffic"
+  },
+  {
+    "videoId": "wuC8wRvXock",
+    "name": "Nishiki Market Kyoto",
+    "city": "Kyoto",
+    "lat": 35.0051,
+    "lng": 135.7645,
+    "type": "city"
+  },
+  {
+    "videoId": "Y1XxYLwpJy4",
+    "name": "Higashi Hongan-ji Temple",
+    "city": "Kyoto",
+    "lat": 34.9916,
+    "lng": 135.7593,
+    "type": "landmark"
+  },
+  {
+    "videoId": "MMeBDRfRHyA",
+    "name": "Fushimi Inari Taisha",
+    "city": "Kyoto",
+    "lat": 34.9671,
+    "lng": 135.7727,
+    "type": "landmark"
+  },
+  {
+    "videoId": "cUnYPpK7ENk",
+    "name": "Kiyomizu-Zaka",
+    "city": "Kyoto",
+    "lat": 34.9949,
+    "lng": 135.785,
+    "type": "landmark"
+  },
+  {
+    "videoId": "IQKJPxjnjUw",
+    "name": "Kyoto Tower",
+    "city": "Kyoto",
+    "lat": 34.9875,
+    "lng": 135.7592,
+    "type": "landmark"
+  },
+  {
+    "videoId": "S6IkZhhwG4A",
+    "name": "Philosophers Walk",
+    "city": "Kyoto",
+    "lat": 35.0183,
+    "lng": 135.7944,
+    "type": "landmark"
+  },
+  {
+    "videoId": "T8FR4SB9pzQ",
+    "name": "Kyoto Live View",
+    "city": "Kyoto",
+    "lat": 35.0116,
+    "lng": 135.7681,
+    "type": "city"
+  },
+  {
+    "videoId": "X5rq4ioggLk",
+    "name": "Hanamikoji Street",
+    "city": "Kyoto",
+    "lat": 35.0037,
+    "lng": 135.7751,
+    "type": "city"
+  },
+  {
+    "videoId": "_eeUYDIF6jc",
+    "name": "Kyoto Station JR",
+    "city": "Kyoto",
+    "lat": 34.9858,
+    "lng": 135.7588,
+    "type": "traffic"
+  },
+  {
+    "videoId": "v9rQqa_VTEY",
+    "name": "Kyoto Station Bus Terminal",
+    "city": "Kyoto",
+    "lat": 34.9858,
+    "lng": 135.7588,
+    "type": "traffic"
+  },
+  {
+    "videoId": "CO_ZjH6N7RE",
+    "name": "Kyoto Station Hachijo Taxi",
+    "city": "Kyoto",
+    "lat": 34.9858,
+    "lng": 135.7588,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Gxt3YCa2Phc",
+    "name": "Nene no Michi",
+    "city": "Kyoto",
+    "lat": 34.9999,
+    "lng": 135.7817,
+    "type": "landmark"
+  },
+  {
+    "videoId": "6QAZgweLc9A",
+    "name": "Nantan Village",
+    "city": "Kyoto",
+    "lat": 35.1075,
+    "lng": 135.4693,
+    "type": "webcam"
+  },
+  {
+    "videoId": "AoRAAex6nBk",
+    "name": "Higashi Hongan-Ji Front",
+    "city": "Kyoto",
+    "lat": 34.9916,
+    "lng": 135.7593,
+    "type": "landmark"
+  },
+  {
+    "videoId": "1LNiqXRjYiY",
+    "name": "Mukomachi-Nagaokakyo Railway",
+    "city": "Kyoto",
+    "lat": 34.9456,
+    "lng": 135.7213,
+    "type": "traffic"
+  },
+  {
+    "videoId": "O7aL3u5n1gQ",
+    "name": "Sapporo Station",
+    "city": "Sapporo",
+    "lat": 43.0687,
+    "lng": 141.3508,
+    "type": "traffic"
+  },
+  {
+    "videoId": "YoKAWhcyNmc",
+    "name": "Sapporo City View 1",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "xB6johNZ3vQ",
+    "name": "Sapporo City View 2",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "RBHsITnIoI0",
+    "name": "Sapporo City View 3",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "WUN-183KH7M",
+    "name": "Sapporo City View 4",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "HiNFpNlSAbg",
+    "name": "Sapporo City View 5",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "icMG4FEFg9w",
+    "name": "Hokkaido Shrine Tongu",
+    "city": "Sapporo",
+    "lat": 43.0558,
+    "lng": 141.3222,
+    "type": "landmark"
+  },
+  {
+    "videoId": "uABIARvcghg",
+    "name": "Sapporo Panorama",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "goxtB53PqrY",
+    "name": "Sapporo Mt Moiwa View",
+    "city": "Sapporo",
+    "lat": 43.026,
+    "lng": 141.323,
+    "type": "city"
+  },
+  {
+    "videoId": "AWVVYHfxZac",
+    "name": "Sapporo View 9",
+    "city": "Sapporo",
+    "lat": 43.0621,
+    "lng": 141.3544,
+    "type": "city"
+  },
+  {
+    "videoId": "s--MDmshT3I",
+    "name": "Mt Hakodate Ropeway",
+    "city": "Hakodate",
+    "lat": 41.7589,
+    "lng": 140.7032,
+    "type": "landmark"
+  },
+  {
+    "videoId": "CF1vS8DdBIk",
+    "name": "Tanukikoji Sapporo",
+    "city": "Sapporo",
+    "lat": 43.0563,
+    "lng": 141.3519,
+    "type": "city"
+  },
+  {
+    "videoId": "kfIQBC0hrII",
+    "name": "Odori Park TV Tower Sapporo",
+    "city": "Sapporo",
+    "lat": 43.0608,
+    "lng": 141.3565,
+    "type": "landmark"
+  },
+  {
+    "videoId": "Azbdr5jbN6o",
+    "name": "New Chitose Airport",
+    "city": "Chitose",
+    "lat": 42.7752,
+    "lng": 141.6925,
+    "type": "traffic"
+  },
+  {
+    "videoId": "gaNLXSEUVRw",
+    "name": "JR Sapporo Station",
+    "city": "Sapporo",
+    "lat": 43.0687,
+    "lng": 141.3508,
+    "type": "traffic"
+  },
+  {
+    "videoId": "3dg35n9DLX0",
+    "name": "Tokachi-Obihiro Airport",
+    "city": "Obihiro",
+    "lat": 42.7335,
+    "lng": 143.2172,
+    "type": "traffic"
+  },
+  {
+    "videoId": "FmtX2lJLoJY",
+    "name": "Mt Moiwa Summit Observation",
+    "city": "Sapporo",
+    "lat": 43.026,
+    "lng": 141.323,
+    "type": "landmark"
+  },
+  {
+    "videoId": "_6Zpd48bjYk",
+    "name": "Tokachi Big Bridge",
+    "city": "Obihiro",
+    "lat": 42.9236,
+    "lng": 143.1967,
+    "type": "webcam"
+  },
+  {
+    "videoId": "X5Ew8btlVbQ",
+    "name": "Otaru Tenguyama",
+    "city": "Otaru",
+    "lat": 43.1907,
+    "lng": 140.9943,
+    "type": "landmark"
+  },
+  {
+    "videoId": "m4ExO19iW4g",
+    "name": "Tanukikoji Shopping Street",
+    "city": "Sapporo",
+    "lat": 43.0563,
+    "lng": 141.3519,
+    "type": "city"
+  },
+  {
+    "videoId": "C28jH3sU2M8",
+    "name": "Panoramic Kitahiroshima",
+    "city": "Kitahiroshima",
+    "lat": 43.0064,
+    "lng": 141.5635,
+    "type": "city"
+  },
+  {
+    "videoId": "iBwjkDhl9ys",
+    "name": "Rishiri Ferry Terminal",
+    "city": "Rishiri",
+    "lat": 45.2413,
+    "lng": 141.2192,
+    "type": "port"
+  },
+  {
+    "videoId": "cElpVZpu1wI",
+    "name": "Shihoro Hokkaido",
+    "city": "Shihoro",
+    "lat": 42.9211,
+    "lng": 143.2314,
+    "type": "webcam"
+  },
+  {
+    "videoId": "H_AHNxgiIc4",
+    "name": "Street View Assabu",
+    "city": "Assabu",
+    "lat": 41.8682,
+    "lng": 140.3447,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Sv9hcJ3k5h4",
+    "name": "Mount Fuji Panoramic",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "sm3xXTfDtGE",
+    "name": "Mount Fuji from Oshino",
+    "city": "Oshino",
+    "lat": 35.4618,
+    "lng": 138.8374,
+    "type": "landmark"
+  },
+  {
+    "videoId": "eU8A7QQOcso",
+    "name": "Mount Fuji Panoramic Fujikawaguchiko",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "kYK9J6KNz0M",
+    "name": "Mount Fuji Live Camera",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "bdUbACCWmoY",
+    "name": "Mount Fuji from Lake Kawaguchiko",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5116,
+    "lng": 138.755,
+    "type": "landmark"
+  },
+  {
+    "videoId": "1cnReFAU04k",
+    "name": "Mount Fuji Cam 6",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "q7C6iIOpeVs",
+    "name": "Mount Fuji from Sagami Bay",
+    "city": "Sagami",
+    "lat": 35.272,
+    "lng": 139.156,
+    "type": "landmark"
+  },
+  {
+    "videoId": "GKem31OI1rA",
+    "name": "Fuji Motosuko Resort",
+    "city": "Fujikawaguchiko",
+    "lat": 35.4665,
+    "lng": 138.593,
+    "type": "landmark"
+  },
+  {
+    "videoId": "y0OFr7jMx9A",
+    "name": "Mount Fuji Lake Yamanaka",
+    "city": "Yamanakako",
+    "lat": 35.408,
+    "lng": 138.8692,
+    "type": "landmark"
+  },
+  {
+    "videoId": "UaD8ew0bqVE",
+    "name": "Mount Fuji Cam 10",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "nh0TUmU-Sko",
+    "name": "Mount Fuji Cam 11",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5011,
+    "lng": 138.766,
+    "type": "landmark"
+  },
+  {
+    "videoId": "15aPtlnUIL4",
+    "name": "Arakurayama Sengen Park & Fuji",
+    "city": "Fujiyoshida",
+    "lat": 35.3983,
+    "lng": 138.7996,
+    "type": "landmark"
+  },
+  {
+    "videoId": "9d9DqBZmjwk",
+    "name": "Kawaguchiko Station",
+    "city": "Fujikawaguchiko",
+    "lat": 35.4978,
+    "lng": 138.7575,
+    "type": "traffic"
+  },
+  {
+    "videoId": "slOgQojt8w8",
+    "name": "Chuo Expressway Uenohara",
+    "city": "Uenohara",
+    "lat": 35.6308,
+    "lng": 139.1089,
+    "type": "traffic"
+  },
+  {
+    "videoId": "FsL_KQz4gpw",
+    "name": "Moto Hachioji Bus Stop Chuo Expwy",
+    "city": "Hachioji",
+    "lat": 35.6493,
+    "lng": 139.3255,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Gn2CJjzY068",
+    "name": "Lake Yamanaka",
+    "city": "Yamanakako",
+    "lat": 35.408,
+    "lng": 138.8692,
+    "type": "webcam"
+  },
+  {
+    "videoId": "pHtmJW8nHgk",
+    "name": "Railcam Fuefuki",
+    "city": "Fuefuki",
+    "lat": 35.6472,
+    "lng": 138.644,
+    "type": "traffic"
+  },
+  {
+    "videoId": "STudE86JCJs",
+    "name": "KFU Panoramic",
+    "city": "Kofu",
+    "lat": 35.6638,
+    "lng": 138.5683,
+    "type": "city"
+  },
+  {
+    "videoId": "S3F3SRllna8",
+    "name": "Railway Passage Fuefuki",
+    "city": "Fuefuki",
+    "lat": 35.6472,
+    "lng": 138.644,
+    "type": "traffic"
+  },
+  {
+    "videoId": "so_3HK9HIdg",
+    "name": "Lake Shoji with Mount Fuji",
+    "city": "Fujikawaguchiko",
+    "lat": 35.4636,
+    "lng": 138.5877,
+    "type": "landmark"
+  },
+  {
+    "videoId": "OeK920dtyZw",
+    "name": "Lake Kawaguchiko View",
+    "city": "Fujikawaguchiko",
+    "lat": 35.5116,
+    "lng": 138.755,
+    "type": "webcam"
+  },
+  {
+    "videoId": "9D7BzjsxxXs",
+    "name": "Arakurayama Sengen Park",
+    "city": "Fujiyoshida",
+    "lat": 35.3983,
+    "lng": 138.7996,
+    "type": "landmark"
+  },
+  {
+    "videoId": "O6tGk5VFti0",
+    "name": "Hiroshima Miyajima View",
+    "city": "Hiroshima",
+    "lat": 34.296,
+    "lng": 132.3198,
+    "type": "landmark"
+  },
+  {
+    "videoId": "oW2Gb8YoGAg",
+    "name": "Hiroshima Hondori Street",
+    "city": "Hiroshima",
+    "lat": 34.3917,
+    "lng": 132.4609,
+    "type": "city"
+  },
+  {
+    "videoId": "m9vpLO3EZKo",
+    "name": "Hiroshima Multicam",
+    "city": "Hiroshima",
+    "lat": 34.3853,
+    "lng": 132.4553,
+    "type": "city"
+  },
+  {
+    "videoId": "4IYYByR29A0",
+    "name": "JR Hiroshima Station",
+    "city": "Hiroshima",
+    "lat": 34.3975,
+    "lng": 132.4754,
+    "type": "traffic"
+  },
+  {
+    "videoId": "9kcvdNqbpxs",
+    "name": "Tadanomi Port Hiroshima",
+    "city": "Hiroshima",
+    "lat": 34.35,
+    "lng": 132.95,
+    "type": "port"
+  },
+  {
+    "videoId": "J7sBLE_8LEg",
+    "name": "Panoramic Hiroshima",
+    "city": "Hiroshima",
+    "lat": 34.3853,
+    "lng": 132.4553,
+    "type": "city"
+  },
+  {
+    "videoId": "7HCE2hfIjhI",
+    "name": "Tadanomi Port View 2",
+    "city": "Hiroshima",
+    "lat": 34.35,
+    "lng": 132.95,
+    "type": "port"
+  },
+  {
+    "videoId": "jB40z6jkcFY",
+    "name": "Panoramic Kure",
+    "city": "Kure",
+    "lat": 34.249,
+    "lng": 132.5652,
+    "type": "city"
+  },
+  {
+    "videoId": "ntkaV32DiZM",
+    "name": "Hiroshima Train Station",
+    "city": "Hiroshima",
+    "lat": 34.3975,
+    "lng": 132.4754,
+    "type": "traffic"
+  },
+  {
+    "videoId": "btU8RkipKiA",
+    "name": "Peace Memorial Park",
+    "city": "Hiroshima",
+    "lat": 34.3915,
+    "lng": 132.4536,
+    "type": "landmark"
+  },
+  {
+    "videoId": "EkH8SihBx9E",
+    "name": "Hakata Port Tower",
+    "city": "Fukuoka",
+    "lat": 33.6077,
+    "lng": 130.4017,
+    "type": "port"
+  },
+  {
+    "videoId": "yETDDgrE2E4",
+    "name": "Hakata Railroad Station",
+    "city": "Fukuoka",
+    "lat": 33.5898,
+    "lng": 130.4207,
+    "type": "traffic"
+  },
+  {
+    "videoId": "CzgSFUAbE9s",
+    "name": "Fukuoka Airport Cam 1",
+    "city": "Fukuoka",
+    "lat": 33.5858,
+    "lng": 130.4507,
+    "type": "traffic"
+  },
+  {
+    "videoId": "cTD7nITGhE0",
+    "name": "Fukuoka Airport Cam 2",
+    "city": "Fukuoka",
+    "lat": 33.5858,
+    "lng": 130.4507,
+    "type": "traffic"
+  },
+  {
+    "videoId": "8RyR0J8zbbU",
+    "name": "Hakata Station View",
+    "city": "Fukuoka",
+    "lat": 33.5898,
+    "lng": 130.4207,
+    "type": "traffic"
+  },
+  {
+    "videoId": "E5R5PPezu7k",
+    "name": "Hakata Station Cam 2",
+    "city": "Fukuoka",
+    "lat": 33.5898,
+    "lng": 130.4207,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Zhfodg0io7M",
+    "name": "Kokusai Street Naha",
+    "city": "Naha",
+    "lat": 26.3175,
+    "lng": 127.6851,
+    "type": "city"
+  },
+  {
+    "videoId": "c-PKJstE_jE",
+    "name": "Kokusai Street Naha 2",
+    "city": "Naha",
+    "lat": 26.3175,
+    "lng": 127.6851,
+    "type": "city"
+  },
+  {
+    "videoId": "WIYUrH4luck",
+    "name": "Ojana Intersection Ginowan",
+    "city": "Ginowan",
+    "lat": 26.3383,
+    "lng": 127.775,
+    "type": "traffic"
+  },
+  {
+    "videoId": "AhQErfreEOE",
+    "name": "Kariyushi Beach Resort",
+    "city": "Onna",
+    "lat": 26.4746,
+    "lng": 127.7945,
+    "type": "webcam"
+  },
+  {
+    "videoId": "sAePgqzfOdY",
+    "name": "Naha Airport",
+    "city": "Naha",
+    "lat": 26.1958,
+    "lng": 127.6459,
+    "type": "traffic"
+  },
+  {
+    "videoId": "6HYjCFkmDPA",
+    "name": "Naha City View",
+    "city": "Naha",
+    "lat": 26.3344,
+    "lng": 127.6809,
+    "type": "city"
+  },
+  {
+    "videoId": "h794owDyuGk",
+    "name": "Ishigaki Island",
+    "city": "Ishigaki",
+    "lat": 24.3448,
+    "lng": 124.1557,
+    "type": "webcam"
+  },
+  {
+    "videoId": "de_40Jj2gF4",
+    "name": "Kokusai Street View 3",
+    "city": "Naha",
+    "lat": 26.3175,
+    "lng": 127.6851,
+    "type": "city"
+  },
+  {
+    "videoId": "VyT694OcIHM",
+    "name": "Motobu Bay",
+    "city": "Motobu",
+    "lat": 26.6591,
+    "lng": 127.8779,
+    "type": "port"
+  },
+  {
+    "videoId": "4v5e4eKIT_E",
+    "name": "Miyakojima Beach",
+    "city": "Miyakojima",
+    "lat": 24.737,
+    "lng": 125.3247,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ZToeWoLf3xQ",
+    "name": "Malibu Beach Okinawa",
+    "city": "Okinawa",
+    "lat": 26.435,
+    "lng": 127.769,
+    "type": "webcam"
+  },
+  {
+    "videoId": "9aA2Qn2TETk",
+    "name": "Okinawa Bay",
+    "city": "Okinawa",
+    "lat": 26.3344,
+    "lng": 127.6809,
+    "type": "port"
+  },
+  {
+    "videoId": "ZdvNQ3D0PY4",
+    "name": "Naha Airport Cam 1 (WorldCams)",
+    "city": "Naha",
+    "lat": 26.1958,
+    "lng": 127.6459,
+    "type": "traffic"
+  },
+  {
+    "videoId": "3e_uPkJCTNo",
+    "name": "Naha Airport Cam 2 (WorldCams)",
+    "city": "Naha",
+    "lat": 26.1958,
+    "lng": 127.6459,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Yzl9offu5g8",
+    "name": "Naha Airport Cam 3 (WorldCams)",
+    "city": "Naha",
+    "lat": 26.1958,
+    "lng": 127.6459,
+    "type": "traffic"
+  },
+  {
+    "videoId": "AinAZQgQp_s",
+    "name": "Sendai Downtown",
+    "city": "Sendai",
+    "lat": 38.2682,
+    "lng": 140.8694,
+    "type": "city"
+  },
+  {
+    "videoId": "Ado_7_DMTdc",
+    "name": "Sendai Panorama",
+    "city": "Sendai",
+    "lat": 38.2682,
+    "lng": 140.8694,
+    "type": "city"
+  },
+  {
+    "videoId": "2_FFyGW-bx8",
+    "name": "Sendai Station",
+    "city": "Sendai",
+    "lat": 38.2601,
+    "lng": 140.8822,
+    "type": "traffic"
+  },
+  {
+    "videoId": "GrEEoEmmrKs",
+    "name": "Yubatake Hot Spring Cam 1",
+    "city": "Kusatsu",
+    "lat": 36.6213,
+    "lng": 138.5963,
+    "type": "landmark"
+  },
+  {
+    "videoId": "B_Sc1v1qR-g",
+    "name": "Yubatake Hot Spring Cam 2",
+    "city": "Kusatsu",
+    "lat": 36.6213,
+    "lng": 138.5963,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ybOa_LRzp_I",
+    "name": "Kusatsu Onsen Urakusa Jizo",
+    "city": "Kusatsu",
+    "lat": 36.6213,
+    "lng": 138.5963,
+    "type": "landmark"
+  },
+  {
+    "videoId": "RT_yg_qsK_M",
+    "name": "Kusatsu Onsen Town View",
+    "city": "Kusatsu",
+    "lat": 36.6213,
+    "lng": 138.5963,
+    "type": "webcam"
+  },
+  {
+    "videoId": "qdws9fzE4Cs",
+    "name": "Kusatsu Onsen Bus Terminal",
+    "city": "Kusatsu",
+    "lat": 36.6213,
+    "lng": 138.5963,
+    "type": "traffic"
+  },
+  {
+    "videoId": "XrytG2vDkqc",
+    "name": "Kusatsu Onsen Ski Resort",
+    "city": "Kusatsu",
+    "lat": 36.6134,
+    "lng": 138.575,
+    "type": "webcam"
+  },
+  {
+    "videoId": "hAbtM3btaJ8",
+    "name": "Sainokawara Park",
+    "city": "Kusatsu",
+    "lat": 36.624,
+    "lng": 138.593,
+    "type": "landmark"
+  },
+  {
+    "videoId": "0Q2YZBnp7vk",
+    "name": "Marunuma Ski Resort",
+    "city": "Katashina",
+    "lat": 36.8858,
+    "lng": 139.3142,
+    "type": "webcam"
+  },
+  {
+    "videoId": "P3bq6nGkpnE",
+    "name": "Hodaigi Ski Resort Minakami",
+    "city": "Minakami",
+    "lat": 36.838,
+    "lng": 139.02,
+    "type": "webcam"
+  },
+  {
+    "videoId": "r0lPKSgA4HI",
+    "name": "Saitama Keihin-Tohoku Line",
+    "city": "Saitama",
+    "lat": 35.8617,
+    "lng": 139.6455,
+    "type": "traffic"
+  },
+  {
+    "videoId": "-LxeC1RhMrU",
+    "name": "Nagano Station Railway",
+    "city": "Nagano",
+    "lat": 36.6432,
+    "lng": 138.1885,
+    "type": "traffic"
+  },
+  {
+    "videoId": "z1MErdsqsw8",
+    "name": "Yunokami Onsen Station",
+    "city": "Shimogo",
+    "lat": 37.2811,
+    "lng": 139.8867,
+    "type": "traffic"
+  },
+  {
+    "videoId": "THy9p2xJSek",
+    "name": "Noto-Sakura Station",
+    "city": "Anamizu",
+    "lat": 37.23,
+    "lng": 136.9,
+    "type": "traffic"
+  },
+  {
+    "videoId": "uCbr0YLxsac",
+    "name": "Sakurajima Volcano",
+    "city": "Kagoshima",
+    "lat": 31.5772,
+    "lng": 130.659,
+    "type": "landmark"
+  },
+  {
+    "videoId": "Mfq8V8uE0SU",
+    "name": "Sakurajima Volcano View 2",
+    "city": "Kagoshima",
+    "lat": 31.5772,
+    "lng": 130.659,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ox3uu-PmgtM",
+    "name": "Makurazaki Coast",
+    "city": "Makurazaki",
+    "lat": 31.27,
+    "lng": 130.295,
+    "type": "webcam"
+  },
+  {
+    "videoId": "PeElJClXtzE",
+    "name": "Sakurajima from Tarumizu",
+    "city": "Tarumizu",
+    "lat": 31.4806,
+    "lng": 130.696,
+    "type": "landmark"
+  },
+  {
+    "videoId": "rF8hCVrU3VU",
+    "name": "Mt Aso Nakadake & Kusasenri",
+    "city": "Aso",
+    "lat": 32.8842,
+    "lng": 131.0856,
+    "type": "landmark"
+  },
+  {
+    "videoId": "rGtE0C62fss",
+    "name": "Aso Kumamoto Airport",
+    "city": "Kumamoto",
+    "lat": 32.8373,
+    "lng": 130.8553,
+    "type": "traffic"
+  },
+  {
+    "videoId": "WknwFmhKRdQ",
+    "name": "Sakurajima & Kotsuki River",
+    "city": "Kagoshima",
+    "lat": 31.593,
+    "lng": 130.558,
+    "type": "landmark"
+  },
+  {
+    "videoId": "gtLrD-Xz6Go",
+    "name": "Kumamoto City Center",
+    "city": "Kumamoto",
+    "lat": 32.8032,
+    "lng": 130.7079,
+    "type": "city"
+  },
+  {
+    "videoId": "OYO_IZpUhOw",
+    "name": "Hitoyoshi",
+    "city": "Hitoyoshi",
+    "lat": 32.21,
+    "lng": 130.76,
+    "type": "webcam"
+  },
+  {
+    "videoId": "JC0_aImeb6o",
+    "name": "Karashima Park Kumamoto",
+    "city": "Kumamoto",
+    "lat": 32.8032,
+    "lng": 130.7079,
+    "type": "webcam"
+  },
+  {
+    "videoId": "HfSrh4sZf1U",
+    "name": "Amakusa Harbour",
+    "city": "Amakusa",
+    "lat": 32.4535,
+    "lng": 130.1934,
+    "type": "port"
+  },
+  {
+    "videoId": "AU_2zfM4m68",
+    "name": "Meriken Park Kobe Waterfront",
+    "city": "Kobe",
+    "lat": 34.6851,
+    "lng": 135.1845,
+    "type": "port"
+  },
+  {
+    "videoId": "8tDuhb9QnQ4",
+    "name": "JR Sannomiya Station Kobe",
+    "city": "Kobe",
+    "lat": 34.6932,
+    "lng": 135.1953,
+    "type": "traffic"
+  },
+  {
+    "videoId": "lsxYH2XQQCg",
+    "name": "Awaji Monkey Center",
+    "city": "Sumoto",
+    "lat": 34.35,
+    "lng": 134.898,
+    "type": "webcam"
+  },
+  {
+    "videoId": "x3P3N3VGvtU",
+    "name": "Minatomirai Yokohama",
+    "city": "Yokohama",
+    "lat": 35.4557,
+    "lng": 139.6328,
+    "type": "port"
+  },
+  {
+    "videoId": "ZeI0dnHjX6w",
+    "name": "Komachi Street Kamakura",
+    "city": "Kamakura",
+    "lat": 35.3192,
+    "lng": 139.5505,
+    "type": "city"
+  },
+  {
+    "videoId": "qYnCG4J26d8",
+    "name": "Lake Ashi Hakone",
+    "city": "Hakone",
+    "lat": 35.1956,
+    "lng": 139.0228,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ywXRfMLuw78",
+    "name": "Enoshima",
+    "city": "Fujisawa",
+    "lat": 35.3006,
+    "lng": 139.482,
+    "type": "landmark"
+  },
+  {
+    "videoId": "JN_Ws9-Hj6A",
+    "name": "Shichirigahama Kamakura",
+    "city": "Kamakura",
+    "lat": 35.3081,
+    "lng": 139.5129,
+    "type": "webcam"
+  },
+  {
+    "videoId": "VOix1wTjheQ",
+    "name": "Wakamiya-Oji Street Kamakura",
+    "city": "Kamakura",
+    "lat": 35.3192,
+    "lng": 139.5505,
+    "type": "city"
+  },
+  {
+    "videoId": "Rb8w1Ebpz5k",
+    "name": "Hokuriku Asahi Broadcasting HQ",
+    "city": "Kanazawa",
+    "lat": 36.5613,
+    "lng": 136.6562,
+    "type": "webcam"
+  },
+  {
+    "videoId": "DoC_PlS1P_M",
+    "name": "Enoshima Yacht Harbor",
+    "city": "Fujisawa",
+    "lat": 35.3006,
+    "lng": 139.482,
+    "type": "port"
+  },
+  {
+    "videoId": "hVGdqZAd1xA",
+    "name": "Panoramic Yokosuka",
+    "city": "Yokosuka",
+    "lat": 35.2814,
+    "lng": 139.6722,
+    "type": "city"
+  },
+  {
+    "videoId": "PrGQsGUAnk0",
+    "name": "Yokosuka Beach",
+    "city": "Yokosuka",
+    "lat": 35.2814,
+    "lng": 139.6722,
+    "type": "webcam"
+  },
+  {
+    "videoId": "CvWZlkY_r7Y",
+    "name": "Yusen Sorakaze Ferry Hakone",
+    "city": "Hakone",
+    "lat": 35.1956,
+    "lng": 139.0228,
+    "type": "port"
+  },
+  {
+    "videoId": "T2dB77dObao",
+    "name": "Shichirigahama Beach",
+    "city": "Kamakura",
+    "lat": 35.3081,
+    "lng": 139.5129,
+    "type": "webcam"
+  },
+  {
+    "videoId": "HXp5x6llMo4",
+    "name": "Karuizawa",
+    "city": "Karuizawa",
+    "lat": 36.3489,
+    "lng": 138.597,
+    "type": "webcam"
+  },
+  {
+    "videoId": "HvJdPF46kak",
+    "name": "Zenkoji Temple Nagano",
+    "city": "Nagano",
+    "lat": 36.661,
+    "lng": 138.1884,
+    "type": "landmark"
+  },
+  {
+    "videoId": "_G5cf3y6ePk",
+    "name": "Matsumoto Castle",
+    "city": "Matsumoto",
+    "lat": 36.2388,
+    "lng": 137.9688,
+    "type": "landmark"
+  },
+  {
+    "videoId": "lAWdqnXJ0w0",
+    "name": "Yudanaka Onsen Station",
+    "city": "Yamanouchi",
+    "lat": 36.7418,
+    "lng": 138.4198,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Tx_kEny6xdA",
+    "name": "Sugadaira Kogen Park",
+    "city": "Ueda",
+    "lat": 36.523,
+    "lng": 138.326,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ZpzNv_hNxPE",
+    "name": "Kenrokuen Garden",
+    "city": "Kanazawa",
+    "lat": 36.5623,
+    "lng": 136.6625,
+    "type": "landmark"
+  },
+  {
+    "videoId": "81-mJdCDK7M",
+    "name": "Kanazawa Station",
+    "city": "Kanazawa",
+    "lat": 36.5781,
+    "lng": 136.6481,
+    "type": "traffic"
+  },
+  {
+    "videoId": "He4-8AUC67Q",
+    "name": "Suzu Ishikawa",
+    "city": "Suzu",
+    "lat": 37.434,
+    "lng": 137.259,
+    "type": "webcam"
+  },
+  {
+    "videoId": "vjp_8TKQRhw",
+    "name": "Wajima Port",
+    "city": "Wajima",
+    "lat": 37.394,
+    "lng": 136.901,
+    "type": "port"
+  },
+  {
+    "videoId": "CgmxirNHFgI",
+    "name": "Suzu Cam 2",
+    "city": "Suzu",
+    "lat": 37.434,
+    "lng": 137.259,
+    "type": "webcam"
+  },
+  {
+    "videoId": "lfasmBsPKF4",
+    "name": "Panorama Kanazawa",
+    "city": "Kanazawa",
+    "lat": 36.5613,
+    "lng": 136.6562,
+    "type": "city"
+  },
+  {
+    "videoId": "SVpsCVjzoiI",
+    "name": "Port of Nagasaki Panoramic",
+    "city": "Nagasaki",
+    "lat": 32.7503,
+    "lng": 129.8779,
+    "type": "port"
+  },
+  {
+    "videoId": "TR0ZBrVbDio",
+    "name": "Ouchi-Juku Shimogo",
+    "city": "Shimogo",
+    "lat": 37.3308,
+    "lng": 139.8506,
+    "type": "landmark"
+  },
+  {
+    "videoId": "sgrAfWdVa0E",
+    "name": "Shinkansen Track Koriyama",
+    "city": "Koriyama",
+    "lat": 37.3991,
+    "lng": 140.3602,
+    "type": "traffic"
+  },
+  {
+    "videoId": "Vops6dmdH-U",
+    "name": "Nakajo Train Station",
+    "city": "Tainai",
+    "lat": 38.0597,
+    "lng": 139.4367,
+    "type": "traffic"
+  },
+  {
+    "videoId": "TUjtOgs_fCM",
+    "name": "Niigata Train Station",
+    "city": "Niigata",
+    "lat": 37.9116,
+    "lng": 139.0436,
+    "type": "traffic"
+  },
+  {
+    "videoId": "6S4qvf97cbQ",
+    "name": "Satta Pass",
+    "city": "Shizuoka",
+    "lat": 35.0909,
+    "lng": 138.5547,
+    "type": "landmark"
+  },
+  {
+    "videoId": "6DRNhfD2_lM",
+    "name": "Shimoda Main Square",
+    "city": "Shimoda",
+    "lat": 34.6796,
+    "lng": 138.9447,
+    "type": "city"
+  },
+  {
+    "videoId": "3FMywRQma8k",
+    "name": "Tottori Sand Dunes",
+    "city": "Tottori",
+    "lat": 35.541,
+    "lng": 134.2282,
+    "type": "landmark"
+  },
+  {
+    "videoId": "hrfezTwcN4c",
+    "name": "Shirahama Beach",
+    "city": "Shirahama",
+    "lat": 33.68,
+    "lng": 135.348,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Bv6pTaelhyk",
+    "name": "Shirahama Beach Cam 2",
+    "city": "Shirahama",
+    "lat": 33.68,
+    "lng": 135.348,
+    "type": "webcam"
+  },
+  {
+    "videoId": "trSGa-eTSrk",
+    "name": "Towada Lake",
+    "city": "Towada",
+    "lat": 40.4303,
+    "lng": 140.8742,
+    "type": "landmark"
+  },
+  {
+    "videoId": "kAGaBIURcv4",
+    "name": "Adachi Museum Gardens",
+    "city": "Yasugi",
+    "lat": 35.392,
+    "lng": 133.237,
+    "type": "landmark"
+  },
+  {
+    "videoId": "G9zwamFFI3Q",
+    "name": "Miyagawa Kajibashi Bridge Takayama",
+    "city": "Takayama",
+    "lat": 36.1412,
+    "lng": 137.2531,
+    "type": "landmark"
+  },
+  {
+    "videoId": "vaifJWjqu0k",
+    "name": "Chiba Live Cam",
+    "city": "Chiba",
+    "lat": 35.6074,
+    "lng": 140.1065,
+    "type": "city"
+  },
+  {
+    "videoId": "Bxvp5bQ7Qa4",
+    "name": "Lake Biwa",
+    "city": "Otsu",
+    "lat": 35.3375,
+    "lng": 136.0744,
+    "type": "landmark"
+  },
+  {
+    "videoId": "Prb4reZ1e0Y",
+    "name": "Nikko Futarasan Shrine",
+    "city": "Nikko",
+    "lat": 36.7498,
+    "lng": 139.5984,
+    "type": "landmark"
+  },
+  {
+    "videoId": "FgiU0Lv9jwU",
+    "name": "Okura Village",
+    "city": "Okura",
+    "lat": 38.85,
+    "lng": 140.33,
+    "type": "webcam"
+  },
+  {
+    "videoId": "OV0JEv6C2QQ",
+    "name": "Shimanami Kaido Expressway",
+    "city": "Imabari",
+    "lat": 34.21,
+    "lng": 133.05,
+    "type": "landmark"
+  },
+  {
+    "videoId": "_d7Q4wxNfyE",
+    "name": "Panoramic Matsuyama",
+    "city": "Matsuyama",
+    "lat": 33.8416,
+    "lng": 132.7657,
+    "type": "city"
+  }
+]

@@ -1,0 +1,1752 @@
+[
+  {
+    "id": "paris-eiffel-tower",
+    "name": "Eiffel Tower Live",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8584,
+    "lng": 2.2945,
+    "videoId": "OzYp4NRZlwQ",
+    "type": "landmark"
+  },
+  {
+    "id": "paris-sacre-coeur",
+    "name": "Sacré-Cœur Basilica",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8867,
+    "lng": 2.3431,
+    "videoId": "lNAhqd8JLtw",
+    "type": "landmark"
+  },
+  {
+    "id": "paris-panorama",
+    "name": "Paris Panorama",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "videoId": "UHlDzWrBEPI",
+    "type": "city"
+  },
+  {
+    "id": "paris-seine-notre-dame",
+    "name": "Seine River and Notre Dame",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8530,
+    "lng": 2.3499,
+    "videoId": "k3DZKHJ4Aqg",
+    "type": "landmark"
+  },
+  {
+    "id": "london-walworth-road",
+    "name": "Walworth Road",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.4875,
+    "lng": -0.0934,
+    "videoId": "8JCk5M_xrBs",
+    "type": "city"
+  },
+  {
+    "id": "london-west",
+    "name": "West London Cam",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.4934,
+    "lng": -0.2247,
+    "videoId": "k51jbDqaI4s",
+    "type": "city"
+  },
+  {
+    "id": "london-abbey-road",
+    "name": "Abbey Road Crossing",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.5320,
+    "lng": -0.1780,
+    "videoId": "M3EYAY2MftI",
+    "type": "landmark"
+  },
+  {
+    "id": "london-dawlish-marine",
+    "name": "Dawlish Marine Parade",
+    "city": "Dawlish",
+    "country": "GB",
+    "lat": 50.5815,
+    "lng": -3.4637,
+    "videoId": "ywz1mcnusfk",
+    "type": "webcam"
+  },
+  {
+    "id": "venice-rialto",
+    "name": "Venice Rialto Bridge",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4380,
+    "lng": 12.3358,
+    "videoId": "K_Vg94nBiaY",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-st-marks-basin",
+    "name": "St. Mark's Basin",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4326,
+    "lng": 12.3430,
+    "videoId": "dFBRpHHwQeg",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-scalzi-bridge",
+    "name": "Scalzi Bridge 4K",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4413,
+    "lng": 12.3218,
+    "videoId": "4wKN93E3K8g",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-bacino-san-marco",
+    "name": "Bacino di San Marco from Via Garibaldi",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4325,
+    "lng": 12.3540,
+    "videoId": "7fhy-Eu8AFs",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-lagoon",
+    "name": "Lagoon of Venice 4K PTZ",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4352,
+    "lng": 12.3185,
+    "videoId": "BPDwgX9GIjs",
+    "type": "webcam"
+  },
+  {
+    "id": "venice-grand-canal-angeli",
+    "name": "Grand Canal from Ca' Angeli",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4368,
+    "lng": 12.3327,
+    "videoId": "HkuZmbVsgF4",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-grand-canal-povoledo",
+    "name": "Grand Canal from Trattoria Povoledo",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4409,
+    "lng": 12.3222,
+    "videoId": "P6JA_YjHMZs",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-grand-canal-san-cassiano",
+    "name": "Grand Canal from Hotel San Cassiano",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4395,
+    "lng": 12.3315,
+    "videoId": "lFQ_BvxIcnI",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-grand-canal-2",
+    "name": "Grand Canal View",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4375,
+    "lng": 12.3330,
+    "videoId": "P393gTj527k",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-ponte-guglie",
+    "name": "Ponte delle Guglie",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4432,
+    "lng": 12.3275,
+    "videoId": "HpZAez2oYsA",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-ponte-guglie-2",
+    "name": "Ponte delle Guglie and Strada Nova",
+    "city": "Venice",
+    "country": "IT",
+    "lat": 45.4432,
+    "lng": 12.3275,
+    "videoId": "yGQepsHPcN4",
+    "type": "landmark"
+  },
+  {
+    "id": "venice-chioggia",
+    "name": "Chioggia Sottomarina 4K",
+    "city": "Chioggia",
+    "country": "IT",
+    "lat": 45.2170,
+    "lng": 12.2850,
+    "videoId": "KnlnB2Poxr0",
+    "type": "webcam"
+  },
+  {
+    "id": "venice-jesolo",
+    "name": "Jesolo Lido Beach",
+    "city": "Jesolo",
+    "country": "IT",
+    "lat": 45.5028,
+    "lng": 12.6431,
+    "videoId": "ES2aIagLWZs",
+    "type": "webcam"
+  },
+  {
+    "id": "rome-trevi",
+    "name": "Rome Trevi Fountain Area",
+    "city": "Rome",
+    "country": "IT",
+    "lat": 41.9009,
+    "lng": 12.4833,
+    "videoId": "wMT2aNcP4Wg",
+    "type": "landmark"
+  },
+  {
+    "id": "catania-etna-villa-mirador",
+    "name": "Mount Etna from Villa Mirador",
+    "city": "Catania",
+    "country": "IT",
+    "lat": 37.7510,
+    "lng": 14.9934,
+    "videoId": "KB3f4zmkqcM",
+    "type": "landmark"
+  },
+  {
+    "id": "catania-etna-santa-venerina",
+    "name": "Mount Etna from Santa Venerina",
+    "city": "Santa Venerina",
+    "country": "IT",
+    "lat": 37.6870,
+    "lng": 15.1385,
+    "videoId": "iOR1htkbkNI",
+    "type": "landmark"
+  },
+  {
+    "id": "catania-etna-agira",
+    "name": "Mount Etna from Agira",
+    "city": "Agira",
+    "country": "IT",
+    "lat": 37.6533,
+    "lng": 14.5217,
+    "videoId": "te59cTcAvMQ",
+    "type": "landmark"
+  },
+  {
+    "id": "catania-etna-nunziata",
+    "name": "Mount Etna from Nunziata di Mascali",
+    "city": "Mascali",
+    "country": "IT",
+    "lat": 37.7290,
+    "lng": 15.1960,
+    "videoId": "pO2zFFeqiMo",
+    "type": "landmark"
+  },
+  {
+    "id": "como-menaggio",
+    "name": "Lake Como from Menaggio",
+    "city": "Menaggio",
+    "country": "IT",
+    "lat": 46.0223,
+    "lng": 9.2390,
+    "videoId": "LlVnKOue3-I",
+    "type": "webcam"
+  },
+  {
+    "id": "como-menaggio-2",
+    "name": "Lake Como Menaggio View 2",
+    "city": "Menaggio",
+    "country": "IT",
+    "lat": 46.0223,
+    "lng": 9.2390,
+    "videoId": "tttUK6YK48U",
+    "type": "webcam"
+  },
+  {
+    "id": "como-skyline",
+    "name": "Lake Como Skyline",
+    "city": "Como",
+    "country": "IT",
+    "lat": 45.8103,
+    "lng": 9.0854,
+    "videoId": "d0-a8UJAyvY",
+    "type": "city"
+  },
+  {
+    "id": "como-sorico",
+    "name": "Lake Como from Sorico",
+    "city": "Sorico",
+    "country": "IT",
+    "lat": 46.1672,
+    "lng": 9.3822,
+    "videoId": "DJed4o6GllY",
+    "type": "webcam"
+  },
+  {
+    "id": "assisi-piazza-comune",
+    "name": "Assisi Piazza del Comune",
+    "city": "Assisi",
+    "country": "IT",
+    "lat": 43.0704,
+    "lng": 12.6173,
+    "videoId": "CkNeltsc5ps",
+    "type": "city"
+  },
+  {
+    "id": "assisi-basilica-san-francesco",
+    "name": "Basilica di San Francesco",
+    "city": "Assisi",
+    "country": "IT",
+    "lat": 43.0755,
+    "lng": 12.6062,
+    "videoId": "5ka3YhVZgME",
+    "type": "landmark"
+  },
+  {
+    "id": "assisi-piazza-san-rufino",
+    "name": "Assisi Piazza San Rufino",
+    "city": "Assisi",
+    "country": "IT",
+    "lat": 43.0706,
+    "lng": 12.6202,
+    "videoId": "4cqPDoX6uws",
+    "type": "city"
+  },
+  {
+    "id": "assisi-panorama",
+    "name": "Assisi City Panorama",
+    "city": "Assisi",
+    "country": "IT",
+    "lat": 43.0713,
+    "lng": 12.6167,
+    "videoId": "1Ho6SNEiOlk",
+    "type": "city"
+  },
+  {
+    "id": "palermo-cathedral-1",
+    "name": "Palermo Cathedral View 1",
+    "city": "Palermo",
+    "country": "IT",
+    "lat": 38.1143,
+    "lng": 13.3564,
+    "videoId": "X7K8IreZ5nw",
+    "type": "landmark"
+  },
+  {
+    "id": "palermo-cathedral-2",
+    "name": "Palermo Cathedral View 2",
+    "city": "Palermo",
+    "country": "IT",
+    "lat": 38.1143,
+    "lng": 13.3564,
+    "videoId": "VgCIW0Y2k1k",
+    "type": "landmark"
+  },
+  {
+    "id": "istanbul-bosphorus",
+    "name": "Istanbul Bosphorus",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "videoId": "Vqzek6ZWy3Y",
+    "type": "city"
+  },
+  {
+    "id": "istanbul-golden-horn",
+    "name": "Istanbul Golden Horn",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0196,
+    "lng": 28.9724,
+    "videoId": "VdAUx5pV3A4",
+    "type": "city"
+  },
+  {
+    "id": "amsterdam-schiphol-airport",
+    "name": "Schiphol Airport",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.3105,
+    "lng": 4.7683,
+    "videoId": "Gd9d4q6WvUY",
+    "type": "traffic"
+  },
+  {
+    "id": "amsterdam-centraal-station-1",
+    "name": "Amsterdam Centraal Station",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.3791,
+    "lng": 4.9003,
+    "videoId": "1phWWCgzXgM",
+    "type": "city"
+  },
+  {
+    "id": "amsterdam-centraal-rooftop",
+    "name": "Amsterdam Centraal Rooftop View",
+    "city": "Amsterdam",
+    "country": "NL",
+    "lat": 52.3791,
+    "lng": 4.9003,
+    "videoId": "9Pm6Ji6tm7s",
+    "type": "city"
+  },
+  {
+    "id": "berlin-brandenburg-gate",
+    "name": "Brandenburg Gate",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5163,
+    "lng": 13.3777,
+    "videoId": "IRqboacDNFg",
+    "type": "landmark"
+  },
+  {
+    "id": "berlin-olympiastadion",
+    "name": "Berlin Olympic Stadium",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5147,
+    "lng": 13.2394,
+    "videoId": "61b3Jty73Zo",
+    "type": "landmark"
+  },
+  {
+    "id": "berlin-panorama",
+    "name": "Berlin Panorama",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5200,
+    "lng": 13.4050,
+    "videoId": "LAJiFSw2ICc",
+    "type": "city"
+  },
+  {
+    "id": "berlin-westendbrucke",
+    "name": "Berlin Westendbrücke",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5130,
+    "lng": 13.2690,
+    "videoId": "qOBuT6TmMCw",
+    "type": "traffic"
+  },
+  {
+    "id": "prague-old-town",
+    "name": "Prague Old Town",
+    "city": "Prague",
+    "country": "CZ",
+    "lat": 50.0874,
+    "lng": 14.4213,
+    "videoId": "IFnbDmgP69Q",
+    "type": "city"
+  },
+  {
+    "id": "scheveningen-beach",
+    "name": "Scheveningen Beach",
+    "city": "The Hague",
+    "country": "NL",
+    "lat": 52.1015,
+    "lng": 4.2785,
+    "videoId": "A5kXiKzbBFs",
+    "type": "webcam"
+  },
+  {
+    "id": "barcelona-sagrada-familia",
+    "name": "Sagrada Familia",
+    "city": "Barcelona",
+    "country": "ES",
+    "lat": 41.4036,
+    "lng": 2.1744,
+    "videoId": "NHRDdaH4LpU",
+    "type": "landmark"
+  },
+  {
+    "id": "dublin-temple-bar",
+    "name": "Temple Bar",
+    "city": "Dublin",
+    "country": "IE",
+    "lat": 53.3454,
+    "lng": -6.2644,
+    "videoId": "3nyPER2kzqk",
+    "type": "landmark"
+  },
+  {
+    "id": "garmisch-bavarian-alps",
+    "name": "Bavarian Alps Garmisch",
+    "city": "Garmisch-Partenkirchen",
+    "country": "DE",
+    "lat": 47.4917,
+    "lng": 11.0958,
+    "videoId": "hXCcHjrPN-s",
+    "type": "webcam"
+  },
+  {
+    "id": "split-riva",
+    "name": "Split Riva Waterfront",
+    "city": "Split",
+    "country": "HR",
+    "lat": 43.5081,
+    "lng": 16.4402,
+    "videoId": "0wHWHAFnNh0",
+    "type": "city"
+  },
+  {
+    "id": "kilpisjarvi-northern-lights",
+    "name": "Northern Lights Kilpisjärvi",
+    "city": "Kilpisjärvi",
+    "country": "FI",
+    "lat": 69.0455,
+    "lng": 20.7891,
+    "videoId": "ccTVAhJU5lg",
+    "type": "webcam"
+  },
+  {
+    "id": "levi-northern-lights",
+    "name": "Northern Lights Levi",
+    "city": "Levi",
+    "country": "FI",
+    "lat": 67.7959,
+    "lng": 24.8141,
+    "videoId": "rKfecmmzzw0",
+    "type": "webcam"
+  },
+  {
+    "id": "sodankyla-northern-lights",
+    "name": "Northern Lights Sodankylä",
+    "city": "Sodankylä",
+    "country": "FI",
+    "lat": 67.4147,
+    "lng": 26.5961,
+    "videoId": "dnlQtDad6Dk",
+    "type": "webcam"
+  },
+  {
+    "id": "finland-aurora-realtime",
+    "name": "Aurora Alert Finland",
+    "city": "Lapland",
+    "country": "FI",
+    "lat": 68.0000,
+    "lng": 25.0000,
+    "videoId": "AvKdtZIb-6c",
+    "type": "webcam"
+  },
+  {
+    "id": "athens-acropolis",
+    "name": "Athens Acropolis View",
+    "city": "Athens",
+    "country": "GR",
+    "lat": 37.9715,
+    "lng": 23.7257,
+    "videoId": "5p-s-1453Us",
+    "type": "landmark"
+  },
+  {
+    "id": "zermatt-matterhorn",
+    "name": "Matterhorn Swiss Alps",
+    "city": "Zermatt",
+    "country": "CH",
+    "lat": 46.0207,
+    "lng": 7.7491,
+    "videoId": "enYFXf8u7Lc",
+    "type": "webcam"
+  },
+  {
+    "id": "zurich-airport",
+    "name": "Zurich Airport",
+    "city": "Zurich",
+    "country": "CH",
+    "lat": 47.4647,
+    "lng": 8.5492,
+    "videoId": "Qcz9JKxFfW4",
+    "type": "traffic"
+  },
+  {
+    "id": "hamburg-port-1",
+    "name": "Port of Hamburg View 1",
+    "city": "Hamburg",
+    "country": "DE",
+    "lat": 53.5415,
+    "lng": 9.9665,
+    "videoId": "P1A1b3R3Se4",
+    "type": "port"
+  },
+  {
+    "id": "hamburg-port-2",
+    "name": "Port of Hamburg View 2",
+    "city": "Hamburg",
+    "country": "DE",
+    "lat": 53.5415,
+    "lng": 9.9665,
+    "videoId": "mfpdquRilCk",
+    "type": "port"
+  },
+  {
+    "id": "lanzarote-airport-1",
+    "name": "Lanzarote Airport View 1",
+    "city": "Arrecife",
+    "country": "ES",
+    "lat": 28.9455,
+    "lng": -13.6052,
+    "videoId": "AAlo3eCPVbk",
+    "type": "traffic"
+  },
+  {
+    "id": "lanzarote-airport-2",
+    "name": "Lanzarote Airport View 2",
+    "city": "Arrecife",
+    "country": "ES",
+    "lat": 28.9455,
+    "lng": -13.6052,
+    "videoId": "JgdRpYxwt4s",
+    "type": "traffic"
+  },
+  {
+    "id": "las-palmas-port-1",
+    "name": "Port of Las Palmas View 1",
+    "city": "Las Palmas",
+    "country": "ES",
+    "lat": 28.1235,
+    "lng": -15.4318,
+    "videoId": "oZpS1U46kb4",
+    "type": "port"
+  },
+  {
+    "id": "las-palmas-port-2",
+    "name": "Port of Las Palmas View 2",
+    "city": "Las Palmas",
+    "country": "ES",
+    "lat": 28.1235,
+    "lng": -15.4318,
+    "videoId": "hRw1_JQMQoE",
+    "type": "port"
+  },
+  {
+    "id": "mallorca-can-pastilla",
+    "name": "Mallorca Can Pastilla Beach",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5278,
+    "lng": 2.7347,
+    "videoId": "VsQekhPeUKs",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-playa-muro",
+    "name": "Mallorca Playa de Muro",
+    "city": "Muro",
+    "country": "ES",
+    "lat": 39.7880,
+    "lng": 3.1097,
+    "videoId": "fH3h_6yoK6s",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-cala-agulla",
+    "name": "Mallorca Cala Agulla",
+    "city": "Capdepera",
+    "country": "ES",
+    "lat": 39.7158,
+    "lng": 3.4574,
+    "videoId": "L-0OgXFSjLs",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-4",
+    "name": "Mallorca Beach View 4",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5600,
+    "lng": 2.6500,
+    "videoId": "XgwdtWuAlGM",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-5",
+    "name": "Mallorca Beach View 5",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5600,
+    "lng": 2.6400,
+    "videoId": "LthZ4IeUM30",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-6",
+    "name": "Mallorca Beach View 6",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5500,
+    "lng": 2.6300,
+    "videoId": "pQil5Xc372E",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-7",
+    "name": "Mallorca Beach View 7",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5400,
+    "lng": 2.6200,
+    "videoId": "4VAvvsBeV9Y",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-8",
+    "name": "Mallorca Beach View 8",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5350,
+    "lng": 2.6100,
+    "videoId": "bkHVlz7Av9c",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-9",
+    "name": "Mallorca Beach View 9",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5300,
+    "lng": 2.6000,
+    "videoId": "AeFSWxScJ8c",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-10",
+    "name": "Mallorca Beach View 10",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5250,
+    "lng": 2.5900,
+    "videoId": "Hxm3aX8T9Ao",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-11",
+    "name": "Mallorca Beach View 11",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5200,
+    "lng": 2.5800,
+    "videoId": "1JQ7K6yZWYs",
+    "type": "webcam"
+  },
+  {
+    "id": "mallorca-beach-12",
+    "name": "Mallorca Beach View 12",
+    "city": "Palma de Mallorca",
+    "country": "ES",
+    "lat": 39.5150,
+    "lng": 2.5700,
+    "videoId": "DKnhcTwSkJs",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-los-cristianos",
+    "name": "Tenerife Playa de Los Cristianos",
+    "city": "Los Cristianos",
+    "country": "ES",
+    "lat": 28.0513,
+    "lng": -16.7155,
+    "videoId": "yGV8MyVYw_I",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-las-vistas",
+    "name": "Tenerife Playa Las Vistas",
+    "city": "Los Cristianos",
+    "country": "ES",
+    "lat": 28.0537,
+    "lng": -16.7267,
+    "videoId": "ULVA54zcoeQ",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-playa-honda",
+    "name": "Tenerife Playa Honda",
+    "city": "Costa Adeje",
+    "country": "ES",
+    "lat": 28.0800,
+    "lng": -16.7350,
+    "videoId": "S6z7esP33j4",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-americas-1",
+    "name": "Tenerife Playa de las Américas View 1",
+    "city": "Arona",
+    "country": "ES",
+    "lat": 28.0594,
+    "lng": -16.7300,
+    "videoId": "vVp1H5fZE0k",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-americas-2",
+    "name": "Tenerife Playa de las Américas View 2",
+    "city": "Arona",
+    "country": "ES",
+    "lat": 28.0600,
+    "lng": -16.7310,
+    "videoId": "WBhqgii4dSw",
+    "type": "webcam"
+  },
+  {
+    "id": "tenerife-americas-3",
+    "name": "Tenerife Playa de las Américas View 3",
+    "city": "Arona",
+    "country": "ES",
+    "lat": 28.0610,
+    "lng": -16.7320,
+    "videoId": "9nBcSKKULIM",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-playa-ingles-1",
+    "name": "Gran Canaria Playa del Inglés View 1",
+    "city": "San Bartolomé de Tirajana",
+    "country": "ES",
+    "lat": 27.7570,
+    "lng": -15.5721,
+    "videoId": "qLEP2uQFwwg",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-playa-ingles-2",
+    "name": "Gran Canaria Playa del Inglés View 2",
+    "city": "San Bartolomé de Tirajana",
+    "country": "ES",
+    "lat": 27.7575,
+    "lng": -15.5725,
+    "videoId": "ksly_2bWGiE",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-beach-3",
+    "name": "Gran Canaria Beach View 3",
+    "city": "San Bartolomé de Tirajana",
+    "country": "ES",
+    "lat": 27.7580,
+    "lng": -15.5730,
+    "videoId": "ElZh1azg7c4",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-beach-4",
+    "name": "Gran Canaria Beach View 4",
+    "city": "San Bartolomé de Tirajana",
+    "country": "ES",
+    "lat": 27.7585,
+    "lng": -15.5735,
+    "videoId": "6rJtyYXOn4s",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-yumbo-1",
+    "name": "Gran Canaria Yumbo Centrum View 1",
+    "city": "Maspalomas",
+    "country": "ES",
+    "lat": 27.7570,
+    "lng": -15.5750,
+    "videoId": "Ea48y09PuNc",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-yumbo-2",
+    "name": "Gran Canaria Yumbo Centrum View 2",
+    "city": "Maspalomas",
+    "country": "ES",
+    "lat": 27.7572,
+    "lng": -15.5752,
+    "videoId": "xWlZip2pwjU",
+    "type": "webcam"
+  },
+  {
+    "id": "gran-canaria-yumbo-3",
+    "name": "Gran Canaria Yumbo Centrum View 3",
+    "city": "Maspalomas",
+    "country": "ES",
+    "lat": 27.7574,
+    "lng": -15.5754,
+    "videoId": "o09siXxJw9A",
+    "type": "webcam"
+  },
+  {
+    "id": "girona-fornells-sud",
+    "name": "Girona Railway Fornells de la Selva South",
+    "city": "Fornells de la Selva",
+    "country": "ES",
+    "lat": 41.9180,
+    "lng": 2.8040,
+    "videoId": "_-zx2fSWpTU",
+    "type": "traffic"
+  },
+  {
+    "id": "girona-fornells-nord",
+    "name": "Girona Railway Fornells de la Selva North",
+    "city": "Fornells de la Selva",
+    "country": "ES",
+    "lat": 41.9200,
+    "lng": 2.8050,
+    "videoId": "0zTOXdxQAp0",
+    "type": "traffic"
+  },
+  {
+    "id": "girona-centre-railway",
+    "name": "Girona Centre Railway Station",
+    "city": "Girona",
+    "country": "ES",
+    "lat": 41.9791,
+    "lng": 2.8185,
+    "videoId": "ot5Rj1NI84k",
+    "type": "traffic"
+  },
+  {
+    "id": "ibiza-beach",
+    "name": "Ibiza Beach",
+    "city": "Ibiza",
+    "country": "ES",
+    "lat": 38.9067,
+    "lng": 1.4206,
+    "videoId": "DuBAVRZVn2A",
+    "type": "webcam"
+  },
+  {
+    "id": "cannes-boulevard-midi",
+    "name": "Cannes Boulevard du Midi",
+    "city": "Cannes",
+    "country": "FR",
+    "lat": 43.5492,
+    "lng": 7.0108,
+    "videoId": "z6BNMoj9Pyo",
+    "type": "city"
+  },
+  {
+    "id": "cannes-palm-beach",
+    "name": "Cannes Palm Beach",
+    "city": "Cannes",
+    "country": "FR",
+    "lat": 43.5395,
+    "lng": 7.0380,
+    "videoId": "8cff6yAO9bw",
+    "type": "webcam"
+  },
+  {
+    "id": "cannes-quai-laubeuf",
+    "name": "Cannes Quai Laubeuf",
+    "city": "Cannes",
+    "country": "FR",
+    "lat": 43.5506,
+    "lng": 7.0155,
+    "videoId": "asO_10T0k2k",
+    "type": "port"
+  },
+  {
+    "id": "la-plagne-colorado",
+    "name": "La Plagne Ski Resort Colorado",
+    "city": "La Plagne",
+    "country": "FR",
+    "lat": 45.5056,
+    "lng": 6.6757,
+    "videoId": "82VhHHL9F78",
+    "type": "webcam"
+  },
+  {
+    "id": "la-plagne-arc-1950",
+    "name": "Arc 1950 Ski Resort",
+    "city": "Bourg-Saint-Maurice",
+    "country": "FR",
+    "lat": 45.5700,
+    "lng": 6.8500,
+    "videoId": "k0n1AcaQ6C8",
+    "type": "webcam"
+  },
+  {
+    "id": "la-plagne-bergerie",
+    "name": "La Plagne Bergerie 2184m",
+    "city": "La Plagne",
+    "country": "FR",
+    "lat": 45.5200,
+    "lng": 6.6800,
+    "videoId": "emSM3Eh0YUw",
+    "type": "webcam"
+  },
+  {
+    "id": "tromso-construction-1",
+    "name": "Tromsø Vervet View 1",
+    "city": "Tromsø",
+    "country": "NO",
+    "lat": 69.6496,
+    "lng": 18.9560,
+    "videoId": "3y7_fkAzzps",
+    "type": "city"
+  },
+  {
+    "id": "tromso-construction-2",
+    "name": "Tromsø Vervet View 2",
+    "city": "Tromsø",
+    "country": "NO",
+    "lat": 69.6496,
+    "lng": 18.9560,
+    "videoId": "zKpPfH8u3GI",
+    "type": "city"
+  },
+  {
+    "id": "oslo-city-1",
+    "name": "Oslo City View 1",
+    "city": "Oslo",
+    "country": "NO",
+    "lat": 59.9139,
+    "lng": 10.7522,
+    "videoId": "uUirqfUMK94",
+    "type": "city"
+  },
+  {
+    "id": "oslo-city-2",
+    "name": "Oslo City View 2",
+    "city": "Oslo",
+    "country": "NO",
+    "lat": 59.9139,
+    "lng": 10.7522,
+    "videoId": "7VXn9NpuSZk",
+    "type": "city"
+  },
+  {
+    "id": "geiranger-fjord-1",
+    "name": "Geirangerfjord View 1",
+    "city": "Geiranger",
+    "country": "NO",
+    "lat": 62.1014,
+    "lng": 7.2060,
+    "videoId": "yMSc-qqW3To",
+    "type": "webcam"
+  },
+  {
+    "id": "geiranger-fjord-2",
+    "name": "Geirangerfjord View 2",
+    "city": "Geiranger",
+    "country": "NO",
+    "lat": 62.1014,
+    "lng": 7.2060,
+    "videoId": "S4aJlRY39fo",
+    "type": "webcam"
+  },
+  {
+    "id": "geiranger-fjord-3",
+    "name": "Geirangerfjord View 3",
+    "city": "Geiranger",
+    "country": "NO",
+    "lat": 62.1014,
+    "lng": 7.2060,
+    "videoId": "wAdTV6Uc5eA",
+    "type": "webcam"
+  },
+  {
+    "id": "geiranger-fjord-4",
+    "name": "Geirangerfjord Cruise Port",
+    "city": "Geiranger",
+    "country": "NO",
+    "lat": 62.1014,
+    "lng": 7.2060,
+    "videoId": "kRbPEg89tjA",
+    "type": "port"
+  },
+  {
+    "id": "narvik-harbour",
+    "name": "Narvik Harbour",
+    "city": "Narvik",
+    "country": "NO",
+    "lat": 68.4283,
+    "lng": 17.4271,
+    "videoId": "OJneSeFqaaw",
+    "type": "port"
+  },
+  {
+    "id": "narvik-ski-resort",
+    "name": "Narvikfjellet Ski Resort",
+    "city": "Narvik",
+    "country": "NO",
+    "lat": 68.4500,
+    "lng": 17.3700,
+    "videoId": "DLjrZmVE_y4",
+    "type": "webcam"
+  },
+  {
+    "id": "finse-railroad-station",
+    "name": "Finse Railroad Station",
+    "city": "Finse",
+    "country": "NO",
+    "lat": 60.5955,
+    "lng": 7.5017,
+    "videoId": "blFtFGu0QBE",
+    "type": "traffic"
+  },
+  {
+    "id": "helsinki-port-west-south",
+    "name": "Helsinki West Harbour South",
+    "city": "Helsinki",
+    "country": "FI",
+    "lat": 60.1548,
+    "lng": 24.9118,
+    "videoId": "6hPWq2IG08M",
+    "type": "port"
+  },
+  {
+    "id": "helsinki-port-west-north",
+    "name": "Helsinki West Harbour North",
+    "city": "Helsinki",
+    "country": "FI",
+    "lat": 60.1558,
+    "lng": 24.9128,
+    "videoId": "JnJhFYhIjFs",
+    "type": "port"
+  },
+  {
+    "id": "helsinki-south-harbour",
+    "name": "Helsinki South Harbour",
+    "city": "Helsinki",
+    "country": "FI",
+    "lat": 60.1675,
+    "lng": 24.9540,
+    "videoId": "CvOB-Is_yYU",
+    "type": "port"
+  },
+  {
+    "id": "rotterdam-cruise-terminal",
+    "name": "Rotterdam Cruise Terminal",
+    "city": "Rotterdam",
+    "country": "NL",
+    "lat": 51.9046,
+    "lng": 4.4894,
+    "videoId": "nFozEhYTEMo",
+    "type": "port"
+  },
+  {
+    "id": "rotterdam-kpn",
+    "name": "Rotterdam KPN Tower View",
+    "city": "Rotterdam",
+    "country": "NL",
+    "lat": 51.9203,
+    "lng": 4.4875,
+    "videoId": "gsViKzj7nuQ",
+    "type": "city"
+  },
+  {
+    "id": "rotterdam-euromast",
+    "name": "Rotterdam Euromast View",
+    "city": "Rotterdam",
+    "country": "NL",
+    "lat": 51.9055,
+    "lng": 4.4667,
+    "videoId": "1wWlJyopdN4",
+    "type": "city"
+  },
+  {
+    "id": "rotterdam-laurenskwartier",
+    "name": "Rotterdam Laurenskwartier",
+    "city": "Rotterdam",
+    "country": "NL",
+    "lat": 51.9204,
+    "lng": 4.4875,
+    "videoId": "2JyBX4a0-aA",
+    "type": "city"
+  },
+  {
+    "id": "zandvoort-railway-1",
+    "name": "Zandvoort Railway Station View 1",
+    "city": "Zandvoort",
+    "country": "NL",
+    "lat": 52.3726,
+    "lng": 4.5310,
+    "videoId": "kqFVH8_D4jo",
+    "type": "traffic"
+  },
+  {
+    "id": "zandvoort-railway-2",
+    "name": "Zandvoort Railway Station View 2",
+    "city": "Zandvoort",
+    "country": "NL",
+    "lat": 52.3726,
+    "lng": 4.5310,
+    "videoId": "4lVSpnP-CGE",
+    "type": "traffic"
+  },
+  {
+    "id": "elburg-city",
+    "name": "Elburg Vischmarkt",
+    "city": "Elburg",
+    "country": "NL",
+    "lat": 52.4467,
+    "lng": 5.8417,
+    "videoId": "UWZNkLXKDpo",
+    "type": "city"
+  },
+  {
+    "id": "castricum-beach",
+    "name": "Castricum aan Zee Beach",
+    "city": "Castricum",
+    "country": "NL",
+    "lat": 52.5500,
+    "lng": 4.6170,
+    "videoId": "5UAYdVOIeFM",
+    "type": "webcam"
+  },
+  {
+    "id": "ameland-nes",
+    "name": "Ameland Nes",
+    "city": "Nes",
+    "country": "NL",
+    "lat": 53.4480,
+    "lng": 5.7600,
+    "videoId": "4-nvvYRJsIs",
+    "type": "webcam"
+  },
+  {
+    "id": "pieterburen-seal-centre",
+    "name": "Pieterburen Seal Centre",
+    "city": "Pieterburen",
+    "country": "NL",
+    "lat": 53.3958,
+    "lng": 6.4508,
+    "videoId": "aXAsMcmtJTc",
+    "type": "webcam"
+  },
+  {
+    "id": "zeewolde-windmill",
+    "name": "Zeewolde Windmill PTZ",
+    "city": "Zeewolde",
+    "country": "NL",
+    "lat": 52.3284,
+    "lng": 5.5410,
+    "videoId": "OD6pKGAtlqU",
+    "type": "landmark"
+  },
+  {
+    "id": "julianadorp-beach",
+    "name": "Julianadorp Beach",
+    "city": "Julianadorp",
+    "country": "NL",
+    "lat": 52.8936,
+    "lng": 4.7286,
+    "videoId": "FsdwbtsJMbg",
+    "type": "webcam"
+  },
+  {
+    "id": "venlo-city",
+    "name": "Venlo City View",
+    "city": "Venlo",
+    "country": "NL",
+    "lat": 51.3700,
+    "lng": 6.1685,
+    "videoId": "THNsbIiujZM",
+    "type": "city"
+  },
+  {
+    "id": "southampton-port-ferry",
+    "name": "Southampton Port Ferry View",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.8985,
+    "lng": -1.3943,
+    "videoId": "QO-hO_kwwmY",
+    "type": "port"
+  },
+  {
+    "id": "southampton-netley",
+    "name": "Southampton Netley View",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.8800,
+    "lng": -1.3600,
+    "videoId": "2XSB4Sj0o_g",
+    "type": "port"
+  },
+  {
+    "id": "southampton-itchen",
+    "name": "Southampton Itchen View",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.8950,
+    "lng": -1.3700,
+    "videoId": "_XKZ2h48yt0",
+    "type": "port"
+  },
+  {
+    "id": "southampton-box",
+    "name": "Southampton Box View",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.9000,
+    "lng": -1.3900,
+    "videoId": "ec6xgmuW1dw",
+    "type": "port"
+  },
+  {
+    "id": "southampton-junction",
+    "name": "Southampton Junction Camera",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.9010,
+    "lng": -1.3950,
+    "videoId": "u7GyFcQJs98",
+    "type": "traffic"
+  },
+  {
+    "id": "southampton-port-main",
+    "name": "Southampton Port Main View",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.8990,
+    "lng": -1.3960,
+    "videoId": "wYlAi6QhNSA",
+    "type": "port"
+  },
+  {
+    "id": "southampton-cruise",
+    "name": "Southampton Cruise Terminal",
+    "city": "Southampton",
+    "country": "GB",
+    "lat": 50.9020,
+    "lng": -1.3970,
+    "videoId": "26pbTW-B8z0",
+    "type": "port"
+  },
+  {
+    "id": "st-ives-harbour",
+    "name": "St Ives Harbour",
+    "city": "St Ives",
+    "country": "GB",
+    "lat": 50.2116,
+    "lng": -5.4801,
+    "videoId": "T83mKGf_c3k",
+    "type": "port"
+  },
+  {
+    "id": "tenby-south-beach",
+    "name": "Tenby South Beach",
+    "city": "Tenby",
+    "country": "GB",
+    "lat": 51.6709,
+    "lng": -4.7037,
+    "videoId": "pbbJULBv2Mk",
+    "type": "webcam"
+  },
+  {
+    "id": "weymouth-seafront-1",
+    "name": "Weymouth Seafront View 1",
+    "city": "Weymouth",
+    "country": "GB",
+    "lat": 50.6133,
+    "lng": -2.4557,
+    "videoId": "oXECyHh01Bc",
+    "type": "webcam"
+  },
+  {
+    "id": "weymouth-seafront-2",
+    "name": "Weymouth Seafront View 2",
+    "city": "Weymouth",
+    "country": "GB",
+    "lat": 50.6133,
+    "lng": -2.4557,
+    "videoId": "2eQlFsurl-s",
+    "type": "webcam"
+  },
+  {
+    "id": "weymouth-seafront-3",
+    "name": "Weymouth Seafront View 3",
+    "city": "Weymouth",
+    "country": "GB",
+    "lat": 50.6133,
+    "lng": -2.4557,
+    "videoId": "rKDXSNTCMDU",
+    "type": "webcam"
+  },
+  {
+    "id": "weymouth-seafront-4",
+    "name": "Weymouth Seafront View 4",
+    "city": "Weymouth",
+    "country": "GB",
+    "lat": 50.6133,
+    "lng": -2.4557,
+    "videoId": "kKv0tI1RYlU",
+    "type": "webcam"
+  },
+  {
+    "id": "marazion-st-michaels-mount",
+    "name": "St Michael's Mount",
+    "city": "Marazion",
+    "country": "GB",
+    "lat": 50.1174,
+    "lng": -5.4770,
+    "videoId": "GL_2CrLwSDA",
+    "type": "landmark"
+  },
+  {
+    "id": "ryde-esplanade-1",
+    "name": "Ryde Esplanade & Pier View 1",
+    "city": "Ryde",
+    "country": "GB",
+    "lat": 50.7350,
+    "lng": -1.1590,
+    "videoId": "kEEL807XevQ",
+    "type": "city"
+  },
+  {
+    "id": "ryde-esplanade-2",
+    "name": "Ryde Esplanade & Pier View 2",
+    "city": "Ryde",
+    "country": "GB",
+    "lat": 50.7350,
+    "lng": -1.1590,
+    "videoId": "R1P9v9bEtuk",
+    "type": "city"
+  },
+  {
+    "id": "severn-valley-kidderminster",
+    "name": "Severn Valley Railway Kidderminster",
+    "city": "Kidderminster",
+    "country": "GB",
+    "lat": 52.3829,
+    "lng": -2.2288,
+    "videoId": "CEQBHYoqBI0",
+    "type": "traffic"
+  },
+  {
+    "id": "severn-valley-kidderminster-platform",
+    "name": "Severn Valley Railway Kidderminster Platform",
+    "city": "Kidderminster",
+    "country": "GB",
+    "lat": 52.3829,
+    "lng": -2.2288,
+    "videoId": "ELBMc80pNAo",
+    "type": "traffic"
+  },
+  {
+    "id": "severn-valley-bewdley-north",
+    "name": "Severn Valley Railway Bewdley North",
+    "city": "Bewdley",
+    "country": "GB",
+    "lat": 52.3761,
+    "lng": -2.3190,
+    "videoId": "IqvDk75pvfE",
+    "type": "traffic"
+  },
+  {
+    "id": "severn-valley-bewdley-south",
+    "name": "Severn Valley Railway Bewdley South",
+    "city": "Bewdley",
+    "country": "GB",
+    "lat": 52.3755,
+    "lng": -2.3185,
+    "videoId": "33cJCHpH9eU",
+    "type": "traffic"
+  },
+  {
+    "id": "severn-valley-highley",
+    "name": "Severn Valley Railway Highley Station",
+    "city": "Highley",
+    "country": "GB",
+    "lat": 52.4450,
+    "lng": -2.3850,
+    "videoId": "L60Zg6dY0fU",
+    "type": "traffic"
+  },
+  {
+    "id": "severn-valley-bridgnorth",
+    "name": "Severn Valley Railway Bridgnorth",
+    "city": "Bridgnorth",
+    "country": "GB",
+    "lat": 52.5351,
+    "lng": -2.4200,
+    "videoId": "Hk7KWsPI_XI",
+    "type": "traffic"
+  },
+  {
+    "id": "bremen-marktplatz",
+    "name": "Bremen Marktplatz",
+    "city": "Bremen",
+    "country": "DE",
+    "lat": 53.0762,
+    "lng": 8.8077,
+    "videoId": "SsyiWrkUjy4",
+    "type": "city"
+  },
+  {
+    "id": "bremen-weser-bridge",
+    "name": "Bremen Weser River Bridge",
+    "city": "Bremen",
+    "country": "DE",
+    "lat": 53.0752,
+    "lng": 8.8007,
+    "videoId": "2vhqpJTE-wA",
+    "type": "city"
+  },
+  {
+    "id": "bremen-weser-stadium",
+    "name": "Bremen Weser River Stadium",
+    "city": "Bremen",
+    "country": "DE",
+    "lat": 53.0660,
+    "lng": 8.8376,
+    "videoId": "rlj8zl6dr48",
+    "type": "city"
+  },
+  {
+    "id": "rees-rhein-1",
+    "name": "Rees Rhine River View 1",
+    "city": "Rees",
+    "country": "DE",
+    "lat": 51.7600,
+    "lng": 6.3970,
+    "videoId": "7yO8E_YFYAU",
+    "type": "webcam"
+  },
+  {
+    "id": "rees-rhein-2",
+    "name": "Rees Rhine River View 2",
+    "city": "Rees",
+    "country": "DE",
+    "lat": 51.7600,
+    "lng": 6.3970,
+    "videoId": "SeN3fw3R6-E",
+    "type": "webcam"
+  },
+  {
+    "id": "rees-rhein-bridge",
+    "name": "Rees Rhine Bridge",
+    "city": "Rees",
+    "country": "DE",
+    "lat": 51.7600,
+    "lng": 6.3970,
+    "videoId": "8XOrJj1hV40",
+    "type": "traffic"
+  },
+  {
+    "id": "hirzenach-rhine-valley-1",
+    "name": "Rhine Valley Hirzenach View 1",
+    "city": "Hirzenach",
+    "country": "DE",
+    "lat": 50.2280,
+    "lng": 7.6063,
+    "videoId": "MXHuT-hXJY8",
+    "type": "webcam"
+  },
+  {
+    "id": "hirzenach-rhine-valley-2",
+    "name": "Rhine Valley Hirzenach View 2",
+    "city": "Hirzenach",
+    "country": "DE",
+    "lat": 50.2280,
+    "lng": 7.6063,
+    "videoId": "eUbB_ev7EH4",
+    "type": "webcam"
+  },
+  {
+    "id": "elbe-dresden",
+    "name": "Elbe River Dresden",
+    "city": "Dresden",
+    "country": "DE",
+    "lat": 51.0504,
+    "lng": 13.7373,
+    "videoId": "ynvrVPHRaYs",
+    "type": "webcam"
+  },
+  {
+    "id": "elbe-grauerort",
+    "name": "Elbe River Grauerort",
+    "city": "Grauerort",
+    "country": "DE",
+    "lat": 53.6700,
+    "lng": 9.4700,
+    "videoId": "nmic4tt88-Y",
+    "type": "webcam"
+  },
+  {
+    "id": "elbe-nordkehdingen",
+    "name": "Elbe River Nordkehdingen",
+    "city": "Nordkehdingen",
+    "country": "DE",
+    "lat": 53.7750,
+    "lng": 9.2000,
+    "videoId": "voexm7WL60o",
+    "type": "webcam"
+  },
+  {
+    "id": "brasov-town-square",
+    "name": "Brașov Town Square",
+    "city": "Brașov",
+    "country": "RO",
+    "lat": 45.6427,
+    "lng": 25.5887,
+    "videoId": "HmBsPGMdxwY",
+    "type": "city"
+  },
+  {
+    "id": "brasov-michael-weiss",
+    "name": "Brașov Michael Weiss Street",
+    "city": "Brașov",
+    "country": "RO",
+    "lat": 45.6427,
+    "lng": 25.5887,
+    "videoId": "5jzXn33PjPk",
+    "type": "city"
+  },
+  {
+    "id": "brasov-ceasu-rau",
+    "name": "Brașov Ceasu Rau",
+    "city": "Brașov",
+    "country": "RO",
+    "lat": 45.6427,
+    "lng": 25.5887,
+    "videoId": "xxDwVG0TvJ0",
+    "type": "city"
+  },
+  {
+    "id": "czech-stork-nest",
+    "name": "Mlade Buky Stork Nest",
+    "city": "Mlade Buky",
+    "country": "CZ",
+    "lat": 50.3900,
+    "lng": 15.8600,
+    "videoId": "9yUkeT8lCKo",
+    "type": "webcam"
+  },
+  {
+    "id": "finland-levi-zero-point",
+    "name": "Zero Point Levi",
+    "city": "Levi",
+    "country": "FI",
+    "lat": 67.7959,
+    "lng": 24.8141,
+    "videoId": "LwihxyJ4V20",
+    "type": "webcam"
+  },
+  {
+    "id": "finland-santa-claus-village",
+    "name": "Santa Claus Village Rovaniemi",
+    "city": "Rovaniemi",
+    "country": "FI",
+    "lat": 66.5436,
+    "lng": 25.8471,
+    "videoId": "Cp4RRAEgpeU",
+    "type": "landmark"
+  },
+  {
+    "id": "france24-live-news",
+    "name": "France 24 English Live",
+    "city": "Paris",
+    "country": "FR",
+    "lat": 48.8269,
+    "lng": 2.3132,
+    "videoId": "Ap-UM1O9RBU",
+    "type": "webcam"
+  },
+  {
+    "id": "dw-news-live",
+    "name": "DW News Live",
+    "city": "Berlin",
+    "country": "DE",
+    "lat": 52.5050,
+    "lng": 13.3890,
+    "videoId": "LuKwFajn37U",
+    "type": "webcam"
+  },
+  {
+    "id": "sky-news-live",
+    "name": "Sky News Live",
+    "city": "London",
+    "country": "GB",
+    "lat": 51.5000,
+    "lng": -0.1419,
+    "videoId": "YDvsBbKfLPA",
+    "type": "webcam"
+  },
+  {
+    "id": "trt-world-live",
+    "name": "TRT World Live",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0670,
+    "lng": 29.0100,
+    "videoId": "ABfFhWzWs0s",
+    "type": "webcam"
+  },
+  {
+    "id": "earthtv-around-world-1",
+    "name": "earthTV Around the World Stream 1",
+    "city": "Munich",
+    "country": "DE",
+    "lat": 48.1351,
+    "lng": 11.5820,
+    "videoId": "HfgIFGbdGJ0",
+    "type": "city"
+  },
+  {
+    "id": "earthtv-around-world-2",
+    "name": "earthTV Around the World Stream 2",
+    "city": "Munich",
+    "country": "DE",
+    "lat": 48.1351,
+    "lng": 11.5820,
+    "videoId": "AiNCbGzabVo",
+    "type": "city"
+  },
+  {
+    "id": "earthtv-around-world-3",
+    "name": "earthTV Around the World Stream 3",
+    "city": "Munich",
+    "country": "DE",
+    "lat": 48.1351,
+    "lng": 11.5820,
+    "videoId": "z7SiAaN4ogw",
+    "type": "city"
+  },
+  {
+    "id": "chioggia-sottomarina-2",
+    "name": "Chioggia Sottomarina HD",
+    "city": "Chioggia",
+    "country": "IT",
+    "lat": 45.2170,
+    "lng": 12.2850,
+    "videoId": "huEcPtSsdLc",
+    "type": "webcam"
+  },
+  {
+    "id": "trt-haber-live",
+    "name": "TRT Haber Live",
+    "city": "Ankara",
+    "country": "TR",
+    "lat": 39.9334,
+    "lng": 32.8597,
+    "videoId": "3XHebGJG0bc",
+    "type": "webcam"
+  },
+  {
+    "id": "tv100-istanbul",
+    "name": "TV100 Istanbul Live",
+    "city": "Istanbul",
+    "country": "TR",
+    "lat": 41.0082,
+    "lng": 28.9784,
+    "videoId": "JCuAFKp_WdE",
+    "type": "webcam"
+  }
+]

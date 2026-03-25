@@ -1,0 +1,422 @@
+[
+  {
+    "id": "cape-town-table-mountain",
+    "name": "Table Mountain Live Stream",
+    "city": "Cape Town",
+    "country": "ZA",
+    "lat": -33.9625,
+    "lng": 18.4039,
+    "videoId": "mxqQYDSg8uE",
+    "type": "landmark"
+  },
+  {
+    "id": "cape-town-sea-point-lions-head",
+    "name": "Sea Point and Lions Head",
+    "city": "Cape Town",
+    "country": "ZA",
+    "lat": -33.9171,
+    "lng": 18.3894,
+    "videoId": "4Zu64CmAjMo",
+    "type": "city"
+  },
+  {
+    "id": "cape-town-signal-hill",
+    "name": "Signal Hill Live Stream",
+    "city": "Cape Town",
+    "country": "ZA",
+    "lat": -33.9222,
+    "lng": 18.3988,
+    "videoId": "-Qi7IXhSScA",
+    "type": "landmark"
+  },
+  {
+    "id": "cape-town-cbd-signal-hill",
+    "name": "Signal Hill and Cape Town CBD",
+    "city": "Cape Town",
+    "country": "ZA",
+    "lat": -33.9249,
+    "lng": 18.4241,
+    "videoId": "8xvFxAPpEtc",
+    "type": "city"
+  },
+  {
+    "id": "tembe-elephant-park",
+    "name": "Tembe Elephant Park Waterhole",
+    "city": "Maputaland",
+    "country": "ZA",
+    "lat": -27.0283,
+    "lng": 32.4183,
+    "videoId": "gdrNUUf-cQw",
+    "type": "webcam"
+  },
+  {
+    "id": "naledi-bush-lodge",
+    "name": "Naledi Bush Lodge Waterhole",
+    "city": "Olifants West",
+    "country": "ZA",
+    "lat": -24.3033,
+    "lng": 30.8833,
+    "videoId": "S4GIPXZnQTM",
+    "type": "webcam"
+  },
+  {
+    "id": "nkorho-bush-lodge",
+    "name": "Nkorho Bush Lodge Waterhole",
+    "city": "Sabi Sand",
+    "country": "ZA",
+    "lat": -24.6500,
+    "lng": 31.3833,
+    "videoId": "O81gItg_Jco",
+    "type": "webcam"
+  },
+  {
+    "id": "cat-eye-cam",
+    "name": "Cat Eye Wildlife Camera",
+    "city": "Sabi Sand",
+    "country": "ZA",
+    "lat": -24.6000,
+    "lng": 31.4000,
+    "videoId": "QGvjAPzImR8",
+    "type": "webcam"
+  },
+  {
+    "id": "olifants-river-cam",
+    "name": "Olifants River Live Camera",
+    "city": "Balule",
+    "country": "ZA",
+    "lat": -24.1883,
+    "lng": 30.9917,
+    "videoId": "NapztoCaKFY",
+    "type": "webcam"
+  },
+  {
+    "id": "kamfers-dam-flamingos",
+    "name": "Kamfers Dam Lesser Flamingos",
+    "city": "Kimberley",
+    "country": "ZA",
+    "lat": -28.6833,
+    "lng": 24.7833,
+    "videoId": "WaszO4l4E2c",
+    "type": "webcam"
+  },
+  {
+    "id": "kwa-maritane-pilanesberg",
+    "name": "Kwa Maritane Waterhole Pilanesberg",
+    "city": "Pilanesberg",
+    "country": "ZA",
+    "lat": -25.3333,
+    "lng": 27.1500,
+    "videoId": "aWglOXp5id0",
+    "type": "webcam"
+  },
+  {
+    "id": "stony-point-penguins",
+    "name": "Stony Point African Penguins",
+    "city": "Betty's Bay",
+    "country": "ZA",
+    "lat": -34.3536,
+    "lng": 18.8992,
+    "videoId": "ydYDqZQpim8",
+    "type": "webcam"
+  },
+  {
+    "id": "ol-donyo-lodge-kenya",
+    "name": "ol Donyo Lodge Waterhole",
+    "city": "Chyulu Hills",
+    "country": "KE",
+    "lat": -2.6633,
+    "lng": 37.7333,
+    "videoId": "XsOU8JnEpNM",
+    "type": "webcam"
+  },
+  {
+    "id": "ark-lodge-kenya",
+    "name": "The Ark Lodge Waterhole",
+    "city": "Aberdare",
+    "country": "KE",
+    "lat": -0.3817,
+    "lng": 36.7083,
+    "videoId": "ydYDqZQpim8",
+    "type": "webcam"
+  },
+  {
+    "id": "namib-desert-waterhole",
+    "name": "Namib Desert Waterhole",
+    "city": "Gondwana",
+    "country": "NA",
+    "lat": -24.0667,
+    "lng": 16.0000,
+    "videoId": "ME0dPuBtzug",
+    "type": "webcam"
+  },
+  {
+    "id": "sydney-harbour-cam1",
+    "name": "Sydney Harbour Panorama Cam 1",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8568,
+    "lng": 151.2153,
+    "videoId": "IhWWW2l-pP0",
+    "type": "city"
+  },
+  {
+    "id": "sydney-harbour-panning",
+    "name": "Sydney Harbour Panning View",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8568,
+    "lng": 151.2153,
+    "videoId": "iGHnLNKYln8",
+    "type": "city"
+  },
+  {
+    "id": "sydney-harbour-worldcams-1",
+    "name": "Sydney Harbour View Cam 1",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8523,
+    "lng": 151.2108,
+    "videoId": "5uZa3-RMFos",
+    "type": "port"
+  },
+  {
+    "id": "sydney-harbour-worldcams-2",
+    "name": "Sydney Harbour View Cam 2",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8523,
+    "lng": 151.2108,
+    "videoId": "jshwkG1ZpP8",
+    "type": "port"
+  },
+  {
+    "id": "sydney-harbour-worldcams-3",
+    "name": "Sydney Harbour View Cam 3",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8523,
+    "lng": 151.2108,
+    "videoId": "7pcL-0Wo77U",
+    "type": "port"
+  },
+  {
+    "id": "sydney-airport",
+    "name": "Sydney Airport Plane Spotting",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.9461,
+    "lng": 151.1772,
+    "videoId": "6JTFqrqcQ4g",
+    "type": "webcam"
+  },
+  {
+    "id": "taronga-zoo-elephants",
+    "name": "Taronga Zoo Elephants",
+    "city": "Sydney",
+    "country": "AU",
+    "lat": -33.8437,
+    "lng": 151.2416,
+    "videoId": "RrMQ17zrPrQ",
+    "type": "webcam"
+  },
+  {
+    "id": "orange-falcon-cam-ledge",
+    "name": "Peregrine Falcon Ledge Camera",
+    "city": "Orange",
+    "country": "AU",
+    "lat": -33.2846,
+    "lng": 149.1013,
+    "videoId": "VuZaWzhXSAI",
+    "type": "webcam"
+  },
+  {
+    "id": "orange-falcon-cam-box",
+    "name": "Peregrine Falcon Box Camera",
+    "city": "Orange",
+    "country": "AU",
+    "lat": -33.2846,
+    "lng": 149.1013,
+    "videoId": "yv2RtoIMNzA",
+    "type": "webcam"
+  },
+  {
+    "id": "orange-falcon-cam-tower",
+    "name": "Peregrine Falcon Tower Camera",
+    "city": "Orange",
+    "country": "AU",
+    "lat": -33.2846,
+    "lng": 149.1013,
+    "videoId": "rQxrTGgNu4M",
+    "type": "webcam"
+  },
+  {
+    "id": "orange-falcon-cam-nest",
+    "name": "Peregrine Falcon Nest Camera",
+    "city": "Orange",
+    "country": "AU",
+    "lat": -33.2846,
+    "lng": 149.1013,
+    "videoId": "h0cfJMB1wyo",
+    "type": "webcam"
+  },
+  {
+    "id": "melbourne-zoo-snow-leopards",
+    "name": "Melbourne Zoo Snow Leopards",
+    "city": "Melbourne",
+    "country": "AU",
+    "lat": -37.7842,
+    "lng": 144.9517,
+    "videoId": "4wb6o3QvrxY",
+    "type": "webcam"
+  },
+  {
+    "id": "melbourne-zoo-penguins",
+    "name": "Melbourne Zoo Penguins",
+    "city": "Melbourne",
+    "country": "AU",
+    "lat": -37.7842,
+    "lng": 144.9517,
+    "videoId": "3CAU9Ex_GKk",
+    "type": "webcam"
+  },
+  {
+    "id": "auckland-skyline-1",
+    "name": "Auckland Skyline View",
+    "city": "Auckland",
+    "country": "NZ",
+    "lat": -36.8485,
+    "lng": 174.7633,
+    "videoId": "Ql7graq0I9M",
+    "type": "city"
+  },
+  {
+    "id": "auckland-skyline-2",
+    "name": "Auckland Skyline View 2",
+    "city": "Auckland",
+    "country": "NZ",
+    "lat": -36.8485,
+    "lng": 174.7633,
+    "videoId": "BQR800Gu28g",
+    "type": "city"
+  },
+  {
+    "id": "auckland-hauraki-gulf",
+    "name": "Auckland Hauraki Gulf",
+    "city": "Auckland",
+    "country": "NZ",
+    "lat": -36.8200,
+    "lng": 175.0000,
+    "videoId": "CGIFDalU84U",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-kamaole-beach",
+    "name": "Kamaole Beach Park II",
+    "city": "Kihei",
+    "country": "US",
+    "lat": 20.7200,
+    "lng": -156.4500,
+    "videoId": "hPvl6IACa2k",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-sheraton-waikiki",
+    "name": "Sheraton Waikiki Beach",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2790,
+    "lng": -157.8290,
+    "videoId": "3ATYHKN2hIg",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-lawai-beach",
+    "name": "Lawai Beach",
+    "city": "Koloa",
+    "country": "US",
+    "lat": 21.8800,
+    "lng": -159.4900,
+    "videoId": "iWCeBAxRCBo",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-whale-sanctuary",
+    "name": "Whale Marine Sanctuary",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.8800,
+    "lng": -156.6800,
+    "videoId": "X0idnu7HUmI",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-kaanapali-beach",
+    "name": "Kaanapali Beach Maui",
+    "city": "Lahaina",
+    "country": "US",
+    "lat": 20.9250,
+    "lng": -156.6940,
+    "videoId": "7do5yOYetV0",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-napili-bay",
+    "name": "Napili Bay Maui",
+    "city": "Napili",
+    "country": "US",
+    "lat": 20.9950,
+    "lng": -156.6690,
+    "videoId": "y6ew34X8P7Q",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-ala-moana",
+    "name": "Ala Moana Beach",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2880,
+    "lng": -157.8460,
+    "videoId": "ZdmEqSHaNzU",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-ward-village",
+    "name": "Ward Village",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2950,
+    "lng": -157.8580,
+    "videoId": "YcEf_y0Ct14",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-poipu-beach",
+    "name": "Poipu Beach Kauai",
+    "city": "Poipu",
+    "country": "US",
+    "lat": 21.8730,
+    "lng": -159.4610,
+    "videoId": "zkKMuhqJKUo",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-maui-cam-1",
+    "name": "Maui Beach Camera",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.7984,
+    "lng": -156.3319,
+    "videoId": "VhTEUsVUCi8",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-maui-cam-2",
+    "name": "Maui Coast View",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.7984,
+    "lng": -156.3319,
+    "videoId": "M6kN1wlNSk4",
+    "type": "webcam"
+  }
+]

@@ -1,0 +1,1652 @@
+[
+  {
+    "id": "times-square-live-cam",
+    "name": "Times Square Live Cam",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7577,
+    "lng": -73.9857,
+    "videoId": "rnXIjl_Rzy4",
+    "type": "city"
+  },
+  {
+    "id": "times-square-street-view",
+    "name": "Times Square Street View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.758,
+    "lng": -73.9855,
+    "videoId": "iiBTWU2FyFo",
+    "type": "city"
+  },
+  {
+    "id": "nyc-skyline-view",
+    "name": "NYC Skyline View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "videoId": "PmfCCNWBunY",
+    "type": "city"
+  },
+  {
+    "id": "jfk-airport-replay-view",
+    "name": "JFK Airport Replay View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.6413,
+    "lng": -73.7781,
+    "videoId": "11INCtK6uiA",
+    "type": "webcam"
+  },
+  {
+    "id": "jfk-airport-live",
+    "name": "JFK Airport Live",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.6415,
+    "lng": -73.7783,
+    "videoId": "UH3Ueo7a_L0",
+    "type": "webcam"
+  },
+  {
+    "id": "sheas-buffalo-theatre",
+    "name": "Shea's Buffalo Theatre",
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.8864,
+    "lng": -78.8784,
+    "videoId": "kGTikc62mFY",
+    "type": "landmark"
+  },
+  {
+    "id": "dyouville-university-view",
+    "name": "D'Youville University View",
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.9006,
+    "lng": -78.8834,
+    "videoId": "ErmhQZepFlc",
+    "type": "city"
+  },
+  {
+    "id": "buffalo-naval-park",
+    "name": "Buffalo Naval Park",
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.8772,
+    "lng": -78.8791,
+    "videoId": "k2cXhqxWj8U",
+    "type": "landmark"
+  },
+  {
+    "id": "buffalo-stadium-view",
+    "name": "Buffalo Stadium View",
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.7738,
+    "lng": -78.787,
+    "videoId": "NBFuzfE7y1Q",
+    "type": "city"
+  },
+  {
+    "id": "buffalo-downtown",
+    "name": "Buffalo Downtown",
+    "city": "Buffalo",
+    "country": "US",
+    "lat": 42.8864,
+    "lng": -78.8784,
+    "videoId": "SinfzIciXKg",
+    "type": "city"
+  },
+  {
+    "id": "sag-harbor-village-cam-1",
+    "name": "Sag Harbor Village Cam 1",
+    "city": "Sag Harbor",
+    "country": "US",
+    "lat": 40.9979,
+    "lng": -72.296,
+    "videoId": "sxZxz0OPoh0",
+    "type": "city"
+  },
+  {
+    "id": "sag-harbor-village-cam-2",
+    "name": "Sag Harbor Village Cam 2",
+    "city": "Sag Harbor",
+    "country": "US",
+    "lat": 40.9978,
+    "lng": -72.2961,
+    "videoId": "p1IbYzNwWDQ",
+    "type": "city"
+  },
+  {
+    "id": "sag-harbor-village-cam-3",
+    "name": "Sag Harbor Village Cam 3",
+    "city": "Sag Harbor",
+    "country": "US",
+    "lat": 40.9977,
+    "lng": -72.2962,
+    "videoId": "l1A96hXsrCU",
+    "type": "city"
+  },
+  {
+    "id": "sag-harbor-village-cam-4",
+    "name": "Sag Harbor Village Cam 4",
+    "city": "Sag Harbor",
+    "country": "US",
+    "lat": 40.9976,
+    "lng": -72.2963,
+    "videoId": "X0i4arU8I9s",
+    "type": "city"
+  },
+  {
+    "id": "las-vegas-strip-cam-1",
+    "name": "Las Vegas Strip Cam 1",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.1147,
+    "lng": -115.1728,
+    "videoId": "jtvmwjzZY0c",
+    "type": "city"
+  },
+  {
+    "id": "miami-river-view",
+    "name": "Miami River View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7699,
+    "lng": -80.1905,
+    "videoId": "7wHgYc_kN98",
+    "type": "city"
+  },
+  {
+    "id": "macarthur-causeway-view",
+    "name": "MacArthur Causeway View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7758,
+    "lng": -80.1663,
+    "videoId": "Qo8EKBYEDaI",
+    "type": "city"
+  },
+  {
+    "id": "biscayne-bay-view",
+    "name": "Biscayne Bay View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7781,
+    "lng": -80.178,
+    "videoId": "4UzQd1dVPlo",
+    "type": "city"
+  },
+  {
+    "id": "biscayne-bay-north",
+    "name": "Biscayne Bay North",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.785,
+    "lng": -80.178,
+    "videoId": "5YCajRjvWCg",
+    "type": "city"
+  },
+  {
+    "id": "port-of-miami-cam-1",
+    "name": "Port of Miami Cam 1",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7743,
+    "lng": -80.1665,
+    "videoId": "PeYZZinH1wI",
+    "type": "port"
+  },
+  {
+    "id": "port-of-miami-cam-2",
+    "name": "Port of Miami Cam 2",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7745,
+    "lng": -80.1667,
+    "videoId": "YNDiaM0zpFc",
+    "type": "port"
+  },
+  {
+    "id": "miami-airport-runway-view",
+    "name": "Miami Airport Runway View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "videoId": "OXeFcz3lEz4",
+    "type": "webcam"
+  },
+  {
+    "id": "miami-airport-embassy-suites",
+    "name": "Miami Airport Embassy Suites",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7961,
+    "lng": -80.2872,
+    "videoId": "q2Dxx5704fQ",
+    "type": "webcam"
+  },
+  {
+    "id": "miami-airport-ne-view",
+    "name": "Miami Airport NE View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7963,
+    "lng": -80.2868,
+    "videoId": "eUX2NawZQ64",
+    "type": "webcam"
+  },
+  {
+    "id": "chicago-lakefront",
+    "name": "Chicago Lakefront",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "videoId": "8Zx_6enN3y0",
+    "type": "city"
+  },
+  {
+    "id": "chicago-skyline-panorama",
+    "name": "Chicago Skyline Panorama",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.8785,
+    "lng": -87.63,
+    "videoId": "feOo3Q0qA0w",
+    "type": "city"
+  },
+  {
+    "id": "chicago-cuppa-hall",
+    "name": "Chicago CUPPA Hall",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.875,
+    "lng": -87.6475,
+    "videoId": "9Kly5fCmJfk",
+    "type": "city"
+  },
+  {
+    "id": "chicago-railroad-power-house-e",
+    "name": "Chicago Railroad Power House E",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.86,
+    "lng": -87.74,
+    "videoId": "6M6rK0ssjYg",
+    "type": "webcam"
+  },
+  {
+    "id": "chicago-railroad-power-house-n",
+    "name": "Chicago Railroad Power House N",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.8602,
+    "lng": -87.7402,
+    "videoId": "InQ0-b4DkCw",
+    "type": "webcam"
+  },
+  {
+    "id": "chicago-railroad-power-house-w",
+    "name": "Chicago Railroad Power House W",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.8598,
+    "lng": -87.7398,
+    "videoId": "grl50cJ7Fq0",
+    "type": "webcam"
+  },
+  {
+    "id": "chicago-railroad-geneva-sub",
+    "name": "Chicago Railroad Geneva Sub",
+    "city": "Chicago",
+    "country": "US",
+    "lat": 41.8828,
+    "lng": -88.3107,
+    "videoId": "AxX3G3eq-qk",
+    "type": "webcam"
+  },
+  {
+    "id": "sf-bay-treasure-island-skyline",
+    "name": "SF Bay Treasure Island Skyline",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.8235,
+    "lng": -122.3697,
+    "videoId": "BSWhGNXxT9A",
+    "type": "city"
+  },
+  {
+    "id": "sf-bay-treasure-island",
+    "name": "SF Bay Treasure Island",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.8237,
+    "lng": -122.3699,
+    "videoId": "_VqvVJfmyfs",
+    "type": "city"
+  },
+  {
+    "id": "sf-clocktower-view",
+    "name": "SF Clocktower View",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7905,
+    "lng": -122.3895,
+    "videoId": "G8RIAgPxaMc",
+    "type": "city"
+  },
+  {
+    "id": "sf-castro-street-cam-1",
+    "name": "SF Castro Street Cam 1",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7609,
+    "lng": -122.435,
+    "videoId": "Yf4cJk3YX4w",
+    "type": "city"
+  },
+  {
+    "id": "sf-castro-street-cam-2",
+    "name": "SF Castro Street Cam 2",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7611,
+    "lng": -122.4352,
+    "videoId": "ByG6k2b7Twc",
+    "type": "city"
+  },
+  {
+    "id": "sf-castro-street-cam-3",
+    "name": "SF Castro Street Cam 3",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7607,
+    "lng": -122.4348,
+    "videoId": "E6muSzS9Hew",
+    "type": "city"
+  },
+  {
+    "id": "houston-downtown-skyline",
+    "name": "Houston Downtown Skyline",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7604,
+    "lng": -95.3698,
+    "videoId": "wUQc3RoLAPs",
+    "type": "city"
+  },
+  {
+    "id": "houston-railroad-tower-26",
+    "name": "Houston Railroad Tower 26",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.722,
+    "lng": -95.35,
+    "videoId": "cRRQyXQAvsE",
+    "type": "webcam"
+  },
+  {
+    "id": "houston-railroad-tower-26-east",
+    "name": "Houston Railroad Tower 26 East",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7222,
+    "lng": -95.3502,
+    "videoId": "bchdO4OtIEI",
+    "type": "webcam"
+  },
+  {
+    "id": "houston-railroad-baer-jct",
+    "name": "Houston Railroad Baer Jct",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.72,
+    "lng": -95.355,
+    "videoId": "gpSR9c0p6lI",
+    "type": "webcam"
+  },
+  {
+    "id": "houston-railroad-sampson-n",
+    "name": "Houston Railroad Sampson N",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.718,
+    "lng": -95.36,
+    "videoId": "oAJH5nZgrNQ",
+    "type": "webcam"
+  },
+  {
+    "id": "houston-railroad-sampson-e",
+    "name": "Houston Railroad Sampson E",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7182,
+    "lng": -95.3602,
+    "videoId": "DTLIqs3mWiM",
+    "type": "webcam"
+  },
+  {
+    "id": "houston-railroad-sampson-s",
+    "name": "Houston Railroad Sampson S",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7178,
+    "lng": -95.3598,
+    "videoId": "OmWt0efvmNQ",
+    "type": "webcam"
+  },
+  {
+    "id": "seattle-downtown-north",
+    "name": "Seattle Downtown North",
+    "city": "Seattle",
+    "country": "US",
+    "lat": 47.6062,
+    "lng": -122.3321,
+    "videoId": "4cgSE12k9Sc",
+    "type": "city"
+  },
+  {
+    "id": "seattle-lake-washington",
+    "name": "Seattle Lake Washington",
+    "city": "Seattle",
+    "country": "US",
+    "lat": 47.6097,
+    "lng": -122.23,
+    "videoId": "0QtzpaZzOmg",
+    "type": "city"
+  },
+  {
+    "id": "nashville-broadway",
+    "name": "Nashville Broadway",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "videoId": "ATbtGvbExP4",
+    "type": "city"
+  },
+  {
+    "id": "nashville-city-view",
+    "name": "Nashville City View",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1629,
+    "lng": -86.7818,
+    "videoId": "h5Grd2w7HQM",
+    "type": "city"
+  },
+  {
+    "id": "nashville-downtown",
+    "name": "Nashville Downtown",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1625,
+    "lng": -86.7814,
+    "videoId": "Gw0FXKfyBno",
+    "type": "city"
+  },
+  {
+    "id": "us-capitol-building",
+    "name": "US Capitol Building",
+    "city": "Washington",
+    "country": "US",
+    "lat": 38.8899,
+    "lng": -77.0091,
+    "videoId": "1wV9lLe14aU",
+    "type": "landmark"
+  },
+  {
+    "id": "key-west-mallory-square-cam-1",
+    "name": "Key West Mallory Square Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5593,
+    "lng": -81.8065,
+    "videoId": "8Rw-tZTeBjU",
+    "type": "city"
+  },
+  {
+    "id": "key-west-mallory-square-cam-2",
+    "name": "Key West Mallory Square Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5595,
+    "lng": -81.8067,
+    "videoId": "f9pMVLoJfyE",
+    "type": "city"
+  },
+  {
+    "id": "key-west-duval-st-la-trattoria",
+    "name": "Key West Duval St La Trattoria",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5551,
+    "lng": -81.8001,
+    "videoId": "3bXyYuk-XK0",
+    "type": "city"
+  },
+  {
+    "id": "key-west-duval-st-nine-one-five",
+    "name": "Key West Duval St Nine One Five",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5553,
+    "lng": -81.8003,
+    "videoId": "zAXQjQZUhB0",
+    "type": "city"
+  },
+  {
+    "id": "key-west-duval-st-bagatelle",
+    "name": "Key West Duval St Bagatelle",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5549,
+    "lng": -81.7999,
+    "videoId": "BP9AtblEpXE",
+    "type": "city"
+  },
+  {
+    "id": "key-west-duval-st-mangoes",
+    "name": "Key West Duval St Mangoes",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5555,
+    "lng": -81.8005,
+    "videoId": "ZZgKSRchph4",
+    "type": "city"
+  },
+  {
+    "id": "key-west-sunset-pier-cam-1",
+    "name": "Key West Sunset Pier Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5592,
+    "lng": -81.807,
+    "videoId": "-mIBQsjQJI0",
+    "type": "webcam"
+  },
+  {
+    "id": "key-west-sunset-pier-cam-2",
+    "name": "Key West Sunset Pier Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5594,
+    "lng": -81.8072,
+    "videoId": "1Gn9gG9U2iM",
+    "type": "webcam"
+  },
+  {
+    "id": "key-west-bight-marina-cam-1",
+    "name": "Key West Bight Marina Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.558,
+    "lng": -81.8024,
+    "videoId": "Y5ypYTZs-7o",
+    "type": "port"
+  },
+  {
+    "id": "key-west-bight-marina-cam-2",
+    "name": "Key West Bight Marina Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5582,
+    "lng": -81.8026,
+    "videoId": "OZ5iz2GsAjo",
+    "type": "port"
+  },
+  {
+    "id": "key-west-bight-marina-cam-3",
+    "name": "Key West Bight Marina Cam 3",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5578,
+    "lng": -81.8022,
+    "videoId": "RDlvQ1G-lwY",
+    "type": "port"
+  },
+  {
+    "id": "key-west-southernmost-point-1",
+    "name": "Key West Southernmost Point 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5465,
+    "lng": -81.7986,
+    "videoId": "2_y6xMdX11c",
+    "type": "landmark"
+  },
+  {
+    "id": "key-west-southernmost-point-2",
+    "name": "Key West Southernmost Point 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5467,
+    "lng": -81.7988,
+    "videoId": "HDlmUp4JBLg",
+    "type": "landmark"
+  },
+  {
+    "id": "key-west-southernmost-point-3",
+    "name": "Key West Southernmost Point 3",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5463,
+    "lng": -81.7984,
+    "videoId": "OKh2Dhyc3-c",
+    "type": "landmark"
+  },
+  {
+    "id": "key-west-irish-kevins-cam-1",
+    "name": "Key West Irish Kevin's Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5578,
+    "lng": -81.8008,
+    "videoId": "bqvD0Xb6sU0",
+    "type": "webcam"
+  },
+  {
+    "id": "key-west-irish-kevins-cam-2",
+    "name": "Key West Irish Kevin's Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5576,
+    "lng": -81.8006,
+    "videoId": "lcVm-Izrpa0",
+    "type": "webcam"
+  },
+  {
+    "id": "fort-lauderdale-beach-aerial",
+    "name": "Fort Lauderdale Beach Aerial",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1003,
+    "lng": -80.1278,
+    "videoId": "1j1lgppb0PY",
+    "type": "webcam"
+  },
+  {
+    "id": "fort-lauderdale-beach-ocean",
+    "name": "Fort Lauderdale Beach Ocean",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1005,
+    "lng": -80.128,
+    "videoId": "UV94XxNvBdw",
+    "type": "webcam"
+  },
+  {
+    "id": "lax-runway-24l-and-24r",
+    "name": "LAX Runway 24L & 24R",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.9425,
+    "lng": -118.4081,
+    "videoId": "12KqO5IBLeY",
+    "type": "webcam"
+  },
+  {
+    "id": "lax-runway-25l-and-25r",
+    "name": "LAX Runway 25L & 25R",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.9427,
+    "lng": -118.4083,
+    "videoId": "UQaSS4_VAV4",
+    "type": "webcam"
+  },
+  {
+    "id": "lax-runway-view",
+    "name": "LAX Runway View",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.9423,
+    "lng": -118.4079,
+    "videoId": "a1_-tFG67d0",
+    "type": "webcam"
+  },
+  {
+    "id": "la-skid-row-cam-1",
+    "name": "LA Skid Row Cam 1",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 34.0445,
+    "lng": -118.2441,
+    "videoId": "NsmJg4oSDVg",
+    "type": "city"
+  },
+  {
+    "id": "la-skid-row-cam-2",
+    "name": "LA Skid Row Cam 2",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 34.0447,
+    "lng": -118.2443,
+    "videoId": "Ja-aqt-rNjQ",
+    "type": "city"
+  },
+  {
+    "id": "santa-monica-pacific-park-cam-1",
+    "name": "Santa Monica Pacific Park Cam 1",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0084,
+    "lng": -118.4981,
+    "videoId": "DckQwhIzMdA",
+    "type": "webcam"
+  },
+  {
+    "id": "santa-monica-pacific-park-cam-2",
+    "name": "Santa Monica Pacific Park Cam 2",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0086,
+    "lng": -118.4983,
+    "videoId": "ntbbWgqco4o",
+    "type": "webcam"
+  },
+  {
+    "id": "santa-monica-pacific-park-cam-3",
+    "name": "Santa Monica Pacific Park Cam 3",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0082,
+    "lng": -118.4979,
+    "videoId": "qmE7U1YZPQA",
+    "type": "webcam"
+  },
+  {
+    "id": "philadelphia-kensington-ave-7",
+    "name": "Philadelphia Kensington Ave 7",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9869,
+    "lng": -75.1302,
+    "videoId": "KMgq36ZOMZA",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-kensington-ave-3",
+    "name": "Philadelphia Kensington Ave 3",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9871,
+    "lng": -75.1304,
+    "videoId": "pdG4hRzMUeI",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-kensington-ave-2",
+    "name": "Philadelphia Kensington Ave 2",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9867,
+    "lng": -75.13,
+    "videoId": "dJNgqfRFA8k",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-kensington-ave-5",
+    "name": "Philadelphia Kensington Ave 5",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9873,
+    "lng": -75.1306,
+    "videoId": "DBVeaQdjHww",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-kensington-ave-4",
+    "name": "Philadelphia Kensington Ave 4",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9865,
+    "lng": -75.1298,
+    "videoId": "Ee02xKDmRxg",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-italian-market",
+    "name": "Philadelphia Italian Market",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9377,
+    "lng": -75.1585,
+    "videoId": "cGXf_ChfbAs",
+    "type": "city"
+  },
+  {
+    "id": "philadelphia-italian-market-tallutos",
+    "name": "Philadelphia Italian Market Talluto's",
+    "city": "Philadelphia",
+    "country": "US",
+    "lat": 39.9379,
+    "lng": -75.1587,
+    "videoId": "LCLHXhmAxd0",
+    "type": "city"
+  },
+  {
+    "id": "san-diego-waterfront-east",
+    "name": "San Diego Waterfront East",
+    "city": "San Diego",
+    "country": "US",
+    "lat": 32.7157,
+    "lng": -117.1611,
+    "videoId": "OAk3giBu5_k",
+    "type": "city"
+  },
+  {
+    "id": "san-diego-harbor-island",
+    "name": "San Diego Harbor Island",
+    "city": "San Diego",
+    "country": "US",
+    "lat": 32.7225,
+    "lng": -117.1915,
+    "videoId": "iaBfYxbmwXA",
+    "type": "port"
+  },
+  {
+    "id": "san-diego-bay-view",
+    "name": "San Diego Bay View",
+    "city": "San Diego",
+    "country": "US",
+    "lat": 32.7159,
+    "lng": -117.1613,
+    "videoId": "edz0ux7JClE",
+    "type": "city"
+  },
+  {
+    "id": "san-diego-la-jolla",
+    "name": "San Diego La Jolla",
+    "city": "San Diego",
+    "country": "US",
+    "lat": 32.8328,
+    "lng": -117.2713,
+    "videoId": "dkr9F4OniqM",
+    "type": "webcam"
+  },
+  {
+    "id": "portland-me-downtown",
+    "name": "Portland ME Downtown",
+    "city": "Portland",
+    "country": "US",
+    "lat": 43.6591,
+    "lng": -70.2568,
+    "videoId": "NxuzhLeRuyQ",
+    "type": "city"
+  },
+  {
+    "id": "portland-me-monument-square",
+    "name": "Portland ME Monument Square",
+    "city": "Portland",
+    "country": "US",
+    "lat": 43.659,
+    "lng": -70.2587,
+    "videoId": "Qn1sbkD78hk",
+    "type": "city"
+  },
+  {
+    "id": "portland-city-views-cam-1",
+    "name": "Portland City Views Cam 1",
+    "city": "Portland",
+    "country": "US",
+    "lat": 43.6593,
+    "lng": -70.257,
+    "videoId": "eHH-e-8m5n4",
+    "type": "city"
+  },
+  {
+    "id": "portland-city-views-cam-2",
+    "name": "Portland City Views Cam 2",
+    "city": "Portland",
+    "country": "US",
+    "lat": 43.6589,
+    "lng": -70.2566,
+    "videoId": "91cA2JY-dZk",
+    "type": "city"
+  },
+  {
+    "id": "ocean-city-boardwalk",
+    "name": "Ocean City Boardwalk",
+    "city": "Ocean City",
+    "country": "US",
+    "lat": 38.3365,
+    "lng": -75.0849,
+    "videoId": "B3fFPaczsoM",
+    "type": "webcam"
+  },
+  {
+    "id": "ocean-city-coastal-highway",
+    "name": "Ocean City Coastal Highway",
+    "city": "Ocean City",
+    "country": "US",
+    "lat": 38.3367,
+    "lng": -75.0851,
+    "videoId": "H0Z6faxNLCI",
+    "type": "webcam"
+  },
+  {
+    "id": "galveston-beach-cam-1",
+    "name": "Galveston Beach Cam 1",
+    "city": "Galveston",
+    "country": "US",
+    "lat": 29.287,
+    "lng": -94.7877,
+    "videoId": "HkHhXsWci7Q",
+    "type": "webcam"
+  },
+  {
+    "id": "galveston-beach-cam-2",
+    "name": "Galveston Beach Cam 2",
+    "city": "Galveston",
+    "country": "US",
+    "lat": 29.2872,
+    "lng": -94.7879,
+    "videoId": "aZ0tx7eeLYU",
+    "type": "webcam"
+  },
+  {
+    "id": "galveston-beach-cam-3",
+    "name": "Galveston Beach Cam 3",
+    "city": "Galveston",
+    "country": "US",
+    "lat": 29.2868,
+    "lng": -94.7875,
+    "videoId": "TKrUIFMoThk",
+    "type": "webcam"
+  },
+  {
+    "id": "myrtle-beach-resort-cam",
+    "name": "Myrtle Beach Resort Cam",
+    "city": "Myrtle Beach",
+    "country": "US",
+    "lat": 33.6891,
+    "lng": -78.8867,
+    "videoId": "UKtfCDXhCq0",
+    "type": "webcam"
+  },
+  {
+    "id": "myrtle-beach-captains-quarters",
+    "name": "Myrtle Beach Captain's Quarters",
+    "city": "Myrtle Beach",
+    "country": "US",
+    "lat": 33.7068,
+    "lng": -78.877,
+    "videoId": "GKOyGoRE0Tg",
+    "type": "webcam"
+  },
+  {
+    "id": "myrtle-beach-sea-watch",
+    "name": "Myrtle Beach Sea Watch",
+    "city": "Myrtle Beach",
+    "country": "US",
+    "lat": 33.7145,
+    "lng": -78.874,
+    "videoId": "MAPDh0XDtZs",
+    "type": "webcam"
+  },
+  {
+    "id": "myrtle-beach-crown-reef",
+    "name": "Myrtle Beach Crown Reef",
+    "city": "Myrtle Beach",
+    "country": "US",
+    "lat": 33.7009,
+    "lng": -78.88,
+    "videoId": "yTfNMKMnK2Y",
+    "type": "webcam"
+  },
+  {
+    "id": "myrtle-beach-ocean-creek",
+    "name": "Myrtle Beach Ocean Creek",
+    "city": "Myrtle Beach",
+    "country": "US",
+    "lat": 33.7221,
+    "lng": -78.8709,
+    "videoId": "lsD46RnvUiw",
+    "type": "webcam"
+  },
+  {
+    "id": "hilton-head-quarterdeck",
+    "name": "Hilton Head Quarterdeck",
+    "city": "Hilton Head Island",
+    "country": "US",
+    "lat": 32.1374,
+    "lng": -80.7625,
+    "videoId": "Y61bjkYJPCQ",
+    "type": "webcam"
+  },
+  {
+    "id": "hilton-head-beach-club",
+    "name": "Hilton Head Beach Club",
+    "city": "Hilton Head Island",
+    "country": "US",
+    "lat": 32.1376,
+    "lng": -80.7627,
+    "videoId": "QIJku1LZGRE",
+    "type": "webcam"
+  },
+  {
+    "id": "hilton-head-heron-point",
+    "name": "Hilton Head Heron Point",
+    "city": "Hilton Head Island",
+    "country": "US",
+    "lat": 32.13,
+    "lng": -80.767,
+    "videoId": "69T6gRN5vAk",
+    "type": "webcam"
+  },
+  {
+    "id": "hilton-head-plantation-golf",
+    "name": "Hilton Head Plantation Golf",
+    "city": "Hilton Head Island",
+    "country": "US",
+    "lat": 32.132,
+    "lng": -80.765,
+    "videoId": "ZcvUDEDw17I",
+    "type": "webcam"
+  },
+  {
+    "id": "hilton-head-harbour-town",
+    "name": "Hilton Head Harbour Town",
+    "city": "Hilton Head Island",
+    "country": "US",
+    "lat": 32.135,
+    "lng": -80.81,
+    "videoId": "pRXLGrvYtZY",
+    "type": "landmark"
+  },
+  {
+    "id": "st-augustine-st-george-st",
+    "name": "St Augustine St George St",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.8943,
+    "lng": -81.3145,
+    "videoId": "ZksWoEAhmTU",
+    "type": "city"
+  },
+  {
+    "id": "st-augustine-vilano-boat-ramp",
+    "name": "St Augustine Vilano Boat Ramp",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.9177,
+    "lng": -81.2952,
+    "videoId": "S8afSTXKkdw",
+    "type": "webcam"
+  },
+  {
+    "id": "st-augustine-vilano-pier",
+    "name": "St Augustine Vilano Pier",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.9218,
+    "lng": -81.2928,
+    "videoId": "mYbn_umeenk",
+    "type": "webcam"
+  },
+  {
+    "id": "st-augustine-fort",
+    "name": "St Augustine Fort",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.8976,
+    "lng": -81.3115,
+    "videoId": "FyGb2TZB344",
+    "type": "landmark"
+  },
+  {
+    "id": "st-augustine-matanzas-river",
+    "name": "St Augustine Matanzas River",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.894,
+    "lng": -81.312,
+    "videoId": "uLJBad4vSno",
+    "type": "city"
+  },
+  {
+    "id": "st-augustine-bridge-of-lions",
+    "name": "St Augustine Bridge of Lions",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.892,
+    "lng": -81.31,
+    "videoId": "0lox0s8zNcU",
+    "type": "landmark"
+  },
+  {
+    "id": "st-augustine-beach-view-1",
+    "name": "St Augustine Beach View 1",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.8605,
+    "lng": -81.2648,
+    "videoId": "Q6eZVkUKFxo",
+    "type": "webcam"
+  },
+  {
+    "id": "st-augustine-beach-view-2",
+    "name": "St Augustine Beach View 2",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.8607,
+    "lng": -81.265,
+    "videoId": "H2q_DJc33kg",
+    "type": "webcam"
+  },
+  {
+    "id": "st-augustine-lighthouse",
+    "name": "St Augustine Lighthouse",
+    "city": "St. Augustine",
+    "country": "US",
+    "lat": 29.8851,
+    "lng": -81.2887,
+    "videoId": "ZTk5cIbXH2g",
+    "type": "landmark"
+  },
+  {
+    "id": "leavenworth-front-street",
+    "name": "Leavenworth Front Street",
+    "city": "Leavenworth",
+    "country": "US",
+    "lat": 47.5962,
+    "lng": -120.6615,
+    "videoId": "TmtVbezZaqg",
+    "type": "city"
+  },
+  {
+    "id": "leavenworth-mountain-modern",
+    "name": "Leavenworth Mountain Modern",
+    "city": "Leavenworth",
+    "country": "US",
+    "lat": 47.5964,
+    "lng": -120.6617,
+    "videoId": "NdW8Mh0lmOo",
+    "type": "city"
+  },
+  {
+    "id": "leavenworth-downtown",
+    "name": "Leavenworth Downtown",
+    "city": "Leavenworth",
+    "country": "US",
+    "lat": 47.596,
+    "lng": -120.6613,
+    "videoId": "XjhxRZEm638",
+    "type": "city"
+  },
+  {
+    "id": "leavenworth-rhein-haus",
+    "name": "Leavenworth Rhein Haus",
+    "city": "Leavenworth",
+    "country": "US",
+    "lat": 47.5966,
+    "lng": -120.6619,
+    "videoId": "yHH8EWIR01Y",
+    "type": "city"
+  },
+  {
+    "id": "friday-harbor-marina-cam-1",
+    "name": "Friday Harbor Marina Cam 1",
+    "city": "Friday Harbor",
+    "country": "US",
+    "lat": 48.5343,
+    "lng": -123.0173,
+    "videoId": "4cvWWukMuFc",
+    "type": "port"
+  },
+  {
+    "id": "friday-harbor-marina-cam-2",
+    "name": "Friday Harbor Marina Cam 2",
+    "city": "Friday Harbor",
+    "country": "US",
+    "lat": 48.5345,
+    "lng": -123.0175,
+    "videoId": "sqflGh69t5I",
+    "type": "port"
+  },
+  {
+    "id": "portsmouth-strawbery-banke",
+    "name": "Portsmouth Strawbery Banke",
+    "city": "Portsmouth",
+    "country": "US",
+    "lat": 43.0759,
+    "lng": -70.7549,
+    "videoId": "6YuIquNmb2E",
+    "type": "city"
+  },
+  {
+    "id": "portsmouth-skating-rink",
+    "name": "Portsmouth Skating Rink",
+    "city": "Portsmouth",
+    "country": "US",
+    "lat": 43.0761,
+    "lng": -70.7551,
+    "videoId": "8hNS4PRbKFM",
+    "type": "city"
+  },
+  {
+    "id": "portsmouth-skating-rink-patio",
+    "name": "Portsmouth Skating Rink Patio",
+    "city": "Portsmouth",
+    "country": "US",
+    "lat": 43.0757,
+    "lng": -70.7547,
+    "videoId": "PoZ1Hy7PQig",
+    "type": "city"
+  },
+  {
+    "id": "portsmouth-market-square",
+    "name": "Portsmouth Market Square",
+    "city": "Portsmouth",
+    "country": "US",
+    "lat": 43.077,
+    "lng": -70.758,
+    "videoId": "LkZZTkRHLVQ",
+    "type": "city"
+  },
+  {
+    "id": "portsmouth-harbour",
+    "name": "Portsmouth Harbour",
+    "city": "Portsmouth",
+    "country": "US",
+    "lat": 43.078,
+    "lng": -70.762,
+    "videoId": "YoHKxHVCmYA",
+    "type": "port"
+  },
+  {
+    "id": "burlington-church-st-marketplace-1",
+    "name": "Burlington Church St Marketplace 1",
+    "city": "Burlington",
+    "country": "US",
+    "lat": 44.4759,
+    "lng": -73.212,
+    "videoId": "zl1woMXGGmQ",
+    "type": "city"
+  },
+  {
+    "id": "burlington-church-st-marketplace-2",
+    "name": "Burlington Church St Marketplace 2",
+    "city": "Burlington",
+    "country": "US",
+    "lat": 44.4761,
+    "lng": -73.2122,
+    "videoId": "T8_7hmOsIJI",
+    "type": "city"
+  },
+  {
+    "id": "birmingham-railroad-cam-1",
+    "name": "Birmingham Railroad Cam 1",
+    "city": "Birmingham",
+    "country": "US",
+    "lat": 33.5207,
+    "lng": -86.8025,
+    "videoId": "8ft5kUvq27U",
+    "type": "webcam"
+  },
+  {
+    "id": "birmingham-railroad-cam-2",
+    "name": "Birmingham Railroad Cam 2",
+    "city": "Birmingham",
+    "country": "US",
+    "lat": 33.5209,
+    "lng": -86.8027,
+    "videoId": "KUM6HBnv_fw",
+    "type": "webcam"
+  },
+  {
+    "id": "auburn-toomers-corner-cam-1",
+    "name": "Auburn Toomer's Corner Cam 1",
+    "city": "Auburn",
+    "country": "US",
+    "lat": 32.6099,
+    "lng": -85.4808,
+    "videoId": "5WN2PJ_Qxjs",
+    "type": "city"
+  },
+  {
+    "id": "auburn-toomers-corner-cam-2",
+    "name": "Auburn Toomer's Corner Cam 2",
+    "city": "Auburn",
+    "country": "US",
+    "lat": 32.6101,
+    "lng": -85.481,
+    "videoId": "qG-86nZmZqU",
+    "type": "city"
+  },
+  {
+    "id": "hawaii-beach-cam-1",
+    "name": "Hawaii Beach Cam 1",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2769,
+    "lng": -157.8234,
+    "videoId": "hPvl6IACa2k",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-beach-cam-2",
+    "name": "Hawaii Beach Cam 2",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2771,
+    "lng": -157.8236,
+    "videoId": "3ATYHKN2hIg",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-beach-view",
+    "name": "Hawaii Beach View",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2773,
+    "lng": -157.8238,
+    "videoId": "iWCeBAxRCBo",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-ocean-monitoring",
+    "name": "Hawaii Ocean Monitoring",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2775,
+    "lng": -157.824,
+    "videoId": "7do5yOYetV0",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-beach-conditions",
+    "name": "Hawaii Beach Conditions",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2777,
+    "lng": -157.8242,
+    "videoId": "y6ew34X8P7Q",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-wave-observation",
+    "name": "Hawaii Wave Observation",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2767,
+    "lng": -157.823,
+    "videoId": "ZdmEqSHaNzU",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-weather-view",
+    "name": "Hawaii Weather View",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2765,
+    "lng": -157.8228,
+    "videoId": "YcEf_y0Ct14",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-beach-monitor",
+    "name": "Hawaii Beach Monitor",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2763,
+    "lng": -157.8226,
+    "videoId": "VhTEUsVUCi8",
+    "type": "webcam"
+  },
+  {
+    "id": "hawaii-oceanside-view",
+    "name": "Hawaii Oceanside View",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2761,
+    "lng": -157.8224,
+    "videoId": "M6kN1wlNSk4",
+    "type": "webcam"
+  },
+  {
+    "id": "kilauea-volcano-main",
+    "name": "Kilauea Volcano Main",
+    "city": "Hawaii Volcanoes NP",
+    "country": "US",
+    "lat": 19.421,
+    "lng": -155.2868,
+    "videoId": "gXKuUyKt8mc",
+    "type": "landmark"
+  },
+  {
+    "id": "kilauea-volcano-south-rim",
+    "name": "Kilauea Volcano South Rim",
+    "city": "Hawaii Volcanoes NP",
+    "country": "US",
+    "lat": 19.4212,
+    "lng": -155.287,
+    "videoId": "6IaMqotNF_s",
+    "type": "landmark"
+  },
+  {
+    "id": "kilauea-volcano-cam-b",
+    "name": "Kilauea Volcano Cam B",
+    "city": "Hawaii Volcanoes NP",
+    "country": "US",
+    "lat": 19.4208,
+    "lng": -155.2866,
+    "videoId": "FVdmnpJ2kM0",
+    "type": "landmark"
+  },
+  {
+    "id": "kilauea-volcano-west-rim",
+    "name": "Kilauea Volcano West Rim",
+    "city": "Hawaii Volcanoes NP",
+    "country": "US",
+    "lat": 19.4214,
+    "lng": -155.2872,
+    "videoId": "p2MbV4DVZX4",
+    "type": "landmark"
+  },
+  {
+    "id": "niagara-falls-cam-1",
+    "name": "Niagara Falls Cam 1",
+    "city": "Niagara Falls",
+    "country": "CA",
+    "lat": 43.0896,
+    "lng": -79.0849,
+    "videoId": "3KhQK5KG7VU",
+    "type": "landmark"
+  },
+  {
+    "id": "niagara-falls-cam-2",
+    "name": "Niagara Falls Cam 2",
+    "city": "Niagara Falls",
+    "country": "CA",
+    "lat": 43.0898,
+    "lng": -79.0851,
+    "videoId": "qx7gry390YA",
+    "type": "landmark"
+  },
+  {
+    "id": "tofino-long-beach-lodge",
+    "name": "Tofino Long Beach Lodge",
+    "city": "Tofino",
+    "country": "CA",
+    "lat": 49.1117,
+    "lng": -125.8859,
+    "videoId": "JZ3UV60ykqc",
+    "type": "webcam"
+  },
+  {
+    "id": "tofino-chesterman-beach",
+    "name": "Tofino Chesterman Beach",
+    "city": "Tofino",
+    "country": "CA",
+    "lat": 49.1068,
+    "lng": -125.8932,
+    "videoId": "K40YWW7ADlU",
+    "type": "webcam"
+  },
+  {
+    "id": "tofino-cox-bay-beach",
+    "name": "Tofino Cox Bay Beach",
+    "city": "Tofino",
+    "country": "CA",
+    "lat": 49.099,
+    "lng": -125.877,
+    "videoId": "LqaP8m2OIqM",
+    "type": "webcam"
+  },
+  {
+    "id": "tofino-sea-kayaking-view",
+    "name": "Tofino Sea Kayaking View",
+    "city": "Tofino",
+    "country": "CA",
+    "lat": 49.1119,
+    "lng": -125.8861,
+    "videoId": "_qN4aao5kWc",
+    "type": "webcam"
+  },
+  {
+    "id": "port-of-san-antonio-cam-1",
+    "name": "Port of San Antonio Cam 1",
+    "city": "San Antonio",
+    "country": "CL",
+    "lat": -33.593,
+    "lng": -71.6212,
+    "videoId": "79PtdSvv1Xc",
+    "type": "port"
+  },
+  {
+    "id": "port-of-san-antonio-cam-2",
+    "name": "Port of San Antonio Cam 2",
+    "city": "San Antonio",
+    "country": "CL",
+    "lat": -33.5932,
+    "lng": -71.6214,
+    "videoId": "XfxpV4hl1aU",
+    "type": "port"
+  },
+  {
+    "id": "el-quisco-waterfront",
+    "name": "El Quisco Waterfront",
+    "city": "El Quisco",
+    "country": "CL",
+    "lat": -33.3962,
+    "lng": -71.6924,
+    "videoId": "i80f0HlybSg",
+    "type": "webcam"
+  },
+  {
+    "id": "vi-a-del-mar-waterfront",
+    "name": "Viña del Mar Waterfront",
+    "city": "Viña del Mar",
+    "country": "CL",
+    "lat": -33.0153,
+    "lng": -71.5501,
+    "videoId": "piw3SNsew8w",
+    "type": "city"
+  },
+  {
+    "id": "faro-monumental",
+    "name": "Faro Monumental",
+    "city": "La Serena",
+    "country": "CL",
+    "lat": -29.9027,
+    "lng": -71.252,
+    "videoId": "7kp3pY40tKY",
+    "type": "landmark"
+  },
+  {
+    "id": "popocatepetl-volcano-altzomoni",
+    "name": "Popocatepetl Volcano Altzomoni",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0224,
+    "lng": -98.6282,
+    "videoId": "rayKu7F6Ub4",
+    "type": "landmark"
+  },
+  {
+    "id": "pico-de-orizaba-view",
+    "name": "Pico de Orizaba View",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0302,
+    "lng": -97.268,
+    "videoId": "B7jUvXADO1c",
+    "type": "landmark"
+  },
+  {
+    "id": "popocatepetl-san-matias",
+    "name": "Popocatepetl San Matias",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.1556,
+    "lng": -98.3644,
+    "videoId": "2RraZgaUsV8",
+    "type": "landmark"
+  },
+  {
+    "id": "popocatepetl-san-pedro-bj",
+    "name": "Popocatepetl San Pedro BJ",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.2022,
+    "lng": -98.4003,
+    "videoId": "GXBqclsAdLM",
+    "type": "landmark"
+  },
+  {
+    "id": "popocatepetl-from-puebla-city",
+    "name": "Popocatepetl from Puebla City",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0414,
+    "lng": -98.2063,
+    "videoId": "VZcb6neiihI",
+    "type": "landmark"
+  },
+  {
+    "id": "playa-del-carmen-royal-haciendas",
+    "name": "Playa del Carmen Royal Haciendas",
+    "city": "Playa del Carmen",
+    "country": "MX",
+    "lat": 20.6296,
+    "lng": -87.0739,
+    "videoId": "r_mablBOcz0",
+    "type": "webcam"
+  },
+  {
+    "id": "playa-del-carmen-playacar",
+    "name": "Playa del Carmen Playacar",
+    "city": "Playa del Carmen",
+    "country": "MX",
+    "lat": 20.6128,
+    "lng": -87.0789,
+    "videoId": "6zRl9by4sSs",
+    "type": "webcam"
+  },
+  {
+    "id": "cancun-temptation-resort",
+    "name": "Cancun Temptation Resort",
+    "city": "Cancún",
+    "country": "MX",
+    "lat": 21.145,
+    "lng": -86.746,
+    "videoId": "rAwfz0gC3JI",
+    "type": "webcam"
+  },
+  {
+    "id": "tamarindo-beach",
+    "name": "Tamarindo Beach",
+    "city": "Tamarindo",
+    "country": "CR",
+    "lat": 10.2992,
+    "lng": -85.8376,
+    "videoId": "OWW-gF46keA",
+    "type": "webcam"
+  }
+]

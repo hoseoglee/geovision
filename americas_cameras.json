@@ -1,0 +1,1901 @@
+[
+  {
+    "videoId": "OWbI6WtlI-k",
+    "name": "Santa Monica Beach Cam",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0095,
+    "lng": -118.497,
+    "type": "webcam"
+  },
+  {
+    "videoId": "zYi_5AF6B2A",
+    "name": "Pacifica Pier and Beach Live 4K",
+    "city": "Pacifica",
+    "country": "US",
+    "lat": 37.6335,
+    "lng": -122.489,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ftGfQqCA184",
+    "name": "30A Live Beach Cam at Vue on 30a",
+    "city": "Santa Rosa Beach",
+    "country": "US",
+    "lat": 30.28,
+    "lng": -86.01,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Ba2cLC3xUpU",
+    "name": "Hamptons Main Beach Cam LIVE",
+    "city": "East Hampton",
+    "country": "US",
+    "lat": 40.9512,
+    "lng": -72.1846,
+    "type": "webcam"
+  },
+  {
+    "videoId": "rxBBRLWF0mM",
+    "name": "Clearwater Beach - Frenchy's Rockaway",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "iBMYVXVZqrE",
+    "name": "Tropical White Sand Beach Cam",
+    "city": "Unknown",
+    "country": "US",
+    "lat": 25.7617,
+    "lng": -80.1918,
+    "type": "webcam"
+  },
+  {
+    "videoId": "DY5RYp4sxYc",
+    "name": "Pipeline Cam - North Shore",
+    "city": "Haleiwa",
+    "country": "US",
+    "lat": 21.665,
+    "lng": -158.0539,
+    "type": "webcam"
+  },
+  {
+    "videoId": "6i0yI_pfg7k",
+    "name": "Hawaii Humpback Whale Marine Sanctuary",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.7984,
+    "lng": -156.3319,
+    "type": "webcam"
+  },
+  {
+    "videoId": "wnNrd-VjLsQ",
+    "name": "Waimea Bay Cam",
+    "city": "Haleiwa",
+    "country": "US",
+    "lat": 21.6427,
+    "lng": -158.066,
+    "type": "webcam"
+  },
+  {
+    "videoId": "1-iS7LArMPA",
+    "name": "Times Square New York Webcam Livestream",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.758,
+    "lng": -73.9855,
+    "type": "city"
+  },
+  {
+    "videoId": "rnXIjl_Rzy4",
+    "name": "Times Square Live Cam 1",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.758,
+    "lng": -73.9855,
+    "type": "city"
+  },
+  {
+    "videoId": "iiBTWU2FyFo",
+    "name": "Times Square Live Cam 2",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.758,
+    "lng": -73.9855,
+    "type": "city"
+  },
+  {
+    "videoId": "TdGXlEOxuOw",
+    "name": "Empire State Building Observation Deck",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7484,
+    "lng": -73.9857,
+    "type": "landmark"
+  },
+  {
+    "videoId": "VGnFLdQW39A",
+    "name": "NYC Multicam View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "type": "city"
+  },
+  {
+    "videoId": "PmfCCNWBunY",
+    "name": "Manhattan Skyline View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7128,
+    "lng": -74.006,
+    "type": "city"
+  },
+  {
+    "videoId": "KuzVYn1Ucbg",
+    "name": "Lower Manhattan View",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.7075,
+    "lng": -74.0021,
+    "type": "city"
+  },
+  {
+    "videoId": "jtvmwjzZY0c",
+    "name": "Las Vegas Strip Cam 1",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.1147,
+    "lng": -115.1728,
+    "type": "city"
+  },
+  {
+    "videoId": "-6q-aEQB14E",
+    "name": "Las Vegas Strip Cam 2",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.1147,
+    "lng": -115.1728,
+    "type": "city"
+  },
+  {
+    "videoId": "jjSo4RJ2sMo",
+    "name": "Las Vegas Sphere View Cam",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.1147,
+    "lng": -115.1728,
+    "type": "city"
+  },
+  {
+    "videoId": "kxD9qBk6WQ8",
+    "name": "Copacabana Beach Cam 1",
+    "city": "Rio de Janeiro",
+    "country": "BR",
+    "lat": -22.9711,
+    "lng": -43.1822,
+    "type": "webcam"
+  },
+  {
+    "videoId": "VXLKruYjJec",
+    "name": "Copacabana Beach Cam 2",
+    "city": "Rio de Janeiro",
+    "country": "BR",
+    "lat": -22.9711,
+    "lng": -43.1822,
+    "type": "webcam"
+  },
+  {
+    "videoId": "3KhQK5KG7VU",
+    "name": "Niagara Falls Live Cam 1",
+    "city": "Niagara Falls",
+    "country": "CA",
+    "lat": 43.0896,
+    "lng": -79.0849,
+    "type": "landmark"
+  },
+  {
+    "videoId": "qx7gry390YA",
+    "name": "Niagara Falls Live Cam 2",
+    "city": "Niagara Falls",
+    "country": "CA",
+    "lat": 43.0896,
+    "lng": -79.0849,
+    "type": "landmark"
+  },
+  {
+    "videoId": "rqBfiegG5qU",
+    "name": "Buenos Aires July 9 Avenue & Obelisk Cam 1",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "lat": -34.6037,
+    "lng": -58.3816,
+    "type": "city"
+  },
+  {
+    "videoId": "2nl5VgUAhyc",
+    "name": "Buenos Aires July 9 Avenue & Obelisk Cam 2",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "lat": -34.6037,
+    "lng": -58.3816,
+    "type": "city"
+  },
+  {
+    "videoId": "aEu5QTSrB40",
+    "name": "Sao Paulo Guarulhos Airport Cam 1",
+    "city": "Sao Paulo",
+    "country": "BR",
+    "lat": -23.4356,
+    "lng": -46.4731,
+    "type": "webcam"
+  },
+  {
+    "videoId": "2-BDtQaEvsI",
+    "name": "Sao Paulo Guarulhos Airport Cam 2",
+    "city": "Sao Paulo",
+    "country": "BR",
+    "lat": -23.4356,
+    "lng": -46.4731,
+    "type": "webcam"
+  },
+  {
+    "videoId": "moUl-CBrXp4",
+    "name": "Christ the Redeemer Cam 1",
+    "city": "Rio de Janeiro",
+    "country": "BR",
+    "lat": -22.9519,
+    "lng": -43.2105,
+    "type": "landmark"
+  },
+  {
+    "videoId": "d6LMwptYVSI",
+    "name": "Christ the Redeemer Cam 2",
+    "city": "Rio de Janeiro",
+    "country": "BR",
+    "lat": -22.9519,
+    "lng": -43.2105,
+    "type": "landmark"
+  },
+  {
+    "videoId": "7IU7TdkPr_k",
+    "name": "Florianopolis Barra da Lagoa Beach",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.569,
+    "lng": -48.429,
+    "type": "webcam"
+  },
+  {
+    "videoId": "GFAEq2j3csQ",
+    "name": "Florianopolis Cachoeira do Bom Jesus Beach",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.4364,
+    "lng": -48.453,
+    "type": "webcam"
+  },
+  {
+    "videoId": "fV9AQHMJN0U",
+    "name": "Florianopolis Canal da Barra da Lagoa",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.569,
+    "lng": -48.429,
+    "type": "webcam"
+  },
+  {
+    "videoId": "enk-Twv4mJw",
+    "name": "Florianopolis North Beach",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.4195,
+    "lng": -48.4563,
+    "type": "webcam"
+  },
+  {
+    "videoId": "CXKCXWiKgew",
+    "name": "Florianopolis Praia dos Ingleses",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.435,
+    "lng": -48.391,
+    "type": "webcam"
+  },
+  {
+    "videoId": "tMYtrEBNVAU",
+    "name": "Santos Waterfront Cam 1",
+    "city": "Santos",
+    "country": "BR",
+    "lat": -23.9618,
+    "lng": -46.3322,
+    "type": "webcam"
+  },
+  {
+    "videoId": "AX74XKJZdJM",
+    "name": "Santos Waterfront Cam 2",
+    "city": "Santos",
+    "country": "BR",
+    "lat": -23.9618,
+    "lng": -46.3322,
+    "type": "webcam"
+  },
+  {
+    "videoId": "75m4Ry69IQA",
+    "name": "Gramado Centre Cam 1",
+    "city": "Gramado",
+    "country": "BR",
+    "lat": -29.3753,
+    "lng": -50.8765,
+    "type": "city"
+  },
+  {
+    "videoId": "Busyb4PoLoo",
+    "name": "Gramado Centre Cam 2",
+    "city": "Gramado",
+    "country": "BR",
+    "lat": -29.3753,
+    "lng": -50.8765,
+    "type": "city"
+  },
+  {
+    "videoId": "3fPqRlwtSHM",
+    "name": "Port of Itajai Cam 1",
+    "city": "Itajai",
+    "country": "BR",
+    "lat": -26.9078,
+    "lng": -48.662,
+    "type": "port"
+  },
+  {
+    "videoId": "DPX04x-cGvw",
+    "name": "Port of Itajai Cam 2",
+    "city": "Itajai",
+    "country": "BR",
+    "lat": -26.9078,
+    "lng": -48.662,
+    "type": "port"
+  },
+  {
+    "videoId": "2HGGG7Dr03g",
+    "name": "Teatro Amazonas Cam",
+    "city": "Manaus",
+    "country": "BR",
+    "lat": -3.13,
+    "lng": -60.0234,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ICAxjegbHnU",
+    "name": "Ponta Negra Beach Cam",
+    "city": "Manaus",
+    "country": "BR",
+    "lat": -3.0772,
+    "lng": -60.0875,
+    "type": "webcam"
+  },
+  {
+    "videoId": "qobQ2iXQzlY",
+    "name": "Beach Kiosk Estrela do Mar Outside Cam",
+    "city": "Itajai",
+    "country": "BR",
+    "lat": -26.9078,
+    "lng": -48.662,
+    "type": "webcam"
+  },
+  {
+    "videoId": "IqAwXJYq2Cw",
+    "name": "Beach Kiosk Estrela do Mar Inside Cam",
+    "city": "Itajai",
+    "country": "BR",
+    "lat": -26.9078,
+    "lng": -48.662,
+    "type": "webcam"
+  },
+  {
+    "videoId": "S605ycm0Vlk",
+    "name": "Hog's Breath Saloon Mini Bar Cam",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5551,
+    "lng": -81.801,
+    "type": "webcam"
+  },
+  {
+    "videoId": "_eE4GBEjjs4",
+    "name": "Hog's Breath Saloon Stage 1 Cam",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5551,
+    "lng": -81.801,
+    "type": "webcam"
+  },
+  {
+    "videoId": "thzfsD7VDFg",
+    "name": "Hog's Breath Saloon Stage 2 Cam",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5551,
+    "lng": -81.801,
+    "type": "webcam"
+  },
+  {
+    "videoId": "rbMK4p6zUwI",
+    "name": "Sloppy Joe's Bar Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5585,
+    "lng": -81.8028,
+    "type": "webcam"
+  },
+  {
+    "videoId": "yNpciG0zc1Q",
+    "name": "Sloppy Joe's Bar Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5585,
+    "lng": -81.8028,
+    "type": "webcam"
+  },
+  {
+    "videoId": "bqvD0Xb6sU0",
+    "name": "Irish Kevin's Bar Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.557,
+    "lng": -81.802,
+    "type": "webcam"
+  },
+  {
+    "videoId": "lcVm-Izrpa0",
+    "name": "Irish Kevin's Bar Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.557,
+    "lng": -81.802,
+    "type": "webcam"
+  },
+  {
+    "videoId": "8Rw-tZTeBjU",
+    "name": "Key West Mallory Square Cam 1",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5596,
+    "lng": -81.8075,
+    "type": "landmark"
+  },
+  {
+    "videoId": "f9pMVLoJfyE",
+    "name": "Key West Mallory Square Cam 2",
+    "city": "Key West",
+    "country": "US",
+    "lat": 24.5596,
+    "lng": -81.8075,
+    "type": "landmark"
+  },
+  {
+    "videoId": "zfSst64NFcE",
+    "name": "Robbie's Marina Islamorada Feeding Dock",
+    "city": "Islamorada",
+    "country": "US",
+    "lat": 24.8809,
+    "lng": -80.6266,
+    "type": "webcam"
+  },
+  {
+    "videoId": "bZJUN1nf5sM",
+    "name": "Robbie's Marina Islamorada Underwater Cam",
+    "city": "Islamorada",
+    "country": "US",
+    "lat": 24.8809,
+    "lng": -80.6266,
+    "type": "webcam"
+  },
+  {
+    "videoId": "EO_1LWqsCNE",
+    "name": "Venice Beach Cam 1",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.985,
+    "lng": -118.4695,
+    "type": "webcam"
+  },
+  {
+    "videoId": "98jOtUeM3m8",
+    "name": "Venice Beach Cam 2",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.985,
+    "lng": -118.4695,
+    "type": "webcam"
+  },
+  {
+    "videoId": "D33ZD6sRvnA",
+    "name": "Venice Beach Cam 3",
+    "city": "Los Angeles",
+    "country": "US",
+    "lat": 33.985,
+    "lng": -118.4695,
+    "type": "webcam"
+  },
+  {
+    "videoId": "UmsfUJ8dF3U",
+    "name": "Shelter Island North Ferry Cam",
+    "city": "Shelter Island",
+    "country": "US",
+    "lat": 41.0682,
+    "lng": -72.3176,
+    "type": "webcam"
+  },
+  {
+    "videoId": "L6eG4ahJc_Q",
+    "name": "Fort Madison Railroad Cam 1",
+    "city": "Fort Madison",
+    "country": "US",
+    "lat": 40.6298,
+    "lng": -91.3154,
+    "type": "traffic"
+  },
+  {
+    "videoId": "mexGMd6-8ik",
+    "name": "Fort Madison Railroad Cam 2",
+    "city": "Fort Madison",
+    "country": "US",
+    "lat": 40.6298,
+    "lng": -91.3154,
+    "type": "traffic"
+  },
+  {
+    "videoId": "OWW-gF46keA",
+    "name": "Tamarindo Beach Cam",
+    "city": "Tamarindo",
+    "country": "CR",
+    "lat": 10.299,
+    "lng": -85.8372,
+    "type": "webcam"
+  },
+  {
+    "videoId": "dXUzu9XiKwk",
+    "name": "Toronto City Views Cam 1",
+    "city": "Toronto",
+    "country": "CA",
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "type": "city"
+  },
+  {
+    "videoId": "Qt3CVWP2P7k",
+    "name": "Toronto City Views Cam 2",
+    "city": "Toronto",
+    "country": "CA",
+    "lat": 43.6532,
+    "lng": -79.3832,
+    "type": "city"
+  },
+  {
+    "videoId": "xsRDTfuksyI",
+    "name": "Calgary Central Memorial Park Cam",
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.0407,
+    "lng": -114.0609,
+    "type": "city"
+  },
+  {
+    "videoId": "MwcqP3ta6RI",
+    "name": "Calgary Downtown Cam 1",
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.0447,
+    "lng": -114.0719,
+    "type": "city"
+  },
+  {
+    "videoId": "1jIuUY9qTkI",
+    "name": "Calgary Downtown Cam 2",
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.0447,
+    "lng": -114.0719,
+    "type": "city"
+  },
+  {
+    "videoId": "wShzNJhnBbU",
+    "name": "Calgary Kensington Road Cam",
+    "city": "Calgary",
+    "country": "CA",
+    "lat": 51.0523,
+    "lng": -114.088,
+    "type": "city"
+  },
+  {
+    "videoId": "DnUFAShZKus",
+    "name": "Peace Bridge Canada Bound Cam",
+    "city": "Fort Erie",
+    "country": "CA",
+    "lat": 42.9062,
+    "lng": -78.9097,
+    "type": "traffic"
+  },
+  {
+    "videoId": "g9hNGJxw6Yw",
+    "name": "Peace Bridge Truck Inspection Cam",
+    "city": "Fort Erie",
+    "country": "CA",
+    "lat": 42.9062,
+    "lng": -78.9097,
+    "type": "traffic"
+  },
+  {
+    "videoId": "WPMgP2C3_co",
+    "name": "Peace Bridge Inspection Lanes Cam",
+    "city": "Fort Erie",
+    "country": "CA",
+    "lat": 42.9062,
+    "lng": -78.9097,
+    "type": "traffic"
+  },
+  {
+    "videoId": "9En2186vo5g",
+    "name": "Peace Bridge US Bound Inspection Cam",
+    "city": "Fort Erie",
+    "country": "CA",
+    "lat": 42.9062,
+    "lng": -78.9097,
+    "type": "traffic"
+  },
+  {
+    "videoId": "spwLOtJD5AI",
+    "name": "Acapulco Beach Cam",
+    "city": "Acapulco",
+    "country": "MX",
+    "lat": 16.8531,
+    "lng": -99.8237,
+    "type": "webcam"
+  },
+  {
+    "videoId": "btSfGGIn_Eo",
+    "name": "Zihuatanejo Beach Cam 1",
+    "city": "Zihuatanejo",
+    "country": "MX",
+    "lat": 17.6396,
+    "lng": -101.552,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Hc32IA80v_Q",
+    "name": "Zihuatanejo Beach Cam 2",
+    "city": "Zihuatanejo",
+    "country": "MX",
+    "lat": 17.6396,
+    "lng": -101.552,
+    "type": "webcam"
+  },
+  {
+    "videoId": "bK-RO4B7x_g",
+    "name": "Tulum Beach Cam",
+    "city": "Tulum",
+    "country": "MX",
+    "lat": 20.2145,
+    "lng": -87.429,
+    "type": "webcam"
+  },
+  {
+    "videoId": "_Yg6OO0gTlg",
+    "name": "Cozumel Beach Cam",
+    "city": "Cozumel",
+    "country": "MX",
+    "lat": 20.423,
+    "lng": -86.9223,
+    "type": "webcam"
+  },
+  {
+    "videoId": "FTVIAR7T3yM",
+    "name": "Mexico Beach Cam 6",
+    "city": "Mexico Beach",
+    "country": "MX",
+    "lat": 17.6396,
+    "lng": -101.552,
+    "type": "webcam"
+  },
+  {
+    "videoId": "AyVSlOI7c9Q",
+    "name": "Cancun Fiesta Americana Beach Cam",
+    "city": "Cancun",
+    "country": "MX",
+    "lat": 21.1619,
+    "lng": -86.8515,
+    "type": "webcam"
+  },
+  {
+    "videoId": "5D8BK_MLd-I",
+    "name": "Cancun Royal Cancun Resort Cam",
+    "city": "Cancun",
+    "country": "MX",
+    "lat": 21.1619,
+    "lng": -86.8515,
+    "type": "webcam"
+  },
+  {
+    "videoId": "fv0Qlo_IofY",
+    "name": "Cancun Royal Sands Cam",
+    "city": "Cancun",
+    "country": "MX",
+    "lat": 21.15,
+    "lng": -86.85,
+    "type": "webcam"
+  },
+  {
+    "videoId": "rAwfz0gC3JI",
+    "name": "Cancun Temptation Resort Cam",
+    "city": "Cancun",
+    "country": "MX",
+    "lat": 21.14,
+    "lng": -86.84,
+    "type": "webcam"
+  },
+  {
+    "videoId": "-KCYRO2qrpU",
+    "name": "Cancun Beach Cam 5",
+    "city": "Cancun",
+    "country": "MX",
+    "lat": 21.1619,
+    "lng": -86.8515,
+    "type": "webcam"
+  },
+  {
+    "videoId": "rayKu7F6Ub4",
+    "name": "Popocatepetl Volcano Cam 1",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0225,
+    "lng": -98.6277,
+    "type": "landmark"
+  },
+  {
+    "videoId": "B7jUvXADO1c",
+    "name": "Popocatepetl Volcano Cam 2",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0225,
+    "lng": -98.6277,
+    "type": "landmark"
+  },
+  {
+    "videoId": "2RraZgaUsV8",
+    "name": "Popocatepetl Volcano Cam 3",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0225,
+    "lng": -98.6277,
+    "type": "landmark"
+  },
+  {
+    "videoId": "GXBqclsAdLM",
+    "name": "Popocatepetl Volcano Cam 4",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0225,
+    "lng": -98.6277,
+    "type": "landmark"
+  },
+  {
+    "videoId": "VZcb6neiihI",
+    "name": "Popocatepetl Volcano Cam 5",
+    "city": "Puebla",
+    "country": "MX",
+    "lat": 19.0225,
+    "lng": -98.6277,
+    "type": "landmark"
+  },
+  {
+    "videoId": "r_mablBOcz0",
+    "name": "Playa del Carmen Beach Cam 1",
+    "city": "Playa del Carmen",
+    "country": "MX",
+    "lat": 20.6296,
+    "lng": -87.0739,
+    "type": "webcam"
+  },
+  {
+    "videoId": "6zRl9by4sSs",
+    "name": "Playa del Carmen Beach Cam 2",
+    "city": "Playa del Carmen",
+    "country": "MX",
+    "lat": 20.6296,
+    "lng": -87.0739,
+    "type": "webcam"
+  },
+  {
+    "videoId": "kC6_JqEt3GA",
+    "name": "Canmore Main Street Cam",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "city"
+  },
+  {
+    "videoId": "_0wPODlF9wU",
+    "name": "Canmore Bow Valley Cam",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "city"
+  },
+  {
+    "videoId": "qIOP6NJLlc8",
+    "name": "Canmore Three Sisters Cam",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "landmark"
+  },
+  {
+    "videoId": "LosHr1bonAA",
+    "name": "Canmore Clock Tower Cam",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "city"
+  },
+  {
+    "videoId": "Tx02Ve_s7m0",
+    "name": "Canmore Mountain Cam 5",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "webcam"
+  },
+  {
+    "videoId": "oe68sJ1ZtsA",
+    "name": "Canmore Mountain Cam 6",
+    "city": "Canmore",
+    "country": "CA",
+    "lat": 51.0884,
+    "lng": -115.358,
+    "type": "webcam"
+  },
+  {
+    "videoId": "fNmFje4SG4o",
+    "name": "Kingston Cross Roads Cam",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 18.0179,
+    "lng": -76.7674,
+    "type": "city"
+  },
+  {
+    "videoId": "x396CVeU74Q",
+    "name": "Kingston Devon House Cam",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 18.0179,
+    "lng": -76.7674,
+    "type": "city"
+  },
+  {
+    "videoId": "Sd9ZD8Vt8tQ",
+    "name": "Kingston Harbour Cam",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 17.9714,
+    "lng": -76.786,
+    "type": "port"
+  },
+  {
+    "videoId": "pwlA66hgV3M",
+    "name": "Kingston West Parade Cam",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 18.012,
+    "lng": -76.796,
+    "type": "city"
+  },
+  {
+    "videoId": "cVpdwCQ7LEc",
+    "name": "Kingston Barbican Cam",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 18.035,
+    "lng": -76.77,
+    "type": "city"
+  },
+  {
+    "videoId": "XF9fcTdr6MQ",
+    "name": "Kingston Street View Cam 6",
+    "city": "Kingston",
+    "country": "JM",
+    "lat": 18.0179,
+    "lng": -76.7674,
+    "type": "city"
+  },
+  {
+    "videoId": "PeYZZinH1wI",
+    "name": "Port of Miami Cam 1",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7743,
+    "lng": -80.1709,
+    "type": "port"
+  },
+  {
+    "videoId": "YNDiaM0zpFc",
+    "name": "Port of Miami Cam 2",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7743,
+    "lng": -80.1709,
+    "type": "port"
+  },
+  {
+    "videoId": "DxZziUUr6CY",
+    "name": "Port of Miami Cam 3",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7743,
+    "lng": -80.1709,
+    "type": "port"
+  },
+  {
+    "videoId": "OXeFcz3lEz4",
+    "name": "Miami Airport Runway Cam",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "type": "webcam"
+  },
+  {
+    "videoId": "q2Dxx5704fQ",
+    "name": "Miami Airport Embassy Suites View",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "type": "webcam"
+  },
+  {
+    "videoId": "eUX2NawZQ64",
+    "name": "Miami Airport Northeast View Cam",
+    "city": "Miami",
+    "country": "US",
+    "lat": 25.7959,
+    "lng": -80.287,
+    "type": "webcam"
+  },
+  {
+    "videoId": "i80f0HlybSg",
+    "name": "El Quisco Waterfront Cam",
+    "city": "El Quisco",
+    "country": "CL",
+    "lat": -33.396,
+    "lng": -71.6912,
+    "type": "webcam"
+  },
+  {
+    "videoId": "piw3SNsew8w",
+    "name": "Vina del Mar Waterfront Cam",
+    "city": "Vina del Mar",
+    "country": "CL",
+    "lat": -33.0153,
+    "lng": -71.55,
+    "type": "webcam"
+  },
+  {
+    "videoId": "7kp3pY40tKY",
+    "name": "Faro Monumental Cam",
+    "city": "La Serena",
+    "country": "CL",
+    "lat": -29.9027,
+    "lng": -71.2752,
+    "type": "landmark"
+  },
+  {
+    "videoId": "_hElzf7C1D8",
+    "name": "Santiago Av. Providencia Cam",
+    "city": "Santiago",
+    "country": "CL",
+    "lat": -33.4289,
+    "lng": -70.6093,
+    "type": "city"
+  },
+  {
+    "videoId": "o5bedndIYIQ",
+    "name": "Santiago Costanera Center Cam",
+    "city": "Santiago",
+    "country": "CL",
+    "lat": -33.417,
+    "lng": -70.606,
+    "type": "city"
+  },
+  {
+    "videoId": "KHkevkcT0bg",
+    "name": "Santiago Luis Thayer Ojeda Cam",
+    "city": "Santiago",
+    "country": "CL",
+    "lat": -33.42,
+    "lng": -70.608,
+    "type": "city"
+  },
+  {
+    "videoId": "79PtdSvv1Xc",
+    "name": "Port of San Antonio Cam 1",
+    "city": "San Antonio",
+    "country": "CL",
+    "lat": -33.5933,
+    "lng": -71.62,
+    "type": "port"
+  },
+  {
+    "videoId": "XfxpV4hl1aU",
+    "name": "Port of San Antonio Cam 2",
+    "city": "San Antonio",
+    "country": "CL",
+    "lat": -33.5933,
+    "lng": -71.62,
+    "type": "port"
+  },
+  {
+    "videoId": "rxyNjFKwzJA",
+    "name": "Port of Vancouver Harbour Cam",
+    "city": "Vancouver",
+    "country": "CA",
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "type": "port"
+  },
+  {
+    "videoId": "GHEmhcWjiTE",
+    "name": "Port of Vancouver Cam 2",
+    "city": "Vancouver",
+    "country": "CA",
+    "lat": 49.2827,
+    "lng": -123.1207,
+    "type": "port"
+  },
+  {
+    "videoId": "I2VvSE0fyz4",
+    "name": "Necochea Beach Cam",
+    "city": "Necochea",
+    "country": "AR",
+    "lat": -38.5545,
+    "lng": -58.7393,
+    "type": "webcam"
+  },
+  {
+    "videoId": "q3aVOvYAfdg",
+    "name": "Argentina Beach Resort Cam",
+    "city": "Buenos Aires",
+    "country": "AR",
+    "lat": -38.0,
+    "lng": -57.55,
+    "type": "webcam"
+  },
+  {
+    "videoId": "2u4GnVNtlsY",
+    "name": "Patagonia Coastal Cam",
+    "city": "Patagonia",
+    "country": "AR",
+    "lat": -43.3,
+    "lng": -65.1,
+    "type": "webcam"
+  },
+  {
+    "videoId": "j453BqwLHcc",
+    "name": "Argentina Wildlife Isla Tova Cam 1",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "mgL0PIzOmqI",
+    "name": "Argentina Wildlife Isla Tova Cam 2",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "dKsjYPieSC4",
+    "name": "Argentina Wildlife Isla Tovita Cam 1",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ghKdm20aMTE",
+    "name": "Argentina Wildlife Isla Tovita Cam 2",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "aYD4sT1kB5g",
+    "name": "Argentina Wildlife Isla Gran Robredo Cam 1",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "gpFM6j3IhPg",
+    "name": "Argentina Wildlife Isla Gran Robredo Cam 2",
+    "city": "Peninsula Valdes",
+    "country": "AR",
+    "lat": -42.4833,
+    "lng": -64.0667,
+    "type": "webcam"
+  },
+  {
+    "videoId": "uyt8JsITTac",
+    "name": "Valle Nevado Ski Resort Pool Cam",
+    "city": "Lo Barnechea",
+    "country": "CL",
+    "lat": -33.3577,
+    "lng": -70.2517,
+    "type": "webcam"
+  },
+  {
+    "videoId": "O_7aVzUBvUY",
+    "name": "Valle Nevado Ski Resort Gondola Cam 1",
+    "city": "Lo Barnechea",
+    "country": "CL",
+    "lat": -33.3577,
+    "lng": -70.2517,
+    "type": "webcam"
+  },
+  {
+    "videoId": "tmS73xQ4zVc",
+    "name": "Valle Nevado Ski Resort Gondola Cam 2",
+    "city": "Lo Barnechea",
+    "country": "CL",
+    "lat": -33.3577,
+    "lng": -70.2517,
+    "type": "webcam"
+  },
+  {
+    "videoId": "SFoS6nBL138",
+    "name": "Peggy's Cove Lighthouse Cam",
+    "city": "Peggy's Cove",
+    "country": "CA",
+    "lat": 44.4912,
+    "lng": -63.9179,
+    "type": "landmark"
+  },
+  {
+    "videoId": "5mYXkctDMsA",
+    "name": "Baccaro Point Lighthouse Cam",
+    "city": "Baccaro",
+    "country": "CA",
+    "lat": 43.45,
+    "lng": -65.47,
+    "type": "landmark"
+  },
+  {
+    "videoId": "Qz-jJ4mxMtU",
+    "name": "The Hawk Nova Scotia Cam",
+    "city": "The Hawk",
+    "country": "CA",
+    "lat": 43.42,
+    "lng": -65.63,
+    "type": "webcam"
+  },
+  {
+    "videoId": "RdQ-e-iCkVI",
+    "name": "Burntcoat Head Cam",
+    "city": "Burntcoat Head",
+    "country": "CA",
+    "lat": 45.3107,
+    "lng": -63.804,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Pwt0tZlt9eE",
+    "name": "Lockeport Crescent Beach Cam",
+    "city": "Lockeport",
+    "country": "CA",
+    "lat": 43.6997,
+    "lng": -65.1117,
+    "type": "webcam"
+  },
+  {
+    "videoId": "GgdmR8zb0M8",
+    "name": "Whistler Olympic Plaza Cam",
+    "city": "Whistler",
+    "country": "CA",
+    "lat": 50.1163,
+    "lng": -122.9574,
+    "type": "city"
+  },
+  {
+    "videoId": "wUQc3RoLAPs",
+    "name": "Houston Downtown Skyline Cam",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7604,
+    "lng": -95.3698,
+    "type": "city"
+  },
+  {
+    "videoId": "SDK_m1_BVJ4",
+    "name": "Houston City Stadium View Cam",
+    "city": "Houston",
+    "country": "US",
+    "lat": 29.7604,
+    "lng": -95.3698,
+    "type": "city"
+  },
+  {
+    "videoId": "Ksrleaxxxhw",
+    "name": "Cat's Meow Bar Bourbon Street Cam 1",
+    "city": "New Orleans",
+    "country": "US",
+    "lat": 29.9584,
+    "lng": -90.0644,
+    "type": "city"
+  },
+  {
+    "videoId": "rnNPl27Arpk",
+    "name": "Cat's Meow Bar Bourbon Street Cam 2",
+    "city": "New Orleans",
+    "country": "US",
+    "lat": 29.9584,
+    "lng": -90.0644,
+    "type": "city"
+  },
+  {
+    "videoId": "hPvl6IACa2k",
+    "name": "Kamaole Beach Park II Cam",
+    "city": "Kihei",
+    "country": "US",
+    "lat": 20.72,
+    "lng": -156.45,
+    "type": "webcam"
+  },
+  {
+    "videoId": "3ATYHKN2hIg",
+    "name": "Lawai Beach Cam",
+    "city": "Koloa",
+    "country": "US",
+    "lat": 21.873,
+    "lng": -159.4957,
+    "type": "webcam"
+  },
+  {
+    "videoId": "iWCeBAxRCBo",
+    "name": "Hawaii Whale Marine Sanctuary Cam",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.75,
+    "lng": -156.45,
+    "type": "webcam"
+  },
+  {
+    "videoId": "X0idnu7HUmI",
+    "name": "Sheraton Waikiki Beach Cam",
+    "city": "Honolulu",
+    "country": "US",
+    "lat": 21.2774,
+    "lng": -157.8308,
+    "type": "webcam"
+  },
+  {
+    "videoId": "7do5yOYetV0",
+    "name": "Hawaii Beach Cam 5",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.8,
+    "lng": -156.35,
+    "type": "webcam"
+  },
+  {
+    "videoId": "y6ew34X8P7Q",
+    "name": "Hawaii Beach Cam 6",
+    "city": "Maui",
+    "country": "US",
+    "lat": 20.85,
+    "lng": -156.4,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ZdmEqSHaNzU",
+    "name": "Hawaii Scenic Cam 7",
+    "city": "Hawaii",
+    "country": "US",
+    "lat": 19.7,
+    "lng": -155.5,
+    "type": "webcam"
+  },
+  {
+    "videoId": "YcEf_y0Ct14",
+    "name": "Hawaii Scenic Cam 8",
+    "city": "Hawaii",
+    "country": "US",
+    "lat": 19.8,
+    "lng": -155.45,
+    "type": "webcam"
+  },
+  {
+    "videoId": "zkKMuhqJKUo",
+    "name": "Hawaii Scenic Cam 9",
+    "city": "Kauai",
+    "country": "US",
+    "lat": 22.08,
+    "lng": -159.32,
+    "type": "webcam"
+  },
+  {
+    "videoId": "VhTEUsVUCi8",
+    "name": "Hawaii Beach Cam 10",
+    "city": "Oahu",
+    "country": "US",
+    "lat": 21.35,
+    "lng": -157.9,
+    "type": "webcam"
+  },
+  {
+    "videoId": "M6kN1wlNSk4",
+    "name": "Hawaii Scenic Cam 11",
+    "city": "Hawaii",
+    "country": "US",
+    "lat": 19.9,
+    "lng": -155.5,
+    "type": "webcam"
+  },
+  {
+    "videoId": "9hRqd24IIaw",
+    "name": "Balneario Camboriu Beach Cam",
+    "city": "Balneario Camboriu",
+    "country": "BR",
+    "lat": -26.9906,
+    "lng": -48.6349,
+    "type": "webcam"
+  },
+  {
+    "videoId": "e7PdAFTY0fM",
+    "name": "Cabo Frio Beach Cam",
+    "city": "Cabo Frio",
+    "country": "BR",
+    "lat": -22.8797,
+    "lng": -42.0186,
+    "type": "webcam"
+  },
+  {
+    "videoId": "j4Wne61IJ3I",
+    "name": "Natal Beach Cam",
+    "city": "Natal",
+    "country": "BR",
+    "lat": -5.7945,
+    "lng": -35.211,
+    "type": "webcam"
+  },
+  {
+    "videoId": "PcbhQFs529w",
+    "name": "Brazil Beach Cam 4",
+    "city": "Florianopolis",
+    "country": "BR",
+    "lat": -27.5949,
+    "lng": -48.5482,
+    "type": "webcam"
+  },
+  {
+    "videoId": "B_tl3zH0j2o",
+    "name": "Brazil Beach Cam 5",
+    "city": "Buzios",
+    "country": "BR",
+    "lat": -22.7481,
+    "lng": -41.881,
+    "type": "webcam"
+  },
+  {
+    "videoId": "AN3MIroAVuU",
+    "name": "Brazil Beach Cam 7",
+    "city": "Praia Grande",
+    "country": "BR",
+    "lat": -24.0058,
+    "lng": -46.4028,
+    "type": "webcam"
+  },
+  {
+    "videoId": "eib_UO1e8ww",
+    "name": "Brazil Beach Cam 8",
+    "city": "Guaruja",
+    "country": "BR",
+    "lat": -23.9935,
+    "lng": -46.2564,
+    "type": "webcam"
+  },
+  {
+    "videoId": "v5Y6WsD577M",
+    "name": "Brazil Beach Cam 9",
+    "city": "Maresias",
+    "country": "BR",
+    "lat": -23.7799,
+    "lng": -45.5622,
+    "type": "webcam"
+  },
+  {
+    "videoId": "bsTPIFHHwlo",
+    "name": "Brazil Beach Cam 10",
+    "city": "Ubatuba",
+    "country": "BR",
+    "lat": -23.4336,
+    "lng": -45.0838,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Jpd7w36gBC0",
+    "name": "Brazil Beach Cam 11",
+    "city": "Ilhabela",
+    "country": "BR",
+    "lat": -23.7785,
+    "lng": -45.3581,
+    "type": "webcam"
+  },
+  {
+    "videoId": "UxGYfuizp-E",
+    "name": "Brazil Beach Cam 12",
+    "city": "Bertioga",
+    "country": "BR",
+    "lat": -23.8524,
+    "lng": -46.1389,
+    "type": "webcam"
+  },
+  {
+    "videoId": "Vsm5qzRxj04",
+    "name": "Brazil Beach Cam 13",
+    "city": "Peruibe",
+    "country": "BR",
+    "lat": -24.3206,
+    "lng": -47.0021,
+    "type": "webcam"
+  },
+  {
+    "videoId": "wsB-Z_oieAU",
+    "name": "Congonhas Airport Cam 1",
+    "city": "Sao Paulo",
+    "country": "BR",
+    "lat": -23.6261,
+    "lng": -46.6564,
+    "type": "webcam"
+  },
+  {
+    "videoId": "s_qnModgkKs",
+    "name": "Congonhas Airport Cam 2",
+    "city": "Sao Paulo",
+    "country": "BR",
+    "lat": -23.6261,
+    "lng": -46.6564,
+    "type": "webcam"
+  },
+  {
+    "videoId": "BSWhGNXxT9A",
+    "name": "SF Treasure Island Skyline Cam",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.8235,
+    "lng": -122.3707,
+    "type": "city"
+  },
+  {
+    "videoId": "_VqvVJfmyfs",
+    "name": "SF Treasure Island Cam 2",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.8235,
+    "lng": -122.3707,
+    "type": "city"
+  },
+  {
+    "videoId": "CXYr04BWvmc",
+    "name": "SF Bay Bridge Cam",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7983,
+    "lng": -122.3778,
+    "type": "landmark"
+  },
+  {
+    "videoId": "G8RIAgPxaMc",
+    "name": "SF Clocktower Cam",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "type": "city"
+  },
+  {
+    "videoId": "Yf4cJk3YX4w",
+    "name": "SF Castro Street Cam 1",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7609,
+    "lng": -122.435,
+    "type": "city"
+  },
+  {
+    "videoId": "ByG6k2b7Twc",
+    "name": "SF Castro Street Cam 2",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7609,
+    "lng": -122.435,
+    "type": "city"
+  },
+  {
+    "videoId": "E6muSzS9Hew",
+    "name": "SF Castro Street Cam 3",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7609,
+    "lng": -122.435,
+    "type": "city"
+  },
+  {
+    "videoId": "ThpFcm9vD7c",
+    "name": "SFO Airport Cam 1",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.6213,
+    "lng": -122.379,
+    "type": "webcam"
+  },
+  {
+    "videoId": "wRP2BtRYZ28",
+    "name": "SFO Airport Cam 2",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.6213,
+    "lng": -122.379,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ai3mi7HQcms",
+    "name": "Cal Academy of Sciences Penguin Cam 1",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7699,
+    "lng": -122.4661,
+    "type": "webcam"
+  },
+  {
+    "videoId": "oP6V5VrOrWc",
+    "name": "Cal Academy of Sciences Penguin Cam 2",
+    "city": "San Francisco",
+    "country": "US",
+    "lat": 37.7699,
+    "lng": -122.4661,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ATbtGvbExP4",
+    "name": "Nashville Broadway Cam 1",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "type": "city"
+  },
+  {
+    "videoId": "h5Grd2w7HQM",
+    "name": "Nashville Broadway Cam 2",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "type": "city"
+  },
+  {
+    "videoId": "Gw0FXKfyBno",
+    "name": "Nashville Downtown Cam 3",
+    "city": "Nashville",
+    "country": "US",
+    "lat": 36.1627,
+    "lng": -86.7816,
+    "type": "city"
+  },
+  {
+    "videoId": "_oWwfJ3v0oE",
+    "name": "Boston Charles River West Cam",
+    "city": "Boston",
+    "country": "US",
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "type": "city"
+  },
+  {
+    "videoId": "FcpsdpQ0xKg",
+    "name": "Boston Charles River East Cam",
+    "city": "Boston",
+    "country": "US",
+    "lat": 42.3601,
+    "lng": -71.0589,
+    "type": "city"
+  },
+  {
+    "videoId": "eN2rDDy48BY",
+    "name": "Boston Boylston Street Cam",
+    "city": "Boston",
+    "country": "US",
+    "lat": 42.3525,
+    "lng": -71.0647,
+    "type": "city"
+  },
+  {
+    "videoId": "49WtyN1V1ZQ",
+    "name": "Boston Harbor Cam",
+    "city": "Boston",
+    "country": "US",
+    "lat": 42.3541,
+    "lng": -71.0504,
+    "type": "port"
+  },
+  {
+    "videoId": "-8rUhH2TmrA",
+    "name": "Telluride Main Street Cam",
+    "city": "Telluride",
+    "country": "US",
+    "lat": 37.9375,
+    "lng": -107.8123,
+    "type": "city"
+  },
+  {
+    "videoId": "1EiC9bvVGnk",
+    "name": "Jackson Hole Town Square Cam 1",
+    "city": "Jackson",
+    "country": "US",
+    "lat": 43.4799,
+    "lng": -110.7624,
+    "type": "city"
+  },
+  {
+    "videoId": "DoUOrTJbIu4",
+    "name": "Jackson Hole Town Square Cam 2",
+    "city": "Jackson",
+    "country": "US",
+    "lat": 43.4799,
+    "lng": -110.7624,
+    "type": "city"
+  },
+  {
+    "videoId": "B_waF26In9o",
+    "name": "Jackson Hole Town Square Cam 3",
+    "city": "Jackson",
+    "country": "US",
+    "lat": 43.4799,
+    "lng": -110.7624,
+    "type": "city"
+  },
+  {
+    "videoId": "zl1woMXGGmQ",
+    "name": "Burlington Church Street Marketplace Cam 1",
+    "city": "Burlington",
+    "country": "US",
+    "lat": 44.4759,
+    "lng": -73.2121,
+    "type": "city"
+  },
+  {
+    "videoId": "T8_7hmOsIJI",
+    "name": "Burlington Church Street Marketplace Cam 2",
+    "city": "Burlington",
+    "country": "US",
+    "lat": 44.4759,
+    "lng": -73.2121,
+    "type": "city"
+  },
+  {
+    "videoId": "DckQwhIzMdA",
+    "name": "Santa Monica Pacific Park Pier Cam",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0095,
+    "lng": -118.497,
+    "type": "landmark"
+  },
+  {
+    "videoId": "ntbbWgqco4o",
+    "name": "Santa Monica Pacific Park Beach Cam",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0095,
+    "lng": -118.497,
+    "type": "webcam"
+  },
+  {
+    "videoId": "qmE7U1YZPQA",
+    "name": "Santa Monica Pacific Park City Cam",
+    "city": "Santa Monica",
+    "country": "US",
+    "lat": 34.0095,
+    "lng": -118.497,
+    "type": "city"
+  },
+  {
+    "videoId": "_-Qg5jD-PfA",
+    "name": "Las Vegas Harry Reid Airport Cam",
+    "city": "Las Vegas",
+    "country": "US",
+    "lat": 36.084,
+    "lng": -115.1537,
+    "type": "webcam"
+  },
+  {
+    "videoId": "11INCtK6uiA",
+    "name": "New York JFK Airport Cam 1",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.6413,
+    "lng": -73.7781,
+    "type": "webcam"
+  },
+  {
+    "videoId": "UH3Ueo7a_L0",
+    "name": "New York JFK Airport Cam 2",
+    "city": "New York",
+    "country": "US",
+    "lat": 40.6413,
+    "lng": -73.7781,
+    "type": "webcam"
+  },
+  {
+    "videoId": "HKIc6CYlMzI",
+    "name": "Pensacola Beach West Cam",
+    "city": "Pensacola",
+    "country": "US",
+    "lat": 30.3282,
+    "lng": -87.1383,
+    "type": "webcam"
+  },
+  {
+    "videoId": "2X0GdFzfv3A",
+    "name": "Pensacola Beach South Cam",
+    "city": "Pensacola",
+    "country": "US",
+    "lat": 30.3282,
+    "lng": -87.1383,
+    "type": "webcam"
+  },
+  {
+    "videoId": "890WmHX7h6U",
+    "name": "Pensacola Beach East Cam",
+    "city": "Pensacola",
+    "country": "US",
+    "lat": 30.3282,
+    "lng": -87.1383,
+    "type": "webcam"
+  },
+  {
+    "videoId": "-73LpcdSuSw",
+    "name": "Clearwater Beach Jimmy's Crows Nest Cam",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "V7sUbjD_e3I",
+    "name": "Clearwater Beach Cam 3",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "6YNbfQllAKk",
+    "name": "Clearwater Beach Cam 4",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "emDyfhDmfUk",
+    "name": "Clearwater Beach Cam 5",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "9c1oLjB3wIs",
+    "name": "Clearwater Beach Cam 6",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "ZL1H-ISxKMA",
+    "name": "Clearwater Beach Shephard's Resort Cam",
+    "city": "Clearwater",
+    "country": "US",
+    "lat": 27.9781,
+    "lng": -82.8268,
+    "type": "webcam"
+  },
+  {
+    "videoId": "1j1lgppb0PY",
+    "name": "Fort Lauderdale Beach Cam 1",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1224,
+    "lng": -80.1373,
+    "type": "webcam"
+  },
+  {
+    "videoId": "UV94XxNvBdw",
+    "name": "Fort Lauderdale Beach Cam 2",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1224,
+    "lng": -80.1373,
+    "type": "webcam"
+  },
+  {
+    "videoId": "YWs0HMRVCBY",
+    "name": "Elbo Room Band Cam",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1186,
+    "lng": -80.1029,
+    "type": "webcam"
+  },
+  {
+    "videoId": "wVNt3l657X0",
+    "name": "Elbo Room Bar Cam",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1186,
+    "lng": -80.1029,
+    "type": "webcam"
+  },
+  {
+    "videoId": "bM0GplM_vPY",
+    "name": "Elbo Room Patio Cam",
+    "city": "Fort Lauderdale",
+    "country": "US",
+    "lat": 26.1186,
+    "lng": -80.1029,
+    "type": "webcam"
+  },
+  {
+    "videoId": "cmkAbDUEoyA",
+    "name": "Hollywood Beach Broadwalk Cam",
+    "city": "Hollywood",
+    "country": "US",
+    "lat": 26.0112,
+    "lng": -80.1495,
+    "type": "webcam"
+  },
+  {
+    "videoId": "LTqT7IRLO0c",
+    "name": "Hollywood Beach Theatre Cam",
+    "city": "Hollywood",
+    "country": "US",
+    "lat": 26.0112,
+    "lng": -80.1495,
+    "type": "webcam"
+  }
+]
