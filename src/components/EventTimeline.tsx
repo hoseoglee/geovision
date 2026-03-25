@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useAlertStore, type Alert, type AlertSeverity } from '@/store/useAlertStore';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
 import { useAppStore } from '@/store/useAppStore';
+import { useTimelineStore } from '@/store/useTimelineStore';
 import type { CorrelationAlert } from '@/correlation/rules';
 
 interface TimelineItem {
@@ -93,13 +94,24 @@ export default function EventTimeline() {
     return merged.slice(0, 50);
   }, [alerts, correlations]);
 
+  const timelineMode = useTimelineStore((s) => s.mode);
+  const seekTo = useTimelineStore((s) => s.seekTo);
+  const enterPlayback = useTimelineStore((s) => s.enterPlayback);
+
   const handleItemClick = (item: TimelineItem) => {
+    // Fly to location
     if (item.lat != null && item.lng != null) {
       setCameraTarget({
         latitude: item.lat,
         longitude: item.lng,
         height: 500000,
       });
+    }
+    // Seek timeline to event time
+    if (timelineMode === 'playback') {
+      seekTo(item.timestamp);
+    } else {
+      enterPlayback().then(() => seekTo(item.timestamp));
     }
   };
 

@@ -22,6 +22,7 @@ import EventTimeline from './components/EventTimeline';
 import KeyboardShortcuts from './components/KeyboardShortcuts';
 import SearchModal from './components/SearchModal';
 import ExportModal from './components/ExportModal';
+import TimelineBar from './components/TimelineBar';
 
 export default function App() {
   return (
@@ -49,6 +50,7 @@ export default function App() {
       <KeyboardShortcuts />
       <SearchModal />
       <ExportModal />
+      <TimelineBar />
       <DataTicker />
     </main>
   );

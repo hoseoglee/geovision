@@ -2462,6 +2462,129 @@ export default function Globe() {
     return () => { cancelled = true; };
   }, [activeOverlays, setDataCounts, setLastUpdated]);
 
+  // ── Heatmap Layer ──
+  const heatmapPrimitivesRef = useRef<Cesium.GroundPrimitive[]>([]);
+  const heatmapPrecisionRef = useRef<number>(0);
+  const activeHeatmaps = useAppStore((s) => s.activeHeatmaps);
+  const heatmapParams = useAppStore((s) => s.heatmapParams);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer || viewer.isDestroyed()) return;
+
+    // 기존 히트맵 제거
+    for (const prim of heatmapPrimitivesRef.current) {
+      try { viewer.scene.primitives.remove(prim); } catch { /* already removed */ }
+    }
+    heatmapPrimitivesRef.current = [];
+
+    if (activeHeatmaps.length === 0) return;
+
+    let cancelled = false;
+    let cameraListener: (() => void) | null = null;
+
+    const buildHeatmaps = async () => {
+      if (cancelled) return;
+      const v = viewerRef.current;
+      if (!v || v.isDestroyed()) return;
+
+      const alt = v.camera.positionCartographic.height;
+      const newPrecision = precisionForAltitude(alt);
+
+      // precision이 바뀌지 않았고 이미 렌더링된 상태면 스킵
+      if (newPrecision === heatmapPrecisionRef.current && heatmapPrimitivesRef.current.length > 0) return;
+      heatmapPrecisionRef.current = newPrecision;
+
+      // 기존 제거
+      for (const prim of heatmapPrimitivesRef.current) {
+        try { v.scene.primitives.remove(prim); } catch { /* ok */ }
+      }
+      heatmapPrimitivesRef.current = [];
+
+      const layerFetchers: Record<string, () => Promise<HeatmapPoint[]>> = {
+        flights: async () => {
+          const data = await fetchFlights();
+          return data.filter((f) => !f.onGround).map((f) => ({ lat: f.lat, lng: f.lng }));
+        },
+        ships: async () => {
+          const data = await fetchShips();
+          return data.map((s) => ({ lat: s.lat, lng: s.lng }));
+        },
+        earthquakes: async () => {
+          const data = await fetchEarthquakes();
+          return data.map((q) => ({ lat: q.lat, lng: q.lng, weight: q.magnitude }));
+        },
+      };
+
+      for (const layerId of activeHeatmaps) {
+        if (cancelled) return;
+        const fetcher = layerFetchers[layerId];
+        if (!fetcher) continue;
+
+        try {
+          const points = await fetcher();
+          const prim = createHeatmapPrimitive(points, alt, {
+            opacity: heatmapParams.opacity,
+            intensity: heatmapParams.intensity,
+            palette: heatmapParams.palette as 'thermal' | 'viridis' | 'plasma',
+          });
+          if (prim && !cancelled && v && !v.isDestroyed()) {
+            v.scene.primitives.add(prim);
+            heatmapPrimitivesRef.current.push(prim);
+          }
+        } catch {
+          // fetch 실패 무시
+        }
+      }
+    };
+
+    // 초기 빌드
+    buildHeatmaps();
+
+    // 카메라 이동 시 precision 변경 감지 → 리빌드 (debounce 800ms)
+    let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+    const onCameraChange = () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        if (!cancelled) {
+          const v = viewerRef.current;
+          if (v && !v.isDestroyed()) {
+            const alt = v.camera.positionCartographic.height;
+            const newP = precisionForAltitude(alt);
+            if (newP !== heatmapPrecisionRef.current) {
+              buildHeatmaps();
+            }
+          }
+        }
+      }, 800);
+    };
+
+    if (viewer.camera) {
+      viewer.camera.changed.addEventListener(onCameraChange);
+      cameraListener = () => viewer.camera.changed.removeEventListener(onCameraChange);
+    }
+
+    // 10초마다 데이터 갱신
+    const interval = setInterval(() => {
+      heatmapPrecisionRef.current = 0; // force rebuild
+      buildHeatmaps();
+    }, 10000);
+
+    return () => {
+      cancelled = true;
+      if (debounceTimer) clearTimeout(debounceTimer);
+      if (cameraListener) cameraListener();
+      clearInterval(interval);
+      const v = viewerRef.current;
+      if (v && !v.isDestroyed()) {
+        for (const prim of heatmapPrimitivesRef.current) {
+          try { v.scene.primitives.remove(prim); } catch { /* ok */ }
+        }
+      }
+      heatmapPrimitivesRef.current = [];
+    };
+  }, [activeHeatmaps, heatmapParams]);
+
   // ── Correlation Engine 연동 ──
   const correlationEngine = useCorrelationStore((s) => s.engine);
 
