@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "validate:cctv": "node scripts/validate-cctvs.mjs --existing --report",
+    "validate:cctv:file": "node scripts/validate-cctvs.mjs --file"
   },
   "dependencies": {
     "cesium": "^1.124.0",
