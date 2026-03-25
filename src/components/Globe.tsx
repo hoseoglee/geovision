@@ -24,6 +24,7 @@ import {
 } from '@/data/overlayData';
 import { getSunPosition } from '@/components/SunPosition';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
+import { useTimelineStore } from '@/store/useTimelineStore';
 import type { SpatialEntity } from '@/correlation/SpatialIndex';
 import crtShader from '@/filters/crt';
 import nightVisionShader from '@/filters/nightVision';
@@ -31,6 +32,7 @@ import thermalShader from '@/filters/thermal';
 import flirShader from '@/filters/flir';
 import animeShader from '@/filters/anime';
 import lutShader from '@/filters/lut';
+import { createHeatmapPrimitive, precisionForAltitude, type HeatmapPoint } from '@/layers/HeatmapLayer';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -128,6 +130,9 @@ export default function Globe() {
   const typhoonBillboardRef = useRef<Cesium.BillboardCollection | null>(null);
   const volcanoEntitiesRef = useRef<Cesium.Entity[]>([]);
   const wildfirePointsRef = useRef<Cesium.PointPrimitiveCollection | null>(null);
+
+  // Timeline playback markers
+  const timelineMarkersRef = useRef<Cesium.Entity[]>([]);
 
   const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);

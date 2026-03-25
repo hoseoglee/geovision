@@ -21,6 +21,7 @@ import DailyBrief from './components/DailyBrief';
 import EventTimeline from './components/EventTimeline';
 import KeyboardShortcuts from './components/KeyboardShortcuts';
 import SearchModal from './components/SearchModal';
+import ExportModal from './components/ExportModal';
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
       <EventTimeline />
       <KeyboardShortcuts />
       <SearchModal />
+      <ExportModal />
       <DataTicker />
     </main>
   );
