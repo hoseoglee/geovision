@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
 import LayerSelector from './LayerSelector';
+import HeatmapControls from './HeatmapControls';
 import FilterControls from './FilterControls';
 import LandmarkNav from './LandmarkNav';
 import Legend from './Legend';
@@ -75,6 +76,8 @@ export default function ControlPanel() {
         {/* 컨트롤 영역 */}
         <div className="flex-1 overflow-y-auto px-4 py-3 space-y-5 scrollbar-thin scrollbar-thumb-gray-700">
           <LayerSelector dataCounts={dataCounts} />
+          <div className="border-t border-gray-700/50" />
+          <HeatmapControls />
           <div className="border-t border-gray-700/50" />
           <FilterControls />
           <div className="border-t border-gray-700/50" />

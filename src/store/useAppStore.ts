@@ -35,11 +35,15 @@ interface AppState {
   issLiveStream: boolean;
   filterParams: Record<string, number>;
   filterPresets: Record<string, Record<string, number>>;
+  activeHeatmaps: string[];
+  heatmapParams: { opacity: number; intensity: number; palette: string };
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
   setActiveFilter: (filter: string | null) => void;
   toggleFilter: (filter: string) => void;
+  toggleHeatmap: (heatmap: string) => void;
+  setHeatmapParam: (key: string, value: number | string) => void;
   setCameraTarget: (target: CameraTarget | null) => void;
   setDataCounts: (layer: string, count: number) => void;
   setMouseCoords: (coords: { lat: number; lng: number } | null) => void;
@@ -95,7 +99,20 @@ export const useAppStore = create<AppState>((set) => ({
     lutVignette: 1.2,
     lutContrast: 1.0,
   },
-  filterPresets: loadPresetsFromStorage(),
+    filterPresets: loadPresetsFromStorage(),
+  activeHeatmaps: [],
+  heatmapParams: { opacity: 0.55, intensity: 1.0, palette: 'thermal' },
+
+  toggleHeatmap: (heatmap) =>
+    set((state) => ({
+      activeHeatmaps: state.activeHeatmaps.includes(heatmap)
+        ? state.activeHeatmaps.filter((h) => h !== heatmap)
+        : [...state.activeHeatmaps, heatmap],
+    })),
+  setHeatmapParam: (key, value) =>
+    set((state) => ({
+      heatmapParams: { ...state.heatmapParams, [key]: value },
+    })),
 
   toggleLayer: (layer) =>
     set((state) => ({
