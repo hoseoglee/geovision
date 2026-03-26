@@ -11,6 +11,14 @@ export interface WildfireData {
 const FIRMS_URL =
   'https://firms.modaps.eosdis.nasa.gov/api/country/csv/VIIRS_SNPP_NRT/world/1';
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 function generateSimulationData(): WildfireData[] {
   const today = new Date().toISOString().split('T')[0];
   return [
@@ -70,14 +78,15 @@ function parseCsv(text: string): WildfireData[] {
  * CORS 실패 또는 에러 시 시뮬레이션 fallback.
  */
 export async function fetchWildfires(): Promise<WildfireData[]> {
+  const _start = Date.now();
   try {
     const res = await fetch(FIRMS_URL, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return generateSimulationData();
+    if (!res.ok) { _lastSimulated = true; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start; return generateSimulationData(); }
 
     const text = await res.text();
     const fires = parseCsv(text);
 
-    if (fires.length === 0) return generateSimulationData();
+    if (fires.length === 0) { _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start; return generateSimulationData(); }
 
     // confidence 높은 순으로 정렬, 상위 200개만
     fires.sort((a, b) => {
@@ -88,8 +97,10 @@ export async function fetchWildfires(): Promise<WildfireData[]> {
       return b.brightness - a.brightness;
     });
 
+    _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
     return fires.slice(0, 200);
-  } catch {
+  } catch (e) {
+    _lastSimulated = true; _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return generateSimulationData();
   }
 }

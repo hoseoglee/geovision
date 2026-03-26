@@ -1,5 +1,6 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { useProviderHealthStore } from '@/store/useProviderHealthStore';
 
 interface LogEntry {
   id: number;
@@ -84,6 +85,35 @@ export default memo(function EventLog() {
     }, 4000 + Math.random() * 3000);
     return () => clearInterval(id);
   }, []);
+
+  // Inject real provider health change events into the log
+  const lastHealthEventId = useRef(0);
+  const healthEvents = useProviderHealthStore((s) => s.events);
+
+  useEffect(() => {
+    const newEvents = healthEvents.filter((e) => e.id > lastHealthEventId.current);
+    if (newEvents.length === 0) return;
+    lastHealthEventId.current = newEvents[newEvents.length - 1].id;
+
+    setNextId((prev) => {
+      let id = prev;
+      const entries: LogEntry[] = newEvents.map((e) => {
+        const severity: LogEntry['severity'] =
+          e.newStatus === 'error' ? 'critical' :
+          e.newStatus === 'degraded' || e.newStatus === 'simulated' ? 'warn' : 'info';
+        const now = new Date(e.timestamp);
+        return {
+          id: ++id,
+          time: now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+          type: 'SYS' as const,
+          message: e.message,
+          severity,
+        };
+      });
+      setLogs((prevLogs) => [...entries.reverse(), ...prevLogs].slice(0, 12));
+      return id;
+    });
+  }, [healthEvents]);
 
   return (
     <div className="fixed bottom-10 right-4 z-30 w-52 pointer-events-none" style={{ contain: 'layout style paint' }}>

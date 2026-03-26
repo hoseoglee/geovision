@@ -12,13 +12,25 @@ export interface EarthquakeData {
 const USGS_URL =
   'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=100&orderby=time&minmagnitude=4';
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 /**
  * USGS API에서 최근 지진 데이터를 가져옴
  */
 export async function fetchEarthquakes(): Promise<EarthquakeData[]> {
+  const _start = Date.now();
   try {
     const res = await fetch(USGS_URL);
-    if (!res.ok) return [];
+    if (!res.ok) {
+      _lastSimulated = false; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start;
+      return [];
+    }
 
     const json = await res.json();
     const features: any[] = json.features;
@@ -43,8 +55,10 @@ export async function fetchEarthquakes(): Promise<EarthquakeData[]> {
       });
     }
 
+    _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
     return earthquakes;
-  } catch {
+  } catch (e) {
+    _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return [];
   }
 }

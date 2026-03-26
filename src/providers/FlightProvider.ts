@@ -21,15 +21,25 @@ const ADSBX_RAPID_URL = 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/';
 let cachedFlights: FlightData[] = [];
 let lastFetchTime = 0;
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 export async function fetchFlights(): Promise<FlightData[]> {
   // OpenSky rate limit 보호: 10초 이내 재호출 시 캐시 반환
   if (Date.now() - lastFetchTime < 10000 && cachedFlights.length > 0) {
     return cachedFlights;
   }
 
+  const _start = Date.now();
   try {
     const res = await fetch(OPENSKY_URL);
     if (!res.ok) {
+      _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start;
       console.warn(`OpenSky API ${res.status} — using cached data (${cachedFlights.length} flights)`);
       return cachedFlights;
     }
@@ -59,8 +69,10 @@ export async function fetchFlights(): Promise<FlightData[]> {
 
     cachedFlights = flights;
     lastFetchTime = Date.now();
+    _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
     return flights;
-  } catch {
+  } catch (e) {
+    _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return cachedFlights;
   }
 }

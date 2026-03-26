@@ -4,6 +4,14 @@
 
 import { PUBLIC_CCTVS } from '../data/publicCCTVs';
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 export interface CCTVData {
   id: string;
   name: string;
@@ -420,6 +428,7 @@ export async function fetchWindyCamsByArea(
     const url = `${WINDY_API}?nearby=${lat},${lng},${radiusKm}&limit=50&include=location,urls,images,player`;
     const res = await fetch(url);
     if (!res.ok) {
+      _lastError = `Windy HTTP ${res.status}`;
       console.warn(`[Windy] API error: ${res.status}`);
       return cached?.data ?? [];
     }
@@ -451,6 +460,7 @@ export async function fetchWindyCamsByArea(
 
     return cams;
   } catch (err) {
+    _lastError = err instanceof Error ? err.message : String(err);
     console.warn('[Windy] fetch error:', err);
     return cached?.data ?? [];
   }
@@ -566,6 +576,7 @@ export function subscribeAllCCTVs(fn: () => void) {
 
 /** Returns just the static list (backwards compat) */
 export function fetchCCTVs(): CCTVData[] {
+  _lastSimulated = false; _lastError = null; _lastLatency = 0;
   return _allCCTVsSnapshot;
 }
 

@@ -16,6 +16,14 @@ export interface TyphoonData {
 
 const NOAA_URL = 'https://www.nhc.noaa.gov/CurrentSurges.json';
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 function generateSimulationData(): TyphoonData[] {
   const now = Date.now();
   return [
@@ -66,13 +74,14 @@ function generateSimulationData(): TyphoonData[] {
  * API 접근 실패 시 시뮬레이션 데이터를 반환.
  */
 export async function fetchTyphoons(): Promise<TyphoonData[]> {
+  const _start = Date.now();
   try {
     const res = await fetch(NOAA_URL, { signal: AbortSignal.timeout(5000) });
-    if (!res.ok) return generateSimulationData();
+    if (!res.ok) { _lastSimulated = true; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start; return generateSimulationData(); }
 
     const json = await res.json();
     const features: any[] = json?.features;
-    if (!features || features.length === 0) return generateSimulationData();
+    if (!features || features.length === 0) { _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start; return generateSimulationData(); }
 
     const typhoons: TyphoonData[] = [];
     for (const feature of features) {
@@ -91,8 +100,14 @@ export async function fetchTyphoons(): Promise<TyphoonData[]> {
       });
     }
 
-    return typhoons.length > 0 ? typhoons : generateSimulationData();
-  } catch {
+    if (typhoons.length > 0) {
+      _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
+      return typhoons;
+    }
+    _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start;
+    return generateSimulationData();
+  } catch (e) {
+    _lastSimulated = true; _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return generateSimulationData();
   }
 }

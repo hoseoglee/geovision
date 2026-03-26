@@ -374,6 +374,15 @@ function generateSimulatedShips(): ShipData[] {
   return ships;
 }
 
+// --- Provider Meta ---
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 // --- Public API ---
 
 /**
@@ -382,6 +391,7 @@ function generateSimulatedShips(): ShipData[] {
  * - 없으면 → 시뮬레이션 폴백
  */
 export async function fetchShips(): Promise<ShipData[]> {
+  const _start = Date.now();
   const apiKey = import.meta.env.VITE_AISSTREAM_KEY;
 
   if (apiKey && apiKey !== 'placeholder') {
@@ -392,12 +402,15 @@ export async function fetchShips(): Promise<ShipData[]> {
 
     // 라이브 데이터가 있으면 반환 (연결 끊겨도 캐시 유지)
     if (liveShips.size > 0) {
+      _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
       return Array.from(liveShips.values());
     }
 
     // 데이터가 모일 때까지 시뮬레이션으로 폴백
+    _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start;
     return generateSimulatedShips();
   }
 
+  _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start;
   return generateSimulatedShips();
 }

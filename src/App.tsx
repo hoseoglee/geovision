@@ -5,6 +5,13 @@ import HudOverlay from './components/HudOverlay';
 import ScanLine from './components/ScanLine';
 import Crosshair from './components/Crosshair';
 import AlertMonitor from './components/AlertMonitor';
+import { ProviderHealthDots, SimulatedDataBanner } from './components/ProviderHealthPanel';
+import { useProviderHealthMonitor } from './hooks/useProviderHealthMonitor';
+
+// Lazy-loaded provider health detail panel
+const ProviderHealthDetail = lazy(() =>
+  import('./components/ProviderHealthPanel').then((m) => ({ default: m.ProviderHealthDetail }))
+);
 
 // Lazy-loaded HUD panels
 const DataTicker = lazy(() => import('./components/DataTicker'));
@@ -35,6 +42,8 @@ const GeofenceEventPanel = lazy(() =>
 );
 
 export default function App() {
+  useProviderHealthMonitor();
+
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
       <Globe />
@@ -42,6 +51,8 @@ export default function App() {
       <Crosshair />
       <ControlPanel />
       <HudOverlay />
+      <ProviderHealthDots />
+      <SimulatedDataBanner />
       <AlertMonitor />
 
       <Suspense fallback={null}>
@@ -58,6 +69,7 @@ export default function App() {
         <EventTimeline />
         <TimelineBar />
         <GeofenceEventPanel />
+        <ProviderHealthDetail />
         <DataTicker />
       </Suspense>
 

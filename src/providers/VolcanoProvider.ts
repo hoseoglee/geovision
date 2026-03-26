@@ -8,6 +8,14 @@ export interface VolcanoData {
   lastEruption: string;
 }
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 /** 활화산 20개 정적 데이터 (Smithsonian GVP 기준) */
 const VOLCANOES: VolcanoData[] = [
   { name: 'Kilauea', lat: 19.41, lng: -155.29, country: 'US', elevation: 1247, status: 'active', lastEruption: '2023' },
@@ -36,5 +44,6 @@ const VOLCANOES: VolcanoData[] = [
  * 정적 활화산 데이터 반환
  */
 export function fetchVolcanoes(): VolcanoData[] {
+  _lastSimulated = false; _lastError = null; _lastLatency = 0;
   return VOLCANOES;
 }

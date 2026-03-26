@@ -17,6 +17,14 @@ const ADSBX_RAPID_URL = 'https://adsbexchange-com1.p.rapidapi.com/v2/mil/';
 let cachedAircraft: MilAircraftData[] = [];
 let lastFetchTime = 0;
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 // Fallback simulation data when API is unavailable
 const SIMULATED_AIRCRAFT: MilAircraftData[] = [
   { hex: 'AE1234', callsign: 'FORTE12', type: 'RQ-4 Global Hawk', lat: 36.2, lng: 129.5, altitude: 55000, heading: 45, speed: 310, squawk: '7700', category: 'A5' },
@@ -39,12 +47,14 @@ export async function fetchMilAircraft(): Promise<MilAircraftData[]> {
     return cachedAircraft;
   }
 
+  const _start = Date.now();
   const rapidApiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
   if (!rapidApiKey || rapidApiKey === 'placeholder') {
     console.warn('[ADS-B] VITE_RAPIDAPI_KEY not set — using simulated data');
     cachedAircraft = SIMULATED_AIRCRAFT;
     lastFetchTime = Date.now();
+    _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start;
     return cachedAircraft;
   }
 
@@ -59,6 +69,7 @@ export async function fetchMilAircraft(): Promise<MilAircraftData[]> {
     if (!res.ok) {
       console.warn(`[ADS-B] API ${res.status} — using cached/simulated data`);
       if (cachedAircraft.length === 0) cachedAircraft = SIMULATED_AIRCRAFT;
+      _lastSimulated = cachedAircraft === SIMULATED_AIRCRAFT; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start;
       return cachedAircraft;
     }
 
@@ -87,11 +98,13 @@ export async function fetchMilAircraft(): Promise<MilAircraftData[]> {
 
     cachedAircraft = aircraft.length > 0 ? aircraft : SIMULATED_AIRCRAFT;
     lastFetchTime = Date.now();
+    _lastSimulated = aircraft.length === 0; _lastError = null; _lastLatency = Date.now() - _start;
     console.log(`[ADS-B] Fetched ${aircraft.length} military aircraft`);
     return cachedAircraft;
   } catch (e) {
     console.warn('[ADS-B] Fetch error:', e);
     if (cachedAircraft.length === 0) cachedAircraft = SIMULATED_AIRCRAFT;
+    _lastSimulated = cachedAircraft === SIMULATED_AIRCRAFT; _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return cachedAircraft;
   }
 }

@@ -18,6 +18,14 @@ export interface SatelliteData {
 const TLE_URL =
   'https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle';
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 /**
  * TLE 텍스트를 파싱하여 [name, line1, line2] 튜플 배열로 변환
  */
@@ -63,9 +71,13 @@ export function propagateSatellite(
  * CelesTrak에서 TLE 데이터를 가져와 현재 위치를 계산
  */
 export async function fetchSatellites(): Promise<SatelliteData[]> {
+  const _start = Date.now();
   try {
     const res = await fetch(TLE_URL);
-    if (!res.ok) return [];
+    if (!res.ok) {
+      _lastSimulated = false; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start;
+      return [];
+    }
 
     const text = await res.text();
     const tles = parseTleText(text);
@@ -94,8 +106,10 @@ export async function fetchSatellites(): Promise<SatelliteData[]> {
       }
     }
 
+    _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
     return satellites;
-  } catch {
+  } catch (e) {
+    _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return [];
   }
 }

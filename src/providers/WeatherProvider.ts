@@ -35,6 +35,14 @@ const CITIES: { name: string; lat: number; lng: number }[] = [
 let cache: { data: WeatherData[]; timestamp: number } | null = null;
 const CACHE_TTL_MS = 10 * 60 * 1000;
 
+let _lastSimulated = false;
+let _lastError: string | null = null;
+let _lastLatency = 0;
+
+export function getProviderMeta() {
+  return { simulated: _lastSimulated, error: _lastError, latency: _lastLatency };
+}
+
 /** weather code → 간단한 설명 (WMO 코드) */
 export function weatherCodeToLabel(code: number): string {
   if (code === 0) return 'Clear';
@@ -81,13 +89,14 @@ export async function fetchWeather(): Promise<WeatherData[]> {
     return cache.data;
   }
 
+  const _start = Date.now();
   try {
     const lats = CITIES.map((c) => c.lat).join(',');
     const lngs = CITIES.map((c) => c.lng).join(',');
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${lats}&longitude=${lngs}&current=temperature_2m,wind_speed_10m,precipitation,weather_code`;
 
     const res = await fetch(url);
-    if (!res.ok) return fallback();
+    if (!res.ok) { _lastSimulated = true; _lastError = `HTTP ${res.status}`; _lastLatency = Date.now() - _start; return fallback(); }
 
     const json = await res.json();
     // Open-Meteo returns array when multiple coordinates
@@ -108,11 +117,13 @@ export async function fetchWeather(): Promise<WeatherData[]> {
       });
     }
 
-    if (weather.length === 0) return fallback();
+    if (weather.length === 0) { _lastSimulated = true; _lastError = null; _lastLatency = Date.now() - _start; return fallback(); }
 
     cache = { data: weather, timestamp: Date.now() };
+    _lastSimulated = false; _lastError = null; _lastLatency = Date.now() - _start;
     return weather;
-  } catch {
+  } catch (e) {
+    _lastSimulated = true; _lastError = e instanceof Error ? e.message : String(e); _lastLatency = Date.now() - _start;
     return fallback();
   }
 }
