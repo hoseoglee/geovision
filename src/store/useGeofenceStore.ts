@@ -118,7 +118,13 @@ export const useGeofenceStore = create<GeofenceState>((set, get) => ({
     set((s) => ({ geofences: s.geofences.map((g) => g.id === id ? { ...g, enabled: !g.enabled } : g) }));
     get().saveToStorage();
   },
-  startDrawing: (shape) => set({ drawingMode: shape, drawingVertices: [] }),
+  startDrawing: (shape) => {
+    // 측정 모드와 상호 배제 — 순환 import 방지를 위해 lazy import
+    import('./useMeasurementStore').then(({ useMeasurementStore }) => {
+      useMeasurementStore.getState().cancelMeasure();
+    });
+    set({ drawingMode: shape, drawingVertices: [] });
+  },
   addVertex: (vertex) => set((s) => ({ drawingVertices: [...s.drawingVertices, vertex] })),
   finishDrawing: (name, color, targetLayers) => {
     const { drawingMode, drawingVertices } = get();

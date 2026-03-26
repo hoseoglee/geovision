@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { useMeasurementStore } from '@/store/useMeasurementStore';
 
 const FILTER_KEYS: Record<string, string> = {
   '1': 'normal',
@@ -32,7 +33,8 @@ const SHORTCUT_LIST: ShortcutDef[] = [
   { key: 'C', description: 'Correlation panel toggle' },
   { key: 'H', description: 'HUD visibility toggle' },
   { key: '/', description: 'Open search' },
-  { key: 'Escape', description: 'Close all modals/panels' },
+  { key: 'M', description: 'Measurement mode toggle (Distance)' },
+  { key: 'Escape', description: 'Close all modals/cancel measurement' },
   { key: '?', description: 'Show this help' },
 ];
 
@@ -42,6 +44,9 @@ export default function KeyboardShortcuts() {
   const toggleHud = useAppStore((s) => s.toggleHud);
   const toggleTimeline = useAppStore((s) => s.toggleTimeline);
   const toggleSearch = useAppStore((s) => s.toggleSearch);
+  const toggleMeasure = useMeasurementStore((s) => s.toggleMode);
+  const cancelMeasure = useMeasurementStore((s) => s.cancelMeasure);
+  const measureMode = useMeasurementStore((s) => s.mode);
   const [helpVisible, setHelpVisible] = useState(false);
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -57,12 +62,22 @@ export default function KeyboardShortcuts() {
       return;
     }
 
-    // Escape closes help + other modals (search/timeline handled by their own listeners)
+    // Escape closes help + cancels measurement + other modals
     if (key === 'Escape') {
+      if (measureMode) {
+        cancelMeasure();
+        return;
+      }
       if (helpVisible) {
         setHelpVisible(false);
         return;
       }
+      return;
+    }
+
+    // 'M' for measurement mode toggle
+    if (key === 'm' || key === 'M') {
+      toggleMeasure('distance');
       return;
     }
 
@@ -98,7 +113,7 @@ export default function KeyboardShortcuts() {
       toggleLayer(LAYER_KEYS[key]);
       return;
     }
-  }, [helpVisible, setActiveFilter, toggleLayer, toggleHud, toggleSearch]);
+  }, [helpVisible, setActiveFilter, toggleLayer, toggleHud, toggleSearch, toggleMeasure, cancelMeasure, measureMode]);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);

@@ -34,6 +34,7 @@ import animeShader from '@/filters/anime';
 import lutShader from '@/filters/lut';
 import { createHeatmapPrimitive, precisionForAltitude, type HeatmapPoint } from '@/layers/HeatmapLayer';
 import { useGeofenceGlobe } from "@/hooks/useGeofenceGlobe";
+import { useMeasurementGlobe } from "@/hooks/useMeasurementGlobe";
 import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/trajectory';
 import { useTrajectoryStore } from '@/store/useTrajectoryStore';
 
@@ -701,6 +702,8 @@ export default function Globe() {
 
   // Geofence system
   useGeofenceGlobe(viewerRef);
+  // Measurement tools
+  useMeasurementGlobe(viewerRef);
   // 위성 데이터 — PointPrimitiveCollection (Entity 대신, 성능 10배↑)
   useEffect(() => {
     const viewer = viewerRef.current;
