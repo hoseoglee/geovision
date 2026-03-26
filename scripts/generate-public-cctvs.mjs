@@ -136,7 +136,10 @@ function main() {
     ME: 'Europe', MT: 'Europe', CY: 'Europe', VA: 'Europe', GL: 'Europe',
     ZA: 'Africa', KE: 'Africa', EG: 'Africa', MA: 'Africa', NG: 'Africa', GH: 'Africa', ET: 'Africa',
     SN: 'Africa', TN: 'Africa', MU: 'Africa', MG: 'Africa', NA: 'Africa', RW: 'Africa', UG: 'Africa', TZ: 'Africa',
-    AU: 'Oceania', NZ: 'Oceania', FJ: 'Oceania', PF: 'Oceania',
+    BW: 'Africa', ZW: 'Africa', CD: 'Africa', SC: 'Africa', CM: 'Africa', CI: 'Africa', MZ: 'Africa',
+    AO: 'Africa', ZM: 'Africa', MW: 'Africa', RE: 'Africa',
+    AU: 'Oceania', NZ: 'Oceania', FJ: 'Oceania', PF: 'Oceania', PG: 'Oceania',
+    PA: 'N. America', GT: 'N. America', HN: 'N. America', SV: 'N. America', SX: 'N. America',
   };
   for (const c of allCCTVs) {
     const cont = CONTINENT[c.country] || 'Other';
