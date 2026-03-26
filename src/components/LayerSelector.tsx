@@ -7,6 +7,7 @@ const LAYERS = [
   { id: 'flights', label: 'Flights', icon: '✈' },
   { id: 'ships', label: 'Ships (AIS)', icon: '🚢' },
   { id: 'earthquakes', label: 'Earthquakes', icon: '⚡' },
+  { id: 'osint', label: 'OSINT News', icon: '📰' },
 ] as const;
 
 // 외부에서 데이터 카운트를 주입받을 수 있도록 props 지원

@@ -48,6 +48,7 @@ export const AVAILABLE_LAYERS = [
   { id: 'volcanoes', label: 'Volcanoes' },
   { id: 'wildfires', label: 'Wildfires' },
   { id: 'weather', label: 'Weather' },
+  { id: 'osint', label: 'OSINT News' },
 ] as const;
 
 export function evaluateFilter(entity: SpatialEntity, filter: RuleDSLConditionFilter): boolean {
@@ -140,4 +141,5 @@ export const BUILTIN_RULES_DSL: RuleDSL[] = [
   { id: 'wildfire-wind', name: 'Wildfire Wind Risk', description: 'Wildfire hotspot with high wind speed nearby (placeholder)', enabled: false, severity: 'warning', triggerLayer: 'wildfires', targetLayer: 'weather', spatialRadius: 100, temporalWindow: 600, cooldown: 60, conditions: { minTargetCount: 1 }, triggerCount: 0, lastTriggered: null, createdAt: now, updatedAt: now, isBuiltin: true },
   { id: 'ship-route-deviation', name: 'Ship Route Deviation', description: 'Vessel deviating from expected course (avg heading change > 30°)', enabled: true, severity: 'warning', triggerLayer: 'ships', targetLayer: 'ships', spatialRadius: 10, temporalWindow: 300, cooldown: 120, conditions: { minTargetCount: 1 }, triggerCount: 0, lastTriggered: null, createdAt: now, updatedAt: now, isBuiltin: true },
   { id: 'adsb-route-deviation', name: 'Military Aircraft Route Deviation', description: 'Military aircraft deviating from expected course (avg heading change > 25°)', enabled: true, severity: 'warning', triggerLayer: 'adsb', targetLayer: 'adsb', spatialRadius: 10, temporalWindow: 300, cooldown: 120, conditions: { minTargetCount: 1 }, triggerCount: 0, lastTriggered: null, createdAt: now, updatedAt: now, isBuiltin: true },
+  { id: 'osint-military-activity', name: 'OSINT Military + Aircraft', description: 'Military-related news with 3+ military aircraft within 200km', enabled: true, severity: 'warning', triggerLayer: 'osint', targetLayer: 'adsb', spatialRadius: 200, temporalWindow: 600, cooldown: 120, conditions: { triggerFilter: { field: 'category', operator: '==', value: 'military' }, minTargetCount: 3 }, triggerCount: 0, lastTriggered: null, createdAt: now, updatedAt: now, isBuiltin: true },
 ];

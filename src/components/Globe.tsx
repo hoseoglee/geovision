@@ -18,6 +18,7 @@ import { fetchWeather, weatherCodeToIcon } from '@/providers/WeatherProvider';
 import { fetchTyphoons } from '@/providers/TyphoonProvider';
 import { fetchVolcanoes } from '@/providers/VolcanoProvider';
 import { fetchWildfires } from '@/providers/WildfireProvider';
+import { fetchOsint, type OsintData } from '@/providers/OsintProvider';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
@@ -134,6 +135,9 @@ export default function Globe() {
   const typhoonBillboardRef = useRef<Cesium.BillboardCollection | null>(null);
   const volcanoEntitiesRef = useRef<Cesium.Entity[]>([]);
   const wildfirePointsRef = useRef<Cesium.PointPrimitiveCollection | null>(null);
+
+  // OSINT 뉴스 마커
+  const osintEntitiesRef = useRef<Cesium.Entity[]>([]);
 
   // Timeline playback markers
   const timelineMarkersRef = useRef<Cesium.Entity[]>([]);
@@ -2538,6 +2542,104 @@ export default function Globe() {
     return () => { cancelled = true; };
   }, [activeOverlays, setDataCounts, setLastUpdated]);
 
+  // ── OSINT 뉴스 레이어 — Entity (개수 적으므로 Entity OK) ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    if (!activeLayers.includes('osint')) {
+      clearEntities(osintEntitiesRef.current, viewer);
+      setDataCounts('osint', 0);
+      return;
+    }
+
+    let cancelled = false;
+    (async () => {
+      const news = await fetchOsint();
+      if (cancelled || !viewerRef.current) return;
+
+      clearEntities(osintEntitiesRef.current, viewer);
+
+      const CATEGORY_COLORS: Record<string, string> = {
+        conflict: '#FF4444',
+        military: '#FF6600',
+        disaster: '#FF8C00',
+        politics: '#9966FF',
+        economy: '#33CC33',
+        health: '#00CCCC',
+        environment: '#66BB6A',
+        general: '#AAAAAA',
+      };
+
+      for (const item of news) {
+        const color = Cesium.Color.fromCssColorString(CATEGORY_COLORS[item.category] ?? '#AAAAAA');
+        const timeStr = new Date(item.time).toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+        const desc = `<b>${item.title}</b><br/>` +
+          `Source: ${item.source} | ${item.category.toUpperCase()}<br/>` +
+          `Location: ${item.locationName}<br/>` +
+          `Time: ${timeStr}<br/>` +
+          (item.tone !== undefined ? `Tone: ${item.tone.toFixed(1)}<br/>` : '') +
+          (item.url ? `<a href="${item.url}" target="_blank">Read more →</a>` : '');
+
+        const entity = viewer.entities.add({
+          name: `📰 ${item.title}`,
+          position: Cesium.Cartesian3.fromDegrees(item.lng, item.lat, 0),
+          point: {
+            pixelSize: item.severity === 'crisis' ? 12 : item.severity === 'disaster' ? 10 : 7,
+            color,
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+            outlineWidth: 1,
+          },
+          label: {
+            text: item.category === 'conflict' ? '⚔' : item.category === 'disaster' ? '⚠' : '📰',
+            font: '14px sans-serif',
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -8),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 1e7, 0.3),
+            show: false,
+          },
+          description: desc,
+        });
+        osintEntitiesRef.current.push(entity);
+      }
+      setDataCounts('osint', news.length);
+      setLastUpdated('osint', Date.now());
+    })();
+
+    // 15분마다 갱신 (캐시 TTL과 동기)
+    const interval = setInterval(async () => {
+      if (!viewerRef.current || !activeLayers.includes('osint')) return;
+      const news = await fetchOsint();
+      if (!viewerRef.current) return;
+      clearEntities(osintEntitiesRef.current, viewerRef.current);
+
+      const CATEGORY_COLORS: Record<string, string> = {
+        conflict: '#FF4444', military: '#FF6600', disaster: '#FF8C00',
+        politics: '#9966FF', economy: '#33CC33', health: '#00CCCC',
+        environment: '#66BB6A', general: '#AAAAAA',
+      };
+
+      for (const item of news) {
+        const color = Cesium.Color.fromCssColorString(CATEGORY_COLORS[item.category] ?? '#AAAAAA');
+        const timeStr = new Date(item.time).toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+        const desc = `<b>${item.title}</b><br/>Source: ${item.source} | ${item.category.toUpperCase()}<br/>Location: ${item.locationName}<br/>Time: ${timeStr}<br/>` +
+          (item.url ? `<a href="${item.url}" target="_blank">Read more →</a>` : '');
+        const entity = viewerRef.current.entities.add({
+          name: `📰 ${item.title}`,
+          position: Cesium.Cartesian3.fromDegrees(item.lng, item.lat, 0),
+          point: { pixelSize: item.severity === 'crisis' ? 12 : item.severity === 'disaster' ? 10 : 7, color, outlineColor: Cesium.Color.WHITE.withAlpha(0.6), outlineWidth: 1 },
+          label: { text: '📰', font: '14px sans-serif', verticalOrigin: Cesium.VerticalOrigin.BOTTOM, pixelOffset: new Cesium.Cartesian2(0, -8), scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 1e7, 0.3), show: false },
+          description: desc,
+        });
+        osintEntitiesRef.current.push(entity);
+      }
+      setDataCounts('osint', news.length);
+      setLastUpdated('osint', Date.now());
+    }, 900_000);
+
+    return () => { cancelled = true; clearInterval(interval); };
+  }, [activeLayers, clearEntities, setDataCounts, setLastUpdated]);
+
   // ── Heatmap Layer ──
   const heatmapPrimitivesRef = useRef<Cesium.GroundPrimitive[]>([]);
   const heatmapPrecisionRef = useRef<number>(0);
@@ -2760,6 +2862,21 @@ export default function Globe() {
         correlationEngine.updateLayer('wildfires', wildfireEntities);
       } catch {
         // 산불 데이터 fetch 실패 시 무시
+      }
+
+      // OSINT 뉴스 데이터
+      try {
+        const news = await fetchOsint();
+        const osintEntities: SpatialEntity[] = news.map((n) => ({
+          id: `osint-${n.id}`,
+          layer: 'osint',
+          lat: n.lat,
+          lng: n.lng,
+          data: { title: n.title, category: n.category, source: n.source, severity: n.severity, tone: n.tone },
+        }));
+        correlationEngine.updateLayer('osint', osintEntities);
+      } catch {
+        // OSINT 데이터 fetch 실패 시 무시
       }
     };
 
