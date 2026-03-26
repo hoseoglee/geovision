@@ -1,14 +1,12 @@
 /**
- * 코릴레이션 엔진
- * - 10초 간격 실행 루프
- * - SpatialIndex + TemporalBuffer + Rules 조합
- * - 결과를 useCorrelationStore + useAlertStore에 저장
+ * 코릴레이션 엔진 - DSL 기반 동적 규칙 지원
  */
-
 import { SpatialIndex, type SpatialEntity } from './SpatialIndex';
-import { TemporalBuffer, type TemporalEvent } from './TemporalBuffer';
+import { TemporalBuffer } from './TemporalBuffer';
 import { AnomalyDetector, type AnomalyResult } from './AnomalyDetector';
-import { BUILTIN_RULES, type CorrelationRule, type CorrelationContext, type CorrelationAlert } from './rules';
+import { type CorrelationRule, type CorrelationContext, type CorrelationAlert } from './rules';
+import { compileDSL, BUILTIN_RULES_DSL, type RuleDSL } from './ruleDSL';
+import { ruleStorage } from './ruleStorage';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import { NUCLEAR_PLANTS } from '@/data/overlayData';
 import { useAlertStore } from '@/store/useAlertStore';
@@ -18,291 +16,111 @@ export class CorrelationEngine {
   readonly temporalBuffer: TemporalBuffer;
   readonly anomalyDetector: AnomalyDetector;
   private rules: CorrelationRule[];
+  private dslRules: Map<string, RuleDSL> = new Map();
   private intervalId: ReturnType<typeof setInterval> | null = null;
   private onCorrelation: ((alert: CorrelationAlert) => void) | null = null;
   private onAnomaly: ((result: AnomalyResult) => void) | null = null;
-  // 중복 방지: ruleId → 마지막 발생 시각
   private lastFired: Map<string, number> = new Map();
-  private readonly COOLDOWN_MS = 60000; // 같은 규칙은 60초 쿨다운
 
   constructor() {
     this.spatialIndex = new SpatialIndex(5);
     this.temporalBuffer = new TemporalBuffer();
     this.anomalyDetector = new AnomalyDetector();
-    this.rules = [...BUILTIN_RULES];
-
-    // 정적 데이터 초기 로드 (초크포인트, 원전)
+    this.rules = [];
+    for (const dsl of BUILTIN_RULES_DSL) this.dslRules.set(dsl.id, dsl);
+    this.recompileRules();
     this.loadStaticData();
+    this.loadCustomRules();
   }
 
-  /** 정적 데이터를 공간 인덱스에 로드 */
-  private loadStaticData(): void {
-    const cpEntities: SpatialEntity[] = CHOKEPOINTS.map((cp) => ({
-      id: `cp-${cp.name}`,
-      layer: 'chokepoints',
-      lat: cp.lat,
-      lng: cp.lng,
-      data: { name: cp.name, type: cp.type, info: cp.info },
-    }));
-    this.spatialIndex.update('chokepoints', cpEntities);
-
-    const npEntities: SpatialEntity[] = NUCLEAR_PLANTS.map((np) => ({
-      id: `np-${np.name}`,
-      layer: 'nuclear_plants',
-      lat: np.lat,
-      lng: np.lng,
-      data: { name: np.name, country: np.country, reactors: np.reactors, status: np.status },
-    }));
-    this.spatialIndex.update('nuclear_plants', npEntities);
-  }
-
-  /** 코릴레이션 결과 콜백 등록 */
-  setOnCorrelation(cb: (alert: CorrelationAlert) => void): void {
-    this.onCorrelation = cb;
-  }
-
-  /** 이상 탐지 결과 콜백 등록 */
-  setOnAnomaly(cb: (result: AnomalyResult) => void): void {
-    this.onAnomaly = cb;
-  }
-
-  /** 엔진 시작 (10초 간격) */
-  start(): void {
-    if (this.intervalId) return;
-    this.evaluate(); // 즉시 1회 실행
-    this.intervalId = setInterval(() => this.evaluate(), 10000);
-  }
-
-  /** 엔진 정지 */
-  stop(): void {
-    if (this.intervalId) {
-      clearInterval(this.intervalId);
-      this.intervalId = null;
+  private recompileRules(): void {
+    this.rules = [];
+    for (const dsl of this.dslRules.values()) {
+      if (dsl.enabled) this.rules.push(compileDSL(dsl));
     }
   }
 
-  /** 엔진 파괴 (리소스 정리) */
-  destroy(): void {
-    this.stop();
-    this.temporalBuffer.destroy();
-    this.spatialIndex.clear();
-    this.anomalyDetector.clear();
-    this.lastFired.clear();
+  private async loadCustomRules(): Promise<void> {
+    try {
+      const stored = await ruleStorage.loadRules();
+      for (const rule of stored) this.dslRules.set(rule.id, rule);
+      this.recompileRules();
+    } catch (e) { console.warn('Failed to load custom rules:', e); }
   }
 
-  get isRunning(): boolean {
-    return this.intervalId !== null;
+  addRule(dsl: RuleDSL): void { this.dslRules.set(dsl.id, dsl); this.recompileRules(); ruleStorage.saveRule(dsl).catch(console.warn); }
+  removeRule(id: string): void { this.dslRules.delete(id); this.recompileRules(); ruleStorage.deleteRule(id).catch(console.warn); }
+  toggleRule(id: string, enabled: boolean): void { const d = this.dslRules.get(id); if (d) { d.enabled = enabled; d.updatedAt = Date.now(); this.recompileRules(); ruleStorage.saveRule(d).catch(console.warn); } }
+  getDSLRules(): RuleDSL[] { return [...this.dslRules.values()]; }
+  getDSLRule(id: string): RuleDSL | undefined { return this.dslRules.get(id); }
+
+  private loadStaticData(): void {
+    this.spatialIndex.update('chokepoints', CHOKEPOINTS.map((cp) => ({ id: `cp-${cp.name}`, layer: 'chokepoints', lat: cp.lat, lng: cp.lng, data: { name: cp.name, type: cp.type, info: cp.info } })));
+    this.spatialIndex.update('nuclear_plants', NUCLEAR_PLANTS.map((np) => ({ id: `np-${np.name}`, layer: 'nuclear_plants', lat: np.lat, lng: np.lng, data: { name: np.name, country: np.country, reactors: np.reactors, status: np.status } })));
   }
 
-  /** 레이어 데이터 업데이트 (Globe에서 호출) */
+  setOnCorrelation(cb: (alert: CorrelationAlert) => void): void { this.onCorrelation = cb; }
+  setOnAnomaly(cb: (result: AnomalyResult) => void): void { this.onAnomaly = cb; }
+  start(): void { if (this.intervalId) return; this.evaluate(); this.intervalId = setInterval(() => this.evaluate(), 10000); }
+  stop(): void { if (this.intervalId) { clearInterval(this.intervalId); this.intervalId = null; } }
+  destroy(): void { this.stop(); this.temporalBuffer.destroy(); this.spatialIndex.clear(); this.anomalyDetector.clear(); this.lastFired.clear(); this.dslRules.clear(); }
+  get isRunning(): boolean { return this.intervalId !== null; }
+
   updateLayer(layer: string, entities: SpatialEntity[]): void {
     this.spatialIndex.update(layer, entities);
-
-    // 시간 버퍼에 이벤트 기록
-    for (const entity of entities) {
-      this.temporalBuffer.addEvent({
-        id: entity.id,
-        type: `${layer}_update`,
-        layer,
-        lat: entity.lat,
-        lng: entity.lng,
-        timestamp: Date.now(),
-        data: entity.data,
-      });
-    }
+    for (const entity of entities) this.temporalBuffer.addEvent({ id: entity.id, type: `${layer}_update`, layer, lat: entity.lat, lng: entity.lng, timestamp: Date.now(), data: entity.data });
   }
 
-  /** 메인 평가 루프 */
-  private evaluate(): void {
-    const now = Date.now();
+  private evaluate(): void { const now = Date.now(); this.evaluateRules(now); this.evaluateAnomalies(now); }
 
-    // 1. 규칙 기반 코릴레이션 평가
-    this.evaluateRules(now);
-
-    // 2. 통계 기반 이상 탐지
-    this.evaluateAnomalies(now);
-  }
-
-  /** 규칙 평가 */
   private evaluateRules(now: number): void {
-    // 지진 트리거 규칙 (earthquake-nuclear, earthquake-cctv, earthquake-shipping)
-    const earthquakes = this.spatialIndex.getByLayer('earthquakes');
-    for (const quake of earthquakes) {
-      for (const rule of this.rules) {
-        if (!rule.layers.includes('earthquakes')) continue;
-
-        // 쿨다운 체크 (규칙+트리거 키)
-        const cooldownKey = `${rule.id}:${quake.id}`;
-        const lastTime = this.lastFired.get(cooldownKey);
-        if (lastTime && now - lastTime < this.COOLDOWN_MS) continue;
-
-        const nearby = this.spatialIndex.nearby(quake.lat, quake.lng, rule.spatialRadius);
-        const ctx: CorrelationContext = {
-          centerLat: quake.lat,
-          centerLng: quake.lng,
-          nearbyEntities: nearby,
-          matchedEntities: [],
-          triggerEntity: quake,
-        };
-
-        if (rule.condition(ctx)) {
-          const alert = rule.generate(ctx);
-          this.lastFired.set(cooldownKey, now);
-          this.emitCorrelation(alert);
+    const rulesByTrigger = new Map<string, CorrelationRule[]>();
+    for (const rule of this.rules) { const tl = rule.layers[0]; const g = rulesByTrigger.get(tl) ?? []; g.push(rule); rulesByTrigger.set(tl, g); }
+    for (const [triggerLayer, rules] of rulesByTrigger.entries()) {
+      const entities = this.spatialIndex.getByLayer(triggerLayer);
+      const clusters = new Set<string>();
+      for (const entity of entities) {
+        const selfRef = rules.some((r) => r.layers.length === 1);
+        if (selfRef) { const ck = `${Math.round(entity.lat)},${Math.round(entity.lng)}`; if (clusters.has(ck)) continue; clusters.add(ck); }
+        for (const rule of rules) {
+          const ck = selfRef ? `${rule.id}:${Math.round(entity.lat)},${Math.round(entity.lng)}` : `${rule.id}:${entity.id}`;
+          const lt = this.lastFired.get(ck); const dsl = this.dslRules.get(rule.id); const cd = (dsl?.cooldown ?? 60) * 1000;
+          if (lt && now - lt < cd) continue;
+          const nearby = this.spatialIndex.nearby(entity.lat, entity.lng, rule.spatialRadius);
+          const ctx: CorrelationContext = { centerLat: entity.lat, centerLng: entity.lng, nearbyEntities: nearby, matchedEntities: [], triggerEntity: entity };
+          if (rule.condition(ctx)) {
+            const alert = rule.generate(ctx); this.lastFired.set(ck, now); this.emitCorrelation(alert);
+            if (dsl) { dsl.triggerCount++; dsl.lastTriggered = now; ruleStorage.updateRuleStats(rule.id, now).catch(() => {}); }
+          }
         }
       }
     }
-
-    // 초크포인트 트리거 규칙 (chokepoint-congestion)
-    const chokepoints = this.spatialIndex.getByLayer('chokepoints');
-    for (const cp of chokepoints) {
-      const rule = this.rules.find((r) => r.id === 'chokepoint-congestion');
-      if (!rule) continue;
-
-      const cooldownKey = `${rule.id}:${cp.id}`;
-      const lastTime = this.lastFired.get(cooldownKey);
-      if (lastTime && now - lastTime < this.COOLDOWN_MS) continue;
-
-      const nearby = this.spatialIndex.nearby(cp.lat, cp.lng, rule.spatialRadius);
-      const ctx: CorrelationContext = {
-        centerLat: cp.lat,
-        centerLng: cp.lng,
-        nearbyEntities: nearby,
-        matchedEntities: [],
-        triggerEntity: cp,
-      };
-
-      if (rule.condition(ctx)) {
-        const alert = rule.generate(ctx);
-        this.lastFired.set(cooldownKey, now);
-        this.emitCorrelation(alert);
-      }
-    }
-
-    // 화산 근접 지진 규칙 (earthquake-volcano)
-    for (const quake of earthquakes) {
-      const rule = this.rules.find((r) => r.id === 'earthquake-volcano');
-      if (!rule) continue;
-
-      const cooldownKey = `${rule.id}:${quake.id}`;
-      const lastTime = this.lastFired.get(cooldownKey);
-      if (lastTime && now - lastTime < this.COOLDOWN_MS) continue;
-
-      const nearby = this.spatialIndex.nearby(quake.lat, quake.lng, rule.spatialRadius);
-      const ctx: CorrelationContext = {
-        centerLat: quake.lat,
-        centerLng: quake.lng,
-        nearbyEntities: nearby,
-        matchedEntities: [],
-        triggerEntity: quake,
-      };
-
-      if (rule.condition(ctx)) {
-        const alert = rule.generate(ctx);
-        this.lastFired.set(cooldownKey, now);
-        this.emitCorrelation(alert);
-      }
-    }
-
-    // 군용기 클러스터 규칙
-    const milAircraft = this.spatialIndex.getByLayer('adsb');
-    const evaluatedClusters = new Set<string>();
-    for (const ac of milAircraft) {
-      const rule = this.rules.find((r) => r.id === 'military-cluster');
-      if (!rule) continue;
-
-      // 중복 클러스터 방지: 이미 평가된 클러스터 영역 스킵
-      const clusterKey = `${Math.round(ac.lat)},${Math.round(ac.lng)}`;
-      if (evaluatedClusters.has(clusterKey)) continue;
-      evaluatedClusters.add(clusterKey);
-
-      const cooldownKey = `${rule.id}:${clusterKey}`;
-      const lastTime = this.lastFired.get(cooldownKey);
-      if (lastTime && now - lastTime < this.COOLDOWN_MS) continue;
-
-      const nearby = this.spatialIndex.nearby(ac.lat, ac.lng, rule.spatialRadius);
-      const ctx: CorrelationContext = {
-        centerLat: ac.lat,
-        centerLng: ac.lng,
-        nearbyEntities: nearby,
-        matchedEntities: [],
-        triggerEntity: ac,
-      };
-
-      if (rule.condition(ctx)) {
-        const alert = rule.generate(ctx);
-        this.lastFired.set(cooldownKey, now);
-        this.emitCorrelation(alert);
-      }
-    }
   }
 
-  /** 이상 탐지 평가 */
   private evaluateAnomalies(_now: number): void {
-    // 초크포인트별 선박 수
-    const chokepoints = this.spatialIndex.getByLayer('chokepoints');
-    for (const cp of chokepoints) {
-      const nearby = this.spatialIndex.nearby(cp.lat, cp.lng, 50);
-      const shipCount = nearby.filter((e) => e.layer === 'ships').length;
-      const result = this.anomalyDetector.update(
-        'chokepoint_ships',
-        cp.id,
-        shipCount,
-        `${cp.data.name}: ship density`,
-      );
-      if (result) this.emitAnomaly(result);
+    for (const cp of this.spatialIndex.getByLayer('chokepoints')) {
+      const sc = this.spatialIndex.nearby(cp.lat, cp.lng, 50).filter((e) => e.layer === 'ships').length;
+      const r = this.anomalyDetector.update('chokepoint_ships', cp.id, sc, `${cp.data.name}: ship density`); if (r) this.emitAnomaly(r);
     }
-
-    // 군용기 출현 빈도 (전역)
-    const milCount = this.spatialIndex.getByLayer('adsb').length;
-    const milResult = this.anomalyDetector.update(
-      'military_aircraft',
-      'global',
-      milCount,
-      'Global military aircraft count',
-    );
-    if (milResult) this.emitAnomaly(milResult);
+    const mc = this.spatialIndex.getByLayer('adsb').length;
+    const mr = this.anomalyDetector.update('military_aircraft', 'global', mc, 'Global military aircraft count'); if (mr) this.emitAnomaly(mr);
   }
 
-  /** 규칙 ID → Alert 카테고리 매핑 */
-  private static readonly RULE_CATEGORY: Record<string, import('@/store/useAlertStore').AlertCategory> = {
-    'earthquake-nuclear': 'nuclear',
-    'chokepoint-congestion': 'chokepoint',
-    'military-cluster': 'flight',
-    'earthquake-cctv': 'earthquake',
-    'earthquake-shipping': 'earthquake',
-    'earthquake-volcano': 'earthquake',
-    'wildfire-wind': 'system',
-  };
+  private getCategoryForRule(ruleId: string): import('@/store/useAlertStore').AlertCategory {
+    const m: Record<string, import('@/store/useAlertStore').AlertCategory> = { 'earthquake-nuclear': 'nuclear', 'chokepoint-congestion': 'chokepoint', 'military-cluster': 'flight', 'earthquake-cctv': 'earthquake', 'earthquake-shipping': 'earthquake', 'earthquake-volcano': 'earthquake', 'wildfire-wind': 'system' };
+    if (m[ruleId]) return m[ruleId];
+    const dsl = this.dslRules.get(ruleId);
+    if (dsl) { const lm: Record<string, import('@/store/useAlertStore').AlertCategory> = { earthquakes: 'earthquake', ships: 'ship', adsb: 'flight', satellites: 'satellite', chokepoints: 'chokepoint', nuclear_plants: 'nuclear' }; return lm[dsl.triggerLayer] ?? 'system'; }
+    return 'system';
+  }
 
-  /** 코릴레이션 알림 발행 */
   private emitCorrelation(alert: CorrelationAlert): void {
-    if (this.onCorrelation) {
-      this.onCorrelation(alert);
-    }
-
-    // 기존 Alert 시스템에도 연동
-    useAlertStore.getState().addAlert({
-      severity: alert.severity,
-      category: CorrelationEngine.RULE_CATEGORY[alert.ruleId] ?? 'system',
-      title: alert.title,
-      message: alert.message,
-      lat: alert.lat,
-      lng: alert.lng,
-    });
+    if (this.onCorrelation) this.onCorrelation(alert);
+    useAlertStore.getState().addAlert({ severity: alert.severity, category: this.getCategoryForRule(alert.ruleId), title: alert.title, message: alert.message, lat: alert.lat, lng: alert.lng });
   }
 
-  /** 이상 탐지 알림 발행 */
   private emitAnomaly(result: AnomalyResult): void {
-    if (this.onAnomaly) {
-      this.onAnomaly(result);
-    }
-
-    useAlertStore.getState().addAlert({
-      severity: 'warning',
-      category: 'system',
-      title: 'ANOMALY DETECTED',
-      message: `${result.label}: current=${result.currentValue.toFixed(0)}, mean=${result.mean.toFixed(1)}, ${result.sigmaDeviation.toFixed(1)}sigma deviation.`,
-    });
+    if (this.onAnomaly) this.onAnomaly(result);
+    useAlertStore.getState().addAlert({ severity: 'warning', category: 'system', title: 'ANOMALY DETECTED', message: `${result.label}: current=${result.currentValue.toFixed(0)}, mean=${result.mean.toFixed(1)}, ${result.sigmaDeviation.toFixed(1)}sigma deviation.` });
   }
 }
