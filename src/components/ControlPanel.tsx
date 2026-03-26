@@ -87,10 +87,11 @@ export default function ControlPanel() {
           <div className="border-t border-gray-700/50" />
           <CorrelationStatus />
           <div className="border-t border-gray-700/50" />
+          <GeofenceControls />
+          <div className="border-t border-gray-700/50" />
           <Legend />
         </div>
 
-        {/* 푸터 */}
         <div className="px-4 py-2 border-t border-gray-700/50 flex-shrink-0">
           <p className="text-gray-600 text-[10px] font-mono text-center">
             SYS ONLINE

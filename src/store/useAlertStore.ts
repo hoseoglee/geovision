@@ -3,7 +3,7 @@ import { create } from 'zustand';
 export type AlertSeverity = 'critical' | 'warning' | 'info';
 export type AlertCategory =
   | 'earthquake' | 'flight' | 'ship' | 'satellite'
-  | 'chokepoint' | 'system' | 'nuclear';
+  | 'chokepoint' | 'system' | 'nuclear' | 'geofence';
 
 export interface Alert {
   id: string;

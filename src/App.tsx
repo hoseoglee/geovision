@@ -21,6 +21,7 @@ import DailyBrief from './components/DailyBrief';
 import EventTimeline from './components/EventTimeline';
 import KeyboardShortcuts from './components/KeyboardShortcuts';
 import SearchModal from './components/SearchModal';
+import { GeofenceEventPanel } from "./components/GeofencePanel";
 import ExportModal from './components/ExportModal';
 import TimelineBar from './components/TimelineBar';
 
@@ -51,6 +52,7 @@ export default function App() {
       <SearchModal />
       <ExportModal />
       <TimelineBar />
+      <GeofenceEventPanel />
       <DataTicker />
     </main>
   );

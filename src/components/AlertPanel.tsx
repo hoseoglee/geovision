@@ -33,6 +33,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   chokepoint: 'CHOKE',
   system: 'SYS',
   nuclear: 'NUCLEAR',
+  geofence: 'GEOFENCE',
 };
 
 /** 알람 카테고리와 메시지로부터 관련 외부 사이트 URL 생성 */

@@ -33,6 +33,7 @@ import flirShader from '@/filters/flir';
 import animeShader from '@/filters/anime';
 import lutShader from '@/filters/lut';
 import { createHeatmapPrimitive, precisionForAltitude, type HeatmapPoint } from '@/layers/HeatmapLayer';
+import { useGeofenceGlobe } from "@/hooks/useGeofenceGlobe";
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -677,6 +678,9 @@ export default function Globe() {
     };
   }, []);
 
+
+  // Geofence system
+  useGeofenceGlobe(viewerRef);
   // 위성 데이터 — PointPrimitiveCollection (Entity 대신, 성능 10배↑)
   useEffect(() => {
     const viewer = viewerRef.current;
