@@ -17,10 +17,7 @@ export default memo(function CCTVFilter() {
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
 
   const isCCTVActive = activeOverlays.includes('cctv');
-
-  if (!isCCTVActive) return null;
-
-  const cctvs = fetchCCTVs();
+  const cctvs = isCCTVActive ? fetchCCTVs() : [];
 
   const typeCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -41,6 +38,8 @@ export default memo(function CCTVFilter() {
     }
     return list.slice(0, 20);
   }, [cctvs, typeFilter, search]);
+
+  if (!isCCTVActive) return null;
 
   const flyTo = (cam: CCTVData) => {
     setCameraTarget({ latitude: cam.lat, longitude: cam.lng, height: 5000 });
