@@ -1087,7 +1087,7 @@ export default function Globe() {
     overlayImageryRef.current = [];
     // CCTV 포인트/라벨 컬렉션 — 토글 시 show/hide (destroy 대신)
     if (!activeOverlays.includes('cctv')) {
-      if (cctvPrimitiveRef.current) cctvPrimitiveRef.current.show = false;
+      if (cctvPrimitiveRef.current) { cctvPrimitiveRef.current.show = false; viewer.scene.requestRender(); }
       if (cctvLabelCollRef.current) cctvLabelCollRef.current.show = false;
       // FOV/썸네일 엔티티 + 카메라 리스너는 비활성 시 정리
       for (const e of cctvFovEntitiesRef.current) viewer.entities.remove(e);
@@ -1562,6 +1562,7 @@ export default function Globe() {
         // 이미 생성된 컬렉션이 있으면 show만 복원
         cctvPrimitiveRef.current.show = true;
         cctvLabelCollRef.current.show = true;
+        viewer.scene.requestRender();
       } else {
         // 최초 생성
         const cctvPoints = new Cesium.PointPrimitiveCollection();
@@ -1609,6 +1610,7 @@ export default function Globe() {
         viewer.scene.primitives.add(cctvLabels);
         cctvPrimitiveRef.current = cctvPoints;
         cctvLabelCollRef.current = cctvLabels;
+        viewer.scene.requestRender();
       }
 
       // ── FOV/썸네일 동적 LOD — 카메라 이동 시 뷰포트 내 저고도 카메라만 Entity 생성 ──
@@ -2044,6 +2046,9 @@ export default function Globe() {
 
       // 군용기 — 별도 useEffect에서 30초 자동 갱신으로 처리
     }
+
+    // requestRenderMode에서 오버레이 변경 후 화면 갱신 보장
+    viewer.scene.requestRender();
   }, [activeOverlays, windyCamsVersion]);
 
   // Subscribe to Windy cam updates to re-trigger overlay rendering
