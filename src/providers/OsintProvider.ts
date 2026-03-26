@@ -145,6 +145,29 @@ function stripHtml(html: string): string {
 }
 
 /**
+ * HTML 특수문자 이스케이프 (XSS 방지)
+ */
+export function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+/**
+ * URL 프로토콜 검증 (http/https만 허용)
+ */
+export function sanitizeUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') return url;
+  } catch { /* invalid URL */ }
+  return '';
+}
+
+/**
  * GDELT GEO 2.0 API에서 뉴스 데이터를 가져옴
  */
 async function fetchGdelt(): Promise<OsintData[]> {
