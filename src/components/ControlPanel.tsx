@@ -9,6 +9,7 @@ import FilterControls from './FilterControls';
 import LandmarkNav from './LandmarkNav';
 import Legend from './Legend';
 import OverlaySelector from './OverlaySelector';
+import { GeofenceControls } from './GeofencePanel';
 
 function CorrelationStatus() {
   const isRunning = useCorrelationStore((s) => s.isRunning);

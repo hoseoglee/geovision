@@ -99,7 +99,7 @@ export const useAppStore = create<AppState>((set) => ({
     lutVignette: 1.2,
     lutContrast: 1.0,
   },
-    filterPresets: loadPresetsFromStorage(),
+  filterPresets: loadPresetsFromStorage(),
   activeHeatmaps: [],
   heatmapParams: { opacity: 0.55, intensity: 1.0, palette: 'thermal' },
 
