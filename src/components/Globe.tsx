@@ -53,8 +53,7 @@ const SATELLITE_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http
 // ISS 전용 아이콘 — 크고 눈에 띄는 금색 마커
 const ISS_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.6"/><circle cx="20" cy="20" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1.5"/><line x1="2" y1="20" x2="38" y2="20" stroke="#FFD700" stroke-width="2" opacity="0.8"/><line x1="20" y1="8" x2="20" y2="32" stroke="#FFD700" stroke-width="1" opacity="0.5"/></svg>`)}`;
 
-// CCTV 아이콘 — 밝은 녹색 카메라
-const CCTV_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="10" rx="2" fill="#00FF88" stroke="#FFF" stroke-width="1"/><polygon points="15,8 21,5 21,19 15,16" fill="#00FF88" stroke="#FFF" stroke-width="0.8"/><circle cx="9" cy="20" r="2" fill="#00FF88"/></svg>`)}`;
+// CCTV 표시 — 녹색 점 (카메라 아이콘 제거, PointPrimitiveCollection 사용)
 
 // 선박 아이콘 — 밝은 파란색 삼각형 (위를 향하는 뱃머리)
 const SHIP_SVG = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 4,16 10,13 16,16" fill="#4DA6FF" stroke="#FFF" stroke-width="0.8"/></svg>`)}`;
@@ -113,7 +112,7 @@ export default function Globe() {
   const overlayEntitiesRef = useRef<Cesium.Entity[]>([]);
   const overlayImageryRef = useRef<Cesium.ImageryLayer[]>([]);
   const buildingsTilesetRef = useRef<Cesium.Cesium3DTileset | null>(null);
-  const cctvPrimitiveRef = useRef<Cesium.BillboardCollection | null>(null);
+  const cctvPrimitiveRef = useRef<Cesium.PointPrimitiveCollection | null>(null);
   const cctvLabelCollRef = useRef<Cesium.LabelCollection | null>(null);
   // CCTV LOD: FOV/썸네일 엔티티 (저고도에서만 동적 생성)
   const cctvFovEntitiesRef = useRef<Cesium.Entity[]>([]);
@@ -1563,32 +1562,31 @@ export default function Globe() {
 
       const cctvs = fetchCCTVs();
 
-      // ── 모든 카메라를 BillboardCollection으로 통합 (Entity 대신) ──
-      const cctvBillboards = new Cesium.BillboardCollection({ scene: viewer.scene });
+      // ── 모든 카메라를 PointPrimitiveCollection으로 표시 (녹색 점) ──
+      const cctvPoints = new Cesium.PointPrimitiveCollection();
       const cctvLabels = new Cesium.LabelCollection({ scene: viewer.scene });
       const bbDataMap = cctvBillboardDataRef.current;
       bbDataMap.clear();
 
-      // 전체 카메라를 BillboardCollection에 추가 (Cesium이 GPU 레벨 distance culling 처리)
       for (const cam of cctvs) {
         const color = cam.type === 'traffic' ? Cesium.Color.LIME
           : cam.type === 'port' ? Cesium.Color.CYAN
           : cam.type === 'landmark' ? Cesium.Color.GOLD
           : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
-          : Cesium.Color.WHITE;
+          : Cesium.Color.fromCssColorString('#00FF88');
 
-        const bb = cctvBillboards.add({
+        const pt = cctvPoints.add({
           position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-          image: CCTV_SVG,
-          width: 20,
-          height: 20,
+          pixelSize: 6,
           color,
-          scaleByDistance: new Cesium.NearFarScalar(1e4, 2.0, 8e6, 0.15),
+          outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+          outlineWidth: 1,
+          scaleByDistance: new Cesium.NearFarScalar(1e4, 1.5, 8e6, 0.3),
           distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
           disableDepthTestDistance: Number.POSITIVE_INFINITY,
         });
-        // Billboard → CCTVData 매핑 (클릭 핸들링)
-        bbDataMap.set(bb, cam);
+        // Point → CCTVData 매핑 (클릭 핸들링)
+        bbDataMap.set(pt, cam);
 
         // 라벨은 500km 이내에서만 표시
         cctvLabels.add({
@@ -1599,16 +1597,16 @@ export default function Globe() {
           outlineColor: Cesium.Color.BLACK,
           outlineWidth: 2,
           style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-          pixelOffset: new Cesium.Cartesian2(0, -18),
+          pixelOffset: new Cesium.Cartesian2(0, -12),
           scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e5, 0.2),
           distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e5),
           disableDepthTestDistance: Number.POSITIVE_INFINITY,
         });
       }
 
-      viewer.scene.primitives.add(cctvBillboards);
+      viewer.scene.primitives.add(cctvPoints);
       viewer.scene.primitives.add(cctvLabels);
-      cctvPrimitiveRef.current = cctvBillboards;
+      cctvPrimitiveRef.current = cctvPoints;
       cctvLabelCollRef.current = cctvLabels;
 
       // ── FOV/썸네일 동적 LOD — 카메라 이동 시 뷰포트 내 저고도 카메라만 Entity 생성 ──
