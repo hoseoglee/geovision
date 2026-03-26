@@ -13,7 +13,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9857,
     embedUrl: 'https://www.youtube.com/embed/a9J1OP_x5Rg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nyc-1560-broadway',
@@ -24,7 +24,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9852,
     embedUrl: 'https://www.youtube.com/embed/4qyZLflp-sI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'nyc-1540-broadway',
@@ -35,7 +37,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.985,
     embedUrl: 'https://www.youtube.com/embed/nVsDt8AvfCU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'nyc-empire-state',
@@ -46,7 +50,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9857,
     embedUrl: 'https://www.youtube.com/embed/TdGXlEOxuOw?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nyc-multicam',
@@ -57,7 +61,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.006,
     embedUrl: 'https://www.youtube.com/embed/VGnFLdQW39A?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nyc-skyline',
@@ -68,7 +72,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.967,
     embedUrl: 'https://www.youtube.com/embed/DTgYVa-W2O8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'nyc-lower-manhattan',
@@ -79,7 +85,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0021,
     embedUrl: 'https://www.youtube.com/embed/KuzVYn1Ucbg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-seokchon-lake',
@@ -90,7 +96,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.1,
     embedUrl: 'https://www.youtube.com/embed/UYziFFSzzMo?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-mapo-bridge',
@@ -101,7 +107,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.944,
     embedUrl: 'https://www.youtube.com/embed/hWyByX9fY2g?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'seoul-jamsil-bridge',
@@ -112,7 +120,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.085,
     embedUrl: 'https://www.youtube.com/embed/ZopiySgQjsc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'seoul-dongdaemun-ddp',
@@ -123,7 +133,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.0095,
     embedUrl: 'https://www.youtube.com/embed/TbHWvdCkMPQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-hongdae',
@@ -134,7 +144,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.924,
     embedUrl: 'https://www.youtube.com/embed/ee6MgrC6O8U?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-n-tower',
@@ -145,7 +155,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.9882,
     embedUrl: 'https://www.youtube.com/embed/eKlMI70C53U?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'seoul-gyeongbokgung-2',
@@ -156,7 +168,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.977,
     embedUrl: 'https://www.youtube.com/embed/EPrqF0HOi9o?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-hangang-segang',
@@ -167,7 +179,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.925,
     embedUrl: 'https://www.youtube.com/embed/_gmTN6ssF7I?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'busan-haeundae-1',
@@ -178,7 +192,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.1604,
     embedUrl: 'https://www.youtube.com/embed/2ddvxTpmKR4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'busan-haeundae-2',
@@ -189,7 +205,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.161,
     embedUrl: 'https://www.youtube.com/embed/uHdl_9hsHqw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'busan-gwangandaegyo-1',
@@ -200,7 +218,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.1187,
     embedUrl: 'https://www.youtube.com/embed/8Gl34_bZ3t8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'busan-gwangandaegyo-2',
@@ -211,7 +231,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.119,
     embedUrl: 'https://www.youtube.com/embed/GXvW-dvTbL8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'busan-gwangandaegyo-3',
@@ -222,7 +244,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.118,
     embedUrl: 'https://www.youtube.com/embed/OhXqC3pDBaU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'busan-gwangandaegyo-4',
@@ -233,7 +257,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.1175,
     embedUrl: 'https://www.youtube.com/embed/fWAYIe5-C4o?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'busan-daeyeon-campus',
@@ -244,7 +270,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.1,
     embedUrl: 'https://www.youtube.com/embed/LLx2dRw-lKM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-shibuya-crossing-2',
@@ -255,7 +281,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7005,
     embedUrl: 'https://www.youtube.com/embed/8H3nRCFVR6Y?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-kabukicho-3',
@@ -266,7 +292,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.703,
     embedUrl: 'https://www.youtube.com/embed/ErHJBXTmm2Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-terminal2',
@@ -277,7 +303,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7798,
     embedUrl: 'https://www.youtube.com/embed/A0FCKcTuRHo?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-runway',
@@ -288,7 +314,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.783,
     embedUrl: 'https://www.youtube.com/embed/2PIdi3Xa7TY?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-3',
@@ -299,7 +325,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.781,
     embedUrl: 'https://www.youtube.com/embed/LZlHg3vzwe0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-4',
@@ -310,7 +336,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.78,
     embedUrl: 'https://www.youtube.com/embed/2f9NOSw-FqM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-5',
@@ -321,7 +347,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7815,
     embedUrl: 'https://www.youtube.com/embed/0ytmbJ6mn70?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-6',
@@ -332,7 +358,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7825,
     embedUrl: 'https://www.youtube.com/embed/WN4XpAU6lu0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-rainbow-bridge-1',
@@ -343,7 +369,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7636,
     embedUrl: 'https://www.youtube.com/embed/KR7qSzE1j_w?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'tokyo-rainbow-bridge-2',
@@ -354,7 +382,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.764,
     embedUrl: 'https://www.youtube.com/embed/fGOCRGXPgRY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'tokyo-rainbow-bridge-3',
@@ -365,7 +395,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7632,
     embedUrl: 'https://www.youtube.com/embed/QE9NWdINg08?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'tokyo-shimbashi',
@@ -376,7 +408,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7578,
     embedUrl: 'https://www.youtube.com/embed/VM18f-IIUTw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-sunset',
@@ -387,7 +419,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7454,
     embedUrl: 'https://www.youtube.com/embed/p37X_4sf5h4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-tower-closeup',
@@ -398,7 +430,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7455,
     embedUrl: 'https://www.youtube.com/embed/nu6NE55_X7A?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'tokyo-city-view-1',
@@ -409,7 +443,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6917,
     embedUrl: 'https://www.youtube.com/embed/1Xm5bjdI5hU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-city-view-2',
@@ -420,7 +454,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.692,
     embedUrl: 'https://www.youtube.com/embed/Zhmmh7l6KEw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-city-view-3',
@@ -431,7 +465,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7008,
     embedUrl: 'https://www.youtube.com/embed/6dp-bvQ7RWo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-city-view-4',
@@ -442,7 +476,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7,
     embedUrl: 'https://www.youtube.com/embed/lA6TaaMGgDo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-city-view-5',
@@ -453,7 +487,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.76,
     embedUrl: 'https://www.youtube.com/embed/urE7veQRlrQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-city-view-6',
@@ -464,7 +498,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.75,
     embedUrl: 'https://www.youtube.com/embed/MwcMURMzJ7A?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-ginza',
@@ -475,7 +509,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7649,
     embedUrl: 'https://www.youtube.com/embed/nvjYhbiznNk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-shinjuku',
@@ -486,7 +520,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6922,
     embedUrl: 'https://www.youtube.com/embed/Okc4okfC45E?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-asakusa',
@@ -497,7 +531,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7967,
     embedUrl: 'https://www.youtube.com/embed/Zq-D5z2n0EY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-akihabara',
@@ -508,7 +542,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7714,
     embedUrl: 'https://www.youtube.com/embed/3KZ20aH_Oq4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-view-11',
@@ -519,7 +553,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.763,
     embedUrl: 'https://www.youtube.com/embed/Ml0_q9_s_xY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-view-12',
@@ -530,7 +564,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.766,
     embedUrl: 'https://www.youtube.com/embed/ktds5GPgu6Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-bay-1',
@@ -541,7 +575,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.77,
     embedUrl: 'https://www.youtube.com/embed/zPfCPHQZvpw?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-bay-2',
@@ -552,7 +586,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.771,
     embedUrl: 'https://www.youtube.com/embed/RIEliWw2WG4?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-nipponbashi',
@@ -563,7 +597,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5058,
     embedUrl: 'https://www.youtube.com/embed/oG3XilZ2xQ8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-shinsaibashi',
@@ -574,7 +608,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.502,
     embedUrl: 'https://www.youtube.com/embed/YZMZSqz9fx8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-view-5',
@@ -585,7 +619,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.507,
     embedUrl: 'https://www.youtube.com/embed/aVAO2wSUsPo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-koreatown',
@@ -596,7 +630,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.523,
     embedUrl: 'https://www.youtube.com/embed/lKZqryb7Nno?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itami-airport-32l',
@@ -607,7 +641,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4385,
     embedUrl: 'https://www.youtube.com/embed/qwKh-LOkomQ?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itami-airport-2',
@@ -618,7 +652,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.439,
     embedUrl: 'https://www.youtube.com/embed/054NeKG4LBg?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itami-airport-3',
@@ -629,7 +663,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.438,
     embedUrl: 'https://www.youtube.com/embed/T2TQocGHH5A?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itami-airport-4',
@@ -640,7 +674,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4395,
     embedUrl: 'https://www.youtube.com/embed/ybJpRrthdNM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itami-airport-5',
@@ -651,7 +685,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4388,
     embedUrl: 'https://www.youtube.com/embed/227EXwqbOVc?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jp-sapporo',
@@ -662,7 +696,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3544,
     embedUrl: 'https://www.youtube.com/embed/O7aL3u5n1gQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jp-kyoto-view',
@@ -673,7 +707,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7681,
     embedUrl: 'https://www.youtube.com/embed/wuC8wRvXock?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jp-okinawa',
@@ -684,7 +718,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.8011,
     embedUrl: 'https://www.youtube.com/embed/Zhfodg0io7M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jp-mt-fuji',
@@ -695,7 +729,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.7274,
     embedUrl: 'https://www.youtube.com/embed/Sv9hcJ3k5h4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hk-causeway-bay',
@@ -706,7 +740,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 114.183,
     embedUrl: 'https://www.youtube.com/embed/qAUi2BOPQ1M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hk-sai-wan',
@@ -717,7 +751,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 114.141,
     embedUrl: 'https://www.youtube.com/embed/Myy_iKyFGSY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vegas-strip-3',
@@ -728,7 +762,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.173,
     embedUrl: 'https://www.youtube.com/embed/0rpYZOxK34M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'keywest-hogs-breath-1',
@@ -739,7 +773,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.804,
     embedUrl: 'https://www.youtube.com/embed/S605ycm0Vlk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'keywest-hogs-breath-2',
@@ -750,7 +784,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8038,
     embedUrl: 'https://www.youtube.com/embed/_eE4GBEjjs4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'keywest-hogs-breath-3',
@@ -761,7 +795,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8042,
     embedUrl: 'https://www.youtube.com/embed/thzfsD7VDFg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'keywest-sloppy-joes-1',
@@ -772,7 +806,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.801,
     embedUrl: 'https://www.youtube.com/embed/rbMK4p6zUwI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'keywest-sloppy-joes-2',
@@ -783,7 +817,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8012,
     embedUrl: 'https://www.youtube.com/embed/yNpciG0zc1Q?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-beach-1',
@@ -793,8 +827,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.985,
     lng: -118.4695,
     embedUrl: 'https://www.youtube.com/embed/EO_1LWqsCNE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'venice-beach-2',
@@ -804,8 +840,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.9852,
     lng: -118.469,
     embedUrl: 'https://www.youtube.com/embed/98jOtUeM3m8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'venice-beach-3',
@@ -815,8 +853,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.9848,
     lng: -118.4698,
     embedUrl: 'https://www.youtube.com/embed/D33ZD6sRvnA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'rio-copacabana-2',
@@ -827,7 +867,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.182,
     embedUrl: 'https://www.youtube.com/embed/c8uRp-57pc0?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rio-christ-redeemer-2',
@@ -838,7 +878,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.21,
     embedUrl: 'https://www.youtube.com/embed/d6LMwptYVSI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itajai-port-1',
@@ -849,7 +889,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.6619,
     embedUrl: 'https://www.youtube.com/embed/3fPqRlwtSHM?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itajai-port-2',
@@ -860,7 +900,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.6615,
     embedUrl: 'https://www.youtube.com/embed/DPX04x-cGvw?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'miami-port-3',
@@ -871,7 +911,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.169,
     embedUrl: 'https://www.youtube.com/embed/3qH-qNoh4Ho?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-harbour-1',
@@ -882,7 +922,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.2153,
     embedUrl: 'https://www.youtube.com/embed/5uZa3-RMFos?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-harbour-2',
@@ -893,7 +933,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.215,
     embedUrl: 'https://www.youtube.com/embed/jshwkG1ZpP8?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-harbour-3',
@@ -904,7 +944,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.2155,
     embedUrl: 'https://www.youtube.com/embed/7pcL-0Wo77U?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-sukhumvit-1',
@@ -915,7 +955,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.56,
     embedUrl: 'https://www.youtube.com/embed/UemFRPrl1hk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-sukhumvit-2',
@@ -926,7 +966,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.5605,
     embedUrl: 'https://www.youtube.com/embed/Q71sLS8h9a4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pattaya-city-1',
@@ -937,7 +977,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.8825,
     embedUrl: 'https://www.youtube.com/embed/yYFSzdW0N1Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pattaya-city-2',
@@ -948,7 +988,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.883,
     embedUrl: 'https://www.youtube.com/embed/JpVkgmkVyRg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pattaya-city-3',
@@ -959,7 +999,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.882,
     embedUrl: 'https://www.youtube.com/embed/gGK2pV5IF6c?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sendai-downtown-1',
@@ -970,7 +1010,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.8826,
     embedUrl: 'https://www.youtube.com/embed/AinAZQgQp_s?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sendai-panorama-1',
@@ -981,7 +1021,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.8694,
     embedUrl: 'https://www.youtube.com/embed/Ado_7_DMTdc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'sendai-station-1',
@@ -992,7 +1034,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.8822,
     embedUrl: 'https://www.youtube.com/embed/2_FFyGW-bx8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hakodate-mountain-1',
@@ -1003,7 +1045,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.7013,
     embedUrl: 'https://www.youtube.com/embed/s--MDmshT3I?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kamakura-komachi-1',
@@ -1014,7 +1056,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.5508,
     embedUrl: 'https://www.youtube.com/embed/ZeI0dnHjX6w?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'kamakura-wakamiyaoji-1',
@@ -1025,7 +1069,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.5538,
     embedUrl: 'https://www.youtube.com/embed/VOix1wTjheQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'nikko-futarasan-1',
@@ -1036,7 +1082,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.599,
     embedUrl: 'https://www.youtube.com/embed/Prb4reZ1e0Y?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yokohama-port-1',
@@ -1047,7 +1093,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.638,
     embedUrl: 'https://www.youtube.com/embed/3MteSlpxCpo?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kobe-meriken-park-1',
@@ -1058,7 +1104,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.1892,
     embedUrl: 'https://www.youtube.com/embed/AU_2zfM4m68?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kobe-sannomiya-1',
@@ -1069,7 +1115,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.197,
     embedUrl: 'https://www.youtube.com/embed/8tDuhb9QnQ4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-panorama-1',
@@ -1080,7 +1126,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.4553,
     embedUrl: 'https://www.youtube.com/embed/J7sBLE_8LEg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-station-1',
@@ -1091,7 +1137,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.4753,
     embedUrl: 'https://www.youtube.com/embed/ntkaV32DiZM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fukuoka-airport-1',
@@ -1102,7 +1148,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.451,
     embedUrl: 'https://www.youtube.com/embed/cTD7nITGhE0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fukuoka-hakata-station-1',
@@ -1113,7 +1159,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.4207,
     embedUrl: 'https://www.youtube.com/embed/8RyR0J8zbbU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fukuoka-panorama-1',
@@ -1124,7 +1170,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.4017,
     embedUrl: 'https://www.youtube.com/embed/EkH8SihBx9E?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'okinawa-kokusai-street-1',
@@ -1135,7 +1181,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6847,
     embedUrl: 'https://www.youtube.com/embed/c-PKJstE_jE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'okinawa-kariyushi-beach-1',
@@ -1145,8 +1193,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.4746,
     lng: 127.7866,
     embedUrl: 'https://www.youtube.com/embed/AhQErfreEOE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'okinawa-miyakojima-1',
@@ -1156,8 +1206,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 24.7374,
     lng: 125.3251,
     embedUrl: 'https://www.youtube.com/embed/4v5e4eKIT_E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'sapporo-odori-park-1',
@@ -1168,7 +1220,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3567,
     embedUrl: 'https://www.youtube.com/embed/kfIQBC0hrII?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'sapporo-jr-station-1',
@@ -1179,7 +1233,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3508,
     embedUrl: 'https://www.youtube.com/embed/gaNLXSEUVRw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'narita-airport-1',
@@ -1190,7 +1244,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.3929,
     embedUrl: 'https://www.youtube.com/embed/ZIHxOzhFFUc?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kansai-airport-1',
@@ -1201,7 +1255,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.2304,
     embedUrl: 'https://www.youtube.com/embed/fJ4j-Moq3Lw?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kanazawa-station-1',
@@ -1212,7 +1266,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.648,
     embedUrl: 'https://www.youtube.com/embed/81-mJdCDK7M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kanazawa-kenrokuen-1',
@@ -1223,7 +1277,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.6625,
     embedUrl: 'https://www.youtube.com/embed/ZpzNv_hNxPE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kagoshima-sakurajima-1',
@@ -1234,7 +1288,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.6571,
     embedUrl: 'https://www.youtube.com/embed/uCbr0YLxsac?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hakone-lake-ashi-1',
@@ -1245,7 +1299,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.0218,
     embedUrl: 'https://www.youtube.com/embed/qYnCG4J26d8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'aso-volcano-1',
@@ -1256,7 +1310,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 131.1042,
     embedUrl: 'https://www.youtube.com/embed/rF8hCVrU3VU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'london-trafalgar-square-1',
@@ -1267,7 +1321,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.1281,
     embedUrl: 'https://www.youtube.com/embed/AdUw5RdyZxI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chicago-skydeck-2',
@@ -1278,7 +1332,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.6359,
     embedUrl: 'https://www.youtube.com/embed/sQxL8t0gtu8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'san-francisco-bay-bridge-2',
@@ -1289,7 +1345,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.3778,
     embedUrl: 'https://www.youtube.com/embed/CXYr04BWvmc?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'las-vegas-strip-2',
@@ -1300,7 +1358,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.1728,
     embedUrl: 'https://www.youtube.com/embed/-6q-aEQB14E?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'las-vegas-sphere-view',
@@ -1311,7 +1369,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.1662,
     embedUrl: 'https://www.youtube.com/embed/jjSo4RJ2sMo?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boston-charles-river-west',
@@ -1322,7 +1380,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.0707,
     embedUrl: 'https://www.youtube.com/embed/_oWwfJ3v0oE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'boston-boylston-street',
@@ -1333,7 +1392,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.0679,
     embedUrl: 'https://www.youtube.com/embed/eN2rDDy48BY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'boston-harbor-2',
@@ -1344,7 +1405,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.051,
     embedUrl: 'https://www.youtube.com/embed/49WtyN1V1ZQ?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'houston-downtown-1',
@@ -1355,7 +1416,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.3698,
     embedUrl: 'https://www.youtube.com/embed/SDK_m1_BVJ4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-waikiki-1',
@@ -1365,8 +1426,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2769,
     lng: -157.8268,
     embedUrl: 'https://www.youtube.com/embed/X0idnu7HUmI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'honolulu-waikiki-2',
@@ -1376,8 +1439,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2878,
     lng: -157.8466,
     embedUrl: 'https://www.youtube.com/embed/zkKMuhqJKUo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'toronto-cn-tower-gardiner',
@@ -1388,7 +1453,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.3871,
     embedUrl: 'https://www.youtube.com/embed/F2l3a9z1FCQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'cancun-fiesta-americana',
@@ -1398,8 +1465,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.1344,
     lng: -86.7466,
     embedUrl: 'https://www.youtube.com/embed/AyVSlOI7c9Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cancun-royal-sands',
@@ -1409,8 +1478,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.1305,
     lng: -86.75,
     embedUrl: 'https://www.youtube.com/embed/fv0Qlo_IofY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cancun-temptation-resort',
@@ -1421,7 +1492,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.739,
     embedUrl: 'https://www.youtube.com/embed/-KCYRO2qrpU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rio-copacabana-1',
@@ -1431,8 +1502,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -22.9711,
     lng: -43.1822,
     embedUrl: 'https://www.youtube.com/embed/kxD9qBk6WQ8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'rio-copacabana-3',
@@ -1442,8 +1515,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -22.9697,
     lng: -43.178,
     embedUrl: 'https://www.youtube.com/embed/VXLKruYjJec?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'buenos-aires-avenida-9-julio',
@@ -1454,7 +1529,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -58.3816,
     embedUrl: 'https://www.youtube.com/embed/rqBfiegG5qU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buenos-aires-obelisco-2',
@@ -1465,7 +1540,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -58.3816,
     embedUrl: 'https://www.youtube.com/embed/2nl5VgUAhyc?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-western-wall-2',
@@ -1476,7 +1551,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2345,
     embedUrl: 'https://www.youtube.com/embed/AKGqd20ik_A?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-panoramic-1',
@@ -1487,7 +1562,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2354,
     embedUrl: 'https://www.youtube.com/embed/fTaKsyMuP_M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-skyline-1',
@@ -1498,7 +1573,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2316,
     embedUrl: 'https://www.youtube.com/embed/hk0qWFmRZBY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'tel-aviv-skyline-2',
@@ -1509,7 +1586,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 34.7818,
     embedUrl: 'https://www.youtube.com/embed/KMZbvDRgAh8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'mecca-kaaba-live-2',
@@ -1520,7 +1599,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 39.8262,
     embedUrl: 'https://www.youtube.com/embed/G0PC9JDC-2Y?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mecca-kaaba-live-3',
@@ -1531,7 +1610,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 39.8262,
     embedUrl: 'https://www.youtube.com/embed/jbUI2d6RwE8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'doha-skyline-2',
@@ -1542,7 +1621,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 51.531,
     embedUrl: 'https://www.youtube.com/embed/Dw6xbWyil5o?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'doha-katara-1',
@@ -1553,7 +1634,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 51.5264,
     embedUrl: 'https://www.youtube.com/embed/Nh9usJqxA7o?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-table-mountain',
@@ -1564,7 +1645,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.4098,
     embedUrl: 'https://www.youtube.com/embed/mxqQYDSg8uE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-sea-point',
@@ -1575,7 +1656,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.39,
     embedUrl: 'https://www.youtube.com/embed/4Zu64CmAjMo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-signal-hill',
@@ -1586,7 +1667,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.3975,
     embedUrl: 'https://www.youtube.com/embed/-Qi7IXhSScA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-cbd',
@@ -1597,7 +1678,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.4232,
     embedUrl: 'https://www.youtube.com/embed/8xvFxAPpEtc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-blouberg',
@@ -1607,8 +1688,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.806,
     lng: 18.462,
     embedUrl: 'https://www.youtube.com/embed/ZfiGeTowMWU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cape-town-clifton',
@@ -1618,8 +1701,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.9394,
     lng: 18.3767,
     embedUrl: 'https://www.youtube.com/embed/pMhXWpyUhsk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-orleans-bourbon-1',
@@ -1630,7 +1715,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -90.0715,
     embedUrl: 'https://www.youtube.com/embed/qHW8srS0ylo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'london-city-walworth',
@@ -1641,7 +1726,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.0961,
     embedUrl: 'https://www.youtube.com/embed/8JCk5M_xrBs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'london-west-views',
@@ -1652,7 +1739,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.16,
     embedUrl: 'https://www.youtube.com/embed/k51jbDqaI4s?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'paris-eiffel-live',
@@ -1663,7 +1751,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.2945,
     embedUrl: 'https://www.youtube.com/embed/OzYp4NRZlwQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'paris-sacre-coeur',
@@ -1674,7 +1764,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.3431,
     embedUrl: 'https://www.youtube.com/embed/lNAhqd8JLtw?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-panorama',
@@ -1685,7 +1775,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.3522,
     embedUrl: 'https://www.youtube.com/embed/UHlDzWrBEPI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'paris-seine-notre-dame',
@@ -1696,7 +1788,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.3499,
     embedUrl: 'https://www.youtube.com/embed/k3DZKHJ4Aqg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-centraal',
@@ -1707,7 +1799,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9003,
     embedUrl: 'https://www.youtube.com/embed/1phWWCgzXgM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-rooftop',
@@ -1718,7 +1810,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.8952,
     embedUrl: 'https://www.youtube.com/embed/9Pm6Ji6tm7s?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'berlin-olympiastadion',
@@ -1729,7 +1823,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.2395,
     embedUrl: 'https://www.youtube.com/embed/61b3Jty73Zo?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-panorama',
@@ -1740,7 +1834,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.405,
     embedUrl: 'https://www.youtube.com/embed/LAJiFSw2ICc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'berlin-westend',
@@ -1751,7 +1847,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.2791,
     embedUrl: 'https://www.youtube.com/embed/qOBuT6TmMCw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hamburg-port-1',
@@ -1762,7 +1858,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.9748,
     embedUrl: 'https://www.youtube.com/embed/P1A1b3R3Se4?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hamburg-port-2',
@@ -1773,7 +1869,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.9755,
     embedUrl: 'https://www.youtube.com/embed/mfpdquRilCk?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-airport',
@@ -1783,8 +1879,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 47.4647,
     lng: 8.5492,
     embedUrl: 'https://www.youtube.com/embed/Qcz9JKxFfW4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'dublin-temple-bar',
@@ -1795,7 +1891,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.2641,
     embedUrl: 'https://www.youtube.com/embed/3nyPER2kzqk?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-bay',
@@ -1806,7 +1902,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.22,
     embedUrl: 'https://www.youtube.com/embed/oxx7MqjhOpw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-port',
@@ -1817,7 +1913,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.2174,
     embedUrl: 'https://www.youtube.com/embed/K_ye7QHXosQ?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-airport',
@@ -1827,8 +1923,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 53.4213,
     lng: -6.2701,
     embedUrl: 'https://www.youtube.com/embed/nI3Y3MArg1A?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'koksijde-beach',
@@ -1838,8 +1934,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 51.1131,
     lng: 2.6519,
     embedUrl: 'https://www.youtube.com/embed/5Uqw_G_IdjE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'oudenaarde-market',
@@ -1850,7 +1948,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 3.6094,
     embedUrl: 'https://www.youtube.com/embed/TTrzSdVej30?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lanzarote-airport',
@@ -1860,8 +1958,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.9455,
     lng: -13.6052,
     embedUrl: 'https://www.youtube.com/embed/AAlo3eCPVbk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'mallorca-can-pastilla',
@@ -1871,8 +1969,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.5492,
     lng: 2.7352,
     embedUrl: 'https://www.youtube.com/embed/VsQekhPeUKs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'tenerife-resort',
@@ -1882,8 +1982,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.1235,
     lng: -16.5958,
     embedUrl: 'https://www.youtube.com/embed/yGV8MyVYw_I?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'las-palmas-port',
@@ -1894,7 +1996,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.43,
     embedUrl: 'https://www.youtube.com/embed/oZpS1U46kb4?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'girona-railway',
@@ -1905,7 +2007,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.8214,
     embedUrl: 'https://www.youtube.com/embed/ot5Rj1NI84k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-station',
@@ -1916,7 +2018,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7576,
     embedUrl: 'https://www.youtube.com/embed/v9rQqa_VTEY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-fushimi-inari',
@@ -1927,7 +2029,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7727,
     embedUrl: 'https://www.youtube.com/embed/MMeBDRfRHyA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-kiyomizuzaka',
@@ -1938,7 +2040,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.785,
     embedUrl: 'https://www.youtube.com/embed/cUnYPpK7ENk?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-chitose-airport',
@@ -1948,8 +2050,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 42.7791,
     lng: 141.6866,
     embedUrl: 'https://www.youtube.com/embed/uvNVpMKG8rw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'sapporo-city',
@@ -1960,7 +2062,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3355,
     embedUrl: 'https://www.youtube.com/embed/YoKAWhcyNmc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fukuoka-airport',
@@ -1970,8 +2072,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.5903,
     lng: 130.4467,
     embedUrl: 'https://www.youtube.com/embed/CzgSFUAbE9s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'fukuoka-hakata-station',
@@ -1982,7 +2084,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.4207,
     embedUrl: 'https://www.youtube.com/embed/yETDDgrE2E4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'singapore-cbd',
@@ -1993,7 +2095,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 103.8535,
     embedUrl: 'https://www.youtube.com/embed/q7Oiln7QlDE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'singapore-robinson',
@@ -2004,7 +2106,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 103.849,
     embedUrl: 'https://www.youtube.com/embed/9cfkyMzanbc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'singapore-woodlands',
@@ -2015,7 +2119,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 103.7891,
     embedUrl: 'https://www.youtube.com/embed/Z6aG6s7xhoY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-traffic-1',
@@ -2026,7 +2130,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.5654,
     embedUrl: 'https://www.youtube.com/embed/pmM2CeSAx0I?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'taipei-traffic-2',
@@ -2037,7 +2143,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.5499,
     embedUrl: 'https://www.youtube.com/embed/SfPJLSMuCQE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'pattaya-soi-buakhao',
@@ -2048,7 +2156,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.885,
     embedUrl: 'https://www.youtube.com/embed/TjHw3VakJY4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'phuket-patong-sainamyen',
@@ -2059,7 +2167,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 98.3011,
     embedUrl: 'https://www.youtube.com/embed/IVa59mpPJTg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'phuket-patong-nanai',
@@ -2070,7 +2180,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 98.3025,
     embedUrl: 'https://www.youtube.com/embed/WSm_r0eNl1E?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'koh-samui-crystal-bay',
@@ -2081,7 +2193,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.0136,
     embedUrl: 'https://www.youtube.com/embed/Fw9hgttWzIg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'koh-samui-bangrak',
@@ -2091,8 +2203,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 9.534,
     lng: 100.053,
     embedUrl: 'https://www.youtube.com/embed/NTTtqzL5OWI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'yogyakarta-drini-beach',
@@ -2102,8 +2216,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -8.1466,
     lng: 110.5782,
     embedUrl: 'https://www.youtube.com/embed/RsPsUMd7Wu4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'yogyakarta-baron-beach',
@@ -2113,8 +2229,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -8.1333,
     lng: 110.55,
     embedUrl: 'https://www.youtube.com/embed/ybq8Gtf2f1A?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'davao-agdao-market',
@@ -2125,7 +2243,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 125.4553,
     embedUrl: 'https://www.youtube.com/embed/1UfgoFkC6QU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'davao-aquino-street',
@@ -2136,7 +2254,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 125.457,
     embedUrl: 'https://www.youtube.com/embed/KFWHAT9N3Us?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'davao-soliman-street',
@@ -2147,7 +2267,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 125.458,
     embedUrl: 'https://www.youtube.com/embed/-Xq2O93KZpQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'toronto-city-views-1',
@@ -2158,7 +2280,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.3832,
     embedUrl: 'https://www.youtube.com/embed/dXUzu9XiKwk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-city-views-2',
@@ -2169,7 +2291,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.39,
     embedUrl: 'https://www.youtube.com/embed/Qt3CVWP2P7k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vancouver-port',
@@ -2180,7 +2302,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -123.11,
     embedUrl: 'https://www.youtube.com/embed/rxyNjFKwzJA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vancouver-city',
@@ -2191,7 +2313,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -123.1207,
     embedUrl: 'https://www.youtube.com/embed/GHEmhcWjiTE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sao-paulo-guarulhos-1',
@@ -2201,8 +2323,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -23.4356,
     lng: -46.4731,
     embedUrl: 'https://www.youtube.com/embed/aEu5QTSrB40?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'sao-paulo-guarulhos-2',
@@ -2212,8 +2334,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -23.432,
     lng: -46.47,
     embedUrl: 'https://www.youtube.com/embed/2-BDtQaEvsI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'sao-paulo-congonhas-1',
@@ -2223,8 +2345,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -23.6261,
     lng: -46.6564,
     embedUrl: 'https://www.youtube.com/embed/wsB-Z_oieAU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'sao-paulo-congonhas-2',
@@ -2234,8 +2356,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -23.628,
     lng: -46.655,
     embedUrl: 'https://www.youtube.com/embed/s_qnModgkKs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'rio-christ-redeemer',
@@ -2246,7 +2368,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.2105,
     embedUrl: 'https://www.youtube.com/embed/moUl-CBrXp4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-barra-lagoa',
@@ -2257,7 +2379,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.4328,
     embedUrl: 'https://www.youtube.com/embed/7IU7TdkPr_k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-ingleses',
@@ -2267,8 +2389,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -27.4412,
     lng: -48.3943,
     embedUrl: 'https://www.youtube.com/embed/CXKCXWiKgew?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'manaus-city',
@@ -2279,7 +2403,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -60.0217,
     embedUrl: 'https://www.youtube.com/embed/2HGGG7Dr03g?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santos-waterfront',
@@ -2290,7 +2414,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -46.3336,
     embedUrl: 'https://www.youtube.com/embed/tMYtrEBNVAU?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santiago-providencia',
@@ -2301,7 +2425,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.61,
     embedUrl: 'https://www.youtube.com/embed/_hElzf7C1D8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santiago-costanera',
@@ -2312,7 +2436,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.607,
     embedUrl: 'https://www.youtube.com/embed/o5bedndIYIQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santiago-thayer',
@@ -2323,7 +2447,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.6067,
     embedUrl: 'https://www.youtube.com/embed/KHkevkcT0bg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-airport',
@@ -2333,8 +2457,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.9399,
     lng: 151.1753,
     embedUrl: 'https://www.youtube.com/embed/6JTFqrqcQ4g?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'auckland-skyline-1',
@@ -2345,7 +2469,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 174.7633,
     embedUrl: 'https://www.youtube.com/embed/Ql7graq0I9M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'auckland-skyline-2',
@@ -2356,7 +2482,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 174.764,
     embedUrl: 'https://www.youtube.com/embed/BQR800Gu28g?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'auckland-hauraki',
@@ -2367,7 +2495,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 175,
     embedUrl: 'https://www.youtube.com/embed/CGIFDalU84U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-western-wall-3',
@@ -2378,7 +2506,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2345,
     embedUrl: 'https://www.youtube.com/embed/zp6LNSoq000?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ashdod-zevulun-beach',
@@ -2388,8 +2516,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 31.795,
     lng: 34.63,
     embedUrl: 'https://www.youtube.com/embed/hWwLAaO0Vyo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'dubai-palm-jumeirah',
@@ -2400,7 +2530,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 55.141,
     embedUrl: 'https://www.youtube.com/embed/7dE4IjDQJmE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cape-town-bloubergstrand',
@@ -2410,8 +2540,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.7983,
     lng: 18.4528,
     embedUrl: 'https://www.youtube.com/embed/YfwTcW1IkN4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cape-town-table-mountain-2',
@@ -2422,7 +2554,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.4098,
     embedUrl: 'https://www.youtube.com/embed/0Igczg6-Yvs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'plettenberg-bay',
@@ -2433,7 +2565,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 23.369,
     embedUrl: 'https://www.youtube.com/embed/fOsu77VX6iY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jeffreys-bay',
@@ -2444,7 +2576,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.921,
     embedUrl: 'https://www.youtube.com/embed/n7Dlk0XRkdA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sa-wild-tembe',
@@ -2455,7 +2587,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 32.41,
     embedUrl: 'https://www.youtube.com/embed/gdrNUUf-cQw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'sa-wild-olifants',
@@ -2466,7 +2599,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.8,
     embedUrl: 'https://www.youtube.com/embed/O81gItg_Jco?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-new-york-city-skyline-live-chill-views-fr',
@@ -2477,7 +2611,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.006,
     embedUrl: 'https://www.youtube.com/embed/PmfCCNWBunY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-re',
@@ -2488,7 +2624,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.7781,
     embedUrl: 'https://www.youtube.com/embed/11INCtK6uiA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buffalo-news-4-buffalo-sheas-buffalo-camera-in-buf',
@@ -2499,7 +2635,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.8784,
     embedUrl: 'https://www.youtube.com/embed/kGTikc62mFY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buffalo-news-4-buffalo-dyouville-university-camera',
@@ -2510,7 +2646,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.8834,
     embedUrl: 'https://www.youtube.com/embed/ErmhQZepFlc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buffalo-buffalo-naval-parks-live-camera-feed',
@@ -2521,7 +2657,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.8791,
     embedUrl: 'https://www.youtube.com/embed/k2cXhqxWj8U?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buffalo-live-weather-update-outside-buffalo-bills-',
@@ -2532,7 +2668,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.787,
     embedUrl: 'https://www.youtube.com/embed/NBFuzfE7y1Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buffalo-buffalo-toronto-public-media-roof-cam',
@@ -2543,7 +2679,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.8784,
     embedUrl: 'https://www.youtube.com/embed/SinfzIciXKg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sag-harbor-hamptonscom-live-4k-main-street-sag-har',
@@ -2554,7 +2690,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.296,
     embedUrl: 'https://www.youtube.com/embed/sxZxz0OPoh0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'sag-harbor-hamptonscom-live-foster-memorial-beach-',
@@ -2565,7 +2703,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.2961,
     embedUrl: 'https://www.youtube.com/embed/p1IbYzNwWDQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'sag-harbor-hamptonscom',
@@ -2576,7 +2716,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.2962,
     embedUrl: 'https://www.youtube.com/embed/l1A96hXsrCU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sag-harbor-hamptonscom-live-bay-street-sag-harbor-',
@@ -2587,7 +2727,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.2963,
     embedUrl: 'https://www.youtube.com/embed/X0i4arU8I9s?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'miami-miami-river-camera',
@@ -2598,7 +2740,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.1905,
     embedUrl: 'https://www.youtube.com/embed/7wHgYc_kN98?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'miami-live-doubletree-by-hilton-grand-hotel-biscay',
@@ -2609,7 +2753,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.178,
     embedUrl: 'https://www.youtube.com/embed/4UzQd1dVPlo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'miami-miami-live-webcam-biscayne-bay-north-waterfr',
@@ -2620,7 +2764,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.178,
     embedUrl: 'https://www.youtube.com/embed/5YCajRjvWCg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'miami-miami-international-airport-mia-live-cam',
@@ -2630,8 +2775,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.7961,
     lng: -80.2872,
     embedUrl: 'https://www.youtube.com/embed/q2Dxx5704fQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'miami-live-miami-airport-cam-miami-plane-spotting-',
@@ -2641,8 +2786,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.7963,
     lng: -80.2868,
     embedUrl: 'https://www.youtube.com/embed/eUX2NawZQ64?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'chicago-4k-chicago-lakefront-247-live',
@@ -2653,7 +2798,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.6298,
     embedUrl: 'https://www.youtube.com/embed/8Zx_6enN3y0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chicago-live-chicago-axis-experience-center-roofto',
@@ -2664,7 +2809,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.63,
     embedUrl: 'https://www.youtube.com/embed/feOo3Q0qA0w?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'chicago-uic-cuppa-cam',
@@ -2675,7 +2822,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.6475,
     embedUrl: 'https://www.youtube.com/embed/9Kly5fCmJfk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chicago-chicago-north-western-power-house-live-web',
@@ -2686,7 +2833,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.74,
     embedUrl: 'https://www.youtube.com/embed/6M6rK0ssjYg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'chicago-chicago-north-western-power-house-live-web-2',
@@ -2697,7 +2845,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.7402,
     embedUrl: 'https://www.youtube.com/embed/InQ0-b4DkCw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'chicago-chicago-north-western-power-house-live-web-3',
@@ -2708,7 +2857,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.7398,
     embedUrl: 'https://www.youtube.com/embed/grl50cJ7Fq0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'chicago-up-geneva-sub-railcam-mp-85-oak-park-il-ra',
@@ -2719,7 +2869,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -88.3107,
     embedUrl: 'https://www.youtube.com/embed/AxX3G3eq-qk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-mersea-restaurant-live-bay-view-san-',
@@ -2730,7 +2880,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.3697,
     embedUrl: 'https://www.youtube.com/embed/BSWhGNXxT9A?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'san-francisco-treasure-island-california-live-cam-',
@@ -2741,7 +2893,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.3699,
     embedUrl: 'https://www.youtube.com/embed/_VqvVJfmyfs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-san-francisco-live-camera-247-stream',
@@ -2752,7 +2904,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.3895,
     embedUrl: 'https://www.youtube.com/embed/G8RIAgPxaMc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-castro-street-cam-1-live-stream',
@@ -2763,7 +2915,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.435,
     embedUrl: 'https://www.youtube.com/embed/Yf4cJk3YX4w?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'san-francisco-castro-street-cam-3-live-stream',
@@ -2774,7 +2928,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.4352,
     embedUrl: 'https://www.youtube.com/embed/ByG6k2b7Twc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'san-francisco-castro-street-cam-4-live-stream',
@@ -2785,7 +2941,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.4348,
     embedUrl: 'https://www.youtube.com/embed/E6muSzS9Hew?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'houston-houston-texas-247-live-downtown-skyline-ca',
@@ -2796,7 +2954,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.3698,
     embedUrl: 'https://www.youtube.com/embed/wUQc3RoLAPs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-tower-26',
@@ -2806,8 +2966,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.722,
     lng: -95.35,
     embedUrl: 'https://www.youtube.com/embed/cRRQyXQAvsE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-tower-26-2',
@@ -2817,8 +2979,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.7222,
     lng: -95.3502,
     embedUrl: 'https://www.youtube.com/embed/bchdO4OtIEI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -15,
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-ptz-baer',
@@ -2829,7 +2993,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.355,
     embedUrl: 'https://www.youtube.com/embed/gpSR9c0p6lI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-sampson-',
@@ -2840,7 +3004,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.36,
     embedUrl: 'https://www.youtube.com/embed/oAJH5nZgrNQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-sampson--2',
@@ -2851,7 +3016,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.3602,
     embedUrl: 'https://www.youtube.com/embed/DTLIqs3mWiM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'houston-live-trains-railcam-houston-texas-sampson--3',
@@ -2862,7 +3028,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -95.3598,
     embedUrl: 'https://www.youtube.com/embed/OmWt0efvmNQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'seattle-uw-continuum-college-cam',
@@ -2873,7 +3040,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.3321,
     embedUrl: 'https://www.youtube.com/embed/4cgSE12k9Sc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seattle-uw-lake-washington-cam',
@@ -2884,7 +3051,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.23,
     embedUrl: 'https://www.youtube.com/embed/0QtzpaZzOmg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nashville-downtown-from-nissan-stadium',
@@ -2895,7 +3062,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.7816,
     embedUrl: 'https://www.youtube.com/embed/ATbtGvbExP4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nashville-live-nashville-live-cam-lower-broadway-w',
@@ -2906,7 +3073,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.7818,
     embedUrl: 'https://www.youtube.com/embed/h5Grd2w7HQM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'nashville-downtown-northeast-view',
@@ -2917,7 +3086,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.7814,
     embedUrl: 'https://www.youtube.com/embed/Gw0FXKfyBno?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 45,
   },
   {
     id: 'washington-washington-dc-live-from-axis-communicat',
@@ -2928,7 +3098,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -77.0091,
     embedUrl: 'https://www.youtube.com/embed/1wV9lLe14aU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'key-west-live-cruise-port-key-west',
@@ -2939,7 +3109,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8065,
     embedUrl: 'https://www.youtube.com/embed/8Rw-tZTeBjU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-mallory-square-4k-key-west',
@@ -2950,7 +3121,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8067,
     embedUrl: 'https://www.youtube.com/embed/f9pMVLoJfyE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-live-la-trattoria-duval-street-cam',
@@ -2961,7 +3133,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8001,
     embedUrl: 'https://www.youtube.com/embed/3bXyYuk-XK0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'key-west-live-nine-one-five-key-west-cam',
@@ -2972,7 +3146,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8003,
     embedUrl: 'https://www.youtube.com/embed/zAXQjQZUhB0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-live-bagatelle-key-west-duval-street-cam',
@@ -2983,7 +3158,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.7999,
     embedUrl: 'https://www.youtube.com/embed/BP9AtblEpXE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-mangoes-key-west-live-stream',
@@ -2994,7 +3170,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8005,
     embedUrl: 'https://www.youtube.com/embed/ZZgKSRchph4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-ocean-key-resort-sunset-pier-key-west',
@@ -3004,8 +3181,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 24.5592,
     lng: -81.807,
     embedUrl: 'https://www.youtube.com/embed/-mIBQsjQJI0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-key-west-sunset-cam-ocean-key-resort',
@@ -3016,7 +3194,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8072,
     embedUrl: 'https://www.youtube.com/embed/1Gn9gG9U2iM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-key-west-bight-marina-live-webcam-key-wes',
@@ -3027,7 +3206,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8024,
     embedUrl: 'https://www.youtube.com/embed/Y5ypYTZs-7o?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-live-key-west-harbor-at-the-marker-hotel',
@@ -3038,7 +3218,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8026,
     embedUrl: 'https://www.youtube.com/embed/OZ5iz2GsAjo?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-key-west-bight-live-from-the-galleon-reso',
@@ -3049,7 +3230,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8022,
     embedUrl: 'https://www.youtube.com/embed/RDlvQ1G-lwY?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-key-west-southernmost-point-live-cam-2',
@@ -3060,7 +3242,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.7986,
     embedUrl: 'https://www.youtube.com/embed/2_y6xMdX11c?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-southernmost-point-live-camera',
@@ -3071,7 +3254,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.7988,
     embedUrl: 'https://www.youtube.com/embed/HDlmUp4JBLg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'key-west-southernmost-point-key-west',
@@ -3082,7 +3265,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.7984,
     embedUrl: 'https://www.youtube.com/embed/OKh2Dhyc3-c?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'key-west-live-irish-kevins-duval-street',
@@ -3093,7 +3277,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8006,
     embedUrl: 'https://www.youtube.com/embed/lcVm-Izrpa0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fort-lauderdale-fort-lauderdale-beach-live-cam-sun',
@@ -3103,8 +3287,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.1003,
     lng: -80.1278,
     embedUrl: 'https://www.youtube.com/embed/1j1lgppb0PY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'fort-lauderdale-live-from-elbo-room-beach-a1a-fort',
@@ -3114,8 +3300,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.1005,
     lng: -80.128,
     embedUrl: 'https://www.youtube.com/embed/UV94XxNvBdw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'los-angeles-live-247-lax-airport-action-runways-24',
@@ -3125,8 +3313,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.9425,
     lng: -118.4081,
     embedUrl: 'https://www.youtube.com/embed/12KqO5IBLeY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'los-angeles-live-247-lax-airport-action-runways-25',
@@ -3136,8 +3324,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.9427,
     lng: -118.4083,
     embedUrl: 'https://www.youtube.com/embed/UQaSS4_VAV4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'los-angeles-live-lax-runway-w-atc-los-angeles-inte',
@@ -3147,8 +3335,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.9423,
     lng: -118.4079,
     embedUrl: 'https://www.youtube.com/embed/a1_-tFG67d0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'los-angeles-skid-row-los-angeles-ca-cam-2',
@@ -3159,7 +3347,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.2441,
     embedUrl: 'https://www.youtube.com/embed/NsmJg4oSDVg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'los-angeles-camera-4',
@@ -3170,7 +3358,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.2443,
     embedUrl: 'https://www.youtube.com/embed/Ja-aqt-rNjQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santa-monica-live-santa-monica-pier-pacific-park-4',
@@ -3180,8 +3368,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 34.0084,
     lng: -118.4981,
     embedUrl: 'https://www.youtube.com/embed/DckQwhIzMdA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'santa-monica-pacific-park-live-stream-santa-monica',
@@ -3191,8 +3379,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 34.0086,
     lng: -118.4983,
     embedUrl: 'https://www.youtube.com/embed/ntbbWgqco4o?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'santa-monica-santa-monica-beach-cam-powered-by-exp',
@@ -3202,8 +3390,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 34.0082,
     lng: -118.4979,
     embedUrl: 'https://www.youtube.com/embed/qmE7U1YZPQA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'philadelphia-kensington-philadelphia-cam-7',
@@ -3214,7 +3404,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.1302,
     embedUrl: 'https://www.youtube.com/embed/KMgq36ZOMZA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'philadelphia-kensington-philadelphia-pa-cam-3',
@@ -3225,7 +3415,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.1304,
     embedUrl: 'https://www.youtube.com/embed/pdG4hRzMUeI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'philadelphia-kensington-philadelphia-pa-cam-2',
@@ -3236,7 +3426,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.13,
     embedUrl: 'https://www.youtube.com/embed/dJNgqfRFA8k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'philadelphia-cam-5-kensington-philadelphia-pa',
@@ -3247,7 +3437,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.1306,
     embedUrl: 'https://www.youtube.com/embed/DBVeaQdjHww?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'philadelphia-883b-ca-covered-arena-north-exterior-',
@@ -3258,7 +3448,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.1298,
     embedUrl: 'https://www.youtube.com/embed/Ee02xKDmRxg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'philadelphia-phillys-italian-market-from-anthonys-',
@@ -3269,7 +3460,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.1585,
     embedUrl: 'https://www.youtube.com/embed/cGXf_ChfbAs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-diego-san-diego-bay-east-san-diego-web-cam',
@@ -3280,7 +3471,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.1611,
     embedUrl: 'https://www.youtube.com/embed/OAk3giBu5_k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'san-diego-san-diego-harbor-island-live-web-cam-4k',
@@ -3291,7 +3483,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.1915,
     embedUrl: 'https://www.youtube.com/embed/iaBfYxbmwXA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-diego-san-diego-web-cam-live-rotatingswitched-',
@@ -3302,7 +3494,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.1613,
     embedUrl: 'https://www.youtube.com/embed/edz0ux7JClE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-diego-scripps-inn-la-jolla-ca-california-webca',
@@ -3312,8 +3504,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 32.8328,
     lng: -117.2713,
     embedUrl: 'https://www.youtube.com/embed/dkr9F4OniqM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'portland-monument-square-tree-cam-presented-by-hoo',
@@ -3324,7 +3518,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2568,
     embedUrl: 'https://www.youtube.com/embed/NxuzhLeRuyQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portland-monument-square-tree-cam-2-presented-by-h',
@@ -3335,7 +3529,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2587,
     embedUrl: 'https://www.youtube.com/embed/Qn1sbkD78hk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portland-koin-tower-southwest-view',
@@ -3346,7 +3540,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.257,
     embedUrl: 'https://www.youtube.com/embed/eHH-e-8m5n4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 225,
+    tilt: -15,
   },
   {
     id: 'portland-subaru-of-portlands-koin-tower-northeast-',
@@ -3357,7 +3553,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2566,
     embedUrl: 'https://www.youtube.com/embed/91cA2JY-dZk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ocean-city-ocean-city-md-boardwalk-cam-live-from-h',
@@ -3368,7 +3564,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.0849,
     embedUrl: 'https://www.youtube.com/embed/B3fFPaczsoM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'ocean-city-ocean-city-md-live-cam',
@@ -3379,7 +3577,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -75.0851,
     embedUrl: 'https://www.youtube.com/embed/H0Z6faxNLCI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'galveston-galveston-texas-247-live-beach-camera',
@@ -3389,8 +3587,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.287,
     lng: -94.7877,
     embedUrl: 'https://www.youtube.com/embed/HkHhXsWci7Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'galveston-murdochs-cam-live-from-the-galveston-sea',
@@ -3400,8 +3600,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.2872,
     lng: -94.7879,
     embedUrl: 'https://www.youtube.com/embed/aZ0tx7eeLYU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'galveston-surf-cam-live-from-the-galveston-seawall',
@@ -3411,8 +3611,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.2868,
     lng: -94.7875,
     embedUrl: 'https://www.youtube.com/embed/TKrUIFMoThk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'myrtle-beach-myrtle-beach-boardwalk-cam',
@@ -3422,8 +3624,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.6891,
     lng: -78.8867,
     embedUrl: 'https://www.youtube.com/embed/UKtfCDXhCq0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'myrtle-beach-live-myrtle-beach-view-captains-quart',
@@ -3433,8 +3637,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.7068,
     lng: -78.877,
     embedUrl: 'https://www.youtube.com/embed/GKOyGoRE0Tg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'myrtle-beach-live-beach-views-sea-watch-resort-myr',
@@ -3444,8 +3650,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.7145,
     lng: -78.874,
     embedUrl: 'https://www.youtube.com/embed/MAPDh0XDtZs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'myrtle-beach-gorgeous-day-in-myrtle-beach-live-loo',
@@ -3455,8 +3663,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.7009,
     lng: -78.88,
     embedUrl: 'https://www.youtube.com/embed/yTfNMKMnK2Y?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'myrtle-beach-live-view-at-ocean-creek-resort-myrtl',
@@ -3466,8 +3676,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.7221,
     lng: -78.8709,
     embedUrl: 'https://www.youtube.com/embed/lsD46RnvUiw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'hilton-head-island-quarterdeck-livestream',
@@ -3478,7 +3690,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.7625,
     embedUrl: 'https://www.youtube.com/embed/Y61bjkYJPCQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hilton-head-island-beach-club-livestream',
@@ -3488,8 +3700,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 32.1376,
     lng: -80.7627,
     embedUrl: 'https://www.youtube.com/embed/QIJku1LZGRE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'hilton-head-island-heron-point-livestream',
@@ -3500,7 +3714,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.767,
     embedUrl: 'https://www.youtube.com/embed/69T6gRN5vAk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hilton-head-island-plantation-golf-club-driving-ra',
@@ -3511,7 +3725,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.765,
     embedUrl: 'https://www.youtube.com/embed/ZcvUDEDw17I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hilton-head-island-harbour-town-clubhouse-livestre',
@@ -3522,7 +3736,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.81,
     embedUrl: 'https://www.youtube.com/embed/pRXLGrvYtZY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'st-augustine-st-george-street-south-st-augustine-l',
@@ -3533,7 +3747,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.3145,
     embedUrl: 'https://www.youtube.com/embed/ZksWoEAhmTU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'st-augustine-vilano-boat-ramp-live-247-st-augustin',
@@ -3544,7 +3759,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.2952,
     embedUrl: 'https://www.youtube.com/embed/S8afSTXKkdw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'st-augustine-vilano-pier-live-247-from-beaches-at-',
@@ -3554,8 +3769,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.9218,
     lng: -81.2928,
     embedUrl: 'https://www.youtube.com/embed/mYbn_umeenk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'st-augustine-castillo-de-san-marcos-fort-live-247-',
@@ -3566,7 +3783,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.3115,
     embedUrl: 'https://www.youtube.com/embed/FyGb2TZB344?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'st-augustine-matanzas-river-lighthouse-bridge-of-l',
@@ -3577,7 +3794,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.312,
     embedUrl: 'https://www.youtube.com/embed/uLJBad4vSno?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'st-augustine-bridge-of-lions-live-247-st-augustine',
@@ -3588,7 +3807,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.31,
     embedUrl: 'https://www.youtube.com/embed/0lox0s8zNcU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'st-augustine-surf-station-north-pier-cam',
@@ -3598,8 +3819,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.8605,
     lng: -81.2648,
     embedUrl: 'https://www.youtube.com/embed/Q6eZVkUKFxo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'st-augustine-st-augustine-beach-surf-cam-surf-stat',
@@ -3609,8 +3831,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.8607,
     lng: -81.265,
     embedUrl: 'https://www.youtube.com/embed/H2q_DJc33kg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'st-augustine-st-augustine-florida-skyline-live-247',
@@ -3621,7 +3845,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.2887,
     embedUrl: 'https://www.youtube.com/embed/ZTk5cIbXH2g?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'leavenworth-leavenworth-washington-live-webcam-fro',
@@ -3632,7 +3858,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -120.6615,
     embedUrl: 'https://www.youtube.com/embed/TmtVbezZaqg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'leavenworth-leavenworth-washington-live-webcam-fro-2',
@@ -3643,7 +3869,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -120.6617,
     embedUrl: 'https://www.youtube.com/embed/NdW8Mh0lmOo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'leavenworth-leavenworth-washington-live-webcam-fro-3',
@@ -3654,7 +3880,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -120.6613,
     embedUrl: 'https://www.youtube.com/embed/XjhxRZEm638?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'leavenworth-leavenworth-washington-live-webcam-fro-4',
@@ -3665,7 +3891,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -120.6619,
     embedUrl: 'https://www.youtube.com/embed/yHH8EWIR01Y?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'friday-harbor-port-of-friday-harbor-marina-live-st',
@@ -3676,7 +3902,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -123.0173,
     embedUrl: 'https://www.youtube.com/embed/4cvWWukMuFc?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'friday-harbor-shipyard-cove-marina-live-stream',
@@ -3687,7 +3913,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -123.0175,
     embedUrl: 'https://www.youtube.com/embed/sqflGh69t5I?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portsmouth-live-outdoor-skating-rink',
@@ -3698,7 +3924,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.7549,
     embedUrl: 'https://www.youtube.com/embed/6YuIquNmb2E?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portsmouth-live-outdoor-skating-rink-2',
@@ -3709,7 +3935,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.7551,
     embedUrl: 'https://www.youtube.com/embed/8hNS4PRbKFM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portsmouth-live-outdoor-skating-rink-3',
@@ -3720,7 +3946,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.7547,
     embedUrl: 'https://www.youtube.com/embed/PoZ1Hy7PQig?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portsmouth-market-square-portsmouth-nh-us',
@@ -3731,7 +3957,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.758,
     embedUrl: 'https://www.youtube.com/embed/LkZZTkRHLVQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'portsmouth-tugboats-and-shipping-on-the-piscataqua',
@@ -3742,7 +3968,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.762,
     embedUrl: 'https://www.youtube.com/embed/YoHKxHVCmYA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'burlington-church-street-market-place-live-stream',
@@ -3753,7 +3981,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.212,
     embedUrl: 'https://www.youtube.com/embed/zl1woMXGGmQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'burlington-wcax-skywatch3-homeport-church-st-burli',
@@ -3764,7 +3994,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.2122,
     embedUrl: 'https://www.youtube.com/embed/T8_7hmOsIJI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'birmingham-live-trains-railcam-birmingham-alabama-',
@@ -3775,7 +4005,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.8025,
     embedUrl: 'https://www.youtube.com/embed/8ft5kUvq27U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'birmingham-live-trains-railcam-birmingham-alabama--2',
@@ -3786,7 +4016,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.8027,
     embedUrl: 'https://www.youtube.com/embed/KUM6HBnv_fw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'auburn-city-of-auburn-toomers-corner-webcam',
@@ -3797,7 +4027,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.4808,
     embedUrl: 'https://www.youtube.com/embed/5WN2PJ_Qxjs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'auburn-city-of-auburn-toomers-corner-quad-cam',
@@ -3808,7 +4038,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.481,
     embedUrl: 'https://www.youtube.com/embed/qG-86nZmZqU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-the-hale-pau-hana-surf-cam',
@@ -3818,8 +4048,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2769,
     lng: -157.8234,
     embedUrl: 'https://www.youtube.com/embed/hPvl6IACa2k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'honolulu-lawai-beach-resort-live-cam',
@@ -3829,8 +4061,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2771,
     lng: -157.8236,
     embedUrl: 'https://www.youtube.com/embed/3ATYHKN2hIg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'honolulu-live-now-247-hawaii-humpback-whale-marine',
@@ -3841,7 +4075,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -157.8238,
     embedUrl: 'https://www.youtube.com/embed/iWCeBAxRCBo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-elks-lodge-surf-cam',
@@ -3852,7 +4086,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -157.824,
     embedUrl: 'https://www.youtube.com/embed/7do5yOYetV0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-shaka-webcam',
@@ -3863,7 +4097,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -157.8242,
     embedUrl: 'https://www.youtube.com/embed/y6ew34X8P7Q?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-live-247-4k-maui-live-cam-whale-watch-cam',
@@ -3874,7 +4108,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -157.823,
     embedUrl: 'https://www.youtube.com/embed/ZdmEqSHaNzU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'honolulu-live-napili-sunset-beachfront-resort-4k-m',
@@ -3884,8 +4118,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2765,
     lng: -157.8228,
     embedUrl: 'https://www.youtube.com/embed/YcEf_y0Ct14?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'honolulu-ward-village-live-cam-oahu-live-cam-hawai',
@@ -3895,8 +4131,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 21.2763,
     lng: -157.8226,
     embedUrl: 'https://www.youtube.com/embed/VhTEUsVUCi8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'honolulu-royal-sonesta-kauai-live-stream',
@@ -3907,7 +4145,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -157.8224,
     embedUrl: 'https://www.youtube.com/embed/M6kN1wlNSk4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hawaii-volcanoes-np-v3cam-klauea-volcano-hawaii-so',
@@ -3918,7 +4156,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -155.2868,
     embedUrl: 'https://www.youtube.com/embed/gXKuUyKt8mc?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'hawaii-volcanoes-np-live-now-247-kilauea-volcano-l',
@@ -3929,7 +4168,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -155.287,
     embedUrl: 'https://www.youtube.com/embed/6IaMqotNF_s?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hawaii-volcanoes-np-live-now-247-kilauea-volcano-w',
@@ -3940,7 +4179,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -155.2866,
     embedUrl: 'https://www.youtube.com/embed/FVdmnpJ2kM0?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hawaii-volcanoes-np-kilauea-volcano-live-247',
@@ -3951,7 +4190,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -155.2872,
     embedUrl: 'https://www.youtube.com/embed/p2MbV4DVZX4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'niagara-falls-niagara-falls-live-cam-2',
@@ -3962,7 +4201,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.0849,
     embedUrl: 'https://www.youtube.com/embed/3KhQK5KG7VU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'niagara-falls-earthcam-live-niagara-falls',
@@ -3973,7 +4212,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.0851,
     embedUrl: 'https://www.youtube.com/embed/qx7gry390YA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tofino-live-from-long-beach-lodge-tofino',
@@ -3983,8 +4222,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 49.1117,
     lng: -125.8859,
     embedUrl: 'https://www.youtube.com/embed/JZ3UV60ykqc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'tofino-wickaninnish-inn-live-stream-with-audio',
@@ -3995,7 +4236,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -125.8932,
     embedUrl: 'https://www.youtube.com/embed/K40YWW7ADlU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tofino-pacific-sands-beach-resort-cox-bay',
@@ -4005,8 +4246,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 49.099,
     lng: -125.877,
     embedUrl: 'https://www.youtube.com/embed/LqaP8m2OIqM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'tofino-tofino-sea-kayaking-live-harbour-cam',
@@ -4016,8 +4259,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 49.1119,
     lng: -125.8861,
     embedUrl: 'https://www.youtube.com/embed/_qN4aao5kWc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'san-antonio-san-antonio-en-vivo',
@@ -4028,7 +4271,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.6212,
     embedUrl: 'https://www.youtube.com/embed/79PtdSvv1Xc?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-antonio-san-antonio-en-vivo-2',
@@ -4039,7 +4282,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.6214,
     embedUrl: 'https://www.youtube.com/embed/XfxpV4hl1aU?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'el-quisco-el-quisco-en-vivo',
@@ -4050,7 +4293,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.6924,
     embedUrl: 'https://www.youtube.com/embed/i80f0HlybSg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'via-del-mar-marejadas-uv-playa-acapulco-via-del-ma',
@@ -4061,7 +4304,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.5501,
     embedUrl: 'https://www.youtube.com/embed/piw3SNsew8w?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'la-serena-faro-monumental-desde-hotel-plaza-la-ser',
@@ -4072,7 +4317,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.252,
     embedUrl: 'https://www.youtube.com/embed/7kp3pY40tKY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'puebla-volcn-popocatpetl-en-vivo-vista-altzomoni-e',
@@ -4083,7 +4328,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -98.6282,
     embedUrl: 'https://www.youtube.com/embed/rayKu7F6Ub4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'puebla-citlaltpetl-pico-de-orizaba-en-vivo-hd-cmar',
@@ -4094,7 +4339,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -97.268,
     embedUrl: 'https://www.youtube.com/embed/B7jUvXADO1c?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'puebla-live-now-247-erupting-popocatpetl-volcano-f',
@@ -4105,7 +4350,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -98.3644,
     embedUrl: 'https://www.youtube.com/embed/2RraZgaUsV8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'puebla-live-now-247-erupting-popocatpetl-volcano-f-2',
@@ -4116,7 +4361,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -98.4003,
     embedUrl: 'https://www.youtube.com/embed/GXBqclsAdLM?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'puebla-puebla-vista-de-los-volcanes-popocatpetl-e-',
@@ -4127,7 +4372,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -98.2063,
     embedUrl: 'https://www.youtube.com/embed/VZcb6neiihI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'playa-del-carmen-the-royal-haciendas-phase-1-live-',
@@ -4138,7 +4383,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.0739,
     embedUrl: 'https://www.youtube.com/embed/r_mablBOcz0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'playa-del-carmen-playa-del-carmen-en-vivo-vista-pa',
@@ -4148,8 +4393,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 20.6128,
     lng: -87.0789,
     embedUrl: 'https://www.youtube.com/embed/6zRl9by4sSs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cancn-cancn-quintana-roo-vista-desde-grand-park-ro',
@@ -4160,7 +4407,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.746,
     embedUrl: 'https://www.youtube.com/embed/rAwfz0gC3JI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tamarindo-tamarindo-diria-beach-resort-tamarindo-b',
@@ -4170,8 +4417,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 10.2992,
     lng: -85.8376,
     embedUrl: 'https://www.youtube.com/embed/OWW-gF46keA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'london-earthcam-live-abbey-road-crossing-london-en',
@@ -4182,7 +4431,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.178,
     embedUrl: 'https://www.youtube.com/embed/M3EYAY2MftI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'dawlish-blenheim-webcam-2-dawlish-4k-webcam-sponso',
@@ -4193,7 +4444,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.4637,
     embedUrl: 'https://www.youtube.com/embed/ywz1mcnusfk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-venice-italy-live-cam',
@@ -4204,7 +4455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3358,
     embedUrl: 'https://www.youtube.com/embed/K_Vg94nBiaY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-4k-live-webcam-venice',
@@ -4215,7 +4466,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.343,
     embedUrl: 'https://www.youtube.com/embed/dFBRpHHwQeg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-4k-live-webcam-on-scalzi-bridge-venice',
@@ -4226,7 +4477,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3218,
     embedUrl: 'https://www.youtube.com/embed/4wKN93E3K8g?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-bacino-di-san-marco-from-via-garibaldi',
@@ -4237,7 +4490,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.354,
     embedUrl: 'https://www.youtube.com/embed/7fhy-Eu8AFs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-venice-live-cam',
@@ -4248,7 +4501,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3185,
     embedUrl: 'https://www.youtube.com/embed/BPDwgX9GIjs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-4k-venice-italy-live-live-streaming-of-gran',
@@ -4259,7 +4512,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3327,
     embedUrl: 'https://www.youtube.com/embed/HkuZmbVsgF4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-4k-live-webcam-on-grand-canal-venice',
@@ -4270,7 +4525,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3222,
     embedUrl: 'https://www.youtube.com/embed/P6JA_YjHMZs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-spectacular-view-of-grand-canal-live-view-f',
@@ -4281,7 +4538,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3315,
     embedUrl: 'https://www.youtube.com/embed/lFQ_BvxIcnI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-venice-italy-live-camera-grand-canal-in-liv',
@@ -4292,7 +4551,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.333,
     embedUrl: 'https://www.youtube.com/embed/P393gTj527k?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-4k-live-cam-of-ponte-delle-guglie-venice',
@@ -4303,7 +4564,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3275,
     embedUrl: 'https://www.youtube.com/embed/HpZAez2oYsA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-4k-view-of-the-ponte-delle-guglie-and-strad',
@@ -4314,7 +4575,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3275,
     embedUrl: 'https://www.youtube.com/embed/yGQepsHPcN4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chioggia-4k-live-cam',
@@ -4325,7 +4586,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.285,
     embedUrl: 'https://www.youtube.com/embed/KnlnB2Poxr0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jesolo-termini-beach-hotel-suites',
@@ -4335,8 +4596,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.5028,
     lng: 12.6431,
     embedUrl: 'https://www.youtube.com/embed/ES2aIagLWZs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'catania-zafferana-etnea-etna-est-live-webcam-panor',
@@ -4347,7 +4610,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.9934,
     embedUrl: 'https://www.youtube.com/embed/KB3f4zmkqcM?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'santa-venerina-santa-venerina-live-webcam-panorami',
@@ -4358,7 +4622,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.1385,
     embedUrl: 'https://www.youtube.com/embed/iOR1htkbkNI?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'agira-webcam-live-etna-panorama-da-agira-en',
@@ -4369,7 +4633,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.5217,
     embedUrl: 'https://www.youtube.com/embed/te59cTcAvMQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'mascali-nunziata-di-mascali-live-webcam-panoramica',
@@ -4380,7 +4646,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.196,
     embedUrl: 'https://www.youtube.com/embed/pO2zFFeqiMo?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'menaggio-chiesetta-degli-alpini-croce-di-menaggio-',
@@ -4391,7 +4658,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.239,
     embedUrl: 'https://www.youtube.com/embed/LlVnKOue3-I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'menaggio-rifugio-menaggio-dal-vivo-bellagio-lake-c',
@@ -4402,7 +4669,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.239,
     embedUrl: 'https://www.youtube.com/embed/tttUK6YK48U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'como-lake-como-skyline-live',
@@ -4413,7 +4680,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.0854,
     embedUrl: 'https://www.youtube.com/embed/d0-a8UJAyvY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'sorico-camping-la-riva-sorico-live-hd-lake-como-it',
@@ -4424,7 +4693,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.3822,
     embedUrl: 'https://www.youtube.com/embed/DJed4o6GllY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'assisi-assisi-live-webcam-piazza-del-comune',
@@ -4435,7 +4704,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.6173,
     embedUrl: 'https://www.youtube.com/embed/CkNeltsc5ps?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'assisi-assisi-live-webcam-basilica-di-san-francesc',
@@ -4446,7 +4715,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.6062,
     embedUrl: 'https://www.youtube.com/embed/5ka3YhVZgME?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'assisi-assisi-live-webcam-piazza-san-rufino',
@@ -4457,7 +4726,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.6202,
     embedUrl: 'https://www.youtube.com/embed/4cqPDoX6uws?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'assisi-assisi-live-webcam-citt',
@@ -4468,7 +4737,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.6167,
     embedUrl: 'https://www.youtube.com/embed/1Ho6SNEiOlk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'palermo-palermo-live-webcam-panoramica-cattedrale',
@@ -4479,7 +4748,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.3564,
     embedUrl: 'https://www.youtube.com/embed/X7K8IreZ5nw?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'palermo-palermo-cattedrale-live-webcam-panoramica-',
@@ -4490,7 +4759,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.3564,
     embedUrl: 'https://www.youtube.com/embed/VgCIW0Y2k1k?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-istanbulgalata-kz-kulesi-live-stream-ista',
@@ -4501,7 +4770,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 28.9784,
     embedUrl: 'https://www.youtube.com/embed/Vqzek6ZWy3Y?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-arise-hotel-golden-horn',
@@ -4512,7 +4781,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 28.9724,
     embedUrl: 'https://www.youtube.com/embed/VdAUx5pV3A4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-now4rentnl-amsterdam-de-dam-pan-tilt-zoo',
@@ -4523,7 +4792,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.7683,
     embedUrl: 'https://www.youtube.com/embed/Gd9d4q6WvUY?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-creative-live-streaming-from-prague-czech-r',
@@ -4534,7 +4803,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.4213,
     embedUrl: 'https://www.youtube.com/embed/IFnbDmgP69Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'the-hague-live-scheveningen-boulevard-en-beach-cam',
@@ -4544,8 +4813,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.1015,
     lng: 4.2785,
     embedUrl: 'https://www.youtube.com/embed/A5kXiKzbBFs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'garmisch-partenkirchen-live-berchtesgaden-town-cen',
@@ -4556,7 +4827,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 11.0958,
     embedUrl: 'https://www.youtube.com/embed/hXCcHjrPN-s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'split-hvar-croatia-live-247-webcam',
@@ -4567,7 +4838,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.4402,
     embedUrl: 'https://www.youtube.com/embed/0wHWHAFnNh0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kilpisjrvi-northern-light-live-kilpisjrvi-finland-',
@@ -4578,7 +4849,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 20.7891,
     embedUrl: 'https://www.youtube.com/embed/ccTVAhJU5lg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'levi-northern-light-live-levi-finland-north-view',
@@ -4589,7 +4861,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.8141,
     embedUrl: 'https://www.youtube.com/embed/rKfecmmzzw0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'sodankyl-northern-light-live-sodankyl-finland-nort',
@@ -4600,7 +4873,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.5961,
     embedUrl: 'https://www.youtube.com/embed/dnlQtDad6Dk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'lapland-aurora-alert-realtime-live',
@@ -4611,7 +4885,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 25,
     embedUrl: 'https://www.youtube.com/embed/AvKdtZIb-6c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zermatt-schweiz-panorama-247-live-stream-webcams-s',
@@ -4621,8 +4895,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 46.0207,
     lng: 7.7491,
     embedUrl: 'https://www.youtube.com/embed/enYFXf8u7Lc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'arrecife-lanzarote-live-weather-views',
@@ -4633,7 +4909,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -13.6052,
     embedUrl: 'https://www.youtube.com/embed/JgdRpYxwt4s?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'las-palmas-live-mallorca-port-airport-city-beach',
@@ -4644,7 +4920,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.4318,
     embedUrl: 'https://www.youtube.com/embed/hRw1_JQMQoE?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'capdepera-live-webcam-cala-agulla-capdepera-mallor',
@@ -4655,7 +4933,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 3.4574,
     embedUrl: 'https://www.youtube.com/embed/L-0OgXFSjLs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'palma-de-mallorca-mallorca-webcam-camp-de-mar-beac',
@@ -4665,8 +4943,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.55,
     lng: 2.63,
     embedUrl: 'https://www.youtube.com/embed/pQil5Xc372E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'palma-de-mallorca-mallorca-webcam-paguera-cala-for',
@@ -4677,7 +4957,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.62,
     embedUrl: 'https://www.youtube.com/embed/4VAvvsBeV9Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'palma-de-mallorca-mallorca-webcam-port-adriano-el-',
@@ -4687,8 +4967,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.53,
     lng: 2.6,
     embedUrl: 'https://www.youtube.com/embed/AeFSWxScJ8c?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'palma-de-mallorca-mallorca-webcam-playa-palmira-re',
@@ -4698,8 +4978,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.52,
     lng: 2.58,
     embedUrl: 'https://www.youtube.com/embed/1JQ7K6yZWYs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'palma-de-mallorca-mallorca-webcam-playa-palmira-re-2',
@@ -4709,8 +4991,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.515,
     lng: 2.57,
     embedUrl: 'https://www.youtube.com/embed/DKnhcTwSkJs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'los-cristianos-streaming-playa-las-vistas-1-arona',
@@ -4720,8 +5004,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.0537,
     lng: -16.7267,
     embedUrl: 'https://www.youtube.com/embed/ULVA54zcoeQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'costa-adeje-streaming-playa-honda-arona',
@@ -4731,8 +5017,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.08,
     lng: -16.735,
     embedUrl: 'https://www.youtube.com/embed/S6z7esP33j4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'arona-streaming-playa-el-camison-arona',
@@ -4742,8 +5030,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.0594,
     lng: -16.73,
     embedUrl: 'https://www.youtube.com/embed/vVp1H5fZE0k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'arona-webcam-teresitas',
@@ -4754,7 +5044,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -16.731,
     embedUrl: 'https://www.youtube.com/embed/WBhqgii4dSw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'arona-marina-amarilla-san-miguel-tenerife-live-web',
@@ -4764,8 +5054,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.061,
     lng: -16.732,
     embedUrl: 'https://www.youtube.com/embed/9nBcSKKULIM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'san-bartolom-de-tirajana-wwwhaffnereu-gran-canaria',
@@ -4775,8 +5065,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 27.757,
     lng: -15.5721,
     embedUrl: 'https://www.youtube.com/embed/qLEP2uQFwwg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'san-bartolom-de-tirajana-live-webcam-gran-canaria',
@@ -4787,7 +5079,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.5725,
     embedUrl: 'https://www.youtube.com/embed/ksly_2bWGiE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-bartolom-de-tirajana-live-pozo-izquierdo-beach',
@@ -4797,8 +5089,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 27.758,
     lng: -15.573,
     embedUrl: 'https://www.youtube.com/embed/ElZh1azg7c4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'san-bartolom-de-tirajana-live-ocean-view',
@@ -4809,7 +5103,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.5735,
     embedUrl: 'https://www.youtube.com/embed/6rJtyYXOn4s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'maspalomas-grancanarialive',
@@ -4820,7 +5114,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.575,
     embedUrl: 'https://www.youtube.com/embed/Ea48y09PuNc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'maspalomas-grancanarialive-minigolfcom-yumbo-cente',
@@ -4830,8 +5124,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 27.7572,
     lng: -15.5752,
     embedUrl: 'https://www.youtube.com/embed/xWlZip2pwjU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'maspalomas-grancanarialive-2',
@@ -4842,7 +5138,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -15.5754,
     embedUrl: 'https://www.youtube.com/embed/o09siXxJw9A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fornells-de-la-selva-fornells-de-la-selva-sud-giro',
@@ -4853,7 +5149,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.804,
     embedUrl: 'https://www.youtube.com/embed/_-zx2fSWpTU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'fornells-de-la-selva-fornells-de-la-selva-nord-gir',
@@ -4864,7 +5161,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.805,
     embedUrl: 'https://www.youtube.com/embed/0zTOXdxQAp0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'cannes-live-webcam-cannes-boulevard-du-midi',
@@ -4875,7 +5173,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.0108,
     embedUrl: 'https://www.youtube.com/embed/z6BNMoj9Pyo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cannes-live-webcam-cannes-palm-beach',
@@ -4885,8 +5183,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.5395,
     lng: 7.038,
     embedUrl: 'https://www.youtube.com/embed/8cff6yAO9bw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cannes-live-webcam-cannes-quai-laubeuf',
@@ -4897,7 +5197,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.0155,
     embedUrl: 'https://www.youtube.com/embed/asO_10T0k2k?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'la-plagne-live-la-plagne-colorado',
@@ -4908,7 +5208,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.6757,
     embedUrl: 'https://www.youtube.com/embed/82VhHHL9F78?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'troms-vervet-live-utsikt-sr',
@@ -4919,7 +5219,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.956,
     embedUrl: 'https://www.youtube.com/embed/3y7_fkAzzps?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'troms-vervet-live',
@@ -4930,7 +5230,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.956,
     embedUrl: 'https://www.youtube.com/embed/zKpPfH8u3GI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-oslo-skimore-live',
@@ -4941,7 +5241,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.7522,
     embedUrl: 'https://www.youtube.com/embed/uUirqfUMK94?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-oslo-live',
@@ -4952,7 +5252,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.7522,
     embedUrl: 'https://www.youtube.com/embed/7VXn9NpuSZk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'geiranger-geirangerfjord-cruise-port-geiranger',
@@ -4962,8 +5262,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 62.1014,
     lng: 7.206,
     embedUrl: 'https://www.youtube.com/embed/yMSc-qqW3To?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'geiranger-geirangerfjord-cruise-port-hellesylt',
@@ -4973,8 +5273,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 62.1034,
     lng: 7.206,
     embedUrl: 'https://www.youtube.com/embed/S4aJlRY39fo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'geiranger-geiranger-live',
@@ -4985,7 +5285,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.204,
     embedUrl: 'https://www.youtube.com/embed/wAdTV6Uc5eA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'geiranger-geirangerfjord-cruise-port-geiranger-mar',
@@ -4996,7 +5296,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.206,
     embedUrl: 'https://www.youtube.com/embed/kRbPEg89tjA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'narvik-narvik-havn-live',
@@ -5007,7 +5307,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 17.4271,
     embedUrl: 'https://www.youtube.com/embed/OJneSeFqaaw?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'narvik-narvik-live',
@@ -5018,7 +5318,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 17.37,
     embedUrl: 'https://www.youtube.com/embed/DLjrZmVE_y4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'finse-finse-railroad-station-for-worldcamstv-credi',
@@ -5029,7 +5329,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.5017,
     embedUrl: 'https://www.youtube.com/embed/blFtFGu0QBE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'helsinki-port-of-helsinki-west-harbour-south-cam',
@@ -5040,7 +5342,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.9118,
     embedUrl: 'https://www.youtube.com/embed/6hPWq2IG08M?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'helsinki-port-of-helsinki-west-harbour-north-cam',
@@ -5051,7 +5354,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.9128,
     embedUrl: 'https://www.youtube.com/embed/JnJhFYhIjFs?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'helsinki-port-of-helsinki-south-harbour-live-live-',
@@ -5062,7 +5366,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.954,
     embedUrl: 'https://www.youtube.com/embed/CvOB-Is_yYU?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'rotterdam-live-stream-erasmusbrug-kop-van-zuid-cru',
@@ -5073,7 +5378,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.4894,
     embedUrl: 'https://www.youtube.com/embed/nFozEhYTEMo?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rotterdam-live-stream-erasmusbrug-rotterdam-kpn-le',
@@ -5084,7 +5389,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.4875,
     embedUrl: 'https://www.youtube.com/embed/gsViKzj7nuQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rotterdam-live-stream-euromast',
@@ -5095,7 +5400,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.4667,
     embedUrl: 'https://www.youtube.com/embed/1wWlJyopdN4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rotterdam-live-stream-laurenskwartier-binnenrotte',
@@ -5106,7 +5411,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.4875,
     embedUrl: 'https://www.youtube.com/embed/2JyBX4a0-aA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zandvoort-live-railcam-zandvoort-2-fixed',
@@ -5117,7 +5422,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.531,
     embedUrl: 'https://www.youtube.com/embed/kqFVH8_D4jo?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zandvoort-live-zandvoort-is-klaar-voor-de-formule-',
@@ -5128,7 +5433,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.531,
     embedUrl: 'https://www.youtube.com/embed/4lVSpnP-CGE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'elburg-locomediagroepnl-webcam-vischmarkt-elburg',
@@ -5139,7 +5444,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 5.8417,
     embedUrl: 'https://www.youtube.com/embed/UWZNkLXKDpo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'castricum-webcamnl-sportsatseanl-live-hd-ptz-camer',
@@ -5150,7 +5455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.617,
     embedUrl: 'https://www.youtube.com/embed/5UAYdVOIeFM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nes-vvv-ameland-wwwvvvamelandnl-live-hd-camera',
@@ -5161,7 +5466,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 5.76,
     embedUrl: 'https://www.youtube.com/embed/4-nvvYRJsIs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pieterburen-seals-live',
@@ -5172,7 +5477,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.4508,
     embedUrl: 'https://www.youtube.com/embed/aXAsMcmtJTc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zeewolde-uitzicht-windpark-zeewolde',
@@ -5183,7 +5488,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 5.541,
     embedUrl: 'https://www.youtube.com/embed/OD6pKGAtlqU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'julianadorp-live-camera-ijsclub-julianadorp',
@@ -5194,7 +5499,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.7286,
     embedUrl: 'https://www.youtube.com/embed/FsdwbtsJMbg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venlo-smitma-yard-livestream-venlo-the-netherlands',
@@ -5205,7 +5510,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.1685,
     embedUrl: 'https://www.youtube.com/embed/THNsbIiujZM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-ferry-cam-southampton-to-cowes-isle-of',
@@ -5216,7 +5521,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3943,
     embedUrl: 'https://www.youtube.com/embed/QO-hO_kwwmY?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-netley-cam',
@@ -5227,7 +5532,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.36,
     embedUrl: 'https://www.youtube.com/embed/2XSB4Sj0o_g?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-itchen-cam',
@@ -5238,7 +5543,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.37,
     embedUrl: 'https://www.youtube.com/embed/_XKZ2h48yt0?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-box-cam',
@@ -5249,7 +5554,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.39,
     embedUrl: 'https://www.youtube.com/embed/ec6xgmuW1dw?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-junction-cam-traffic-jams-and-queues-a',
@@ -5260,7 +5565,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.395,
     embedUrl: 'https://www.youtube.com/embed/u7GyFcQJs98?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'southampton-port-cam',
@@ -5271,7 +5578,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.396,
     embedUrl: 'https://www.youtube.com/embed/wYlAi6QhNSA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'southampton-cruise-cam',
@@ -5282,7 +5589,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.397,
     embedUrl: 'https://www.youtube.com/embed/26pbTW-B8z0?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'st-ives-live-webcam-of-st-ives-harbour-in-cornwall',
@@ -5293,7 +5600,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -5.4801,
     embedUrl: 'https://www.youtube.com/embed/T83mKGf_c3k?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenby-live-hd-cam-tenby-south-beach-pembrokeshire-',
@@ -5303,8 +5610,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 51.6709,
     lng: -4.7037,
     embedUrl: 'https://www.youtube.com/embed/pbbJULBv2Mk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'weymouth-weymouth-harbour',
@@ -5314,8 +5622,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6133,
     lng: -2.4557,
     embedUrl: 'https://www.youtube.com/embed/oXECyHh01Bc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'weymouth-overcombe-beach-weymouth-uk-live-webcam',
@@ -5325,8 +5633,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6153,
     lng: -2.4557,
     embedUrl: 'https://www.youtube.com/embed/2eQlFsurl-s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'weymouth-weymouth-pavilion-webcam',
@@ -5337,7 +5647,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.4577,
     embedUrl: 'https://www.youtube.com/embed/rKDXSNTCMDU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'weymouth-bowleaze-cove-beach-weymouth-uk-live-webc',
@@ -5347,8 +5657,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6113,
     lng: -2.4557,
     embedUrl: 'https://www.youtube.com/embed/kKv0tI1RYlU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'marazion-st-michaels-mount-cornwall-live-uk-live-c',
@@ -5359,7 +5671,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -5.477,
     embedUrl: 'https://www.youtube.com/embed/GL_2CrLwSDA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'ryde-aspire-ryde-camera',
@@ -5370,7 +5684,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.159,
     embedUrl: 'https://www.youtube.com/embed/kEEL807XevQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ryde-isle-of-wight-ryde-pier-solent-scenic-cam-rai',
@@ -5381,7 +5695,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.159,
     embedUrl: 'https://www.youtube.com/embed/R1P9v9bEtuk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kidderminster-live-cam-kidderminster-station-conco',
@@ -5392,7 +5706,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.2288,
     embedUrl: 'https://www.youtube.com/embed/CEQBHYoqBI0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kidderminster-live-cam-kidderminster-platform-on-t',
@@ -5403,7 +5717,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.2288,
     embedUrl: 'https://www.youtube.com/embed/ELBMc80pNAo?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bewdley-live-cam-bewdley-north-on-the-severn-valle',
@@ -5414,7 +5728,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.319,
     embedUrl: 'https://www.youtube.com/embed/IqvDk75pvfE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'bewdley-live-cam-bewdley-south-on-the-severn-valle',
@@ -5425,7 +5740,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.3185,
     embedUrl: 'https://www.youtube.com/embed/33cJCHpH9eU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'highley-live-cam-highley-station-on-the-severn-val',
@@ -5436,7 +5752,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.385,
     embedUrl: 'https://www.youtube.com/embed/L60Zg6dY0fU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bridgnorth-live-cam-bridgnorth-station-on-the-seve',
@@ -5447,7 +5763,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -2.42,
     embedUrl: 'https://www.youtube.com/embed/Hk7KWsPI_XI?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bremen-blick-auf-den-marktplatz-rathaus-roland-und',
@@ -5458,7 +5774,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.8077,
     embedUrl: 'https://www.youtube.com/embed/SsyiWrkUjy4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bremen-bremen-webcam-weserblick',
@@ -5469,7 +5785,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.8007,
     embedUrl: 'https://www.youtube.com/embed/2vhqpJTE-wA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bremen-bremen-webcam-weser-stadion',
@@ -5480,7 +5796,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.8376,
     embedUrl: 'https://www.youtube.com/embed/rlj8zl6dr48?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rees-live-rhein-bei-rees-rheinaufwrts-richtung-wes',
@@ -5491,7 +5807,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.397,
     embedUrl: 'https://www.youtube.com/embed/7yO8E_YFYAU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rees-live-rhein-bei-rees-rheinabwrts-richtung-emme',
@@ -5502,7 +5818,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.397,
     embedUrl: 'https://www.youtube.com/embed/SeN3fw3R6-E?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rees-live-rhein-rees',
@@ -5513,7 +5829,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 6.397,
     embedUrl: 'https://www.youtube.com/embed/8XOrJj1hV40?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hirzenach-livecam-gedeonseck-boppard-filsen-und-rh',
@@ -5524,7 +5840,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.6063,
     embedUrl: 'https://www.youtube.com/embed/MXHuT-hXJY8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hirzenach-livecam-mittelrheintal-live-from-the-rhi',
@@ -5535,7 +5851,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.6063,
     embedUrl: 'https://www.youtube.com/embed/eUbB_ev7EH4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dresden-livecam-elbufer-dresden',
@@ -5546,7 +5862,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.7373,
     embedUrl: 'https://www.youtube.com/embed/ynvrVPHRaYs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'grauerort-grauerort-live-shipspotting',
@@ -5557,7 +5873,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.47,
     embedUrl: 'https://www.youtube.com/embed/nmic4tt88-Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nordkehdingen-live-vom-alten-baljer-leuchtturm-120',
@@ -5568,7 +5884,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 9.2,
     embedUrl: 'https://www.youtube.com/embed/voexm7WL60o?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'braov-town-square-piata-sfatului-brasov-pizza-roma',
@@ -5579,7 +5895,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 25.5887,
     embedUrl: 'https://www.youtube.com/embed/HmBsPGMdxwY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'braov-michael-weiss-street-brasov-pilvax-restauran',
@@ -5590,7 +5906,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 25.5887,
     embedUrl: 'https://www.youtube.com/embed/5jzXn33PjPk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'braov-brasov-city-ceasu-rau-see-transylvania-live-',
@@ -5601,7 +5919,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 25.5887,
     embedUrl: 'https://www.youtube.com/embed/xxDwVG0TvJ0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mlade-buky-iv-kamera-mlad-buky-ap-hnzdo-4k',
@@ -5612,7 +5930,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.86,
     embedUrl: 'https://www.youtube.com/embed/9yUkeT8lCKo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'levi-zero-point-levi-levi-ski-resort-finland',
@@ -5623,7 +5941,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.8141,
     embedUrl: 'https://www.youtube.com/embed/LwihxyJ4V20?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rovaniemi-live-santa-claus-village',
@@ -5634,7 +5952,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 25.8471,
     embedUrl: 'https://www.youtube.com/embed/Cp4RRAEgpeU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-france-24-english',
@@ -5645,7 +5963,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.3132,
     embedUrl: 'https://www.youtube.com/embed/Ap-UM1O9RBU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-dw-news-livestream-headline-news-from-aroun',
@@ -5656,7 +5974,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.389,
     embedUrl: 'https://www.youtube.com/embed/LuKwFajn37U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'london-watch-sky-news',
@@ -5667,7 +5985,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.1419,
     embedUrl: 'https://www.youtube.com/embed/YDvsBbKfLPA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-live-watch-trt-world',
@@ -5678,7 +5996,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 29.01,
     embedUrl: 'https://www.youtube.com/embed/ABfFhWzWs0s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'munich-the-world-live-original-version-earthtv',
@@ -5689,7 +6007,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 11.582,
     embedUrl: 'https://www.youtube.com/embed/HfgIFGbdGJ0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'munich-live-cameras-around-the-world-music-timelap',
@@ -5700,7 +6018,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 11.582,
     embedUrl: 'https://www.youtube.com/embed/AiNCbGzabVo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'munich-live-cam-around-the-world-rolling-cam-with-',
@@ -5711,7 +6029,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 11.582,
     embedUrl: 'https://www.youtube.com/embed/z7SiAaN4ogw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chioggia-webcam-live-streaming-from-chioggia-sotto',
@@ -5721,8 +6039,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.217,
     lng: 12.285,
     embedUrl: 'https://www.youtube.com/embed/huEcPtSsdLc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'ankara-trt-haber-canl-yayn',
@@ -5733,7 +6051,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 32.8597,
     embedUrl: 'https://www.youtube.com/embed/3XHebGJG0bc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'olifants-west-naledi-dam-wildlife-live-stream-grea',
@@ -5744,7 +6062,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.8833,
     embedUrl: 'https://www.youtube.com/embed/S4GIPXZnQTM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sabi-sand-cat-eye-live-camera-naledi-lodge-greater',
@@ -5755,7 +6073,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.4,
     embedUrl: 'https://www.youtube.com/embed/QGvjAPzImR8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balule-olifants-river-wildlife-live-stream-greater',
@@ -5766,7 +6084,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.9917,
     embedUrl: 'https://www.youtube.com/embed/NapztoCaKFY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'kimberley-flamingo-camera-kamfers-dam-live',
@@ -5777,7 +6097,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.7833,
     embedUrl: 'https://www.youtube.com/embed/WaszO4l4E2c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pilanesberg-africam-kwa-maritane',
@@ -5788,7 +6108,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 27.15,
     embedUrl: 'https://www.youtube.com/embed/aWglOXp5id0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bettys-bay-namibia-live-stream-in-the-namib-desert',
@@ -5799,7 +6119,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.8992,
     embedUrl: 'https://www.youtube.com/embed/ydYDqZQpim8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chyulu-hills-ol-donyo-lodge-wildlife-live-stream-k',
@@ -5810,7 +6130,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 37.7333,
     embedUrl: 'https://www.youtube.com/embed/XsOU8JnEpNM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'gondwana-namibia-live-stream-in-the-kalahari-deser',
@@ -5821,7 +6141,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16,
     embedUrl: 'https://www.youtube.com/embed/ME0dPuBtzug?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-webcam-1-recording-of-sydney-harbour-247-to',
@@ -5832,7 +6152,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.2153,
     embedUrl: 'https://www.youtube.com/embed/IhWWW2l-pP0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-elephant-cam',
@@ -5843,7 +6163,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.2416,
     embedUrl: 'https://www.youtube.com/embed/RrMQ17zrPrQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'orange-ledge-camera-falconcam-project-live',
@@ -5854,7 +6174,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 149.1013,
     embedUrl: 'https://www.youtube.com/embed/VuZaWzhXSAI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'orange-box-camera-falconcam-project-live',
@@ -5865,7 +6185,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 149.1013,
     embedUrl: 'https://www.youtube.com/embed/yv2RtoIMNzA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'orange-tower-cam-falconcam-project-live',
@@ -5875,8 +6195,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.2846,
     lng: 149.0993,
     embedUrl: 'https://www.youtube.com/embed/rQxrTGgNu4M?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'orange-nest-camera-falconcam-project-live',
@@ -5887,7 +6209,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 149.1013,
     embedUrl: 'https://www.youtube.com/embed/h0cfJMB1wyo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'melbourne-snow-leopards-outdoor-cam',
@@ -5898,7 +6220,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 144.9517,
     embedUrl: 'https://www.youtube.com/embed/4wb6o3QvrxY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'melbourne-penguin-cam',
@@ -5909,7 +6231,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 144.9517,
     embedUrl: 'https://www.youtube.com/embed/3CAU9Ex_GKk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-ch-akihabara-live-camera',
@@ -5920,7 +6242,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7745,
     embedUrl: 'https://www.youtube.com/embed/XVmLmpU1bLY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-ebisu-live-camera',
@@ -5931,7 +6253,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7101,
     embedUrl: 'https://www.youtube.com/embed/hZWjNxtKP4Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'narita-live-at-narita-international-airport-plane-',
@@ -5942,7 +6264,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.3864,
     embedUrl: 'https://www.youtube.com/embed/r5C3u8ypCtM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-haneda-airport-live-march-24-2026-2026324',
@@ -5953,7 +6275,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7798,
     embedUrl: 'https://www.youtube.com/embed/6iwGblWPMQQ?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-tokyo-live-camera-with-lofi-and-soft-jazz-bg',
@@ -5964,7 +6286,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6503,
     embedUrl: 'https://www.youtube.com/embed/_k-5U7IeK8g?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo',
@@ -5975,7 +6297,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7671,
     embedUrl: 'https://www.youtube.com/embed/ZN4gh5IOowM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-livetokyo-station-terminal-for-shinkansen',
@@ -5986,7 +6308,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7671,
     embedUrl: 'https://www.youtube.com/embed/3PnakUsiMOE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-itscom-live-camera-tokyo-shibuya',
@@ -5997,7 +6319,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7004,
     embedUrl: 'https://www.youtube.com/embed/f50R4vDlCmA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-tokyo-nishiazabu-live-camera',
@@ -6008,7 +6330,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7265,
     embedUrl: 'https://www.youtube.com/embed/vLVAbockG6k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-beach-cam',
@@ -6018,8 +6340,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 35.629,
     lng: 139.7746,
     embedUrl: 'https://www.youtube.com/embed/KsoxRtx01KE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'tokyo-live-shinjuku-tokyo-japan-tbs-news-dig',
@@ -6030,7 +6354,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7034,
     embedUrl: 'https://www.youtube.com/embed/_zU8K43Twus?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-livejapan-tokyo-livecamera-webcam-livestream',
@@ -6041,7 +6365,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6503,
     embedUrl: 'https://www.youtube.com/embed/m_WCI3EQRwQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-itscom-live-camera-tokyo-futako-tamagawa',
@@ -6052,7 +6376,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6264,
     embedUrl: 'https://www.youtube.com/embed/fndY3LREfdE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-scenery-overlooking-land-sea-and-sky-to',
@@ -6063,7 +6387,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7746,
     embedUrl: 'https://www.youtube.com/embed/_ByNEL0Ton4?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-2',
@@ -6074,7 +6398,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.8043,
     embedUrl: 'https://www.youtube.com/embed/XXU3tg6cmGs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-4k24',
@@ -6085,7 +6409,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.8107,
     embedUrl: 'https://www.youtube.com/embed/_wTMYAEtwAM?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-precincts-of-sensoji-temple-to-main-hall',
@@ -6096,7 +6420,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7967,
     embedUrl: 'https://www.youtube.com/embed/HjRZNBm1kms?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-tokyo-bay-traffic-between-ships-and-pla',
@@ -6107,7 +6431,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.77,
     embedUrl: 'https://www.youtube.com/embed/qMDxy_qbdtE?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'tokyo-tokyo-odaiba-live-camera',
@@ -6118,7 +6444,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7726,
     embedUrl: 'https://www.youtube.com/embed/n3B8fp-Henc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-itscom-live-camera-tokyo-metropolitan-expres',
@@ -6129,7 +6455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6365,
     embedUrl: 'https://www.youtube.com/embed/AADZvNj8db4?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-3',
@@ -6140,7 +6466,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6503,
     embedUrl: 'https://www.youtube.com/embed/3o9aoRyrvAk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-24livek-tokyo-shinjuku-kabukich',
@@ -6151,7 +6477,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7028,
     embedUrl: 'https://www.youtube.com/embed/gTO_FJzv70k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-4',
@@ -6162,7 +6488,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.5628,
     embedUrl: 'https://www.youtube.com/embed/1XphVUBHHmk?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-5',
@@ -6173,7 +6499,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.8045,
     embedUrl: 'https://www.youtube.com/embed/fSm0LbN2y1Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-tokyo-skytree-live-view-of-tokyo-in-4k-247',
@@ -6184,7 +6510,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7637,
     embedUrl: 'https://www.youtube.com/embed/K2ZEHtTU1XY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-livemile-zero-shimbashi-2023010620251201',
@@ -6195,7 +6521,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7585,
     embedUrl: 'https://www.youtube.com/embed/A5H4LoL9he4?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-4klivelive',
@@ -6206,7 +6532,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.1492,
     embedUrl: 'https://www.youtube.com/embed/1vdmvnXnkQ4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-cam',
@@ -6217,7 +6543,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7746,
     embedUrl: 'https://www.youtube.com/embed/dJZBqTeC-h8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-ch-akihabara-live-camera-2',
@@ -6228,7 +6554,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7745,
     embedUrl: 'https://www.youtube.com/embed/p7mbQ2qkACg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-live-stream-of-hamamatsu-cho-railway-tr',
@@ -6239,7 +6565,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7571,
     embedUrl: 'https://www.youtube.com/embed/W0V8-6WrgBY?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-tokyo-dome-city-japan-live-camera-247',
@@ -6250,7 +6576,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.7519,
     embedUrl: 'https://www.youtube.com/embed/7XzfKy8CzdY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-livetokyo-shinjuku-jr-live-cam-omoideyokocho',
@@ -6261,7 +6587,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6989,
     embedUrl: 'https://www.youtube.com/embed/GLQhbRGv5qU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nagano-4k-kamikochi-kappa-bashi-live-camera',
@@ -6272,7 +6598,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 137.6313,
     embedUrl: 'https://www.youtube.com/embed/Iv2VUE_UhRQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-japan-night-vew-live-streaming-a',
@@ -6283,7 +6609,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5023,
     embedUrl: 'https://www.youtube.com/embed/YIjxwMxWzgE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-osaka-live-stream-247livestreaming',
@@ -6294,7 +6620,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5033,
     embedUrl: 'https://www.youtube.com/embed/uDat-pm3Rzw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-osakajapan-247-livestreaming-weather-os',
@@ -6305,7 +6631,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5013,
     embedUrl: 'https://www.youtube.com/embed/O9HzIuolSds?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-itm-sky-cam-osaka-airport-live-cam',
@@ -6316,7 +6642,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.438,
     embedUrl: 'https://www.youtube.com/embed/IBW4UX4A-Dk?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-japan-night-vew-live-streaming-a-2',
@@ -6327,7 +6653,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5141,
     embedUrl: 'https://www.youtube.com/embed/GCxs-DhQs08?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-itm-sky-cam-osaka-airport-live-cam-2',
@@ -6338,7 +6664,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.438,
     embedUrl: 'https://www.youtube.com/embed/f7RlL3k6FJM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-livekix-1',
@@ -6349,7 +6675,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.244,
     embedUrl: 'https://www.youtube.com/embed/2gisxkF6Lao?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live',
@@ -6360,7 +6686,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.438,
     embedUrl: 'https://www.youtube.com/embed/KuTnm6CSqag?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-osaka-nipponbashi-livecamera',
@@ -6371,7 +6697,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5057,
     embedUrl: 'https://www.youtube.com/embed/BUV-HTTp3ZI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-expo2025-the-grand-ring-live-camera',
@@ -6382,7 +6708,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5325,
     embedUrl: 'https://www.youtube.com/embed/kCE6T3p8AZ4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-osaka-live-camera-4k',
@@ -6393,7 +6719,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5003,
     embedUrl: 'https://www.youtube.com/embed/7lcPQ97iv5I?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-osaka-dotonbori',
@@ -6404,7 +6730,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5012,
     embedUrl: 'https://www.youtube.com/embed/vSLXU7AbZAQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-livecam-osaka-jr4kuhd',
@@ -6415,7 +6741,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4959,
     embedUrl: 'https://www.youtube.com/embed/Z0oyVhk_7RA?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-2024-09-16-1400-tokaido-shinkansen-rail',
@@ -6426,7 +6752,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4959,
     embedUrl: 'https://www.youtube.com/embed/qdF4u9KY3BQ?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-osaka-mountain-view-live-camera-lofi-radio-2',
@@ -6437,7 +6763,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5013,
     embedUrl: 'https://www.youtube.com/embed/4b9X-g0L844?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-in',
@@ -6448,7 +6774,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5009,
     embedUrl: 'https://www.youtube.com/embed/8Pr3xHazf0k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-japan-shinosaka-live-camera',
@@ -6459,7 +6785,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4939,
     embedUrl: 'https://www.youtube.com/embed/Bq30kRKn3eA?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-osaka-live-osaka-osaka-castle',
@@ -6470,7 +6796,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.5033,
     embedUrl: 'https://www.youtube.com/embed/-Vck0hn-zqk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'osaka-live-1-toyonaka-romantic-road-live-camera-no',
@@ -6481,7 +6807,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4694,
     embedUrl: 'https://www.youtube.com/embed/i9LRwkZCGtU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'osaka-live-jr-west-osaka-loop-line',
@@ -6492,7 +6820,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4959,
     embedUrl: 'https://www.youtube.com/embed/kFKxyyLfh1E?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'kyoto-live-kyoto-japan-live-camera',
@@ -6503,7 +6832,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7593,
     embedUrl: 'https://www.youtube.com/embed/Y1XxYLwpJy4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-live-the-philosophers-path-kyoto-live-camera',
@@ -6514,7 +6843,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7944,
     embedUrl: 'https://www.youtube.com/embed/S6IkZhhwG4A?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-world-heritage-site-kyoto-live-webcam',
@@ -6525,7 +6854,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7681,
     embedUrl: 'https://www.youtube.com/embed/T8FR4SB9pzQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-livehanamikoji-street-kyoto-live-camera',
@@ -6536,7 +6865,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7751,
     embedUrl: 'https://www.youtube.com/embed/X5rq4ioggLk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'kyoto-20240916-1200livekyoto-station-live-cam-jr',
@@ -6547,7 +6878,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7588,
     embedUrl: 'https://www.youtube.com/embed/_eeUYDIF6jc?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-livekyoto-station-hachijo',
@@ -6558,7 +6889,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7588,
     embedUrl: 'https://www.youtube.com/embed/CO_ZjH6N7RE?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-livenene-no-michinene-street-kyoto-live-came',
@@ -6569,7 +6900,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7817,
     embedUrl: 'https://www.youtube.com/embed/Gxt3YCa2Phc?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'kyoto-live-camera-livecamera-nantan-m',
@@ -6580,7 +6913,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.4693,
     embedUrl: 'https://www.youtube.com/embed/6QAZgweLc9A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kyoto-live-2026-03-26-0235-kyoto-japan-railcam',
@@ -6591,7 +6924,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.7213,
     embedUrl: 'https://www.youtube.com/embed/1LNiqXRjYiY?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-live-live-camera-of-sapporo-mtmoiwa-in',
@@ -6602,7 +6935,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.355647,
     embedUrl: 'https://www.youtube.com/embed/xB6johNZ3vQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-live-sapporo-odori-park-in-hokkaido-live',
@@ -6613,7 +6946,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.353955,
     embedUrl: 'https://www.youtube.com/embed/RBHsITnIoI0?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-stv-live-camera-sapporo-hokkaido',
@@ -6624,7 +6957,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.352598,
     embedUrl: 'https://www.youtube.com/embed/WUN-183KH7M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-sapporo-hokkaido-japan-live-247-tanukikoji',
@@ -6635,7 +6968,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.352598,
     embedUrl: 'https://www.youtube.com/embed/HiNFpNlSAbg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo',
@@ -6646,7 +6979,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.353955,
     embedUrl: 'https://www.youtube.com/embed/uABIARvcghg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-live-camera-tanukikoji-shopping-street-i',
@@ -6657,7 +6990,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.323,
     embedUrl: 'https://www.youtube.com/embed/goxtB53PqrY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'sapporo-live14',
@@ -6668,7 +7003,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.355647,
     embedUrl: 'https://www.youtube.com/embed/AWVVYHfxZac?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-sapporo-hokkaido-japan-live-247-tanukikoji-2',
@@ -6679,7 +7014,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3519,
     embedUrl: 'https://www.youtube.com/embed/CF1vS8DdBIk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chitose-livelive-streaming-from-hokkaido-new-chito',
@@ -6690,7 +7025,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.6925,
     embedUrl: 'https://www.youtube.com/embed/Azbdr5jbN6o?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'obihiro-live-camera-in-the-tokachi-obihiro-airport',
@@ -6701,7 +7036,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 143.2172,
     embedUrl: 'https://www.youtube.com/embed/3dg35n9DLX0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'obihiro-live-camera-in-tokachi-big-bridge-over-the',
@@ -6711,8 +7046,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 42.9236,
     lng: 143.1967,
     embedUrl: 'https://www.youtube.com/embed/_6Zpd48bjYk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'otaru',
@@ -6723,7 +7060,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.9943,
     embedUrl: 'https://www.youtube.com/embed/X5Ew8btlVbQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sapporo-live-camera-tanukikoji-shopping-street-i-2',
@@ -6734,7 +7071,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.3519,
     embedUrl: 'https://www.youtube.com/embed/m4ExO19iW4g?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'kitahiroshima-stvlive-camera-kitahirosima-city-hok',
@@ -6745,7 +7084,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.5635,
     embedUrl: 'https://www.youtube.com/embed/C28jH3sU2M8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rishiri-live',
@@ -6756,7 +7095,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 141.2192,
     embedUrl: 'https://www.youtube.com/embed/iBwjkDhl9ys?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shihoro-shihoro-town-hokkaido-japan',
@@ -6767,7 +7106,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 143.2314,
     embedUrl: 'https://www.youtube.com/embed/cElpVZpu1wI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oshino-4k',
@@ -6778,7 +7117,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.8374,
     embedUrl: 'https://www.youtube.com/embed/sm3xXTfDtGE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-utymtfuji-live-cam-in-japan',
@@ -6789,7 +7128,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.766,
     embedUrl: 'https://www.youtube.com/embed/eU8A7QQOcso?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-live-camera-of-mtfuji',
@@ -6800,7 +7139,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.766618,
     embedUrl: 'https://www.youtube.com/embed/kYK9J6KNz0M?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-live-mount-fuji-live-camera-from-l',
@@ -6811,7 +7150,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.755,
     embedUrl: 'https://www.youtube.com/embed/bdUbACCWmoY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-livemount-fuji-live-camera-from-la',
@@ -6822,7 +7161,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.764382,
     embedUrl: 'https://www.youtube.com/embed/1cnReFAU04k?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sagami-shonan-beach-fm-789-sagami-bay-enoshima-mt-',
@@ -6833,7 +7172,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.156,
     embedUrl: 'https://www.youtube.com/embed/q7C6iIOpeVs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'fujikawaguchiko-livecam-hayama-japan',
@@ -6844,7 +7185,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.593,
     embedUrl: 'https://www.youtube.com/embed/GKem31OI1rA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yamanakako-live-camera-english-ga',
@@ -6855,7 +7196,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.8692,
     embedUrl: 'https://www.youtube.com/embed/y0OFr7jMx9A?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-live-mt-fuji-live-247',
@@ -6866,7 +7207,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.764382,
     embedUrl: 'https://www.youtube.com/embed/UaD8ew0bqVE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-live-stream-of-mtfuji-from-oshino-',
@@ -6877,7 +7218,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.766618,
     embedUrl: 'https://www.youtube.com/embed/nh0TUmU-Sko?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujiyoshida-live-mtfuji-live-camera-from-ara',
@@ -6888,7 +7229,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.7996,
     embedUrl: 'https://www.youtube.com/embed/15aPtlnUIL4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-utykawaguchiko-stat',
@@ -6899,7 +7240,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.7575,
     embedUrl: 'https://www.youtube.com/embed/9d9DqBZmjwk?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'uenohara-uty',
@@ -6910,7 +7251,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.1089,
     embedUrl: 'https://www.youtube.com/embed/slOgQojt8w8?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yamanakako-live-camera-hotel-mtfuji',
@@ -6921,7 +7262,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.8692,
     embedUrl: 'https://www.youtube.com/embed/Gn2CJjzY068?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fuefuki-jr-1',
@@ -6932,7 +7273,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.644,
     embedUrl: 'https://www.youtube.com/embed/pHtmJW8nHgk?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kofu-kofu-basin-live-cam-in-japan',
@@ -6943,7 +7284,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.5683,
     embedUrl: 'https://www.youtube.com/embed/STudE86JCJs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fuefuki-jr',
@@ -6954,7 +7295,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.644,
     embedUrl: 'https://www.youtube.com/embed/S3F3SRllna8?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujikawaguchiko-live-mount-fuji-live-camera-from-l-2',
@@ -6965,7 +7306,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.5877,
     embedUrl: 'https://www.youtube.com/embed/so_3HK9HIdg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujiyoshida-live-mtfuji-live-camera-from-ara-2',
@@ -6976,7 +7317,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.7996,
     embedUrl: 'https://www.youtube.com/embed/9D7BzjsxxXs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-live',
@@ -6987,7 +7328,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.3198,
     embedUrl: 'https://www.youtube.com/embed/O6tGk5VFti0?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-livehiroshima-city-japan-the-2023-g7-sum',
@@ -6998,7 +7339,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.4609,
     embedUrl: 'https://www.youtube.com/embed/oW2Gb8YoGAg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-tss-live-camera',
@@ -7009,7 +7350,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.4553,
     embedUrl: 'https://www.youtube.com/embed/m9vpLO3EZKo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-live-2',
@@ -7020,7 +7361,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.4754,
     embedUrl: 'https://www.youtube.com/embed/4IYYByR29A0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-by-the-gateway-to-rabbit-islan',
@@ -7031,7 +7372,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.95,
     embedUrl: 'https://www.youtube.com/embed/9kcvdNqbpxs?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hiroshima-by-the-gateway-to-rabbit-islan-2',
@@ -7042,7 +7383,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.95,
     embedUrl: 'https://www.youtube.com/embed/7HCE2hfIjhI?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kure-live-live-camera-kure-hiroshimarcc-news-dig',
@@ -7053,7 +7394,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 132.5652,
     embedUrl: 'https://www.youtube.com/embed/jB40z6jkcFY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ginowan-live-42x-ptz-okinawa-japan',
@@ -7064,7 +7405,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.775,
     embedUrl: 'https://www.youtube.com/embed/WIYUrH4luck?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'naha-live-okinawa-naha',
@@ -7075,7 +7416,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6809,
     embedUrl: 'https://www.youtube.com/embed/6HYjCFkmDPA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'naha-8131okichan-okinawa-kokusai-street-live-camer',
@@ -7086,7 +7427,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6851,
     embedUrl: 'https://www.youtube.com/embed/de_40Jj2gF4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'motobu',
@@ -7097,7 +7440,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.8779,
     embedUrl: 'https://www.youtube.com/embed/VyT694OcIHM?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'okinawa-nowlive',
@@ -7108,7 +7451,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.769,
     embedUrl: 'https://www.youtube.com/embed/ZToeWoLf3xQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'naha-qab',
@@ -7119,7 +7462,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6459,
     embedUrl: 'https://www.youtube.com/embed/ZdvNQ3D0PY4?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'naha-live-okinawa',
@@ -7130,7 +7473,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6459,
     embedUrl: 'https://www.youtube.com/embed/3e_uPkJCTNo?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'naha-livenaha-airport-okinawa-japanrbc-news',
@@ -7141,7 +7484,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.6459,
     embedUrl: 'https://www.youtube.com/embed/Yzl9offu5g8?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-livecamera',
@@ -7152,7 +7495,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.5963,
     embedUrl: 'https://www.youtube.com/embed/GrEEoEmmrKs?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-livecamera-2',
@@ -7163,7 +7506,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.596918,
     embedUrl: 'https://www.youtube.com/embed/B_Sc1v1qR-g?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-livecamera-3',
@@ -7174,7 +7517,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.594682,
     embedUrl: 'https://www.youtube.com/embed/ybOa_LRzp_I?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-livecamera-live',
@@ -7185,7 +7528,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.594682,
     embedUrl: 'https://www.youtube.com/embed/RT_yg_qsK_M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-live-camera',
@@ -7196,7 +7539,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.596918,
     embedUrl: 'https://www.youtube.com/embed/qdws9fzE4Cs?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kusatsu-livecamera-4',
@@ -7207,7 +7550,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.593,
     embedUrl: 'https://www.youtube.com/embed/hAbtM3btaJ8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'katashina',
@@ -7218,7 +7561,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.3142,
     embedUrl: 'https://www.youtube.com/embed/0Q2YZBnp7vk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'minakami',
@@ -7229,7 +7572,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.02,
     embedUrl: 'https://www.youtube.com/embed/P3bq6nGkpnE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saitama-live-2026-03-26-0200-omiyasaitamajapan-rai',
@@ -7240,7 +7583,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6455,
     embedUrl: 'https://www.youtube.com/embed/r0lPKSgA4HI?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nagano-jrlivenagano-station-live-caminc',
@@ -7251,7 +7594,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.1885,
     embedUrl: 'https://www.youtube.com/embed/-LxeC1RhMrU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shimogo-yunokami-onsen-station-live-camera',
@@ -7262,7 +7605,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.8867,
     embedUrl: 'https://www.youtube.com/embed/z1MErdsqsw8?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'anamizu-live',
@@ -7273,7 +7616,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.9,
     embedUrl: 'https://www.youtube.com/embed/THy9p2xJSek?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kagoshima-live-live-streaming-sakurajima-cra',
@@ -7284,7 +7627,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.659,
     embedUrl: 'https://www.youtube.com/embed/Mfq8V8uE0SU?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'makurazaki-k-live-ocean-hotel-iwatok',
@@ -7295,7 +7638,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.295,
     embedUrl: 'https://www.youtube.com/embed/ox3uu-PmgtM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tarumizu-2k-live-b-sakurajima-an-active-volc',
@@ -7306,7 +7649,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.696,
     embedUrl: 'https://www.youtube.com/embed/PeElJClXtzE?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kumamoto',
@@ -7317,7 +7660,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.8553,
     embedUrl: 'https://www.youtube.com/embed/rGtE0C62fss?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kagoshima-live-nandenko-weather-live-cam',
@@ -7328,7 +7671,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.558,
     embedUrl: 'https://www.youtube.com/embed/WknwFmhKRdQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kumamoto-kkt',
@@ -7339,7 +7682,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.7079,
     embedUrl: 'https://www.youtube.com/embed/gtLrD-Xz6Go?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hitoyoshi',
@@ -7350,7 +7693,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.76,
     embedUrl: 'https://www.youtube.com/embed/OYO_IZpUhOw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kumamoto-2',
@@ -7361,7 +7704,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.7079,
     embedUrl: 'https://www.youtube.com/embed/JC0_aImeb6o?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amakusa',
@@ -7372,7 +7715,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 130.1934,
     embedUrl: 'https://www.youtube.com/embed/HfSrh4sZf1U?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sumoto',
@@ -7383,7 +7726,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 134.898,
     embedUrl: 'https://www.youtube.com/embed/lsxYH2XQQCg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujisawa-2-enoshima-livecamera-24hoursby-hviewcam',
@@ -7394,7 +7737,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.482,
     embedUrl: 'https://www.youtube.com/embed/ywXRfMLuw78?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujisawa-live-enoshima-yacht-harbor-live-camera',
@@ -7405,7 +7748,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.482,
     embedUrl: 'https://www.youtube.com/embed/DoC_PlS1P_M?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yokosuka-live-stream-the-sky-of-yokosuka-japan',
@@ -7416,7 +7759,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6722,
     embedUrl: 'https://www.youtube.com/embed/hVGdqZAd1xA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yokosuka-live-miura-beach-live-cam-japan',
@@ -7426,8 +7769,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 35.2814,
     lng: 139.6722,
     embedUrl: 'https://www.youtube.com/embed/PrGQsGUAnk0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'kamakura-3rd-house-hview-camera',
@@ -7438,7 +7783,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.5129,
     embedUrl: 'https://www.youtube.com/embed/T2dB77dObao?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'karuizawa-live',
@@ -7449,7 +7794,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.597,
     embedUrl: 'https://www.youtube.com/embed/HXp5x6llMo4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nagano-livezenkoji-temple-live-cam-inc',
@@ -7460,7 +7805,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.1884,
     embedUrl: 'https://www.youtube.com/embed/HvJdPF46kak?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yamanouchi-live',
@@ -7471,7 +7816,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.4198,
     embedUrl: 'https://www.youtube.com/embed/lAWdqnXJ0w0?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'wajima-wajima-ishikawa-japan-live-camera',
@@ -7482,7 +7827,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.901,
     embedUrl: 'https://www.youtube.com/embed/vjp_8TKQRhw?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'suzu-suzu-ishikawa-japan-live-camera',
@@ -7493,7 +7838,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 137.259,
     embedUrl: 'https://www.youtube.com/embed/CgmxirNHFgI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kanazawa-kanazawa-ishikawa-japan-live-camera',
@@ -7504,7 +7849,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.6562,
     embedUrl: 'https://www.youtube.com/embed/lfasmBsPKF4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nagasaki-ncc',
@@ -7515,7 +7860,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 129.8779,
     embedUrl: 'https://www.youtube.com/embed/SVpsCVjzoiI?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shimogo-ouchi-juku-live-camera',
@@ -7526,7 +7871,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.8506,
     embedUrl: 'https://www.youtube.com/embed/TR0ZBrVbDio?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'koriyama-live-shinkansen-tohokujapan-nonstop-camer',
@@ -7537,7 +7882,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.3602,
     embedUrl: 'https://www.youtube.com/embed/sgrAfWdVa0E?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tainai-jr-nakajo-station-live-camerafhd',
@@ -7548,7 +7893,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.4367,
     embedUrl: 'https://www.youtube.com/embed/Vops6dmdH-U?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'niigata-livelive-camera-niigata',
@@ -7559,7 +7904,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.0436,
     embedUrl: 'https://www.youtube.com/embed/TUjtOgs_fCM?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shizuoka-live',
@@ -7570,7 +7915,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.5547,
     embedUrl: 'https://www.youtube.com/embed/6S4qvf97cbQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shimoda-live',
@@ -7581,7 +7926,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.9447,
     embedUrl: 'https://www.youtube.com/embed/6DRNhfD2_lM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tottori-live-tottori-sand-dunes',
@@ -7592,7 +7937,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 134.2282,
     embedUrl: 'https://www.youtube.com/embed/3FMywRQma8k?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shirahama',
@@ -7603,7 +7948,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 135.348,
     embedUrl: 'https://www.youtube.com/embed/hrfezTwcN4c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'shirahama-4k-live-live-stream-of-shirahama-beach',
@@ -7613,8 +7958,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 33.68,
     lng: 135.348,
     embedUrl: 'https://www.youtube.com/embed/Bv6pTaelhyk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'towada',
@@ -7625,7 +7972,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.8742,
     embedUrl: 'https://www.youtube.com/embed/trSGa-eTSrk?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'yasugi-livethe-gardens-of-adachi-museum',
@@ -7636,7 +7983,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 133.237,
     embedUrl: 'https://www.youtube.com/embed/kAGaBIURcv4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'takayama-live-streaming-of-hida-takayama-live-came',
@@ -7647,7 +7994,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 137.2531,
     embedUrl: 'https://www.youtube.com/embed/G9zwamFFI3Q?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chiba-live-chiba',
@@ -7658,7 +8005,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 140.1065,
     embedUrl: 'https://www.youtube.com/embed/vaifJWjqu0k?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'otsu-live-camera',
@@ -7669,7 +8016,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 136.0744,
     embedUrl: 'https://www.youtube.com/embed/Bxvp5bQ7Qa4?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'imabari-ebc',
@@ -7680,7 +8027,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 133.05,
     embedUrl: 'https://www.youtube.com/embed/OV0JEv6C2QQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santa-monica-santa-monica-beach-cam-powered-by-exp-2',
@@ -7690,8 +8037,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 34.0095,
     lng: -118.497,
     embedUrl: 'https://www.youtube.com/embed/OWbI6WtlI-k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'pacifica-offline-read-description-for-replacement-',
@@ -7701,8 +8050,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.6335,
     lng: -122.489,
     embedUrl: 'https://www.youtube.com/embed/zYi_5AF6B2A?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'santa-rosa-beach-live-beach-cam-at-the-vue-on-30a-',
@@ -7712,8 +8061,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.28,
     lng: -86.01,
     embedUrl: 'https://www.youtube.com/embed/ftGfQqCA184?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'clearwater-frenchys-clearwater-beach-cam',
@@ -7724,7 +8075,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.8268,
     embedUrl: 'https://www.youtube.com/embed/rxBBRLWF0mM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'unknown-tropical-white-sand-beach-with-the-sound-o',
@@ -7734,8 +8085,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.7617,
     lng: -80.1918,
     embedUrl: 'https://www.youtube.com/embed/iBMYVXVZqrE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'haleiwa-pipeline-cam-powered-by-exploreorg',
@@ -7746,7 +8099,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -158.0539,
     embedUrl: 'https://www.youtube.com/embed/DY5RYp4sxYc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'haleiwa-waimea-bay-cam-powered-by-exploreorg',
@@ -7757,7 +8110,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -158.066,
     embedUrl: 'https://www.youtube.com/embed/wnNrd-VjLsQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-cmera-ao-vivo-florianpolis-cachoeira',
@@ -7768,7 +8121,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.453,
     embedUrl: 'https://www.youtube.com/embed/GFAEq2j3csQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-cmera-ao-vivo-florianpolis-canal-da-',
@@ -7779,7 +8132,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.429,
     embedUrl: 'https://www.youtube.com/embed/fV9AQHMJN0U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'florianopolis-cmera-ao-vivo-florianpolis-koxixos-b',
@@ -7790,7 +8145,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.4563,
     embedUrl: 'https://www.youtube.com/embed/enk-Twv4mJw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santos-porto-ao-vivo-vista-panormica-4k',
@@ -7801,7 +8156,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -46.3322,
     embedUrl: 'https://www.youtube.com/embed/AX74XKJZdJM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'gramado-conhea-melhor-a-cidade-de-gramado',
@@ -7812,7 +8167,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -50.8765,
     embedUrl: 'https://www.youtube.com/embed/75m4Ry69IQA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'gramado-gramado-ao-vivo',
@@ -7823,7 +8178,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -50.8765,
     embedUrl: 'https://www.youtube.com/embed/Busyb4PoLoo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manaus-ponta-negra-ao-vivo-24h-manaus-amzlivecombr',
@@ -7834,7 +8189,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -60.0875,
     embedUrl: 'https://www.youtube.com/embed/ICAxjegbHnU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'itajai-itaja-sc-ao-vivo-praia-brava-quiosque-estre',
@@ -7844,8 +8199,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -26.9078,
     lng: -48.662,
     embedUrl: 'https://www.youtube.com/embed/qobQ2iXQzlY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'itajai-itaja-sc-ao-vivo-quiosque-estrela-do-mar-pr',
@@ -7855,8 +8212,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -26.9078,
     lng: -48.662,
     embedUrl: 'https://www.youtube.com/embed/IqAwXJYq2Cw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'islamorada-tarpon-feeding-dock-at-robbies-marina-i',
@@ -7866,8 +8225,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 24.8809,
     lng: -80.6266,
     embedUrl: 'https://www.youtube.com/embed/zfSst64NFcE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'islamorada-underwater-tarpon-feeding-dock-at-robbi',
@@ -7877,8 +8236,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 24.8809,
     lng: -80.6266,
     embedUrl: 'https://www.youtube.com/embed/bZJUN1nf5sM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'fort-madison-fort-madison-iowa-usa-live-train-came',
@@ -7889,7 +8248,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -91.3154,
     embedUrl: 'https://www.youtube.com/embed/L6eG4ahJc_Q?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fort-madison-fort-madison-lost-duck-brewing-live-r',
@@ -7900,7 +8259,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -91.3154,
     embedUrl: 'https://www.youtube.com/embed/mexGMd6-8ik?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'calgary-live-cam-central-memorial-park-calgary-alb',
@@ -7911,7 +8272,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -114.0609,
     embedUrl: 'https://www.youtube.com/embed/xsRDTfuksyI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'calgary-calgary-live-camera',
@@ -7922,7 +8283,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -114.0719,
     embedUrl: 'https://www.youtube.com/embed/MwcqP3ta6RI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'calgary-calgary-live-webcam-downtown-canada',
@@ -7933,7 +8294,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -114.0719,
     embedUrl: 'https://www.youtube.com/embed/1jIuUY9qTkI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'calgary-live-cam-pulcinella',
@@ -7944,7 +8305,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -114.088,
     embedUrl: 'https://www.youtube.com/embed/wShzNJhnBbU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fort-erie-peace-bridge-canada-bound',
@@ -7955,7 +8316,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.9097,
     embedUrl: 'https://www.youtube.com/embed/DnUFAShZKus?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'fort-erie-peace-bridge-canada-bound-truck-inspecti',
@@ -7966,7 +8329,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.9097,
     embedUrl: 'https://www.youtube.com/embed/g9hNGJxw6Yw?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'fort-erie-peace-bridge-canadian-inspection-lanes',
@@ -7977,7 +8342,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.9117,
     embedUrl: 'https://www.youtube.com/embed/WPMgP2C3_co?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'fort-erie-peace-bridge-us-inspection-plaza',
@@ -7988,7 +8355,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -78.9097,
     embedUrl: 'https://www.youtube.com/embed/9En2186vo5g?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'acapulco-acapulco-guerrero-en-vivo-vista-panormica',
@@ -7998,8 +8367,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 16.8531,
     lng: -99.8237,
     embedUrl: 'https://www.youtube.com/embed/spwLOtJD5AI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'zihuatanejo-zihuatanejo-en-vivo-playa-la-madera',
@@ -8009,8 +8380,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.6396,
     lng: -101.552,
     embedUrl: 'https://www.youtube.com/embed/btSfGGIn_Eo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'zihuatanejo-zihuatanejo-en-vivo-playa-la-madera-ii',
@@ -8020,8 +8393,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.6396,
     lng: -101.552,
     embedUrl: 'https://www.youtube.com/embed/Hc32IA80v_Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'tulum-zihuatanejo-en-vivo-playa-la-ropa',
@@ -8031,8 +8406,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 20.2145,
     lng: -87.429,
     embedUrl: 'https://www.youtube.com/embed/bK-RO4B7x_g?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cozumel-casa-malca-tulum-mexico',
@@ -8043,7 +8420,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.9223,
     embedUrl: 'https://www.youtube.com/embed/_Yg6OO0gTlg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mexico-beach-buccanos-beach-club-cozumel-mexico',
@@ -8053,8 +8430,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.6396,
     lng: -101.552,
     embedUrl: 'https://www.youtube.com/embed/FTVIAR7T3yM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'cancun-the-royal-cancun-live-webcam',
@@ -8065,7 +8444,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.8515,
     embedUrl: 'https://www.youtube.com/embed/5D8BK_MLd-I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'canmore-main-st-2',
@@ -8076,7 +8455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.358,
     embedUrl: 'https://www.youtube.com/embed/kC6_JqEt3GA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'canmore-main-street-livecam-canmore-alberta',
@@ -8087,7 +8466,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.357,
     embedUrl: 'https://www.youtube.com/embed/_0wPODlF9wU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'canmore-the-shops-of-canmore-bow-valley',
@@ -8098,7 +8479,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.359,
     embedUrl: 'https://www.youtube.com/embed/qIOP6NJLlc8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'canmore-views-of-three-sisters-from-a-bear-bison-i',
@@ -8109,7 +8490,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.36,
     embedUrl: 'https://www.youtube.com/embed/LosHr1bonAA?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'canmore-the-shops-of-canmore-courtyard',
@@ -8120,7 +8501,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.359,
     embedUrl: 'https://www.youtube.com/embed/Tx02Ve_s7m0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'canmore-spring-creek-drive-webcam',
@@ -8131,7 +8512,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -115.357,
     embedUrl: 'https://www.youtube.com/embed/oe68sJ1ZtsA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kingston-half-way-tree-clock-live-247-kingston-jam',
@@ -8142,7 +8523,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.7674,
     embedUrl: 'https://www.youtube.com/embed/fNmFje4SG4o?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'kingston-half-way-tree-live-jamaicas-busiest-trans',
@@ -8153,7 +8536,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.7674,
     embedUrl: 'https://www.youtube.com/embed/x396CVeU74Q?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kingston-devon-house-kingston-live-247-from-ycma',
@@ -8164,7 +8547,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.786,
     embedUrl: 'https://www.youtube.com/embed/Sd9ZD8Vt8tQ?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kingston-kingston-harbour-live-247-jamaica-waterfr',
@@ -8175,7 +8558,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.796,
     embedUrl: 'https://www.youtube.com/embed/pwlA66hgV3M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kingston-downtown-kingston-live-247-west-parade-ja',
@@ -8186,7 +8569,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.77,
     embedUrl: 'https://www.youtube.com/embed/cVpdwCQ7LEc?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'kingston-barbican-st-andrew-live-247-kingston-jama',
@@ -8197,7 +8581,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -76.7674,
     embedUrl: 'https://www.youtube.com/embed/XF9fcTdr6MQ?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'necochea-necochea-en-vivo-mir-la-mejor-playa-argen',
@@ -8207,8 +8593,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -38.5545,
     lng: -58.7393,
     embedUrl: 'https://www.youtube.com/embed/I2VvSE0fyz4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'buenos-aires-pinamar-playa-en-vivo-cmaras-pinamar',
@@ -8218,8 +8606,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -37.1084,
     lng: -56.8619,
     embedUrl: 'https://www.youtube.com/embed/q3aVOvYAfdg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'patagonia-argentina-live-247-villa-gesell-pinamar-',
@@ -8230,7 +8620,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -65.1,
     embedUrl: 'https://www.youtube.com/embed/2u4GnVNtlsY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla-',
@@ -8241,7 +8631,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0667,
     embedUrl: 'https://www.youtube.com/embed/j453BqwLHcc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla--2',
@@ -8252,7 +8642,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0657,
     embedUrl: 'https://www.youtube.com/embed/mgL0PIzOmqI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla--3',
@@ -8263,7 +8653,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0677,
     embedUrl: 'https://www.youtube.com/embed/dKsjYPieSC4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla--4',
@@ -8274,7 +8664,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0687,
     embedUrl: 'https://www.youtube.com/embed/ghKdm20aMTE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla--5',
@@ -8285,7 +8675,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0677,
     embedUrl: 'https://www.youtube.com/embed/aYD4sT1kB5g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peninsula-valdes-transmisin-en-vivo-desde-la-isla--6',
@@ -8296,7 +8686,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.0657,
     embedUrl: 'https://www.youtube.com/embed/gpFM6j3IhPg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lo-barnechea-valle-nevado-ski-resort-live-piscina',
@@ -8307,7 +8697,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2517,
     embedUrl: 'https://www.youtube.com/embed/uyt8JsITTac?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lo-barnechea-valle-nevado-ski-resort-la-gndola',
@@ -8318,7 +8708,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2517,
     embedUrl: 'https://www.youtube.com/embed/O_7aVzUBvUY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lo-barnechea-valle-nevado-ski-resort-live-hotel-pu',
@@ -8329,7 +8719,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.2517,
     embedUrl: 'https://www.youtube.com/embed/tmS73xQ4zVc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peggys-cove-peggys-cove-lighthouse-nova-scotia',
@@ -8340,7 +8730,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -63.9179,
     embedUrl: 'https://www.youtube.com/embed/SFoS6nBL138?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'baccaro-baccaro-point-lighthouse-nova-scotia',
@@ -8351,7 +8741,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -65.47,
     embedUrl: 'https://www.youtube.com/embed/5mYXkctDMsA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'the-hawk-the-hawk-nova-scotia',
@@ -8362,7 +8752,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -65.63,
     embedUrl: 'https://www.youtube.com/embed/Qz-jJ4mxMtU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'burntcoat-head-burntcoat-head-nova-scotia',
@@ -8373,7 +8763,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -63.804,
     embedUrl: 'https://www.youtube.com/embed/RdQ-e-iCkVI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lockeport-lockeport-crescent-beach-centre-nova-sco',
@@ -8383,8 +8773,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.6997,
     lng: -65.1117,
     embedUrl: 'https://www.youtube.com/embed/Pwt0tZlt9eE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'whistler-whistler-olympic-plaza-2',
@@ -8395,7 +8787,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.9574,
     embedUrl: 'https://www.youtube.com/embed/GgdmR8zb0M8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-orleans-earthcam-live-new-orleans-street-view',
@@ -8406,7 +8798,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -90.0644,
     embedUrl: 'https://www.youtube.com/embed/Ksrleaxxxhw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'new-orleans-earthcam-live-new-orleans-balcony-view',
@@ -8417,7 +8811,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -90.0644,
     embedUrl: 'https://www.youtube.com/embed/rnNPl27Arpk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balneario-camboriu-balnerio-cambori-sc-ao-vivo',
@@ -8428,7 +8822,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.6349,
     embedUrl: 'https://www.youtube.com/embed/9hRqd24IIaw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cabo-frio-live-2-cmera-com-movimento-praia-do-fort',
@@ -8438,8 +8832,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -22.8797,
     lng: -42.0186,
     embedUrl: 'https://www.youtube.com/embed/e7PdAFTY0fM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'natal-balnerio-cambori-ao-vivo',
@@ -8450,7 +8846,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -35.211,
     embedUrl: 'https://www.youtube.com/embed/j4Wne61IJ3I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-balnerio-cambori-ao-vivo-avenida-atl',
@@ -8461,7 +8857,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.5482,
     embedUrl: 'https://www.youtube.com/embed/PcbhQFs529w?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buzios-balnerio-cambori-sc-ao-vivo-av-atlntica-prx',
@@ -8472,7 +8868,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -41.881,
     embedUrl: 'https://www.youtube.com/embed/B_tl3zH0j2o?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'praia-grande-praia-de-ponta-negra-ao-vivo-natal-rn',
@@ -8482,8 +8878,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -24.0058,
     lng: -46.4028,
     embedUrl: 'https://www.youtube.com/embed/AN3MIroAVuU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'guaruja-balnerio-cambori-sc-ao-vivo',
@@ -8494,7 +8892,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -46.2564,
     embedUrl: 'https://www.youtube.com/embed/eib_UO1e8ww?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'maresias-guaruj-ao-vivo-hotel-palmar-enseada-posto',
@@ -8505,7 +8903,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -45.5622,
     embedUrl: 'https://www.youtube.com/embed/v5Y6WsD577M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ubatuba-praia-grande-sp-ao-vivo-boqueiro-previso-d',
@@ -8515,8 +8913,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -23.4336,
     lng: -45.0838,
     embedUrl: 'https://www.youtube.com/embed/bsTPIFHHwlo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'ilhabela-ao-vivo-arraial-do-cabo-rj',
@@ -8527,7 +8927,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -45.3581,
     embedUrl: 'https://www.youtube.com/embed/Jpd7w36gBC0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bertioga-altas-ondas-per-plataforma-de-pesca-de-mo',
@@ -8538,7 +8938,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -46.1389,
     embedUrl: 'https://www.youtube.com/embed/UxGYfuizp-E?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'peruibe-balnerio-cambori-sc-ao-vivo',
@@ -8549,7 +8949,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -47.0021,
     embedUrl: 'https://www.youtube.com/embed/Vsm5qzRxj04?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-live-sfo-plane-spotting',
@@ -8560,7 +8960,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.379,
     embedUrl: 'https://www.youtube.com/embed/ThpFcm9vD7c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-ksfo-airport-live-247-tracking-atc-a',
@@ -8570,8 +8970,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.6213,
     lng: -122.379,
     embedUrl: 'https://www.youtube.com/embed/wRP2BtRYZ28?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-live-penguin-cam-biologist-view-cali',
@@ -8582,7 +8982,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.4661,
     embedUrl: 'https://www.youtube.com/embed/ai3mi7HQcms?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'san-francisco-live-penguin-cam-underwater-view-cal',
@@ -8593,7 +8993,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.4661,
     embedUrl: 'https://www.youtube.com/embed/oP6V5VrOrWc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boston-boston-weather-cam-massachusetts-live-cam-c',
@@ -8604,7 +9004,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.0589,
     embedUrl: 'https://www.youtube.com/embed/FcpsdpQ0xKg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'jackson-jackson-hole-town-square-live-webcam-strea',
@@ -8615,7 +9017,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.7624,
     embedUrl: 'https://www.youtube.com/embed/1EiC9bvVGnk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jackson-live-from-jacksons-famous-town-square-dont',
@@ -8626,7 +9028,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.7624,
     embedUrl: 'https://www.youtube.com/embed/DoUOrTJbIu4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jackson-jackson-town-square-live-ptz-webcam-seejha',
@@ -8637,7 +9039,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.7624,
     embedUrl: 'https://www.youtube.com/embed/B_waF26In9o?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'las-vegas-las-vegas-airport-live-247-with-views-of',
@@ -8647,8 +9049,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 36.084,
     lng: -115.1537,
     embedUrl: 'https://www.youtube.com/embed/_-Qg5jD-PfA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'pensacola-sria-west-cam',
@@ -8659,7 +9061,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.1383,
     embedUrl: 'https://www.youtube.com/embed/HKIc6CYlMzI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'pensacola-sria-south-cam',
@@ -8670,7 +9073,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.1383,
     embedUrl: 'https://www.youtube.com/embed/2X0GdFzfv3A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'pensacola-sria-east-cam',
@@ -8681,7 +9085,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -87.1383,
     embedUrl: 'https://www.youtube.com/embed/890WmHX7h6U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'clearwater-jimmys-crows-nest-sunset-view',
@@ -8692,7 +9097,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.825553,
     embedUrl: 'https://www.youtube.com/embed/-73LpcdSuSw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'clearwater-the-edge-hotel-clearwater-beach',
@@ -8702,8 +9107,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 27.98005,
     lng: -82.827245,
     embedUrl: 'https://www.youtube.com/embed/V7sUbjD_e3I?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'clearwater-jimmys-crows-nest-sunrise',
@@ -8714,7 +9121,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.828602,
     embedUrl: 'https://www.youtube.com/embed/6YNbfQllAKk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'clearwater-jimmys-fish-house-sunset',
@@ -8725,7 +9132,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.828602,
     embedUrl: 'https://www.youtube.com/embed/emDyfhDmfUk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'clearwater-jimmys-fish-house-deck',
@@ -8736,7 +9143,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.827245,
     embedUrl: 'https://www.youtube.com/embed/9c1oLjB3wIs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'clearwater-shephards-beach-resort-live-stream',
@@ -8747,7 +9154,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -82.825553,
     embedUrl: 'https://www.youtube.com/embed/ZL1H-ISxKMA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fort-lauderdale-live-fort-lauderdale-beach-bar-cam',
@@ -8757,8 +9164,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.1186,
     lng: -80.1029,
     embedUrl: 'https://www.youtube.com/embed/YWs0HMRVCBY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'fort-lauderdale-watch-live-from-fort-lauderdales-e',
@@ -8769,7 +9178,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.1029,
     embedUrl: 'https://www.youtube.com/embed/wVNt3l657X0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fort-lauderdale-live-from-elbo-room-patio-fort-lau',
@@ -8780,7 +9189,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.1029,
     embedUrl: 'https://www.youtube.com/embed/bM0GplM_vPY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hollywood-live-beach-cam-hollywood-beach-broadwalk',
@@ -8790,8 +9199,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.0112,
     lng: -80.1495,
     embedUrl: 'https://www.youtube.com/embed/cmkAbDUEoyA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'hollywood-hollywood-beach-theatre',
@@ -8801,8 +9212,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.0112,
     lng: -80.1495,
     embedUrl: 'https://www.youtube.com/embed/LTqT7IRLO0c?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'berlin-live-dsseldorf-rheinkniebrcke-pegeluhr-rhin',
@@ -8813,7 +9226,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.3777,
     embedUrl: 'https://www.youtube.com/embed/L0o8ACCxH_A?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'amsterdam-duluth-canal-cam',
@@ -8824,7 +9239,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9041,
     embedUrl: 'https://www.youtube.com/embed/HPS48TMmNag?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'playa-del-ingls-wwwhaffnereu-gran-canaria-playa-de',
@@ -8834,8 +9251,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 27.7507,
     lng: -15.5723,
     embedUrl: 'https://www.youtube.com/embed/jNCiy9kujro?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'dublin-earthcam-live-dublin-ireland',
@@ -8846,7 +9265,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.2639,
     embedUrl: 'https://www.youtube.com/embed/u4UZ4UvZXrg?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-istanbulgalata-kz-kulesi-live-stream-ista-2',
@@ -8857,7 +9276,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 29.0083,
     embedUrl: 'https://www.youtube.com/embed/L_lz09YdBqI?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-arise-hotel-golden-horn-2',
@@ -8868,7 +9287,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 28.9562,
     embedUrl: 'https://www.youtube.com/embed/pWdJOo-6IuM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'istanbul-ntv-canl-yayn-full-hd-izle',
@@ -8879,7 +9298,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 28.9784,
     embedUrl: 'https://www.youtube.com/embed/pqq5c6k70kk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ankara-cnn-trk-canl-yayn-canl-tv-izle-haber',
@@ -8890,7 +9309,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 32.8597,
     embedUrl: 'https://www.youtube.com/embed/6N8_r2uwLEc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-medview-dn-skrapan-stockholm',
@@ -8901,7 +9320,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.0686,
     embedUrl: 'https://www.youtube.com/embed/agY6ZaM1G_o?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lourdes-lourdes-le-sanctuaire-notre-dame-de-lourde',
@@ -8912,7 +9331,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -0.0559,
     embedUrl: 'https://www.youtube.com/embed/ESNa1vdHcYY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'funchal-live-planespotting-madeira-airport-by-cass',
@@ -8922,8 +9341,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 32.6942,
     lng: -16.7745,
     embedUrl: 'https://www.youtube.com/embed/KKyell1r4xQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'venice-venice-italy-live-webcam',
@@ -8934,7 +9353,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.334,
     embedUrl: 'https://www.youtube.com/embed/JqUREqYduHw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-venice-italy-live-webcam-the-view-on-canal-',
@@ -8945,7 +9364,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.335,
     embedUrl: 'https://www.youtube.com/embed/GgLRWs8OyMs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-venezia-italia-live-webcam',
@@ -8956,7 +9377,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.3432,
     embedUrl: 'https://www.youtube.com/embed/WjOGhNDX51M?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'venice-venice-live-cam-2',
@@ -8967,7 +9388,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.341,
     embedUrl: 'https://www.youtube.com/embed/rVyP35EHCzY?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'athens-live-ano-liosia-athens-greece',
@@ -8978,7 +9399,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 23.7015,
     embedUrl: 'https://www.youtube.com/embed/yTEFISws27Y?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'athens-live-window-in-athens-4k-uhd',
@@ -8989,7 +9410,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 23.765,
     embedUrl: 'https://www.youtube.com/embed/cRTbQePGwPk?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'athens',
@@ -9000,7 +9421,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 23.7882,
     embedUrl: 'https://www.youtube.com/embed/tuPEEiVkLgU?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'corfu-arillas-corfu-live-webcam-corfu-greece',
@@ -9011,7 +9432,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 19.6612,
     embedUrl: 'https://www.youtube.com/embed/CcnlJI_UXyM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'kos-municipality-of-kos-island-harbour',
@@ -9022,7 +9443,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 27.091,
     embedUrl: 'https://www.youtube.com/embed/OJbDXnoQzjA?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-bol-na-brau-luka-i-riva-u-arobnom-time-lap',
@@ -9033,7 +9454,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16,
     embedUrl: 'https://www.youtube.com/embed/v7RIxT4mtHw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-zlatni-rat-bol-bra-arobna-no-i-bonaca-u-ti',
@@ -9044,7 +9465,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.001683,
     embedUrl: 'https://www.youtube.com/embed/8vC5GKNzexM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-borba-s-valovima-trajekt-uplovljava-u-tkon',
@@ -9055,7 +9476,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.000831,
     embedUrl: 'https://www.youtube.com/embed/wkO-_0OhbFM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-zimska-razglednica-koprivnice-novi-live-ca',
@@ -9066,7 +9487,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.999715,
     embedUrl: 'https://www.youtube.com/embed/xZc_ZFy4KOg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-tuepi-bura-27052020',
@@ -9077,7 +9498,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.99869,
     embedUrl: 'https://www.youtube.com/embed/n5tBV2Vt7WQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-slano-dubrovako-primorje-snijeg-1112017',
@@ -9088,7 +9509,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.998081,
     embedUrl: 'https://www.youtube.com/embed/2Ooc_zUMkW4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-advent-zadar-11122020',
@@ -9099,7 +9520,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.998081,
     embedUrl: 'https://www.youtube.com/embed/HLZ39mGq2fc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-novi-vinodolski',
@@ -9110,7 +9531,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.99869,
     embedUrl: 'https://www.youtube.com/embed/QIHg4S9iTm8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-rijeka-webcam-live',
@@ -9121,7 +9542,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.999715,
     embedUrl: 'https://www.youtube.com/embed/SOrEBtHuSxU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'croatia-krk-riva-i-marina-sunce-i-kia-18082020',
@@ -9131,8 +9552,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.498181,
     lng: 16.000831,
     embedUrl: 'https://www.youtube.com/embed/adWtErhP0CU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'croatia-trajekt-cres-merag-valbiska-krk-live-strea',
@@ -9143,7 +9564,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.001683,
     embedUrl: 'https://www.youtube.com/embed/8WNV-Cwim2s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-live-cam-i-gwanghwamun-boulevard-seoul-kore',
@@ -9154,7 +9575,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.978,
     embedUrl: 'https://www.youtube.com/embed/dRXKooC6tTM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-live-cam-i-seoul-seokchon-lake-seoulkorea',
@@ -9165,7 +9586,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.978,
     embedUrl: 'https://www.youtube.com/embed/f-77scE-PVw?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-4k-seoul-ddp-live-camera-citypop',
@@ -9176,7 +9597,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.976,
     embedUrl: 'https://www.youtube.com/embed/VzWr8L7SeD8?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-4k-live-cam-hongdae-seoul-korea',
@@ -9187,7 +9608,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.978,
     embedUrl: 'https://www.youtube.com/embed/ZiF2R9qQPnI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'monterey-live-open-sea-cam-monterey-bay-aquarium',
@@ -9198,7 +9619,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -121.902,
     embedUrl: 'https://www.youtube.com/embed/KVaosHNjAfE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mittelrhein-villa-gast-ferienwohnungen-in-kamp-bor',
@@ -9209,7 +9630,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 7.5906,
     embedUrl: 'https://www.youtube.com/embed/Q3j8qrU15JQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-cabview-stockholm-to-oslo',
@@ -9220,7 +9641,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.7522,
     embedUrl: 'https://www.youtube.com/embed/XSvC3lyApog?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'frankfurt-cabview-ice-frankfurt-airport-cologne-ma',
@@ -9230,8 +9651,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.1109,
     lng: 8.6821,
     embedUrl: 'https://www.youtube.com/embed/iwzoYXIQUfo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'cowlitz-cowlitz-river-live-cam-2',
@@ -9242,7 +9663,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.8976,
     embedUrl: 'https://www.youtube.com/embed/4a35Qsbf3ow?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'teton-valley-grand-tetons-in-teton-valley-idaho-se',
@@ -9253,7 +9676,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -111.1028,
     embedUrl: 'https://www.youtube.com/embed/8DdnDOGWAOQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'washington-dc-white-house-live-cam-washington-dc-u',
@@ -9264,7 +9687,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -77.0365,
     embedUrl: 'https://www.youtube.com/embed/CTOLpSIiTzA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-duluth-aerial-lift-bridge-cam',
@@ -9275,7 +9698,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.0996,
     embedUrl: 'https://www.youtube.com/embed/BzwWjdZXymc?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -15,
   },
   {
     id: 'duluth-pier-b-cam',
@@ -9286,7 +9711,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.0996,
     embedUrl: 'https://www.youtube.com/embed/vCBaTTC7FHs?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-duluth-harborcam',
@@ -9297,7 +9722,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.1016,
     embedUrl: 'https://www.youtube.com/embed/05WivhRmKq4?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-duluth-hillside-cam',
@@ -9308,7 +9733,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.0996,
     embedUrl: 'https://www.youtube.com/embed/DzJb26edNjs?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'fujiyoshida-live',
@@ -9319,7 +9744,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 138.7274,
     embedUrl: 'https://www.youtube.com/embed/KiMeFMZ-_ms?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-new-york-harbor-ship-cam-waterfront-museu',
@@ -9330,7 +9755,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0445,
     embedUrl: 'https://www.youtube.com/embed/UoUKX8PtuDg?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'anchorage-lake-hood-seaplane-base-anchorage-alaska',
@@ -9341,7 +9766,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -149.9683,
     embedUrl: 'https://www.youtube.com/embed/AQItp_RvMpM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vatican-city-vatican-media-live',
@@ -9352,7 +9777,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.4534,
     embedUrl: 'https://www.youtube.com/embed/Q38Ta6_SY40?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-le-sacr-coeur-de-montmartre-paris-tv-live-we',
@@ -9363,7 +9788,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.3431,
     embedUrl: 'https://www.youtube.com/embed/PnjX0u6B1yA?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-live-cam-eiffel-tower',
@@ -9374,7 +9799,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.2945,
     embedUrl: 'https://www.youtube.com/embed/4iUmg6eN3Yk?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'winter-garden-live-winter-garden-florida-webcam',
@@ -9385,7 +9812,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.5862,
     embedUrl: 'https://www.youtube.com/embed/67zqaidhq-U?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'philipsburg-live-cam-boardwalk-great-bay-beach-phi',
@@ -9395,8 +9822,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 18.0237,
     lng: -63.0458,
     embedUrl: 'https://www.youtube.com/embed/N5Mb2bjYwZo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'funchal-live-funchal-city-webcam-from-so-roque-mad',
@@ -9407,7 +9836,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -16.9241,
     embedUrl: 'https://www.youtube.com/embed/kLsk1pZ5YeY?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-earthcam-live-summit-one-vanderbilt-new-y',
@@ -9418,7 +9847,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9785,
     embedUrl: 'https://www.youtube.com/embed/TsgoxkRFit0?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-bryant-park-webcam',
@@ -9429,7 +9858,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9832,
     embedUrl: 'https://www.youtube.com/embed/g4CmWNxgsic?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'st-augustine-st-george-street-north-st-augustine-l',
@@ -9440,7 +9869,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.3113,
     embedUrl: 'https://www.youtube.com/embed/R8LU4PCZdgo?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'pattaya-pattaya-beach-road-thailand-lcs-16-mar-26',
@@ -9451,7 +9881,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.8825,
     embedUrl: 'https://www.youtube.com/embed/piKtIXKNfB4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'jerusalem-the-western-wall',
@@ -9462,7 +9894,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2345,
     embedUrl: 'https://www.youtube.com/embed/QFK1-XaBnlg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-earthcam-live-western-wall-jerusalem-isr',
@@ -9473,7 +9905,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.2345,
     embedUrl: 'https://www.youtube.com/embed/77akujLn4k8?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'global-live-earthquake-tracker-worldwide-247-news',
@@ -9484,7 +9916,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.4194,
     embedUrl: 'https://www.youtube.com/embed/ndXCZm2b40M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-live-cam-sanxiantai-2160p',
@@ -9495,7 +9927,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41328912330798,
     embedUrl: 'https://www.youtube.com/embed/dQ7Sd6PGLdA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bali-bali-weather-today-live-webcam',
@@ -9506,7 +9938,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 115.09568613772812,
     embedUrl: 'https://www.youtube.com/embed/L1duJDAqbJY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-kaohsiung-shoushan-lovers-viewing-platf',
@@ -9517,7 +9949,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41528942054629,
     embedUrl: 'https://www.youtube.com/embed/C03Itx8iSC0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-kaohsiung-cijin-qijin-beach-4k-live-cam',
@@ -9527,8 +9959,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.9079774939806,
     lng: 116.40220260470763,
     embedUrl: 'https://www.youtube.com/embed/ka7FV0sCvxQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'beijing-4k-kaohsiung-lianchihtan-lotus-pond-4k-liv',
@@ -9539,7 +9973,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40663951027075,
     embedUrl: 'https://www.youtube.com/embed/BnPoNatG-HE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-live-camera-stream',
@@ -9550,7 +9984,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.51009517959896,
     embedUrl: 'https://www.youtube.com/embed/FyFAqPHBKiQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-6',
@@ -9561,7 +9995,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6571434779522,
     embedUrl: 'https://www.youtube.com/embed/UcSxu7zegTo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-webcam-aroport-ajaccio-napolon-bonaparte',
@@ -9571,8 +10005,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 48.85416836231035,
     lng: 2.358453119478454,
     embedUrl: 'https://www.youtube.com/embed/G1SBh8081ws?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'tokyo-chubu-centrair-international-airpor',
@@ -9583,7 +10017,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6462857397191,
     embedUrl: 'https://www.youtube.com/embed/N1_qXtzWA30?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hong-kong-live-hong-kongs-only-247-live-camera-fro',
@@ -9594,7 +10028,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 114.15997840834751,
     embedUrl: 'https://www.youtube.com/embed/l2a745-uykU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hong-kong-live233',
@@ -9605,7 +10039,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 114.16957542227821,
     embedUrl: 'https://www.youtube.com/embed/4Gh5cxOTOHs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-ncc',
@@ -9616,7 +10050,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65183166557512,
     embedUrl: 'https://www.youtube.com/embed/zNahac5x0Tw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-live-streaming-from-shonai-airport',
@@ -9626,8 +10060,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 35.669782870263646,
     lng: 139.64614492434362,
     embedUrl: 'https://www.youtube.com/embed/MN-NOYwPUDk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'taipei-0836-26503',
@@ -9638,7 +10072,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.56614137605999,
     embedUrl: 'https://www.youtube.com/embed/HwUzhqm259g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei',
@@ -9649,7 +10083,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.56819775613931,
     embedUrl: 'https://www.youtube.com/embed/o1k0wrJPuqA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-live-planespotting-frankfurt-runway-25c-ope',
@@ -9660,7 +10094,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.413997318881174,
     embedUrl: 'https://www.youtube.com/embed/RnaVCtGayhU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-07r-ostwind-frankfurt-airport-live-frankfur',
@@ -9670,8 +10104,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.5296453388601,
     lng: 13.402202599834956,
     embedUrl: 'https://www.youtube.com/embed/fHgbX19yY1Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'berlin-re',
@@ -9682,7 +10116,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.403669962586477,
     embedUrl: 'https://www.youtube.com/embed/97RfczNmY7s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-live-toronto-pearson-airport-plane-spottin',
@@ -9692,8 +10126,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.65882691796681,
     lng: -79.39002835207876,
     embedUrl: 'https://www.youtube.com/embed/VLl_8QaGg2U?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-planespotting-schiphol-amsterdam-ai',
@@ -9704,7 +10138,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.898982900694959,
     embedUrl: 'https://www.youtube.com/embed/7alA3JN-yQE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'brisbane-total-lunar-eclipse-brisbane-airport-w-ja',
@@ -9714,8 +10148,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -27.46775523331122,
     lng: 153.02286856370142,
     embedUrl: 'https://www.youtube.com/embed/5QsL8bdo2vg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'dublin-090326-live-plane-spotting-action-at-dublin',
@@ -9725,8 +10159,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 53.34026257969661,
     lng: -6.256786084960576,
     embedUrl: 'https://www.youtube.com/embed/yuMjRAlU6b4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'prague-live-planespotting-at-prague-vaclav-havel-a',
@@ -9736,8 +10170,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.06818704544247,
     lng: 14.447539359488854,
     embedUrl: 'https://www.youtube.com/embed/pKbUd8n5p5Y?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'rio-de-janeiro-live-aeroporto-santos-dumont-rio-de',
@@ -9748,7 +10182,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.17960083600785,
     embedUrl: 'https://www.youtube.com/embed/HkyEdaNzlfs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-street-view-live-camera-2-solim',
@@ -9759,7 +10193,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.99201183591566,
     embedUrl: 'https://www.youtube.com/embed/DSRm7V_bsm8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'manila-philippines-live-camera-jet-wash-area-and-i',
@@ -9770,7 +10206,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.99161173610436,
     embedUrl: 'https://www.youtube.com/embed/QQBVEf6B2r0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-traffic-camera-leon-garcia',
@@ -9780,8 +10216,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 14.605290511013377,
     lng: 120.99008456600505,
     embedUrl: 'https://www.youtube.com/embed/vUVIvbkidFs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'lisbon-live-funchal-marina-webcam-1-madeira-island',
@@ -9791,8 +10229,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 38.72217539409817,
     lng: -9.134314998810522,
     embedUrl: 'https://www.youtube.com/embed/-p1Xnt9n0yg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'lisbon-ritz-madeira-live-webcam-avenida-arriaga-fu',
@@ -9803,7 +10241,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.146092510159429,
     embedUrl: 'https://www.youtube.com/embed/lUCDJ6cilzk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-hotel-east-west-basel',
@@ -9814,7 +10252,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.542329876469692,
     embedUrl: 'https://www.youtube.com/embed/jtLh8BdmHUU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'manila-philippines-live-camera-vulcanizing-tyre-re',
@@ -9825,7 +10264,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97642240170859,
     embedUrl: 'https://www.youtube.com/embed/1rWzQP_ZYxc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-tyre-repair-shop-sa',
@@ -9836,7 +10275,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98268518362364,
     embedUrl: 'https://www.youtube.com/embed/crkbTPqIuz4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-live-camera-stream-2',
@@ -9847,7 +10286,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50273171649411,
     embedUrl: 'https://www.youtube.com/embed/VR-x3HdhKLQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-live-webcam-from-puerto-del-carmen-beach',
@@ -9857,8 +10296,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.30076527079403,
     lng: -16.622072153059342,
     embedUrl: 'https://www.youtube.com/embed/AfD16cDYBbE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'melbourne-melbourne-live-from-platinum-apartments',
@@ -9869,7 +10310,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 144.96969182331569,
     embedUrl: 'https://www.youtube.com/embed/l_8DrACHpwY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-taipei-live-cam',
@@ -9880,7 +10321,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.57403772809646,
     embedUrl: 'https://www.youtube.com/embed/z_fY1pj1VBw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-live-cam-taiwan-taipei-city',
@@ -9891,7 +10332,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.5608995991102,
     embedUrl: 'https://www.youtube.com/embed/c-fsELxk5aw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-famous-the-best-pancake-man',
@@ -9902,7 +10343,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50271908275694,
     embedUrl: 'https://www.youtube.com/embed/e9T0L_POAOk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-cam-sorobon-luxury-beach-resort-dun',
@@ -9912,8 +10353,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.37583086396479,
     lng: 4.910118430437553,
     embedUrl: 'https://www.youtube.com/embed/EcumU_n6fTY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'berlin-cuxhaven-wettercam-kamp-hotels-cuxhaven-duh',
@@ -9924,7 +10367,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.39822387477177,
     embedUrl: 'https://www.youtube.com/embed/SZp1Q6LX7Wk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-live-webcam-from-tenerife-airport-storm-t',
@@ -9934,8 +10377,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.298299357154367,
     lng: -16.627260213427057,
     embedUrl: 'https://www.youtube.com/embed/yrx0fvj-4QI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'lisbon-live-247-lisbon-airport-25032026-livestream',
@@ -9945,8 +10388,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 38.715614383999686,
     lng: -9.135133570876098,
     embedUrl: 'https://www.youtube.com/embed/4dTIhYrW71M?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'lisbon-live-at-madeira-airport-lpma-landings-and-t',
@@ -9956,8 +10399,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 38.716486662833034,
     lng: -9.133162969146003,
     embedUrl: 'https://www.youtube.com/embed/ZDoly6hB0NE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'lisbon-live-madeira-windy-airport-show-lpma',
@@ -9967,8 +10410,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 38.729381027344985,
     lng: -9.135901420047857,
     embedUrl: 'https://www.youtube.com/embed/Yi5VvxIzaao?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'lisbon-madeira-airport-live-action-lpma-spotter-25',
@@ -9978,8 +10421,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 38.731284497805476,
     lng: -9.142842110825327,
     embedUrl: 'https://www.youtube.com/embed/s_-u0Alg8KU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'tenerife-live-webcam-from-fuerteventura-airport-ca',
@@ -9989,8 +10432,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.289681948225006,
     lng: -16.623486174809166,
     embedUrl: 'https://www.youtube.com/embed/JMFFi4Ma5M4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live',
@@ -10001,7 +10444,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.66027439979726,
     embedUrl: 'https://www.youtube.com/embed/uPXvT-eE0To?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-2-2',
@@ -10012,7 +10455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65353706114306,
     embedUrl: 'https://www.youtube.com/embed/xi47AfuVnWA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rio-de-janeiro-live-aeroporto-internacional-do-gal',
@@ -10023,7 +10466,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.168587929119155,
     embedUrl: 'https://www.youtube.com/embed/cAwItRgPk1Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-kagoshima-airport-by-kyt-live',
@@ -10033,8 +10476,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 35.670213712474,
     lng: 139.6478913116846,
     embedUrl: 'https://www.youtube.com/embed/pJC3BThpdio?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'rio-de-janeiro-sbkp-live-aeroporto-internacional-d',
@@ -10044,8 +10487,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -22.91597255557272,
     lng: -43.17517634182779,
     embedUrl: 'https://www.youtube.com/embed/6Nt52pNAUhg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'tokyo-shinshu-matsumoto-airport-runway-live-stream',
@@ -10055,8 +10498,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 35.68071078372045,
     lng: 139.64252799010475,
     embedUrl: 'https://www.youtube.com/embed/WAzZUkjgT4k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'windhoek-swakopmund-airport-fysm-towards-runway-02',
@@ -10066,8 +10509,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -22.560184207410472,
     lng: 17.073623947533356,
     embedUrl: 'https://www.youtube.com/embed/rcT8qzT5sbM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'bangkok-live-camera-stream-3',
@@ -10078,7 +10521,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.49891467487387,
     embedUrl: 'https://www.youtube.com/embed/w47yvCftkWQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-daxi-old-street-live-cam',
@@ -10089,7 +10532,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41350002086688,
     embedUrl: 'https://www.youtube.com/embed/XUWjAsajKXg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'beijing-daxi-bridge-live-cam',
@@ -10099,8 +10544,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.896514838091996,
     lng: 116.4093125540164,
     embedUrl: 'https://www.youtube.com/embed/oFJ6gCaBb_Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'venice-live-247-rolling-cam-venice',
@@ -10111,7 +10558,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.316479482606226,
     embedUrl: 'https://www.youtube.com/embed/ph1vpnYIxJk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-amsterdam-live-247-singel-hotel-amsterda',
@@ -10122,7 +10569,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.904990514565886,
     embedUrl: 'https://www.youtube.com/embed/ZnOoxCd7BGU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bucharest-castelul-bran-draculas-castle-casa-din-b',
@@ -10133,7 +10580,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.106891942372247,
     embedUrl: 'https://www.youtube.com/embed/8hgQsI1CfsY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcamnl-dezaanseschansnl-live-ultrahd-p',
@@ -10144,7 +10591,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.907447426554538,
     embedUrl: 'https://www.youtube.com/embed/o9MIV7sep5k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-luzern-live-lucerne-live',
@@ -10155,7 +10602,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.535488326490276,
     embedUrl: 'https://www.youtube.com/embed/QIt1FaDMnQc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-whistler-olympic-plaza',
@@ -10165,8 +10612,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.65739345934857,
     lng: -79.39123944203273,
     embedUrl: 'https://www.youtube.com/embed/IEhDUXECe_k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'brussels-webcam-oostduinkerke-bad',
@@ -10177,7 +10624,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.354026537025741,
     embedUrl: 'https://www.youtube.com/embed/wqWoNyCAvss?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'brussels-webcam-sint-idesbald',
@@ -10188,7 +10635,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.359635790038366,
     embedUrl: 'https://www.youtube.com/embed/ORfGhqVNNVc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'brussels-webcam-duinenhuis',
@@ -10199,7 +10646,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.356430141951886,
     embedUrl: 'https://www.youtube.com/embed/UjntYig_VrQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-cam-eagle-beach-costa-linda-beach-r',
@@ -10209,8 +10656,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.37690879445234,
     lng: 4.913993018501384,
     embedUrl: 'https://www.youtube.com/embed/_ZXMjk5K0_s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'taipei-4ktaiwan-taoyuan-international-airport-tper',
@@ -10220,8 +10669,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.04211026475118,
     lng: 121.56915673705872,
     embedUrl: 'https://www.youtube.com/embed/68GFgzQxrXs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'taipei-2ktaiwan-taoyuan-international-airport-tper',
@@ -10231,8 +10680,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.039520105823865,
     lng: 121.56576014772948,
     embedUrl: 'https://www.youtube.com/embed/0D6QgDOdI6c?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'taipei-tpe-4k',
@@ -10243,7 +10692,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.57524251962462,
     embedUrl: 'https://www.youtube.com/embed/wWEnxWA7nnY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-tpe-4k-2',
@@ -10254,7 +10703,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.56838281694996,
     embedUrl: 'https://www.youtube.com/embed/y3_x8el5ZJY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'wellington-camview-wellington-airport-webcam-live-',
@@ -10264,8 +10713,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -41.295874380272586,
     lng: 174.77874575027826,
     embedUrl: 'https://www.youtube.com/embed/v7xySvhug0Y?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'montreal-live-montreal-trudeau-airport-cyul-247-we',
@@ -10275,8 +10724,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.505173086402635,
     lng: -73.56372762272296,
     embedUrl: 'https://www.youtube.com/embed/lXmX5FdMbz0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'oslo-skarsvg-live',
@@ -10287,7 +10736,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.747460448139597,
     embedUrl: 'https://www.youtube.com/embed/iMqrD-HBDGo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-nkym-helsingist',
@@ -10298,7 +10747,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93032575155918,
     embedUrl: 'https://www.youtube.com/embed/LMZQ7eFhm58?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-livestream-gemeente-elburg',
@@ -10309,7 +10758,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.905144841674624,
     embedUrl: 'https://www.youtube.com/embed/vB5GFU9Wfnk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-live-ptz-st-petersburg-dobrolyubo',
@@ -10320,7 +10769,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.33863586615103,
     embedUrl: 'https://www.youtube.com/embed/TIBrNSoMKfg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-4k-video-live-camera-saint-peters',
@@ -10330,8 +10779,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 59.9395792800942,
     lng: 30.339777693443907,
     embedUrl: 'https://www.youtube.com/embed/CjtIYbmVfck?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'saint-petersburg-live-camera-ptz-amazing-st-peters',
@@ -10342,7 +10793,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.332972031620415,
     embedUrl: 'https://www.youtube.com/embed/dhVzWNos718?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-live-camera-russia-saint-petersbu',
@@ -10353,7 +10804,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.325434561064,
     embedUrl: 'https://www.youtube.com/embed/VhGdKCs5KIA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-live',
@@ -10364,7 +10815,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.33822243395623,
     embedUrl: 'https://www.youtube.com/embed/kjem5-kanuc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-live-st-petersburg-russia-nevskiy',
@@ -10374,8 +10825,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 59.9324497767377,
     lng: 30.332877373009964,
     embedUrl: 'https://www.youtube.com/embed/eBsRKdlctxc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'saint-petersburg-live-st-petersburg-russia-command',
@@ -10386,7 +10837,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 30.33600946572728,
     embedUrl: 'https://www.youtube.com/embed/WExdugl3Zi4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-grote-markt-groningen-the-ne',
@@ -10397,7 +10848,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.8965119509696695,
     embedUrl: 'https://www.youtube.com/embed/ZjfFGJlkjmE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcam-sittard-limburg-camera-2-axis-q63',
@@ -10408,7 +10859,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.902356734148831,
     embedUrl: 'https://www.youtube.com/embed/KTZf6GVWwBE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-pirbadet-trondheim',
@@ -10419,7 +10870,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.753964035285405,
     embedUrl: 'https://www.youtube.com/embed/cQUw882F6aE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-live-rio-boat-247-live',
@@ -10430,7 +10881,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.432249087898455,
     embedUrl: 'https://www.youtube.com/embed/VnsRQvfv_g4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-port-de-qubec',
@@ -10440,8 +10891,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.65122670307152,
     lng: -79.38737073945681,
     embedUrl: 'https://www.youtube.com/embed/I-7mv4-BJ7M?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'toronto-diffusion-en-direct-de-saguenay',
@@ -10452,7 +10903,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.38323514209377,
     embedUrl: 'https://www.youtube.com/embed/ZGk4fkhBTvU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-live-webcam-from-fuerteventura-airport',
@@ -10462,8 +10913,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.284061028131337,
     lng: -16.62246425374274,
     embedUrl: 'https://www.youtube.com/embed/BRXBUNi2J78?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'athens-patitiri-port-alonissos-live-portcam',
@@ -10473,8 +10924,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.97398898912805,
     lng: 23.73669620546676,
     embedUrl: 'https://www.youtube.com/embed/PLFQoOXjjmI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'athens-patitiri-port-outside-dock-lithos-bar',
@@ -10484,8 +10935,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.97894617374181,
     lng: 23.717912813882585,
     embedUrl: 'https://www.youtube.com/embed/PKo3CUUHXNE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'sydney-port-of-newcastle-live-harbour-cam',
@@ -10495,8 +10946,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.87450076834811,
     lng: 151.20751881379456,
     embedUrl: 'https://www.youtube.com/embed/tbQPUvUifEc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'berlin-livestream-kieler-hafen',
@@ -10507,7 +10958,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.406522655259371,
     embedUrl: 'https://www.youtube.com/embed/Z0vgzGyldcQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-dublin-port-poolbeg-lighthouse-view-live-sh',
@@ -10517,8 +10968,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 53.342398158568145,
     lng: -6.2592115256087775,
     embedUrl: 'https://www.youtube.com/embed/jy3fkOBIolk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'berlin-ostseebowling-warnemnde-livestream-kreuzfah',
@@ -10529,7 +10982,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.414717814420571,
     embedUrl: 'https://www.youtube.com/embed/dAHJivjQHlU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-stream-nieuwe-waterweg',
@@ -10540,7 +10993,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.897962819473069,
     embedUrl: 'https://www.youtube.com/embed/_KVWehizoNU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-stream-amazonehaven-west',
@@ -10551,7 +11004,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.907715349226054,
     embedUrl: 'https://www.youtube.com/embed/M09NaBVPjAI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'amsterdam-live-stream-ponton-prinses-margriethaven',
@@ -10562,7 +11016,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.908108728794724,
     embedUrl: 'https://www.youtube.com/embed/dQJp5_o_p3U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'singapore-singapore-port-4k-livestream-disney-crui',
@@ -10572,8 +11026,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 1.3423968480182438,
     lng: 103.81192587039645,
     embedUrl: 'https://www.youtube.com/embed/KUtH-ztAWcA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-taitung-duoliang-station-live-camera',
@@ -10584,7 +11038,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40031351864619,
     embedUrl: 'https://www.youtube.com/embed/UCG1aXVO8H8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warsaw-urzd-transportu-kolejowego-transmisja-widok',
@@ -10595,7 +11049,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 21.020589032516927,
     embedUrl: 'https://www.youtube.com/embed/ymjl0_nRXME?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-bahnhof-freilassing',
@@ -10606,7 +11060,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.40326902692573,
     embedUrl: 'https://www.youtube.com/embed/IdZm9MStEv4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-4k-live-trainspotting-on-prague-main-statio',
@@ -10617,7 +11071,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.429567310145286,
     embedUrl: 'https://www.youtube.com/embed/tmlE1ct0cYk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-livestream-railcam-netherlands',
@@ -10628,7 +11082,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.913304505769924,
     embedUrl: 'https://www.youtube.com/embed/TcJvbahPke8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-live-trains-at-ousteck-ndra-247-live',
@@ -10639,7 +11093,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.441870044511678,
     embedUrl: 'https://www.youtube.com/embed/oFLvtPKBXEs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-amsterdam-de-vijf-bruggen-camera-1',
@@ -10650,7 +11104,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.912867406014533,
     embedUrl: 'https://www.youtube.com/embed/2tgHBRFHMm8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-station-amsterdam-centraal-de-vijf-brugg',
@@ -10661,7 +11115,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.909223854047393,
     embedUrl: 'https://www.youtube.com/embed/FHJH2yMe6Hw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-strukton-pacs-c11-camera-1',
@@ -10672,7 +11126,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.912387512377873,
     embedUrl: 'https://www.youtube.com/embed/tmMXU7B79Tg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-strukton-pacs-c11-camera-2',
@@ -10683,7 +11137,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.897175432199465,
     embedUrl: 'https://www.youtube.com/embed/OisSiJ36SLI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-railcam-twello',
@@ -10694,7 +11148,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.894868445688707,
     embedUrl: 'https://www.youtube.com/embed/Wbq7-Tj85m4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-revelstoke-british-columbia-canada-live-tr',
@@ -10705,7 +11159,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.39080063681432,
     embedUrl: 'https://www.youtube.com/embed/fIMbMz2P7Bs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-live-lun-u-rakovnka-train-station-247-live',
@@ -10716,7 +11170,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.439354241109172,
     embedUrl: 'https://www.youtube.com/embed/EHgE96uSTdk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-live-cam-alishan4k-fenqihu',
@@ -10727,7 +11181,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.4114458975772,
     embedUrl: 'https://www.youtube.com/embed/B6eki-0-w0g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-livestream-heerhugowaard-bouw-spooronder',
@@ -10738,7 +11192,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.8957944856710265,
     embedUrl: 'https://www.youtube.com/embed/SfvOavZTU3Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-spoorzicht-met-mo-railcam-amersfoort',
@@ -10749,7 +11203,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9047650592498595,
     embedUrl: 'https://www.youtube.com/embed/JRqpdVvZNUI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-panda-247-hd-live-at-chengdu-panda-base',
@@ -10760,7 +11214,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40630875514192,
     embedUrl: 'https://www.youtube.com/embed/gnEuhfyZPPQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-panda-247-hd-live-at-ccrcgp',
@@ -10771,7 +11225,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40596224406688,
     embedUrl: 'https://www.youtube.com/embed/9LvjI3NelAU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-zchrann-stanice-ivoich-makov-krmtko',
@@ -10782,7 +11236,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.4335839131012,
     embedUrl: 'https://www.youtube.com/embed/F0fsV1GGZ3M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-zchrann-stanice-ivoich-makov-hnzdn-p',
@@ -10793,7 +11247,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.433836496841831,
     embedUrl: 'https://www.youtube.com/embed/S46DdA8Mc4I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-zchrann-stanice-ivoich-makov-jezrko',
@@ -10804,7 +11258,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.429019217414474,
     embedUrl: 'https://www.youtube.com/embed/SLYQKV_vgDw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-livestream-von-hemme-milch-uckermark',
@@ -10815,7 +11269,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.414179894483455,
     embedUrl: 'https://www.youtube.com/embed/Cc-4Rq0NF_Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-4k',
@@ -10826,7 +11280,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.907395256203453,
     embedUrl: 'https://www.youtube.com/embed/6nQgzl3jXY4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-harbour-village-bonaire-coral-reef',
@@ -10836,8 +11290,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.369922792491145,
     lng: 4.911643975925316,
     embedUrl: 'https://www.youtube.com/embed/W8mRMe2CDDc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'vienna-atlantiktunnel-1',
@@ -10847,8 +11301,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 48.211192257731035,
     lng: 16.377611738398777,
     embedUrl: 'https://www.youtube.com/embed/T_RtokRj1Ck?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
   },
   {
     id: 'vienna-atlantiktunnel-2',
@@ -10858,8 +11312,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 48.20251572707117,
     lng: 16.364082384198312,
     embedUrl: 'https://www.youtube.com/embed/TxPKYmdZroE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
   },
   {
     id: 'vienna-haus-des-meeres-aqua-terra-zoo-haifischbeck',
@@ -10870,7 +11324,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.370486121339802,
     embedUrl: 'https://www.youtube.com/embed/V_lYXRlyjVM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-thredbo-alpine-coaster-live',
@@ -10880,8 +11334,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.86076116826319,
     lng: 151.2145283679099,
     embedUrl: 'https://www.youtube.com/embed/o8PceocW2xQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'ljubljana-kranjska-gora-town-center-live-webcam',
@@ -10892,7 +11348,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.510893202750246,
     embedUrl: 'https://www.youtube.com/embed/-Huu1iNTpfk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ljubljana-ski-arena-kranjska-gora',
@@ -10903,7 +11359,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.507284726386949,
     embedUrl: 'https://www.youtube.com/embed/8AMmuoTUNRw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'ljubljana-planica-live-webcam',
@@ -10914,7 +11370,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.513616998054575,
     embedUrl: 'https://www.youtube.com/embed/SIihW0koOZw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-south-point-levi-levi-ski-resort-finland',
@@ -10925,7 +11381,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93427929393242,
     embedUrl: 'https://www.youtube.com/embed/89vRm9bb9_c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'helsinki-levi-glacier-express-lift-and-slopes-levi',
@@ -10936,7 +11393,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.932945797937123,
     embedUrl: 'https://www.youtube.com/embed/Wr9b5aYA4mI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-leevilandia-area-levi-ski-resort-finland',
@@ -10947,7 +11404,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.939303503910402,
     embedUrl: 'https://www.youtube.com/embed/mupuSRKkL_M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-kylnkym-village-view-levi-ski-resort-finl',
@@ -10958,7 +11415,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.945814973556477,
     embedUrl: 'https://www.youtube.com/embed/X7tdyNFpp1g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-nkym-levin-huipulta-view-from-top-of-levi',
@@ -10969,7 +11426,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.938238347353437,
     embedUrl: 'https://www.youtube.com/embed/eXDCi75TjM8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-levin-seikkailupuisto-adventure-park-levi',
@@ -10980,7 +11437,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.94177057697448,
     embedUrl: 'https://www.youtube.com/embed/ucfAqkh8c50?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-live-camera-elves-village-levi-resort-lap',
@@ -10991,7 +11448,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93157789774241,
     embedUrl: 'https://www.youtube.com/embed/EmoTKMm5sDI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-place-centrale-verbier',
@@ -11002,7 +11459,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.538655220478168,
     embedUrl: 'https://www.youtube.com/embed/C3qbo3AhrgA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-grimentz-live-cam-hd',
@@ -11013,7 +11470,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.538051332030912,
     embedUrl: 'https://www.youtube.com/embed/iCxfe27HpaY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-jostedal-hotell-livestream',
@@ -11024,7 +11481,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.75710912293609,
     embedUrl: 'https://www.youtube.com/embed/PLtFwHS9bfk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-hafjell-live',
@@ -11035,7 +11492,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.760700161553952,
     embedUrl: 'https://www.youtube.com/embed/BADzwd9b0RU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-webcam-saint-vran-centre-village',
@@ -11046,7 +11503,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.344372405667927,
     embedUrl: 'https://www.youtube.com/embed/hoN9su9T-G4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-ern-hora-zinneckerovy-boudy-live-webcam-4k',
@@ -11057,7 +11514,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.443462973913237,
     embedUrl: 'https://www.youtube.com/embed/3veZKm44_sU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-ern-hora-ld-hofmanky-express-live-webcam',
@@ -11068,7 +11525,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.433809160614718,
     embedUrl: 'https://www.youtube.com/embed/vsXevNpyb5c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vienna-hastings-pier-webcam-and-english-channel-li',
@@ -11078,8 +11535,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 48.20954165520525,
     lng: 16.377554888603832,
     embedUrl: 'https://www.youtube.com/embed/tyhP78T3lDY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'bucharest-ka-ma-sport-poiana-brasov-live-webcam-pa',
@@ -11089,8 +11546,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 44.42760416839073,
     lng: 26.104233462032106,
     embedUrl: 'https://www.youtube.com/embed/QhxtsNPDrtw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'bucharest-partia-bradul-poiana-brasov',
@@ -11101,7 +11558,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.10737947976509,
     embedUrl: 'https://www.youtube.com/embed/RU95EHwyVNE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bucharest-julius-rmer-htte',
@@ -11112,7 +11569,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.09521831782995,
     embedUrl: 'https://www.youtube.com/embed/RjH0oyqIjJQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bucharest-teleferic-grand-hotel-live',
@@ -11123,7 +11580,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.100758691432052,
     embedUrl: 'https://www.youtube.com/embed/kEIFOfvNF4I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bucharest-camere-live-poiana-braov-postvarul-sud-a',
@@ -11134,7 +11591,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.108218802784403,
     embedUrl: 'https://www.youtube.com/embed/iZw0NV86IB8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'rome-webcam-live-val-di-luce-abetone-pt-impianti-d',
@@ -11145,7 +11603,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.503762922158781,
     embedUrl: 'https://www.youtube.com/embed/cqiHNzgIBbg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-webcam-live-val-di-luce-abetone-pt-piazza-cen',
@@ -11155,8 +11613,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.90134141420423,
     lng: 12.499437631712349,
     embedUrl: 'https://www.youtube.com/embed/8ySM57gHETU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-webcam-live-abetone-pt-piazza-europa',
@@ -11166,8 +11624,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.90639889125122,
     lng: 12.49839521438657,
     embedUrl: 'https://www.youtube.com/embed/fjnJ2fzlh4g?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-piano-battaglia-live-webcam-madonie',
@@ -11178,7 +11636,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.497456824906392,
     embedUrl: 'https://www.youtube.com/embed/Qqt0vGW7gY8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-webcam-riao-y-pico-yordas-len-wwwembutido',
@@ -11189,7 +11647,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -16.624693547516937,
     embedUrl: 'https://www.youtube.com/embed/qik4TvEr9ZU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-4k-live-camera-niseko-hanazono-resort',
@@ -11200,7 +11658,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6486053304853,
     embedUrl: 'https://www.youtube.com/embed/1ksmiy6EsDo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-4k-niseko-annupuri-international-ski-area-li',
@@ -11211,7 +11669,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.64457065142298,
     embedUrl: 'https://www.youtube.com/embed/F5aeMEfP0PY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-niseko-tokyu-grand-hirafu-live-camera-ace-hi',
@@ -11222,7 +11680,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65650633318936,
     embedUrl: 'https://www.youtube.com/embed/c_Mftnh0iJI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-niseko-village-niseko-gondola',
@@ -11233,7 +11691,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6500693519905,
     embedUrl: 'https://www.youtube.com/embed/w1BuUCVYdsQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-ylls-ski-resort-gondolin-ala-asema',
@@ -11244,7 +11702,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.948114086400043,
     embedUrl: 'https://www.youtube.com/embed/PeLTbbI2i6U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-ylls-ski-resort-tuolihissi-live',
@@ -11255,7 +11713,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93267618298022,
     embedUrl: 'https://www.youtube.com/embed/FY4GLYiZieE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-rhine-falls-live-rheinfall-live-webcam',
@@ -11266,7 +11724,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.54872370347803,
     embedUrl: 'https://www.youtube.com/embed/UCgLr29bxO8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-jrpeland-norway-4k',
@@ -11277,7 +11735,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.756711413010015,
     embedUrl: 'https://www.youtube.com/embed/OHqNIOuH9c0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dubrovnik-webcam-bol-live-monitored-with-livestrea',
@@ -11288,7 +11746,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.10162452450729,
     embedUrl: 'https://www.youtube.com/embed/ONOqkFoxqa4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcam-kolk-sneeknl',
@@ -11299,7 +11757,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.901531757626142,
     embedUrl: 'https://www.youtube.com/embed/G4922_4kYsg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'oslo-nordkapp-havfiske-live',
@@ -11310,7 +11768,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 10.744945549116482,
     embedUrl: 'https://www.youtube.com/embed/iXLaEkB3J0I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'auckland-castlepoint-lighthouse-live-stream',
@@ -11320,8 +11778,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -36.84122072254142,
     lng: 174.76360544875075,
     embedUrl: 'https://www.youtube.com/embed/t0nYqriNf-w?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'beijing-live-kenting-nanwan-bay-live-camera-taiwan',
@@ -11332,7 +11790,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.3994921634069,
     embedUrl: 'https://www.youtube.com/embed/jUnFuJSj0OU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-live-kenting-wanlitong-live-camera-taiwan',
@@ -11343,7 +11801,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41311659133854,
     embedUrl: 'https://www.youtube.com/embed/Ycb9CcZkjD0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4kyongan-fishing-harbor-live-cam',
@@ -11353,8 +11811,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 39.910216208891,
     lng: 116.41605670899756,
     embedUrl: 'https://www.youtube.com/embed/tD_a03trUvE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'beijing-live-cam-vase-rockxiao-liuqiu',
@@ -11365,7 +11823,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41119939876543,
     embedUrl: 'https://www.youtube.com/embed/zbcuIwEdgWg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-live-cam',
@@ -11376,7 +11834,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40489075134154,
     embedUrl: 'https://www.youtube.com/embed/a8nJQr5rBGs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-jhongjiao-bay-live-camera',
@@ -11387,7 +11845,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.41370146361474,
     embedUrl: 'https://www.youtube.com/embed/iJphhU-iaTA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-taitung-shanyuan-bay-live-camera',
@@ -11398,7 +11856,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.39762278478857,
     embedUrl: 'https://www.youtube.com/embed/VqS_Y8ZCj6M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vancouver-deep-cove-vancouver-canada-webcam',
@@ -11409,7 +11867,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -123.11935820499453,
     embedUrl: 'https://www.youtube.com/embed/T0oUufecXeE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-tropical-murphys-irish-pub',
@@ -11420,7 +11878,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50628532250298,
     embedUrl: 'https://www.youtube.com/embed/OBJ5Q0lWbqk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-live-camera-stream-4',
@@ -11431,7 +11889,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50419720231831,
     embedUrl: 'https://www.youtube.com/embed/6MMXJrzT5c0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-webcam-lanzarote-live-stream-from-the-bea',
@@ -11441,8 +11899,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.284778928113806,
     lng: -16.629932002728477,
     embedUrl: 'https://www.youtube.com/embed/NJPewajVRBk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'bangkok-hush-bar',
@@ -11453,7 +11913,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50537999092484,
     embedUrl: 'https://www.youtube.com/embed/DwKCna1mumk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-inside-lyns-sisig-b',
@@ -11464,7 +11924,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98286959969298,
     embedUrl: 'https://www.youtube.com/embed/rts_4SHhFJs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-restaurant-servery-',
@@ -11475,7 +11935,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97958880828223,
     embedUrl: 'https://www.youtube.com/embed/oixHsQ8Q9mI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-outside-lyns-sisig-',
@@ -11486,7 +11946,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97600406988303,
     embedUrl: 'https://www.youtube.com/embed/fmlkL1TpbI0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-teddy-weed-beach-club-lamai-koh-samui-thai',
@@ -11496,8 +11956,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 13.75662798767462,
     lng: 100.49436062913583,
     embedUrl: 'https://www.youtube.com/embed/DoPsVBjJYw4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'bangkok-banyan-food-market-koh-samui-thailand-live',
@@ -11507,8 +11969,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 13.761296145023302,
     lng: 100.50495429500691,
     embedUrl: 'https://www.youtube.com/embed/cnJri1YXJUI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'manila-philippines-live-camera-bankerohan-lyns-foo',
@@ -11519,7 +11983,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.99111293974092,
     embedUrl: 'https://www.youtube.com/embed/pvasCb_myrk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-bankerohan-lyns-foo-2',
@@ -11530,7 +11994,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.9864948411029,
     embedUrl: 'https://www.youtube.com/embed/qltYs-o6kl4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcamnl-wwwbadhuyscom-live-hd-camera-vl',
@@ -11541,7 +12005,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.91363009199985,
     embedUrl: 'https://www.youtube.com/embed/34tOlrk7z4M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-renesse-aan-zee-wapen-van-renesse',
@@ -11552,7 +12016,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.910546083487538,
     embedUrl: 'https://www.youtube.com/embed/4hMWuRwe5gE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'riga-jras-rgi-haliaeetus-albicilla-durb',
@@ -11563,7 +12027,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.111118468122346,
     embedUrl: 'https://www.youtube.com/embed/3wSd4iXrCw0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'auckland-northern-royal-albatross-cam-nz-dept-of-c',
@@ -11574,7 +12038,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 174.75901702407702,
     embedUrl: 'https://www.youtube.com/embed/Mm_zVDDUeNA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-live-4k-60fps-bird-feeder-cam-hedgehog-bird',
@@ -11585,7 +12049,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.414346476537059,
     embedUrl: 'https://www.youtube.com/embed/4kRzwJXaeIM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-live-bird-bath-cam-day-hedgehog-feeder-cam-',
@@ -11596,7 +12060,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.402411598671321,
     embedUrl: 'https://www.youtube.com/embed/t20fPDAZxCA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'prague-iv-z-apho-komna-firmy-kara-v-bohuslavicch-u',
@@ -11607,7 +12071,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 14.443118375162431,
     embedUrl: 'https://www.youtube.com/embed/ABJTbc2tOc4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warsaw-live-bird-feeder-cam-forest-nook-poland-zyw',
@@ -11618,7 +12082,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 21.012213901829224,
     embedUrl: 'https://www.youtube.com/embed/RxLoZ-D4_dY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-live-hummingbird-feeder-cam-bird-feeder-sim',
@@ -11629,7 +12093,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.412452467527933,
     embedUrl: 'https://www.youtube.com/embed/pXe8MpU7uzk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sydney-sea-eaglecam4-live-stream',
@@ -11640,7 +12104,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 151.21826497517694,
     embedUrl: 'https://www.youtube.com/embed/Ls32TD2czcI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'riyadh-makkah-live',
@@ -11651,7 +12115,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 46.66809875614954,
     embedUrl: 'https://www.youtube.com/embed/yqXOpwx9h-Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lisbon-santurio-de-ftima',
@@ -11662,7 +12126,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.135225895244686,
     embedUrl: 'https://www.youtube.com/embed/Ymu8JZMWqD0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lisbon-capelinha-das-aparies',
@@ -11673,7 +12137,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.133509563572144,
     embedUrl: 'https://www.youtube.com/embed/GENH9mWlvb4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warsaw-ewtn-polska-adoracja-z-niepokalanowa',
@@ -11684,7 +12148,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 21.008962762146165,
     embedUrl: 'https://www.youtube.com/embed/Orc7lHFSqNY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-7',
@@ -11695,7 +12159,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65796241048736,
     embedUrl: 'https://www.youtube.com/embed/gnGwhHccEB0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-cam-yokohama-japan',
@@ -11706,7 +12170,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6437174313991,
     embedUrl: 'https://www.youtube.com/embed/bZ1sln1VoaA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-camera-livecamera',
@@ -11717,7 +12181,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65437176826103,
     embedUrl: 'https://www.youtube.com/embed/IhX7B0aQCk4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-8',
@@ -11728,7 +12192,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65726370565451,
     embedUrl: 'https://www.youtube.com/embed/Xn7YQxxC5R0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-9',
@@ -11739,7 +12203,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6593376442176,
     embedUrl: 'https://www.youtube.com/embed/jX46WOhWAFo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-8131okichan-okinawa-kokusai-street-live-came',
@@ -11750,7 +12214,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.6484987655751,
     embedUrl: 'https://www.youtube.com/embed/qRo8qAHjExE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'tokyo-10',
@@ -11761,7 +12227,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.65032494755738,
     embedUrl: 'https://www.youtube.com/embed/BhtSrV3lnaw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-lake-tazawa-live-camera-semboku-city-akita-j',
@@ -11772,7 +12238,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.64905362329978,
     embedUrl: 'https://www.youtube.com/embed/57sY6dlQVTs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-camping-janse-zoutelande-live-webcam',
@@ -11783,7 +12249,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.909788659899526,
     embedUrl: 'https://www.youtube.com/embed/9yYWoKgoscM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcam-marktstraat-sneeknl',
@@ -11794,7 +12260,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.8956930966778875,
     embedUrl: 'https://www.youtube.com/embed/PkjAdPYJZ9I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-oldehove-webcam',
@@ -11805,7 +12271,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.910734421231425,
     embedUrl: 'https://www.youtube.com/embed/SjY9wJXBQP8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcam-wilhelminaplein-leeuwarden-webcam',
@@ -11816,7 +12282,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.905712782311746,
     embedUrl: 'https://www.youtube.com/embed/cm9kLpJfydM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-livestream-webcam-lemmer',
@@ -11827,7 +12293,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.894208155637169,
     embedUrl: 'https://www.youtube.com/embed/m56IrgAhzuI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-boulevard-de-favauge-zandvoo',
@@ -11838,7 +12304,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.894674006080947,
     embedUrl: 'https://www.youtube.com/embed/2X7C758XeWQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-backup-live-stream',
@@ -11849,7 +12315,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9138140016905725,
     embedUrl: 'https://www.youtube.com/embed/xGzG6bLWrg4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-of-the-skyline-of-zandvoort-',
@@ -11859,8 +12325,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.360064667610445,
     lng: 4.8980560862023,
     embedUrl: 'https://www.youtube.com/embed/KiPmDwgTAu0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'amsterdam-live-webcam-texel-paal-9',
@@ -11871,7 +12339,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.909287537724145,
     embedUrl: 'https://www.youtube.com/embed/YIefLlsHUVQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-texel-panorama-de-koog',
@@ -11881,8 +12349,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.35807284571295,
     lng: 4.90475968445335,
     embedUrl: 'https://www.youtube.com/embed/Di4WiSTX1oY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'amsterdam-live-webcam-texel-haven-oudeschild',
@@ -11893,7 +12363,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.903482764370821,
     embedUrl: 'https://www.youtube.com/embed/NYGtSbvt6d0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-den-helder-teso-boot-texel-h',
@@ -11904,7 +12374,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.900056981803322,
     embedUrl: 'https://www.youtube.com/embed/U8m7Fr6xMqM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-texel-paal-17-de-koog',
@@ -11915,7 +12385,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.911168138068594,
     embedUrl: 'https://www.youtube.com/embed/Hq2Qbcuph4w?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-texel-kaap-noord-paal-33',
@@ -11926,7 +12396,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.894964014925931,
     embedUrl: 'https://www.youtube.com/embed/Gq8dWezdEX8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-texel-vuurtoren',
@@ -11937,7 +12407,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.907574284951632,
     embedUrl: 'https://www.youtube.com/embed/DpjUDR32_AY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-webcam-pompplein-egmond-aan-zee',
@@ -11948,7 +12418,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9062799176125775,
     embedUrl: 'https://www.youtube.com/embed/TTWBm-m8Qhc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-vanaf-de-nederlandse-kust-egmond-aa',
@@ -11959,7 +12429,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.894926258148923,
     embedUrl: 'https://www.youtube.com/embed/vooUmYcsXIM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-egmond-aan-zee-boulevard-en-beach-c',
@@ -11969,8 +12439,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.37165959577417,
     lng: 4.907646738810861,
     embedUrl: 'https://www.youtube.com/embed/mI1Os7TFdGc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'amsterdam-webcamnl',
@@ -11981,7 +12453,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.897273284922111,
     embedUrl: 'https://www.youtube.com/embed/43qH0tDA6lM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-webcamnl-charmenl-live-ultrahd-camera-4k',
@@ -11992,7 +12464,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.9074771306287985,
     embedUrl: 'https://www.youtube.com/embed/pOL0u6K4wLI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-live-stream-stationsweg-groninger-museum',
@@ -12002,8 +12474,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.372877189418645,
     lng: 4.911280868865546,
     embedUrl: 'https://www.youtube.com/embed/15AYqnLbmDM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'amsterdam-livestream-spoorzone-groningen-prorail-l',
@@ -12014,7 +12486,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 4.910825895453216,
     embedUrl: 'https://www.youtube.com/embed/Z4HhtYkbfSk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-einbecker-morgenpost-webcam',
@@ -12025,7 +12497,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.414043306880739,
     embedUrl: 'https://www.youtube.com/embed/71Yer9LojaU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-livestream-webcam-aus-neustadt-in-holstein-',
@@ -12036,7 +12508,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.40138374084342,
     embedUrl: 'https://www.youtube.com/embed/I2Z2AJrR1xo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-webcam-baden-baden',
@@ -12047,7 +12519,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 13.407899753179601,
     embedUrl: 'https://www.youtube.com/embed/JBKs0WYlbHQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'berlin-marktplatz-cam',
@@ -12057,8 +12529,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.51187783460531,
     lng: 13.413265875176052,
     embedUrl: 'https://www.youtube.com/embed/RR_bvFBoM2s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'berlin-fhr-webcam-sandwall',
@@ -12068,8 +12540,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.522670460528836,
     lng: 13.40735613306794,
     embedUrl: 'https://www.youtube.com/embed/4HFvQIxR7dk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'berlin-live-train-traffic-in-hannover-germany',
@@ -12079,8 +12551,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 52.514067614153866,
     lng: 13.398433552997124,
     embedUrl: 'https://www.youtube.com/embed/D8OX81BWMpU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'toronto-beachview-cam-crystal-cove-beach-resort-to',
@@ -12090,8 +12564,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.64619157911595,
     lng: -79.39144556563234,
     embedUrl: 'https://www.youtube.com/embed/AovvFApVnKc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'toronto-live-from-white-rock-bc',
@@ -12102,7 +12578,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.37708469120868,
     embedUrl: 'https://www.youtube.com/embed/BnkxqF6Y0bs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-pier-camera',
@@ -12112,8 +12588,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.65891609190467,
     lng: -79.38931140677083,
     embedUrl: 'https://www.youtube.com/embed/4MK3E9EWDSY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'toronto-live-from-white-rock-bc-2',
@@ -12124,7 +12600,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.38055965412303,
     embedUrl: 'https://www.youtube.com/embed/LENLyDDEtUM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-ottawa-ontario-canada-live-camera',
@@ -12135,7 +12611,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.38007536226849,
     embedUrl: 'https://www.youtube.com/embed/lLYosWv_AwQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-live-o-train-ottawa-bayview-station-line-1',
@@ -12146,7 +12622,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.39120769634044,
     embedUrl: 'https://www.youtube.com/embed/tZ9ReMo0Cc4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-live-o-train-ottawa-cyrville-station-line-',
@@ -12157,7 +12633,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.37755245575374,
     embedUrl: 'https://www.youtube.com/embed/_0BHjcVP_ts?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-port-colborne-ontario-canada-welland-canal',
@@ -12167,8 +12643,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.662568093762744,
     lng: -79.38448740474443,
     embedUrl: 'https://www.youtube.com/embed/yF7XdpkL34w?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'toronto-river-view-city-hall-brockville',
@@ -12179,7 +12657,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.3840406520451,
     embedUrl: 'https://www.youtube.com/embed/k36fwVlkzBM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'toronto-block-house-island',
@@ -12190,7 +12670,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.39232312473503,
     embedUrl: 'https://www.youtube.com/embed/wJTwuekiCr0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'toronto-northern-lights-powered-by-exploreorg',
@@ -12201,7 +12681,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -79.3918617857392,
     embedUrl: 'https://www.youtube.com/embed/a0i1Kg6fROg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-trento-live-cam-centro-citt-piazza-duomo',
@@ -12211,8 +12691,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.90049407234517,
     lng: 12.500743346997725,
     embedUrl: 'https://www.youtube.com/embed/NNsiinhO7YE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-bb-boutique-exclusive-trento',
@@ -12223,7 +12703,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.503442616553766,
     embedUrl: 'https://www.youtube.com/embed/WmCMwRROkCk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-menaggio-piazza-garibaldi',
@@ -12233,8 +12713,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.90805834812536,
     lng: 12.504403628245568,
     embedUrl: 'https://www.youtube.com/embed/B2tGMIVbGyg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-webcam-live-siena-si-piazza-del-campo',
@@ -12244,8 +12724,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.90463299469101,
     lng: 12.499947389175954,
     embedUrl: 'https://www.youtube.com/embed/d6IstgeKiiU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-cefal-live-webcam-panoramica-duomo',
@@ -12256,7 +12736,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.504959098322532,
     embedUrl: 'https://www.youtube.com/embed/Lk8YtiFzpX0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-palermo-live-webcam-panoramica-teatro-massimo',
@@ -12267,7 +12747,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.497744339535664,
     embedUrl: 'https://www.youtube.com/embed/O3-KWNc1VQw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-palermo-live-webcam',
@@ -12278,7 +12758,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.50188355652905,
     embedUrl: 'https://www.youtube.com/embed/8J80F86f114?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-palermo-cattedrale-live-webcam-panoramica-nor',
@@ -12289,7 +12769,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.501707697248017,
     embedUrl: 'https://www.youtube.com/embed/9Q4S_71QFPQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'rome-piazza-armerina-live-webcam-panoramica-duomo-',
@@ -12299,8 +12780,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.89391555185261,
     lng: 12.48767819029538,
     embedUrl: 'https://www.youtube.com/embed/gmvV9D9tOGA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'rome-zafferana-etnea-panoramica-etna-e-chiesa-madr',
@@ -12311,7 +12792,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.500518182547603,
     embedUrl: 'https://www.youtube.com/embed/RqWOFUgqhs4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-gualdo-tadino-live-webcam',
@@ -12322,7 +12803,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.488917075789436,
     embedUrl: 'https://www.youtube.com/embed/Bc_bgHNApZ8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-perugia-live-webcam',
@@ -12333,7 +12814,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.490402281174834,
     embedUrl: 'https://www.youtube.com/embed/8TZ8YRt9nYc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-bevagna-live-webcam',
@@ -12344,7 +12825,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.495737827062847,
     embedUrl: 'https://www.youtube.com/embed/PfBPe5Jfzxo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-orvieto-live-webcam',
@@ -12355,7 +12836,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.50259850403144,
     embedUrl: 'https://www.youtube.com/embed/y7QcpQwxHrA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-montefalco-live-webcam',
@@ -12366,7 +12847,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.48972377802594,
     embedUrl: 'https://www.youtube.com/embed/mBs2lOPdkMo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rome-webcam-piazza-europa',
@@ -12376,8 +12857,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.91034660043677,
     lng: 12.493616953248246,
     embedUrl: 'https://www.youtube.com/embed/iIm5-XIpZ10?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'milan-milan-skyline-live',
@@ -12387,8 +12868,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.459426066094935,
     lng: 9.18181917676518,
     embedUrl: 'https://www.youtube.com/embed/dsoM6TYIkOI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'tenerife-platja-daro-center-live',
@@ -12399,7 +12882,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -16.627576227137556,
     embedUrl: 'https://www.youtube.com/embed/LSPN10FbR3U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tenerife-aguas-de-cdiz-fuente-de-la-plaza-de-sevil',
@@ -12409,8 +12892,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 28.301152934805792,
     lng: -16.627124029875635,
     embedUrl: 'https://www.youtube.com/embed/0dKNLFFcHFU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'tenerife-webcam-plaa-mercadal-ajuntament-de-reus',
@@ -12421,7 +12904,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -16.636950645988012,
     embedUrl: 'https://www.youtube.com/embed/L9HyLjRVN8E?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bangkok-live-camera-stream-5',
@@ -12432,7 +12915,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 100.50496192717655,
     embedUrl: 'https://www.youtube.com/embed/x73IEW0fOo0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-4k-taitung-chihshang-live-camera',
@@ -12443,7 +12926,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.39967859476043,
     embedUrl: 'https://www.youtube.com/embed/6kUEK3LVrro?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'beijing-shihmen-reservoir-live-cam',
@@ -12454,7 +12937,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 116.40308627175368,
     embedUrl: 'https://www.youtube.com/embed/GUCaVR88ZFU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-taipei-live-cam-4k-taipei-dadaocheng-wharf',
@@ -12464,8 +12947,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.038881447587997,
     lng: 121.55802185962928,
     embedUrl: 'https://www.youtube.com/embed/Ndo_8RuefH4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'taipei-taipei-live-cam-4k-jiantanshan-weifeng-obse',
@@ -12476,7 +12959,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.56551675939087,
     embedUrl: 'https://www.youtube.com/embed/34h_Cy_n0Ok?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'taipei-taipei-live-cam-4k-taipei-dajia-riverside-p',
@@ -12487,7 +12970,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 121.5686183312133,
     embedUrl: 'https://www.youtube.com/embed/fP4ecxfsJos?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'paris-webcam-en-direct-du-port-de-vannes',
@@ -12497,8 +12982,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 48.862370098512194,
     lng: 2.3476525617242463,
     embedUrl: 'https://www.youtube.com/embed/dXckWr5B8f8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'paris-webcam-brest-htel-de-ville',
@@ -12509,7 +12994,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.343414288520946,
     embedUrl: 'https://www.youtube.com/embed/SZmbvyfbPbg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'paris-webcam-noirmoutier-la-chaloupe',
@@ -12520,7 +13005,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 2.357087211023124,
     embedUrl: 'https://www.youtube.com/embed/Pj84-0bRazs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'brisbane-brisbane-weather-live',
@@ -12531,7 +13016,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 153.01853562925024,
     embedUrl: 'https://www.youtube.com/embed/7xTmCQf4NIo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'perth-st-john-of-god-mt-lawley-perth',
@@ -12542,7 +13027,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 115.8591326648921,
     embedUrl: 'https://www.youtube.com/embed/uakxJIafWcw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-live-webcam-collins-avenue-dublin-ireland',
@@ -12553,7 +13038,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.256435326698924,
     embedUrl: 'https://www.youtube.com/embed/g1r59JJqY60?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-the-brian-boru-pub-live-webcam-glasnevin-du',
@@ -12564,7 +13049,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -6.2660172613447545,
     embedUrl: 'https://www.youtube.com/embed/hG9WevRhP_s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dublin-north-circular-road-live-webcam-facing-nort',
@@ -12574,8 +13059,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 53.34160179223352,
     lng: -6.250522218363544,
     embedUrl: 'https://www.youtube.com/embed/KpZ8vteYNOw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'moscow-247-multichannel-camera-omsk-russia-siberia',
@@ -12586,7 +13072,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 37.6207146059364,
     embedUrl: 'https://www.youtube.com/embed/tw4ssPvMSBE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tel-aviv',
@@ -12597,7 +13083,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 34.78936214181608,
     embedUrl: 'https://www.youtube.com/embed/KhEmwNERRZc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tel-aviv-2',
@@ -12608,7 +13094,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 34.774201696391174,
     embedUrl: 'https://www.youtube.com/embed/iqBmhyivMcA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jerusalem-gethsemane-golden-gate-mount-of-olives-p',
@@ -12618,8 +13104,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 31.76329815263211,
     lng: 35.207965735371666,
     embedUrl: 'https://www.youtube.com/embed/kXOjSHqo8dE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'lisbon-i-love-lx-live-stream',
@@ -12630,7 +13116,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.13669758551381,
     embedUrl: 'https://www.youtube.com/embed/VbDwJxGlZ5k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lisbon-cmara-vts',
@@ -12641,7 +13127,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.14393669750775,
     embedUrl: 'https://www.youtube.com/embed/FE-JfjvXFEU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'athens-athensgate',
@@ -12651,8 +13137,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.98722157146508,
     lng: 23.72114248456384,
     embedUrl: 'https://www.youtube.com/embed/sgXUxHqBLpA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'athens-2',
@@ -12663,7 +13149,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 23.72091131405035,
     embedUrl: 'https://www.youtube.com/embed/09NGLixVinU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-live-camera-arvidsjaur',
@@ -12674,7 +13160,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.063420261065037,
     embedUrl: 'https://www.youtube.com/embed/Dnw_l8f9rUc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-medview-liseberg-gteborg',
@@ -12685,7 +13171,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.066345032339278,
     embedUrl: 'https://www.youtube.com/embed/AqkYfZl4vkA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-medview-varbergs-torg',
@@ -12696,7 +13182,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.0780553605322,
     embedUrl: 'https://www.youtube.com/embed/BMTxMn6IYBQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-medview-brunnsparken-varberg',
@@ -12707,7 +13193,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.076446895421082,
     embedUrl: 'https://www.youtube.com/embed/IEDF51akADs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-medview-ksa-strand-varberg',
@@ -12717,8 +13203,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 59.32536186815215,
     lng: 18.05933736101939,
     embedUrl: 'https://www.youtube.com/embed/p49CeURYHUM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'stockholm-webbkamera-apelviken-varberg',
@@ -12729,7 +13217,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.073524786808303,
     embedUrl: 'https://www.youtube.com/embed/vQ3IGhbe8xk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'stockholm-stora-torg-kristianstad',
@@ -12740,7 +13228,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.06954018174174,
     embedUrl: 'https://www.youtube.com/embed/v7wWIO7brSM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-muikku-live-kuopion-tori',
@@ -12751,7 +13239,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.94530468401405,
     embedUrl: 'https://www.youtube.com/embed/T7RdJdFMz-U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-torilive-ne-turun-kauppatori-liven',
@@ -12762,7 +13250,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93368964121307,
     embedUrl: 'https://www.youtube.com/embed/KLQLeZ9vjt4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-webcam-zrich-hb',
@@ -12773,7 +13261,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.53913174177642,
     embedUrl: 'https://www.youtube.com/embed/ULDI15Svfas?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-pakkahuoneen-ranta-kamera-1',
@@ -12784,7 +13272,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.9433941305146,
     embedUrl: 'https://www.youtube.com/embed/PqJdoFV6kYc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-etelranta-pori-finland',
@@ -12795,7 +13283,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.947842177518535,
     embedUrl: 'https://www.youtube.com/embed/e0tSa2z92mM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-kirjurinluoto-pori-finland',
@@ -12806,7 +13294,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.94476856381011,
     embedUrl: 'https://www.youtube.com/embed/KhyuIt7t5pY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'helsinki-reposaari-pori-finland',
@@ -12817,7 +13305,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.93024421110455,
     embedUrl: 'https://www.youtube.com/embed/3aZNOTRB6lU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'zurich-lausanne-pont-bessires',
@@ -12828,7 +13316,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 8.544058505503632,
     embedUrl: 'https://www.youtube.com/embed/y3sMI1HtZfE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'mexico-city-zcalo-que-pasa-en-la-explanada-envivo',
@@ -12839,7 +13329,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -99.13672624643617,
     embedUrl: 'https://www.youtube.com/embed/VOqBVGy9d1U?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'buenos-aires-cmaras-ushuaia',
@@ -12850,7 +13340,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -58.389189329963244,
     embedUrl: 'https://www.youtube.com/embed/yQnmSF2wYIA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'singapore-singapore-cbd-live-stream-4k-webcam',
@@ -12861,7 +13351,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 103.82578808404834,
     embedUrl: 'https://www.youtube.com/embed/b5P4fI82ZDA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-marias-store-cam6-agdao-davao-city-philippi',
@@ -12872,7 +13362,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97792184308106,
     embedUrl: 'https://www.youtube.com/embed/CmtuOVxcKRo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-boy-sayong-cam-3-inside-agdao-public-market',
@@ -12883,7 +13373,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97524142819579,
     embedUrl: 'https://www.youtube.com/embed/0XoLW23sL3k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-marias-cam-9-rosemary-street-agdao-davao-ci',
@@ -12894,7 +13384,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98490037746929,
     embedUrl: 'https://www.youtube.com/embed/u6J-S5sbYF8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-boy-sayong-cam-3a-inside-agdao-public-marke',
@@ -12905,7 +13395,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98106527119563,
     embedUrl: 'https://www.youtube.com/embed/iMakfrnFtck?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-boy-sayong-cam4-agdao-public-market-davao-c',
@@ -12916,7 +13406,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98306516837856,
     embedUrl: 'https://www.youtube.com/embed/zXehjXzOWxM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-majah-carolina-stre',
@@ -12927,7 +13417,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98667326181193,
     embedUrl: 'https://www.youtube.com/embed/z9O-XeUraDs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'manila-philippines-live-camera-majah-mjmb-store-so',
@@ -12938,7 +13430,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.99292977140675,
     embedUrl: 'https://www.youtube.com/embed/8D94_hdxcac?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'manila-lang-lang-cam-1-agdao-public-market-philipp',
@@ -12949,7 +13443,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97649048788115,
     embedUrl: 'https://www.youtube.com/embed/WVyYq6h32b8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-inside-cynthia-stor',
@@ -12960,7 +13454,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97739068422263,
     embedUrl: 'https://www.youtube.com/embed/d17IkvT4EkQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-outside-cynthia-sto',
@@ -12971,7 +13465,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.979471728458,
     embedUrl: 'https://www.youtube.com/embed/wvaB1q5blpk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-edge-cam5-dfamily-barbershop-agdao-davaocit',
@@ -12982,7 +13476,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.984348373878,
     embedUrl: 'https://www.youtube.com/embed/iFhVikU5H6w?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-billiards-hall-bank',
@@ -12993,7 +13487,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97955676845042,
     embedUrl: 'https://www.youtube.com/embed/B355nVv6Kxc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-live-camera-inside-dodong-barbe',
@@ -13004,7 +13498,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.97763522241375,
     embedUrl: 'https://www.youtube.com/embed/0Kaji9GHl68?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'manila-philippines-street-view-live-camera-outside',
@@ -13015,7 +13509,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 120.98253674129256,
     embedUrl: 'https://www.youtube.com/embed/D0zoMg6-XsQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'seoul-live-kabukicho-live-channel-ii',
@@ -13026,7 +13522,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 127.0276,
     embedUrl: 'https://www.youtube.com/embed/gFRtAAmiFbE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'space-how-github-works',
@@ -13037,7 +13533,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.648,
     embedUrl: 'https://www.youtube.com/embed/w3jLJU7DT5E?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dubai-earth-views-seen-from-the-international-spac',
@@ -13048,7 +13544,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 55.3003,
     embedUrl: 'https://www.youtube.com/embed/DDU-rZs-Ic4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'dhaka-live-24-tokyo-shinjuku-kabukicho-live',
@@ -13059,7 +13555,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 90.3985,
     embedUrl: 'https://www.youtube.com/embed/DjdUEyjx8GM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'colombo-slagsmlsklubben-sponsored-by-destiny',
@@ -13070,7 +13566,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 79.8441,
     embedUrl: 'https://www.youtube.com/embed/Y54ABqSOScQ?autoplay=1&mute=1',
     type: 'port',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bratislava-rick-astley-never-gonna-give-you-up-off',
@@ -13081,7 +13577,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 17.1,
     embedUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-rehoboth-boardwalk-plaza-hotel-cam',
@@ -13091,8 +13587,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70585260545582,
     lng: -74.00093341667593,
     embedUrl: 'https://www.youtube.com/embed/lq15dNFXISw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'pacifica-pacifica-pier-and-beach-pacifica-ca-4k-li',
@@ -13102,8 +13598,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.61153738880469,
     lng: -122.48068886740234,
     embedUrl: 'https://www.youtube.com/embed/Ge6yH7p5vw0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'isle-of-wight-polzeath-beach-community-webcam',
@@ -13113,8 +13611,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.701277346539854,
     lng: -1.3029198082750173,
     embedUrl: 'https://www.youtube.com/embed/diIR3SN_c6k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'pacifica-sharp-park-beach-pacifica-ca-4k-live',
@@ -13124,8 +13624,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.61112434791374,
     lng: -122.48479847424774,
     embedUrl: 'https://www.youtube.com/embed/Xy2sgld2m8E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'pacifica-mori-point-pacifica-ca-4k-live',
@@ -13136,7 +13638,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -122.48080285194496,
     embedUrl: 'https://www.youtube.com/embed/UYu-TjvAVFs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'pacifica-pacifica-pier-closeup-pacifica-ca-4k-live',
@@ -13146,8 +13648,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.604982915369405,
     lng: -122.48744770773445,
     embedUrl: 'https://www.youtube.com/embed/16hHfZzf8-I?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-mke-live-cam-milwaukee-wisconsin-from-mke',
@@ -13158,7 +13660,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99686637932398,
     embedUrl: 'https://www.youtube.com/embed/7fZ2JLtv_c8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-new-york-city-east-34th-street-ferry-east',
@@ -13168,8 +13670,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71918496367469,
     lng: -74.00760973155084,
     embedUrl: 'https://www.youtube.com/embed/1eO17Pp5T3o?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-mke-river-cam-milwaukee-wisconsin-by-mkec',
@@ -13180,7 +13683,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99707465108959,
     embedUrl: 'https://www.youtube.com/embed/JATo2lPJcaE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'fort-myers-beach-sunset-terrace-at-margaritaville-',
@@ -13190,8 +13695,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.446907157987187,
     lng: -81.95831757091926,
     embedUrl: 'https://www.youtube.com/embed/2qd9j2CbIpg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-midway-airport-chicago-il-usa-streamtime-',
@@ -13201,8 +13708,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70483531081082,
     lng: -73.9999749570007,
     embedUrl: 'https://www.youtube.com/embed/67BCsiW-1Io?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'saint-jean-live-webcam-sbh-col-de-la-tourmente',
@@ -13213,7 +13720,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -62.82539813227298,
     embedUrl: 'https://www.youtube.com/embed/15pVqwQb7A0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-manchester-airport-live-plane-spotti',
@@ -13223,8 +13730,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6991874432154,
     lng: -1.313102844885001,
     embedUrl: 'https://www.youtube.com/embed/3q3TkOTNBMw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-heathrow-airport-live-wednesday-25th',
@@ -13234,8 +13741,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.69001215014746,
     lng: -1.3083217545500259,
     embedUrl: 'https://www.youtube.com/embed/T9eRvJ30iIA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-lake-hood-seaplane-base-anchorage-alaska-',
@@ -13246,7 +13753,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00241228698246,
     embedUrl: 'https://www.youtube.com/embed/61pi8UjLOlo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-jean-live-webcam-sbh-plaine-de-st-jean',
@@ -13257,7 +13764,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -62.83316062758789,
     embedUrl: 'https://www.youtube.com/embed/028GpBNaiJs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-birmingham-airport-live-windy-plane-',
@@ -13267,8 +13774,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6993353327933,
     lng: -1.2966596613796308,
     embedUrl: 'https://www.youtube.com/embed/ed8kP23TKPs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'nuuk-nuuk-airport-south',
@@ -13278,8 +13785,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 64.1711575373005,
     lng: -51.741925320270255,
     embedUrl: 'https://www.youtube.com/embed/MApnQlsX5AQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'saint-jean-live-webcam-sbh-baie-de-st-jean',
@@ -13290,7 +13798,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -62.837877059819085,
     embedUrl: 'https://www.youtube.com/embed/hb_nPVSnNqw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'nuuk-nuuk-airport-north',
@@ -13300,8 +13808,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 64.17484678133036,
     lng: -51.74060797611612,
     embedUrl: 'https://www.youtube.com/embed/IZhDwv4dz0g?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'cape-town-muizenberg-beach-live-webcam-reef-south-',
@@ -13311,8 +13820,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -33.918396343961255,
     lng: 18.431640252772215,
     embedUrl: 'https://www.youtube.com/embed/5UqVSW_VASU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'cape-town-table-mountain-cape-town-webcam-live-str',
@@ -13323,7 +13833,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.426352236447716,
     embedUrl: 'https://www.youtube.com/embed/z1PJqpgZccg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'panama-city-beach-palazzo-beach-cam-panama-city-be',
@@ -13333,8 +13843,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.172874851032738,
     lng: -85.8113476309164,
     embedUrl: 'https://www.youtube.com/embed/mj7r-U0kYPI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-jean-live-webcam-sbh-avions-au-dcollage',
@@ -13345,7 +13857,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -62.838449968823355,
     embedUrl: 'https://www.youtube.com/embed/3PQNnVqrJEw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'panama-city-beach-emerald-beach-resort-north-pool-',
@@ -13355,8 +13867,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.174906645426177,
     lng: -85.80901568190323,
     embedUrl: 'https://www.youtube.com/embed/j5lXM8YP-p8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'panama-city-beach-ldv-carillon-beach-live-webcam-p',
@@ -13366,8 +13879,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.17919151388472,
     lng: -85.80126878117306,
     embedUrl: 'https://www.youtube.com/embed/7129nXp5fRo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'panama-city-beach-pineapple-willys-beach-cam',
@@ -13378,7 +13893,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.81341898069518,
     embedUrl: 'https://www.youtube.com/embed/-rSXsJuGQ3M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'panama-city-beach-live',
@@ -13389,7 +13904,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.80705226636913,
     embedUrl: 'https://www.youtube.com/embed/nT8aBQx8OS4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'panama-city-beach-sterling-reef-panama-city-beach-',
@@ -13399,8 +13914,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.170640783192024,
     lng: -85.80843597645,
     embedUrl: 'https://www.youtube.com/embed/Y82E6_IVEdY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'panama-city-beach-majestic-towers',
@@ -13410,8 +13927,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.170054025289627,
     lng: -85.80917641910071,
     embedUrl: 'https://www.youtube.com/embed/XSl1FZzhiQI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-ormond-beach-cam-180',
@@ -13421,8 +13940,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71146984271709,
     lng: -73.99610941059107,
     embedUrl: 'https://www.youtube.com/embed/Kga3og9T_mI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'fort-myers-beach-fins-up-beach-club-at-margaritavi',
@@ -13432,8 +13953,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.46145545936518,
     lng: -81.95903389682555,
     embedUrl: 'https://www.youtube.com/embed/spyttB6YiaU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-hermosa-beach-good-stuff-strand-cam-live-',
@@ -13443,8 +13966,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71724736914006,
     lng: -74.00979988746853,
     embedUrl: 'https://www.youtube.com/embed/LwEhh_66UMY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-the-university-of-tampa-riverfront-webcam',
@@ -13455,7 +13980,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00448179026787,
     embedUrl: 'https://www.youtube.com/embed/QvNWCIOaB4Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'seoul-4k-seoul-korea-247-hangang-live-cam-lofi-rad',
@@ -13466,7 +13993,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.97166407601932,
     embedUrl: 'https://www.youtube.com/embed/-JhoMGoAfFc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-live-cam-i-lotte-world-seoulkorea-i',
@@ -13477,7 +14004,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.98475951524394,
     embedUrl: 'https://www.youtube.com/embed/JIQPCfb9Qs0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-live-cam-i-gyeongbokgung-seoul-korea-i',
@@ -13488,7 +14015,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 126.97833961987557,
     embedUrl: 'https://www.youtube.com/embed/VBlN0MGqyz4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'seoul-live-cam-i-seoul-station-plaza-seoulkorea-i',
@@ -13498,8 +14025,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 37.57021659966358,
     lng: 126.98740402382212,
     embedUrl: 'https://www.youtube.com/embed/DSgn-lTHJzM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'new-york-acqualina-live-beach-cam',
@@ -13509,8 +14036,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71611049252325,
     lng: -74.00992782273839,
     embedUrl: 'https://www.youtube.com/embed/sI7oCUe1dmo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'south-padre-island-south-padre-island-live',
@@ -13521,7 +14050,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -97.16858816057562,
     embedUrl: 'https://www.youtube.com/embed/kJ_EXhKsH30?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-ocean-city-nj-boardwalk-music-pier-live-r',
@@ -13531,8 +14061,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71533994963327,
     lng: -74.00246048427364,
     embedUrl: 'https://www.youtube.com/embed/Gz7M7MTWgsM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-marginal-way-ogunquit-maine-live-view',
@@ -13543,7 +14073,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00747203637744,
     embedUrl: 'https://www.youtube.com/embed/RLIRtD89O7g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'south-padre-island-live-hd-stream-courtyard-by-mar',
@@ -13553,8 +14083,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.10369565917066,
     lng: -97.17745783210015,
     embedUrl: 'https://www.youtube.com/embed/dzylsC0KcOE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-access-laporte-county-beachcam',
@@ -13564,8 +14095,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71821454347464,
     lng: -74.00701764684491,
     embedUrl: 'https://www.youtube.com/embed/Y2VkN45kj_0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'south-padre-island-live-stream',
@@ -13576,7 +14109,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -97.17733482186131,
     embedUrl: 'https://www.youtube.com/embed/bvL_3W7F4Fk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-247-dfw-airport-east-side-camera-wit',
@@ -13586,8 +14119,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.703410146990265,
     lng: -74.00165598996831,
     embedUrl: 'https://www.youtube.com/embed/EeCOHKWyfj0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -15,
   },
   {
     id: 'ilulissat-ilulissat-airport-north',
@@ -13597,8 +14132,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.22935028364826,
     lng: -51.09234124856925,
     embedUrl: 'https://www.youtube.com/embed/nT9QtAbaLg4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-wwwraspberryislandcom-beach-cam',
@@ -13608,8 +14144,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.721530665287325,
     lng: -74.01565181855021,
     embedUrl: 'https://www.youtube.com/embed/0xllXx9QMBk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'ilulissat-ilulissat-airport-south',
@@ -13619,8 +14157,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.2145632863266,
     lng: -51.10085317582676,
     embedUrl: 'https://www.youtube.com/embed/EI27YpsNzSQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'ilulissat-kangerlussuaq-airport-west',
@@ -13630,8 +14169,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.2236283322641,
     lng: -51.10791747709792,
     embedUrl: 'https://www.youtube.com/embed/HVIUqiv7EmA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'ilulissat-kangerlussuaq-airport-east',
@@ -13641,8 +14181,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.21077946574174,
     lng: -51.10274642260551,
     embedUrl: 'https://www.youtube.com/embed/KWJD89He7v0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-berry-aviation-san-marcos-airport-cam',
@@ -13652,8 +14193,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70952962258538,
     lng: -73.99676563620172,
     embedUrl: 'https://www.youtube.com/embed/WKIFpFePu_M?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-247-sea-tac-airport-sea',
@@ -13663,8 +14204,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70983828798544,
     lng: -74.01047151966621,
     embedUrl: 'https://www.youtube.com/embed/YHWkTKQqWzw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'tokyo-shibuya-scramble-crossing-tokyo-japan-live-c',
@@ -13675,7 +14216,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.64572539778538,
     embedUrl: 'https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-afton-wy-airport-kafo-south-west-view-rwy',
@@ -13685,8 +14226,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.711583108851855,
     lng: -74.00661957157509,
     embedUrl: 'https://www.youtube.com/embed/vtvF24QRI5k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-afton-wy-airport-kafo-north-view-rwy-16',
@@ -13696,8 +14238,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.712437321737326,
     lng: -73.9996858000727,
     embedUrl: 'https://www.youtube.com/embed/VyzULEX4WHU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-downtown-telluride-live-camera',
@@ -13707,8 +14250,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71923011739723,
     lng: -74.00105086932943,
     embedUrl: 'https://www.youtube.com/embed/8Et9fVZld7E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
   },
   {
     id: 'new-york-earthtv-white-house-cam-is-back',
@@ -13719,7 +14262,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99718981400223,
     embedUrl: 'https://www.youtube.com/embed/Fu8vYoIkaeM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-berry-aviation-san-marcos-fbo-weather-cam',
@@ -13730,7 +14273,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99919627789639,
     embedUrl: 'https://www.youtube.com/embed/2eQwW-r2WsA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-las-vegas-aerie-view-live',
@@ -13741,7 +14284,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00176150386142,
     embedUrl: 'https://www.youtube.com/embed/jtvmwjzZY0c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-auburn-airport-camera-kaun-auburn-ca-ctaf',
@@ -13751,8 +14294,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70283550666346,
     lng: -73.99996559690707,
     embedUrl: 'https://www.youtube.com/embed/t0J6D3XAVh8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-bryant-park-webcam-2',
@@ -13763,7 +14306,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01117625720677,
     embedUrl: 'https://www.youtube.com/embed/KxioeLhQMuQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-alum-bay-camera-static',
@@ -13774,7 +14317,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3104201897285799,
     embedUrl: 'https://www.youtube.com/embed/Y1h4c4KNWA0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-alum-bay-camera-scenic',
@@ -13785,7 +14328,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.295704573130037,
     embedUrl: 'https://www.youtube.com/embed/xB7_GRTV-b8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-the-needles-lighthouse-camera-static',
@@ -13796,7 +14339,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3038211207914239,
     embedUrl: 'https://www.youtube.com/embed/Go3rQa9X0Tk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-earthcam-live-times-square-in-4k',
@@ -13806,8 +14349,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70853639004074,
     lng: -74.00311695260851,
     embedUrl: 'https://www.youtube.com/embed/rnXIjl_Rzy4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-stream-of-the-iconic-view-of-falling',
@@ -13818,7 +14361,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00928568789294,
     embedUrl: 'https://www.youtube.com/embed/7ucskwkESko?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-times-square-duffy-square-4k-view-live',
@@ -13828,8 +14371,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.708843199606356,
     lng: -73.99915615834534,
     embedUrl: 'https://www.youtube.com/embed/iiBTWU2FyFo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-nyc-brooklyn-bridge-manhattan-cam',
@@ -13839,8 +14382,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70486344846359,
     lng: -73.99787933679283,
     embedUrl: 'https://www.youtube.com/embed/gKF1tTMubuM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-vermont-covered-bridge-webcam-in-hd-from-',
@@ -13850,8 +14395,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.72031229155829,
     lng: -73.99647300328779,
     embedUrl: 'https://www.youtube.com/embed/IB55Ni_wJcQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-view-from-huntington-beach-pier',
@@ -13861,8 +14408,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71204698169207,
     lng: -74.01206752009713,
     embedUrl: 'https://www.youtube.com/embed/mhQjsLBfOoY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'vatican-city-vatican-media-live-franais',
@@ -13873,7 +14422,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 12.444916523991765,
     embedUrl: 'https://www.youtube.com/embed/K-zknhNgt7Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-wahoo-bay-underwater-camera',
@@ -13884,7 +14433,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01057883483428,
     embedUrl: 'https://www.youtube.com/embed/oBTGY6Ax870?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-live-broad-haven-beach-pembrokeshire',
@@ -13894,8 +14443,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6862575411049,
     lng: -1.3043787741962012,
     embedUrl: 'https://www.youtube.com/embed/4DfQkKfDtS4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-lifeguard-hq',
@@ -13906,7 +14456,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00397513580216,
     embedUrl: 'https://www.youtube.com/embed/RGYlFjV-dtc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-pompano-beach-underwater-pier-cam',
@@ -13916,8 +14466,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70779692339532,
     lng: -74.01436010289483,
     embedUrl: 'https://www.youtube.com/embed/mV8zVsX_o_0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-croix-west-end-water-sports-on-rainbow-beach',
@@ -13927,8 +14479,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.73458161273687,
     lng: -64.82806581007672,
     embedUrl: 'https://www.youtube.com/embed/ytNWnGt0kB4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'isle-of-wight-live-broad-haven-beach-pembrokeshire-2',
@@ -13938,8 +14491,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.68714340976216,
     lng: -1.2989788209773323,
     embedUrl: 'https://www.youtube.com/embed/tkpmcVQroqs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-croix-caravelle-hotel-casinos-view-toward-ch',
@@ -13949,8 +14504,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.73115463310359,
     lng: -64.83255195399269,
     embedUrl: 'https://www.youtube.com/embed/II9_tyn1HDI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'saint-croix-schooner-bay-condominium-christiansted',
@@ -13961,7 +14516,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.82601003633485,
     embedUrl: 'https://www.youtube.com/embed/LcjRMvb-yOg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-croix-the-buccaneer-beach-and-golf-resort-st',
@@ -13971,8 +14526,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.723237457483428,
     lng: -64.83279647493671,
     embedUrl: 'https://www.youtube.com/embed/07jdFF_jvC0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-croix-cottages-by-the-sea-in-frederiksted-st',
@@ -13983,7 +14540,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.82758315827631,
     embedUrl: 'https://www.youtube.com/embed/lm1f6_4XB9g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'miramar-beach-leeward-key-webcam-miramar-beach-fl',
@@ -13993,8 +14550,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.382885910572835,
     lng: -86.34937509460318,
     embedUrl: 'https://www.youtube.com/embed/CVgBM39TOh8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'miramar-beach-whales-tail-webcam-seascape-fl',
@@ -14005,7 +14564,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.35163847339284,
     embedUrl: 'https://www.youtube.com/embed/TyX02EtQcYI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'miramar-beach-maravilla-live-webcam-miramar-beach-',
@@ -14015,8 +14574,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.370759651651728,
     lng: -86.3579787791007,
     embedUrl: 'https://www.youtube.com/embed/j2AYwnv0M7k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'miramar-beach-the-empress-miramar-beach-florida',
@@ -14026,8 +14587,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.381358537679798,
     lng: -86.35151560045999,
     embedUrl: 'https://www.youtube.com/embed/ZoPnPXNdKAw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'miramar-beach-beachhouse-webcam-miramar-beach-fl',
@@ -14037,8 +14600,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.366090242859457,
     lng: -86.35364618536632,
     embedUrl: 'https://www.youtube.com/embed/K1PkxWM6QB4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'jacksonville-beach-live-cam-from-the-best-western-',
@@ -14048,8 +14613,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.291738788456648,
     lng: -81.38488636123115,
     embedUrl: 'https://www.youtube.com/embed/bZ4uxyLqV-E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'jacksonville-beach-jacksonville-beach-pier-live-ca',
@@ -14059,8 +14626,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.304224477607516,
     lng: -81.39369091269023,
     embedUrl: 'https://www.youtube.com/embed/ZSFOoTkQB2s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-salisbury-beach-camera-north',
@@ -14070,8 +14638,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70862496204284,
     lng: -74.00096021736816,
     embedUrl: 'https://www.youtube.com/embed/870YJO-cr_w?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-salisbury-beach-camera-south',
@@ -14081,8 +14650,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.720597685390544,
     lng: -74.00587420352889,
     embedUrl: 'https://www.youtube.com/embed/by7PwZvV_CU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-jupiter-reef-club-live-webcam',
@@ -14093,7 +14663,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00167312951594,
     embedUrl: 'https://www.youtube.com/embed/1FYgBpkM7SA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jacksonville-beach-jacksonville-beach-pier-live-ca-2',
@@ -14103,8 +14673,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.30187692711302,
     lng: -81.39893916656916,
     embedUrl: 'https://www.youtube.com/embed/bcqxtDQ6O20?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-247-msp-webcam-minneapolis-st-paul-airpor',
@@ -14114,8 +14685,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70603810378247,
     lng: -74.01047284616197,
     embedUrl: 'https://www.youtube.com/embed/4M5SYE_xneI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-wcax-skywatch3-btv-airport-south',
@@ -14125,8 +14696,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71605190013573,
     lng: -74.00819388592247,
     embedUrl: 'https://www.youtube.com/embed/3NZYi-BCCDY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'ilulissat-narsarsuaq-airport-west',
@@ -14136,8 +14708,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.2282647092349,
     lng: -51.10161697154357,
     embedUrl: 'https://www.youtube.com/embed/8qjUhPCFA9o?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'ilulissat-sisimiut-airport-southwest',
@@ -14147,8 +14720,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.2259677014436,
     lng: -51.09894827489314,
     embedUrl: 'https://www.youtube.com/embed/FW417sPHDOc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 225,
   },
   {
     id: 'ilulissat-narsarsuaq-airport-east',
@@ -14158,8 +14732,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.21629144077104,
     lng: -51.0912490618389,
     embedUrl: 'https://www.youtube.com/embed/jNWh7FFUFOA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-watertown-international-airport',
@@ -14169,8 +14744,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.718772185074954,
     lng: -73.99892274806221,
     embedUrl: 'https://www.youtube.com/embed/L3bYhofjjRU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'ilulissat-sisimiut-airport-southeast',
@@ -14180,8 +14755,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 69.22475713481721,
     lng: -51.09777408393305,
     embedUrl: 'https://www.youtube.com/embed/uR_XJZ6L0PI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 135,
   },
   {
     id: 'isle-of-wight-oxford-martin-school-webcam-broad-st',
@@ -14191,8 +14767,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.68575637391645,
     lng: -1.3085789099654412,
     embedUrl: 'https://www.youtube.com/embed/-FguEt6H91s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'new-york-south-lake-tahoe-airport-live-webcam-nort',
@@ -14202,8 +14780,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71286467243849,
     lng: -74.00650838914484,
     embedUrl: 'https://www.youtube.com/embed/E_m1ihDDWEs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'deerfield-beach-fishing-pier-camera',
@@ -14213,8 +14792,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.31865112460109,
     lng: -80.09629442461461,
     embedUrl: 'https://www.youtube.com/embed/H33wtprQqSM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-mattercam-03252026-1216',
@@ -14225,7 +14804,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99996947495785,
     embedUrl: 'https://www.youtube.com/embed/-CvGvhAUeK8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-breckenridge-main-street-cam-by-breckenri',
@@ -14235,8 +14814,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71797497242541,
     lng: -74.00767707697682,
     embedUrl: 'https://www.youtube.com/embed/SH63YaIWyK0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'deerfield-beach-surf-camera-deerfield-beach-florid',
@@ -14246,8 +14827,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.324496524911734,
     lng: -80.10066610058091,
     embedUrl: 'https://www.youtube.com/embed/hIeFPNHfuoY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-south-lake-tahoe-airport-live-webcam-sout',
@@ -14257,8 +14840,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.708219003338954,
     lng: -74.01049234133247,
     embedUrl: 'https://www.youtube.com/embed/Gq1kM9PqNg4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'deerfield-beach-beach-camera-deerfield-beach-flori',
@@ -14268,8 +14852,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.31980578485581,
     lng: -80.09024937431279,
     embedUrl: 'https://www.youtube.com/embed/rdeoEeJ00xA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'deerfield-beach-underwater-camera-deerfield-beach-',
@@ -14279,8 +14865,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.325677928365256,
     lng: -80.09641503789415,
     embedUrl: 'https://www.youtube.com/embed/V7c7pBbH150?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'deerfield-beach-live-sport-camera-deerfield-beach-',
@@ -14290,8 +14878,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 26.326633548427324,
     lng: -80.10307546293564,
     embedUrl: 'https://www.youtube.com/embed/1PLqzPwXP0c?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-live-vanderbilt-beach-cam',
@@ -14301,8 +14891,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70551238927758,
     lng: -74.01045811546655,
     embedUrl: 'https://www.youtube.com/embed/CTmO0RenFdY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-dania-beach-pier-cam',
@@ -14312,8 +14904,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70493508281992,
     lng: -74.00124287475612,
     embedUrl: 'https://www.youtube.com/embed/o1eTLR7Degs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-resorts-casino-hotel-beach-camera',
@@ -14323,8 +14917,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.716873242698625,
     lng: -74.00442759513366,
     embedUrl: 'https://www.youtube.com/embed/vVyBOU9Huvo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'miami-live-4k-south-beach-miami-beach-247-street-c',
@@ -14334,8 +14930,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.759461944679053,
     lng: -80.19299888218046,
     embedUrl: 'https://www.youtube.com/embed/4wAQ-0tFXf0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-ac-boardwalk-live',
@@ -14346,7 +14943,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0099129842001,
     embedUrl: 'https://www.youtube.com/embed/GDU59FNpYAM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-bigrigtravels-live-columbus-oh-load-in-sp',
@@ -14357,7 +14954,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00373922340174,
     embedUrl: 'https://www.youtube.com/embed/W2Ax1Q-LqUo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-grand-avenue-bridge-in-glenwood-springs-l',
@@ -14367,8 +14964,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.715359766617674,
     lng: -74.0100841213398,
     embedUrl: 'https://www.youtube.com/embed/B0YjuKbVZ5w?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'miami-live-port-miami-cruise-ship-departures-and-a',
@@ -14378,8 +14977,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.771666593138036,
     lng: -80.19393199670793,
     embedUrl: 'https://www.youtube.com/embed/PeYZZinH1wI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-4-corners-camera-downtown',
@@ -14389,8 +14988,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.72267213649602,
     lng: -74.00215847821832,
     embedUrl: 'https://www.youtube.com/embed/1H0iTzv2jiQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
   },
   {
     id: 'new-york-city-of-orange-plaza-camera',
@@ -14400,8 +14999,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70456435042173,
     lng: -74.00404531794622,
     embedUrl: 'https://www.youtube.com/embed/AShvF9ILGkc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'new-york-hamptonscom-live-south-ferry-shelter-isla',
@@ -14411,8 +15010,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71324316301341,
     lng: -74.00852063927162,
     embedUrl: 'https://www.youtube.com/embed/uvqfv-BWpe4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'destin-destin-bridge-webcam-destin-fl',
@@ -14422,8 +15022,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.395107579355304,
     lng: -86.49986379955297,
     embedUrl: 'https://www.youtube.com/embed/0SQH6DvLINI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'miami-live-port-miami-cruise-ship-terminals',
@@ -14433,8 +15035,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.751739283294743,
     lng: -80.19781797023042,
     embedUrl: 'https://www.youtube.com/embed/YNDiaM0zpFc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'destin-inlet-reef-beachcam-destin-fl',
@@ -14444,8 +15046,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.386664603825295,
     lng: -86.50494358786737,
     embedUrl: 'https://www.youtube.com/embed/a1FGfIrel44?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'destin-sterling-sands-beachcam-destin-fl',
@@ -14455,8 +15059,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.403163563117864,
     lng: -86.49690676585118,
     embedUrl: 'https://www.youtube.com/embed/iOK4amNYwRY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'destin-pelican-beach-resort-destin-fl',
@@ -14466,8 +15072,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 30.389604669014723,
     lng: -86.49744111296614,
     embedUrl: 'https://www.youtube.com/embed/sS4GzzSOY8Q?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'destin-ldv-crab-island-destin-fl-247-livestream-in',
@@ -14478,7 +15086,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -86.49980367228113,
     embedUrl: 'https://www.youtube.com/embed/bbppaLyViuI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-rr-new-river-cam',
@@ -14489,7 +15097,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00482749182866,
     embedUrl: 'https://www.youtube.com/embed/3LtOF19QGQY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-soo-locks-sault-ste-marie-michigan-usa-st',
@@ -14500,7 +15110,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01166589608138,
     embedUrl: 'https://www.youtube.com/embed/TkY4BzCikQ4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-port-huron-michigan-usa-streamtime-live',
@@ -14510,8 +15120,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.715784954050804,
     lng: -74.00903868189287,
     embedUrl: 'https://www.youtube.com/embed/AwP_Q6IGwFs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-sightsailing-newport-rhode-island-usa',
@@ -14521,8 +15131,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70882166032825,
     lng: -74.01096154698828,
     embedUrl: 'https://www.youtube.com/embed/HlK9G6PdIUo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-cruise-cam-live-from-the-galveston-cruise',
@@ -14532,8 +15142,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71238036077772,
     lng: -74.00960452320628,
     embedUrl: 'https://www.youtube.com/embed/Mnj84qrUbXc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-mississippi-river-lock-19-keokuk-ia-usa-s',
@@ -14544,7 +15154,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01031988775483,
     embedUrl: 'https://www.youtube.com/embed/JkPjC4fbbQQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-port-huron-live-cam-showing-shipping-traf',
@@ -14554,8 +15166,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.708886930509415,
     lng: -73.99986271750097,
     embedUrl: 'https://www.youtube.com/embed/St7ydveKTIc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'new-york-pier-23-cafe-san-francisco-bay-san-franci',
@@ -14565,8 +15179,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70728364544696,
     lng: -74.0148545001326,
     embedUrl: 'https://www.youtube.com/embed/a5IW4I-z2rs?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-baltimore-shipping-channel-baltimore-md-u',
@@ -14577,7 +15191,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00753297261713,
     embedUrl: 'https://www.youtube.com/embed/t_VfYNtprYE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-algonac-michigan-usa-streamtime-live',
@@ -14588,7 +15202,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00523905984254,
     embedUrl: 'https://www.youtube.com/embed/g4mpc2I5lhc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-door-county-maritime-museum-south-view',
@@ -14598,8 +15212,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70355715818019,
     lng: -74.0040272333271,
     embedUrl: 'https://www.youtube.com/embed/bUomNllBJRU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'isle-of-wight-hms-warrior-webcam',
@@ -14610,7 +15225,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.299670542664127,
     embedUrl: 'https://www.youtube.com/embed/N9KCrI_-Zv0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-hotel-roanoke-railcam-west',
@@ -14621,7 +15236,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99688627791775,
     embedUrl: 'https://www.youtube.com/embed/cV3kP5FSUDk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-door-county-maritime-museum-north-tower-v',
@@ -14631,8 +15247,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71074912566717,
     lng: -74.01178973106008,
     embedUrl: 'https://www.youtube.com/embed/ZYKB7IqxMZ4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-hotel-roanoke-railcam-east',
@@ -14643,7 +15261,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0131385052849,
     embedUrl: 'https://www.youtube.com/embed/Xm3pqQsStPY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-chester-railway-station-csx-amtrak-live',
@@ -14654,7 +15273,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00102166158266,
     embedUrl: 'https://www.youtube.com/embed/wuPEBUNnATE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'swanage-swanage-station-swanage-railway-railcam-uk',
@@ -14665,7 +15284,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.9553939276255488,
     embedUrl: 'https://www.youtube.com/embed/YxUW7c22Dkg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'blue-anchor-wsr-williton-camera-2-west-somerset-ra',
@@ -14676,7 +15295,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.338866377306384,
     embedUrl: 'https://www.youtube.com/embed/4VpPcLda84M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'swanage-corfe-castle-station-cam2-swanage-railway-',
@@ -14686,8 +15306,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.6106729924766,
     lng: -1.9628601115438484,
     embedUrl: 'https://www.youtube.com/embed/GHgFUHbW7eI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'blue-anchor-wsr',
@@ -14698,7 +15318,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.3255925481947104,
     embedUrl: 'https://www.youtube.com/embed/SbCdQLt-5D4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'blue-anchor-wsr-2',
@@ -14709,7 +15329,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.323171198611959,
     embedUrl: 'https://www.youtube.com/embed/nRAFf6UnXSo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'blue-anchor-wsr-3',
@@ -14720,7 +15340,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.3409273975217744,
     embedUrl: 'https://www.youtube.com/embed/N3pRix_kIik?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'chicago-illinois-railway-museum-diesel-shop-west-w',
@@ -14730,8 +15350,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.88560778538987,
     lng: -87.6212967546055,
     embedUrl: 'https://www.youtube.com/embed/VVR3Yrmqcu4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'chicago-illinois-railway-museum-barn-9-north-webca',
@@ -14741,8 +15362,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.870361905732594,
     lng: -87.62845558978036,
     embedUrl: 'https://www.youtube.com/embed/R4dm3Ogn8oA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'chicago-illinois-railway-museum-spaulding-webcam-l',
@@ -14752,8 +15374,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.873734293625795,
     lng: -87.6289844761123,
     embedUrl: 'https://www.youtube.com/embed/XqzKCKjIlls?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'chicago-illinois-railway-museum-car-line-junction-',
@@ -14763,8 +15385,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.86932174266193,
     lng: -87.63473966903823,
     embedUrl: 'https://www.youtube.com/embed/5Yl0k_6L71c?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'chicago-illinois-railway-museum-barn-9-southeast-w',
@@ -14774,8 +15396,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.879369703676765,
     lng: -87.62573608455541,
     embedUrl: 'https://www.youtube.com/embed/gCUQJVEZs5w?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 135,
   },
   {
     id: 'northern-us-wadena-mn-usa-ptz-train-cam-live-now-b',
@@ -14786,7 +15409,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -89.00844296912874,
     embedUrl: 'https://www.youtube.com/embed/ELXZRHDU-tc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'northern-us-fargomoorhead-usa',
@@ -14797,7 +15420,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -88.99325564869487,
     embedUrl: 'https://www.youtube.com/embed/A1PoDybhDQs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-tehachapi-live-train-cams-at-the-tehachap',
@@ -14808,7 +15431,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00344093771145,
     embedUrl: 'https://www.youtube.com/embed/pCpkspPc-n0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'northern-us-perham-mn-usa-train-cam-live-now-bnsf-',
@@ -14819,7 +15442,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -88.99821328386058,
     embedUrl: 'https://www.youtube.com/embed/bfuxxXT2GLE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-tehachapi-live-train-cams-at-the-tehachap-2',
@@ -14829,8 +15452,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71835640100254,
     lng: -74.00027449779033,
     embedUrl: 'https://www.youtube.com/embed/ITrG1UTPlOI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'northern-us-fargomoorhead-mn-usa',
@@ -14841,7 +15466,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -89.00204576719133,
     embedUrl: 'https://www.youtube.com/embed/3lVIpE2rbQo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-la-plata-missouri-usa-live-train-camera-f',
@@ -14852,7 +15477,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01120842170046,
     embedUrl: 'https://www.youtube.com/embed/X-ir2KfXMX0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-ashland-virginia-usa-live-train-camera-pt',
@@ -14863,7 +15489,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99994762571156,
     embedUrl: 'https://www.youtube.com/embed/wgkdREYOfw0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-blenheim-webcam-dawlish-live-cam-spo',
@@ -14874,7 +15500,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3035542050490538,
     embedUrl: 'https://www.youtube.com/embed/7qWBKx-mhNY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'la-grange-trains-in-the-street-at-la-grange-kentuc',
@@ -14885,7 +15511,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -96.883478487377,
     embedUrl: 'https://www.youtube.com/embed/9SLt3AT0rXk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'new-york-live-bigtrainstv-cp10-csx-river-line-berg',
@@ -14896,7 +15524,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0113235136661,
     embedUrl: 'https://www.youtube.com/embed/eMGPHdPbyrU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-galesburg-illinois-usa-live-train-camera-',
@@ -14907,7 +15537,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01159819445623,
     embedUrl: 'https://www.youtube.com/embed/On1MRt0NqFs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-ashland-virginia-usa-live-train-camera-fi',
@@ -14918,7 +15548,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00579520224204,
     embedUrl: 'https://www.youtube.com/embed/D5kKdEBmrYU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-elkhart-indiana-usa-live-train-camera-ptz',
@@ -14929,7 +15560,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01235218725822,
     embedUrl: 'https://www.youtube.com/embed/YR1PdWaSxgk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-york-roc-camera-no1-yorkshire-uk',
@@ -14940,7 +15571,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2969997208495945,
     embedUrl: 'https://www.youtube.com/embed/vByZX49lCic?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'flagstaff-flagstaff-arizona-usa-live-train-camera-',
@@ -14951,7 +15582,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -111.65745272326754,
     embedUrl: 'https://www.youtube.com/embed/7xdHH9KMSVk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-mount-washington-cog-railway-live-',
@@ -14962,7 +15593,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.75915877980997,
     embedUrl: 'https://www.youtube.com/embed/k0Dp4c-VQEQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'la-grange-la-grange-kentucky-usa-live-train-camera',
@@ -14973,7 +15604,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -96.88313448510961,
     embedUrl: 'https://www.youtube.com/embed/0YIKIk76Sy0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-lewis-county-historical-museum-live-railc',
@@ -14983,8 +15615,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71677265657838,
     lng: -74.00746738268344,
     embedUrl: 'https://www.youtube.com/embed/YV8hzUJCp88?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'la-grange-la-grange-kentucky-usa-live-train-camera-2',
@@ -14994,8 +15628,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 29.912920763252153,
     lng: -96.86956881158515,
     embedUrl: 'https://www.youtube.com/embed/jntMnCMiZx4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'white-mountains-cog-railway-and-mount-washington-o',
@@ -15006,7 +15641,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.76247783399076,
     embedUrl: 'https://www.youtube.com/embed/4uqzsC5BIeo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-cog-railway-waumbek-station',
@@ -15017,7 +15652,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.77651010413095,
     embedUrl: 'https://www.youtube.com/embed/6qSId11XFWY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-horseshoe-curve-altoona-pennsylvania-usa-',
@@ -15028,7 +15663,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00621462641105,
     embedUrl: 'https://www.youtube.com/embed/ssuM6NJQ2no?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-lake-shore-railway-museum-west-camera',
@@ -15038,8 +15673,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71483461331496,
     lng: -74.01534150949912,
     embedUrl: 'https://www.youtube.com/embed/8LcB2bpv0xI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-greenville-jct-maine-canadian-pacific-rai',
@@ -15050,7 +15686,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01013694683785,
     embedUrl: 'https://www.youtube.com/embed/xpFB6aUuFso?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-ashey-station-camera',
@@ -15061,7 +15697,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2990010968060977,
     embedUrl: 'https://www.youtube.com/embed/yalfhK84SNU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-westfield-massachusetts-usa-live-railfan-',
@@ -15072,7 +15708,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01254111639119,
     embedUrl: 'https://www.youtube.com/embed/e3AB9nAhqjA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-the-royal-albert-bridge-saltash-corn',
@@ -15082,8 +15718,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.68794708925539,
     lng: -1.3145528454388358,
     embedUrl: 'https://www.youtube.com/embed/bKoMKuvsFxw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'isle-of-wight-havenstreet-bridge-camera',
@@ -15093,8 +15731,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.68974570605559,
     lng: -1.30782119323335,
     embedUrl: 'https://www.youtube.com/embed/GLfyUlgRZm8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'isle-of-wight-havenstreet-station-camera',
@@ -15105,7 +15745,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3002950871629957,
     embedUrl: 'https://www.youtube.com/embed/3cFhLFzVxrE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'new-york-lake-shore-railway-museum-east-camera',
@@ -15115,8 +15757,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.704088832445635,
     lng: -74.00438228333137,
     embedUrl: 'https://www.youtube.com/embed/S1T5erazOlI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-needles-ca-bnsf-needles-sub-mp-578-east-c',
@@ -15127,7 +15770,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00934551100829,
     embedUrl: 'https://www.youtube.com/embed/Veng2vw-Hfo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-live-trains-railcam-st-louis-missouri-ptz',
@@ -15138,7 +15782,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99710752297203,
     embedUrl: 'https://www.youtube.com/embed/NXmFAhX_3vY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-trains-railcam-blue-island-illinois-',
@@ -15149,7 +15793,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01179026509291,
     embedUrl: 'https://www.youtube.com/embed/GKjSoXuZ0hU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-trains-railcam-st-louis-missouri-wes',
@@ -15160,7 +15804,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0124104672074,
     embedUrl: 'https://www.youtube.com/embed/OHRc7YRmuTk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-live-trains-railcam-blue-island-illinois--2',
@@ -15171,7 +15816,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01340083664506,
     embedUrl: 'https://www.youtube.com/embed/RDxBH2S1hxs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'new-york-anchorage-alaska-usa-live-train-camera-fi',
@@ -15182,7 +15828,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0133484642368,
     embedUrl: 'https://www.youtube.com/embed/WMSiw_Hyac8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-skykomish-washington-usa-live-train-camer',
@@ -15193,7 +15840,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01060729351676,
     embedUrl: 'https://www.youtube.com/embed/jxvalaix3K0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-kearney-nebraska-usa-live-train-camera-fi',
@@ -15204,7 +15851,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00023947004352,
     embedUrl: 'https://www.youtube.com/embed/23tmCNeFh7A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-fairport-new-york-usa-live-train-camera-f',
@@ -15214,8 +15862,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71085756104048,
     lng: -74.0000072026647,
     embedUrl: 'https://www.youtube.com/embed/XWxyuL9dctA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-battle-creek-michigan-usa-live-train-came',
@@ -15226,7 +15875,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00096607404151,
     embedUrl: 'https://www.youtube.com/embed/fTkOmPbSXBg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-deshler-ohio-usa-live-train-camera-fixed-',
@@ -15237,7 +15887,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00399893544181,
     embedUrl: 'https://www.youtube.com/embed/Y28qU7UsFko?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-bnsf-railway-yard-in-belen-new-mexico-usa',
@@ -15248,7 +15898,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9972827382399,
     embedUrl: 'https://www.youtube.com/embed/EKohXgHGCj8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-rochelle-illinois-usa-live-train-camera-p',
@@ -15259,7 +15909,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01523969613406,
     embedUrl: 'https://www.youtube.com/embed/LhNpn9L5ndM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-north-platte-golden-spike-tower-west-live',
@@ -15269,8 +15919,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.708594694321015,
     lng: -74.0155413915185,
     embedUrl: 'https://www.youtube.com/embed/laKzBnfVIsQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-san-juan-capistrano-usa-live-train-camera',
@@ -15281,7 +15933,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01196409797915,
     embedUrl: 'https://www.youtube.com/embed/-g1qAvXyIyQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-newcastle-central-station-northeast-',
@@ -15291,8 +15943,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.693127714889016,
     lng: -1.2998567481928167,
     embedUrl: 'https://www.youtube.com/embed/oiLG19R9PmE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 45,
   },
   {
     id: 'new-york-waycross-georgia-usa-live-train-camera-pt',
@@ -15303,7 +15956,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00342044248144,
     embedUrl: 'https://www.youtube.com/embed/bCIIn4c5LrM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-strasburg-pennsylvania-usa-live-train-cam',
@@ -15314,7 +15967,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01240110663257,
     embedUrl: 'https://www.youtube.com/embed/fzq7IQvL-oQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-chesterton-indiana-usa-live-train-camera-',
@@ -15325,7 +15978,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01402341908387,
     embedUrl: 'https://www.youtube.com/embed/BDb_sSL-K5k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'new-york-thomasville-north-carolina-usa-live-train',
@@ -15336,7 +15990,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00338080023509,
     embedUrl: 'https://www.youtube.com/embed/JPdUQtZcuk8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-glendale-ohio-usa-live-train-camera-fixed',
@@ -15347,7 +16002,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0142671594488,
     embedUrl: 'https://www.youtube.com/embed/vF4ZdG-_6FE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-tower-55-in-fort-worth-texas-usa-live-tra',
@@ -15357,8 +16013,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71046125604352,
     lng: -73.99769436213715,
     embedUrl: 'https://www.youtube.com/embed/blcDjPvPbss?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-kingman-az-bnsf-seligman-sub-mp-5165-ptz-',
@@ -15369,7 +16027,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00517644534338,
     embedUrl: 'https://www.youtube.com/embed/h8-J3JGU7g4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 225,
   },
   {
     id: 'new-york-woodside-train-camera-long-island-rail-ro',
@@ -15379,8 +16038,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71895814274689,
     lng: -74.01063354736405,
     embedUrl: 'https://www.youtube.com/embed/JK7oRJHBsiE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'traffic',
+    source: 'youtube',
+    heading: 0,
+    tilt: -20,
   },
   {
     id: 'germantown-nursery-at-warrior-canine-connection-po',
@@ -15391,7 +16052,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -77.26803844679829,
     embedUrl: 'https://www.youtube.com/embed/eC__seErcqo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-giraffe-deck-cam-animal-adventure-park',
@@ -15402,7 +16063,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01498459723601,
     embedUrl: 'https://www.youtube.com/embed/g_3xeHZk7_0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-international-wolf-center-north-camera-po',
@@ -15413,7 +16074,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01494563282496,
     embedUrl: 'https://www.youtube.com/embed/5e4lsEe4Vew?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-friends-of-felines-rescue-center-ffrc',
@@ -15424,7 +16086,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99964169726006,
     embedUrl: 'https://www.youtube.com/embed/HXEdqvXaRPc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-friends-of-felines-rescue-center-kabana-c',
@@ -15435,7 +16097,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01074033913235,
     embedUrl: 'https://www.youtube.com/embed/A3dfq_pYA8A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-kitten-rescue-baby-kittens-cam-powered-by',
@@ -15446,7 +16108,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01144696070146,
     embedUrl: 'https://www.youtube.com/embed/o8YhyLb__cI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-tucson-arizona-usa-live-train-camera-ptz',
@@ -15457,7 +16119,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99821991888898,
     embedUrl: 'https://www.youtube.com/embed/-Q9VQJdqIlk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-kitten-rescue-cat-cam-powered-by-exploreo',
@@ -15468,7 +16130,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01401217807484,
     embedUrl: 'https://www.youtube.com/embed/-m_nQT62B4Y?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'germantown-outdoor-puppy-pen-at-warrior-canine-con',
@@ -15479,7 +16141,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -77.27312691127308,
     embedUrl: 'https://www.youtube.com/embed/cWzkAHB1kT8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-international-wolf-center-south-camera-po',
@@ -15490,7 +16152,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00251667924442,
     embedUrl: 'https://www.youtube.com/embed/DRxYSIoBusQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 180,
   },
   {
     id: 'germantown-full-house-puppy-cam-at-warrior-canine-',
@@ -15501,7 +16164,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -77.26669982069781,
     embedUrl: 'https://www.youtube.com/embed/Qeq2Kax0v64?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-kc-zoo-polar-bear-cam',
@@ -15512,7 +16175,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99655574780738,
     embedUrl: 'https://www.youtube.com/embed/BSUnBPvX9K4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-ryans-bird-buffet-at-brownvilles-food-pan',
@@ -15523,7 +16186,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01442941525555,
     embedUrl: 'https://www.youtube.com/embed/47dcM4M16Ic?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'monterey-live-sea-otter-cam-monterey-bay-aquarium',
@@ -15534,7 +16197,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -121.89985340960493,
     embedUrl: 'https://www.youtube.com/embed/abbR-Ttd-cA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-alligator-and-spoonbill-swamp-cam-powered',
@@ -15545,7 +16208,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00548883047884,
     embedUrl: 'https://www.youtube.com/embed/M4P_GzA6H80?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-14-newborn-baby-goats-syman-says-far',
@@ -15556,7 +16219,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99872879045792,
     embedUrl: 'https://www.youtube.com/embed/bNKfGfW2p8M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'monterey-live-jelly-cam-monterey-bay-aquarium',
@@ -15567,7 +16230,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -121.88887570434791,
     embedUrl: 'https://www.youtube.com/embed/NUnJc82ptd4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-shark-lagoon-cam-powered-by-exploreorg',
@@ -15578,7 +16241,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00735712736126,
     embedUrl: 'https://www.youtube.com/embed/BLvr4K2eiRE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'monterey-live-moon-jelly-cam-monterey-bay-aquarium',
@@ -15589,7 +16252,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -121.89332240545765,
     embedUrl: 'https://www.youtube.com/embed/IeWhbCe2Krk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-cam-in-the-lower-keys',
@@ -15600,7 +16263,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99807130325094,
     embedUrl: 'https://www.youtube.com/embed/qi0mY6zVQnY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-coral-reef-cam-california-academy-of',
@@ -15611,7 +16274,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01569342271388,
     embedUrl: 'https://www.youtube.com/embed/99aULx3GORo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'miami-coral-city-camera-miamis-free-range-aquarium',
@@ -15621,8 +16284,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.755053283392233,
     lng: -80.1952245253326,
     embedUrl: 'https://www.youtube.com/embed/7i8ARjIeM2k?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
   },
   {
     id: 'new-york-tropical-reef-camera-powered-by-exploreor',
@@ -15633,7 +16296,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0022984333655,
     embedUrl: 'https://www.youtube.com/embed/DHUnz4dyb54?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-hamptonscom-live-relaxing-shark-cam-w-mus',
@@ -15644,7 +16307,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01079589882788,
     embedUrl: 'https://www.youtube.com/embed/Kw8uKR1q7y4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-trevor-lovejoy-zoo-red-pandas-live',
@@ -15655,7 +16318,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00958549311102,
     embedUrl: 'https://www.youtube.com/embed/dkFYrv1NFPg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-gatlinburg-skypark-live-webcam',
@@ -15666,7 +16329,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00439492096795,
     embedUrl: 'https://www.youtube.com/embed/teGLziUvDkI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-blue-cavern-powered-by-exploreorg',
@@ -15677,7 +16340,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01554029694623,
     embedUrl: 'https://www.youtube.com/embed/yuhnCtTPtZo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-live-mount-washington-observatory-',
@@ -15688,7 +16351,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.77352146066947,
     embedUrl: 'https://www.youtube.com/embed/RUN2G9r136c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-live-mount-washington-observatory--2',
@@ -15698,8 +16361,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 44.06710318262993,
     lng: -71.77038179482066,
     embedUrl: 'https://www.youtube.com/embed/ASfVpWLj-TE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'white-mountains-live-mount-washington-observatory--3',
@@ -15710,7 +16375,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.77562531547109,
     embedUrl: 'https://www.youtube.com/embed/iftUwUC-rgk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mammoth-lakes-the-village',
@@ -15721,7 +16386,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.96252105249582,
     embedUrl: 'https://www.youtube.com/embed/MwHWDokyUhw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mammoth-lakes-mccoy-station',
@@ -15732,7 +16397,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.98110467847926,
     embedUrl: 'https://www.youtube.com/embed/jFK8bVYad0M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mammoth-lakes-cm-revanth-speech-live-telangana-ris',
@@ -15743,7 +16408,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.97047452773124,
     embedUrl: 'https://www.youtube.com/embed/C-Le_apXFSA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mammoth-lakes-canyon-lodge',
@@ -15754,7 +16419,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.96990341617095,
     embedUrl: 'https://www.youtube.com/embed/9--ZgYEZBhk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-mount-washington-observatory-west-',
@@ -15765,7 +16430,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.77094470120518,
     embedUrl: 'https://www.youtube.com/embed/qQelttP13Rg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'boyne-falls-skybridge-michigan',
@@ -15775,8 +16441,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.17189345992933,
     lng: -84.9112729837283,
     embedUrl: 'https://www.youtube.com/embed/ioTfHBawdw4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'mammoth-lakes-main-lodge-woolly-cam',
@@ -15787,7 +16455,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.9777546442385,
     embedUrl: 'https://www.youtube.com/embed/AXyxIFY3JaA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boyne-falls-clock-tower-boyne-mountain-resort',
@@ -15797,8 +16465,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.17703467421765,
     lng: -84.91611886771074,
     embedUrl: 'https://www.youtube.com/embed/3vuXRsZXFUU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'mammoth-lakes-caledon-ski-club-main-lodge',
@@ -15809,7 +16479,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -118.9726022965382,
     embedUrl: 'https://www.youtube.com/embed/oIcwu7zZnAM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'white-mountains-live-mount-washington-observatory--4',
@@ -15820,7 +16490,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.76535211757425,
     embedUrl: 'https://www.youtube.com/embed/zJjiTnGlSSM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boyne-falls-ramshead-boyne-mountain-resort',
@@ -15831,7 +16501,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -84.90592049574389,
     embedUrl: 'https://www.youtube.com/embed/7ZJyX7imL1M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boyne-falls-victor-glacier-cam',
@@ -15842,7 +16512,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -84.90729642700856,
     embedUrl: 'https://www.youtube.com/embed/XWyDmTPBN6g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'boyne-falls-mountain-express',
@@ -15853,7 +16523,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -84.92439990855759,
     embedUrl: 'https://www.youtube.com/embed/RODEbIPGspQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-mad-river-glen-single-chair-mid-station',
@@ -15864,7 +16534,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9975564499997,
     embedUrl: 'https://www.youtube.com/embed/m31OIfdFY_c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-mad-river-glen-single-chair-base-area',
@@ -15875,7 +16547,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01389245880686,
     embedUrl: 'https://www.youtube.com/embed/wVOqgmbvCrY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-mad-river-glen-birdcage',
@@ -15886,7 +16560,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00025260105895,
     embedUrl: 'https://www.youtube.com/embed/JViQ_cai7aQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'flagstaff-arizona-snowbowl-grand-canyon-express',
@@ -15897,7 +16573,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -111.65941114476745,
     embedUrl: 'https://www.youtube.com/embed/AKNXz9QnjO0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'carrabassett-valley-sugarloaf-webcam-the-beach',
@@ -15907,8 +16583,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.0703169826021,
     lng: -70.22144468840848,
     embedUrl: 'https://www.youtube.com/embed/j8VVBhJdyqY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'carrabassett-valley-sugarloaf-web-cam-narrow-gauag',
@@ -15919,7 +16597,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.20919815663457,
     embedUrl: 'https://www.youtube.com/embed/e66yj2vN96A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'carrabassett-valley-sugarloaf-webcam-bullwinkles',
@@ -15930,7 +16608,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.21318222342565,
     embedUrl: 'https://www.youtube.com/embed/be_gqTEj7CU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'flagstaff-arizona-snowbowl-arizona-gondola',
@@ -15941,7 +16619,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -111.64938482738954,
     embedUrl: 'https://www.youtube.com/embed/WkWctaDP-LE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jackson-hole-grand-targhee-resort-dreamcatcher-see',
@@ -15952,7 +16630,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.75328814998066,
     embedUrl: 'https://www.youtube.com/embed/fQiA_DZT0cE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'carrabassett-valley-sugarloaf-webcam-top-of-skylin',
@@ -15962,8 +16640,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.0718411645679,
     lng: -70.21011270255319,
     embedUrl: 'https://www.youtube.com/embed/4yNO6-W-n2A?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'jackson-hole-grand-targhee-resort-plaza-seejhcom',
@@ -15973,8 +16653,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 43.481411665038934,
     lng: -110.76691955842487,
     embedUrl: 'https://www.youtube.com/embed/eHL_FJOoVTE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'jackson-hole-snow-king-mountain-summit-gondola-see',
@@ -15985,7 +16665,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.7564476504897,
     embedUrl: 'https://www.youtube.com/embed/9ID7fhbc_s0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'steamboat-springs-steamboat-square-cam',
@@ -15995,8 +16675,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.4852096438254,
     lng: -106.83036528779691,
     embedUrl: 'https://www.youtube.com/embed/2UJDLWcSADk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'steamboat-springs-christie-peak-express-wild-blue-',
@@ -16007,7 +16687,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -106.83826836317193,
     embedUrl: 'https://www.youtube.com/embed/fI30YzAmCHw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'steamboat-springs-steamboat-gondola-cam',
@@ -16018,7 +16698,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -106.83041338451953,
     embedUrl: 'https://www.youtube.com/embed/oKKj_upaoCI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jackson-hole-grand-targhee-resort-summit-seejhai',
@@ -16029,7 +16709,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.75768139100714,
     embedUrl: 'https://www.youtube.com/embed/RpoA0HZfIh4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'jackson-hole-togwotee-mountain-lodge-seejhcom',
@@ -16040,7 +16720,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -110.76904505903316,
     embedUrl: 'https://www.youtube.com/embed/DyvzXyJ_fVg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'steamboat-springs-thunderhead-lodge-roof',
@@ -16051,7 +16731,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -106.83682327364491,
     embedUrl: 'https://www.youtube.com/embed/qjAqCiwCW34?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warren-super-bravo-liftcam',
@@ -16062,7 +16742,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.76285801824501,
     embedUrl: 'https://www.youtube.com/embed/n5QqJSYEZT8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warren-mt-ellen-base',
@@ -16073,7 +16753,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.76550531413017,
     embedUrl: 'https://www.youtube.com/embed/ipi5Fl4L68c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'warren-gatehouse-liftcam',
@@ -16083,8 +16763,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 44.11148933114745,
     lng: -72.76217046202991,
     embedUrl: 'https://www.youtube.com/embed/GJ5IWnq6vC4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'warren-gate-house-plaza-view',
@@ -16094,8 +16774,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 44.113222028520276,
     lng: -72.76572946478605,
     embedUrl: 'https://www.youtube.com/embed/tdQOYaEQC3o?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'warren-allyns-lodge-scenic',
@@ -16106,7 +16786,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -72.75789438565123,
     embedUrl: 'https://www.youtube.com/embed/SW8uNfI43E4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'wrightwood-yeti-snow-play-live-webcam',
@@ -16117,7 +16797,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.62714712695231,
     embedUrl: 'https://www.youtube.com/embed/MoGCaIXrG4s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'wrightwood-west-base-live-webcam',
@@ -16128,7 +16808,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.6374697312301,
     embedUrl: 'https://www.youtube.com/embed/YcQT1a6K1Mo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'wrightwood-east-summit-live-webcam',
@@ -16139,7 +16820,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.64138777667927,
     embedUrl: 'https://www.youtube.com/embed/S3hpb7nnoFI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'wrightwood-borderline-live-webcam',
@@ -16150,7 +16832,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -117.63544458911488,
     embedUrl: 'https://www.youtube.com/embed/KDYnfJzQrQA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-oregons-mt-hood-territory',
@@ -16161,7 +16843,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00478995064091,
     embedUrl: 'https://www.youtube.com/embed/DMRhJGfxfo0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-rnli-live-camera-at-porthcawl-pier',
@@ -16171,8 +16853,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.690295787163706,
     lng: -1.3076604486197507,
     embedUrl: 'https://www.youtube.com/embed/bmNAteGGFpA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-mt-hood-from-portland-oregon-downtown',
@@ -16182,8 +16864,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.704699075166204,
     lng: -73.9996850492314,
     embedUrl: 'https://www.youtube.com/embed/_tTd-Uo0eFI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
   },
   {
     id: 'duluth-harbor-plazagreat-lakes-aquarium',
@@ -16193,8 +16875,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 46.78390222790777,
     lng: -92.0909058265975,
     embedUrl: 'https://www.youtube.com/embed/bBubIPZYVt0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'new-york-mt-hood-meadows',
@@ -16205,7 +16887,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0038739349872,
     embedUrl: 'https://www.youtube.com/embed/cnikALxnRxA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-ami-connors-point-cam',
@@ -16216,7 +16898,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.10613731277128,
     embedUrl: 'https://www.youtube.com/embed/_L0u39B732I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-two-harbors-depot',
@@ -16226,8 +16908,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 46.78833546769523,
     lng: -92.10183348690607,
     embedUrl: 'https://www.youtube.com/embed/rCec9HDbFwA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'duluth-lake-cam',
@@ -16238,7 +16920,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.09896216764118,
     embedUrl: 'https://www.youtube.com/embed/gX1exrdM5rE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-the-beach-bar-panorama-180-cruz-bay-bea',
@@ -16248,8 +16930,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 18.342850960749804,
     lng: -64.73806149233012,
     embedUrl: 'https://www.youtube.com/embed/ZQ5OqjssArE?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -15,
   },
   {
     id: 'duluth-bayfront-cam',
@@ -16260,7 +16944,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -92.09778862654228,
     embedUrl: 'https://www.youtube.com/embed/EbVlhVeD3jA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'duluth-two-harbors-boat-launch',
@@ -16270,8 +16954,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 46.791527788129535,
     lng: -92.09114658954051,
     embedUrl: 'https://www.youtube.com/embed/sThx7mQM3Uc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'saint-john-coral-bay-views-live-qhd-webcam-of-cora',
@@ -16282,7 +16966,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.73808216680132,
     embedUrl: 'https://www.youtube.com/embed/J5dURyBwaf0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-great-expectations-live-st-john-webcam-',
@@ -16293,7 +16977,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.73728371612621,
     embedUrl: 'https://www.youtube.com/embed/dsbHMpqPTWI?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-windswept-point-live-webcam-on-cinnamon',
@@ -16304,7 +16988,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.72529245617801,
     embedUrl: 'https://www.youtube.com/embed/C0e8bpZ-5WY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-sapphire-beach-live',
@@ -16314,8 +16998,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 18.345051285094975,
     lng: -64.73800433939347,
     embedUrl: 'https://www.youtube.com/embed/QuowSqkjImk?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'isle-of-wight-bridport-harbour-west-bay',
@@ -16325,8 +17011,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.69375450512515,
     lng: -1.314514374880464,
     embedUrl: 'https://www.youtube.com/embed/KoB32C-liwI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'isle-of-wight-lyme-regis-harbour',
@@ -16336,8 +17023,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.69564285254004,
     lng: -1.306173212283635,
     embedUrl: 'https://www.youtube.com/embed/rulGLEdCHZU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-shark-cam-powered-by-exploreorg',
@@ -16348,7 +17035,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0025247606924,
     embedUrl: 'https://www.youtube.com/embed/og8bbxl0iW8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-bridport-harbour-east-beach',
@@ -16358,8 +17045,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.70243905328904,
     lng: -1.311088180825763,
     embedUrl: 'https://www.youtube.com/embed/HikXPCyNcFg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 90,
   },
   {
     id: 'isle-of-wight-west-bay-bridport-harbour-live-webca',
@@ -16369,8 +17057,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.69392632192297,
     lng: -1.3103111273956785,
     embedUrl: 'https://www.youtube.com/embed/Z9u__twkjm4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'ilulissat-live-now-247-iceberg-cam-of-ilulissat-gr',
@@ -16381,7 +17070,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -51.09937607951905,
     embedUrl: 'https://www.youtube.com/embed/qJ3D5vhIK6k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-colwell-bay-camera-senic',
@@ -16392,7 +17081,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2995049211726213,
     embedUrl: 'https://www.youtube.com/embed/D3RVI3vV9Ws?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-cowes-4k-camera',
@@ -16403,7 +17092,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2973053824649012,
     embedUrl: 'https://www.youtube.com/embed/90ZXm5zNhRs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-sandown-camera-beach-esplanade-isle-',
@@ -16413,8 +17102,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.68386231591453,
     lng: -1.2960883278829824,
     embedUrl: 'https://www.youtube.com/embed/zITv7NFN0HI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'isle-of-wight-spinlock',
@@ -16425,7 +17116,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3124898200557578,
     embedUrl: 'https://www.youtube.com/embed/PvFIAuYnLnU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-ventnor-camera-ventnor-esplanade-isl',
@@ -16436,7 +17127,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2951395796086274,
     embedUrl: 'https://www.youtube.com/embed/3nah_tJ5_LA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-new-york-city-harbor-brooklyn-new-yo',
@@ -16446,8 +17137,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.691833331921586,
     lng: -1.302011807521209,
     embedUrl: 'https://www.youtube.com/embed/OgqbZLzEbQU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-luccombe-camera',
@@ -16458,7 +17149,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3071070885254013,
     embedUrl: 'https://www.youtube.com/embed/zxUNJ2h6MJ4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marthas-vineyard-gomvcom-marthas-vineyard-alpaca-f',
@@ -16469,7 +17160,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.63806295271766,
     embedUrl: 'https://www.youtube.com/embed/a_WjWhIsVVU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marthas-vineyard-gomvcom-marthas-vineyard-ferry-li',
@@ -16480,7 +17171,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.64315428896646,
     embedUrl: 'https://www.youtube.com/embed/bdjXsDufCQY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marthas-vineyard-gomvcom-woods-hole-ferry-dock-har',
@@ -16490,8 +17181,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.38606575517898,
     lng: -70.64152398423354,
     embedUrl: 'https://www.youtube.com/embed/TE6N2eDrsR0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'marthas-vineyard-gomvcom-marthas-vineyard-ocean-vi',
@@ -16502,7 +17193,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.6508465406376,
     embedUrl: 'https://www.youtube.com/embed/Y0BRntF3178?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marthas-vineyard-gomvcom-chilmark-menemsha-beach-p',
@@ -16512,8 +17203,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 41.371098909806726,
     lng: -70.64568798933544,
     embedUrl: 'https://www.youtube.com/embed/6OoxjzKP4N4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-chinook-winds-casino-resort-in-lincoln-ci',
@@ -16524,7 +17217,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00203888305336,
     embedUrl: 'https://www.youtube.com/embed/A7ib2rokOHg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-oregon-coast-aquarium',
@@ -16534,8 +17227,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.708949411032705,
     lng: -74.00221729302747,
     embedUrl: 'https://www.youtube.com/embed/Nw-3ukCSobw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'isle-of-wight-live-fort-william-live-webcam-scotla',
@@ -16546,7 +17241,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3037895655382734,
     embedUrl: 'https://www.youtube.com/embed/fKb7dUCuofs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'new-york-pier-camera',
@@ -16556,8 +17252,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71879087671159,
     lng: -74.01486477141214,
     embedUrl: 'https://www.youtube.com/embed/hXqjUfQJf9U?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-mackinac-bridge-camera-from-the-rivi',
@@ -16567,8 +17263,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71773858025333,
     lng: -74.00323744501412,
     embedUrl: 'https://www.youtube.com/embed/Mf_qId_7mlM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-detroit-river-live-cam-from-the-dossin-mu',
@@ -16578,8 +17276,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.72066008198324,
     lng: -74.0002708047627,
     embedUrl: 'https://www.youtube.com/embed/lo5OtAdWC2s?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-mendenhall-glacier-and-mountain-goat-cam-',
@@ -16590,7 +17290,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00423377185935,
     embedUrl: 'https://www.youtube.com/embed/jJI5w_RVGtQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-garden-city-realtys-live-cam-at-river-cit',
@@ -16601,7 +17301,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01309037352942,
     embedUrl: 'https://www.youtube.com/embed/PdudbIiVIKQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-city-of-seaside',
@@ -16611,8 +17311,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.721231220252186,
     lng: -74.00944620935259,
     embedUrl: 'https://www.youtube.com/embed/FyTZdTQfIKw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'charlevoix-bridgecam-by-charlevoixcam',
@@ -16622,8 +17324,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.32045951730149,
     lng: -85.26417512337707,
     embedUrl: 'https://www.youtube.com/embed/yWIHgMW2yVQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'charlevoix-round-lake-cam-live-charlevoixcam',
@@ -16634,7 +17338,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.25802219386006,
     embedUrl: 'https://www.youtube.com/embed/lmMEuTaF18k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'charlevoix-ferrycam-live-charlevoixcam',
@@ -16644,8 +17348,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 45.320882220320605,
     lng: -85.2556480904998,
     embedUrl: 'https://www.youtube.com/embed/D90I8AeLyp4?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-cam-ohio-river-jeffersonville-in-str',
@@ -16656,7 +17360,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9987380320048,
     embedUrl: 'https://www.youtube.com/embed/MqzQdTHCTOg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'marathon-live-crane-point-live-webcam-marathon-flo',
@@ -16667,7 +17373,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.08770228790274,
     embedUrl: 'https://www.youtube.com/embed/0XkkQS1c9mE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'charlevoix-charlevoixcam-live-stream-channel-cam',
@@ -16678,7 +17384,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -85.26582536610418,
     embedUrl: 'https://www.youtube.com/embed/HeZbPbqO-6M?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marathon-live-faro-blanco-marina-of-suntex',
@@ -16688,8 +17394,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 24.715347365160746,
     lng: -81.09009680351737,
     embedUrl: 'https://www.youtube.com/embed/3XJOcSvIM0E?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'marathon-tranquility-bay-resort-marathon',
@@ -16700,7 +17406,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.08192323653546,
     embedUrl: 'https://www.youtube.com/embed/sk7jojKGefM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-rockport-harbor-webcam',
@@ -16710,8 +17416,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70768142698141,
     lng: -74.00689849321884,
     embedUrl: 'https://www.youtube.com/embed/v9NWddwu8rw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-florida-cams',
@@ -16722,7 +17428,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0024642709166,
     embedUrl: 'https://www.youtube.com/embed/0bv7YxPWRdw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-from-the-beach-club',
@@ -16732,8 +17438,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70632046990936,
     lng: -74.01573338497047,
     embedUrl: 'https://www.youtube.com/embed/l2em7gqBj00?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-fairhope-piercam',
@@ -16744,7 +17452,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00107748662627,
     embedUrl: 'https://www.youtube.com/embed/N5wWOVOTHmQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-burry-port-rnli',
@@ -16754,8 +17462,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.70136391487238,
     lng: -1.309448725754624,
     embedUrl: 'https://www.youtube.com/embed/RYtgM3-cyvQ?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-poppit-sands-live-webcam',
@@ -16766,7 +17474,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2989500061361061,
     embedUrl: 'https://www.youtube.com/embed/VFxfMyomEgM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-port-lorain-lake-erie-live-cam-ohio',
@@ -16776,8 +17484,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70501805142247,
     lng: -74.00081959852147,
     embedUrl: 'https://www.youtube.com/embed/1MVB3fgg7kg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'new-york-bar-harbor-maine-north-view-bar-harbor-in',
@@ -16787,8 +17495,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.714896187295714,
     lng: -74.00800360378203,
     embedUrl: 'https://www.youtube.com/embed/RH9wCBhxkxM?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-bar-harbor-maine-west-view-bar-harbor-inn',
@@ -16798,8 +17507,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71040719732779,
     lng: -74.0092412196089,
     embedUrl: 'https://www.youtube.com/embed/OteVW3af3BU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'islamorada-little-basin-live-webcam-islamorada-flo',
@@ -16810,7 +17520,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.63055385525493,
     embedUrl: 'https://www.youtube.com/embed/HfSOXLUtYmA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-lorain-ohio-black-river-landing-cam',
@@ -16821,7 +17531,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00089497316546,
     embedUrl: 'https://www.youtube.com/embed/ZZevIUr2cTk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'islamorada-cheeca-lodge-islamorada',
@@ -16832,7 +17544,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.63166063398893,
     embedUrl: 'https://www.youtube.com/embed/g8yMaHH8m34?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'islamorada-islamorada-charter-boats-live-webcam-is',
@@ -16843,7 +17555,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.63158444605129,
     embedUrl: 'https://www.youtube.com/embed/8ShFKuTCmhQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'islamorada-live-lazy-days-islamorada-florida',
@@ -16854,7 +17566,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.62585198477055,
     embedUrl: 'https://www.youtube.com/embed/Bxy3g5WfYbg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-dartmouth-webcam-4k-embankment-bistr',
@@ -16865,7 +17577,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2949484249326155,
     embedUrl: 'https://www.youtube.com/embed/IQkwNUebkts?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-linlithgow-union-canal-lucs-basin',
@@ -16876,7 +17588,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.31399538004739,
     embedUrl: 'https://www.youtube.com/embed/pCS-fnjVcdg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-the-rooftop-bar-oceanside-ca-san-diego-we',
@@ -16886,8 +17600,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.712850980939685,
     lng: -73.99906311342687,
     embedUrl: 'https://www.youtube.com/embed/cvP_F-c2Upw?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 0,
+    tilt: -15,
   },
   {
     id: 'new-york-oceanside-ca-harbor-live',
@@ -16897,8 +17613,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.71398392978624,
     lng: -74.0058945820844,
     embedUrl: 'https://www.youtube.com/embed/vIpKwzH_Jpc?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'monterey-live-monterey-bay-cam-monterey-bay-aquari',
@@ -16909,7 +17625,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -121.89935901019908,
     embedUrl: 'https://www.youtube.com/embed/fVa6-zCBR7A?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-st-clair-river-from-the-voyageur-restaura',
@@ -16920,7 +17636,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01268687341428,
     embedUrl: 'https://www.youtube.com/embed/yu0pKQSvYX8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-the-rooftop-bar-fixed-wide-west-oceanside',
@@ -16930,8 +17648,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.72029697096282,
     lng: -74.00693712699375,
     embedUrl: 'https://www.youtube.com/embed/OYqo4dqYjh0?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 270,
+    tilt: -15,
   },
   {
     id: 'key-largo-live-snooks-bayside-key-largo-florida',
@@ -16942,7 +17662,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.43802967265178,
     embedUrl: 'https://www.youtube.com/embed/tIYUOWF1N4s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'key-largo-jewfish-creek-bridge-live-webcam-key-lar',
@@ -16952,8 +17672,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.082678737868576,
     lng: -80.43894328259152,
     embedUrl: 'https://www.youtube.com/embed/W01huIwqSEo?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'key-largo-key-largo-marina-live-webcam-key-largo-f',
@@ -16963,8 +17685,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 25.08639889587588,
     lng: -80.45338686292234,
     embedUrl: 'https://www.youtube.com/embed/cDzoBVvTaEU?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-mapes-of-millport-scrolling-camera-l',
@@ -16974,8 +17696,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.700210266056814,
     lng: -1.3048016346782167,
     embedUrl: 'https://www.youtube.com/embed/Xsj7PBTdBfI?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'port',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-live-hd-webcam-saundersfoot-beach-fr',
@@ -16985,8 +17707,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 50.69828003391397,
     lng: -1.3032786691984821,
     embedUrl: 'https://www.youtube.com/embed/PtmU0ih1Y28?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'isle-of-wight-st-brides-spa-hotel-saundersfoot-liv',
@@ -16997,7 +17721,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.305651381500046,
     embedUrl: 'https://www.youtube.com/embed/gDbUG0oE0Dk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'key-largo-dolphin-live-webcam-key-largo-florida-ke',
@@ -17008,7 +17732,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.43736037573524,
     embedUrl: 'https://www.youtube.com/embed/ghg9lhFDouM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-alexandria-bay-chamber-of-commerce-river-',
@@ -17019,7 +17743,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00594973425315,
     embedUrl: 'https://www.youtube.com/embed/wQiewnlyXlA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'new-york-hubbards-marina-dock-cam',
@@ -17030,7 +17756,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01355591266655,
     embedUrl: 'https://www.youtube.com/embed/8xOkbnxHVG0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-beach-bar-st-john-live-stage-webcam',
@@ -17040,8 +17766,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 18.34313671919779,
     lng: -64.72400951072414,
     embedUrl: 'https://www.youtube.com/embed/jiLN3wBushA?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-john-beach-bar-st-john-webcam',
@@ -17051,8 +17779,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 18.32897244990159,
     lng: -64.7202730236419,
     embedUrl: 'https://www.youtube.com/embed/2wqpy036z24?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-live-from-two-friends-restaurant-music-ka',
@@ -17063,7 +17793,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.0123624255858,
     embedUrl: 'https://www.youtube.com/embed/BWifbj_mOHM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 270,
   },
   {
     id: 'the-valley-elvis-beach-bar-live-hd-webcam-from-san',
@@ -17074,7 +17805,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -63.07356668197949,
     embedUrl: 'https://www.youtube.com/embed/SPj4hMttgJM?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'road-town-soggy-dollar-bar-live-webcam-on-white-ba',
@@ -17085,7 +17816,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.62602641281502,
     embedUrl: 'https://www.youtube.com/embed/V_I168MM-ik?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-johns-pass-camera-hubbards-marina-wwwhubb',
@@ -17096,7 +17827,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00729490912524,
     embedUrl: 'https://www.youtube.com/embed/uaivpT7T0A4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-at-nudies',
@@ -17107,7 +17838,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01366850223206,
     embedUrl: 'https://www.youtube.com/embed/oiDaHXup_Aw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-croix-the-landing-beach-bar-cane-bay-in-st-c',
@@ -17117,8 +17848,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.72230894542946,
     lng: -64.84283508402103,
     embedUrl: 'https://www.youtube.com/embed/bm_-L6felME?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'saint-john-the-windmill-bar-st-john-usvi',
@@ -17129,7 +17862,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.71834725811283,
     embedUrl: 'https://www.youtube.com/embed/K_FOP7_wGPE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-lime-out-floating-taco-boat-live-webcam',
@@ -17140,7 +17873,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.71926809221702,
     embedUrl: 'https://www.youtube.com/embed/zNvNY9xf9T4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'marathon-live-sparkys-landing-live-webcam-marathon',
@@ -17151,7 +17884,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.09057514998089,
     embedUrl: 'https://www.youtube.com/embed/lF-BDaWpTmc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-john-windmill-bar-stage-camera-st-john-usvi',
@@ -17162,7 +17895,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -64.72929239307378,
     embedUrl: 'https://www.youtube.com/embed/zM3uID8BSJ4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'saint-croix-palms-at-pelican-cove-beach-resort-st-',
@@ -17172,8 +17905,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 17.72460010570966,
     lng: -64.82978200207151,
     embedUrl: 'https://www.youtube.com/embed/9nmchjRTEtY?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'new-york-the-cove-leland-fishtown-live',
@@ -17184,7 +17919,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01049002366815,
     embedUrl: 'https://www.youtube.com/embed/s7sY1waeOf4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-hungry-hens-live-chicken-coop-cam-live-an',
@@ -17195,7 +17930,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.9974181611018,
     embedUrl: 'https://www.youtube.com/embed/c2SXDkaNOU4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-coopers-live',
@@ -17206,7 +17941,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3137551584883629,
     embedUrl: 'https://www.youtube.com/embed/WKYekgqcIww?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-llandudno-north-parade-from-min-y-do',
@@ -17217,7 +17952,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3066006610229217,
     embedUrl: 'https://www.youtube.com/embed/xUyJO_QcH9s?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 0,
   },
   {
     id: 'new-york-hellgate-ospreys-nest-cam-cornell-lab-uni',
@@ -17227,8 +17963,8 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: 40.70466420269985,
     lng: -74.01072828668644,
     embedUrl: 'https://www.youtube.com/embed/-qvYCbvbeN8?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'landmark',
+    source: 'youtube',
   },
   {
     id: 'cape-town-live-africa-wildlife-magnificent-birds-b',
@@ -17239,7 +17975,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.42458992489589,
     embedUrl: 'https://www.youtube.com/embed/BVbFRP_vIIc?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-decorah-eagles-powered-by-exploreorg',
@@ -17250,7 +17986,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01144689787093,
     embedUrl: 'https://www.youtube.com/embed/IVmL3diwJuw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-live-cornell-lab-feederwatch-cam-at-sapsu',
@@ -17261,7 +17997,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01225341643335,
     embedUrl: 'https://www.youtube.com/embed/x10vL6_47Dw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'edinburgh-loch-arkaig-osprey-camera-1',
@@ -17272,7 +18008,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -3.195811679668931,
     embedUrl: 'https://www.youtube.com/embed/--l_qKzu2kE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-big-bear-bald-eagle-live-nest-cam-1',
@@ -17283,7 +18019,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00553849806543,
     embedUrl: 'https://www.youtube.com/embed/B4-L2nfGcuE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-big-bear-bald-eagle-wide-view-cam-2',
@@ -17294,7 +18030,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99792983245209,
     embedUrl: 'https://www.youtube.com/embed/41eq4VzCYc4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-live-barn-owls-stoats-kestrels-tawny',
@@ -17305,7 +18041,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3106445696412201,
     embedUrl: 'https://www.youtube.com/embed/1laEOsLJLV4?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-live-tawny-owls-kestrels-buzzards-ba',
@@ -17316,7 +18052,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3087679371087517,
     embedUrl: 'https://www.youtube.com/embed/z-lG3ro832c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-starbase-live-247-starship-super-heavy-de',
@@ -17327,7 +18063,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.01012152080278,
     embedUrl: 'https://www.youtube.com/embed/mhJRzQsLZGg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-the-global-prayer-room-247-livestream',
@@ -17338,7 +18074,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -74.00720345596572,
     embedUrl: 'https://www.youtube.com/embed/0uaZ30NEHLU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'new-york-starbase-live-247-multi-plex',
@@ -17349,7 +18085,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -73.99696753394193,
     embedUrl: 'https://www.youtube.com/embed/QYO-tNjkQO8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-nessie-on-the-net-loch-ness-monster-',
@@ -17360,7 +18096,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.308966129537163,
     embedUrl: 'https://www.youtube.com/embed/IrH--L0WdrY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-surveillancemap-live-smeatons-tower-',
@@ -17371,7 +18107,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.3104183269427512,
     embedUrl: 'https://www.youtube.com/embed/SfuCqR7RLHA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-osaka-dotonbori',
@@ -17382,7 +18118,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.64682040266914,
     embedUrl: 'https://www.youtube.com/embed/bzn2QWfOLFY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tokyo-live-2',
@@ -17393,7 +18129,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 139.64787798476743,
     embedUrl: 'https://www.youtube.com/embed/LPcDAtkX0-Q?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-seaton-station-camera-seaton-tramway',
@@ -17404,7 +18140,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2997814094164055,
     embedUrl: 'https://www.youtube.com/embed/djPvpp3anJ8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'isle-of-wight-colyford-station-camera-seaton-tramw',
@@ -17415,7 +18151,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -1.2991997084855091,
     embedUrl: 'https://www.youtube.com/embed/7x4D0qmUkLg?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sabi-sand-wild-africa-live-247-safari-cam',
@@ -17426,7 +18162,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.45,
     embedUrl: 'https://www.youtube.com/embed/qpukdDslCjk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sabi-sand-roys-dam-live-cam',
@@ -17437,7 +18173,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.38,
     embedUrl: 'https://www.youtube.com/embed/C9hjksOtngo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sabi-sand-ulusaba-live-wildlife-camera',
@@ -17448,7 +18184,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.36,
     embedUrl: 'https://www.youtube.com/embed/zqc0Z2oWmo8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hoedspruit-rosies-pan-greater-kruger',
@@ -17459,7 +18195,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.05,
     embedUrl: 'https://www.youtube.com/embed/Cq2qCph6Lx8?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'hoedspruit-africam-olifants-river-exploreorg',
@@ -17470,7 +18206,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.17,
     embedUrl: 'https://www.youtube.com/embed/_NXaovxB-Bk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'hoedspruit-imagine-africa-luxury-camp-waterhole',
@@ -17481,7 +18219,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.1,
     embedUrl: 'https://www.youtube.com/embed/7TX8_bsOjcw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'timbavati-kings-camp-live-wildlife-stream',
@@ -17492,7 +18230,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.2,
     embedUrl: 'https://www.youtube.com/embed/_AyumoafMOU?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'madikwe-africam-tau-exploreorg',
@@ -17503,7 +18241,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 26.28,
     embedUrl: 'https://www.youtube.com/embed/DsNtwGJXTTs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balule-africam-rosies-pan-exploreorg',
@@ -17514,7 +18252,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.05,
     embedUrl: 'https://www.youtube.com/embed/ItdXaWUVF48?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'sabi-sand-djuma-cam-live-stream',
@@ -17525,7 +18263,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 31.33,
     embedUrl: 'https://www.youtube.com/embed/RmAeEvZJXEY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bettys-bay-african-penguins-live-stony-point',
@@ -17536,7 +18274,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.9,
     embedUrl: 'https://www.youtube.com/embed/NiwrvhQIHIo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'bettys-bay-africam-penguin-nest-exploreorg',
@@ -17547,7 +18285,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 18.91,
     embedUrl: 'https://www.youtube.com/embed/ZRvngZiRx_g?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'etosha-okaukuejo-resort-waterhole-live',
@@ -17558,7 +18296,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.93,
     embedUrl: 'https://www.youtube.com/embed/JMMoRwYo5kE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'etosha-onguma-waterhole-elephants-giraffes',
@@ -17569,7 +18307,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 16.82,
     embedUrl: 'https://www.youtube.com/embed/yuIm1V7Ne7I?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'lentorre-live-from-lentorre-kenya',
@@ -17580,7 +18318,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 36.22,
     embedUrl: 'https://www.youtube.com/embed/bEmFpjwMOvs?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'masai-mara-mahali-mzuri-landscape-maasai-mara',
@@ -17591,7 +18329,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 35.1,
     embedUrl: 'https://www.youtube.com/embed/jIh2FYqMOw0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'makgadikgadi-zebra-migration-meno-a-kwena',
@@ -17602,7 +18340,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.4,
     embedUrl: 'https://www.youtube.com/embed/RZFMYVNhd4k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'makgadikgadi-camelthorn-waterhole-botswana',
@@ -17613,7 +18351,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.42,
     embedUrl: 'https://www.youtube.com/embed/mk02pEy3FdA?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'makgadikgadi-africam-boteti-river-zebra-migration',
@@ -17624,7 +18362,9 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 24.39,
     embedUrl: 'https://www.youtube.com/embed/7hKbyXxWT2k?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
+    heading: 90,
+    tilt: -10,
   },
   {
     id: 'kinshasa-lola-ya-bonobo-sanctuary',
@@ -17635,7 +18375,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 15.4,
     embedUrl: 'https://www.youtube.com/embed/T0cF-bXCOHE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tayna-grace-gorilla-forest-corridor-cam',
@@ -17646,7 +18386,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 28.7,
     embedUrl: 'https://www.youtube.com/embed/yfSyjwY6zSQ?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'essaouira-plage-de-targhate-essaouira',
@@ -17657,7 +18397,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -9.77,
     embedUrl: 'https://www.youtube.com/embed/e3mvgluWZU0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'mahe-seychelles-ocean-4k-live',
@@ -17668,7 +18408,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 55.49,
     embedUrl: 'https://www.youtube.com/embed/Thtj8Ht7Z_c?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'melbourne-melbourne-city-life-247',
@@ -17679,7 +18419,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 144.96,
     embedUrl: 'https://www.youtube.com/embed/yLSaCBV4mXI?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'perth-truck-queue-cam-perth',
@@ -17690,7 +18430,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 115.74,
     embedUrl: 'https://www.youtube.com/embed/EabbsMllaIc?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'wellington-new-zealand-now',
@@ -17701,7 +18441,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 174.78,
     embedUrl: 'https://www.youtube.com/embed/nmDtEa9aSiY?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'cairns-flying-fox-cam-cairns',
@@ -17712,7 +18452,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: 145.77,
     embedUrl: 'https://www.youtube.com/embed/zH0IM95ia5w?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rio-de-janeiro-mirante-corcovado-cristo-scenic',
@@ -17723,7 +18463,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.21,
     embedUrl: 'https://www.youtube.com/embed/qXJ3IRVHoNg?autoplay=1&mute=1',
     type: 'landmark',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'rio-de-janeiro-brazil-now',
@@ -17734,7 +18474,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -43.17,
     embedUrl: 'https://www.youtube.com/embed/OjhKdbolIIw?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balneario-camboriu-balneario-camboriu-avenida-atla',
@@ -17745,7 +18485,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.63,
     embedUrl: 'https://www.youtube.com/embed/ZyOEQrdzh34?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balneario-camboriu-balneario-camboriu-5a-avenida',
@@ -17756,7 +18496,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.63,
     embedUrl: 'https://www.youtube.com/embed/zxvq_tT8sPU?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'balneario-camboriu-balneario-camboriu-br-101-sul',
@@ -17767,7 +18507,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.64,
     embedUrl: 'https://www.youtube.com/embed/AsjwUeP62AQ?autoplay=1&mute=1',
     type: 'traffic',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'florianopolis-florianopolis-barra-da-lagoa',
@@ -17778,7 +18518,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -48.43,
     embedUrl: 'https://www.youtube.com/embed/iVD75867Tko?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'recife-praia-de-candeias-pe',
@@ -17788,8 +18528,10 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lat: -8.18,
     lng: -34.92,
     embedUrl: 'https://www.youtube.com/embed/bTGga4qhhyg?autoplay=1&mute=1',
-    type: 'webcam',
-    source: 'static',
+    type: 'city',
+    source: 'youtube',
+    heading: 180,
+    tilt: -5,
   },
   {
     id: 'rio-grande-camaras-rio-grande-tierra-del-fuego',
@@ -17800,7 +18542,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -67.71,
     embedUrl: 'https://www.youtube.com/embed/YaUdt5qENk4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'tolhuin-camaras-tolhuin-tierra-del-fuego',
@@ -17811,7 +18553,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -67.19,
     embedUrl: 'https://www.youtube.com/embed/BR7GpV6kLE4?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'vina-del-mar-marejadas-uv-vina-del-mar',
@@ -17822,7 +18564,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.55,
     embedUrl: 'https://www.youtube.com/embed/6FPHipiIBMo?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'valparaiso-valparaiso-chile-en-vivo',
@@ -17833,7 +18575,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -71.62,
     embedUrl: 'https://www.youtube.com/embed/5jPpMkg5daM?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'santiago-nunoa-santiago-chile',
@@ -17844,7 +18586,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -70.6,
     embedUrl: 'https://www.youtube.com/embed/E9FK3QGdpqE?autoplay=1&mute=1',
     type: 'city',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'el-valle-de-anton-panama-fruit-feeder-cam',
@@ -17855,7 +18597,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.13,
     embedUrl: 'https://www.youtube.com/embed/VfFfS64rtZE?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'el-valle-de-anton-panama-fruit-feeder-cornell-lab',
@@ -17866,7 +18608,7 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -80.14,
     embedUrl: 'https://www.youtube.com/embed/WtoxxHADnGk?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
   {
     id: 'key-west-live-irish-kevins-stage',
@@ -17877,6 +18619,6 @@ export const PUBLIC_CCTVS: CCTVData[] = [
     lng: -81.8008,
     embedUrl: 'https://www.youtube.com/embed/bqvD0Xb6sU0?autoplay=1&mute=1',
     type: 'webcam',
-    source: 'static',
+    source: 'youtube',
   },
 ];

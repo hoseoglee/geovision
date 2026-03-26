@@ -1085,24 +1085,19 @@ export default function Globe() {
       viewer.imageryLayers.remove(layer);
     }
     overlayImageryRef.current = [];
-    // CCTV BillboardCollection 정리 (ADS-B는 독립 useEffect에서 관리)
-    if (cctvPrimitiveRef.current) {
-      viewer.scene.primitives.remove(cctvPrimitiveRef.current);
-      cctvPrimitiveRef.current = null;
-    }
-    if (cctvLabelCollRef.current) {
-      viewer.scene.primitives.remove(cctvLabelCollRef.current);
-      cctvLabelCollRef.current = null;
-    }
-    // CCTV FOV/썸네일 엔티티 + 카메라 리스너 정리
-    for (const e of cctvFovEntitiesRef.current) viewer.entities.remove(e);
-    cctvFovEntitiesRef.current = [];
-    for (const e of cctvThumbnailEntitiesRef.current) viewer.entities.remove(e);
-    cctvThumbnailEntitiesRef.current = [];
-    cctvBillboardDataRef.current.clear();
-    if (cctvCameraListenerRef.current) {
-      cctvCameraListenerRef.current();
-      cctvCameraListenerRef.current = null;
+    // CCTV 포인트/라벨 컬렉션 — 토글 시 show/hide (destroy 대신)
+    if (!activeOverlays.includes('cctv')) {
+      if (cctvPrimitiveRef.current) cctvPrimitiveRef.current.show = false;
+      if (cctvLabelCollRef.current) cctvLabelCollRef.current.show = false;
+      // FOV/썸네일 엔티티 + 카메라 리스너는 비활성 시 정리
+      for (const e of cctvFovEntitiesRef.current) viewer.entities.remove(e);
+      cctvFovEntitiesRef.current = [];
+      for (const e of cctvThumbnailEntitiesRef.current) viewer.entities.remove(e);
+      cctvThumbnailEntitiesRef.current = [];
+      if (cctvCameraListenerRef.current) {
+        cctvCameraListenerRef.current();
+        cctvCameraListenerRef.current = null;
+      }
     }
 
     // 0. 위성사진 베이스맵 토글
@@ -1555,66 +1550,70 @@ export default function Globe() {
     //   > 8,000km: 표시 안함
     //   > 2,000km: 빌보드만 (작게)
     //   > 500km:  빌보드 + 라벨
-    //   > 50km:   빌보드 + 라벨 + FOV 프러스텀 (기존 40개 큐레이션 카메라만)
+    //   > 50km:   빌보드 + 라벨 + FOV 프러스텀
     //   < 50km:   빌보드 + 라벨 + FOV + 썸네일 프리뷰
     if (activeOverlays.includes('cctv')) {
       bootstrapWindyCams();
 
       const cctvs = fetchCCTVs();
 
-      // ── 모든 카메라를 PointPrimitiveCollection으로 표시 (녹색 점) ──
-      const cctvPoints = new Cesium.PointPrimitiveCollection();
-      const cctvLabels = new Cesium.LabelCollection({ scene: viewer.scene });
-      const bbDataMap = cctvBillboardDataRef.current;
-      bbDataMap.clear();
+      // ── PointPrimitiveCollection/LabelCollection 재사용 (최초 1회만 생성) ──
+      if (cctvPrimitiveRef.current && cctvLabelCollRef.current) {
+        // 이미 생성된 컬렉션이 있으면 show만 복원
+        cctvPrimitiveRef.current.show = true;
+        cctvLabelCollRef.current.show = true;
+      } else {
+        // 최초 생성
+        const cctvPoints = new Cesium.PointPrimitiveCollection();
+        const cctvLabels = new Cesium.LabelCollection({ scene: viewer.scene });
+        const bbDataMap = cctvBillboardDataRef.current;
+        bbDataMap.clear();
 
-      for (const cam of cctvs) {
-        const color = cam.type === 'traffic' ? Cesium.Color.LIME
-          : cam.type === 'port' ? Cesium.Color.CYAN
-          : cam.type === 'landmark' ? Cesium.Color.GOLD
-          : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
-          : Cesium.Color.fromCssColorString('#00FF88');
+        for (const cam of cctvs) {
+          const color = cam.type === 'traffic' ? Cesium.Color.LIME
+            : cam.type === 'port' ? Cesium.Color.CYAN
+            : cam.type === 'landmark' ? Cesium.Color.GOLD
+            : cam.type === 'webcam' ? Cesium.Color.fromCssColorString('#BB86FC')
+            : Cesium.Color.fromCssColorString('#00FF88');
 
-        const pt = cctvPoints.add({
-          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-          pixelSize: 6,
-          color,
-          outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
-          outlineWidth: 1,
-          scaleByDistance: new Cesium.NearFarScalar(1e4, 1.5, 8e6, 0.3),
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
-          disableDepthTestDistance: Number.POSITIVE_INFINITY,
-        });
-        // Point → CCTVData 매핑 (클릭 핸들링)
-        bbDataMap.set(pt, cam);
+          const pt = cctvPoints.add({
+            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
+            pixelSize: 6,
+            color,
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+            outlineWidth: 1,
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.5, 8e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          });
+          // Point → CCTVData 매핑 (클릭 핸들링)
+          bbDataMap.set(pt, cam);
 
-        // 라벨은 500km 이내에서만 표시
-        cctvLabels.add({
-          position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
-          text: cam.name,
-          font: '10px monospace',
-          fillColor: Cesium.Color.WHITE,
-          outlineColor: Cesium.Color.BLACK,
-          outlineWidth: 2,
-          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-          pixelOffset: new Cesium.Cartesian2(0, -12),
-          scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e5, 0.2),
-          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e5),
-          disableDepthTestDistance: Number.POSITIVE_INFINITY,
-        });
+          // 라벨은 500km 이내에서만 표시
+          cctvLabels.add({
+            position: Cesium.Cartesian3.fromDegrees(cam.lng, cam.lat, 200),
+            text: cam.name,
+            font: '10px monospace',
+            fillColor: Cesium.Color.WHITE,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            pixelOffset: new Cesium.Cartesian2(0, -12),
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.0, 5e5, 0.2),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e5),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          });
+        }
+
+        viewer.scene.primitives.add(cctvPoints);
+        viewer.scene.primitives.add(cctvLabels);
+        cctvPrimitiveRef.current = cctvPoints;
+        cctvLabelCollRef.current = cctvLabels;
       }
 
-      viewer.scene.primitives.add(cctvPoints);
-      viewer.scene.primitives.add(cctvLabels);
-      cctvPrimitiveRef.current = cctvPoints;
-      cctvLabelCollRef.current = cctvLabels;
-
       // ── FOV/썸네일 동적 LOD — 카메라 이동 시 뷰포트 내 저고도 카메라만 Entity 생성 ──
-      // 기존 40개 큐레이션 카메라 (source=static, STATIC_CCTVS 원본)만 FOV 대상
-      const ORIGINAL_STATIC_IDS = new Set(
-        cctvs.filter((c) => c.source === 'static').slice(0, 40).map((c) => c.id),
-      );
-      const fovCandidates = cctvs.filter((c) => ORIGINAL_STATIC_IDS.has(c.id));
+      // heading이 있는 모든 카메라를 FOV 대상으로 (하드코딩 40개 제한 제거)
+      const fovCandidates = cctvs.filter((c) => c.heading != null);
 
       /** 뷰포트 내 카메라 중 고도 기반으로 FOV/썸네일 동적 생성 */
       const updateCCTVLOD = () => {

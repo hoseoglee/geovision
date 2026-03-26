@@ -14,7 +14,7 @@ export interface CCTVData {
   embedUrl: string; // iframe-embeddable URL (YouTube or Windy player)
   thumbnailUrl?: string; // Windy preview image
   type: 'traffic' | 'city' | 'port' | 'landmark' | 'webcam';
-  source: 'static' | 'windy';
+  source: 'static' | 'youtube' | 'windy';
   heading?: number; // 카메라 방향 (0=North, 90=East, 180=South, 270=West)
   tilt?: number; // 카메라 틸트 (음수=하향, 양수=상향)
 }
@@ -572,4 +572,29 @@ export function fetchCCTVs(): CCTVData[] {
 /** Get total count */
 export function getCCTVCount(): number {
   return _allCCTVsSnapshot.length;
+}
+
+// ── CCTV 즐겨찾기 (localStorage) ────────────────────────
+const FAV_KEY = 'geovision-cctv-favorites';
+
+export function getFavorites(): string[] {
+  try {
+    return JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
+  } catch { return []; }
+}
+
+export function toggleFavorite(id: string): boolean {
+  const favs = getFavorites();
+  const idx = favs.indexOf(id);
+  if (idx >= 0) {
+    favs.splice(idx, 1);
+  } else {
+    favs.push(id);
+  }
+  localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+  return idx < 0; // true = added, false = removed
+}
+
+export function isFavorite(id: string): boolean {
+  return getFavorites().includes(id);
 }

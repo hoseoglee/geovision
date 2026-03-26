@@ -1,8 +1,10 @@
-import { useState, useRef, useCallback, useSyncExternalStore } from 'react';
+import { useState, useRef, useCallback, useEffect, useSyncExternalStore } from 'react';
 import {
   getSelectedCCTV,
   subscribeSelectedCCTV,
   setSelectedCCTV,
+  toggleFavorite,
+  isFavorite,
   type CCTVData,
 } from '@/providers/CCTVProvider';
 import CCTVAnalysis from './CCTVAnalysis';
@@ -29,7 +31,25 @@ export default function CCTVViewer() {
   const [minimized, setMinimized] = useState(false);
   const [pos, setPos] = useState({ x: 140, y: 100 });
   const [imgError, setImgError] = useState(false);
+  const [size, setSize] = useState(() => {
+    const w = Math.min(window.innerWidth - 32, 520);
+    return { width: w, height: Math.round(w * 9 / 16) };
+  });
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [fav, setFav] = useState(() => cctv ? isFavorite(cctv.id) : false);
   const dragRef = useRef<{ startX: number; startY: number; origX: number; origY: number } | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const w = Math.min(window.innerWidth - 32, 520);
+      setSize({ width: w, height: Math.round(w * 9 / 16) });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => { setLoadFailed(false); }, [cctv?.id]);
+  useEffect(() => { if (cctv) setFav(isFavorite(cctv.id)); }, [cctv?.id]);
 
   const onMouseDown = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
@@ -82,6 +102,13 @@ export default function CCTVViewer() {
         </div>
         <div className="flex items-center gap-1.5">
           <button
+            onClick={() => { if (cctv) setFav(toggleFavorite(cctv.id)); }}
+            className={`text-xs px-1 ${fav ? 'text-yellow-400' : 'text-zinc-500 hover:text-yellow-400'}`}
+            title={fav ? 'Remove from favorites' : 'Add to favorites'}
+          >
+            {fav ? '★' : '☆'}
+          </button>
+          <button
             onClick={() => setMinimized(!minimized)}
             className="text-zinc-500 hover:text-zinc-300 text-xs px-1"
             title={minimized ? 'Expand' : 'Minimize'}
@@ -106,8 +133,8 @@ export default function CCTVViewer() {
             <iframe
               key={cctv.id}
               src={cctv.embedUrl}
-              width="520"
-              height="293"
+              width={size.width}
+              height={size.height}
               allow="autoplay"
               className="block"
               title={`CCTV: ${cctv.name}`}
@@ -118,10 +145,10 @@ export default function CCTVViewer() {
               <img
                 src={cctv.thumbnailUrl}
                 alt={cctv.name}
-                width={520}
-                height={293}
+                width={size.width}
+                height={size.height}
                 className="block object-cover"
-                style={{ width: 520, height: 293 }}
+                style={{ width: size.width, height: size.height }}
                 onError={() => setImgError(true)}
               />
               <div className="absolute bottom-2 right-2 flex gap-1">
@@ -140,16 +167,23 @@ export default function CCTVViewer() {
             </div>
           ) : (
             // YouTube embed (static cameras) or fallback
-            <iframe
-              key={cctv.id}
-              src={cctv.embedUrl}
-              width="520"
-              height="293"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-              allowFullScreen
-              className="block"
-              title={`CCTV: ${cctv.name}`}
-            />
+            <div className="relative">
+              <iframe
+                key={cctv.id}
+                src={cctv.embedUrl}
+                width={size.width}
+                height={size.height}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                allowFullScreen
+                className="block"
+                title={`CCTV: ${cctv.name}`}
+              />
+              {cctv.source === 'youtube' && (
+                <div className="absolute top-2 left-2 text-[8px] px-1.5 py-0.5 rounded bg-black/60 text-zinc-400">
+                  YOUTUBE LIVE
+                </div>
+              )}
+            </div>
           )}
           {/* Bottom info bar */}
           <div className="flex items-center justify-between px-3 py-1.5 bg-zinc-900/95">

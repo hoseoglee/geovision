@@ -162,7 +162,7 @@ export default function CCTVAnalysis({ cctv }: { cctv: CCTVData }) {
           {/* Simulated badge */}
           {result.simulated && (
             <div className="text-[8px] text-yellow-500 tracking-wider font-bold">
-              ⚠ SIMULATED ANALYSIS
+              ⚠ SIMULATED — YouTube 스트림은 이미지 추출 불가
             </div>
           )}
 
