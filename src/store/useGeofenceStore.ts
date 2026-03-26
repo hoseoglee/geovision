@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persistGeofenceEvent } from './useEventStore';
 
 export type GeofenceShape = 'polygon' | 'circle';
 export type GeofenceTargetLayer = 'flights' | 'ships' | 'adsb' | 'all';
@@ -142,7 +143,11 @@ export const useGeofenceStore = create<GeofenceState>((set, get) => ({
     set({ drawingMode: null, drawingVertices: [] });
   },
   cancelDrawing: () => set({ drawingMode: null, drawingVertices: [] }),
-  addEvent: (event) => set((s) => ({ events: [{ ...event, id: gid('gfe'), timestamp: Date.now() }, ...s.events].slice(0, 100) })),
+  addEvent: (event) => set((s) => {
+    const ts = Date.now();
+    persistGeofenceEvent({ ...event, timestamp: ts });
+    return { events: [{ ...event, id: gid('gfe'), timestamp: ts }, ...s.events].slice(0, 100) };
+  }),
   clearEvents: () => set({ events: [] }),
   loadFromStorage: async () => {
     try { const d = await idbGet(); if (d) { set({ geofences: d }); return; } } catch { /* */ }

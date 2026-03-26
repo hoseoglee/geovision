@@ -12,6 +12,7 @@ import OverlaySelector from './OverlaySelector';
 import { GeofenceControls } from './GeofencePanel';
 import CCTVFilter from './CCTVFilter';
 import { MeasurementControls } from './MeasurementPanel';
+import AnalyticsDashboard from './AnalyticsDashboard';
 
 function CorrelationStatus() {
   const isRunning = useCorrelationStore((s) => s.isRunning);
@@ -95,6 +96,8 @@ export default function ControlPanel() {
           <MeasurementControls />
           <div className="border-t border-zinc-700/50" />
           <CCTVFilter />
+          <div className="border-t border-zinc-700/50" />
+          <AnalyticsDashboard />
           <div className="border-t border-zinc-700/50" />
           <Legend />
         </div>

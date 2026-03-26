@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persistAlert } from './useEventStore';
 
 export type AlertSeverity = 'critical' | 'warning' | 'info';
 export type AlertCategory =
@@ -50,6 +51,9 @@ export const useAlertStore = create<AlertState>((set, get) => ({
         (a) => a.title === alert.title && Date.now() - a.timestamp < 30000
       );
       if (recent) return state;
+
+      // persist to IndexedDB
+      persistAlert(newAlert);
 
       const alerts = [newAlert, ...state.alerts].slice(0, 50); // 최대 50개
       return {

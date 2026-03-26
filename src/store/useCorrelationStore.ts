@@ -3,6 +3,7 @@ import { CorrelationEngine } from '@/correlation/engine';
 import type { CorrelationAlert } from '@/correlation/rules';
 import type { RuleDSL } from '@/correlation/ruleDSL';
 import { ruleStorage } from '@/correlation/ruleStorage';
+import { persistCorrelation } from './useEventStore';
 
 interface CorrelationState {
   correlations: CorrelationAlert[]; engine: CorrelationEngine | null; isRunning: boolean; dslRules: RuleDSL[];
@@ -16,7 +17,9 @@ export const useCorrelationStore = create<CorrelationState>((set, get) => ({
   correlations: [], engine: null, isRunning: false, dslRules: [],
   addCorrelation: (alert) => set((state) => {
     const recent = state.correlations.find((c) => c.ruleId === alert.ruleId && Date.now() - c.timestamp < 30000 && Math.abs(c.lat - alert.lat) < 0.5 && Math.abs(c.lng - alert.lng) < 0.5);
-    if (recent) return state; return { correlations: [alert, ...state.correlations].slice(0, 100) };
+    if (recent) return state;
+    persistCorrelation(alert);
+    return { correlations: [alert, ...state.correlations].slice(0, 100) };
   }),
   startEngine: () => {
     const existing = get().engine; if (existing?.isRunning) return;
