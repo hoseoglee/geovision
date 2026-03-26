@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 const CITIES = [
   { name: 'SEOUL', tz: 'Asia/Seoul' },
@@ -8,16 +8,16 @@ const CITIES = [
 ];
 
 /** 세계 주요 도시 시계 */
-export default function WorldClock() {
+export default memo(function WorldClock() {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 1000);
+    const id = setInterval(() => setNow(new Date()), 5000);
     return () => clearInterval(id);
   }, []);
 
   return (
-    <div className="fixed top-[290px] right-4 z-30 pointer-events-none">
+    <div className="fixed top-[290px] right-4 z-30 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 font-mono">
         <div className="text-zinc-500 text-[9px] tracking-widest mb-1">WORLD TIME</div>
         <div className="grid grid-cols-2 gap-x-4 gap-y-0.5">
@@ -42,4 +42,4 @@ export default function WorldClock() {
       </div>
     </div>
   );
-}
+})

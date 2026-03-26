@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 interface LogEntry {
@@ -67,7 +67,7 @@ function genEvent(id: number): LogEntry {
 }
 
 /** 최근 이벤트 로그 패널 */
-export default function EventLog() {
+export default memo(function EventLog() {
   const [logs, setLogs] = useState<LogEntry[]>(() =>
     Array.from({ length: 8 }, (_, i) => genEvent(i))
   );
@@ -86,7 +86,7 @@ export default function EventLog() {
   }, []);
 
   return (
-    <div className="fixed bottom-10 right-4 z-30 w-52 pointer-events-none">
+    <div className="fixed bottom-10 right-4 z-30 w-52 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-700/30 rounded font-mono">
         <div className="px-3 py-1.5 border-b border-zinc-700/30">
           <div className="text-zinc-500 text-[9px] tracking-widest">EVENT LOG</div>
@@ -103,4 +103,4 @@ export default function EventLog() {
       </div>
     </div>
   );
-}
+})

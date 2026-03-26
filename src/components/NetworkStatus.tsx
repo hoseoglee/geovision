@@ -1,4 +1,6 @@
+import { memo } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { shallow } from 'zustand/shallow';
 
 const SOURCES = [
   { key: 'satellites', label: 'CELESTRAK', icon: '🛰' },
@@ -8,10 +10,10 @@ const SOURCES = [
 ];
 
 /** 네트워크/데이터소스 연결 상태 + 마지막 갱신 시간 */
-export default function NetworkStatus() {
-  const lastUpdated = useAppStore((s) => s.lastUpdated);
-  const activeLayers = useAppStore((s) => s.activeLayers);
-  const dataCounts = useAppStore((s) => s.dataCounts);
+export default memo(function NetworkStatus() {
+  const lastUpdated = useAppStore((s) => s.lastUpdated, shallow);
+  const activeLayers = useAppStore((s) => s.activeLayers, shallow);
+  const dataCounts = useAppStore((s) => s.dataCounts, shallow);
 
   function timeAgo(ts: number): string {
     const diff = Math.floor((Date.now() - ts) / 1000);
@@ -22,7 +24,7 @@ export default function NetworkStatus() {
   }
 
   return (
-    <div className="fixed top-[430px] right-4 z-30 pointer-events-none">
+    <div className="fixed top-[430px] right-4 z-30 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 font-mono">
         <div className="text-zinc-500 text-[9px] tracking-widest mb-1">NETWORK STATUS</div>
         {SOURCES.map((src) => {
@@ -47,4 +49,4 @@ export default function NetworkStatus() {
       </div>
     </div>
   );
-}
+})

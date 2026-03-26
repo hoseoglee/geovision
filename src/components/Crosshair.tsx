@@ -1,5 +1,7 @@
+import { memo } from 'react';
+
 /** 화면 중앙 조준선 — 팔란티어 스타일 타겟팅 크로스헤어 */
-export default function Crosshair() {
+export default memo(function Crosshair() {
   return (
     <div className="fixed inset-0 z-20 pointer-events-none flex items-center justify-center">
       {/* 수평선 */}
@@ -23,4 +25,4 @@ export default function Crosshair() {
       </div>
     </div>
   );
-}
+})

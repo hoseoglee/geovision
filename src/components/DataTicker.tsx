@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { memo, useEffect, useState, useRef } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { shallow } from 'zustand/shallow';
 
 interface TickerEvent {
   id: number;
@@ -23,11 +24,11 @@ const TYPE_PREFIX = {
 };
 
 /** 하단 데이터 티커 — 실시간 이벤트 스트림 */
-export default function DataTicker() {
+export default memo(function DataTicker() {
   const [events, setEvents] = useState<TickerEvent[]>([]);
   const idRef = useRef(0);
-  const dataCounts = useAppStore((s) => s.dataCounts);
-  const activeLayers = useAppStore((s) => s.activeLayers);
+  const dataCounts = useAppStore((s) => s.dataCounts, shallow);
+  const activeLayers = useAppStore((s) => s.activeLayers, shallow);
 
   // 초기 시스템 이벤트
   useEffect(() => {
@@ -90,7 +91,7 @@ export default function DataTicker() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none">
+    <div className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-950/80 backdrop-blur-sm border-t border-emerald-900/50 px-4 py-1.5">
         <div className="flex items-center gap-3">
           <span className="text-emerald-500 text-[10px] font-mono font-bold tracking-wider flex-shrink-0 animate-pulse">
@@ -113,7 +114,7 @@ export default function DataTicker() {
       </div>
     </div>
   );
-}
+})
 
 function ts() {
   return new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });

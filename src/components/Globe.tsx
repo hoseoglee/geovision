@@ -96,6 +96,7 @@ export default function Globe() {
   const stageRef = useRef<Cesium.PostProcessStage | Cesium.PostProcessStageComposite | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
   const [windyCamsVersion, setWindyCamsVersion] = useState(0);
+  const lastMouseUpdateRef = useRef(0);
 
   // Billboard → 데이터 매핑 (호버/클릭용)
   const billboardDataMap = useRef<Map<any, BillboardMeta>>(new Map());
@@ -183,6 +184,8 @@ export default function Globe() {
       infoBox: false,
       selectionIndicator: false,
       imageryProvider: hasValidToken ? undefined : false as any,
+      requestRenderMode: true,
+      maximumRenderTimeChange: Infinity,
     });
 
     // Expose viewer for debugging
@@ -198,6 +201,10 @@ export default function Globe() {
     viewer.scene.fog.density = 2.0e-4;
 
     viewerRef.current = viewer;
+
+    // 데이터 업데이트 시 렌더 요청
+    const requestRender = () => viewer.scene.requestRender();
+    viewer.clock.onTick.addEventListener(requestRender);
 
     if (hasValidToken) {
       (async () => {
@@ -415,16 +422,20 @@ export default function Globe() {
         setTooltip(null);
       }
 
-      // 마우스 좌표 추적
-      const ray = viewer.camera.getPickRay(movement.endPosition);
-      if (ray) {
-        const pos = viewer.scene.globe.pick(ray, viewer.scene);
-        if (pos) {
-          const carto = Cesium.Cartographic.fromCartesian(pos);
-          setMouseCoords({
-            lat: Cesium.Math.toDegrees(carto.latitude),
-            lng: Cesium.Math.toDegrees(carto.longitude),
-          });
+      // 마우스 좌표 추적 (throttled — 50ms)
+      const now = performance.now();
+      if (now - lastMouseUpdateRef.current > 50) {
+        lastMouseUpdateRef.current = now;
+        const ray = viewer.camera.getPickRay(movement.endPosition);
+        if (ray) {
+          const pos = viewer.scene.globe.pick(ray, viewer.scene);
+          if (pos) {
+            const carto = Cesium.Cartographic.fromCartesian(pos);
+            setMouseCoords({
+              lat: Cesium.Math.toDegrees(carto.latitude),
+              lng: Cesium.Math.toDegrees(carto.longitude),
+            });
+          }
         }
       }
     }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);

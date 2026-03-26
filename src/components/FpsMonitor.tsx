@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 /** FPS 모니터 — 프레임 레이트 + 미니 그래프 */
-export default function FpsMonitor() {
+export default memo(function FpsMonitor() {
   const setFps = useAppStore((s) => s.setFps);
   const [displayFps, setDisplayFps] = useState(60);
   const [history, setHistory] = useState<number[]>(Array(30).fill(60));
@@ -39,7 +39,7 @@ export default function FpsMonitor() {
   const barColor = displayFps >= 50 ? 'bg-emerald-500/60' : displayFps >= 30 ? 'bg-yellow-500/60' : 'bg-red-500/60';
 
   return (
-    <div className="fixed top-[370px] right-4 z-30 pointer-events-none">
+    <div className="fixed top-[370px] right-4 z-30 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 font-mono">
         <div className="flex items-center justify-between mb-1">
           <span className="text-zinc-500 text-[9px] tracking-widest">FPS</span>
@@ -57,4 +57,4 @@ export default function FpsMonitor() {
       </div>
     </div>
   );
-}
+})

@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 /** 레이어 범례 — 색상/아이콘 의미 */
-export default function Legend() {
+export default memo(function Legend() {
   const activeLayers = useAppStore((s) => s.activeLayers);
 
   if (activeLayers.length === 0) return null;
@@ -41,7 +42,7 @@ export default function Legend() {
       )}
     </div>
   );
-}
+})
 
 function LegendSection({ title, items }: { title: string; items: { color: string; label: string }[] }) {
   return (

@@ -1,5 +1,7 @@
+import { memo } from 'react';
+
 /** 레이더 스캔 라인 오버레이 — CSS 애니메이션 */
-export default function ScanLine() {
+export default memo(function ScanLine() {
   return (
     <div className="fixed inset-0 z-20 pointer-events-none overflow-hidden">
       {/* 수평 스캔 라인 */}
@@ -17,4 +19,4 @@ export default function ScanLine() {
       />
     </div>
   );
-}
+})

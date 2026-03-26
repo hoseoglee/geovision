@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useAlertStore } from '@/store/useAlertStore';
+import { shallow } from 'zustand/shallow';
 import { playAlertSound } from '@/utils/alertSound';
 
 /** 뮤트 상태를 항상 최신 값으로 읽는 헬퍼 */
@@ -14,7 +15,7 @@ function playSoundIfNotMuted(severity: 'critical' | 'warning' | 'info') {
  * 알람 모니터 — 백그라운드에서 데이터를 감시하고 특이사항 발생 시 알람 생성
  */
 export default function AlertMonitor() {
-  const dataCounts = useAppStore((s) => s.dataCounts);
+  const dataCounts = useAppStore((s) => s.dataCounts, shallow);
   const lastUpdated = useAppStore((s) => s.lastUpdated);
   const fps = useAppStore((s) => s.fps);
   const activeLayers = useAppStore((s) => s.activeLayers);

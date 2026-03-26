@@ -1,19 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { shallow } from 'zustand/shallow';
 
 /** 팔란티어 스타일 HUD 오버레이 — 코너 브래킷 + 시스템 상태 + 좌표 + 시계 */
 export default function HudOverlay() {
   const [time, setTime] = useState(new Date());
-  const [utcTime, setUtcTime] = useState('');
-  const dataCounts = useAppStore((s) => s.dataCounts);
-  const activeLayers = useAppStore((s) => s.activeLayers);
+  const dataCounts = useAppStore((s) => s.dataCounts, shallow);
+  const activeLayers = useAppStore((s) => s.activeLayers, shallow);
   const hudVisible = useAppStore((s) => s.hudVisible);
 
   useEffect(() => {
     const id = setInterval(() => {
-      const now = new Date();
-      setTime(now);
-      setUtcTime(now.toISOString().replace('T', ' ').slice(0, 19) + 'Z');
+      setTime(new Date());
     }, 1000);
     return () => clearInterval(id);
   }, []);
@@ -46,7 +44,7 @@ export default function HudOverlay() {
             {time.toLocaleTimeString('ko-KR', { hour12: false })}
           </div>
           <div className="text-emerald-600 text-[10px]">
-            UTC {utcTime}
+            UTC {time.toISOString().replace('T', ' ').slice(0, 19) + 'Z'}
           </div>
           <div className="text-zinc-500 text-[10px] mt-1">
             {time.toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short' })}

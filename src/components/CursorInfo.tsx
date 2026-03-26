@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 /** 좌하단 — 마우스 커서 좌표 + 카메라 고도 표시 */
-export default function CursorInfo() {
+export default memo(function CursorInfo() {
   const mouseCoords = useAppStore((s) => s.mouseCoords);
   const cameraAltitude = useAppStore((s) => s.cameraAltitude);
 
@@ -21,7 +22,7 @@ export default function CursorInfo() {
   }
 
   return (
-    <div className="fixed bottom-12 left-[300px] z-30 pointer-events-none font-mono">
+    <div className="fixed bottom-12 left-[300px] z-30 pointer-events-none font-mono" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 space-y-1">
         <div className="text-zinc-500 text-[9px] tracking-widest">CURSOR POSITION</div>
         {mouseCoords ? (
@@ -43,4 +44,4 @@ export default function CursorInfo() {
       </div>
     </div>
   );
-}
+})

@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { isAISConnected } from '@/providers/ShipProvider';
 import { getCCTVCount } from '@/providers/CCTVProvider';
 
 /** 우측 미니 통계 패널 — 위협 레벨 + 데이터 파이프라인 + 엔티티 카운트 */
-export default function MiniStats() {
+export default memo(function MiniStats() {
   const dataCounts = useAppStore((s) => s.dataCounts);
   const [aisLive, setAisLive] = useState(false);
 
@@ -17,7 +17,7 @@ export default function MiniStats() {
   const threatColor = threatLevel === 'ELEVATED' ? 'text-yellow-400' : 'text-emerald-400';
 
   return (
-    <div className="fixed top-20 right-4 z-30 w-44 pointer-events-none">
+    <div className="fixed top-20 right-4 z-30 w-44 pointer-events-none" style={{ contain: 'layout style paint' }}>
       <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-700/40 rounded p-2.5 font-mono space-y-2">
         {/* 위협 레벨 */}
         <div>
@@ -51,7 +51,7 @@ export default function MiniStats() {
       </div>
     </div>
   );
-}
+})
 
 function PipelineRow({ label, value, ok }: { label: string; value: string; ok: boolean }) {
   return (

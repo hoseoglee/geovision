@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 
 /** 태양 위치 계산 (간략 천문학) */
@@ -16,7 +16,7 @@ function getSunPosition(date: Date): { lat: number; lng: number; altitude: numbe
 }
 
 /** 태양/달 위치 HUD 인디케이터 */
-export default function SunPositionHUD() {
+export default memo(function SunPositionHUD() {
   const activeOverlays = useAppStore((s) => s.activeOverlays);
   const [sun, setSun] = useState(getSunPosition(new Date()));
 
@@ -46,6 +46,6 @@ export default function SunPositionHUD() {
       </div>
     </div>
   );
-}
+})
 
 export { getSunPosition };
