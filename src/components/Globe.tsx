@@ -184,7 +184,7 @@ export default function Globe() {
       selectionIndicator: false,
       imageryProvider: hasValidToken ? undefined : false as any,
       requestRenderMode: true,
-      maximumRenderTimeChange: Infinity,
+      maximumRenderTimeChange: 0.5,
     });
 
     // Expose viewer for debugging
