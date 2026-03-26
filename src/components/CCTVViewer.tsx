@@ -62,7 +62,7 @@ export default function CCTVViewer() {
     >
       {/* Header — drag handle */}
       <div
-        className="flex items-center justify-between px-3 py-1.5 bg-gray-900/95 border border-emerald-500/40
+        className="flex items-center justify-between px-3 py-1.5 bg-zinc-900/95 border border-emerald-500/40
           border-b-0 rounded-t cursor-move select-none"
         onMouseDown={onMouseDown}
       >
@@ -83,14 +83,14 @@ export default function CCTVViewer() {
         <div className="flex items-center gap-1.5">
           <button
             onClick={() => setMinimized(!minimized)}
-            className="text-gray-500 hover:text-gray-300 text-xs px-1"
+            className="text-zinc-500 hover:text-zinc-300 text-xs px-1"
             title={minimized ? 'Expand' : 'Minimize'}
           >
             {minimized ? '\u25A1' : '\u2014'}
           </button>
           <button
             onClick={() => { setSelectedCCTV(null); setImgError(false); }}
-            className="text-gray-500 hover:text-red-400 text-xs px-1"
+            className="text-zinc-500 hover:text-red-400 text-xs px-1"
             title="Close"
           >
             ✕
@@ -134,7 +134,7 @@ export default function CCTVViewer() {
                   OPEN PLAYER
                 </a>
               </div>
-              <div className="absolute top-2 left-2 text-[8px] px-1.5 py-0.5 rounded bg-black/60 text-gray-300">
+              <div className="absolute top-2 left-2 text-[8px] px-1.5 py-0.5 rounded bg-black/60 text-zinc-300">
                 SNAPSHOT
               </div>
             </div>
@@ -152,12 +152,12 @@ export default function CCTVViewer() {
             />
           )}
           {/* Bottom info bar */}
-          <div className="flex items-center justify-between px-3 py-1.5 bg-gray-900/95">
+          <div className="flex items-center justify-between px-3 py-1.5 bg-zinc-900/95">
             <div className="flex items-center gap-2">
-              <span className="text-gray-500 text-[9px]">
+              <span className="text-zinc-500 text-[9px]">
                 {cctv.city}, {cctv.country}
               </span>
-              <span className="text-gray-600 text-[9px]">
+              <span className="text-zinc-600 text-[9px]">
                 {cctv.lat.toFixed(3)}, {cctv.lng.toFixed(3)}
               </span>
             </div>
@@ -166,7 +166,7 @@ export default function CCTVViewer() {
             </span>
           </div>
           {/* AI Analysis section */}
-          <div className="bg-gray-900/95">
+          <div className="bg-zinc-900/95">
             <CCTVAnalysis cctv={cctv} />
           </div>
         </div>

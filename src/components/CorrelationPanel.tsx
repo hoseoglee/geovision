@@ -18,18 +18,18 @@ function timeAgo(ts: number): string { const d = Math.floor((Date.now() - ts) / 
 function CorrelationRow({ alert, onFocus }: { alert: CorrelationAlert; onFocus: () => void }) {
   const s = SS[alert.severity];
   return (
-    <div className={`px-3 py-2 border-b border-gray-800/50 flex items-start gap-2 cursor-pointer hover:brightness-125 ${s.bg}`} onClick={onFocus}>
+    <div className={`px-3 py-2 border-b border-zinc-800/50 flex items-start gap-2 cursor-pointer hover:brightness-125 ${s.bg}`} onClick={onFocus}>
       <span className={`text-xs mt-0.5 ${s.text} ${s.pulse}`}>{s.icon}</span>
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center">
           <span className={`text-[10px] font-bold ${s.text}`}>[{alert.ruleId.toUpperCase()}] {alert.title}</span>
-          <span className="text-gray-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
+          <span className="text-zinc-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
         </div>
-        <p className="text-gray-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
+        <p className="text-zinc-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
         {alert.relatedEntities.length > 0 && (
           <div className="flex gap-1 mt-1 flex-wrap">
-            {alert.relatedEntities.slice(0, 4).map((e, i) => (<span key={i} className="text-[8px] bg-gray-800/60 text-gray-500 px-1 py-0.5 rounded">{e.layer}:{e.id.slice(0, 12)}</span>))}
-            {alert.relatedEntities.length > 4 && <span className="text-[8px] text-gray-600">+{alert.relatedEntities.length - 4}</span>}
+            {alert.relatedEntities.slice(0, 4).map((e, i) => (<span key={i} className="text-[8px] bg-zinc-800/60 text-zinc-500 px-1 py-0.5 rounded">{e.layer}:{e.id.slice(0, 12)}</span>))}
+            {alert.relatedEntities.length > 4 && <span className="text-[8px] text-zinc-600">+{alert.relatedEntities.length - 4}</span>}
           </div>
         )}
       </div>
@@ -66,7 +66,7 @@ export default function CorrelationPanel() {
 
   if (!expanded) {
     return (
-      <button onClick={() => setExpanded(true)} className={`fixed bottom-20 right-4 z-50 flex items-center gap-1.5 px-2.5 py-1.5 rounded font-mono text-xs backdrop-blur-sm transition-all border ${criticalCount > 0 ? 'bg-red-900/80 border-red-500/60 text-red-400 animate-pulse' : isRunning ? 'bg-cyan-900/60 border-cyan-500/40 text-cyan-400' : 'bg-gray-800/60 border-gray-600/40 text-gray-500'}`}>
+      <button onClick={() => setExpanded(true)} className={`fixed bottom-20 right-4 z-50 flex items-center gap-1.5 px-2.5 py-1.5 rounded font-mono text-xs backdrop-blur-sm transition-all border ${criticalCount > 0 ? 'bg-red-900/80 border-red-500/60 text-red-400 animate-pulse' : isRunning ? 'bg-cyan-900/60 border-cyan-500/40 text-cyan-400' : 'bg-zinc-800/60 border-zinc-600/40 text-zinc-500'}`}>
         <span className="text-[10px]">{isRunning ? '\u25C9' : '\u25CB'}</span>
         <span className="font-bold tracking-wider">CORR</span>
         {activeCount > 0 && <span className={`text-[9px] px-1 py-0.5 rounded-full font-bold ${criticalCount > 0 ? 'bg-red-600/80 text-white' : 'bg-cyan-600/80 text-white'}`}>{activeCount}</span>}
@@ -75,28 +75,28 @@ export default function CorrelationPanel() {
   }
   return (
     <>
-      <div className="fixed bottom-20 right-4 z-50 w-[420px] max-h-[500px] flex flex-col bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded shadow-2xl font-mono animate-slideIn pointer-events-auto">
-        <div className="flex justify-between items-center px-3 py-2 border-b border-gray-700/40">
-          <div className="flex items-center gap-2"><span className={`w-2 h-2 rounded-full ${isRunning ? 'bg-cyan-400 animate-pulse' : 'bg-gray-600'}`} /><span className="text-gray-300 text-xs font-bold tracking-widest">CORRELATION ENGINE</span></div>
+      <div className="fixed bottom-20 right-4 z-50 w-[420px] max-h-[500px] flex flex-col bg-zinc-900/95 backdrop-blur-md border border-zinc-700/50 rounded shadow-2xl font-mono animate-slideIn pointer-events-auto">
+        <div className="flex justify-between items-center px-3 py-2 border-b border-zinc-700/40">
+          <div className="flex items-center gap-2"><span className={`w-2 h-2 rounded-full ${isRunning ? 'bg-cyan-400 animate-pulse' : 'bg-zinc-600'}`} /><span className="text-zinc-300 text-xs font-bold tracking-widest">CORRELATION ENGINE</span></div>
           <div className="flex items-center gap-2">
             <button onClick={handleToggleEngine} className={`text-[10px] border px-2 py-0.5 rounded transition-colors ${isRunning ? 'border-red-500/40 text-red-400 hover:bg-red-900/30' : 'border-green-500/40 text-green-400 hover:bg-green-900/30'}`}>{isRunning ? 'STOP' : 'START'}</button>
-            <button onClick={() => setExpanded(false)} className="text-gray-500 hover:text-gray-300 text-xs">{'\u2715'}</button>
+            <button onClick={() => setExpanded(false)} className="text-zinc-500 hover:text-zinc-300 text-xs">{'\u2715'}</button>
           </div>
         </div>
-        <div className="flex border-b border-gray-800/40">
-          <button onClick={() => setTab('alerts')} className={`flex-1 py-1.5 text-[10px] font-bold tracking-widest transition-colors ${tab === 'alerts' ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-500 hover:text-gray-400'}`}>ALERTS{activeCount > 0 && <span className="ml-1 px-1 py-px bg-cyan-600/80 text-white text-[8px] rounded-full">{activeCount}</span>}</button>
-          <button onClick={() => setTab('rules')} className={`flex-1 py-1.5 text-[10px] font-bold tracking-widest transition-colors ${tab === 'rules' ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-gray-500 hover:text-gray-400'}`}>RULES<span className="ml-1 text-[8px] text-gray-500">{enabledRuleCount}/{dslRules.length}</span></button>
+        <div className="flex border-b border-zinc-800/40">
+          <button onClick={() => setTab('alerts')} className={`flex-1 py-1.5 text-[10px] font-bold tracking-widest transition-colors ${tab === 'alerts' ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-zinc-500 hover:text-zinc-400'}`}>ALERTS{activeCount > 0 && <span className="ml-1 px-1 py-px bg-cyan-600/80 text-white text-[8px] rounded-full">{activeCount}</span>}</button>
+          <button onClick={() => setTab('rules')} className={`flex-1 py-1.5 text-[10px] font-bold tracking-widest transition-colors ${tab === 'rules' ? 'text-cyan-400 border-b-2 border-cyan-400' : 'text-zinc-500 hover:text-zinc-400'}`}>RULES<span className="ml-1 text-[8px] text-zinc-500">{enabledRuleCount}/{dslRules.length}</span></button>
         </div>
-        <div className="flex gap-3 px-3 py-1.5 border-b border-gray-800/40 text-[9px] text-gray-500">
-          <span>ENGINE: <span className={isRunning ? 'text-cyan-400' : 'text-gray-600'}>{isRunning ? 'ACTIVE' : 'IDLE'}</span></span>
-          <span>RULES: <span className="text-gray-400">{enabledRuleCount}</span></span>
-          <span>TOTAL: <span className="text-gray-400">{correlations.length}</span></span>
-          <span>CRIT: <span className={criticalCount > 0 ? 'text-red-400' : 'text-gray-600'}>{criticalCount}</span></span>
+        <div className="flex gap-3 px-3 py-1.5 border-b border-zinc-800/40 text-[9px] text-zinc-500">
+          <span>ENGINE: <span className={isRunning ? 'text-cyan-400' : 'text-zinc-600'}>{isRunning ? 'ACTIVE' : 'IDLE'}</span></span>
+          <span>RULES: <span className="text-zinc-400">{enabledRuleCount}</span></span>
+          <span>TOTAL: <span className="text-zinc-400">{correlations.length}</span></span>
+          <span>CRIT: <span className={criticalCount > 0 ? 'text-red-400' : 'text-zinc-600'}>{criticalCount}</span></span>
         </div>
-        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
-          {tab === 'alerts' ? (correlations.length === 0 ? <div className="text-gray-600 text-xs text-center py-8">{isRunning ? 'MONITORING \u2014 NO CORRELATIONS DETECTED' : 'ENGINE IDLE \u2014 START TO BEGIN MONITORING'}</div> : correlations.map((a) => <CorrelationRow key={a.id} alert={a} onFocus={() => handleFocus(a)} />)) : (<RuleManager rules={dslRules} onToggle={toggleRule} onEdit={handleEditRule} onDelete={removeRule} onDuplicate={duplicateRule} onImport={importRules} onExport={exportRules} onAdd={handleAddRule} />)}
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700">
+          {tab === 'alerts' ? (correlations.length === 0 ? <div className="text-zinc-600 text-xs text-center py-8">{isRunning ? 'MONITORING \u2014 NO CORRELATIONS DETECTED' : 'ENGINE IDLE \u2014 START TO BEGIN MONITORING'}</div> : correlations.map((a) => <CorrelationRow key={a.id} alert={a} onFocus={() => handleFocus(a)} />)) : (<RuleManager rules={dslRules} onToggle={toggleRule} onEdit={handleEditRule} onDelete={removeRule} onDuplicate={duplicateRule} onImport={importRules} onExport={exportRules} onAdd={handleAddRule} />)}
         </div>
-        {tab === 'alerts' && correlations.length > 0 && (<div className="px-3 py-1.5 border-t border-gray-800/40 flex justify-end"><button onClick={clearCorrelations} className="text-gray-500 hover:text-gray-300 text-[10px] border border-gray-700/40 px-2 py-0.5 rounded">CLEAR ALL</button></div>)}
+        {tab === 'alerts' && correlations.length > 0 && (<div className="px-3 py-1.5 border-t border-zinc-800/40 flex justify-end"><button onClick={clearCorrelations} className="text-zinc-500 hover:text-zinc-300 text-[10px] border border-zinc-700/40 px-2 py-0.5 rounded">CLEAR ALL</button></div>)}
       </div>
       {builderOpen && <RuleBuilder rule={editingRule} onSave={handleSaveRule} onCancel={() => { setBuilderOpen(false); setEditingRule(undefined); }} />}
     </>

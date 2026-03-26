@@ -117,11 +117,11 @@ export default function KeyboardShortcuts() {
 
       {/* Help overlay */}
       <div className="relative pointer-events-auto w-[400px]
-        font-mono bg-gray-900/95 backdrop-blur-md border border-green-500/40 rounded
-        shadow-2xl shadow-green-900/20 animate-slideIn">
+        font-mono bg-zinc-900/95 backdrop-blur-md border border-emerald-500/40 rounded
+        shadow-2xl shadow-emerald-900/20 animate-slideIn">
         {/* Header */}
-        <div className="px-5 py-3 border-b border-green-500/30 text-center">
-          <div className="text-green-400 text-xs tracking-[0.4em] font-bold">
+        <div className="px-5 py-3 border-b border-emerald-500/30 text-center">
+          <div className="text-emerald-400 text-xs tracking-[0.4em] font-bold">
             KEYBOARD SHORTCUTS
           </div>
         </div>
@@ -130,18 +130,18 @@ export default function KeyboardShortcuts() {
         <div className="px-5 py-3 space-y-1.5">
           {SHORTCUT_LIST.map((s) => (
             <div key={s.key} className="flex items-center gap-3">
-              <span className="text-green-400 text-[11px] font-bold w-16 text-right shrink-0
-                bg-gray-800/60 px-1.5 py-0.5 rounded border border-gray-700/40">
+              <span className="text-emerald-400 text-[11px] font-bold w-16 text-right shrink-0
+                bg-zinc-800/60 px-1.5 py-0.5 rounded border border-zinc-700/40">
                 {s.key}
               </span>
-              <span className="text-gray-400 text-[10px]">{s.description}</span>
+              <span className="text-zinc-400 text-[10px]">{s.description}</span>
             </div>
           ))}
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-2 border-t border-gray-700/40 text-center">
-          <span className="text-[8px] text-gray-600">PRESS [?] OR [ESC] TO CLOSE</span>
+        <div className="px-5 py-2 border-t border-zinc-700/40 text-center">
+          <span className="text-[8px] text-zinc-600">PRESS [?] OR [ESC] TO CLOSE</span>
         </div>
       </div>
     </div>

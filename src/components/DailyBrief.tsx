@@ -15,7 +15,7 @@ interface BriefData {
 const LEVEL_CONFIG = {
   critical: { label: 'CRITICAL', dot: 'bg-red-500', text: 'text-red-400', border: 'border-red-500/30' },
   warning: { label: 'WARNING', dot: 'bg-yellow-500', text: 'text-yellow-400', border: 'border-yellow-500/30' },
-  info: { label: 'SUMMARY', dot: 'bg-green-500', text: 'text-green-400', border: 'border-green-500/30' },
+  info: { label: 'SUMMARY', dot: 'bg-emerald-500', text: 'text-emerald-400', border: 'border-emerald-500/30' },
 };
 
 const STORAGE_KEY = 'geovision-daily-brief-seen';
@@ -116,15 +116,15 @@ export default function DailyBrief() {
 
       {/* Modal */}
       <div className="relative pointer-events-auto w-[480px] max-h-[80vh] overflow-y-auto
-        font-mono bg-gray-900/95 backdrop-blur-md border border-green-500/40 rounded
-        shadow-2xl shadow-green-900/20 animate-slideIn">
+        font-mono bg-zinc-900/95 backdrop-blur-md border border-emerald-500/40 rounded
+        shadow-2xl shadow-emerald-900/20 animate-slideIn">
 
         {/* Header */}
-        <div className="px-5 py-3 border-b border-green-500/30 text-center">
-          <div className="text-green-400 text-xs tracking-[0.4em] font-bold">
+        <div className="px-5 py-3 border-b border-emerald-500/30 text-center">
+          <div className="text-emerald-400 text-xs tracking-[0.4em] font-bold">
             GEOVISION DAILY BRIEF
           </div>
-          <div className="text-gray-500 text-[10px] mt-0.5">
+          <div className="text-zinc-500 text-[10px] mt-0.5">
             {dateStr} {timeStr} LOCAL
           </div>
           {data?.simulated && (
@@ -138,7 +138,7 @@ export default function DailyBrief() {
         <div className="px-5 py-3 space-y-3">
           {loading && (
             <div className="text-center py-6">
-              <span className="text-green-400 text-[10px] tracking-widest animate-pulse">
+              <span className="text-emerald-400 text-[10px] tracking-widest animate-pulse">
                 COMPILING INTELLIGENCE BRIEF...
               </span>
             </div>
@@ -156,8 +156,8 @@ export default function DailyBrief() {
                 </div>
                 <ul className="space-y-0.5">
                   {section.items.map((item, i) => (
-                    <li key={i} className="text-[10px] text-gray-300 leading-relaxed flex gap-1.5">
-                      <span className="text-gray-600 select-none">•</span>
+                    <li key={i} className="text-[10px] text-zinc-300 leading-relaxed flex gap-1.5">
+                      <span className="text-zinc-600 select-none">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -168,9 +168,9 @@ export default function DailyBrief() {
 
           {/* Summary */}
           {data?.summary && (
-            <div className="mt-3 pt-3 border-t border-gray-700/40">
-              <div className="text-[9px] text-gray-500 tracking-wider mb-1">ANALYST ASSESSMENT</div>
-              <div className="text-[10px] text-gray-300 leading-relaxed italic">
+            <div className="mt-3 pt-3 border-t border-zinc-700/40">
+              <div className="text-[9px] text-zinc-500 tracking-wider mb-1">ANALYST ASSESSMENT</div>
+              <div className="text-[10px] text-zinc-300 leading-relaxed italic">
                 {data.summary}
               </div>
             </div>
@@ -178,14 +178,14 @@ export default function DailyBrief() {
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-2 border-t border-gray-700/40 flex items-center justify-between">
-          <span className="text-[8px] text-gray-600">
+        <div className="px-5 py-2 border-t border-zinc-700/40 flex items-center justify-between">
+          <span className="text-[8px] text-zinc-600">
             PRESS [B] TO TOGGLE
           </span>
           <button
             onClick={close}
-            className="text-[10px] text-gray-500 hover:text-green-400 transition-colors
-              px-3 py-1 border border-gray-700/40 hover:border-green-500/40 rounded"
+            className="text-[10px] text-zinc-500 hover:text-emerald-400 transition-colors
+              px-3 py-1 border border-zinc-700/40 hover:border-emerald-500/40 rounded"
           >
             DISMISS
           </button>

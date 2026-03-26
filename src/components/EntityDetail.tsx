@@ -161,8 +161,8 @@ export default function EntityDetail() {
   if (!entity) return null;
 
   const isISS = entity.name?.includes('ISS');
-  const typeColor = TYPE_COLORS[entity.type] || 'text-gray-300';
-  const typeBorder = TYPE_BORDER[entity.type] || 'border-gray-500/40';
+  const typeColor = TYPE_COLORS[entity.type] || 'text-zinc-300';
+  const typeBorder = TYPE_BORDER[entity.type] || 'border-zinc-500/40';
 
   const handleNewsToggle = () => {
     if (!showNews) {
@@ -177,12 +177,12 @@ export default function EntityDetail() {
 
   return (
     <div className={`fixed top-20 left-[310px] z-40 w-72 font-mono
-      bg-gray-900/90 backdrop-blur-sm border ${isISS ? 'border-yellow-500/60' : typeBorder} rounded
+      bg-zinc-900/90 backdrop-blur-sm border ${isISS ? 'border-yellow-500/60' : typeBorder} rounded
       transition-all duration-300 animate-slideIn max-h-[85vh] flex flex-col`}>
       {/* 헤더 */}
-      <div className="flex justify-between items-center px-3 py-2 border-b border-gray-700/40 shrink-0">
+      <div className="flex justify-between items-center px-3 py-2 border-b border-zinc-700/40 shrink-0">
         <div className="min-w-0">
-          <div className="text-gray-500 text-[9px] tracking-widest">
+          <div className="text-zinc-500 text-[9px] tracking-widest">
             {isISS ? 'SPACE STATION' : TYPE_LABELS[entity.type] || entity.type.toUpperCase()}
           </div>
           <div className={`text-sm font-bold truncate ${isISS ? 'text-yellow-400' : typeColor}`}>
@@ -191,7 +191,7 @@ export default function EntityDetail() {
         </div>
         <button
           onClick={() => setSelectedEntity(null)}
-          className="text-gray-500 hover:text-gray-300 text-xs pointer-events-auto ml-2 shrink-0"
+          className="text-zinc-500 hover:text-zinc-300 text-xs pointer-events-auto ml-2 shrink-0"
         >✕</button>
       </div>
 
@@ -199,15 +199,15 @@ export default function EntityDetail() {
       <div className="px-3 py-2 space-y-1 shrink-0">
         {Object.entries(entity.details).map(([key, val]) => (
           <div key={key} className="flex justify-between items-center text-[10px] gap-2">
-            <span className="text-gray-500 uppercase shrink-0">{key}</span>
-            <span className="text-gray-300 text-right truncate">{val}</span>
+            <span className="text-zinc-500 uppercase shrink-0">{key}</span>
+            <span className="text-zinc-300 text-right truncate">{val}</span>
           </div>
         ))}
       </div>
 
       {/* ISS: 라이브 스트림 버튼 */}
       {isISS && (
-        <div className="px-3 py-2 border-t border-gray-700/40 space-y-1.5 shrink-0">
+        <div className="px-3 py-2 border-t border-zinc-700/40 space-y-1.5 shrink-0">
           <button
             onClick={() => setIssLiveStream(true)}
             className="w-full flex items-center justify-center gap-1.5 text-[10px] font-bold
@@ -223,7 +223,7 @@ export default function EntityDetail() {
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-1.5 text-[10px] font-bold
               py-1.5 rounded border transition-all hover:brightness-125
-              text-cyan-400 border-cyan-500/40 bg-gray-800/50 hover:bg-gray-700/50"
+              text-cyan-400 border-cyan-500/40 bg-zinc-800/50 hover:bg-zinc-700/50"
           >
             <span>↗</span>
             <span>TRACK ON N2YO</span>
@@ -233,14 +233,14 @@ export default function EntityDetail() {
 
       {/* 기타 엔티티: 외부 사이트 링크 */}
       {!isISS && entity.url && (
-        <div className="px-3 py-2 border-t border-gray-700/40 shrink-0">
+        <div className="px-3 py-2 border-t border-zinc-700/40 shrink-0">
           <a
             href={entity.url}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex items-center justify-center gap-1.5 text-[10px] font-bold
               py-1.5 rounded border transition-all hover:brightness-125
-              ${typeColor} ${typeBorder} bg-gray-800/50 hover:bg-gray-700/50`}
+              ${typeColor} ${typeBorder} bg-zinc-800/50 hover:bg-zinc-700/50`}
           >
             <span>↗</span>
             <span>{LINK_LABELS[entity.type] || 'VIEW DETAILS'}</span>
@@ -249,11 +249,11 @@ export default function EntityDetail() {
       )}
 
       {/* ── 관련 뉴스 섹션 ── */}
-      <div className="border-t border-gray-700/40 shrink-0">
+      <div className="border-t border-zinc-700/40 shrink-0">
         <button
           onClick={handleNewsToggle}
           className="w-full flex items-center justify-between px-3 py-2
-            text-[10px] font-bold tracking-wider text-gray-400 hover:text-gray-200
+            text-[10px] font-bold tracking-wider text-zinc-400 hover:text-zinc-200
             transition-colors"
         >
           <span className="flex items-center gap-1.5">
@@ -271,7 +271,7 @@ export default function EntityDetail() {
         <div className="overflow-y-auto max-h-56 scrollbar-thin">
           {newsLoading && (
             <div className="px-3 py-3 text-center">
-              <div className="text-[10px] text-gray-500 animate-pulse">SCANNING NEWS FEEDS...</div>
+              <div className="text-[10px] text-zinc-500 animate-pulse">SCANNING NEWS FEEDS...</div>
             </div>
           )}
 
@@ -284,15 +284,15 @@ export default function EntityDetail() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block p-1.5 rounded bg-gray-800/50 hover:bg-gray-700/60
-                    border border-gray-700/30 hover:border-gray-600/50
+                  className="block p-1.5 rounded bg-zinc-800/50 hover:bg-zinc-700/60
+                    border border-zinc-700/30 hover:border-zinc-600/50
                     transition-all group"
                 >
-                  <div className="text-[10px] text-gray-200 leading-tight group-hover:text-white
+                  <div className="text-[10px] text-zinc-200 leading-tight group-hover:text-white
                     line-clamp-2">
                     {item.title}
                   </div>
-                  <div className="flex justify-between mt-0.5 text-[8px] text-gray-500">
+                  <div className="flex justify-between mt-0.5 text-[8px] text-zinc-500">
                     <span className="truncate max-w-[60%]">{item.source}</span>
                     <span>{item.pubDate}</span>
                   </div>
@@ -304,7 +304,7 @@ export default function EntityDetail() {
           {/* RSS 실패 시 → Google News 직접 링크 + 추가 소스 */}
           {(newsError || (!newsLoading && newsItems.length === 0)) && (
             <div className="px-3 py-2 space-y-1.5">
-              <div className="text-[9px] text-gray-500 text-center mb-1">
+              <div className="text-[9px] text-zinc-500 text-center mb-1">
                 SEARCH NEWS SOURCES
               </div>
               <a
@@ -312,61 +312,61 @@ export default function EntityDetail() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-2 py-1.5 rounded
-                  bg-gray-800/50 hover:bg-gray-700/60 border border-gray-700/30
-                  hover:border-amber-500/30 transition-all text-[10px] text-gray-300 hover:text-white"
+                  bg-zinc-800/50 hover:bg-zinc-700/60 border border-zinc-700/30
+                  hover:border-amber-500/30 transition-all text-[10px] text-zinc-300 hover:text-white"
               >
                 <span className="text-amber-400 shrink-0">G</span>
                 <span className="truncate">Google News</span>
-                <span className="ml-auto text-gray-500">↗</span>
+                <span className="ml-auto text-zinc-500">↗</span>
               </a>
               <a
                 href={`https://www.reuters.com/search/news?query=${encodeURIComponent(newsQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-2 py-1.5 rounded
-                  bg-gray-800/50 hover:bg-gray-700/60 border border-gray-700/30
-                  hover:border-orange-500/30 transition-all text-[10px] text-gray-300 hover:text-white"
+                  bg-zinc-800/50 hover:bg-zinc-700/60 border border-zinc-700/30
+                  hover:border-orange-500/30 transition-all text-[10px] text-zinc-300 hover:text-white"
               >
                 <span className="text-orange-400 shrink-0">R</span>
                 <span className="truncate">Reuters</span>
-                <span className="ml-auto text-gray-500">↗</span>
+                <span className="ml-auto text-zinc-500">↗</span>
               </a>
               <a
                 href={`https://apnews.com/search?q=${encodeURIComponent(newsQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-2 py-1.5 rounded
-                  bg-gray-800/50 hover:bg-gray-700/60 border border-gray-700/30
-                  hover:border-blue-500/30 transition-all text-[10px] text-gray-300 hover:text-white"
+                  bg-zinc-800/50 hover:bg-zinc-700/60 border border-zinc-700/30
+                  hover:border-blue-500/30 transition-all text-[10px] text-zinc-300 hover:text-white"
               >
                 <span className="text-blue-400 shrink-0">AP</span>
                 <span className="truncate">AP News</span>
-                <span className="ml-auto text-gray-500">↗</span>
+                <span className="ml-auto text-zinc-500">↗</span>
               </a>
               <a
                 href={`https://twitter.com/search?q=${encodeURIComponent(newsQuery)}&f=live`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-2 py-1.5 rounded
-                  bg-gray-800/50 hover:bg-gray-700/60 border border-gray-700/30
-                  hover:border-sky-500/30 transition-all text-[10px] text-gray-300 hover:text-white"
+                  bg-zinc-800/50 hover:bg-zinc-700/60 border border-zinc-700/30
+                  hover:border-sky-500/30 transition-all text-[10px] text-zinc-300 hover:text-white"
               >
                 <span className="text-sky-400 shrink-0">X</span>
                 <span className="truncate">X / Twitter (Live)</span>
-                <span className="ml-auto text-gray-500">↗</span>
+                <span className="ml-auto text-zinc-500">↗</span>
               </a>
             </div>
           )}
 
           {/* 하단 Google News 전체 검색 링크 */}
           {newsItems.length > 0 && (
-            <div className="px-3 py-2 border-t border-gray-700/20">
+            <div className="px-3 py-2 border-t border-zinc-700/20">
               <a
                 href={buildNewsSearchUrl(newsQuery)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1 text-[9px]
-                  text-gray-500 hover:text-amber-400 transition-colors"
+                  text-zinc-500 hover:text-amber-400 transition-colors"
               >
                 <span>VIEW ALL ON GOOGLE NEWS ↗</span>
               </a>

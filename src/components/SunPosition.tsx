@@ -29,18 +29,18 @@ export default function SunPositionHUD() {
 
   return (
     <div className="fixed top-8 left-1/2 -translate-x-1/2 translate-x-32 z-30 pointer-events-none">
-      <div className="bg-gray-900/60 backdrop-blur-sm border border-yellow-500/30 rounded px-3 py-1.5 font-mono flex items-center gap-3">
+      <div className="bg-zinc-900/60 backdrop-blur-sm border border-yellow-500/30 rounded px-3 py-1.5 font-mono flex items-center gap-3">
         <div className="flex items-center gap-1.5">
           <span className="text-yellow-400 text-sm">☀</span>
           <div>
-            <div className="text-gray-500 text-[8px] tracking-widest">SOLAR POSITION</div>
+            <div className="text-zinc-500 text-[8px] tracking-widest">SOLAR POSITION</div>
             <div className="text-yellow-400 text-[10px]">
               {sun.lat.toFixed(1)}° {sun.lat >= 0 ? 'N' : 'S'}, {sun.lng.toFixed(1)}° {sun.lng >= 0 ? 'E' : 'W'}
             </div>
           </div>
         </div>
-        <div className="border-l border-gray-700/40 pl-3">
-          <div className="text-gray-500 text-[8px] tracking-widest">ELEVATION</div>
+        <div className="border-l border-zinc-700/40 pl-3">
+          <div className="text-zinc-500 text-[8px] tracking-widest">ELEVATION</div>
           <div className="text-yellow-300 text-[10px]">{sun.altitude.toFixed(1)}°</div>
         </div>
       </div>

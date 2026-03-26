@@ -14,7 +14,7 @@ const TYPE_COLORS: Record<string, string> = {
   'ADS-B': 'text-yellow-400',
   AIS: 'text-blue-400',
   SEISMIC: 'text-red-400',
-  SYS: 'text-green-400',
+  SYS: 'text-emerald-400',
 };
 
 const SEVERITY_BG: Record<string, string> = {
@@ -87,16 +87,16 @@ export default function EventLog() {
 
   return (
     <div className="fixed bottom-10 right-4 z-30 w-52 pointer-events-none">
-      <div className="bg-gray-900/70 backdrop-blur-sm border border-gray-700/30 rounded font-mono">
-        <div className="px-3 py-1.5 border-b border-gray-700/30">
-          <div className="text-gray-500 text-[9px] tracking-widest">EVENT LOG</div>
+      <div className="bg-zinc-900/70 backdrop-blur-sm border border-zinc-700/30 rounded font-mono">
+        <div className="px-3 py-1.5 border-b border-zinc-700/30">
+          <div className="text-zinc-500 text-[9px] tracking-widest">EVENT LOG</div>
         </div>
-        <div className="max-h-36 overflow-hidden px-2 py-1 space-y-0.5">
+        <div className="max-h-48 overflow-hidden px-2 py-1 space-y-0.5">
           {logs.map((log) => (
             <div key={log.id} className={`text-[9px] px-1 py-0.5 rounded ${SEVERITY_BG[log.severity]}`}>
-              <span className="text-gray-600">{log.time}</span>{' '}
+              <span className="text-zinc-600">{log.time}</span>{' '}
               <span className={TYPE_COLORS[log.type]}>[{log.type}]</span>{' '}
-              <span className="text-gray-400">{log.message}</span>
+              <span className="text-zinc-400">{log.message}</span>
             </div>
           ))}
         </div>

@@ -45,23 +45,23 @@ export default function RuleBuilder({ rule, onSave, onCancel }: RuleBuilderProps
     setErrors([]); onSave(dsl);
   }
 
-  const ic = 'w-full bg-gray-800 border border-gray-600 rounded px-2 py-1 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500 font-mono';
-  const sc = 'bg-gray-800 border border-gray-600 rounded px-2 py-1 text-sm text-gray-200 focus:outline-none focus:border-cyan-500 font-mono appearance-none cursor-pointer';
-  const lc = 'text-[11px] uppercase tracking-wider text-gray-500 font-mono';
+  const ic = 'w-full bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-cyan-500 font-mono';
+  const sc = 'bg-zinc-800 border border-zinc-600 rounded px-2 py-1 text-sm text-zinc-200 focus:outline-none focus:border-cyan-500 font-mono appearance-none cursor-pointer';
+  const lc = 'text-[11px] uppercase tracking-wider text-zinc-500 font-mono';
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60" onClick={(e) => { if (e.target === e.currentTarget) onCancel(); }}>
-      <div className="w-[480px] max-h-[80vh] overflow-y-auto bg-gray-900/[.98] border border-gray-700 rounded-lg shadow-2xl font-mono">
-        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-700">
+      <div className="w-[480px] max-h-[80vh] overflow-y-auto bg-zinc-900/[.98] border border-zinc-700 rounded-lg shadow-2xl font-mono">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-700">
           <h2 className="text-sm font-bold tracking-widest text-cyan-400 uppercase">{isEdit ? 'Edit Rule' : 'Rule Builder'}</h2>
-          <button onClick={onCancel} className="text-gray-500 hover:text-gray-300 text-lg leading-none">&times;</button>
+          <button onClick={onCancel} className="text-zinc-500 hover:text-zinc-300 text-lg leading-none">&times;</button>
         </div>
         <div className="p-4 space-y-4">
           <div className="space-y-1"><label className={lc}>Name *</label><input className={ic} placeholder="e.g. Earthquake near Nuclear Plant" value={name} onChange={(e) => setName(e.target.value)} /></div>
           <div className="space-y-1"><label className={lc}>Description</label><input className={ic} placeholder="Optional description" value={description} onChange={(e) => setDescription(e.target.value)} /></div>
           <div className="space-y-1"><label className={lc}>Severity</label><select className={`${sc} w-full`} value={severity} onChange={(e) => setSeverity(e.target.value as AlertSeverity)}>{SEVERITIES.map((s) => <option key={s} value={s}>{s.toUpperCase()}</option>)}</select></div>
           <div className="pt-2">
-            <div className="text-[10px] uppercase tracking-widest text-gray-600 mb-2 border-b border-gray-700 pb-1">Sources</div>
+            <div className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2 border-b border-zinc-700 pb-1">Sources</div>
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1"><label className={lc}>Trigger Layer</label><select className={`${sc} w-full`} value={triggerLayer} onChange={(e) => setTriggerLayer(e.target.value)}>{AVAILABLE_LAYERS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}</select></div>
               <div className="space-y-1"><label className={lc}>Target Layer</label><select className={`${sc} w-full`} value={targetLayer} onChange={(e) => setTargetLayer(e.target.value)}>{AVAILABLE_LAYERS.map((l) => <option key={l.id} value={l.id}>{l.label}</option>)}</select></div>
@@ -73,8 +73,8 @@ export default function RuleBuilder({ rule, onSave, onCancel }: RuleBuilderProps
             </div>
           </div>
           <div className="pt-2">
-            <div className="text-[10px] uppercase tracking-widest text-gray-600 mb-2 border-b border-gray-700 pb-1">Trigger Condition (optional)</div>
-            <label className="flex items-center gap-2 text-xs text-gray-400 cursor-pointer mb-2"><input type="checkbox" checked={triggerEnabled} onChange={(e) => setTriggerEnabled(e.target.checked)} className="accent-cyan-500" />Enable</label>
+            <div className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2 border-b border-zinc-700 pb-1">Trigger Condition (optional)</div>
+            <label className="flex items-center gap-2 text-xs text-zinc-400 cursor-pointer mb-2"><input type="checkbox" checked={triggerEnabled} onChange={(e) => setTriggerEnabled(e.target.checked)} className="accent-cyan-500" />Enable</label>
             {triggerEnabled && <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-end">
               <div className="space-y-1"><label className={lc}>Field</label><input className={ic} placeholder="e.g. magnitude" value={triggerField} onChange={(e) => setTriggerField(e.target.value)} /></div>
               <div className="space-y-1"><label className={lc}>Op</label><select className={sc} value={triggerOp} onChange={(e) => setTriggerOp(e.target.value as RuleDSLConditionFilter['operator'])}>{OPERATORS.map((op) => <option key={op} value={op}>{op}</option>)}</select></div>
@@ -82,8 +82,8 @@ export default function RuleBuilder({ rule, onSave, onCancel }: RuleBuilderProps
             </div>}
           </div>
           <div className="pt-2">
-            <div className="text-[10px] uppercase tracking-widest text-gray-600 mb-2 border-b border-gray-700 pb-1">Target Condition (optional)</div>
-            <label className="flex items-center gap-2 text-xs text-gray-400 cursor-pointer mb-2"><input type="checkbox" checked={targetEnabled} onChange={(e) => setTargetEnabled(e.target.checked)} className="accent-cyan-500" />Enable</label>
+            <div className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2 border-b border-zinc-700 pb-1">Target Condition (optional)</div>
+            <label className="flex items-center gap-2 text-xs text-zinc-400 cursor-pointer mb-2"><input type="checkbox" checked={targetEnabled} onChange={(e) => setTargetEnabled(e.target.checked)} className="accent-cyan-500" />Enable</label>
             {targetEnabled && <div className="grid grid-cols-[1fr_auto_1fr] gap-2 items-end">
               <div className="space-y-1"><label className={lc}>Field</label><input className={ic} placeholder="e.g. status" value={targetField} onChange={(e) => setTargetField(e.target.value)} /></div>
               <div className="space-y-1"><label className={lc}>Op</label><select className={sc} value={targetOp} onChange={(e) => setTargetOp(e.target.value as RuleDSLConditionFilter['operator'])}>{OPERATORS.map((op) => <option key={op} value={op}>{op}</option>)}</select></div>
@@ -91,8 +91,8 @@ export default function RuleBuilder({ rule, onSave, onCancel }: RuleBuilderProps
             </div>}
           </div>
           {errors.length > 0 && <div className="bg-red-900/30 border border-red-700 rounded p-2 space-y-1">{errors.map((err, i) => <p key={i} className="text-xs text-red-400 font-mono">{err}</p>)}</div>}
-          <div className="flex justify-end gap-3 pt-2 border-t border-gray-700">
-            <button onClick={onCancel} className="px-4 py-1.5 text-xs uppercase tracking-wider text-gray-400 border border-gray-600 rounded hover:bg-gray-800">Cancel</button>
+          <div className="flex justify-end gap-3 pt-2 border-t border-zinc-700">
+            <button onClick={onCancel} className="px-4 py-1.5 text-xs uppercase tracking-wider text-zinc-400 border border-zinc-600 rounded hover:bg-zinc-800">Cancel</button>
             <button onClick={handleSave} className="px-4 py-1.5 text-xs uppercase tracking-wider text-black bg-cyan-500 rounded hover:bg-cyan-400 font-bold">Save Rule</button>
           </div>
         </div>

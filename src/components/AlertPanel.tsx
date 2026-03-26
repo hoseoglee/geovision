@@ -131,13 +131,13 @@ export default function AlertPanel() {
       {/* 확장된 알람 패널 */}
       {expanded && (
         <div className="fixed top-16 left-[300px] z-50 w-[420px] max-h-[500px] flex flex-col
-          bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded shadow-2xl
+          bg-zinc-900/95 backdrop-blur-md border border-zinc-700/50 rounded shadow-2xl
           font-mono animate-slideIn pointer-events-auto">
           {/* 헤더 */}
-          <div className="flex justify-between items-center px-3 py-2 border-b border-gray-700/40">
+          <div className="flex justify-between items-center px-3 py-2 border-b border-zinc-700/40">
             <div className="flex items-center gap-2">
               <span className="text-red-400 text-sm">🚨</span>
-              <span className="text-gray-300 text-xs font-bold tracking-widest">ALERT CENTER</span>
+              <span className="text-zinc-300 text-xs font-bold tracking-widest">ALERT CENTER</span>
               {unacknowledgedCount > 0 && (
                 <span className="bg-red-600/80 text-white text-[9px] px-1.5 py-0.5 rounded-full font-bold">
                   {unacknowledgedCount}
@@ -147,20 +147,20 @@ export default function AlertPanel() {
             <div className="flex items-center gap-2">
               <button
                 onClick={toggleMute}
-                className="text-gray-500 hover:text-gray-300 text-xs"
+                className="text-zinc-500 hover:text-zinc-300 text-xs"
                 title={muted ? 'Unmute' : 'Mute'}
               >
                 {muted ? '🔇' : '🔊'}
               </button>
               <button
                 onClick={acknowledgeAll}
-                className="text-gray-500 hover:text-green-400 text-[10px] border border-gray-700/40 px-2 py-0.5 rounded"
+                className="text-zinc-500 hover:text-emerald-400 text-[10px] border border-zinc-700/40 px-2 py-0.5 rounded"
               >
                 ACK ALL
               </button>
               <button
                 onClick={() => setExpanded(false)}
-                className="text-gray-500 hover:text-gray-300 text-xs"
+                className="text-zinc-500 hover:text-zinc-300 text-xs"
               >
                 ✕
               </button>
@@ -168,9 +168,9 @@ export default function AlertPanel() {
           </div>
 
           {/* 알람 목록 */}
-          <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
+          <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700">
             {alerts.length === 0 ? (
-              <div className="text-gray-600 text-xs text-center py-8">NO ACTIVE ALERTS</div>
+              <div className="text-zinc-600 text-xs text-center py-8">NO ACTIVE ALERTS</div>
             ) : (
               alerts.map((alert) => (
                 <AlertRow key={alert.id} alert={alert} onAck={() => acknowledgeAlert(alert.id)} />
@@ -203,12 +203,12 @@ function AlertToast({ alert, onAck }: { alert: Alert; onAck: () => void }) {
           <span className={`text-[10px] font-bold ${style.text}`}>
             [{CATEGORY_LABELS[alert.category] || alert.category}] {alert.title}
           </span>
-          <span className="text-gray-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
+          <span className="text-zinc-600 text-[9px] ml-2">{timeAgo(alert.timestamp)}</span>
         </div>
-        <p className="text-gray-400 text-[10px] mt-0.5 leading-snug">{alert.message}</p>
-        {url && <span className="text-gray-600 text-[8px] mt-0.5">↗ CLICK TO VIEW</span>}
+        <p className="text-zinc-400 text-[10px] mt-0.5 leading-snug">{alert.message}</p>
+        {url && <span className="text-zinc-600 text-[8px] mt-0.5">↗ CLICK TO VIEW</span>}
       </div>
-      <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0" title="Acknowledge">
+      <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-zinc-600 hover:text-emerald-400 text-[10px] mt-0.5 shrink-0" title="Acknowledge">
         ✓
       </button>
     </div>
@@ -225,7 +225,7 @@ function AlertRow({ alert, onAck }: { alert: Alert; onAck: () => void }) {
 
   return (
     <div
-      className={`px-3 py-2 border-b border-gray-800/50 flex items-start gap-2
+      className={`px-3 py-2 border-b border-zinc-800/50 flex items-start gap-2
       ${alert.acknowledged ? 'opacity-40' : ''} ${!alert.acknowledged ? style.bg : ''}
       ${url ? 'cursor-pointer hover:brightness-125' : ''}`}
       onClick={handleClick}
@@ -233,18 +233,18 @@ function AlertRow({ alert, onAck }: { alert: Alert; onAck: () => void }) {
       <span className="text-xs mt-0.5">{style.icon}</span>
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-center">
-          <span className={`text-[10px] font-bold ${alert.acknowledged ? 'text-gray-600' : style.text}`}>
+          <span className={`text-[10px] font-bold ${alert.acknowledged ? 'text-zinc-600' : style.text}`}>
             [{CATEGORY_LABELS[alert.category] || alert.category}] {alert.title}
           </span>
           <div className="flex items-center gap-1.5">
-            {url && <span className="text-gray-600 text-[8px]">↗</span>}
-            <span className="text-gray-600 text-[9px]">{timeAgo(alert.timestamp)}</span>
+            {url && <span className="text-zinc-600 text-[8px]">↗</span>}
+            <span className="text-zinc-600 text-[9px]">{timeAgo(alert.timestamp)}</span>
           </div>
         </div>
-        <p className="text-gray-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
+        <p className="text-zinc-500 text-[9px] mt-0.5 leading-snug">{alert.message}</p>
       </div>
       {!alert.acknowledged && (
-        <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-gray-600 hover:text-green-400 text-[10px] mt-0.5 shrink-0">✓</button>
+        <button onClick={(e) => { e.stopPropagation(); onAck(); }} className="text-zinc-600 hover:text-emerald-400 text-[10px] mt-0.5 shrink-0">✓</button>
       )}
     </div>
   );

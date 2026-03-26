@@ -2706,7 +2706,7 @@ export default function Globe() {
       {tooltip && (
         <div
           className="fixed z-50 pointer-events-none font-mono text-[10px] leading-snug
-            bg-gray-900/90 backdrop-blur-sm border border-gray-600/50 rounded px-2.5 py-1.5 shadow-lg"
+            bg-zinc-900/90 backdrop-blur-sm border border-zinc-600/50 rounded px-2.5 py-1.5 shadow-lg"
           style={{
             left: tooltip.x + 16,
             top: tooltip.y - 10,

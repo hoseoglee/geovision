@@ -47,8 +47,8 @@ function buildSearchIndex(): SearchResult[] {
 }
 
 const CATEGORY_COLOR: Record<string, string> = {
-  CITY: 'text-green-400',
-  LANDMARK: 'text-green-500',
+  CITY: 'text-emerald-400',
+  LANDMARK: 'text-emerald-500',
   CHOKEPOINT: 'text-orange-400',
   'MIL BASE': 'text-red-400',
   NUCLEAR: 'text-yellow-400',
@@ -139,46 +139,46 @@ export default function SearchModal() {
 
       {/* Search panel */}
       <div className="relative pointer-events-auto w-[480px] max-h-[60vh] flex flex-col
-        font-mono bg-gray-900/95 backdrop-blur-md border border-green-500/40 rounded
-        shadow-2xl shadow-green-900/20 animate-slideIn">
+        font-mono bg-zinc-900/95 backdrop-blur-md border border-emerald-500/40 rounded
+        shadow-2xl shadow-emerald-900/20 animate-slideIn">
         {/* Search input */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700/40">
-          <span className="text-green-400 text-sm">&gt;</span>
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-zinc-700/40">
+          <span className="text-emerald-400 text-sm">&gt;</span>
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search locations, bases, ports..."
-            className="flex-1 bg-transparent text-gray-200 text-sm outline-none placeholder-gray-600
+            className="flex-1 bg-transparent text-zinc-200 text-sm outline-none placeholder-zinc-600
               font-mono tracking-wide"
           />
-          <span className="text-gray-600 text-[9px] border border-gray-700/40 px-1.5 py-0.5 rounded">ESC</span>
+          <span className="text-zinc-600 text-[9px] border border-zinc-700/40 px-1.5 py-0.5 rounded">ESC</span>
         </div>
 
         {/* Results */}
-        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
+        <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700">
           {results.length === 0 ? (
-            <div className="text-gray-600 text-xs text-center py-6">NO RESULTS FOUND</div>
+            <div className="text-zinc-600 text-xs text-center py-6">NO RESULTS FOUND</div>
           ) : (
             results.map((result, idx) => (
               <div
                 key={`${result.category}-${result.name}`}
                 className={`flex items-center gap-3 px-4 py-2 cursor-pointer transition-colors
-                  ${idx === selectedIdx ? 'bg-green-900/30 border-l-2 border-green-500' : 'border-l-2 border-transparent hover:bg-gray-800/40'}`}
+                  ${idx === selectedIdx ? 'bg-emerald-900/30 border-l-2 border-emerald-500' : 'border-l-2 border-transparent hover:bg-zinc-800/40'}`}
                 onClick={() => selectResult(result)}
                 onMouseEnter={() => setSelectedIdx(idx)}
               >
-                <span className={`text-[9px] font-bold w-16 shrink-0 ${CATEGORY_COLOR[result.category] ?? 'text-gray-500'}`}>
+                <span className={`text-[9px] font-bold w-16 shrink-0 ${CATEGORY_COLOR[result.category] ?? 'text-zinc-500'}`}>
                   {result.category}
                 </span>
                 <div className="flex-1 min-w-0">
-                  <span className="text-gray-200 text-xs">{result.name}</span>
+                  <span className="text-zinc-200 text-xs">{result.name}</span>
                   {result.detail && (
-                    <span className="text-gray-600 text-[9px] ml-2">{result.detail}</span>
+                    <span className="text-zinc-600 text-[9px] ml-2">{result.detail}</span>
                   )}
                 </div>
-                <span className="text-gray-700 text-[8px] shrink-0">
+                <span className="text-zinc-700 text-[8px] shrink-0">
                   {result.lat.toFixed(1)}, {result.lng.toFixed(1)}
                 </span>
               </div>
@@ -187,11 +187,11 @@ export default function SearchModal() {
         </div>
 
         {/* Footer */}
-        <div className="px-4 py-1.5 border-t border-gray-700/40 flex items-center justify-between">
-          <span className="text-[8px] text-gray-600">
+        <div className="px-4 py-1.5 border-t border-zinc-700/40 flex items-center justify-between">
+          <span className="text-[8px] text-zinc-600">
             {results.length} RESULTS
           </span>
-          <div className="flex gap-2 text-[8px] text-gray-600">
+          <div className="flex gap-2 text-[8px] text-zinc-600">
             <span>↑↓ NAVIGATE</span>
             <span>ENTER SELECT</span>
             <span>/ TOGGLE</span>

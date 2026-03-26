@@ -71,7 +71,7 @@ export default function FilterControls() {
 
   return (
     <div className="space-y-1">
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-green-500 mb-2">
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-2">
         Visual Filter
       </h3>
       <div className="grid grid-cols-3 gap-1.5">
@@ -95,8 +95,8 @@ export default function FilterControls() {
               className={`px-2 py-1.5 rounded text-xs font-medium transition-all border
                 ${
                   isActive
-                    ? 'bg-green-600/30 border-green-500 text-green-300 shadow-[0_0_8px_rgba(34,197,94,0.2)]'
-                    : 'bg-gray-800/50 border-gray-700 text-gray-400 hover:border-gray-500 hover:text-gray-200'
+                    ? 'bg-emerald-600/30 border-emerald-500 text-emerald-300 shadow-[0_0_8px_rgba(34,197,94,0.2)]'
+                    : 'bg-zinc-800/50 border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200'
                 }`}
             >
               <span>{filter.label}</span>
@@ -106,18 +106,18 @@ export default function FilterControls() {
         })}
       </div>
       {activeFilters.length > 0 && (
-        <p className="text-[9px] text-gray-600 mt-1">⌘/Ctrl+Click to combine filters</p>
+        <p className="text-[9px] text-zinc-600 mt-1">⌘/Ctrl+Click to combine filters</p>
       )}
 
       {/* 파라미터 슬라이더 */}
       {allActiveParams.length > 0 && (
-        <div className="mt-3 space-y-2 border-t border-gray-700/50 pt-2">
-          <h4 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500">
+        <div className="mt-3 space-y-2 border-t border-zinc-700/50 pt-2">
+          <h4 className="text-[10px] font-semibold uppercase tracking-wider text-zinc-500">
             Parameters {activeFilters.length > 1 && `(${activeFilters.length} filters)`}
           </h4>
           {allActiveParams.map((param) => (
             <div key={param.key} className="flex items-center gap-2">
-              <span className="text-[10px] text-gray-400 w-16 shrink-0">{param.label}</span>
+              <span className="text-[10px] text-zinc-400 w-16 shrink-0">{param.label}</span>
               <input
                 type="range"
                 min={param.min}
@@ -125,20 +125,20 @@ export default function FilterControls() {
                 step={param.step}
                 value={filterParams[param.key] ?? param.default}
                 onChange={(e) => setFilterParam(param.key, parseFloat(e.target.value))}
-                className="flex-1 h-1 accent-green-500 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                className="flex-1 h-1 accent-emerald-500 bg-zinc-700 rounded-lg appearance-none cursor-pointer"
               />
-              <span className="text-[10px] text-gray-500 w-8 text-right">
+              <span className="text-[10px] text-zinc-500 w-8 text-right">
                 {(filterParams[param.key] ?? param.default).toFixed(param.step < 0.01 ? 3 : 1)}
               </span>
             </div>
           ))}
 
           {/* 프리셋 저장/불러오기 */}
-          <div className="mt-2 border-t border-gray-700/30 pt-2">
+          <div className="mt-2 border-t border-zinc-700/30 pt-2">
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setShowPresets(!showPresets)}
-                className="text-[10px] text-gray-500 hover:text-gray-300 transition-colors"
+                className="text-[10px] text-zinc-500 hover:text-zinc-300 transition-colors"
               >
                 {showPresets ? 'Hide' : 'Presets'} ({presetNames.length})
               </button>
@@ -148,8 +148,8 @@ export default function FilterControls() {
                 placeholder="Name..."
                 value={presetName}
                 onChange={(e) => setPresetName(e.target.value)}
-                className="w-20 px-1.5 py-0.5 text-[10px] bg-gray-800/60 border border-gray-700 rounded
-                  text-gray-300 placeholder-gray-600 focus:border-green-600 focus:outline-none"
+                className="w-20 px-1.5 py-0.5 text-[10px] bg-zinc-800/60 border border-zinc-700 rounded
+                  text-zinc-300 placeholder-zinc-600 focus:border-emerald-600 focus:outline-none"
               />
               <button
                 onClick={() => {
@@ -159,8 +159,8 @@ export default function FilterControls() {
                   }
                 }}
                 disabled={!presetName.trim()}
-                className="px-1.5 py-0.5 text-[10px] bg-green-800/40 border border-green-700/50 rounded
-                  text-green-400 hover:bg-green-700/40 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                className="px-1.5 py-0.5 text-[10px] bg-emerald-800/40 border border-emerald-700/50 rounded
+                  text-emerald-400 hover:bg-emerald-700/40 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
               >
                 Save
               </button>
@@ -172,14 +172,14 @@ export default function FilterControls() {
                   <div key={name} className="flex items-center gap-1">
                     <button
                       onClick={() => loadFilterPreset(name)}
-                      className="flex-1 text-left px-1.5 py-0.5 text-[10px] text-gray-400
-                        hover:text-green-300 hover:bg-gray-800/50 rounded transition-colors truncate"
+                      className="flex-1 text-left px-1.5 py-0.5 text-[10px] text-zinc-400
+                        hover:text-emerald-300 hover:bg-zinc-800/50 rounded transition-colors truncate"
                     >
                       {name}
                     </button>
                     <button
                       onClick={() => deleteFilterPreset(name)}
-                      className="px-1 text-[10px] text-gray-600 hover:text-red-400 transition-colors"
+                      className="px-1 text-[10px] text-zinc-600 hover:text-red-400 transition-colors"
                       title="Delete preset"
                     >
                       x

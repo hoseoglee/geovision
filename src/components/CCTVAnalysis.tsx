@@ -21,12 +21,12 @@ const BADGE_COLORS: Record<string, string> = {
   congested: 'bg-red-900/50 text-red-400 border-red-500/40',
   clear: 'bg-cyan-900/50 text-cyan-400 border-cyan-500/40',
   sunny: 'bg-yellow-900/50 text-yellow-300 border-yellow-500/40',
-  cloudy: 'bg-gray-800/50 text-gray-400 border-gray-500/40',
-  overcast: 'bg-gray-800/50 text-gray-400 border-gray-500/40',
+  cloudy: 'bg-zinc-800/50 text-zinc-400 border-zinc-500/40',
+  overcast: 'bg-zinc-800/50 text-zinc-400 border-zinc-500/40',
   rainy: 'bg-blue-900/50 text-blue-400 border-blue-500/40',
-  foggy: 'bg-gray-800/50 text-gray-300 border-gray-400/40',
+  foggy: 'bg-zinc-800/50 text-zinc-300 border-zinc-400/40',
   snowy: 'bg-white/10 text-white border-white/30',
-  unknown: 'bg-gray-800/50 text-gray-500 border-gray-600/40',
+  unknown: 'bg-zinc-800/50 text-zinc-500 border-zinc-600/40',
 };
 
 function getBadgeClass(value: string): string {
@@ -117,7 +117,7 @@ export default function CCTVAnalysis({ cctv }: { cctv: CCTVData }) {
   }, [cctv]);
 
   return (
-    <div className="border-t border-gray-700/40">
+    <div className="border-t border-zinc-700/40">
       {/* Analyze button */}
       {!result && !loading && (
         <div className="px-3 py-2">
@@ -149,7 +149,7 @@ export default function CCTVAnalysis({ cctv }: { cctv: CCTVData }) {
           <div className="text-red-400 text-[10px]">{error}</div>
           <button
             onClick={analyze}
-            className="mt-1 text-[9px] text-gray-500 hover:text-gray-300 underline"
+            className="mt-1 text-[9px] text-zinc-500 hover:text-zinc-300 underline"
           >
             RETRY
           </button>
@@ -180,12 +180,12 @@ export default function CCTVAnalysis({ cctv }: { cctv: CCTVData }) {
           </div>
 
           {/* Analysis text */}
-          <div className="text-[9px] text-gray-300 leading-relaxed">
+          <div className="text-[9px] text-zinc-300 leading-relaxed">
             {result.analysis.replace('[SIMULATED] ', '').replace(`${cctv.name}: `, '')}
           </div>
 
           {/* Timestamp */}
-          <div className="text-[8px] text-gray-600">
+          <div className="text-[8px] text-zinc-600">
             {new Date(result.timestamp).toLocaleTimeString('en-US', { hour12: false })}
           </div>
 

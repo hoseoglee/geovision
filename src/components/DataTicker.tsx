@@ -12,7 +12,7 @@ const TYPE_COLORS = {
   satellite: 'text-cyan-400',
   flight: 'text-yellow-400',
   earthquake: 'text-red-400',
-  system: 'text-green-400',
+  system: 'text-emerald-400',
 };
 
 const TYPE_PREFIX = {
@@ -91,20 +91,20 @@ export default function DataTicker() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none">
-      <div className="bg-gray-950/80 backdrop-blur-sm border-t border-green-900/50 px-4 py-1.5">
+      <div className="bg-zinc-950/80 backdrop-blur-sm border-t border-emerald-900/50 px-4 py-1.5">
         <div className="flex items-center gap-3">
-          <span className="text-green-500 text-[10px] font-mono font-bold tracking-wider flex-shrink-0 animate-pulse">
+          <span className="text-emerald-500 text-[10px] font-mono font-bold tracking-wider flex-shrink-0 animate-pulse">
             LIVE
           </span>
           <div className="overflow-hidden flex-1">
             <div className="flex gap-6 animate-ticker font-mono text-[11px] whitespace-nowrap">
               {events.slice(0, 10).map((e) => (
                 <span key={e.id} className="flex-shrink-0">
-                  <span className="text-gray-600">{e.time}</span>
+                  <span className="text-zinc-600">{e.time}</span>
                   {' '}
                   <span className={TYPE_COLORS[e.type]}>{TYPE_PREFIX[e.type]}</span>
                   {' '}
-                  <span className="text-gray-400">{e.message}</span>
+                  <span className="text-zinc-400">{e.message}</span>
                 </span>
               ))}
             </div>

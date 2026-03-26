@@ -23,8 +23,8 @@ export default function NetworkStatus() {
 
   return (
     <div className="fixed top-[430px] right-4 z-30 pointer-events-none">
-      <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/30 rounded px-3 py-2 font-mono">
-        <div className="text-gray-500 text-[9px] tracking-widest mb-1">NETWORK STATUS</div>
+      <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 font-mono">
+        <div className="text-zinc-500 text-[9px] tracking-widest mb-1">NETWORK STATUS</div>
         {SOURCES.map((src) => {
           const active = activeLayers.includes(src.key);
           const ts = lastUpdated[src.key];
@@ -32,14 +32,14 @@ export default function NetworkStatus() {
           return (
             <div key={src.key} className="flex items-center gap-1.5 text-[10px] py-0.5">
               <div className={`w-1.5 h-1.5 rounded-full ${
-                active ? (ts ? 'bg-green-400 animate-pulse' : 'bg-yellow-400') : 'bg-gray-600'
+                active ? (ts ? 'bg-emerald-400 animate-pulse' : 'bg-yellow-400') : 'bg-zinc-600'
               }`} />
-              <span className="text-gray-500 w-16">{src.label}</span>
-              <span className={`flex-1 text-right ${active ? 'text-green-400' : 'text-gray-600'}`}>
+              <span className="text-zinc-500 w-16">{src.label}</span>
+              <span className={`flex-1 text-right ${active ? 'text-emerald-400' : 'text-zinc-600'}`}>
                 {active ? (ts ? timeAgo(ts) : 'SYNC...') : 'OFF'}
               </span>
               {active && count > 0 && (
-                <span className="text-gray-600 w-10 text-right">{count}</span>
+                <span className="text-zinc-600 w-10 text-right">{count}</span>
               )}
             </div>
           );

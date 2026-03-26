@@ -153,7 +153,7 @@ export default function ExportModal() {
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
 
       {/* Modal */}
-      <div className="relative w-[460px] max-h-[85vh] overflow-y-auto bg-gray-950 border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/10 font-mono text-sm">
+      <div className="relative w-[460px] max-h-[85vh] overflow-y-auto bg-zinc-950 border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/10 font-mono text-sm">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-cyan-500/20">
           <div className="flex items-center gap-2">
@@ -162,7 +162,7 @@ export default function ExportModal() {
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="text-gray-500 hover:text-cyan-400 transition-colors text-lg leading-none"
+            className="text-zinc-500 hover:text-cyan-400 transition-colors text-lg leading-none"
           >
             ×
           </button>
@@ -171,19 +171,19 @@ export default function ExportModal() {
         <div className="p-4 space-y-4">
           {/* Data Preview */}
           <div className="grid grid-cols-2 gap-2">
-            <div className="bg-gray-900/50 border border-gray-700/50 rounded p-2 text-center">
+            <div className="bg-zinc-900/50 border border-zinc-700/50 rounded p-2 text-center">
               <div className="text-lg font-bold text-amber-400">{previewAlerts.length}</div>
-              <div className="text-[10px] text-gray-500 uppercase tracking-wider">Alerts</div>
+              <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Alerts</div>
             </div>
-            <div className="bg-gray-900/50 border border-gray-700/50 rounded p-2 text-center">
+            <div className="bg-zinc-900/50 border border-zinc-700/50 rounded p-2 text-center">
               <div className="text-lg font-bold text-purple-400">{previewCorrelations.length}</div>
-              <div className="text-[10px] text-gray-500 uppercase tracking-wider">Correlations</div>
+              <div className="text-[10px] text-zinc-500 uppercase tracking-wider">Correlations</div>
             </div>
           </div>
 
           {/* Time Range */}
           <div>
-            <label className="block text-[10px] text-gray-500 uppercase tracking-wider mb-1.5">Time Range</label>
+            <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1.5">Time Range</label>
             <div className="grid grid-cols-4 gap-1">
               {(Object.keys(TIME_RANGE_LABELS) as TimeRange[]).map((tr) => (
                 <button
@@ -192,7 +192,7 @@ export default function ExportModal() {
                   className={`py-1.5 px-2 rounded text-xs transition-all ${
                     timeRange === tr
                       ? 'bg-cyan-500/20 border border-cyan-400/50 text-cyan-300'
-                      : 'bg-gray-900/50 border border-gray-700/30 text-gray-400 hover:border-gray-600'
+                      : 'bg-zinc-900/50 border border-zinc-700/30 text-zinc-400 hover:border-zinc-600'
                   }`}
                 >
                   {tr}
@@ -203,7 +203,7 @@ export default function ExportModal() {
 
           {/* Export Format */}
           <div>
-            <label className="block text-[10px] text-gray-500 uppercase tracking-wider mb-1.5">Export Format</label>
+            <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1.5">Export Format</label>
             <div className="space-y-1">
               {([
                 { key: 'report', label: 'Intelligence Report', desc: 'Markdown + screenshot + summary', icon: '📋' },
@@ -218,13 +218,13 @@ export default function ExportModal() {
                   className={`w-full flex items-center gap-3 p-2.5 rounded text-left transition-all ${
                     format === key
                       ? 'bg-cyan-500/15 border border-cyan-400/40 text-cyan-300'
-                      : 'bg-gray-900/30 border border-gray-800/50 text-gray-400 hover:border-gray-600'
+                      : 'bg-zinc-900/30 border border-zinc-800/50 text-zinc-400 hover:border-zinc-600'
                   }`}
                 >
                   <span className="text-base">{icon}</span>
                   <div>
                     <div className="text-xs font-medium">{label}</div>
-                    <div className="text-[10px] text-gray-500">{desc}</div>
+                    <div className="text-[10px] text-zinc-500">{desc}</div>
                   </div>
                 </button>
               ))}
@@ -234,7 +234,7 @@ export default function ExportModal() {
           {/* Data Source (not for screenshot/report) */}
           {format !== 'screenshot' && format !== 'report' && (
             <div>
-              <label className="block text-[10px] text-gray-500 uppercase tracking-wider mb-1.5">Data Source</label>
+              <label className="block text-[10px] text-zinc-500 uppercase tracking-wider mb-1.5">Data Source</label>
               <div className="grid grid-cols-3 gap-1">
                 {([
                   { key: 'all', label: 'All' },
@@ -247,7 +247,7 @@ export default function ExportModal() {
                     className={`py-1.5 px-2 rounded text-xs transition-all ${
                       dataSource === key
                         ? 'bg-cyan-500/20 border border-cyan-400/50 text-cyan-300'
-                        : 'bg-gray-900/50 border border-gray-700/30 text-gray-400 hover:border-gray-600'
+                        : 'bg-zinc-900/50 border border-zinc-700/30 text-zinc-400 hover:border-zinc-600'
                     }`}
                   >
                     {label}
@@ -272,7 +272,7 @@ export default function ExportModal() {
             disabled={exporting}
             className={`w-full py-2.5 rounded font-bold text-xs tracking-wider transition-all ${
               exporting
-                ? 'bg-gray-800 border border-gray-600 text-gray-500 cursor-wait'
+                ? 'bg-zinc-800 border border-zinc-600 text-zinc-500 cursor-wait'
                 : 'bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 hover:bg-cyan-500/30 hover:border-cyan-400/70'
             }`}
           >
@@ -281,7 +281,7 @@ export default function ExportModal() {
         </div>
 
         {/* Footer */}
-        <div className="px-4 py-2 border-t border-cyan-500/10 text-[10px] text-gray-600 text-center">
+        <div className="px-4 py-2 border-t border-cyan-500/10 text-[10px] text-zinc-600 text-center">
           PRESS [E] TO TOGGLE · [ESC] TO CLOSE
         </div>
       </div>

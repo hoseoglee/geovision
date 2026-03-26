@@ -8,7 +8,7 @@ export default function Legend() {
 
   return (
     <div className="space-y-2">
-      <div className="text-gray-500 text-[9px] font-mono tracking-widest">LEGEND</div>
+      <div className="text-zinc-500 text-[9px] font-mono tracking-widest">LEGEND</div>
 
       {activeLayers.includes('satellites') && (
         <LegendSection title="SATELLITES" items={[
@@ -46,11 +46,11 @@ export default function Legend() {
 function LegendSection({ title, items }: { title: string; items: { color: string; label: string }[] }) {
   return (
     <div>
-      <div className="text-gray-500 text-[10px] font-mono mb-0.5">{title}</div>
+      <div className="text-zinc-500 text-[10px] font-mono mb-0.5">{title}</div>
       {items.map((item) => (
         <div key={item.label} className="flex items-center gap-2 text-[10px] py-0.5">
           <div className={`w-2 h-2 rounded-sm ${item.color}`} />
-          <span className="text-gray-400">{item.label}</span>
+          <span className="text-zinc-400">{item.label}</span>
         </div>
       ))}
     </div>

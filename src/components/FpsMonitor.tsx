@@ -35,14 +35,14 @@ export default function FpsMonitor() {
     };
   }, [setFps]);
 
-  const fpsColor = displayFps >= 50 ? 'text-green-400' : displayFps >= 30 ? 'text-yellow-400' : 'text-red-400';
-  const barColor = displayFps >= 50 ? 'bg-green-500/60' : displayFps >= 30 ? 'bg-yellow-500/60' : 'bg-red-500/60';
+  const fpsColor = displayFps >= 50 ? 'text-emerald-400' : displayFps >= 30 ? 'text-yellow-400' : 'text-red-400';
+  const barColor = displayFps >= 50 ? 'bg-emerald-500/60' : displayFps >= 30 ? 'bg-yellow-500/60' : 'bg-red-500/60';
 
   return (
     <div className="fixed top-[370px] right-4 z-30 pointer-events-none">
-      <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/30 rounded px-3 py-2 font-mono">
+      <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 font-mono">
         <div className="flex items-center justify-between mb-1">
-          <span className="text-gray-500 text-[9px] tracking-widest">FPS</span>
+          <span className="text-zinc-500 text-[9px] tracking-widest">FPS</span>
           <span className={`text-sm font-bold ${fpsColor}`}>{displayFps}</span>
         </div>
         <div className="flex items-end gap-[1px] h-4">

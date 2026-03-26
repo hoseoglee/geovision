@@ -19,7 +19,7 @@ export default function LayerSelector({ dataCounts = {} }: LayerSelectorProps) {
 
   return (
     <div className="space-y-1">
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-green-500 mb-2">
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-2">
         Data Layers
       </h3>
       {LAYERS.map((layer) => {
@@ -30,18 +30,18 @@ export default function LayerSelector({ dataCounts = {} }: LayerSelectorProps) {
           <label
             key={layer.id}
             className={`flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer transition-colors
-              ${isActive ? 'bg-green-900/30 text-green-300' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'}`}
+              ${isActive ? 'bg-emerald-900/30 text-emerald-300' : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50'}`}
           >
             <input
               type="checkbox"
               checked={isActive}
               onChange={() => toggleLayer(layer.id)}
-              className="accent-green-500 w-3.5 h-3.5"
+              className="accent-emerald-500 w-3.5 h-3.5"
             />
             <span className="text-sm flex-1">
               {layer.icon} {layer.label}
             </span>
-            <span className="text-xs tabular-nums text-gray-500">
+            <span className="text-xs tabular-nums text-zinc-500">
               {count.toLocaleString()}
             </span>
           </label>

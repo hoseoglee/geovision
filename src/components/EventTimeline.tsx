@@ -119,39 +119,39 @@ export default function EventTimeline() {
 
   return (
     <div className="fixed top-16 left-[300px] z-50 w-[360px] max-h-[70vh] flex flex-col
-      bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded shadow-2xl
+      bg-zinc-900/95 backdrop-blur-md border border-zinc-700/50 rounded shadow-2xl
       font-mono pointer-events-auto">
       {/* Header */}
-      <div className="flex justify-between items-center px-3 py-2 border-b border-gray-700/40">
+      <div className="flex justify-between items-center px-3 py-2 border-b border-zinc-700/40">
         <div className="flex items-center gap-2">
           <span className="text-cyan-400 text-sm">&#9776;</span>
-          <span className="text-gray-300 text-xs font-bold tracking-widest">EVENT TIMELINE</span>
-          <span className="text-gray-600 text-[9px]">{items.length}</span>
+          <span className="text-zinc-300 text-xs font-bold tracking-widest">EVENT TIMELINE</span>
+          <span className="text-zinc-600 text-[9px]">{items.length}</span>
         </div>
         <button
           onClick={toggleTimeline}
-          className="text-gray-500 hover:text-gray-300 text-xs"
+          className="text-zinc-500 hover:text-zinc-300 text-xs"
         >
           {'\u2715'}
         </button>
       </div>
 
       {/* Timeline */}
-      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700">
+      <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-zinc-700">
         {items.length === 0 ? (
-          <div className="text-gray-600 text-xs text-center py-8">NO EVENTS RECORDED</div>
+          <div className="text-zinc-600 text-xs text-center py-8">NO EVENTS RECORDED</div>
         ) : (
           <div className="px-3 py-2">
             {items.map((item, idx) => (
               <div
                 key={item.id}
-                className={`flex gap-2 pb-2 cursor-pointer hover:bg-gray-800/40 rounded px-1 py-1 transition-colors
+                className={`flex gap-2 pb-2 cursor-pointer hover:bg-zinc-800/40 rounded px-1 py-1 transition-colors
                   ${item.lat != null ? '' : 'cursor-default'}`}
                 onClick={() => handleItemClick(item)}
               >
                 {/* Time column */}
                 <div className="w-12 shrink-0 text-right">
-                  <span className="text-gray-500 text-[10px]">{formatTime(item.timestamp)}</span>
+                  <span className="text-zinc-500 text-[10px]">{formatTime(item.timestamp)}</span>
                 </div>
 
                 {/* Dot + line */}
@@ -168,15 +168,15 @@ export default function EventTimeline() {
                     <span className={`text-[10px] font-bold ${SEVERITY_DOT[item.severity]}`}>
                       {item.title}
                     </span>
-                    <span className="text-gray-700 text-[8px]">
+                    <span className="text-zinc-700 text-[8px]">
                       {item.source === 'correlation' ? 'CORR' : 'ALERT'}
                     </span>
                   </div>
-                  <p className="text-gray-500 text-[9px] mt-0.5 leading-snug truncate">
+                  <p className="text-zinc-500 text-[9px] mt-0.5 leading-snug truncate">
                     {item.message}
                   </p>
                   {item.lat != null && (
-                    <span className="text-gray-700 text-[8px]">
+                    <span className="text-zinc-700 text-[8px]">
                       {item.lat.toFixed(1)}, {item.lng!.toFixed(1)} ↗
                     </span>
                   )}
@@ -188,8 +188,8 @@ export default function EventTimeline() {
       </div>
 
       {/* Footer */}
-      <div className="px-3 py-1.5 border-t border-gray-700/40 text-center">
-        <span className="text-[8px] text-gray-600">PRESS [T] TO TOGGLE</span>
+      <div className="px-3 py-1.5 border-t border-zinc-700/40 text-center">
+        <span className="text-[8px] text-zinc-600">PRESS [T] TO TOGGLE</span>
       </div>
     </div>
   );

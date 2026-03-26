@@ -31,7 +31,7 @@ export default function OverlaySelector() {
 
   return (
     <div>
-      <h3 className="text-gray-400 text-[10px] font-mono tracking-widest mb-2 uppercase">
+      <h3 className="text-zinc-400 text-[10px] font-mono tracking-widest mb-2 uppercase">
         Intel Overlays
       </h3>
       <div className="grid grid-cols-2 gap-1">
@@ -43,15 +43,15 @@ export default function OverlaySelector() {
               onClick={() => toggleOverlay(o.id)}
               className={`flex items-center gap-1 px-2 py-1 rounded text-[10px] font-mono transition-colors
                 ${active
-                  ? 'bg-green-900/40 text-green-300 border border-green-500/30'
-                  : 'text-gray-500 hover:text-gray-300 hover:bg-gray-800/50 border border-transparent'
+                  ? 'bg-emerald-900/40 text-emerald-300 border border-emerald-500/30'
+                  : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50 border border-transparent'
                 }`}
             >
               <span className="text-xs">{o.icon}</span>
               <span className="truncate">
                 {o.label}
                 {(o as any).dynamic && active && (
-                  <span className="ml-1 text-[8px] text-gray-400">({getCCTVCount()})</span>
+                  <span className="ml-1 text-[8px] text-zinc-400">({getCCTVCount()})</span>
                 )}
               </span>
             </button>

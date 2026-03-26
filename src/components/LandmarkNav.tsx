@@ -71,7 +71,7 @@ export default function LandmarkNav() {
 
   return (
     <div className="space-y-2">
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-green-500 mb-2">
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-emerald-500 mb-2">
         Landmark Nav
       </h3>
 
@@ -79,8 +79,8 @@ export default function LandmarkNav() {
       <select
         value={selectedCityIdx}
         onChange={(e) => handleCityChange(Number(e.target.value))}
-        className="w-full bg-gray-800 border border-gray-700 text-gray-200 text-sm rounded px-2 py-1.5
-          focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500/30"
+        className="w-full bg-zinc-800 border border-zinc-700 text-zinc-200 text-sm rounded px-2 py-1.5
+          focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500/30"
       >
         {cities.map((c, i) => (
           <option key={c.name} value={i}>
@@ -102,14 +102,14 @@ export default function LandmarkNav() {
               className={`w-full text-left px-2 py-1.5 rounded text-sm transition-colors flex items-center gap-2
                 ${
                   isActive
-                    ? 'bg-green-600/30 text-green-300'
-                    : 'text-gray-400 hover:bg-gray-800/50 hover:text-gray-200'
+                    ? 'bg-emerald-600/30 text-emerald-300'
+                    : 'text-zinc-400 hover:bg-zinc-800/50 hover:text-zinc-200'
                 }`}
             >
               {shortcutKey && (
                 <kbd
                   className={`text-[10px] w-4 h-4 flex items-center justify-center rounded border
-                    ${isActive ? 'border-green-500 text-green-400' : 'border-gray-600 text-gray-500'}`}
+                    ${isActive ? 'border-emerald-500 text-emerald-400' : 'border-zinc-600 text-zinc-500'}`}
                 >
                   {shortcutKey}
                 </kbd>
@@ -121,7 +121,7 @@ export default function LandmarkNav() {
       </div>
 
       {/* 현재 위치 표시 */}
-      <div className="text-[10px] text-gray-600 pt-1 border-t border-gray-800">
+      <div className="text-[10px] text-zinc-600 pt-1 border-t border-zinc-800">
         {selectedLandmarkIdx >= 0
           ? `${city.name} / ${landmarks[selectedLandmarkIdx].name}`
           : city.name}

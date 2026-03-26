@@ -45,7 +45,7 @@ export default function ISSLiveStream() {
     >
       {/* 헤더 — 드래그 핸들 */}
       <div
-        className="flex items-center justify-between px-3 py-1.5 bg-gray-900/95 border border-yellow-500/40
+        className="flex items-center justify-between px-3 py-1.5 bg-zinc-900/95 border border-yellow-500/40
           border-b-0 rounded-t cursor-move select-none"
         onMouseDown={onMouseDown}
       >
@@ -56,14 +56,14 @@ export default function ISSLiveStream() {
         <div className="flex items-center gap-1.5">
           <button
             onClick={() => setMinimized(!minimized)}
-            className="text-gray-500 hover:text-gray-300 text-xs px-1"
+            className="text-zinc-500 hover:text-zinc-300 text-xs px-1"
             title={minimized ? 'Expand' : 'Minimize'}
           >
             {minimized ? '□' : '—'}
           </button>
           <button
             onClick={() => setShow(false)}
-            className="text-gray-500 hover:text-red-400 text-xs px-1"
+            className="text-zinc-500 hover:text-red-400 text-xs px-1"
             title="Close"
           >
             ✕
@@ -85,7 +85,7 @@ export default function ISSLiveStream() {
             title="ISS Live Stream"
           />
           {/* 하단 채널 전환 바 */}
-          <div className="flex items-center justify-between px-3 py-1.5 bg-gray-900/95">
+          <div className="flex items-center justify-between px-3 py-1.5 bg-zinc-900/95">
             <div className="flex items-center gap-1">
               {STREAMS.map((s, i) => (
                 <button
@@ -94,7 +94,7 @@ export default function ISSLiveStream() {
                   className={`text-[9px] px-2 py-0.5 rounded transition-all
                     ${i === activeStream
                       ? 'bg-yellow-900/50 text-yellow-400 border border-yellow-500/40'
-                      : 'text-gray-500 hover:text-gray-300 border border-transparent'
+                      : 'text-zinc-500 hover:text-zinc-300 border border-transparent'
                     }`}
                 >
                   {s.label}

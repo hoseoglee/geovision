@@ -22,22 +22,22 @@ export default function CursorInfo() {
 
   return (
     <div className="fixed bottom-12 left-[300px] z-30 pointer-events-none font-mono">
-      <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/30 rounded px-3 py-2 space-y-1">
-        <div className="text-gray-500 text-[9px] tracking-widest">CURSOR POSITION</div>
+      <div className="bg-zinc-900/60 backdrop-blur-sm border border-zinc-700/30 rounded px-3 py-2 space-y-1">
+        <div className="text-zinc-500 text-[9px] tracking-widest">CURSOR POSITION</div>
         {mouseCoords ? (
           <>
-            <div className="text-green-400 text-xs">
+            <div className="text-emerald-400 text-xs">
               {formatDMS(mouseCoords.lat, true)}  {formatDMS(mouseCoords.lng, false)}
             </div>
-            <div className="text-gray-500 text-[10px]">
+            <div className="text-zinc-500 text-[10px]">
               {mouseCoords.lat.toFixed(5)}°, {mouseCoords.lng.toFixed(5)}°
             </div>
           </>
         ) : (
-          <div className="text-gray-600 text-xs">— NO SIGNAL —</div>
+          <div className="text-zinc-600 text-xs">— NO SIGNAL —</div>
         )}
-        <div className="border-t border-gray-700/30 pt-1 mt-1">
-          <div className="text-gray-500 text-[9px] tracking-widest">CAM ALTITUDE</div>
+        <div className="border-t border-zinc-700/30 pt-1 mt-1">
+          <div className="text-zinc-500 text-[9px] tracking-widest">CAM ALTITUDE</div>
           <div className="text-cyan-400 text-xs">{formatAlt(cameraAltitude)}</div>
         </div>
       </div>

@@ -146,8 +146,8 @@ export default function TimelineBar() {
         <button
           onClick={() => enterPlayback()}
           disabled={isLoading}
-          className="flex items-center gap-2 px-4 py-1.5 bg-gray-900/90 border border-cyan-500/30
-            text-cyan-400 text-xs font-mono rounded hover:bg-gray-800/90 hover:border-cyan-400/50
+          className="flex items-center gap-2 px-4 py-1.5 bg-zinc-900/90 border border-cyan-500/30
+            text-cyan-400 text-xs font-mono rounded hover:bg-zinc-800/90 hover:border-cyan-400/50
             transition-all disabled:opacity-50"
           title="Shift+T"
         >
@@ -161,7 +161,7 @@ export default function TimelineBar() {
   // Playback mode — full timeline bar
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-auto font-mono">
-      <div className="mx-2 mb-2 bg-gray-900/95 backdrop-blur-md border border-cyan-500/30 rounded-lg
+      <div className="mx-2 mb-2 bg-zinc-900/95 backdrop-blur-md border border-cyan-500/30 rounded-lg
         shadow-[0_0_20px_rgba(0,200,255,0.1)]">
 
         {/* Top row: time display + controls */}
@@ -176,7 +176,7 @@ export default function TimelineBar() {
             {/* Rewind 1h */}
             <button
               onClick={() => seekTo(currentTime - 3600000)}
-              className="text-gray-400 hover:text-cyan-400 text-xs px-1 transition-colors"
+              className="text-zinc-400 hover:text-cyan-400 text-xs px-1 transition-colors"
               title="Rewind 1h"
             >&#9664;&#9664;</button>
 
@@ -192,7 +192,7 @@ export default function TimelineBar() {
             {/* Forward 1h */}
             <button
               onClick={() => seekTo(currentTime + 3600000)}
-              className="text-gray-400 hover:text-cyan-400 text-xs px-1 transition-colors"
+              className="text-zinc-400 hover:text-cyan-400 text-xs px-1 transition-colors"
               title="Forward 1h"
             >&#9654;&#9654;</button>
           </div>
@@ -206,7 +206,7 @@ export default function TimelineBar() {
                 className={`text-[10px] px-1.5 py-0.5 rounded transition-colors
                   ${playbackSpeed === s
                     ? 'bg-cyan-500/30 text-cyan-300'
-                    : 'text-gray-500 hover:text-gray-300'
+                    : 'text-zinc-500 hover:text-zinc-300'
                   }`}
               >
                 {s}x
@@ -225,16 +225,16 @@ export default function TimelineBar() {
             <DensityCanvas density={density} width={sliderWidth} height={24} />
 
             {/* Track background */}
-            <div className="absolute inset-0 rounded border border-gray-700/50" />
+            <div className="absolute inset-0 rounded border border-zinc-700/50" />
 
             {/* Day markers */}
             {dayMarkers.map((m, i) => (
               <div
                 key={i}
-                className="absolute top-0 bottom-0 border-l border-gray-600/30"
+                className="absolute top-0 bottom-0 border-l border-zinc-600/30"
                 style={{ left: `${m.pct}%` }}
               >
-                <span className="absolute -top-3.5 -translate-x-1/2 text-[8px] text-gray-600">
+                <span className="absolute -top-3.5 -translate-x-1/2 text-[8px] text-zinc-600">
                   {m.label}
                 </span>
               </div>
@@ -250,7 +250,7 @@ export default function TimelineBar() {
           </div>
 
           {/* Event count */}
-          <div className="text-gray-500 text-[10px] whitespace-nowrap min-w-[60px] text-right">
+          <div className="text-zinc-500 text-[10px] whitespace-nowrap min-w-[60px] text-right">
             {visibleEvents} EVT
           </div>
 
