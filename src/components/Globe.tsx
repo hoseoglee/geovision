@@ -34,6 +34,8 @@ import animeShader from '@/filters/anime';
 import lutShader from '@/filters/lut';
 import { createHeatmapPrimitive, precisionForAltitude, type HeatmapPoint } from '@/layers/HeatmapLayer';
 import { useGeofenceGlobe } from "@/hooks/useGeofenceGlobe";
+import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/trajectory';
+import { useTrajectoryStore } from '@/store/useTrajectoryStore';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -135,6 +137,10 @@ export default function Globe() {
   // Timeline playback markers
   const timelineMarkersRef = useRef<Cesium.Entity[]>([]);
 
+  // Trajectory tracking
+  const trajectoryRendererRef = useRef<TrajectoryRenderer | null>(null);
+  const trajectoryEntityMapRef = useRef<Map<string, { lat: number; lng: number; altitude: number; heading: number; speed: number; entityType: 'flight' | 'ship' | 'adsb' }>>(new Map());
+
   const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);
   const activeOverlays = useAppStore((s) => s.activeOverlays);
@@ -200,6 +206,10 @@ export default function Globe() {
     viewer.scene.fog.density = 2.0e-4;
 
     viewerRef.current = viewer;
+
+    // Initialize trajectory renderer & DB
+    trajectoryRendererRef.current = new TrajectoryRenderer(viewer);
+    trajectoryDB.init();
 
     // 데이터 업데이트 시 렌더 요청
     const requestRender = () => viewer.scene.requestRender();
@@ -834,6 +844,22 @@ export default function Globe() {
       flightPrimitiveRef.current = billboards;
       setDataCounts('flights', count);
       setLastUpdated('flights', Date.now());
+
+      // Record flight positions for trajectory
+      const now = Date.now();
+      const posRecords: PositionRecord[] = [];
+      for (const f of flights) {
+        if (f.onGround || !f.callsign) continue;
+        const eid = `flight-${f.callsign.trim()}`;
+        trajectoryEntityMapRef.current.set(eid, {
+          lat: f.lat, lng: f.lng, altitude: f.altitude || 10000,
+          heading: f.heading || 0, speed: f.velocity || 0, entityType: 'flight',
+        });
+        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
+          posRecords.push({ entityId: eid, entityType: 'flight', lat: f.lat, lng: f.lng, altitude: f.altitude || 10000, heading: f.heading || 0, speed: f.velocity || 0, timestamp: now });
+        }
+      }
+      if (posRecords.length) trajectoryDB.addPositions(posRecords);
     }
 
     // 초기 로드 + 15초마다 갱신
@@ -890,6 +916,21 @@ export default function Globe() {
       shipPrimitiveRef.current = billboards;
       setDataCounts('ships', ships.length);
       setLastUpdated('ships', Date.now());
+
+      // Record ship positions for trajectory
+      const now = Date.now();
+      const posRecords: PositionRecord[] = [];
+      for (const s of ships) {
+        const eid = `ship-${s.mmsi}`;
+        trajectoryEntityMapRef.current.set(eid, {
+          lat: s.lat, lng: s.lng, altitude: 0,
+          heading: s.heading || 0, speed: s.speed || 0, entityType: 'ship',
+        });
+        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
+          posRecords.push({ entityId: eid, entityType: 'ship', lat: s.lat, lng: s.lng, altitude: 0, heading: s.heading || 0, speed: s.speed || 0, timestamp: now });
+        }
+      }
+      if (posRecords.length) trajectoryDB.addPositions(posRecords);
     }
 
     // 초기 로드
@@ -2171,6 +2212,21 @@ export default function Globe() {
       adsbLabelCollRef.current = adsbLabels;
       setDataCounts('adsb', aircraft.length);
       setLastUpdated('adsb', Date.now());
+
+      // Record ADSB positions for trajectory
+      const now = Date.now();
+      const posRecords: PositionRecord[] = [];
+      for (const a of aircraft) {
+        const eid = `adsb-${a.hex}`;
+        trajectoryEntityMapRef.current.set(eid, {
+          lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048,
+          heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, entityType: 'adsb',
+        });
+        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
+          posRecords.push({ entityId: eid, entityType: 'adsb', lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048, heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, timestamp: now });
+        }
+      }
+      if (posRecords.length) trajectoryDB.addPositions(posRecords);
     }
 
     // 초기 로드 + 30초마다 갱신
@@ -2709,6 +2765,46 @@ export default function Globe() {
     const interval = setInterval(buildEntities, 15000);
     return () => clearInterval(interval);
   }, [correlationEngine]);
+
+  // ── Trajectory rendering & periodic cleanup ──
+  const activeTrajectories = useTrajectoryStore((s) => s.activeTrajectories);
+  const showPrediction = useTrajectoryStore((s) => s.showPrediction);
+  const predictionMinutes = useTrajectoryStore((s) => s.predictionMinutes);
+  const historyMinutes = useTrajectoryStore((s) => s.historyMinutes);
+
+  useEffect(() => {
+    const renderer = trajectoryRendererRef.current;
+    if (!renderer) return;
+
+    renderer.update(
+      activeTrajectories,
+      showPrediction,
+      predictionMinutes,
+      historyMinutes,
+      trajectoryEntityMapRef.current,
+    );
+  }, [activeTrajectories, showPrediction, predictionMinutes, historyMinutes]);
+
+  // Refresh trajectory render every 15 seconds while trajectories are active
+  useEffect(() => {
+    if (activeTrajectories.length === 0) return;
+    const interval = setInterval(() => {
+      trajectoryRendererRef.current?.update(
+        useTrajectoryStore.getState().activeTrajectories,
+        useTrajectoryStore.getState().showPrediction,
+        useTrajectoryStore.getState().predictionMinutes,
+        useTrajectoryStore.getState().historyMinutes,
+        trajectoryEntityMapRef.current,
+      );
+    }, 15000);
+    return () => clearInterval(interval);
+  }, [activeTrajectories.length > 0]);
+
+  // Periodic cleanup of old position records (every 5 minutes)
+  useEffect(() => {
+    const interval = setInterval(() => { trajectoryDB.cleanup(); }, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>

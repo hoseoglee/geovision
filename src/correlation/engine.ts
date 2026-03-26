@@ -10,6 +10,7 @@ import { ruleStorage } from './ruleStorage';
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import { NUCLEAR_PLANTS } from '@/data/overlayData';
 import { useAlertStore } from '@/store/useAlertStore';
+import { detectRouteDeviation } from '@/trajectory/pathPrediction';
 
 export class CorrelationEngine {
   readonly spatialIndex: SpatialIndex;
@@ -71,7 +72,7 @@ export class CorrelationEngine {
     for (const entity of entities) this.temporalBuffer.addEvent({ id: entity.id, type: `${layer}_update`, layer, lat: entity.lat, lng: entity.lng, timestamp: Date.now(), data: entity.data });
   }
 
-  private evaluate(): void { const now = Date.now(); this.evaluateRules(now); this.evaluateAnomalies(now); }
+  private evaluate(): void { const now = Date.now(); this.evaluateRules(now); this.evaluateAnomalies(now); this.evaluateRouteDeviations(now); }
 
   private evaluateRules(now: number): void {
     const rulesByTrigger = new Map<string, CorrelationRule[]>();
@@ -106,8 +107,55 @@ export class CorrelationEngine {
     const mr = this.anomalyDetector.update('military_aircraft', 'global', mc, 'Global military aircraft count'); if (mr) this.emitAnomaly(mr);
   }
 
+  private evaluateRouteDeviations(now: number): void {
+    const deviationRules: { ruleId: string; layer: string; threshold: number }[] = [
+      { ruleId: 'ship-route-deviation', layer: 'ships', threshold: 30 },
+      { ruleId: 'adsb-route-deviation', layer: 'adsb', threshold: 25 },
+    ];
+    for (const { ruleId, layer, threshold } of deviationRules) {
+      const dsl = this.dslRules.get(ruleId);
+      if (!dsl || !dsl.enabled) continue;
+      const cd = (dsl.cooldown ?? 120) * 1000;
+
+      // Get recent events for this layer from temporal buffer
+      const events = this.temporalBuffer.getEvents(300000); // 5 min
+      const byEntity = new Map<string, Array<{ lat: number; lng: number; heading: number; timestamp: number }>>();
+      for (const ev of events) {
+        if (ev.layer !== layer) continue;
+        const heading = ev.data.heading as number;
+        if (heading == null || isNaN(heading)) continue;
+        const arr = byEntity.get(ev.id) ?? [];
+        arr.push({ lat: ev.lat, lng: ev.lng, heading, timestamp: ev.timestamp });
+        byEntity.set(ev.id, arr);
+      }
+
+      for (const [entityId, history] of byEntity) {
+        if (history.length < 3) continue;
+        const ck = `${ruleId}:${entityId}`;
+        const lt = this.lastFired.get(ck);
+        if (lt && now - lt < cd) continue;
+
+        history.sort((a, b) => a.timestamp - b.timestamp);
+        const result = detectRouteDeviation(history, threshold);
+        if (result.deviated && result.deviationPoint) {
+          this.lastFired.set(ck, now);
+          const alert: CorrelationAlert = {
+            id: `corr-${ruleId}-${entityId}-${now}`,
+            ruleId, ruleName: dsl.name, severity: dsl.severity,
+            title: `ROUTE DEVIATION: ${entityId}`,
+            message: `${entityId} deviating ${result.deviationAngle}° avg heading change (threshold: ${threshold}°)`,
+            lat: result.deviationPoint.lat, lng: result.deviationPoint.lng,
+            timestamp: now, relatedEntities: [{ id: entityId, layer, lat: result.deviationPoint.lat, lng: result.deviationPoint.lng }],
+          };
+          this.emitCorrelation(alert);
+          if (dsl) { dsl.triggerCount++; dsl.lastTriggered = now; ruleStorage.updateRuleStats(ruleId, now).catch(() => {}); }
+        }
+      }
+    }
+  }
+
   private getCategoryForRule(ruleId: string): import('@/store/useAlertStore').AlertCategory {
-    const m: Record<string, import('@/store/useAlertStore').AlertCategory> = { 'earthquake-nuclear': 'nuclear', 'chokepoint-congestion': 'chokepoint', 'military-cluster': 'flight', 'earthquake-cctv': 'earthquake', 'earthquake-shipping': 'earthquake', 'earthquake-volcano': 'earthquake', 'wildfire-wind': 'system' };
+    const m: Record<string, import('@/store/useAlertStore').AlertCategory> = { 'earthquake-nuclear': 'nuclear', 'chokepoint-congestion': 'chokepoint', 'military-cluster': 'flight', 'earthquake-cctv': 'earthquake', 'earthquake-shipping': 'earthquake', 'earthquake-volcano': 'earthquake', 'wildfire-wind': 'system', 'ship-route-deviation': 'ship', 'adsb-route-deviation': 'flight' };
     if (m[ruleId]) return m[ruleId];
     const dsl = this.dslRules.get(ruleId);
     if (dsl) { const lm: Record<string, import('@/store/useAlertStore').AlertCategory> = { earthquakes: 'earthquake', ships: 'ship', adsb: 'flight', satellites: 'satellite', chokepoints: 'chokepoint', nuclear_plants: 'nuclear' }; return lm[dsl.triggerLayer] ?? 'system'; }

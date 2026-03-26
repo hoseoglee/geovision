@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
+import { useTrajectoryStore } from '@/store/useTrajectoryStore';
 
 // ── 타입별 UI 매핑 ──
 const TYPE_LABELS: Record<string, string> = {
@@ -158,11 +159,28 @@ export default function EntityDetail() {
     setShowNews(false);
   }, [entity?.name, entity?.type]);
 
+  // Trajectory store
+  const toggleTrajectory = useTrajectoryStore((s) => s.toggleTrajectory);
+  const activeTrajectories = useTrajectoryStore((s) => s.activeTrajectories);
+
   if (!entity) return null;
 
   const isISS = entity.name?.includes('ISS');
   const typeColor = TYPE_COLORS[entity.type] || 'text-zinc-300';
   const typeBorder = TYPE_BORDER[entity.type] || 'border-zinc-500/40';
+
+  // Compute trajectory entity ID from selected entity
+  const canTrack = ['flight', 'ship', 'adsb'].includes(entity.type);
+  let trajectoryEntityId = '';
+  if (entity.type === 'flight') {
+    const cs = String(entity.details.CALLSIGN || entity.name || '').trim();
+    trajectoryEntityId = `flight-${cs}`;
+  } else if (entity.type === 'ship') {
+    trajectoryEntityId = `ship-${entity.details.MMSI || ''}`;
+  } else if (entity.type === 'adsb') {
+    trajectoryEntityId = `adsb-${entity.details.HEX || ''}`;
+  }
+  const isTracking = canTrack && activeTrajectories.includes(trajectoryEntityId);
 
   const handleNewsToggle = () => {
     if (!showNews) {
@@ -245,6 +263,24 @@ export default function EntityDetail() {
             <span>↗</span>
             <span>{LINK_LABELS[entity.type] || 'VIEW DETAILS'}</span>
           </a>
+        </div>
+      )}
+
+      {/* ── 궤적 추적 토글 ── */}
+      {canTrack && trajectoryEntityId && (
+        <div className="px-3 py-2 border-t border-zinc-700/40 shrink-0">
+          <button
+            onClick={() => toggleTrajectory(trajectoryEntityId)}
+            className={`w-full flex items-center justify-center gap-1.5 text-[10px] font-bold
+              py-1.5 rounded border transition-all hover:brightness-125
+              ${isTracking
+                ? 'text-emerald-400 border-emerald-500/60 bg-emerald-900/30 hover:bg-emerald-800/40'
+                : 'text-zinc-400 border-zinc-600/40 bg-zinc-800/50 hover:bg-zinc-700/50'
+              }`}
+          >
+            <span>{isTracking ? '◉' : '◎'}</span>
+            <span>{isTracking ? 'TRACKING TRAJECTORY' : 'SHOW TRAJECTORY'}</span>
+          </button>
         </div>
       )}
 
