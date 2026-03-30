@@ -955,7 +955,10 @@ export default function Globe() {
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
+        for (const r of posRecords) {
+          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+        }
       }
     }
 
@@ -1029,7 +1032,10 @@ export default function Globe() {
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
+        for (const r of posRecords) {
+          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+        }
       }
     }
 
@@ -2328,7 +2334,10 @@ export default function Globe() {
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
+        for (const r of posRecords) {
+          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+        }
       }
     }
 

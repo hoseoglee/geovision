@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { behavioralProfiler, type BehavioralProfile, type ProfileAnomaly } from '@/behavioral';
+import { trajectoryDB } from '@/trajectory';
 
 // ── Props ──────────────────────────────────────────────────────────────────
 interface Props {
@@ -119,18 +120,14 @@ function ActivityHeatmap({ activeHours }: { activeHours: number[] }) {
         })}
       </div>
       {/* 시간 눈금 (0, 6, 12, 18, 23) */}
-      <div className="flex mt-0.5" style={{ fontSize: '7px', color: '#52525b' }}>
+      <div className="relative mt-0.5 flex justify-between" style={{ fontSize: '7px', color: '#52525b', height: '10px' }}>
         {[0, 6, 12, 18, 23].map((h) => (
-          <span
-            key={h}
-            className="absolute"
-            style={{ left: `${(h / 23) * 100}%`, transform: 'translateX(-50%)' }}
-          >
+          <span key={h} style={{ position: 'absolute', left: `${(h / 23) * 100}%`, transform: 'translateX(-50%)' }}>
             {h.toString().padStart(2, '0')}
           </span>
         ))}
         {/* peak 레이블 */}
-        <span className="ml-auto text-[8px] text-cyan-500">
+        <span className="ml-auto text-[8px] text-cyan-500" style={{ position: 'absolute', right: 0 }}>
           PEAK {peakHour.toString().padStart(2, '0')}:00Z
         </span>
       </div>
@@ -188,10 +185,20 @@ export default function BehavioralProfilePanel({ entityId, entityType, isTrackin
 
   // ── 이상 탐지 (프로파일 갱신 시마다) ────────────────────────────────────
   useEffect(() => {
-    if (!profile) return setAnomalies([]);
-    // 현재 값 없이는 이상 탐지 불가 — 빈 배열 유지
-    setAnomalies([]);
-  }, [profile]);
+    if (!profile) { setAnomalies([]); return; }
+    // TrajectoryDB에서 최신 위치 레코드를 읽어 checkAnomaly 수행
+    trajectoryDB.getHistory(entityId, 60_000).then((history) => {
+      if (!history.length) { setAnomalies([]); return; }
+      const latest = history[history.length - 1];
+      const detected = behavioralProfiler.checkAnomaly(profile, {
+        lat: latest.lat,
+        lng: latest.lng,
+        speed: latest.speed,
+        altitude: latest.altitude,
+      });
+      setAnomalies(detected);
+    });
+  }, [profile, entityId]);
 
   // ── 케이스 1: 추적 비활성 ───────────────────────────────────────────────
   if (!isTracking && !profile) {
