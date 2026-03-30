@@ -694,7 +694,92 @@ export default function Globe() {
       (entity as any)._chokepoint = cp;
     }
 
+    // --- 지평선 오클루전 컬링: 지구 반대편(카메라 음영 반구) 아이콘 숨기기 ---
+    // 지구를 구체(반지름 = WGS84 적도 반지름)로 근사하여 카메라→아이템 광선이
+    // 지구와 교차하면 숨김 처리한다. 고도가 높은 위성도 정확히 처리된다.
+    const EARTH_R = Cesium.Ellipsoid.WGS84.maximumRadius; // ≈ 6378137 m
+    let lastOcclusionMs = 0;
+
+    const isHorizonVisible = (cam: Cesium.Cartesian3, item: Cesium.Cartesian3): boolean => {
+      const dx = item.x - cam.x, dy = item.y - cam.y, dz = item.z - cam.z;
+      const dist2 = dx*dx + dy*dy + dz*dz;
+      if (dist2 === 0) return true;
+      const dist = Math.sqrt(dist2);
+      const nx = dx/dist, ny = dy/dist, nz = dz/dist;
+      // 카메라→아이템 방향 광선과 지구 구체 교차 검사
+      // 방정식: |c + t*n|² = R²  →  t² + 2(c·n)t + (|c|² - R²) = 0
+      const cdot = cam.x*nx + cam.y*ny + cam.z*nz;
+      const cSq = cam.x*cam.x + cam.y*cam.y + cam.z*cam.z;
+      const discriminant = cdot*cdot - cSq + EARTH_R*EARTH_R;
+      if (discriminant < 0) return true; // 광선이 지구에 닿지 않음
+      const tHit = -cdot - Math.sqrt(discriminant);
+      if (tHit < 0) return true; // 교차점이 카메라 뒤 (카메라가 지구 안에 있을 때)
+      return tHit >= dist; // 아이템이 교차점보다 가까우면 가시
+    };
+
+    const applyHorizonOcclusion = () => {
+      const now = performance.now();
+      if (now - lastOcclusionMs < 100) return; // 100ms throttle
+      lastOcclusionMs = now;
+
+      const cam = viewer.camera.position;
+
+      // BillboardCollection 기반 프리미티브 (위성, 항공기, 선박, 군용기, 태풍, 날씨)
+      const billboardColls: (Cesium.BillboardCollection | null)[] = [
+        satPrimitiveRef.current instanceof Cesium.BillboardCollection
+          ? satPrimitiveRef.current
+          : null,
+        flightPrimitiveRef.current,
+        shipPrimitiveRef.current,
+        adsbPrimitiveRef.current,
+        typhoonBillboardRef.current,
+        weatherBillboardRef.current,
+      ];
+      for (const coll of billboardColls) {
+        if (!coll) continue;
+        for (let i = 0; i < coll.length; i++) {
+          const bb = coll.get(i);
+          if (bb.position) {
+            bb.show = isHorizonVisible(cam, bb.position);
+          }
+        }
+      }
+
+      // PointPrimitiveCollection 기반 프리미티브 (CCTV, 산불)
+      const pointColls: (Cesium.PointPrimitiveCollection | null)[] = [
+        cctvPrimitiveRef.current,
+        wildfirePointsRef.current,
+      ];
+      for (const coll of pointColls) {
+        if (!coll) continue;
+        for (let i = 0; i < coll.length; i++) {
+          const pt = coll.get(i);
+          if (pt.position) {
+            pt.show = isHorizonVisible(cam, pt.position);
+          }
+        }
+      }
+
+      // Entity 기반 아이템: 지진, 화산, OSINT 마커
+      for (const entityList of [
+        earthquakeEntitiesRef.current,
+        volcanoEntitiesRef.current,
+        osintEntitiesRef.current,
+      ]) {
+        for (const entity of entityList) {
+          if (!entity.position) continue;
+          const pos = entity.position.getValue(viewer.clock.currentTime);
+          if (pos) {
+            entity.show = isHorizonVisible(cam, pos);
+          }
+        }
+      }
+    };
+
+    viewer.scene.postRender.addEventListener(applyHorizonOcclusion);
+
     return () => {
+      viewer.scene.postRender.removeEventListener(applyHorizonOcclusion);
       for (const e of hoverTrailRef.current) viewer.entities.remove(e);
       hoverTrailRef.current = [];
       handler.destroy();
