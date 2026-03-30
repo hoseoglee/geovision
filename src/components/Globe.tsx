@@ -33,7 +33,8 @@ import thermalShader from '@/filters/thermal';
 import flirShader from '@/filters/flir';
 import animeShader from '@/filters/anime';
 import lutShader from '@/filters/lut';
-import { createHeatmapPrimitive, precisionForAltitude, type HeatmapPoint } from '@/layers/HeatmapLayer';
+import { createHeatmapPrimitive, createHaloPrimitive, precisionForAltitude, aggregatePoints, type HeatmapPoint } from '@/layers/HeatmapLayer';
+import { AnomalyHaloDetector } from '@/layers/AnomalyHaloDetector';
 import { useGeofenceGlobe } from "@/hooks/useGeofenceGlobe";
 import { useMeasurementGlobe } from "@/hooks/useMeasurementGlobe";
 import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/trajectory';
@@ -2705,6 +2706,9 @@ export default function Globe() {
   const heatmapPrecisionRef = useRef<number>(0);
   const activeHeatmaps = useAppStore((s) => s.activeHeatmaps);
   const heatmapParams = useAppStore((s) => s.heatmapParams);
+  const anomalyHaloEnabled = useAppStore((s) => s.anomalyHaloEnabled);
+  const haloDetectorRef = useRef(new AnomalyHaloDetector());
+  const haloPrimitiveRef = useRef<Cesium.GroundPrimitive | null>(null);
 
   useEffect(() => {
     const viewer = viewerRef.current;
@@ -2761,6 +2765,9 @@ export default function Globe() {
 
         try {
           const points = await fetcher();
+          // halo 통계 업데이트 (이상치 탐지용)
+          const cells = aggregatePoints(points, newPrecision);
+          haloDetectorRef.current.update(layerId, cells, newPrecision);
           const prim = createHeatmapPrimitive(points, alt, {
             opacity: heatmapParams.opacity,
             intensity: heatmapParams.intensity,
@@ -2822,6 +2829,54 @@ export default function Globe() {
       heatmapPrimitivesRef.current = [];
     };
   }, [activeHeatmaps, heatmapParams]);
+
+  // ── Anomaly Halo 렌더링 ──
+  useEffect(() => {
+    const removeHalo = () => {
+      const v = viewerRef.current;
+      if (v && !v.isDestroyed() && haloPrimitiveRef.current) {
+        try { v.scene.primitives.remove(haloPrimitiveRef.current); } catch { /* ok */ }
+        haloPrimitiveRef.current = null;
+      }
+    };
+
+    if (!anomalyHaloEnabled || activeHeatmaps.length === 0) {
+      removeHalo();
+      return;
+    }
+
+    const buildHalo = () => {
+      const v = viewerRef.current;
+      if (!v || v.isDestroyed()) return;
+
+      // sin 기반 맥동 (주기 2.5초)
+      const pulseFactor = (Math.sin(Date.now() / 1250) + 1) / 2;
+
+      const allCells = activeHeatmaps.flatMap((layerId) =>
+        haloDetectorRef.current.getHaloCells(layerId),
+      );
+
+      const alt = v.camera.positionCartographic.height;
+      const newPrim = allCells.length > 0
+        ? createHaloPrimitive(allCells, alt, pulseFactor)
+        : null;
+
+      removeHalo();
+      if (newPrim) {
+        v.scene.primitives.add(newPrim);
+        haloPrimitiveRef.current = newPrim;
+      }
+    };
+
+    // 400ms마다 재빌드 — 맥동 주기와 맞춤
+    const interval = setInterval(buildHalo, 400);
+    buildHalo();
+
+    return () => {
+      clearInterval(interval);
+      removeHalo();
+    };
+  }, [anomalyHaloEnabled, activeHeatmaps]);
 
   // ── Correlation Engine 연동 ──
   const correlationEngine = useCorrelationStore((s) => s.engine);

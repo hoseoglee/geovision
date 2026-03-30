@@ -37,6 +37,7 @@ interface AppState {
   filterPresets: Record<string, Record<string, number>>;
   activeHeatmaps: string[];
   heatmapParams: { opacity: number; intensity: number; palette: string };
+  anomalyHaloEnabled: boolean;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -44,6 +45,7 @@ interface AppState {
   toggleFilter: (filter: string) => void;
   toggleHeatmap: (heatmap: string) => void;
   setHeatmapParam: (key: string, value: number | string) => void;
+  toggleAnomalyHalo: () => void;
   setCameraTarget: (target: CameraTarget | null) => void;
   setDataCounts: (layer: string, count: number) => void;
   setMouseCoords: (coords: { lat: number; lng: number } | null) => void;
@@ -102,6 +104,7 @@ export const useAppStore = create<AppState>((set) => ({
   filterPresets: loadPresetsFromStorage(),
   activeHeatmaps: [],
   heatmapParams: { opacity: 0.55, intensity: 1.0, palette: 'thermal' },
+  anomalyHaloEnabled: false,
 
   toggleHeatmap: (heatmap) =>
     set((state) => ({
@@ -113,6 +116,7 @@ export const useAppStore = create<AppState>((set) => ({
     set((state) => ({
       heatmapParams: { ...state.heatmapParams, [key]: value },
     })),
+  toggleAnomalyHalo: () => set((state) => ({ anomalyHaloEnabled: !state.anomalyHaloEnabled })),
 
   toggleLayer: (layer) =>
     set((state) => ({

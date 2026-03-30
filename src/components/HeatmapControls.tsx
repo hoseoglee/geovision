@@ -1,5 +1,6 @@
 import { useAppStore } from '@/store/useAppStore';
 
+
 const HEATMAP_LAYERS = [
   { id: 'flights', label: 'Flights Density', icon: '✈' },
   { id: 'ships', label: 'Ships Density', icon: '🚢' },
@@ -17,6 +18,8 @@ export default function HeatmapControls() {
   const toggleHeatmap = useAppStore((s) => s.toggleHeatmap);
   const heatmapParams = useAppStore((s) => s.heatmapParams);
   const setHeatmapParam = useAppStore((s) => s.setHeatmapParam);
+  const anomalyHaloEnabled = useAppStore((s) => s.anomalyHaloEnabled);
+  const toggleAnomalyHalo = useAppStore((s) => s.toggleAnomalyHalo);
 
   const anyActive = activeHeatmaps.length > 0;
 
@@ -105,6 +108,30 @@ export default function HeatmapControls() {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Anomaly Halo 토글 */}
+          <div className="pt-2 border-t border-zinc-700/30">
+            <label
+              className={`flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer transition-colors
+                ${anomalyHaloEnabled
+                  ? 'bg-yellow-900/30 text-yellow-300'
+                  : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-600/40'
+                }`}
+            >
+              <input
+                type="checkbox"
+                checked={anomalyHaloEnabled}
+                onChange={toggleAnomalyHalo}
+                className="accent-yellow-500 w-3.5 h-3.5"
+              />
+              <span className="text-sm flex-1">Anomaly Halo</span>
+              <span className="text-[9px] font-mono text-zinc-500">2σ</span>
+            </label>
+            <p className="text-[9px] text-zinc-600 px-2 mt-0.5 leading-tight">
+              Highlights cells with abnormal density vs rolling history.
+              Requires ~5 min of data to activate.
+            </p>
           </div>
         </div>
       )}

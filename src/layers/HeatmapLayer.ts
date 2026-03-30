@@ -6,6 +6,7 @@
  */
 import * as Cesium from 'cesium';
 import { geohashEncode, geohashDecode } from '@/correlation/SpatialIndex';
+import type { HaloCell } from './AnomalyHaloDetector';
 
 export interface HeatmapPoint {
   lat: number;
@@ -157,6 +158,76 @@ export function createHeatmapPrimitive(
     const east = Cesium.Math.toRadians(center.lng + lngSize / 2);
     const south = Cesium.Math.toRadians(center.lat - latSize / 2);
     const north = Cesium.Math.toRadians(center.lat + latSize / 2);
+
+    instances.push(
+      new Cesium.GeometryInstance({
+        geometry: new Cesium.RectangleGeometry({
+          rectangle: new Cesium.Rectangle(west, south, east, north),
+        }),
+        attributes: {
+          color: Cesium.ColorGeometryInstanceAttribute.fromColor(color),
+        },
+      }),
+    );
+  }
+
+  if (instances.length === 0) return null;
+
+  return new Cesium.GroundPrimitive({
+    geometryInstances: instances,
+    appearance: new Cesium.PerInstanceColorAppearance({
+      flat: true,
+      translucent: true,
+    }),
+    asynchronous: true,
+    classificationType: Cesium.ClassificationType.BOTH,
+  });
+}
+
+/**
+ * 이상치 셀에 맥동 Halo GroundPrimitive를 생성한다.
+ *
+ * surge (z > +2σ): 오렌지/노란 글로우
+ * void  (z < -2σ): 청록색 글로우
+ *
+ * @param pulseFactor 0~1, sin 변조값 — 맥동 효과용
+ */
+export function createHaloPrimitive(
+  haloCells: HaloCell[],
+  cameraAltitude: number,
+  pulseFactor = 1.0,
+): Cesium.GroundPrimitive | null {
+  if (haloCells.length === 0) return null;
+
+  const precision = precisionForAltitude(cameraAltitude);
+  const { latSize, lngSize } = cellSizeDegrees(precision);
+  const instances: Cesium.GeometryInstance[] = [];
+
+  for (const cell of haloCells) {
+    const strength = Math.min(Math.abs(cell.zScore) / 5.0, 1.0); // zScore 5 이상이면 최대
+    const alpha = (0.2 + 0.5 * strength) * (0.35 + 0.65 * pulseFactor);
+
+    let r: number, g: number, b: number;
+    if (cell.type === 'surge') {
+      // 급증: 노란색 → 오렌지 (strength에 따라)
+      r = 1.0;
+      g = 0.75 - 0.3 * strength;
+      b = 0.0;
+    } else {
+      // 급감: 청록색
+      r = 0.0;
+      g = 0.85;
+      b = 1.0;
+    }
+
+    const color = new Cesium.Color(r, g, b, alpha);
+
+    // 원래 셀보다 40% 크게 → 글로우 halo 효과
+    const scale = 1.4;
+    const west = Cesium.Math.toRadians(cell.lng - (lngSize * scale) / 2);
+    const east = Cesium.Math.toRadians(cell.lng + (lngSize * scale) / 2);
+    const south = Cesium.Math.toRadians(cell.lat - (latSize * scale) / 2);
+    const north = Cesium.Math.toRadians(cell.lat + (latSize * scale) / 2);
 
     instances.push(
       new Cesium.GeometryInstance({
