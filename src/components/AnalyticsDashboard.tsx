@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useEventStore } from '@/store/useEventStore';
 import type { DailyCount, TypeCount } from '@/storage/EventStore';
+import CorrelationTimeline from './CorrelationTimeline';
 
 // ─── Mini Bar Chart (Canvas) ──────────────────────────────────
 
@@ -238,6 +239,9 @@ export default memo(function AnalyticsDashboard() {
             <p className="text-zinc-500 text-[8px] mb-1 tracking-wider">STORAGE</p>
             <StorageStatus onClear={handleClear} />
           </div>
+
+          {/* Cross-collection correlation timeline */}
+          <CorrelationTimeline />
         </div>
       )}
     </div>
