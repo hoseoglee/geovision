@@ -3045,7 +3045,7 @@ export default function Globe() {
           layer: 'flights',
           lat: f.lat,
           lng: f.lng,
-          data: { callsign: f.callsign, altitude: f.altitude, velocity: f.velocity },
+          data: { callsign: f.callsign, altitude: f.altitude, velocity: f.velocity, heading: f.heading },
         }));
         correlationEngine.updateLayer('flights', flightEntities);
 
@@ -3108,11 +3108,26 @@ export default function Globe() {
           layer: 'osint',
           lat: n.lat,
           lng: n.lng,
-          data: { title: n.title, category: n.category, source: n.source, severity: n.severity, tone: n.tone },
+          data: { title: n.title, category: n.category, source: n.source, severity: n.severity, tone: n.tone, time: n.time },
         }));
         correlationEngine.updateLayer('osint', osintEntities);
       } catch {
         // OSINT 데이터 fetch 실패 시 무시
+      }
+
+      // 위성 데이터 (SpatialIndex 등록 — AreaBriefing에서 SATELLITES OVERHEAD 표시용)
+      try {
+        const sats = await fetchSatellites();
+        const satEntities: SpatialEntity[] = sats.map((s) => ({
+          id: `sat-${s.noradId}`,
+          layer: 'satellites',
+          lat: s.lat,
+          lng: s.lng,
+          data: { name: s.name, noradId: s.noradId, alt: s.alt },
+        }));
+        correlationEngine.updateLayer('satellites', satEntities);
+      } catch {
+        // 위성 데이터 fetch 실패 시 무시
       }
     };
 
