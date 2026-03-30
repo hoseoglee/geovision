@@ -35,6 +35,7 @@ const DailyBrief = lazy(() => import('./components/DailyBrief'));
 const KeyboardShortcuts = lazy(() => import('./components/KeyboardShortcuts'));
 const SearchModal = lazy(() => import('./components/SearchModal'));
 const ExportModal = lazy(() => import('./components/ExportModal'));
+const NewsClusterTimelapse = lazy(() => import('./components/NewsClusterTimelapse'));
 
 // Lazy-loaded named export needs wrapper
 const GeofenceEventPanel = lazy(() =>
@@ -80,6 +81,7 @@ export default function App() {
         <KeyboardShortcuts />
         <SearchModal />
         <ExportModal />
+        <NewsClusterTimelapse />
       </Suspense>
     </main>
   );

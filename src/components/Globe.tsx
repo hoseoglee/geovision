@@ -26,6 +26,8 @@ import {
 import { getSunPosition } from '@/components/SunPosition';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
 import { useTimelineStore } from '@/store/useTimelineStore';
+import { useNewsClusterStore } from '@/store/useNewsClusterStore';
+import { getVisibleClusterState } from '@/osint/NewsClusterEngine';
 import type { SpatialEntity } from '@/correlation/SpatialIndex';
 import crtShader from '@/filters/crt';
 import nightVisionShader from '@/filters/nightVision';
@@ -140,6 +142,10 @@ export default function Globe() {
 
   // OSINT 뉴스 마커
   const osintEntitiesRef = useRef<Cesium.Entity[]>([]);
+
+  // News Cluster Timelapse arcs & markers
+  const clusterArcEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const clusterMarkerEntitiesRef = useRef<Cesium.Entity[]>([]);
 
   // Timeline playback markers
   const timelineMarkersRef = useRef<Cesium.Entity[]>([]);
@@ -2719,6 +2725,89 @@ export default function Globe() {
 
     return () => { cancelled = true; clearInterval(interval); };
   }, [activeLayers, clearEntities, setDataCounts, setLastUpdated, renderOsintEntities]);
+
+  // ── News Cluster Timelapse ──
+  const clusterSelectedId = useNewsClusterStore((s) => s.selectedClusterId);
+  const clusterCurrentTime = useNewsClusterStore((s) => s.currentTime);
+  const allClusters = useNewsClusterStore((s) => s.clusters);
+
+  const CLUSTER_CATEGORY_COLORS: Record<string, string> = {
+    conflict: '#FF4444', military: '#FF6600', disaster: '#FF8C00',
+    politics: '#9966FF', economy: '#33CC33', health: '#00CCCC',
+    environment: '#66BB6A', general: '#AAAAAA',
+  };
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    // Clear previous arc/marker entities
+    clearEntities(clusterArcEntitiesRef.current, viewer);
+    clearEntities(clusterMarkerEntitiesRef.current, viewer);
+
+    if (!clusterSelectedId) return;
+
+    const cluster = allClusters.find((c) => c.id === clusterSelectedId);
+    if (!cluster) return;
+
+    const { visibleEvents, visibleArcs } = getVisibleClusterState(cluster, clusterCurrentTime);
+    const colorHex = CLUSTER_CATEGORY_COLORS[cluster.category] ?? '#AAAAAA';
+    const color = Cesium.Color.fromCssColorString(colorHex);
+
+    // Draw glowing arcs
+    for (const arc of visibleArcs) {
+      // Midpoint elevated for arc effect
+      const midLat = (arc.fromLat + arc.toLat) / 2;
+      const midLng = (arc.fromLng + arc.toLng) / 2;
+      const dist = Math.sqrt(
+        Math.pow(arc.toLat - arc.fromLat, 2) + Math.pow(arc.toLng - arc.fromLng, 2)
+      );
+      const arcHeight = Math.min(dist * 80000, 1200000); // max 1200km height
+
+      const positions = [
+        Cesium.Cartesian3.fromDegrees(arc.fromLng, arc.fromLat, 0),
+        Cesium.Cartesian3.fromDegrees(midLng, midLat, arcHeight),
+        Cesium.Cartesian3.fromDegrees(arc.toLng, arc.toLat, 0),
+      ];
+
+      const arcEntity = viewer.entities.add({
+        polyline: {
+          positions,
+          width: 2,
+          material: new Cesium.PolylineGlowMaterialProperty({
+            glowPower: 0.25,
+            color: color.withAlpha(0.7),
+          }),
+          arcType: Cesium.ArcType.NONE,
+        },
+      });
+      clusterArcEntitiesRef.current.push(arcEntity);
+    }
+
+    // Draw event markers
+    for (const ev of visibleEvents) {
+      const isOrigin = ev.id === cluster.events[0].id;
+      const markerEntity = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(ev.lng, ev.lat, 0),
+        point: {
+          pixelSize: isOrigin ? 10 : 7,
+          color: isOrigin ? Cesium.Color.WHITE : color.withAlpha(0.9),
+          outlineColor: color,
+          outlineWidth: isOrigin ? 2 : 1,
+        },
+        label: {
+          text: isOrigin ? '★' : '•',
+          font: '12px sans-serif',
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+          pixelOffset: new Cesium.Cartesian2(0, -10),
+          scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 8e6, 0.3),
+          show: true,
+          fillColor: color,
+        },
+      });
+      clusterMarkerEntitiesRef.current.push(markerEntity);
+    }
+  }, [clusterSelectedId, clusterCurrentTime, allClusters, clearEntities]);
 
   // ── Heatmap Layer ──
   const heatmapPrimitivesRef = useRef<Cesium.GroundPrimitive[]>([]);
