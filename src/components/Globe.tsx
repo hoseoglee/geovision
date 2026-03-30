@@ -103,6 +103,7 @@ export default function Globe() {
   const stageRef = useRef<Cesium.PostProcessStage | Cesium.PostProcessStageComposite | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
   const [windyCamsVersion, setWindyCamsVersion] = useState(0);
+  const [contextMenu, setContextMenu] = useState<{ x: number; y: number; lat: number; lng: number } | null>(null);
   const lastMouseUpdateRef = useRef(0);
 
   // Billboard → 데이터 매핑 (호버/클릭용)
@@ -164,6 +165,7 @@ export default function Globe() {
   const setCameraAltitude = useAppStore((s) => s.setCameraAltitude);
   const setSelectedEntity = useAppStore((s) => s.setSelectedEntity);
   const setLastUpdated = useAppStore((s) => s.setLastUpdated);
+  const setAreaBriefingTarget = useAppStore((s) => s.setAreaBriefingTarget);
 
   const clearEntities = useCallback((entities: Cesium.Entity[], viewer: Cesium.Viewer) => {
     for (const e of entities) {
@@ -658,6 +660,17 @@ export default function Globe() {
         setSelectedEntity(null);
       }
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    // 우클릭 → 지역 브리핑 컨텍스트 메뉴
+    handler.setInputAction((click: { position: Cesium.Cartesian2 }) => {
+      const cartesian = viewer.camera.pickEllipsoid(click.position, viewer.scene.globe.ellipsoid);
+      if (cartesian) {
+        const carto = Cesium.Cartographic.fromCartesian(cartesian);
+        const lat = Cesium.Math.toDegrees(carto.latitude);
+        const lng = Cesium.Math.toDegrees(carto.longitude);
+        setContextMenu({ x: click.position.x, y: click.position.y, lat, lng });
+      }
+    }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
 
     // 카메라 고도 추적
     viewer.camera.changed.addEventListener(() => {
@@ -3170,6 +3183,27 @@ export default function Globe() {
               {i === 0 ? <span className="font-bold">{line}</span> : line}
             </div>
           ))}
+        </div>
+      )}
+      {contextMenu && (
+        <div
+          className="fixed z-50 font-mono text-[10px] bg-black/95 border border-cyan-500/40 shadow-xl shadow-cyan-900/20 py-1 min-w-[160px]"
+          style={{ left: contextMenu.x, top: contextMenu.y }}
+          onMouseLeave={() => setContextMenu(null)}
+        >
+          <div className="px-3 py-1 text-cyan-600 text-[9px] tracking-wider border-b border-cyan-900/40 mb-1">
+            {Math.abs(contextMenu.lat).toFixed(3)}°{contextMenu.lat >= 0 ? 'N' : 'S'}{' '}
+            {Math.abs(contextMenu.lng).toFixed(3)}°{contextMenu.lng >= 0 ? 'E' : 'W'}
+          </div>
+          <button
+            className="w-full text-left px-3 py-1.5 text-cyan-300 hover:bg-cyan-900/30 transition-colors flex items-center gap-2"
+            onClick={() => {
+              setAreaBriefingTarget({ lat: contextMenu.lat, lng: contextMenu.lng });
+              setContextMenu(null);
+            }}
+          >
+            <span>◉</span> Area Briefing
+          </button>
         </div>
       )}
     </>

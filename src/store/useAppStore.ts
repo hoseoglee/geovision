@@ -38,6 +38,9 @@ interface AppState {
   activeHeatmaps: string[];
   heatmapParams: { opacity: number; intensity: number; palette: string };
   anomalyHaloEnabled: boolean;
+  areaBriefingTarget: { lat: number; lng: number } | null;
+
+  setAreaBriefingTarget: (target: { lat: number; lng: number } | null) => void;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -105,6 +108,9 @@ export const useAppStore = create<AppState>((set) => ({
   activeHeatmaps: [],
   heatmapParams: { opacity: 0.55, intensity: 1.0, palette: 'thermal' },
   anomalyHaloEnabled: false,
+  areaBriefingTarget: null,
+
+  setAreaBriefingTarget: (target) => set({ areaBriefingTarget: target }),
 
   toggleHeatmap: (heatmap) =>
     set((state) => ({
