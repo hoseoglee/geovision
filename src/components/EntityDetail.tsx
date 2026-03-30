@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useTrajectoryStore } from '@/store/useTrajectoryStore';
+import BehavioralProfilePanel from '@/components/BehavioralProfile';
 
 // ── 타입별 UI 매핑 ──
 const TYPE_LABELS: Record<string, string> = {
@@ -125,6 +126,7 @@ export default function EntityDetail() {
   const [newsLoading, setNewsLoading] = useState(false);
   const [newsError, setNewsError] = useState(false);
   const [showNews, setShowNews] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   // 뉴스 검색 키워드
   const newsQuery = entity?.newsQuery || entity?.name || '';
@@ -281,6 +283,35 @@ export default function EntityDetail() {
             <span>{isTracking ? '◉' : '◎'}</span>
             <span>{isTracking ? 'TRACKING TRAJECTORY' : 'SHOW TRAJECTORY'}</span>
           </button>
+        </div>
+      )}
+
+      {/* ── 행동 프로파일 섹션 ── */}
+      {canTrack && trajectoryEntityId && (
+        <div className="border-t border-zinc-700/40 shrink-0">
+          <button
+            onClick={() => setShowProfile((v) => !v)}
+            className="w-full flex items-center justify-between px-3 py-2
+              text-[10px] font-bold tracking-wider text-zinc-400 hover:text-zinc-200
+              transition-colors"
+          >
+            <span className="flex items-center gap-1.5">
+              <span className="text-purple-400">◈</span>
+              <span>BEHAVIORAL FINGERPRINT</span>
+            </span>
+            <span className={`transition-transform duration-200 ${showProfile ? 'rotate-180' : ''}`}>
+              ▾
+            </span>
+          </button>
+        </div>
+      )}
+      {canTrack && trajectoryEntityId && showProfile && (
+        <div className="border-t border-zinc-700/30 overflow-y-auto max-h-96 scrollbar-thin">
+          <BehavioralProfilePanel
+            entityId={trajectoryEntityId}
+            entityType={entity.type as 'flight' | 'ship' | 'adsb'}
+            isTracking={isTracking}
+          />
         </div>
       )}
 

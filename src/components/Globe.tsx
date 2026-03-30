@@ -39,6 +39,7 @@ import { useGeofenceGlobe } from "@/hooks/useGeofenceGlobe";
 import { useMeasurementGlobe } from "@/hooks/useMeasurementGlobe";
 import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/trajectory';
 import { useTrajectoryStore } from '@/store/useTrajectoryStore';
+import { behavioralProfiler } from '@/behavioral';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -952,7 +953,10 @@ export default function Globe() {
           posRecords.push({ entityId: eid, entityType: 'flight', lat: f.lat, lng: f.lng, altitude: f.altitude || 10000, heading: f.heading || 0, speed: f.velocity || 0, timestamp: now });
         }
       }
-      if (posRecords.length) trajectoryDB.addPositions(posRecords);
+      if (posRecords.length) {
+        trajectoryDB.addPositions(posRecords);
+        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+      }
     }
 
     // 초기 로드 + 15초마다 갱신
@@ -1023,7 +1027,10 @@ export default function Globe() {
           posRecords.push({ entityId: eid, entityType: 'ship', lat: s.lat, lng: s.lng, altitude: 0, heading: s.heading || 0, speed: s.speed || 0, timestamp: now });
         }
       }
-      if (posRecords.length) trajectoryDB.addPositions(posRecords);
+      if (posRecords.length) {
+        trajectoryDB.addPositions(posRecords);
+        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+      }
     }
 
     // 초기 로드
@@ -2319,7 +2326,10 @@ export default function Globe() {
           posRecords.push({ entityId: eid, entityType: 'adsb', lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048, heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, timestamp: now });
         }
       }
-      if (posRecords.length) trajectoryDB.addPositions(posRecords);
+      if (posRecords.length) {
+        trajectoryDB.addPositions(posRecords);
+        for (const r of posRecords) behavioralProfiler.refreshProfile(r.entityId);
+      }
     }
 
     // 초기 로드 + 30초마다 갱신
