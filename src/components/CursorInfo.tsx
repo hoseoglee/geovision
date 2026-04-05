@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { forward } from 'mgrs';
 import { useAppStore } from '@/store/useAppStore';
 
 /** 좌하단 — 마우스 커서 좌표 + 카메라 고도 표시 */
@@ -32,6 +33,18 @@ export default memo(function CursorInfo() {
             </div>
             <div className="text-zinc-500 text-[10px]">
               {mouseCoords.lat.toFixed(5)}°, {mouseCoords.lng.toFixed(5)}°
+            </div>
+            <div className="flex items-baseline gap-1 mt-0.5">
+              <span className="text-zinc-500 text-[9px] tracking-widest">MGRS</span>
+              <span className="text-amber-400 text-xs">
+                {(() => {
+                  try {
+                    return forward([mouseCoords.lng, mouseCoords.lat]);
+                  } catch {
+                    return '—';
+                  }
+                })()}
+              </span>
             </div>
           </>
         ) : (

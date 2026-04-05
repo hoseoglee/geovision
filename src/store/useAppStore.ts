@@ -39,8 +39,10 @@ interface AppState {
   heatmapParams: { opacity: number; intensity: number; palette: string };
   anomalyHaloEnabled: boolean;
   areaBriefingTarget: { lat: number; lng: number } | null;
+  viewMode: 'google3d' | 'aerial' | 'label' | 'road';
 
   setAreaBriefingTarget: (target: { lat: number; lng: number } | null) => void;
+  setViewMode: (mode: 'google3d' | 'aerial' | 'label' | 'road') => void;
 
   toggleLayer: (layer: string) => void;
   toggleOverlay: (overlay: string) => void;
@@ -109,8 +111,10 @@ export const useAppStore = create<AppState>((set) => ({
   heatmapParams: { opacity: 0.55, intensity: 1.0, palette: 'thermal' },
   anomalyHaloEnabled: false,
   areaBriefingTarget: null,
+  viewMode: 'google3d',
 
   setAreaBriefingTarget: (target) => set({ areaBriefingTarget: target }),
+  setViewMode: (mode) => set({ viewMode: mode }),
 
   toggleHeatmap: (heatmap) =>
     set((state) => ({

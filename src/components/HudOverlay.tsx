@@ -38,6 +38,16 @@ export default function HudOverlay() {
 
       {/* 우상단 코너 브래킷 + 시계 */}
       <div className="fixed top-8 right-4 z-30 pointer-events-none text-right">
+        <div className="flex items-center justify-end gap-1.5 mb-1 font-mono">
+          <span className="text-red-500 animate-pulse">●</span>
+          <span className="text-red-400 font-mono text-[10px] tracking-widest">REC</span>
+          <span className="text-red-300 font-mono text-[10px]">
+            {time.toISOString().slice(0, 10)}
+          </span>
+          <span className="text-red-300 font-mono text-[10px]">
+            {time.toISOString().slice(11, 19)}Z
+          </span>
+        </div>
         <div className="border-r-2 border-t-2 border-emerald-500/40 w-16 h-16 ml-auto" />
         <div className="mt-2 font-mono">
           <div className="text-emerald-400 text-xs tracking-wider">
