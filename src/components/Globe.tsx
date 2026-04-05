@@ -166,6 +166,11 @@ export default function Globe() {
   const setSelectedEntity = useAppStore((s) => s.setSelectedEntity);
   const setLastUpdated = useAppStore((s) => s.setLastUpdated);
   const setAreaBriefingTarget = useAppStore((s) => s.setAreaBriefingTarget);
+  const viewMode = useAppStore((s) => s.viewMode);
+
+  // 4D Playback timeline
+  const timelineMode = useTimelineStore((s) => s.mode);
+  const timelineCurrentTime = useTimelineStore((s) => s.currentTime);
 
   const clearEntities = useCallback((entities: Cesium.Entity[], viewer: Cesium.Viewer) => {
     for (const e of entities) {
@@ -810,6 +815,54 @@ export default function Globe() {
   }, []);
 
 
+  // viewMode 변경 시 베이스맵 교체
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    // satellite overlay가 켜져 있으면 viewMode가 베이스맵을 제어하지 않음
+    // (satellite overlay는 index 0을 hide하고 index 1에 위성사진을 올림)
+    // viewMode는 index 0 레이어(베이스맵)만 교체한다
+
+    let provider: Cesium.ImageryProvider;
+
+    switch (viewMode) {
+      case 'google3d':
+      case 'aerial':
+        provider = new Cesium.UrlTemplateImageryProvider({
+          url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          credit: new Cesium.Credit('Esri World Imagery'),
+          minimumLevel: 0,
+          maximumLevel: 19,
+        });
+        break;
+      case 'label':
+        provider = new Cesium.UrlTemplateImageryProvider({
+          url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+          credit: new Cesium.Credit('© OpenStreetMap contributors'),
+          minimumLevel: 0,
+          maximumLevel: 18,
+        });
+        break;
+      case 'road':
+      default:
+        provider = new Cesium.UrlTemplateImageryProvider({
+          url: 'https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+          credit: new Cesium.Credit('© OpenStreetMap contributors © CARTO'),
+          minimumLevel: 0,
+          maximumLevel: 18,
+        });
+        break;
+    }
+
+    const layers = viewer.imageryLayers;
+    if (layers.length > 0) {
+      layers.remove(layers.get(0), false);
+    }
+    layers.addImageryProvider(provider, 0);
+    viewer.scene.requestRender();
+  }, [viewMode]);
+
   // Geofence system
   useGeofenceGlobe(viewerRef);
   // Measurement tools
@@ -912,6 +965,16 @@ export default function Globe() {
     const viewer = viewerRef.current;
     if (!viewer) return;
 
+    // 4D Playback 모드에서는 playback effect가 렌더링 담당
+    if (timelineMode === 'playback') {
+      if (flightPrimitiveRef.current) {
+        viewer.scene.primitives.remove(flightPrimitiveRef.current);
+        flightPrimitiveRef.current = null;
+      }
+      setDataCounts('flights', 0);
+      return;
+    }
+
     if (!activeLayers.includes('flights')) {
       if (flightPrimitiveRef.current) {
         viewer.scene.primitives.remove(flightPrimitiveRef.current);
@@ -958,9 +1021,10 @@ export default function Globe() {
       setDataCounts('flights', count);
       setLastUpdated('flights', Date.now());
 
-      // Record flight positions for trajectory
+      // Record ALL flight positions for 4D playback
       const now = Date.now();
       const posRecords: PositionRecord[] = [];
+      const activeTrajs = useTrajectoryStore.getState().activeTrajectories;
       for (const f of flights) {
         if (f.onGround || !f.callsign) continue;
         const eid = `flight-${f.callsign.trim()}`;
@@ -968,15 +1032,15 @@ export default function Globe() {
           lat: f.lat, lng: f.lng, altitude: f.altitude || 10000,
           heading: f.heading || 0, speed: f.velocity || 0, entityType: 'flight',
         });
-        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
-          posRecords.push({ entityId: eid, entityType: 'flight', lat: f.lat, lng: f.lng, altitude: f.altitude || 10000, heading: f.heading || 0, speed: f.velocity || 0, timestamp: now });
-        }
+        posRecords.push({ entityId: eid, entityType: 'flight', lat: f.lat, lng: f.lng, altitude: f.altitude || 10000, heading: f.heading || 0, speed: f.velocity || 0, timestamp: now });
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
+        // Behavioral profiler update only for active trajectories
         for (const r of posRecords) {
-          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+          if (activeTrajs.includes(r.entityId) && behavioralProfiler.loadProfile(r.entityId)) {
+            behavioralProfiler.refreshProfile(r.entityId);
+          }
         }
       }
     }
@@ -986,12 +1050,23 @@ export default function Globe() {
     const interval = setInterval(updateFlights, 15000);
 
     return () => { cancelled = true; clearInterval(interval); };
-  }, [activeLayers, setDataCounts]);
+  }, [activeLayers, setDataCounts, timelineMode]);
 
   // 선박(AIS) — Billboard + heading 회전 + WebSocket 실시간 업데이트
   useEffect(() => {
     const viewer = viewerRef.current;
     if (!viewer) return;
+
+    // 4D Playback 모드에서는 playback effect가 렌더링 담당
+    if (timelineMode === 'playback') {
+      if (shipPrimitiveRef.current) {
+        viewer.scene.primitives.remove(shipPrimitiveRef.current);
+        shipPrimitiveRef.current = null;
+      }
+      disconnectAISStream();
+      setDataCounts('ships', 0);
+      return;
+    }
 
     if (!activeLayers.includes('ships')) {
       if (shipPrimitiveRef.current) {
@@ -1036,24 +1111,24 @@ export default function Globe() {
       setDataCounts('ships', ships.length);
       setLastUpdated('ships', Date.now());
 
-      // Record ship positions for trajectory
+      // Record ALL ship positions for 4D playback
       const now = Date.now();
       const posRecords: PositionRecord[] = [];
+      const activeTrajs = useTrajectoryStore.getState().activeTrajectories;
       for (const s of ships) {
         const eid = `ship-${s.mmsi}`;
         trajectoryEntityMapRef.current.set(eid, {
           lat: s.lat, lng: s.lng, altitude: 0,
           heading: s.heading || 0, speed: s.speed || 0, entityType: 'ship',
         });
-        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
-          posRecords.push({ entityId: eid, entityType: 'ship', lat: s.lat, lng: s.lng, altitude: 0, heading: s.heading || 0, speed: s.speed || 0, timestamp: now });
-        }
+        posRecords.push({ entityId: eid, entityType: 'ship', lat: s.lat, lng: s.lng, altitude: 0, heading: s.heading || 0, speed: s.speed || 0, timestamp: now });
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
         for (const r of posRecords) {
-          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+          if (activeTrajs.includes(r.entityId) && behavioralProfiler.loadProfile(r.entityId)) {
+            behavioralProfiler.refreshProfile(r.entityId);
+          }
         }
       }
     }
@@ -1078,7 +1153,7 @@ export default function Globe() {
       cancelled = true;
       clearInterval(refreshInterval);
     };
-  }, [activeLayers, setDataCounts]);
+  }, [activeLayers, setDataCounts, timelineMode]);
 
   // 지진 — 펄스 링 애니메이션 + Entity (개수 적으므로 Entity OK)
   useEffect(() => {
@@ -2232,6 +2307,22 @@ export default function Globe() {
     const viewer = viewerRef.current;
     if (!viewer) return;
 
+    // 4D Playback 모드에서는 playback effect가 렌더링 담당
+    if (timelineMode === 'playback') {
+      if (adsbPrimitiveRef.current) {
+        viewer.scene.primitives.remove(adsbPrimitiveRef.current);
+        adsbPrimitiveRef.current = null;
+      }
+      if (adsbLabelCollRef.current) {
+        viewer.scene.primitives.remove(adsbLabelCollRef.current);
+        adsbLabelCollRef.current = null;
+      }
+      for (const e of adsbTrailEntitiesRef.current) viewer.entities.remove(e);
+      adsbTrailEntitiesRef.current = [];
+      setDataCounts('adsb', 0);
+      return;
+    }
+
     if (!activeOverlays.includes('adsb')) {
       // ADS-B 비활성 시 정리
       if (adsbPrimitiveRef.current) {
@@ -2338,24 +2429,24 @@ export default function Globe() {
       setDataCounts('adsb', aircraft.length);
       setLastUpdated('adsb', Date.now());
 
-      // Record ADSB positions for trajectory
+      // Record ALL ADSB positions for 4D playback
       const now = Date.now();
       const posRecords: PositionRecord[] = [];
+      const activeTrajs = useTrajectoryStore.getState().activeTrajectories;
       for (const a of aircraft) {
         const eid = `adsb-${a.hex}`;
         trajectoryEntityMapRef.current.set(eid, {
           lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048,
           heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, entityType: 'adsb',
         });
-        if (useTrajectoryStore.getState().activeTrajectories.some((id) => id === eid)) {
-          posRecords.push({ entityId: eid, entityType: 'adsb', lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048, heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, timestamp: now });
-        }
+        posRecords.push({ entityId: eid, entityType: 'adsb', lat: a.lat, lng: a.lng, altitude: (a.altitude || 0) * 0.3048, heading: a.heading || 0, speed: (a.speed || 0) * 0.514444, timestamp: now });
       }
       if (posRecords.length) {
         trajectoryDB.addPositions(posRecords);
-        // 이미 저장된 프로파일이 있는 엔티티만 백그라운드 갱신 (신규는 패널에서 온디맨드 로드)
         for (const r of posRecords) {
-          if (behavioralProfiler.loadProfile(r.entityId)) behavioralProfiler.refreshProfile(r.entityId);
+          if (activeTrajs.includes(r.entityId) && behavioralProfiler.loadProfile(r.entityId)) {
+            behavioralProfiler.refreshProfile(r.entityId);
+          }
         }
       }
     }
@@ -2368,7 +2459,7 @@ export default function Globe() {
       cancelled = true;
       clearInterval(interval);
     };
-  }, [activeOverlays, setDataCounts, setLastUpdated]);
+  }, [activeOverlays, setDataCounts, setLastUpdated, timelineMode]);
 
   // ── Weather 오버레이 — 주요 도시 현재 기상 (10분 갱신) ──
   useEffect(() => {
@@ -3176,6 +3267,107 @@ export default function Globe() {
     const interval = setInterval(() => { trajectoryDB.cleanup(); }, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // ── 4D Playback — TrajectoryDB에서 과거 시점 스냅샷 렌더링 ──
+  useEffect(() => {
+    if (timelineMode !== 'playback') return;
+    const viewer = viewerRef.current;
+    if (!viewer || viewer.isDestroyed()) return;
+
+    let cancelled = false;
+
+    async function renderPlaybackSnapshot() {
+      const snapshot = await trajectoryDB.getSnapshotAtTime(timelineCurrentTime);
+      if (cancelled || !viewerRef.current || viewerRef.current.isDestroyed()) return;
+      const v = viewerRef.current;
+
+      // --- Flights ---
+      if (activeLayers.includes('flights')) {
+        if (flightPrimitiveRef.current) {
+          for (let i = 0; i < flightPrimitiveRef.current.length; i++) {
+            billboardDataMap.current.delete(flightPrimitiveRef.current.get(i));
+          }
+          v.scene.primitives.remove(flightPrimitiveRef.current);
+        }
+        const flights = snapshot.filter((r) => r.entityType === 'flight');
+        const billboards = new Cesium.BillboardCollection({ scene: v.scene });
+        for (const f of flights) {
+          billboards.add({
+            position: Cesium.Cartesian3.fromDegrees(f.lng, f.lat, f.altitude),
+            image: AIRPLANE_SVG,
+            width: 20, height: 20,
+            rotation: -Cesium.Math.toRadians(f.heading),
+            alignedAxis: Cesium.Cartesian3.UNIT_Z,
+            scaleByDistance: new Cesium.NearFarScalar(5e4, 2.5, 5e6, 0.5),
+            color: Cesium.Color.YELLOW.withAlpha(0.75),
+          });
+        }
+        v.scene.primitives.add(billboards);
+        flightPrimitiveRef.current = billboards;
+        setDataCounts('flights', flights.length);
+      }
+
+      // --- Ships ---
+      if (activeLayers.includes('ships')) {
+        if (shipPrimitiveRef.current) {
+          for (let i = 0; i < shipPrimitiveRef.current.length; i++) {
+            billboardDataMap.current.delete(shipPrimitiveRef.current.get(i));
+          }
+          v.scene.primitives.remove(shipPrimitiveRef.current);
+        }
+        const ships = snapshot.filter((r) => r.entityType === 'ship');
+        const billboards = new Cesium.BillboardCollection({ scene: v.scene });
+        for (const s of ships) {
+          billboards.add({
+            position: Cesium.Cartesian3.fromDegrees(s.lng, s.lat, 0),
+            image: SHIP_SVG,
+            width: 14, height: 14,
+            rotation: -Cesium.Math.toRadians(s.heading),
+            alignedAxis: Cesium.Cartesian3.UNIT_Z,
+            scaleByDistance: new Cesium.NearFarScalar(5e4, 2.0, 5e6, 0.5),
+            color: Cesium.Color.fromCssColorString('#4DA6FF').withAlpha(0.75),
+          });
+        }
+        v.scene.primitives.add(billboards);
+        shipPrimitiveRef.current = billboards;
+        setDataCounts('ships', ships.length);
+      }
+
+      // --- ADSB 군용기 ---
+      if (activeOverlays.includes('adsb')) {
+        if (adsbPrimitiveRef.current) {
+          for (let i = 0; i < adsbPrimitiveRef.current.length; i++) {
+            billboardDataMap.current.delete(adsbPrimitiveRef.current.get(i));
+          }
+          v.scene.primitives.remove(adsbPrimitiveRef.current);
+        }
+        if (adsbLabelCollRef.current) v.scene.primitives.remove(adsbLabelCollRef.current);
+        const adsbs = snapshot.filter((r) => r.entityType === 'adsb');
+        const adsbBillboards = new Cesium.BillboardCollection({ scene: v.scene });
+        const adsbLabels = new Cesium.LabelCollection({ scene: v.scene });
+        for (const a of adsbs) {
+          adsbBillboards.add({
+            position: Cesium.Cartesian3.fromDegrees(a.lng, a.lat, a.altitude),
+            image: AIRPLANE_SVG,
+            width: 24, height: 24,
+            color: Cesium.Color.RED.withAlpha(0.75),
+            rotation: -Cesium.Math.toRadians(a.heading),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
+          });
+        }
+        v.scene.primitives.add(adsbBillboards);
+        v.scene.primitives.add(adsbLabels);
+        adsbPrimitiveRef.current = adsbBillboards;
+        adsbLabelCollRef.current = adsbLabels;
+        setDataCounts('adsb', adsbs.length);
+      }
+
+      v.scene.requestRender();
+    }
+
+    renderPlaybackSnapshot();
+    return () => { cancelled = true; };
+  }, [timelineMode, timelineCurrentTime, activeLayers, activeOverlays, setDataCounts]);
 
   return (
     <>

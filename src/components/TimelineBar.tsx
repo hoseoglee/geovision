@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useTimelineStore, type PlaybackSpeed } from '@/store/useTimelineStore';
 
-const SPEEDS: PlaybackSpeed[] = [1, 2, 4, 8];
+const SPEEDS: PlaybackSpeed[] = [1, 10, 60, 360];
 
 function formatDateTime(ts: number): string {
   const d = new Date(ts);
@@ -139,20 +139,26 @@ export default function TimelineBar() {
     return s.getEventsAtTime(s.currentTime).length;
   });
 
-  // Realtime mode — show enter button
+  // Realtime mode — show LIVE indicator + PLAYBACK button
   if (mode === 'realtime') {
     return (
-      <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-40 pointer-events-auto">
+      <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-40 pointer-events-auto flex items-center gap-2">
+        {/* LIVE indicator */}
+        <div className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/90 border border-green-500/40 text-green-400 text-xs font-mono rounded">
+          <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+          LIVE
+        </div>
+        {/* PLAYBACK button */}
         <button
           onClick={() => enterPlayback()}
           disabled={isLoading}
-          className="flex items-center gap-2 px-4 py-1.5 bg-zinc-900/90 border border-cyan-500/30
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/90 border border-cyan-500/30
             text-cyan-400 text-xs font-mono rounded hover:bg-zinc-800/90 hover:border-cyan-400/50
             transition-all disabled:opacity-50"
-          title="Shift+T"
+          title="4D Playback (Shift+T)"
         >
-          <span className="text-sm">&#9202;</span>
-          {isLoading ? 'LOADING...' : 'TIMELINE'}
+          <span className="text-sm">⏮</span>
+          {isLoading ? 'LOADING...' : 'PLAYBACK'}
         </button>
       </div>
     );

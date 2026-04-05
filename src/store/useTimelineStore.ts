@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { timeSeriesDB, type TimeSeriesRecord } from '@/storage/TimeSeriesDB';
 
-export type PlaybackSpeed = 1 | 2 | 4 | 8;
+export type PlaybackSpeed = 1 | 10 | 60 | 360;
 
 export interface TimelineEvent {
   id: string;

@@ -122,6 +122,42 @@ class TrajectoryDB {
     return all.filter((r) => r.timestamp >= cutoff);
   }
 
+  async getSnapshotAtTime(timestamp: number): Promise<PositionRecord[]> {
+    await this.init();
+    if (!this.db) {
+      const all = this.lsLoad();
+      const byEntity = new Map<string, PositionRecord>();
+      for (const r of all) {
+        if (r.timestamp <= timestamp) {
+          const prev = byEntity.get(r.entityId);
+          if (!prev || r.timestamp > prev.timestamp) {
+            byEntity.set(r.entityId, r);
+          }
+        }
+      }
+      return Array.from(byEntity.values());
+    }
+    return new Promise((resolve, reject) => {
+      const tx = this.db!.transaction(STORE_NAME, 'readonly');
+      const store = tx.objectStore(STORE_NAME);
+      const index = store.index('timestamp');
+      const range = IDBKeyRange.upperBound(timestamp);
+      const req = index.getAll(range);
+      req.onsuccess = () => {
+        const records = req.result as PositionRecord[];
+        const byEntity = new Map<string, PositionRecord>();
+        for (const r of records) {
+          const prev = byEntity.get(r.entityId);
+          if (!prev || r.timestamp > prev.timestamp) {
+            byEntity.set(r.entityId, r);
+          }
+        }
+        resolve(Array.from(byEntity.values()));
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
   async cleanup(): Promise<void> {
     await this.init();
     const cutoff = Date.now() - DEFAULT_MAX_AGE;
