@@ -1,0 +1,6 @@
+{
+  "_comment": "프로젝트별 자동 허용 명령어",
+  "permissions": {
+    "allow": []
+  }
+}
