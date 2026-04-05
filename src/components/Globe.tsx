@@ -3292,7 +3292,8 @@ export default function Globe() {
         const flights = snapshot.filter((r) => r.entityType === 'flight');
         const billboards = new Cesium.BillboardCollection({ scene: v.scene });
         for (const f of flights) {
-          billboards.add({
+          const callsign = f.entityId.replace('flight-', '');
+          const bb = billboards.add({
             position: Cesium.Cartesian3.fromDegrees(f.lng, f.lat, f.altitude),
             image: AIRPLANE_SVG,
             width: 20, height: 20,
@@ -3300,6 +3301,10 @@ export default function Globe() {
             alignedAxis: Cesium.Cartesian3.UNIT_Z,
             scaleByDistance: new Cesium.NearFarScalar(5e4, 2.5, 5e6, 0.5),
             color: Cesium.Color.YELLOW.withAlpha(0.75),
+          });
+          billboardDataMap.current.set(bb, {
+            type: 'flight',
+            data: { callsign, lat: f.lat, lng: f.lng, altitude: f.altitude, heading: f.heading, velocity: f.speed, onGround: false },
           });
         }
         v.scene.primitives.add(billboards);
@@ -3318,7 +3323,8 @@ export default function Globe() {
         const ships = snapshot.filter((r) => r.entityType === 'ship');
         const billboards = new Cesium.BillboardCollection({ scene: v.scene });
         for (const s of ships) {
-          billboards.add({
+          const mmsi = s.entityId.replace('ship-', '');
+          const bb = billboards.add({
             position: Cesium.Cartesian3.fromDegrees(s.lng, s.lat, 0),
             image: SHIP_SVG,
             width: 14, height: 14,
@@ -3326,6 +3332,10 @@ export default function Globe() {
             alignedAxis: Cesium.Cartesian3.UNIT_Z,
             scaleByDistance: new Cesium.NearFarScalar(5e4, 2.0, 5e6, 0.5),
             color: Cesium.Color.fromCssColorString('#4DA6FF').withAlpha(0.75),
+          });
+          billboardDataMap.current.set(bb, {
+            type: 'ship',
+            data: { mmsi, lat: s.lat, lng: s.lng, heading: s.heading, speed: s.speed, shipType: 'cargo' },
           });
         }
         v.scene.primitives.add(billboards);
@@ -3346,13 +3356,18 @@ export default function Globe() {
         const adsbBillboards = new Cesium.BillboardCollection({ scene: v.scene });
         const adsbLabels = new Cesium.LabelCollection({ scene: v.scene });
         for (const a of adsbs) {
-          adsbBillboards.add({
+          const icao = a.entityId.replace('adsb-', '');
+          const bb = adsbBillboards.add({
             position: Cesium.Cartesian3.fromDegrees(a.lng, a.lat, a.altitude),
             image: AIRPLANE_SVG,
             width: 24, height: 24,
             color: Cesium.Color.RED.withAlpha(0.75),
             rotation: -Cesium.Math.toRadians(a.heading),
             scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.4),
+          });
+          billboardDataMap.current.set(bb, {
+            type: 'adsb',
+            data: { icao, lat: a.lat, lng: a.lng, altitude: a.altitude, heading: a.heading, speed: a.speed },
           });
         }
         v.scene.primitives.add(adsbBillboards);

@@ -14,7 +14,7 @@ const DB_NAME = 'geovision-trajectories';
 const DB_VERSION = 1;
 const STORE_NAME = 'positions';
 const LS_KEY = 'geovision-trajectory-positions';
-const DEFAULT_MAX_AGE = 2 * 60 * 60 * 1000; // 2 hours
+const DEFAULT_MAX_AGE = 24 * 60 * 60 * 1000; // 24 hours for 4D playback
 const MAX_RECORDS_PER_ENTITY = 500;
 
 class TrajectoryDB {
