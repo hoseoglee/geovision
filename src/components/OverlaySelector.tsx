@@ -23,6 +23,10 @@ const OVERLAYS = [
   { id: 'typhoon', label: 'Typhoons', icon: '🌀' },
   { id: 'volcano', label: 'Volcanoes', icon: '🌋' },
   { id: 'wildfire', label: 'Wildfires', icon: '🔥' },
+  // 전략 인프라
+  { id: 'pipelines', label: 'Oil/Gas Pipelines', icon: '🛢' },
+  { id: 'refineries', label: 'Refineries & LNG', icon: '🏭' },
+  { id: 'desalination', label: 'Desalination', icon: '💧' },
 ];
 
 export default function OverlaySelector() {

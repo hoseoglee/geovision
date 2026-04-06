@@ -22,6 +22,7 @@ import { fetchOsint, type OsintData, escapeHtml, sanitizeUrl } from '@/providers
 import { CHOKEPOINTS } from '@/data/chokepoints';
 import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
+  PIPELINES, REFINERIES, DESALINATION_PLANTS,
 } from '@/data/overlayData';
 import { getSunPosition } from '@/components/SunPosition';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
@@ -633,6 +634,44 @@ export default function Globe() {
               TYPE: overlayData.warm ? 'WARM CURRENT' : 'COLD CURRENT',
             },
             newsQuery: `${overlayData.name} ocean current climate`,
+          });
+        } else if (overlayType === 'pipeline' && overlayData) {
+          setSelectedEntity({
+            type: 'pipeline',
+            name: overlayData.name,
+            details: {
+              TYPE: overlayData.type.toUpperCase(),
+              CAPACITY: overlayData.capacity || 'N/A',
+              COUNTRIES: overlayData.countries.join(' → '),
+              SEGMENTS: `${overlayData.points.length} waypoints`,
+            },
+            newsQuery: `${overlayData.name} pipeline energy`,
+          });
+        } else if (overlayType === 'refinery' && overlayData) {
+          setSelectedEntity({
+            type: 'refinery',
+            name: overlayData.name,
+            details: {
+              TYPE: overlayData.type.replace('_', ' ').toUpperCase(),
+              CAPACITY: overlayData.capacity || 'N/A',
+              COUNTRY: overlayData.country,
+              LAT: overlayData.lat.toFixed(3),
+              LNG: overlayData.lng.toFixed(3),
+            },
+            newsQuery: `${overlayData.name} ${overlayData.type === 'refinery' ? 'oil refinery' : 'LNG terminal'}`,
+          });
+        } else if (overlayType === 'desalination' && overlayData) {
+          setSelectedEntity({
+            type: 'desalination',
+            name: overlayData.name,
+            details: {
+              TECHNOLOGY: overlayData.technology,
+              CAPACITY: overlayData.capacity,
+              COUNTRY: overlayData.country,
+              LAT: overlayData.lat.toFixed(3),
+              LNG: overlayData.lng.toFixed(3),
+            },
+            newsQuery: `${overlayData.name} desalination water`,
           });
         } else if ((entity as any)._chokepoint) {
           const cp = (entity as any)._chokepoint;
@@ -1694,6 +1733,155 @@ export default function Globe() {
         (curLabelEntity as any)._overlayType = 'current';
         (curLabelEntity as any)._overlayData = current;
         overlayEntitiesRef.current.push(curLabelEntity);
+      }
+    }
+
+    // 10-A. 전략 인프라 — 석유/가스 파이프라인
+    if (activeOverlays.includes('pipelines')) {
+      const typeColors: Record<string, string> = {
+        oil: '#FF8C00',
+        gas: '#9B59B6',
+        lng: '#1ABC9C',
+      };
+      for (const pipeline of PIPELINES) {
+        const positions = pipeline.points.map(([lng, lat]) =>
+          Cesium.Cartesian3.fromDegrees(lng, lat, 0)
+        );
+        const pColor = Cesium.Color.fromCssColorString(typeColors[pipeline.type] || '#FF8C00');
+        const entity = viewer.entities.add({
+          name: pipeline.name,
+          polyline: {
+            positions,
+            width: 4,
+            material: new Cesium.PolylineDashMaterialProperty({
+              color: pColor.withAlpha(0.85),
+              dashLength: 16,
+              dashPattern: 255,
+            }),
+            clampToGround: true,
+          },
+        });
+        (entity as any)._overlayType = 'pipeline';
+        (entity as any)._overlayData = pipeline;
+        overlayEntitiesRef.current.push(entity);
+
+        // 파이프라인 중간 라벨
+        const midIdx = Math.floor(pipeline.points.length / 2);
+        const midPt = pipeline.points[midIdx];
+        const labelIcon = pipeline.type === 'oil' ? '🛢' : pipeline.type === 'gas' ? '🔥' : '❄';
+        const labelEntity = viewer.entities.add({
+          name: pipeline.name,
+          position: Cesium.Cartesian3.fromDegrees(midPt[0], midPt[1], 0),
+          point: {
+            pixelSize: 9,
+            color: pColor.withAlpha(0.9),
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.6),
+            outlineWidth: 2,
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1.5, 1e7, 0.5),
+          },
+          label: {
+            text: `${labelIcon} ${pipeline.name}`,
+            font: '10px monospace',
+            fillColor: pColor,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            outlineWidth: 2,
+            outlineColor: Cesium.Color.BLACK,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -12),
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1, 8e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 8e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+        });
+        (labelEntity as any)._overlayType = 'pipeline';
+        (labelEntity as any)._overlayData = pipeline;
+        overlayEntitiesRef.current.push(labelEntity);
+      }
+    }
+
+    // 10-B. 전략 인프라 — 정유소 / LNG 터미널
+    if (activeOverlays.includes('refineries')) {
+      const typeColors: Record<string, string> = {
+        refinery: '#E74C3C',
+        lng_terminal: '#3498DB',
+        lng_liquefaction: '#27AE60',
+      };
+      const typeIcons: Record<string, string> = {
+        refinery: '🏭',
+        lng_terminal: '🚢',
+        lng_liquefaction: '❄',
+      };
+      for (const refinery of REFINERIES) {
+        const rColor = Cesium.Color.fromCssColorString(typeColors[refinery.type] || '#E74C3C');
+        const entity = viewer.entities.add({
+          name: refinery.name,
+          position: Cesium.Cartesian3.fromDegrees(refinery.lng, refinery.lat, 0),
+          point: {
+            pixelSize: 11,
+            color: rColor,
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
+            outlineWidth: 2,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+          label: {
+            text: `${typeIcons[refinery.type] || '🏭'} ${refinery.name}`,
+            font: '10px monospace',
+            fillColor: rColor,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            outlineWidth: 2,
+            outlineColor: Cesium.Color.BLACK,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -14),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+        });
+        (entity as any)._overlayType = 'refinery';
+        (entity as any)._overlayData = refinery;
+        overlayEntitiesRef.current.push(entity);
+      }
+    }
+
+    // 10-C. 전략 인프라 — 담수화 플랜트
+    if (activeOverlays.includes('desalination')) {
+      const techColors: Record<string, string> = {
+        MSF: '#E67E22',
+        RO: '#2ECC71',
+        MED: '#F39C12',
+      };
+      for (const plant of DESALINATION_PLANTS) {
+        const dColor = Cesium.Color.fromCssColorString(techColors[plant.technology] || '#2ECC71');
+        const entity = viewer.entities.add({
+          name: plant.name,
+          position: Cesium.Cartesian3.fromDegrees(plant.lng, plant.lat, 0),
+          point: {
+            pixelSize: 10,
+            color: dColor,
+            outlineColor: Cesium.Color.fromCssColorString('#00BFFF').withAlpha(0.8),
+            outlineWidth: 2,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2, 1e7, 0.6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+          label: {
+            text: `💧 ${plant.name}`,
+            font: '10px monospace',
+            fillColor: dColor,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            outlineWidth: 2,
+            outlineColor: Cesium.Color.BLACK,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -14),
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 1, 5e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+        });
+        (entity as any)._overlayType = 'desalination';
+        (entity as any)._overlayData = plant;
+        overlayEntitiesRef.current.push(entity);
       }
     }
 

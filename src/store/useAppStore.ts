@@ -10,7 +10,8 @@ export interface SelectedEntity {
   type:
     | 'satellite' | 'flight' | 'ship' | 'earthquake' | 'adsb'
     | 'chokepoint' | 'cable' | 'military_base' | 'nuclear_plant'
-    | 'port' | 'current' | 'sun';
+    | 'port' | 'current' | 'sun'
+    | 'pipeline' | 'refinery' | 'desalination';
   name: string;
   details: Record<string, string | number>;
   url?: string;
