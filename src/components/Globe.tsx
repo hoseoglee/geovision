@@ -24,6 +24,7 @@ import {
   SUBMARINE_CABLES, MILITARY_BASES, NUCLEAR_PLANTS, MAJOR_PORTS, OCEAN_CURRENTS,
   PIPELINES, REFINERIES, DESALINATION_PLANTS,
 } from '@/data/overlayData';
+import { CONFLICT_EVENTS, getConflictEventsInTimeRange } from '@/data/conflictEvents';
 import { getSunPosition } from '@/components/SunPosition';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
 import { useTimelineStore } from '@/store/useTimelineStore';
@@ -677,6 +678,20 @@ export default function Globe() {
               LNG: overlayData.lng.toFixed(3),
             },
             newsQuery: `${overlayData.name} desalination water`,
+          });
+        } else if (overlayType === 'conflict_event' && overlayData) {
+          setSelectedEntity({
+            type: 'earthquake', // reuse existing type for display
+            name: overlayData.title,
+            details: {
+              TYPE: overlayData.type.replace('_', ' ').toUpperCase(),
+              SEVERITY: overlayData.severity.toUpperCase(),
+              REGION: overlayData.region,
+              COUNTRY: overlayData.country,
+              DATE: overlayData.date,
+              INFO: overlayData.description,
+            },
+            newsQuery: `${overlayData.title} ${overlayData.country} conflict`,
           });
         } else if ((entity as any)._chokepoint) {
           const cp = (entity as any)._chokepoint;
@@ -2615,9 +2630,68 @@ export default function Globe() {
       // 군용기 — 별도 useEffect에서 30초 자동 갱신으로 처리
     }
 
+    // 11. 분쟁/군사 이벤트 오버레이
+    if (activeOverlays.includes('conflicts')) {
+      const severityColors: Record<string, string> = {
+        critical: '#FF2222',
+        high: '#FF8C00',
+        medium: '#FFD700',
+      };
+      const typeIcons: Record<string, string> = {
+        airstrike: '💥',
+        ground_battle: '⚔',
+        naval: '🚢',
+        missile: '🚀',
+        explosion: '💣',
+        siege: '🏚',
+      };
+      // 타임라인 플레이백 시 해당 시간 범위 이벤트만 표시
+      const events = (timelineMode === 'playback')
+        ? getConflictEventsInTimeRange(
+            timelineCurrentTime - 7 * 24 * 60 * 60 * 1000,
+            timelineCurrentTime
+          )
+        : CONFLICT_EVENTS;
+
+      for (const evt of events) {
+        const color = Cesium.Color.fromCssColorString(severityColors[evt.severity] || '#FF8C00');
+        const icon = typeIcons[evt.type] || '💥';
+
+        // 폭발 포인트
+        const point = viewer.entities.add({
+          name: evt.title,
+          position: Cesium.Cartesian3.fromDegrees(evt.lng, evt.lat, 0),
+          point: {
+            pixelSize: evt.severity === 'critical' ? 14 : evt.severity === 'high' ? 11 : 8,
+            color: color.withAlpha(0.9),
+            outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
+            outlineWidth: 2,
+            scaleByDistance: new Cesium.NearFarScalar(1e5, 2.5, 2e7, 0.5),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+          label: {
+            text: `${icon} ${evt.title}`,
+            font: '10px monospace',
+            fillColor: color,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            outlineWidth: 2,
+            outlineColor: Cesium.Color.BLACK,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -14),
+            scaleByDistance: new Cesium.NearFarScalar(5e5, 1, 8e6, 0.3),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 6e6),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+          },
+        });
+        (point as any)._overlayType = 'conflict_event';
+        (point as any)._overlayData = evt;
+        overlayEntitiesRef.current.push(point);
+      }
+    }
+
     // requestRenderMode에서 오버레이 변경 후 화면 갱신 보장
     viewer.scene.requestRender();
-  }, [activeOverlays, windyCamsVersion]);
+  }, [activeOverlays, windyCamsVersion, timelineMode, timelineCurrentTime]);
 
   // Subscribe to Windy cam updates to re-trigger overlay rendering
   useEffect(() => {

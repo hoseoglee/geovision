@@ -27,6 +27,8 @@ const OVERLAYS = [
   { id: 'pipelines', label: 'Oil/Gas Pipelines', icon: '🛢' },
   { id: 'refineries', label: 'Refineries & LNG', icon: '🏭' },
   { id: 'desalination', label: 'Desalination', icon: '💧' },
+  // 분쟁/군사 이벤트
+  { id: 'conflicts', label: 'Conflict Events', icon: '💥' },
 ];
 
 export default function OverlaySelector() {

@@ -5,6 +5,7 @@ import { useAppStore } from '@/store/useAppStore';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
 import { useDarkVesselStore } from '@/store/useDarkVesselStore';
 import { NewsClusterButton } from './NewsClusterTimelapse';
+import { OilPricePanelToggle } from './OilPricePanel';
 import LayerSelector from './LayerSelector';
 import HeatmapControls from './HeatmapControls';
 import FilterControls from './FilterControls';
@@ -157,6 +158,11 @@ export default function ControlPanel() {
           <div className="space-y-1">
             <p className="text-zinc-500 text-[10px] font-mono uppercase tracking-wider">타임랩스</p>
             <NewsClusterButton />
+          </div>
+          <div className="border-t border-zinc-700/50" />
+          <div className="space-y-1">
+            <p className="text-zinc-500 text-[10px] font-mono uppercase tracking-wider">Financial Intel</p>
+            <OilPricePanelToggle />
           </div>
           <div className="border-t border-zinc-700/50" />
           <Legend />

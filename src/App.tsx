@@ -46,6 +46,12 @@ const GeofenceEventPanel = lazy(() =>
   import('./components/GeofencePanel').then((m) => ({ default: m.GeofenceEventPanel }))
 );
 
+// Financial & Conflict Intelligence
+const OilPricePanel = lazy(() => import('./components/OilPricePanel'));
+const BeforeAfterToggle = lazy(() =>
+  import('./components/BeforeAfterSlider').then((m) => ({ default: m.BeforeAfterToggle }))
+);
+
 export default function App() {
   useProviderHealthMonitor();
 
@@ -90,6 +96,8 @@ export default function App() {
         <ViewModeToggle />
         <ChokepointAnalyticsPanel />
         <DarkVesselPanel />
+        <OilPricePanel />
+        <BeforeAfterToggle />
       </Suspense>
     </main>
   );
