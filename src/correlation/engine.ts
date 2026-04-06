@@ -155,7 +155,7 @@ export class CorrelationEngine {
   }
 
   private getCategoryForRule(ruleId: string): import('@/store/useAlertStore').AlertCategory {
-    const m: Record<string, import('@/store/useAlertStore').AlertCategory> = { 'earthquake-nuclear': 'nuclear', 'chokepoint-congestion': 'chokepoint', 'military-cluster': 'flight', 'earthquake-cctv': 'earthquake', 'earthquake-shipping': 'earthquake', 'earthquake-volcano': 'earthquake', 'wildfire-wind': 'system', 'ship-route-deviation': 'ship', 'adsb-route-deviation': 'flight' };
+    const m: Record<string, import('@/store/useAlertStore').AlertCategory> = { 'earthquake-nuclear': 'nuclear', 'chokepoint-congestion': 'chokepoint', 'military-cluster': 'flight', 'earthquake-cctv': 'earthquake', 'earthquake-shipping': 'earthquake', 'earthquake-volcano': 'earthquake', 'wildfire-wind': 'system', 'ship-route-deviation': 'ship', 'adsb-route-deviation': 'flight', 'dark-vessel-chokepoint': 'ship' };
     if (m[ruleId]) return m[ruleId];
     const dsl = this.dslRules.get(ruleId);
     if (dsl) { const lm: Record<string, import('@/store/useAlertStore').AlertCategory> = { earthquakes: 'earthquake', ships: 'ship', adsb: 'flight', satellites: 'satellite', chokepoints: 'chokepoint', nuclear_plants: 'nuclear' }; return lm[dsl.triggerLayer] ?? 'system'; }

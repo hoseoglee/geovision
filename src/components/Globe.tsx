@@ -43,6 +43,7 @@ import { useMeasurementGlobe } from "@/hooks/useMeasurementGlobe";
 import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/trajectory';
 import { useTrajectoryStore } from '@/store/useTrajectoryStore';
 import { behavioralProfiler } from '@/behavioral';
+import { useDarkVesselStore, CHOKEPOINT_GATES } from '@/store/useDarkVesselStore';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -155,6 +156,10 @@ export default function Globe() {
   // Trajectory tracking
   const trajectoryRendererRef = useRef<TrajectoryRenderer | null>(null);
   const trajectoryEntityMapRef = useRef<Map<string, { lat: number; lng: number; altitude: number; heading: number; speed: number; entityType: 'flight' | 'ship' | 'adsb' }>>(new Map());
+
+  // Dark vessel visualization
+  const darkGapEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const chokepointGateEntitiesRef = useRef<Cesium.Entity[]>([]);
 
   const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);
@@ -1170,6 +1175,12 @@ export default function Globe() {
           }
         }
       }
+
+      // Dark vessel & chokepoint passage tracking
+      const dvStore = useDarkVesselStore.getState();
+      for (const s of ships) {
+        dvStore.updateShip(s.mmsi, s.name || `MMSI ${s.mmsi}`, s.shipType || 'cargo', s.lat, s.lng, s.heading || 0, s.speed || 0);
+      }
     }
 
     // 초기 로드
@@ -1193,6 +1204,134 @@ export default function Globe() {
       clearInterval(refreshInterval);
     };
   }, [activeLayers, setDataCounts, timelineMode]);
+
+  // Dark vessel gap polylines
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+    if (!activeLayers.includes('ships')) return;
+
+    const removeEntities: Cesium.Entity[] = [];
+
+    function renderDarkVesselGaps() {
+      if (!viewerRef.current) return;
+
+      // Remove previous
+      for (const e of removeEntities) {
+        try { viewerRef.current.entities.remove(e); } catch {}
+      }
+      removeEntities.length = 0;
+
+      const { darkGaps } = useDarkVesselStore.getState();
+
+      for (const gap of darkGaps) {
+        if (!gap.isOngoing && gap.resumeLat === null) continue;
+
+        // Warning icon at last known position
+        const warningEntity = viewerRef.current.entities.add({
+          name: `dark-${gap.mmsi}`,
+          position: Cesium.Cartesian3.fromDegrees(gap.lastKnownLng, gap.lastKnownLat, 50),
+          billboard: {
+            image: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon points="10,1 19,18 1,18" fill="%23FF4500" opacity="0.9"/><text x="10" y="15" text-anchor="middle" font-size="10" fill="white" font-weight="bold">!</text></svg>`,
+            width: 20,
+            height: 20,
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.5, 2e6, 0.5),
+          },
+          label: {
+            text: `DARK ${Math.round(gap.gapDurationMs / 60000)}m`,
+            font: '9px monospace',
+            fillColor: Cesium.Color.fromCssColorString('#FF4500'),
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 2,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            pixelOffset: new Cesium.Cartesian2(0, -18),
+            scaleByDistance: new Cesium.NearFarScalar(1e4, 1.2, 2e6, 0.4),
+          },
+        });
+        removeEntities.push(warningEntity);
+
+        // If resumed: draw dotted polyline from last known to resume position
+        if (!gap.isOngoing && gap.resumeLat !== null && gap.resumeLng !== null) {
+          const lineEntity = viewerRef.current.entities.add({
+            name: `dark-line-${gap.mmsi}`,
+            polyline: {
+              positions: Cesium.Cartesian3.fromDegreesArray([
+                gap.lastKnownLng, gap.lastKnownLat,
+                gap.resumeLng, gap.resumeLat,
+              ]),
+              width: 2,
+              material: new Cesium.PolylineDashMaterialProperty({
+                color: Cesium.Color.fromCssColorString('#FF4500').withAlpha(0.7),
+                dashLength: 16,
+                dashPattern: 0xff00,
+              }),
+            },
+          });
+          removeEntities.push(lineEntity);
+        }
+      }
+    }
+
+    renderDarkVesselGaps();
+    const interval = setInterval(renderDarkVesselGaps, 60000);
+
+    return () => {
+      clearInterval(interval);
+      const v = viewerRef.current;
+      if (v) {
+        for (const e of removeEntities) {
+          try { v.entities.remove(e); } catch {}
+        }
+      }
+    };
+  }, [activeLayers]);
+
+  // Chokepoint gate lines
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+    if (!activeLayers.includes('ships')) {
+      // Remove existing gate lines
+      const toRemove = viewer.entities.values.filter(e => e.name?.startsWith('gate-line-'));
+      for (const e of toRemove) {
+        try { viewer.entities.remove(e); } catch {}
+      }
+      return;
+    }
+
+    // Remove old gate lines
+    const toRemove = Array.from(viewer.entities.values).filter(e => e.name?.startsWith('gate-line-'));
+    for (const e of toRemove) {
+      try { viewer.entities.remove(e); } catch {}
+    }
+
+    for (const gate of CHOKEPOINT_GATES) {
+      viewer.entities.add({
+        name: `gate-line-${gate.name}`,
+        polyline: {
+          positions: Cesium.Cartesian3.fromDegreesArray([
+            gate.gateLng1, gate.gateLat1,
+            gate.gateLng2, gate.gateLat2,
+          ]),
+          width: 2,
+          material: new Cesium.PolylineDashMaterialProperty({
+            color: Cesium.Color.fromCssColorString(gate.color).withAlpha(0.6),
+            dashLength: 10,
+          }),
+          clampToGround: false,
+        },
+      });
+    }
+
+    return () => {
+      const v = viewerRef.current;
+      if (!v) return;
+      const lines = Array.from(v.entities.values).filter(e => e.name?.startsWith('gate-line-'));
+      for (const e of lines) {
+        try { v.entities.remove(e); } catch {}
+      }
+    };
+  }, [activeLayers]);
 
   // 지진 — 펄스 링 애니메이션 + Entity (개수 적으므로 Entity OK)
   useEffect(() => {
@@ -3455,6 +3594,127 @@ export default function Globe() {
     const interval = setInterval(() => { trajectoryDB.cleanup(); }, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // ── Dark Vessel Visualization ──
+  const darkGaps = useDarkVesselStore((s) => s.darkGaps);
+  const darkVesselEnabled = useDarkVesselStore((s) => s.enabled);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer || viewer.isDestroyed()) return;
+
+    // Remove previous dark gap entities
+    for (const e of darkGapEntitiesRef.current) {
+      try { viewer.entities.remove(e); } catch { /* already removed */ }
+    }
+    darkGapEntitiesRef.current = [];
+
+    if (!darkVesselEnabled || darkGaps.length === 0) return;
+
+    for (const gap of darkGaps) {
+      // Warning icon at last known position
+      const warningEntity = viewer.entities.add({
+        name: `Dark Vessel: ${gap.shipName}`,
+        position: Cesium.Cartesian3.fromDegrees(gap.lastKnownLng, gap.lastKnownLat, 0),
+        point: {
+          pixelSize: 8,
+          color: Cesium.Color.fromCssColorString('#FF4444').withAlpha(0.9),
+          outlineColor: Cesium.Color.fromCssColorString('#FF0000'),
+          outlineWidth: 2,
+          scaleByDistance: new Cesium.NearFarScalar(5e4, 2.0, 5e6, 0.6),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        },
+        label: {
+          text: `⚠ ${gap.shipName}`,
+          font: '9px monospace',
+          fillColor: Cesium.Color.fromCssColorString('#FF6666'),
+          style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+          outlineWidth: 2,
+          outlineColor: Cesium.Color.BLACK,
+          verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+          pixelOffset: new Cesium.Cartesian2(0, -12),
+          scaleByDistance: new Cesium.NearFarScalar(5e4, 1, 3e6, 0.4),
+          distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 3e6),
+          disableDepthTestDistance: Number.POSITIVE_INFINITY,
+        },
+      });
+      darkGapEntitiesRef.current.push(warningEntity);
+
+      // Dashed polyline between last known and resume position
+      if (gap.resumeLat !== null && gap.resumeLng !== null) {
+        const lineEntity = viewer.entities.add({
+          name: `Dark Gap: ${gap.shipName}`,
+          polyline: {
+            positions: Cesium.Cartesian3.fromDegreesArray([
+              gap.lastKnownLng, gap.lastKnownLat,
+              gap.resumeLng!, gap.resumeLat!,
+            ]),
+            width: 2,
+            material: new Cesium.PolylineDashMaterialProperty({
+              color: Cesium.Color.fromCssColorString('#FF4444').withAlpha(0.7),
+              dashLength: 16,
+              dashPattern: 255,
+            }),
+            clampToGround: true,
+          },
+        });
+        darkGapEntitiesRef.current.push(lineEntity);
+      }
+    }
+
+    // Update correlation engine with dark vessel layer
+    if (correlationEngine) {
+      const darkEntities = darkGaps.map((gap) => ({
+        id: gap.id,
+        layer: 'dark_vessels',
+        lat: gap.lastKnownLat,
+        lng: gap.lastKnownLng,
+        data: { mmsi: gap.mmsi, shipName: gap.shipName, gapDurationMs: gap.gapDurationMs },
+      }));
+      correlationEngine.updateLayer('dark_vessels', darkEntities);
+    }
+  }, [darkGaps, darkVesselEnabled, correlationEngine]);
+
+  // ── Chokepoint Gate Lines ──
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer || viewer.isDestroyed()) return;
+
+    for (const e of chokepointGateEntitiesRef.current) {
+      try { viewer.entities.remove(e); } catch { /* already removed */ }
+    }
+    chokepointGateEntitiesRef.current = [];
+
+    for (const gate of CHOKEPOINT_GATES) {
+      const color = Cesium.Color.fromCssColorString(gate.color).withAlpha(0.7);
+      const gateEntity = viewer.entities.add({
+        name: `Gate: ${gate.name}`,
+        polyline: {
+          positions: Cesium.Cartesian3.fromDegreesArray([
+            gate.gateLng1, gate.gateLat1,
+            gate.gateLng2, gate.gateLat2,
+          ]),
+          width: 3,
+          material: new Cesium.PolylineDashMaterialProperty({
+            color,
+            dashLength: 8,
+            dashPattern: 0xff00,
+          }),
+          clampToGround: true,
+        },
+      });
+      chokepointGateEntitiesRef.current.push(gateEntity);
+    }
+
+    return () => {
+      const v = viewerRef.current;
+      if (!v || v.isDestroyed()) return;
+      for (const e of chokepointGateEntitiesRef.current) {
+        try { v.entities.remove(e); } catch { /* already removed */ }
+      }
+      chokepointGateEntitiesRef.current = [];
+    };
+  }, []); // Gate lines are static — render once on mount
 
   // ── 4D Playback — TrajectoryDB에서 과거 시점 스냅샷 렌더링 ──
   useEffect(() => {

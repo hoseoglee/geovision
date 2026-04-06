@@ -38,6 +38,8 @@ const ExportModal = lazy(() => import('./components/ExportModal'));
 const NewsClusterTimelapse = lazy(() => import('./components/NewsClusterTimelapse'));
 const AreaBriefingPanel = lazy(() => import('./components/AreaBriefingPanel'));
 const ViewModeToggle = lazy(() => import('./components/ViewModeToggle'));
+const ChokepointAnalyticsPanel = lazy(() => import('./components/ChokepointAnalyticsPanel'));
+const DarkVesselPanel = lazy(() => import('./components/DarkVesselPanel'));
 
 // Lazy-loaded named export needs wrapper
 const GeofenceEventPanel = lazy(() =>
@@ -86,6 +88,8 @@ export default function App() {
         <NewsClusterTimelapse />
         <AreaBriefingPanel />
         <ViewModeToggle />
+        <ChokepointAnalyticsPanel />
+        <DarkVesselPanel />
       </Suspense>
     </main>
   );

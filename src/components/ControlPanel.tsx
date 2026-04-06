@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { useCorrelationStore } from '@/store/useCorrelationStore';
+import { useDarkVesselStore } from '@/store/useDarkVesselStore';
 import { NewsClusterButton } from './NewsClusterTimelapse';
 import LayerSelector from './LayerSelector';
 import HeatmapControls from './HeatmapControls';
@@ -56,6 +57,57 @@ function CorrelationStatus() {
   );
 }
 
+function DarkVesselControls() {
+  const enabled = useDarkVesselStore((s) => s.enabled);
+  const analyticsVisible = useDarkVesselStore((s) => s.analyticsVisible);
+  const darkGaps = useDarkVesselStore((s) => s.darkGaps);
+  const passageEvents = useDarkVesselStore((s) => s.passageEvents);
+  const toggleEnabled = useDarkVesselStore((s) => s.toggleEnabled);
+  const toggleAnalytics = useDarkVesselStore((s) => s.toggleAnalytics);
+
+  const ongoingCount = darkGaps.filter((g) => g.isOngoing).length;
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const todayPassages = passageEvents.filter((e) => new Date(e.timestamp).toISOString().slice(0, 10) === todayStr).length;
+
+  return (
+    <div>
+      <h3 className="text-zinc-400 text-[10px] font-bold tracking-widest mb-2">DARK VESSEL & CHOKEPOINTS</h3>
+      <div className="space-y-2">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className={`w-2 h-2 rounded-full ${enabled ? 'bg-red-400 animate-pulse' : 'bg-zinc-600'}`} />
+            <span className="text-zinc-400 text-[10px]">{enabled ? 'MONITORING' : 'OFF'}</span>
+          </div>
+          <button
+            onClick={toggleEnabled}
+            className={`text-[9px] font-mono px-2 py-0.5 rounded border transition-colors
+              ${enabled
+                ? 'border-red-500/40 text-red-400 hover:bg-red-900/30'
+                : 'border-zinc-600/40 text-zinc-400 hover:bg-zinc-700/30'
+              }`}
+          >
+            {enabled ? 'DISABLE' : 'ENABLE'}
+          </button>
+        </div>
+        <div className="flex gap-3 text-[9px] text-zinc-500">
+          <span>DARK: <span className={ongoingCount > 0 ? 'text-red-400' : 'text-zinc-600'}>{ongoingCount}</span></span>
+          <span>PASSAGES: <span className="text-cyan-400">{todayPassages}</span></span>
+        </div>
+        <button
+          onClick={toggleAnalytics}
+          className={`w-full text-[9px] font-mono py-1 rounded border transition-colors
+            ${analyticsVisible
+              ? 'border-cyan-500/50 text-cyan-400 bg-cyan-900/20'
+              : 'border-zinc-600/40 text-zinc-400 hover:border-zinc-500/50'
+            }`}
+        >
+          {analyticsVisible ? '▲ HIDE ANALYTICS' : '▼ CHOKEPOINT ANALYTICS'}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function ControlPanel() {
   const [collapsed, setCollapsed] = useState(false);
   const dataCounts = useAppStore((s) => s.dataCounts);
@@ -99,6 +151,8 @@ export default function ControlPanel() {
           <CCTVFilter />
           <div className="border-t border-zinc-700/50" />
           <AnalyticsDashboard />
+          <div className="border-t border-zinc-700/50" />
+          <DarkVesselControls />
           <div className="border-t border-zinc-700/50" />
           <div className="space-y-1">
             <p className="text-zinc-500 text-[10px] font-mono uppercase tracking-wider">타임랩스</p>
