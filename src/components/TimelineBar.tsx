@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { useTimelineStore, type PlaybackSpeed } from '@/store/useTimelineStore';
+import { useTimelineStore, type PlaybackSpeed, type DarkGapSegment } from '@/store/useTimelineStore';
 
 const SPEEDS: PlaybackSpeed[] = [1, 10, 60, 360];
 
@@ -50,6 +50,76 @@ function DensityCanvas({ density, width, height }: { density: number[]; width: n
   return <canvas ref={canvasRef} className="absolute inset-0 rounded" style={{ width, height }} />;
 }
 
+/** Dark vessel AIS gap segments rendered as orange/red overlays on the timeline */
+function DarkGapCanvas({
+  darkGapSegments,
+  rangeStart,
+  rangeEnd,
+  width,
+  height,
+}: {
+  darkGapSegments: DarkGapSegment[];
+  rangeStart: number;
+  rangeEnd: number;
+  width: number;
+  height: number;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || width <= 0 || !darkGapSegments.length) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = width;
+    canvas.height = height;
+    ctx.clearRect(0, 0, width, height);
+
+    const range = rangeEnd - rangeStart;
+    if (range <= 0) return;
+
+    for (const gap of darkGapSegments) {
+      const x1 = ((gap.gapStartTime - rangeStart) / range) * width;
+      const x2 = gap.gapEndTime != null
+        ? ((gap.gapEndTime - rangeStart) / range) * width
+        : width; // ongoing gap: extend to end of timeline
+
+      if (x2 < 0 || x1 > width) continue;
+
+      const gx1 = Math.max(0, x1);
+      const gx2 = Math.min(width, Math.max(gx1 + 2, x2));
+
+      // Ongoing gaps = red, resolved gaps = orange
+      ctx.fillStyle = gap.gapEndTime == null
+        ? 'rgba(239, 68, 68, 0.40)'
+        : 'rgba(251, 146, 60, 0.30)';
+      ctx.fillRect(gx1, 0, gx2 - gx1, height);
+
+      // Dashed vertical line at gap start
+      ctx.save();
+      ctx.setLineDash([2, 2]);
+      ctx.strokeStyle = gap.gapEndTime == null
+        ? 'rgba(239, 68, 68, 0.85)'
+        : 'rgba(251, 146, 60, 0.75)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(gx1, 0);
+      ctx.lineTo(gx1, height);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }, [darkGapSegments, rangeStart, rangeEnd, width, height]);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 rounded pointer-events-none"
+      style={{ width, height }}
+    />
+  );
+}
+
 export default function TimelineBar() {
   const mode = useTimelineStore((s) => s.mode);
   const currentTime = useTimelineStore((s) => s.currentTime);
@@ -59,6 +129,7 @@ export default function TimelineBar() {
   const rangeEnd = useTimelineStore((s) => s.rangeEnd);
   const density = useTimelineStore((s) => s.density);
   const isLoading = useTimelineStore((s) => s.isLoading);
+  const darkGapSegments = useTimelineStore((s) => s.darkGapSegments);
 
   const enterPlayback = useTimelineStore((s) => s.enterPlayback);
   const exitPlayback = useTimelineStore((s) => s.exitPlayback);
@@ -229,6 +300,17 @@ export default function TimelineBar() {
           >
             {/* Density heatmap */}
             <DensityCanvas density={density} width={sliderWidth} height={24} />
+
+            {/* Dark vessel AIS gap segments */}
+            {darkGapSegments.length > 0 && (
+              <DarkGapCanvas
+                darkGapSegments={darkGapSegments}
+                rangeStart={rangeStart}
+                rangeEnd={rangeEnd}
+                width={sliderWidth}
+                height={24}
+              />
+            )}
 
             {/* Track background */}
             <div className="absolute inset-0 rounded border border-zinc-700/50" />

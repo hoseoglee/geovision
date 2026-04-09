@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { timeSeriesDB, type TimeSeriesRecord } from '@/storage/TimeSeriesDB';
+import { useDarkVesselStore } from './useDarkVesselStore';
 
 export type PlaybackSpeed = 1 | 10 | 60 | 360;
 
@@ -13,6 +14,15 @@ export interface TimelineEvent {
   lng?: number;
   source: 'alert' | 'correlation';
   ruleId?: string;
+}
+
+export interface DarkGapSegment {
+  mmsi: string;
+  shipName: string;
+  gapStartTime: number;
+  gapEndTime: number | null; // null = ongoing (vessel still dark)
+  lastKnownLat: number;
+  lastKnownLng: number;
 }
 
 interface TimelineState {
@@ -36,6 +46,7 @@ interface TimelineState {
 
   // Loading state
   isLoading: boolean;
+  darkGapSegments: DarkGapSegment[];
 
   // Actions
   enterPlayback: () => Promise<void>;
@@ -91,6 +102,7 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
   events: [],
   density: new Array<number>(DENSITY_BINS).fill(0),
   isLoading: false,
+  darkGapSegments: [],
 
   enterPlayback: async () => {
     const now = Date.now();
@@ -116,6 +128,17 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
       }
       events.sort((a, b) => a.timestamp - b.timestamp);
 
+      // Load dark vessel gap segments from DarkVesselStore
+      const darkGaps = useDarkVesselStore.getState().darkGaps;
+      const darkGapSegments: DarkGapSegment[] = darkGaps.map((gap) => ({
+        mmsi: gap.mmsi,
+        shipName: gap.shipName,
+        gapStartTime: gap.gapStartTime,
+        gapEndTime: gap.isOngoing ? null : gap.gapStartTime + gap.gapDurationMs,
+        lastKnownLat: gap.lastKnownLat,
+        lastKnownLng: gap.lastKnownLng,
+      }));
+
       const density = computeDensity(events, rangeStart, rangeEnd);
 
       set({
@@ -126,6 +149,7 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
         rangeEnd,
         events,
         density,
+        darkGapSegments,
         isLoading: false,
       });
     } catch {
