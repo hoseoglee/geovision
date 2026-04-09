@@ -29,6 +29,8 @@ const OVERLAYS = [
   { id: 'desalination', label: 'Desalination', icon: '💧' },
   // 분쟁/군사 이벤트
   { id: 'conflicts', label: 'Conflict Events', icon: '💥' },
+  // 센서 커버리지
+  { id: 'sensorCoverage', label: 'Sensor Coverage', icon: '📡' },
 ];
 
 export default function OverlaySelector() {

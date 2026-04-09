@@ -4,7 +4,7 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import * as Cesium from 'cesium';
 import { useAppStore } from '@/store/useAppStore';
 import type { SatelliteData } from '@/providers/SatelliteProvider';
-import { propagateSatellite } from '@/providers/SatelliteProvider';
+import { propagateSatellite, SATELLITE_SENSOR_DB } from '@/providers/SatelliteProvider';
 import type { FlightData } from '@/providers/FlightProvider';
 import type { MilAircraftData } from '@/providers/AdsbProvider';
 import type { ShipData } from '@/providers/ShipProvider';
@@ -161,6 +161,11 @@ export default function Globe() {
   // Dark vessel visualization
   const darkGapEntitiesRef = useRef<Cesium.Entity[]>([]);
   const chokepointGateEntitiesRef = useRef<Cesium.Entity[]>([]);
+
+  // Sensor coverage footprint
+  const sensorCoverageEntitiesRef = useRef<Cesium.Entity[]>([]);
+  const satDataRef = useRef<SatelliteData[]>([]);
+  const [satDataVersion, setSatDataVersion] = useState(0);
 
   const activeFilters = useAppStore((s) => s.activeFilters);
   const filterParams = useAppStore((s) => s.filterParams);
@@ -1012,12 +1017,139 @@ export default function Globe() {
 
       viewer.scene.primitives.add(billboards);
       satPrimitiveRef.current = billboards;
+      satDataRef.current = sats;
+      setSatDataVersion(v => v + 1);
       setDataCounts('satellites', sats.length);
       setLastUpdated('satellites', Date.now());
     })();
 
     return () => { cancelled = true; };
   }, [activeLayers, removePrimitive, setDataCounts]);
+
+  // ─── Sensor Coverage Footprint ───────────────────────────────────────────
+  // 위성 고도 + 센서 반각으로 지상 footprint 반경(m) 계산
+  // 공식: 지구 중심각 λ = π - θ - arcsin(sin(θ)*(R+h)/R), footprintRadius = R*λ
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer) return;
+
+    // 기존 footprint 엔티티 정리
+    for (const e of sensorCoverageEntitiesRef.current) viewer.entities.remove(e);
+    sensorCoverageEntitiesRef.current = [];
+
+    if (!activeOverlays.includes('sensorCoverage')) return;
+
+    const R_KM = 6371;
+
+    function calcFootprintRadiusM(altKm: number, halfAngleDeg: number): number {
+      const h = Math.max(altKm, 1);
+      const θ = (halfAngleDeg * Math.PI) / 180;
+      const sinRho = Math.sin(θ) * (R_KM + h) / R_KM;
+      if (sinRho >= 1) return R_KM * 1000 * (Math.PI / 2); // 반구 전체
+      const rho = Math.asin(sinRho);
+      const lambda = Math.PI - θ - rho; // 지구 중심각 (rad)
+      return R_KM * 1000 * Math.max(0, lambda); // 미터
+    }
+
+    const SENSOR_COLORS: Record<string, string> = {
+      optical: '#00E5FF',  // 청록
+      radar:   '#FF8800',  // 주황
+      sigint:  '#BB00FF',  // 보라
+      weather: '#FFFF44',  // 노랑
+      comms:   '#4488FF',  // 파랑
+    };
+
+    const sats = satDataRef.current;
+
+    // 전역 위성 커버리지 맵: 상위 250개 위성에 저투명도 footprint
+    const globalSubset = sats.slice(0, 250);
+    for (const sat of globalSubset) {
+      const sensorInfo = SATELLITE_SENSOR_DB[sat.noradId];
+      const halfAngle = sensorInfo?.halfAngleDeg ?? 30;
+      const sType = sensorInfo?.type ?? 'optical';
+      const hexColor = SENSOR_COLORS[sType] ?? '#00FF88';
+      const radius = calcFootprintRadiusM(sat.alt, halfAngle);
+      if (radius <= 0) continue;
+
+      const color = Cesium.Color.fromCssColorString(hexColor);
+      const e = viewer.entities.add({
+        position: Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, 0),
+        ellipse: {
+          semiMinorAxis: radius,
+          semiMajorAxis: radius,
+          material: color.withAlpha(0.05),
+          outline: false,
+          height: 0,
+        },
+      });
+      sensorCoverageEntitiesRef.current.push(e);
+    }
+
+    // 선택된 위성 강조 footprint
+    if (selectedEntity?.type === 'satellite') {
+      const sat = selectedEntity.data as SatelliteData;
+      const sensorInfo = SATELLITE_SENSOR_DB[sat.noradId];
+      const halfAngle = sensorInfo?.halfAngleDeg ?? 30;
+      const sType = sensorInfo?.type ?? 'optical';
+      const hexColor = SENSOR_COLORS[sType] ?? '#00FF88';
+      const radius = calcFootprintRadiusM(sat.alt, halfAngle);
+
+      if (radius > 0) {
+        const color = Cesium.Color.fromCssColorString(hexColor);
+        const radiusKm = Math.round(radius / 1000);
+
+        // 채우기 ellipse
+        const fill = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, 0),
+          ellipse: {
+            semiMinorAxis: radius,
+            semiMajorAxis: radius,
+            material: color.withAlpha(0.18),
+            outline: true,
+            outlineColor: color.withAlpha(0.8),
+            outlineWidth: 2,
+            height: 0,
+          },
+        });
+        sensorCoverageEntitiesRef.current.push(fill);
+
+        // 커버리지 정보 라벨
+        const label = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, 0),
+          label: {
+            text: `📡 ${sat.name}\n${sType.toUpperCase()} | ∅${radiusKm.toLocaleString()} km\nAlt: ${Math.round(sat.alt)} km | θ=${halfAngle}°`,
+            font: '11px monospace',
+            fillColor: color,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 3,
+            style: Cesium.LabelStyle.FILL_AND_OUTLINE,
+            verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+            pixelOffset: new Cesium.Cartesian2(0, -10),
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
+            showBackground: true,
+            backgroundColor: Cesium.Color.BLACK.withAlpha(0.6),
+            backgroundPadding: new Cesium.Cartesian2(6, 4),
+          },
+        });
+        sensorCoverageEntitiesRef.current.push(label);
+
+        // 위성-지상 연결선
+        const satPos = Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, sat.alt * 1000);
+        const groundPos = Cesium.Cartesian3.fromDegrees(sat.lng, sat.lat, 0);
+        const line = viewer.entities.add({
+          polyline: {
+            positions: [satPos, groundPos],
+            width: 1,
+            material: new Cesium.PolylineDashMaterialProperty({
+              color: color.withAlpha(0.5),
+              dashLength: 16,
+            }),
+          },
+        });
+        sensorCoverageEntitiesRef.current.push(line);
+      }
+    }
+  }, [activeOverlays, satDataVersion, selectedEntity]);
 
   // 항공기 — Billboard + heading 회전 + 15초 주기 갱신
   useEffect(() => {
