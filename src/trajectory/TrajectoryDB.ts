@@ -209,6 +209,54 @@ class TrajectoryDB {
       tx.onerror = () => reject(tx.error);
     });
   }
+
+  /**
+   * Detect AIS signal gaps for a ship entity.
+   * Returns gaps between consecutive position records exceeding the threshold.
+   * A null gapEndTime indicates an ongoing gap (vessel still dark).
+   */
+  async detectGaps(
+    entityId: string,
+    thresholdMs: number = 30 * 60 * 1000
+  ): Promise<Array<{ gapStartTime: number; gapEndTime: number | null; durationMs: number }>> {
+    const records = await this.getHistory(entityId);
+    if (records.length < 2) {
+      // Check for ongoing gap from a single record
+      if (records.length === 1) {
+        const gap = Date.now() - records[0].timestamp;
+        if (gap >= thresholdMs) {
+          return [{ gapStartTime: records[0].timestamp, gapEndTime: null, durationMs: gap }];
+        }
+      }
+      return [];
+    }
+
+    const gaps: Array<{ gapStartTime: number; gapEndTime: number | null; durationMs: number }> = [];
+
+    for (let i = 1; i < records.length; i++) {
+      const gap = records[i].timestamp - records[i - 1].timestamp;
+      if (gap >= thresholdMs) {
+        gaps.push({
+          gapStartTime: records[i - 1].timestamp,
+          gapEndTime: records[i].timestamp,
+          durationMs: gap,
+        });
+      }
+    }
+
+    // Check for ongoing gap (last record to now)
+    const lastRecord = records[records.length - 1];
+    const ongoingGap = Date.now() - lastRecord.timestamp;
+    if (ongoingGap >= thresholdMs) {
+      gaps.push({
+        gapStartTime: lastRecord.timestamp,
+        gapEndTime: null,
+        durationMs: ongoingGap,
+      });
+    }
+
+    return gaps;
+  }
 }
 
 export const trajectoryDB = new TrajectoryDB();

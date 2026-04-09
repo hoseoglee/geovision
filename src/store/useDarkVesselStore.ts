@@ -149,10 +149,33 @@ export const useDarkVesselStore = create<DarkVesselState>((set, get) => ({
   },
 }));
 
-// Auto-tick every 60 seconds
+// Auto-tick every 60 seconds + sync to CorrelationEngine
 if (typeof window !== 'undefined') {
   setInterval(() => {
     useDarkVesselStore.getState().tick();
+    // Sync detected dark vessels to CorrelationEngine as 'dark_vessels' layer
+    import('@/store/useCorrelationStore').then(({ useCorrelationStore }) => {
+      const engine = useCorrelationStore.getState().engine;
+      if (!engine) return;
+      const { darkGaps } = useDarkVesselStore.getState();
+      if (!darkGaps.length) return;
+      engine.updateLayer(
+        'dark_vessels',
+        darkGaps.map((gap) => ({
+          id: gap.id,
+          layer: 'dark_vessels',
+          lat: gap.lastKnownLat,
+          lng: gap.lastKnownLng,
+          data: {
+            mmsi: gap.mmsi,
+            shipName: gap.shipName,
+            shipType: gap.shipType,
+            gapDurationMs: gap.gapDurationMs,
+            isOngoing: gap.isOngoing,
+          },
+        }))
+      );
+    }).catch(() => {/* engine may not be initialized yet */});
   }, 60000);
 }
 
