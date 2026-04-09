@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { timeSeriesDB, type TimeSeriesRecord } from '@/storage/TimeSeriesDB';
 import { useDarkVesselStore } from './useDarkVesselStore';
+import { clipPayloadToEvents, type ClipPayload } from '@/utils/clipUtils';
 
 export type PlaybackSpeed = 1 | 10 | 60 | 360;
 
@@ -50,6 +51,7 @@ interface TimelineState {
 
   // Actions
   enterPlayback: () => Promise<void>;
+  enterPlaybackWithClip: (payload: ClipPayload) => void;
   exitPlayback: () => void;
   seekTo: (timestamp: number) => void;
   play: () => void;
@@ -155,6 +157,23 @@ export const useTimelineStore = create<TimelineState>((set, get) => ({
     } catch {
       set({ isLoading: false });
     }
+  },
+
+  enterPlaybackWithClip: (payload: ClipPayload) => {
+    const events: TimelineEvent[] = clipPayloadToEvents(payload);
+    events.sort((a, b) => a.timestamp - b.timestamp);
+    const density = computeDensity(events, payload.s, payload.e);
+    set({
+      mode: 'playback',
+      currentTime: payload.t,
+      isPlaying: false,
+      rangeStart: payload.s,
+      rangeEnd: payload.e,
+      events,
+      density,
+      darkGapSegments: [],
+      isLoading: false,
+    });
   },
 
   exitPlayback: () => {

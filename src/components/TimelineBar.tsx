@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { useTimelineStore, type PlaybackSpeed, type DarkGapSegment, type TimelineEvent } from '@/store/useTimelineStore';
 import { useAppStore } from '@/store/useAppStore';
 import type { AlertSeverity } from '@/store/useAlertStore';
+import { encodeClip } from '@/utils/clipUtils';
 
 const SPEEDS: PlaybackSpeed[] = [1, 10, 60, 360];
 
@@ -218,6 +219,12 @@ export default function TimelineBar() {
   );
   const [hoveredCluster, setHoveredCluster] = useState<{ cluster: MarkerCluster; mouseX: number; mouseY: number } | null>(null);
 
+  // Clip range selection state
+  const [clipRange, setClipRange] = useState<{ start: number; end: number } | null>(null);
+  const [isDraggingClip, setIsDraggingClip] = useState(false);
+  const [clipDragStart, setClipDragStart] = useState<number | null>(null);
+  const [shareStatus, setShareStatus] = useState<'idle' | 'copying' | 'copied'>('idle');
+
   const toggleSeverity = useCallback((sev: AlertSeverity) => {
     setSeverityFilter((prev) => {
       const next = new Set(prev);
@@ -264,16 +271,75 @@ export default function TimelineBar() {
     return ((currentTime - rangeStart) / range) * 100;
   }, [currentTime, rangeStart, rangeEnd]);
 
+  const pctToTime = useCallback((pct: number) => {
+    return rangeStart + pct * (rangeEnd - rangeStart);
+  }, [rangeStart, rangeEnd]);
+
+  const eventToPct = useCallback((clientX: number, rect: DOMRect) => {
+    return Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+  }, []);
+
+  const handleSliderMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.shiftKey) {
+      e.preventDefault();
+      const rect = e.currentTarget.getBoundingClientRect();
+      const time = pctToTime(eventToPct(e.clientX, rect));
+      setClipDragStart(time);
+      setClipRange({ start: time, end: time });
+      setIsDraggingClip(true);
+    }
+  }, [pctToTime, eventToPct]);
+
   const handleSliderClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.shiftKey) return; // Shift+click은 clip 선택
     const rect = e.currentTarget.getBoundingClientRect();
     const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-    seekTo(rangeStart + pct * (rangeEnd - rangeStart));
-  }, [rangeStart, rangeEnd, seekTo]);
+    seekTo(pctToTime(pct));
+  }, [pctToTime, seekTo]);
 
-  const handleSliderDrag = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.buttons !== 1) return;
+  const handleSliderMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (isDraggingClip && clipDragStart != null && e.buttons === 1) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const time = pctToTime(eventToPct(e.clientX, rect));
+      setClipRange({
+        start: Math.min(clipDragStart, time),
+        end: Math.max(clipDragStart, time),
+      });
+      return;
+    }
+    if (e.buttons !== 1 || e.shiftKey) return;
     handleSliderClick(e);
-  }, [handleSliderClick]);
+  }, [isDraggingClip, clipDragStart, pctToTime, eventToPct, handleSliderClick]);
+
+  const handleSliderMouseUp = useCallback(() => {
+    if (isDraggingClip) {
+      setIsDraggingClip(false);
+      setClipDragStart(null);
+    }
+  }, [isDraggingClip]);
+
+  const handleSliderDrag = handleSliderMouseMove;
+
+  const handleShareClip = useCallback(async () => {
+    if (!clipRange) return;
+    setShareStatus('copying');
+    try {
+      const midpoint = Math.round((clipRange.start + clipRange.end) / 2);
+      const encoded = await encodeClip(events, clipRange.start, clipRange.end, midpoint);
+      const url = new URL(window.location.href);
+      url.searchParams.set('clip', encoded);
+      await navigator.clipboard.writeText(url.toString());
+      setShareStatus('copied');
+      setTimeout(() => setShareStatus('idle'), 2500);
+    } catch {
+      setShareStatus('idle');
+    }
+  }, [clipRange, events]);
+
+  const clearClipRange = useCallback(() => {
+    setClipRange(null);
+    setShareStatus('idle');
+  }, []);
 
   // Day markers for the slider
   const dayMarkers = useMemo(() => {
@@ -428,7 +494,9 @@ export default function TimelineBar() {
             ref={sliderRef}
             className="flex-1 relative h-6 cursor-pointer select-none"
             onClick={handleSliderClick}
-            onMouseMove={handleSliderDrag}
+            onMouseDown={handleSliderMouseDown}
+            onMouseMove={handleSliderMouseMove}
+            onMouseUp={handleSliderMouseUp}
           >
             {/* Density heatmap */}
             <DensityCanvas density={density} width={sliderWidth} height={24} />
@@ -446,6 +514,19 @@ export default function TimelineBar() {
 
             {/* Track background */}
             <div className="absolute inset-0 rounded border border-zinc-700/50" />
+
+            {/* Clip range selection overlay */}
+            {clipRange && sliderWidth > 0 && (() => {
+              const range = rangeEnd - rangeStart;
+              const x1 = ((clipRange.start - rangeStart) / range) * sliderWidth;
+              const x2 = ((clipRange.end - rangeStart) / range) * sliderWidth;
+              return (
+                <div
+                  className="absolute top-0 bottom-0 bg-blue-400/20 border-x border-blue-400/60 pointer-events-none"
+                  style={{ left: x1, width: Math.max(2, x2 - x1) }}
+                />
+              );
+            })()}
 
             {/* Day markers */}
             {dayMarkers.map((m, i) => (
@@ -517,6 +598,33 @@ export default function TimelineBar() {
           <div className="text-zinc-500 text-[10px] whitespace-nowrap min-w-[60px] text-right">
             {visibleEvents} EVT
           </div>
+
+          {/* Clip share controls */}
+          {clipRange ? (
+            <div className="flex items-center gap-1">
+              <button
+                onClick={handleShareClip}
+                disabled={shareStatus === 'copying'}
+                className={`text-[10px] px-2 py-0.5 rounded border transition-colors font-mono ${
+                  shareStatus === 'copied'
+                    ? 'bg-green-500/20 border-green-500/50 text-green-300'
+                    : 'bg-blue-500/20 border-blue-500/40 text-blue-300 hover:bg-blue-500/30'
+                }`}
+                title="클립 URL을 클립보드에 복사"
+              >
+                {shareStatus === 'copied' ? '✓ COPIED' : shareStatus === 'copying' ? '...' : '📋 CLIP'}
+              </button>
+              <button
+                onClick={clearClipRange}
+                className="text-[10px] px-1 py-0.5 text-zinc-600 hover:text-zinc-400 transition-colors"
+                title="구간 선택 해제"
+              >✕</button>
+            </div>
+          ) : (
+            <div className="text-[9px] text-zinc-700 whitespace-nowrap" title="Shift+드래그로 구간 선택">
+              ⇥CLIP
+            </div>
+          )}
 
           {/* Marker hover tooltip (portal-style, fixed position) */}
           {hoveredCluster && (

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Globe from './components/Globe';
 import ControlPanel from './components/ControlPanel';
 import HudOverlay from './components/HudOverlay';
@@ -8,6 +8,8 @@ import AlertMonitor from './components/AlertMonitor';
 import InfoWarfareMonitor from './components/InfoWarfareMonitor';
 import { ProviderHealthDots, SimulatedDataBanner } from './components/ProviderHealthPanel';
 import { useProviderHealthMonitor } from './hooks/useProviderHealthMonitor';
+import { useTimelineStore } from './store/useTimelineStore';
+import { decodeClip } from './utils/clipUtils';
 
 // Lazy-loaded provider health detail panel
 const ProviderHealthDetail = lazy(() =>
@@ -56,6 +58,22 @@ const BeforeAfterToggle = lazy(() =>
 
 export default function App() {
   useProviderHealthMonitor();
+
+  // GEO-003: ?clip= URL 파라미터 감지 → 자동 playback 진입
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const clipParam = params.get('clip');
+    if (!clipParam) return;
+
+    decodeClip(clipParam).then((payload) => {
+      if (!payload) return;
+      useTimelineStore.getState().enterPlaybackWithClip(payload);
+      // URL에서 clip 파라미터 제거 (히스토리 클린)
+      const url = new URL(window.location.href);
+      url.searchParams.delete('clip');
+      window.history.replaceState(null, '', url.toString());
+    });
+  }, []);
 
   return (
     <main className="relative h-screen w-screen overflow-hidden bg-black">
