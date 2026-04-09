@@ -1,7 +1,74 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { useTimelineStore, type PlaybackSpeed, type DarkGapSegment } from '@/store/useTimelineStore';
+import { useTimelineStore, type PlaybackSpeed, type DarkGapSegment, type TimelineEvent } from '@/store/useTimelineStore';
+import { useAppStore } from '@/store/useAppStore';
+import type { AlertSeverity } from '@/store/useAlertStore';
 
 const SPEEDS: PlaybackSpeed[] = [1, 10, 60, 360];
+
+// Category → marker color
+const CATEGORY_COLOR: Record<string, string> = {
+  earthquake: '#facc15',
+  flight: '#ef4444',
+  ship: '#3b82f6',
+  chokepoint: '#f97316',
+  satellite: '#a855f7',
+  nuclear: '#84cc16',
+  'information-warfare': '#ec4899',
+  geofence: '#06b6d4',
+  system: '#6b7280',
+};
+
+// Severity → marker half-size (px)
+const SEVERITY_SIZE: Record<AlertSeverity, number> = {
+  critical: 7,
+  warning: 5,
+  info: 3,
+};
+
+interface MarkerCluster {
+  x: number;           // pixel position
+  events: TimelineEvent[];
+  dominantSeverity: AlertSeverity;
+  dominantCategory: string;
+}
+
+/** Clusters events into 4px buckets and returns renderable marker groups */
+function clusterEvents(
+  events: TimelineEvent[],
+  rangeStart: number,
+  rangeEnd: number,
+  width: number,
+  severityFilter: Set<AlertSeverity>
+): MarkerCluster[] {
+  if (width <= 0) return [];
+  const range = rangeEnd - rangeStart;
+  if (range <= 0) return [];
+
+  const filtered = events.filter((e) => severityFilter.has(e.severity));
+
+  // Map each event to a 4px bucket
+  const buckets = new Map<number, TimelineEvent[]>();
+  for (const evt of filtered) {
+    const xRaw = ((evt.timestamp - rangeStart) / range) * width;
+    const bucket = Math.round(xRaw / 4) * 4;
+    if (!buckets.has(bucket)) buckets.set(bucket, []);
+    buckets.get(bucket)!.push(evt);
+  }
+
+  const severityRank: Record<AlertSeverity, number> = { critical: 3, warning: 2, info: 1 };
+
+  return Array.from(buckets.entries()).map(([x, evts]) => {
+    const dominant = evts.reduce((best, e) =>
+      severityRank[e.severity] > severityRank[best.severity] ? e : best
+    );
+    return {
+      x,
+      events: evts,
+      dominantSeverity: dominant.severity,
+      dominantCategory: dominant.source === 'correlation' ? 'chokepoint' : (dominant as unknown as { category?: string }).category ?? 'system',
+    };
+  });
+}
 
 function formatDateTime(ts: number): string {
   const d = new Date(ts);
@@ -130,6 +197,7 @@ export default function TimelineBar() {
   const density = useTimelineStore((s) => s.density);
   const isLoading = useTimelineStore((s) => s.isLoading);
   const darkGapSegments = useTimelineStore((s) => s.darkGapSegments);
+  const events = useTimelineStore((s) => s.events);
 
   const enterPlayback = useTimelineStore((s) => s.enterPlayback);
   const exitPlayback = useTimelineStore((s) => s.exitPlayback);
@@ -139,8 +207,25 @@ export default function TimelineBar() {
   const setSpeed = useTimelineStore((s) => s.setSpeed);
   const tick = useTimelineStore((s) => s.tick);
 
+  const setCameraTarget = useAppStore((s) => s.setCameraTarget);
+
   const sliderRef = useRef<HTMLDivElement>(null);
   const [sliderWidth, setSliderWidth] = useState(0);
+
+  // Event marker state
+  const [severityFilter, setSeverityFilter] = useState<Set<AlertSeverity>>(
+    new Set<AlertSeverity>(['critical', 'warning', 'info'])
+  );
+  const [hoveredCluster, setHoveredCluster] = useState<{ cluster: MarkerCluster; mouseX: number; mouseY: number } | null>(null);
+
+  const toggleSeverity = useCallback((sev: AlertSeverity) => {
+    setSeverityFilter((prev) => {
+      const next = new Set(prev);
+      if (next.has(sev)) next.delete(sev);
+      else next.add(sev);
+      return next;
+    });
+  }, []);
 
   // Measure slider width
   useEffect(() => {
@@ -209,6 +294,31 @@ export default function TimelineBar() {
     if (s.mode !== 'playback') return 0;
     return s.getEventsAtTime(s.currentTime).length;
   });
+
+  // Compute clustered event markers
+  const clusters = useMemo(
+    () => clusterEvents(events, rangeStart, rangeEnd, sliderWidth, severityFilter),
+    [events, rangeStart, rangeEnd, sliderWidth, severityFilter]
+  );
+
+  // Handle marker click: seekTo + optional flyTo
+  const handleMarkerClick = useCallback(
+    (cluster: MarkerCluster, e: React.MouseEvent) => {
+      e.stopPropagation();
+      const representative = cluster.events.reduce((best, ev) =>
+        (ev.lat != null && ev.lng != null) ? ev : best
+      );
+      seekTo(representative.timestamp);
+      if (representative.lat != null && representative.lng != null) {
+        setCameraTarget({
+          longitude: representative.lng,
+          latitude: representative.lat,
+          height: 500_000,
+        });
+      }
+    },
+    [seekTo, setCameraTarget]
+  );
 
   // Realtime mode — show LIVE indicator + PLAYBACK button
   if (mode === 'realtime') {
@@ -291,6 +401,28 @@ export default function TimelineBar() {
             ))}
           </div>
 
+          {/* Severity filter toggles */}
+          <div className="flex items-center gap-0.5">
+            {(['critical', 'warning', 'info'] as AlertSeverity[]).map((sev) => (
+              <button
+                key={sev}
+                onClick={() => toggleSeverity(sev)}
+                title={`Toggle ${sev} markers`}
+                className={`text-[9px] px-1 py-0.5 rounded transition-colors border ${
+                  severityFilter.has(sev)
+                    ? sev === 'critical'
+                      ? 'bg-red-500/30 border-red-500/50 text-red-300'
+                      : sev === 'warning'
+                      ? 'bg-yellow-500/30 border-yellow-500/50 text-yellow-300'
+                      : 'bg-zinc-600/50 border-zinc-500/50 text-zinc-400'
+                    : 'bg-transparent border-zinc-700/30 text-zinc-700'
+                }`}
+              >
+                {sev === 'critical' ? '!' : sev === 'warning' ? '▲' : '·'}
+              </button>
+            ))}
+          </div>
+
           {/* Slider track */}
           <div
             ref={sliderRef}
@@ -328,6 +460,50 @@ export default function TimelineBar() {
               </div>
             ))}
 
+            {/* Event markers SVG overlay */}
+            {clusters.length > 0 && (
+              <svg
+                className="absolute inset-0 overflow-visible pointer-events-none"
+                width={sliderWidth}
+                height={24}
+              >
+                {clusters.map((cluster, i) => {
+                  const color = CATEGORY_COLOR[cluster.dominantCategory] ?? '#6b7280';
+                  const halfSize = SEVERITY_SIZE[cluster.dominantSeverity];
+                  const cx = cluster.x;
+                  const cy = 12;
+                  const isCluster = cluster.events.length > 1;
+
+                  return (
+                    <g
+                      key={i}
+                      style={{ pointerEvents: 'all', cursor: 'pointer' }}
+                      onClick={(e) => handleMarkerClick(cluster, e)}
+                      onMouseEnter={(e) => setHoveredCluster({ cluster, mouseX: e.clientX, mouseY: e.clientY })}
+                      onMouseLeave={() => setHoveredCluster(null)}
+                    >
+                      {isCluster ? (
+                        <>
+                          <circle cx={cx} cy={cy} r={halfSize + 2} fill={color} fillOpacity={0.25} stroke={color} strokeWidth={1} />
+                          <text x={cx} y={cy + 3} textAnchor="middle" fontSize={8} fill={color} fontFamily="monospace">
+                            {cluster.events.length}
+                          </text>
+                        </>
+                      ) : (
+                        <polygon
+                          points={`${cx},${cy - halfSize} ${cx + halfSize},${cy} ${cx},${cy + halfSize} ${cx - halfSize},${cy}`}
+                          fill={color}
+                          fillOpacity={0.85}
+                          stroke={color}
+                          strokeWidth={0.5}
+                        />
+                      )}
+                    </g>
+                  );
+                })}
+              </svg>
+            )}
+
             {/* Playhead */}
             <div
               className="absolute top-0 bottom-0 w-0.5 bg-cyan-400 shadow-[0_0_6px_rgba(0,200,255,0.8)]"
@@ -341,6 +517,29 @@ export default function TimelineBar() {
           <div className="text-zinc-500 text-[10px] whitespace-nowrap min-w-[60px] text-right">
             {visibleEvents} EVT
           </div>
+
+          {/* Marker hover tooltip (portal-style, fixed position) */}
+          {hoveredCluster && (
+            <div
+              className="fixed z-[100] pointer-events-none bg-zinc-900/95 border border-zinc-600/60 rounded px-2 py-1.5 text-[10px] font-mono shadow-lg"
+              style={{ left: hoveredCluster.mouseX + 10, top: hoveredCluster.mouseY - 40 }}
+            >
+              {hoveredCluster.cluster.events.length > 1 ? (
+                <>
+                  <div className="text-zinc-300 font-bold">{hoveredCluster.cluster.events.length} events</div>
+                  <div className="text-zinc-500">{hoveredCluster.cluster.dominantSeverity.toUpperCase()}</div>
+                </>
+              ) : (() => {
+                const evt = hoveredCluster.cluster.events[0];
+                return (
+                  <>
+                    <div className="text-zinc-200 font-bold max-w-[180px] truncate">{evt.title}</div>
+                    <div className="text-zinc-500">{evt.severity.toUpperCase()} · {formatDateTime(evt.timestamp)}</div>
+                  </>
+                );
+              })()}
+            </div>
+          )}
 
           {/* LIVE button */}
           <button
