@@ -5,6 +5,7 @@ import HudOverlay from './components/HudOverlay';
 import ScanLine from './components/ScanLine';
 import Crosshair from './components/Crosshair';
 import AlertMonitor from './components/AlertMonitor';
+import InfoWarfareMonitor from './components/InfoWarfareMonitor';
 import { ProviderHealthDots, SimulatedDataBanner } from './components/ProviderHealthPanel';
 import { useProviderHealthMonitor } from './hooks/useProviderHealthMonitor';
 
@@ -40,6 +41,7 @@ const AreaBriefingPanel = lazy(() => import('./components/AreaBriefingPanel'));
 const ViewModeToggle = lazy(() => import('./components/ViewModeToggle'));
 const ChokepointAnalyticsPanel = lazy(() => import('./components/ChokepointAnalyticsPanel'));
 const DarkVesselPanel = lazy(() => import('./components/DarkVesselPanel'));
+const InfoWarfarePanel = lazy(() => import('./components/InfoWarfarePanel'));
 
 // Lazy-loaded named export needs wrapper
 const GeofenceEventPanel = lazy(() =>
@@ -65,6 +67,7 @@ export default function App() {
       <ProviderHealthDots />
       <SimulatedDataBanner />
       <AlertMonitor />
+      <InfoWarfareMonitor />
 
       <Suspense fallback={null}>
         <MiniStats />
@@ -98,6 +101,7 @@ export default function App() {
         <DarkVesselPanel />
         <OilPricePanel />
         <BeforeAfterToggle />
+        <InfoWarfarePanel />
       </Suspense>
     </main>
   );
