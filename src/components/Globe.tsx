@@ -45,6 +45,7 @@ import { trajectoryDB, TrajectoryRenderer, type PositionRecord } from '@/traject
 import { useTrajectoryStore } from '@/store/useTrajectoryStore';
 import { behavioralProfiler } from '@/behavioral';
 import { useDarkVesselStore, CHOKEPOINT_GATES } from '@/store/useDarkVesselStore';
+import { useInfoWarfareGlobe } from '@/hooks/useInfoWarfareGlobe';
 
 const FILTER_SHADERS: Record<string, string> = {
   crt: crtShader,
@@ -931,6 +932,8 @@ export default function Globe() {
   useGeofenceGlobe(viewerRef);
   // Measurement tools
   useMeasurementGlobe(viewerRef);
+  // InfoWarfare visualization
+  useInfoWarfareGlobe(viewerRef);
   // 위성 데이터 — PointPrimitiveCollection (Entity 대신, 성능 10배↑)
   useEffect(() => {
     const viewer = viewerRef.current;

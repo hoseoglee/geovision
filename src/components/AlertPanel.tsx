@@ -34,6 +34,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   system: 'SYS',
   nuclear: 'NUCLEAR',
   geofence: 'GEOFENCE',
+  'information-warfare': 'INFOWAR',
 };
 
 /** 알람 카테고리와 메시지로부터 관련 외부 사이트 URL 생성 */

@@ -4,7 +4,8 @@ import { persistAlert } from './useEventStore';
 export type AlertSeverity = 'critical' | 'warning' | 'info';
 export type AlertCategory =
   | 'earthquake' | 'flight' | 'ship' | 'satellite'
-  | 'chokepoint' | 'system' | 'nuclear' | 'geofence';
+  | 'chokepoint' | 'system' | 'nuclear' | 'geofence'
+  | 'information-warfare';
 
 export interface Alert {
   id: string;
